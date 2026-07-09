@@ -1,4 +1,4 @@
-/* 🎋 Ambient Canvas (Vết mực loang, lá trúc rơi, chim bay, mây trôi) */
+/* 🎋 Ambient Canvas (Nét cọ loang thư pháp, mây thủy mặc xoáy tâm, lá trúc rơi, chim bay) */
 document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("ambient-canvas");
   if (!canvas) return;
@@ -7,8 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let width = canvas.width = window.innerWidth;
   let height = canvas.height = window.innerHeight;
 
-  // Track mouse coordinates
+  // Track mouse coordinates and interpolation
   const mouse = { x: -1000, y: -1000, active: false };
+  const lastMouse = { x: null, y: null };
 
   // Arrays to hold particles/objects
   const inkBlots = [];
@@ -18,10 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Config parameters
   const config = {
-    maxInkBlots: 40,
+    maxInkBlots: 100, // increased for smoother brush lines
     leafCount: 15,
     birdCount: 4,
-    cloudCount: 3
+    cloudCount: 4
   };
 
   // Resize canvas
@@ -31,44 +32,66 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.addEventListener("resize", resize);
 
-  // Track mouse movements
+  // Track mouse movements with brush line interpolation
   window.addEventListener("mousemove", (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
     mouse.active = true;
     
-    // Spawn ink blots occasionally on movement
-    if (Math.random() < 0.25) {
-      spawnInk(mouse.x, mouse.y);
+    if (lastMouse.x !== null && lastMouse.y !== null) {
+      const dx = mouse.x - lastMouse.x;
+      const dy = mouse.y - lastMouse.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      
+      // Interpolate points along the path for a continuous brush stroke
+      if (dist > 4) {
+        const steps = Math.min(Math.floor(dist / 3), 10);
+        for (let i = 0; i < steps; i++) {
+          const t = i / steps;
+          const interX = lastMouse.x + dx * t;
+          const interY = lastMouse.y + dy * t;
+          
+          // Spawn ink spots along the stroke line
+          if (Math.random() < 0.8) {
+            spawnInk(interX, interY);
+          }
+        }
+      }
     }
+    
+    lastMouse.x = mouse.x;
+    lastMouse.y = mouse.y;
   });
 
   // Track when mouse leaves viewport
   document.addEventListener("mouseleave", () => {
     mouse.active = false;
+    lastMouse.x = null;
+    lastMouse.y = null;
   });
 
   // ==========================================================================
-  // 1. INK WASH PARTICLES (VẾT MỰC LOANG)
+  // 1. CALLIGRAPHY INK BRUSH TRAILS (VẾT MỰC LOANG DẠNG CỌ THƯ PHÁP)
   // ==========================================================================
   class InkBlot {
     constructor(x, y) {
-      this.x = x + (Math.random() - 0.5) * 10;
-      this.y = y + (Math.random() - 0.5) * 10;
-      this.radius = Math.random() * 5 + 5; // starting size
-      this.maxRadius = Math.random() * 25 + 30; // bleed size
-      this.vx = (Math.random() - 0.5) * 0.4;
-      this.vy = (Math.random() - 0.5) * 0.4;
-      this.alpha = 0.08; // extremely subtle ink wash
-      this.decay = Math.random() * 0.0015 + 0.001; // fades out in ~1s
+      // Small offset to simulate natural brush hair scatter
+      this.x = x + (Math.random() - 0.5) * 6;
+      this.y = y + (Math.random() - 0.5) * 6;
+      this.radius = Math.random() * 4 + 4; // starting size
+      this.maxRadius = Math.random() * 18 + 15; // bleed size (smaller for elegance)
+      this.vx = (Math.random() - 0.5) * 0.2;
+      this.vy = (Math.random() - 0.5) * 0.2;
+      this.alpha = 0.09; // very subtle watercolor tint
+      this.decay = Math.random() * 0.0018 + 0.0012; // fades out in ~1s
     }
 
     update() {
       this.x += this.vx;
       this.y += this.vy;
-      // Bleed out/expand
+      // Bleed out/expand simulating rice paper absorption
       if (this.radius < this.maxRadius) {
-        this.radius += (this.maxRadius - this.radius) * 0.05;
+        this.radius += (this.maxRadius - this.radius) * 0.06;
       }
       this.alpha -= this.decay;
     }
@@ -76,14 +99,16 @@ document.addEventListener("DOMContentLoaded", () => {
     draw() {
       if (this.alpha <= 0) return;
       
-      // Radial gradient for watercolor bleed effect
+      // Multi-layer radial gradient for fuzzy, authentic calligraphy dispersion
       const grad = ctx.createRadialGradient(
-        this.x, this.y, this.radius * 0.1,
+        this.x, this.y, this.radius * 0.02,
         this.x, this.y, this.radius
       );
-      grad.addColorStop(0, `rgba(28, 28, 28, ${this.alpha})`);
-      grad.addColorStop(0.3, `rgba(40, 40, 40, ${this.alpha * 0.6})`);
-      grad.addColorStop(1, 'rgba(28, 28, 28, 0)');
+      grad.addColorStop(0, `rgba(20, 20, 20, ${this.alpha})`);
+      grad.addColorStop(0.25, `rgba(32, 32, 32, ${this.alpha * 0.75})`);
+      grad.addColorStop(0.55, `rgba(80, 80, 80, ${this.alpha * 0.3})`);
+      grad.addColorStop(0.85, `rgba(130, 130, 130, ${this.alpha * 0.08})`);
+      grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
       ctx.fillStyle = grad;
       ctx.beginPath();
@@ -107,7 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     reset(isInitial = false) {
-      // Enter from left or top edges, or random if initial
       if (isInitial) {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
@@ -126,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this.speedY = Math.random() * 0.5 + 0.7; // drifts downward
       this.angle = Math.random() * Math.PI * 2;
       this.spinSpeed = (Math.random() - 0.5) * 0.02;
-      this.alpha = Math.random() * 0.25 + 0.15; // Muted contrast
+      this.alpha = Math.random() * 0.22 + 0.13; // Muted contrast
     }
 
     update() {
@@ -134,7 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
       this.y += this.speedY;
       this.angle += this.spinSpeed;
 
-      // Wrap around if leaves go off-screen
       if (this.x > width + 50 || this.y > height + 50) {
         this.reset();
       }
@@ -148,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Muted charcoal-green bamboo leaf color
       ctx.fillStyle = `rgba(54, 68, 58, ${this.alpha})`;
       
-      // Draw bamboo leaf contour using bezier curves
+      // Draw bamboo leaf contour
       ctx.beginPath();
       ctx.moveTo(0, -this.length / 2);
       ctx.quadraticCurveTo(this.width, 0, 0, this.length / 2);
@@ -170,13 +193,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     reset(isInitial = false) {
       this.x = isInitial ? Math.random() * width : -100;
-      this.y = Math.random() * height * 0.4 + 50; // Fly in upper sky
-      this.speedX = Math.random() * 0.4 + 0.3; // fly slowly rightward
-      this.speedY = (Math.random() - 0.5) * 0.1;
-      this.size = Math.random() * 6 + 8; // bird size
+      this.y = Math.random() * height * 0.4 + 50; // upper sky
+      this.speedX = Math.random() * 0.35 + 0.25; // slow speed
+      this.speedY = (Math.random() - 0.5) * 0.08;
+      this.size = Math.random() * 5 + 7;
       this.wingPhase = Math.random() * Math.PI * 2;
-      this.wingSpeed = Math.random() * 0.05 + 0.05;
-      this.alpha = Math.random() * 0.2 + 0.15; // Very soft contrast
+      this.wingSpeed = Math.random() * 0.04 + 0.04;
+      this.alpha = Math.random() * 0.18 + 0.12; // very soft silhouette
     }
 
     update() {
@@ -193,11 +216,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.save();
       ctx.translate(this.x, this.y);
       
-      // Classical brush stroke drawing style: flap wings based on phase
-      const wingOffset = Math.sin(this.wingPhase) * this.size * 0.6;
+      const wingOffset = Math.sin(this.wingPhase) * this.size * 0.5;
       
       ctx.strokeStyle = `rgba(28, 28, 28, ${this.alpha})`;
-      ctx.lineWidth = 1.2;
+      ctx.lineWidth = 1.1;
       ctx.lineCap = "round";
       ctx.lineJoin = "round";
       
@@ -214,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================================================
-  // 4. FLOATING CLOUDS (MÂY TRÔI)
+  // 4. FLOATING CLOUDS VORTEX (MÂY THỦY MẶC XOÁY TÂM)
   // ==========================================================================
   class FloatingCloud {
     constructor(isInitial = false) {
@@ -222,27 +244,67 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     reset(isInitial = false) {
-      this.x = isInitial ? Math.random() * width : -300;
-      this.y = Math.random() * height * 0.6;
-      this.radius = Math.random() * 80 + 120; // large misty clouds
-      this.speedX = Math.random() * 0.08 + 0.04; // drift extremely slowly
-      this.alpha = Math.random() * 0.04 + 0.03; // almost invisible, ambient
+      const cx = width / 2;
+      const cy = height / 2;
+      const maxSpawnRadius = Math.sqrt(cx * cx + cy * cy) * 1.1;
+      
+      // Spawn at a random angle
+      this.angle = Math.random() * Math.PI * 2;
+      
+      // Distance from center
+      const spawnDist = isInitial ? Math.random() * maxSpawnRadius : maxSpawnRadius;
+      this.spawnDist = maxSpawnRadius;
+      
+      this.x = cx + Math.cos(this.angle) * spawnDist;
+      this.y = cy + Math.sin(this.angle) * spawnDist;
+      
+      this.initialRadius = Math.random() * 100 + 120; // large watercolor wash clouds
+      this.radius = this.initialRadius;
+      
+      // Speed directing toward center
+      const moveSpeed = Math.random() * 0.15 + 0.15;
+      this.vx = -Math.cos(this.angle) * moveSpeed;
+      this.vy = -Math.sin(this.angle) * moveSpeed;
+      
+      // Add a slight rotation/whirlpool drift
+      const rotateSpeed = Math.random() * 0.08 + 0.04;
+      this.vx += -Math.sin(this.angle) * rotateSpeed;
+      this.vy += Math.cos(this.angle) * rotateSpeed;
+      
+      this.initialAlpha = Math.random() * 0.04 + 0.02; // very soft and transparent
+      this.alpha = this.initialAlpha;
     }
 
     update() {
-      this.x += this.speedX;
-      if (this.x > width + 300) {
-        this.reset();
+      this.x += this.vx;
+      this.y += this.vy;
+      
+      const cx = width / 2;
+      const cy = height / 2;
+      const dx = cx - this.x;
+      const dy = cy - this.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      
+      // Scale down and fade out as it approaches the center
+      const progress = Math.min(dist / this.spawnDist, 1);
+      this.radius = this.initialRadius * progress;
+      this.alpha = this.initialAlpha * progress;
+      
+      // Reset if too close to center or completely faded
+      if (dist < 30 || this.alpha <= 0.001) {
+        this.reset(false);
       }
     }
 
     draw() {
+      if (this.radius <= 0 || this.alpha <= 0) return;
+      
       const grad = ctx.createRadialGradient(
         this.x, this.y, 0,
         this.x, this.y, this.radius
       );
-      grad.addColorStop(0, `rgba(220, 215, 205, ${this.alpha})`);
-      grad.addColorStop(0.5, `rgba(240, 235, 225, ${this.alpha * 0.4})`);
+      grad.addColorStop(0, `rgba(215, 210, 198, ${this.alpha})`);
+      grad.addColorStop(0.4, `rgba(235, 230, 220, ${this.alpha * 0.5})`);
       grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
       ctx.fillStyle = grad;
@@ -274,7 +336,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function loop() {
     ctx.clearRect(0, 0, width, height);
 
-    // Update and draw Clouds
+    // Update and draw Clouds (underneath everything else)
     clouds.forEach(cloud => {
       cloud.update();
       cloud.draw();
@@ -298,7 +360,6 @@ document.addEventListener("DOMContentLoaded", () => {
       blot.update();
       blot.draw();
       
-      // Delete faded out blots
       if (blot.alpha <= 0) {
         inkBlots.splice(i, 1);
       }

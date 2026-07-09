@@ -12,8 +12,28 @@ document.addEventListener("DOMContentLoaded", () => {
   let isPlayingIntro = true;
   let fadeOutTriggered = false;
 
-  // 1. Lock scrolling initially
-  document.body.style.overflow = "hidden";
+  // Check if page loaded with a hash (e.g. back from details page or navigating directly)
+  const hasHash = window.location.hash && (
+    window.location.hash.startsWith("#stage-node-") || 
+    ["#Modau", "#ToiLaAi", "#HanhTrinh", "#NhinLai", "#LienHe"].includes(window.location.hash)
+  );
+
+  if (hasHash && overlay) {
+    overlay.style.display = "none";
+    overlay.classList.add("fade-out");
+    isPlayingIntro = false;
+    document.body.style.overflow = "";
+    
+    // Trigger Hero entrance animations immediately
+    const heroElements = document.querySelectorAll(".hero-animate");
+    heroElements.forEach((el) => {
+      el.classList.add("animate-fade-in-up");
+      el.style.opacity = "1";
+    });
+  } else {
+    // 1. Lock scrolling initially
+    document.body.style.overflow = "hidden";
+  }
 
   // 2. Play intro on welcome screen click (Bypasses browser autoplay block with audio)
   if (enterScreen && video) {
