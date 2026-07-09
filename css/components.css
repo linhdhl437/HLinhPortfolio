@@ -1,0 +1,362 @@
+/* 🎋 UI Components for HLinh Portfolio */
+
+/* ==========================================================================
+   1. NAVIGATION HEADER
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-nav);
+  background-color: rgba(249, 249, 246, 0.85); /* Semitransparent paper */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-ink);
+  transition: transform var(--transition-normal), background-color var(--transition-normal);
+}
+
+.site-header.scroll-down {
+  transform: translateY(-100%);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-ink);
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.nav-logo span {
+  color: var(--accent-vermillion);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: var(--space-md);
+}
+
+.nav-link {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--text-charcoal);
+  padding: var(--space-xs) var(--space-sm);
+  position: relative;
+  transition: color var(--transition-normal);
+  cursor: pointer;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: var(--accent-vermillion);
+  transition: width 0.3s var(--ease-ink), left 0.3s var(--ease-ink);
+}
+
+.nav-link:hover {
+  color: var(--accent-vermillion);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 80%;
+  left: 10%;
+}
+
+/* Mobile Menu Toggle button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  z-index: calc(var(--z-nav) + 1);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-ink);
+  position: absolute;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle span:nth-child(1) { top: 0; }
+.menu-toggle span:nth-child(2) { top: 11px; }
+.menu-toggle span:nth-child(3) { top: 22px; }
+
+/* ==========================================================================
+   2. BUTTONS
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-align: center;
+  font-weight: 500;
+  gap: var(--space-xs);
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--accent-vermillion);
+  color: var(--text-paper);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-vermillion-hover);
+  color: var(--text-paper);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-paper-warm);
+  color: var(--accent-gold-light);
+  border-color: var(--accent-gold-light);
+  transform: translateY(-2px);
+}
+
+.btn-text {
+  font-family: var(--font-serif);
+  color: var(--accent-vermillion);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-weight: 600;
+  transition: transform var(--transition-normal);
+}
+
+.btn-text:hover {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   3. CARDS & BENTO GRID
+   ========================================================================== */
+.card {
+  background: rgba(255, 255, 255, 0.92); /* Increased opacity to 0.92 for excellent text contrast */
+  backdrop-filter: blur(16px);           /* Stronger blur for glassmorphism */
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(184, 144, 71, 0.25); /* Gold-accent border */
+  border-radius: 12px;
+  padding: var(--space-lg);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal), background-color var(--transition-normal);
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(184, 144, 71, 0.7);
+  background: rgba(255, 255, 255, 0.98); /* Almost solid on hover to ensure maximum readability */
+  box-shadow: 0 12px 30px rgba(184, 144, 71, 0.12);
+}
+
+/* Cổ phong border corner decoration */
+.card-classical::before,
+.card-classical::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: var(--accent-gold);
+  border-style: solid;
+  opacity: 0.45; /* Semi-visible standard border decoration */
+  transition: opacity var(--transition-normal), border-color var(--transition-normal);
+  pointer-events: none;
+}
+
+.card-classical::before {
+  top: 10px;
+  left: 10px;
+  border-width: 1px 0 0 1px;
+}
+
+.card-classical::after {
+  bottom: 10px;
+  right: 10px;
+  border-width: 0 1px 1px 0;
+}
+
+.card-classical:hover::before,
+.card-classical:hover::after {
+  opacity: 1;
+  border-color: var(--accent-gold-light);
+}
+
+/* ==========================================================================
+   4. LIGHTBOX & MODAL (GALLERY PREVIEW)
+   ========================================================================== */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 20, 20, 0.95); /* Deep ink backdrop */
+  z-index: var(--z-modal);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.lightbox-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 80%;
+  text-align: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border: 2px solid var(--accent-gold);
+  border-radius: 4px;
+}
+
+.lightbox-caption {
+  color: var(--text-paper);
+  font-family: var(--font-serif);
+  margin-top: var(--space-sm);
+  font-size: 1.1rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--text-paper);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color var(--transition-normal);
+}
+
+.lightbox-close:hover {
+  color: var(--accent-vermillion);
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-paper);
+  font-size: 3rem;
+  cursor: pointer;
+  transition: color var(--transition-normal);
+  user-select: none;
+}
+
+.lightbox-arrow:hover {
+  color: var(--accent-gold-light);
+}
+
+.lightbox-prev { left: -60px; }
+.lightbox-next { right: -60px; }
+
+/* Handle arrows and close button on mobile layout */
+@media (max-width: 768px) {
+  .lightbox-prev { left: 0; background: rgba(0,0,0,0.5); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+  .lightbox-next { right: 0; background: rgba(0,0,0,0.5); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+  .lightbox-close { right: 10px; top: 10px; position: fixed; background: rgba(0,0,0,0.5); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+}
+
+/* 🌸 Corner Flower Ornaments */
+.corner-flower {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  opacity: 0.12; /* Subtle opacity to respect academic readability */
+  pointer-events: none;
+  z-index: var(--z-decoration);
+  user-select: none;
+  color: var(--accent-gold);
+}
+
+.corner-flower.top-left {
+  top: 15px;
+  left: 15px;
+}
+
+.corner-flower.top-right {
+  top: 15px;
+  right: 15px;
+  transform: scaleX(-1);
+}
+
+.corner-flower.bottom-left {
+  bottom: 15px;
+  left: 15px;
+  transform: scaleY(-1);
+}
+
+.corner-flower.bottom-right {
+  bottom: 15px;
+  right: 15px;
+  transform: scale(-1);
+}
+
+/* 🧭 Special Replay Navigation Item */
+.nav-link-special {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  color: var(--accent-vermillion) !important;
+  font-weight: 600;
+  padding: 6px 14px;
+  border: 1px solid rgba(139, 0, 0, 0.3);
+  border-radius: 20px;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-link-special:hover {
+  background-color: var(--accent-vermillion);
+  color: var(--bg-paper) !important;
+  border-color: var(--accent-vermillion);
+  box-shadow: 0 4px 10px rgba(139, 0, 0, 0.15);
+}

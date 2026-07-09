@@ -1,0 +1,50 @@
+/* 🎋 Design Tokens & CSS Variables for HLinh Portfolio */
+:root {
+  /* Color Palette - Trung Hoa Cổ Phong (Tactile Ink & Paper) */
+  --bg-paper: #F9F9F6;         /* Trắng ngà giấy dó chính */
+  --bg-paper-warm: #F3EFE6;    /* Kem nhạt giấy dó ấm (cho section/card) */
+  --bg-dark: #141414;          /* Đen mực tàu sâu (loading screen, footer) */
+  
+  --text-ink: #111111;         /* Đen mực tàu sâu cho chữ chính (tương phản tối đa) */
+  --text-charcoal: #222222;    /* Đen xám cho nội dung body (đọc tốt trên nền sáng) */
+  --text-muted: #555555;       /* Xám đậm cho caption, metadata (đảm bảo tương phản >= 4.5:1) */
+  --text-paper: #F9F9F6;       /* Chữ sáng trên nền tối */
+  
+  --accent-vermillion: #8B0000; /* Đỏ chu sa (màu con dấu thư pháp) */
+  --accent-vermillion-hover: #A61C1C;
+  --accent-gold: #B89047;       /* Vàng trầm cổ điển */
+  --accent-gold-light: #D4AF37; /* Vàng kim sáng */
+  
+  /* Border & Overlay */
+  --border-ink: rgba(28, 28, 28, 0.1);
+  --border-gold: rgba(184, 144, 71, 0.25);
+  --ink-spread: rgba(0, 0, 0, 0.04);
+  
+  /* Typography Scale */
+  --font-serif: "Noto Serif", "Playfair Display", "Times New Roman", serif;
+  --font-sans: "Inter", "system-ui", -apple-system, sans-serif;
+  --font-chinese: "Noto Serif SC", serif; /* Chỉ dùng minh họa thị giác */
+  
+  /* Spacing System (8px grid base) */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 1rem;     /* 16px */
+  --space-md: 1.5rem;   /* 24px */
+  --space-lg: 2rem;     /* 32px */
+  --space-xl: 3rem;     /* 48px */
+  --space-2xl: 4.5rem;  /* 72px */
+  --space-3xl: 6rem;    /* 96px */
+  
+  /* Z-Index Hierarchy */
+  --z-loading: 9999;
+  --z-toast: 9000;
+  --z-modal: 8000;
+  --z-overlay: 7000;
+  --z-nav: 6000;
+  --z-decoration: 1;
+  --z-content: 10;
+  
+  /* Transition & Motion */
+  --ease-ink: cubic-bezier(0.25, 1, 0.5, 1); /* OutQuart */
+  --transition-normal: 0.3s var(--ease-ink);
+  --transition-slow: 0.6s var(--ease-ink);
+}

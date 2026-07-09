@@ -1,0 +1,138 @@
+/* 🎋 Base & Global Styles for HLinh Portfolio */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-paper);
+  color: var(--text-charcoal);
+  line-height: 1.75;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* 📜 Tactile Paper Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.04;
+  z-index: var(--z-decoration);
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* 🖌️ Text Selection Style */
+::selection {
+  background-color: rgba(139, 0, 0, 0.15); /* Vermillion tint */
+  color: var(--accent-vermillion);
+}
+
+/* 🏔️ Decorative Chinese Calligraphy Accent Font */
+.calligraphy-accent {
+  font-family: var(--font-chinese);
+  font-weight: 300;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: rgba(28, 28, 28, 0.05);
+  font-size: clamp(3rem, 8vw, 6rem);
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+  z-index: var(--z-decoration);
+}
+
+/* 📐 Typography Settings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--text-ink);
+  font-weight: 700;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+  margin-bottom: var(--space-sm);
+}
+
+a {
+  color: var(--accent-vermillion);
+  text-decoration: none;
+  transition: color var(--transition-normal);
+}
+
+a:hover {
+  color: var(--accent-vermillion-hover);
+}
+
+/* 🧭 Navigation & Container Layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* 📜 Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-paper);
+  border-left: 1px solid var(--border-ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(184, 144, 71, 0.3); /* Accent gold thumb */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
+
+/* 🎴 Global UI Helpers */
+.text-serif {
+  font-family: var(--font-serif);
+}
+
+.text-sans {
+  font-family: var(--font-sans);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}

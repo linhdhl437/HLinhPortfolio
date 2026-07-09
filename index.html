@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Digital Portfolio hành trình học tập và trưởng thành trong thời đại AI của Đồng Huyền Linh - Sinh viên Ngôn ngữ Trung, ĐH Ngoại ngữ - ĐHQGHN.">
+  <title>Đồng Huyền Linh | Digital Portfolio</title>
+  
+  <!-- 🎋 CSS Design System & Components -->
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/sections.css">
+</head>
+<body>
+
+  <!-- 🖌️ Ambient Canvas (Vết mực loang, lá trúc, chim bay, mây trôi) -->
+  <canvas id="ambient-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></canvas>
+
+  <!-- 🖌️ Intro Video & Welcome Overlay (Toàn màn hình) -->
+  <div id="intro-video-overlay" class="intro-video-overlay">
+    <!-- Màn hình đệm cổ phong (Welcome Enter Screen) -->
+    <div id="intro-enter-screen" class="intro-enter-screen" style="cursor: pointer;">
+      <div class="glass-panel-welcome">
+        <!-- Watermark chữ Hán mờ -->
+        <div class="watermark-characters">玄靈</div>
+        
+        <!-- Chữ chào mừng -->
+        <h2 class="chinese-welcome">你好，欢迎来到我的</h2>
+        <h1 class="english-welcome">"PORTFOLIO"</h1>
+        
+        <p class="welcome-name">Đồng Huyền Linh • 董玄靈</p>
+        <p class="welcome-desc">Hành trình học tập & Trưởng thành trong thời đại AI</p>
+        
+        <!-- Dòng chỉ dẫn tĩnh cổ phong -->
+        <p class="welcome-click-to-start" style="font-family: var(--font-serif); font-size: 0.9rem; color: var(--accent-gold); margin-top: 1.5rem; letter-spacing: 0.05em; font-weight: 500; pointer-events: none;">
+          Nhấp chuột vào màn hình để bắt đầu hành trình 🎋
+        </p>
+      </div>
+    </div>
+    
+    <!-- Nút Bỏ qua Video (Skip Intro) -->
+    <button id="btn-skip-intro" class="btn-skip-intro" style="position: absolute; top: 24px; right: 24px; z-index: 10; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #ffffff; padding: 8px 16px; font-family: var(--font-serif); font-size: 0.85rem; border-radius: 4px; cursor: pointer; backdrop-filter: blur(8px); transition: background 0.3s, border-color 0.3s;">
+      Bỏ qua ✕
+    </button>
+    
+    <!-- Thẻ video phát intro -->
+    <video id="intro-video" playsinline preload="auto">
+      <source src="./PortfolioAssets/VideoIntroPhanMoDau.mp4" type="video/mp4">
+      Trình duyệt của bạn không hỗ trợ thẻ video này.
+    </video>
+  </div>
+
+  <!-- 🧭 Site Header & Sticky Navigation -->
+  <header id="site-header" class="site-header">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo">
+        玄靈 <span>• Portfolio</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#hero" class="nav-link active">Mở đầu</a></li>
+          <li><a href="#about" class="nav-link">Tôi là ai</a></li>
+          <li><a href="#journey" class="nav-link">Hành trình</a></li>
+          <li><a href="#reflection" class="nav-link">Nhìn lại</a></li>
+          <li><a href="#contact" class="nav-link">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         1. HERO SECTION (MỞ ĐẦU)
+         ========================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg-mountains"></div>
+      
+      <!-- Decorative background clouds -->
+      <svg class="hero-cloud animate-float-cloud" style="position: absolute; top: 15%; left: 5%; width: 120px; opacity: 0.08; z-index: 1;" viewBox="0 0 100 100">
+        <path fill="currentColor" d="M20,50 C20,35 40,30 50,40 C60,25 85,30 80,50 C95,50 95,70 80,70 C70,70 65,70 50,70 C30,70 10,70 20,50 Z"/>
+      </svg>
+      <svg class="hero-cloud animate-float-cloud" style="position: absolute; top: 25%; right: 8%; width: 180px; opacity: 0.06; z-index: 1; animation-delay: -3s;" viewBox="0 0 100 100">
+        <path fill="currentColor" d="M20,50 C20,35 40,30 50,40 C60,25 85,30 80,50 C95,50 95,70 80,70 C70,70 65,70 50,70 C30,70 10,70 20,50 Z"/>
+      </svg>
+
+      <!-- Decorative calligraphy watermark -->
+      <div class="calligraphy-accent" style="top: 15%; right: 5%;">數位學卷</div> <!-- Kỷ yếu số -->
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="hero-subtitle hero-animate" style="opacity: 0;">Digital Portfolio</span>
+          <h1 class="hero-title hero-animate" style="opacity: 0;">Hành trình học tập & Trưởng thành</h1>
+          
+          <div class="hero-meta hero-animate" style="opacity: 0;">
+            <p style="font-weight: 600; margin-bottom: 4px;">ĐỒNG HUYỀN LINH</p>
+            <p style="font-size: 0.95rem; margin-bottom: 2px;">Sinh viên ngành Ngôn ngữ Trung</p>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Trường Đại học Ngoại ngữ – ĐHQGHN | MSSV: 25041679</p>
+          </div>
+          
+          <p class="hero-quote hero-animate" style="opacity: 0;">
+            “Hãy để AI làm trợ lý nâng tầm tư duy, đừng biến AI thành bộ não thay thế chính mình.”
+          </p>
+          
+          <div class="hero-animate" style="opacity: 0; margin-top: var(--space-md);">
+            <a href="#about" id="hero-cta-btn" class="btn btn-primary ink-hover-btn">Bắt đầu hành trình</a>
+          </div>
+        </div>
+        
+        <div class="hero-visual hero-animate" style="opacity: 0;">
+          <div class="hero-avatar-wrapper">
+            <img src="./PortfolioAssets/ẢNH AVARTAR PHẦN MỞ ĐẦU_.jpg" alt="Đồng Huyền Linh" class="hero-avatar">
+          </div>
+          
+          <!-- Embedded Video Intro (Chuyển thành Card kích hoạt Replay Intro) -->
+          <div class="hero-video-box cursor-pointer" id="hero-video-trigger" style="cursor: pointer;">
+            <div class="hero-video-thumbnail-wrapper" style="position: relative; border-radius: 6px; overflow: hidden; height: 180px; background-color: #000;">
+              <img src="./PortfolioAssets/AnhIntro1.png" alt="Video Intro" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+              <div class="video-play-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); transition: background 0.3s;">
+                <div class="play-btn-circle" style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); color: var(--accent-vermillion); font-size: 1.25rem;">
+                  ▶
+                </div>
+              </div>
+            </div>
+            <div class="video-label">Xem lại intro</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         2. TÔI LÀ AI? SECTION
+         ========================================================================== -->
+    <section id="about" class="section-padding scroll-reveal" style="position: relative;">
+      <!-- Elegant Corner Flowers -->
+      <svg class="corner-flower top-left" viewBox="0 0 100 100">
+        <path d="M10,10 Q40,30 80,45" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M30,23 Q50,15 65,10" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="30" cy="23" r="5" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="27" cy="19" r="4" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="33" cy="19" r="4" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="25" cy="24" r="4" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="35" cy="24" r="4" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="30" cy="23" r="1.5" fill="var(--accent-gold)"/>
+        <circle cx="65" cy="10" r="4" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="62" cy="7" r="3.2" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="68" cy="7" r="3.2" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="60" cy="11" r="3.2" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="70" cy="11" r="3.2" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="65" cy="10" r="1.2" fill="var(--accent-gold)"/>
+        <circle cx="80" cy="45" r="6" fill="#FFF" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="76" cy="40" r="4.8" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="84" cy="40" r="4.8" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="74" cy="46" r="4.8" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="86" cy="46" r="4.8" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="80" cy="45" r="1.8" fill="var(--accent-gold)"/>
+      </svg>
+      <svg class="corner-flower top-right" viewBox="0 0 100 100">
+        <path d="M10,10 Q40,30 80,45" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M30,23 Q50,15 65,10" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="30" cy="23" r="5" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="27" cy="19" r="4" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="33" cy="19" r="4" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="25" cy="24" r="4" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="35" cy="24" r="4" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="30" cy="23" r="1.5" fill="var(--accent-gold)"/>
+        <circle cx="65" cy="10" r="4" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="62" cy="7" r="3.2" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="68" cy="7" r="3.2" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="60" cy="11" r="3.2" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="70" cy="11" r="3.2" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="65" cy="10" r="1.2" fill="var(--accent-gold)"/>
+        <circle cx="80" cy="45" r="6" fill="#FFF" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="76" cy="40" r="4.8" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="84" cy="40" r="4.8" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="74" cy="46" r="4.8" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="86" cy="46" r="4.8" fill="#FFF" stroke="currentColor" stroke-width="1"/>
+        <circle cx="80" cy="45" r="1.8" fill="var(--accent-gold)"/>
+      </svg>
+
+      <!-- Calligraphy decorative stamp background -->
+      <div class="calligraphy-accent" style="top: 25%; left: 2%; font-size: 4rem;">吾是誰</div> <!-- Ta là ai -->
+
+      <div class="scroll-unroll-container">
+        <div class="scroll-unroll-roller-left"></div>
+        <div class="scroll-unroll-roller-right"></div>
+        <div class="scroll-unroll-content">
+          <div class="container">
+            <div class="section-header">
+              <span class="section-eyebrow">Giới Thiệu</span>
+              <h2 class="section-title-line text-serif">Tôi Là Ai?</h2>
+            </div>
+            
+            <div class="about-grid">
+              <div class="stagger-item" style="opacity: 0;">
+                <h3 class="text-serif" style="margin-bottom: var(--space-md); color: var(--accent-vermillion);">Xin chào!</h3>
+                <div class="about-intro-text">
+                  <p>
+                    Mình là <strong>Đồng Huyền Linh</strong>, sinh viên năm nhất ngành Ngôn ngữ Trung tại Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội.
+                  </p>
+                  <p>
+                    Mình yêu thích ngôn ngữ, văn hóa và những câu chuyện được kể qua con chữ. Bên cạnh đó, mình cũng luôn tò mò về cách công nghệ đang thay đổi việc học tập và giao tiếp của con người. Chính sự giao thoa giữa ngôn ngữ và công nghệ đã khiến mình hứng thú với học phần <em>“Nhập môn Công nghệ số & Ứng dụng Trí tuệ nhân tạo”</em>.
+                  </p>
+                  <p>
+                    Sở thích của mình là đọc truyện, học ngoại ngữ, nghe nhạc và khám phá những công cụ mới có thể hỗ trợ việc học hiệu quả hơn.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="about-details stagger-item" style="opacity: 0;">
+                <!-- Values Grid -->
+                <div>
+                  <h3 class="text-serif" style="margin-bottom: var(--space-sm); font-size: 1.2rem;">Giá Trị Cốt Lõi</h3>
+                  <div class="values-grid">
+                    <div class="value-card card-classical">
+                      <h4><span>📖</span> Học tập suốt đời</h4>
+                      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">Liên tục cập nhật tri thức mới trong thời đại số.</p>
+                    </div>
+                    <div class="value-card card-classical">
+                      <h4><span>🧠</span> Tư duy phản biện</h4>
+                      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">Luôn kiểm chứng, đánh giá thông tin khoa học.</p>
+                    </div>
+                    <div class="value-card card-classical">
+                      <h4><span>⚖️</span> Liêm chính học thuật</h4>
+                      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">Tôn trọng sở hữu trí tuệ, sử dụng AI có trách nhiệm.</p>
+                    </div>
+                    <div class="value-card card-classical">
+                      <h4><span>📈</span> Phát triển cá nhân</h4>
+                      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">Xây dựng lộ trình phát triển bản thân bền vững.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Goals Section -->
+                <div class="goals-section">
+                  <h3 class="text-serif" style="margin-bottom: var(--space-sm); font-size: 1.2rem;">Mục Tiêu Tương Lai</h3>
+                  <ul class="goals-list">
+                    <li class="goal-item"><span class="goal-icon">📚</span> HSK Cấp 6 quốc tế</li>
+                    <li class="goal-item"><span class="goal-icon">🎓</span> Điểm GPA tích lũy 3.5+</li>
+                    <li class="goal-item"><span class="goal-icon">🌟</span> Đạt danh hiệu Sinh viên 5 tốt</li>
+                    <li class="goal-item"><span class="goal-icon">🤖</span> Ứng dụng AI hiệu quả trong ngôn ngữ</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Vì sao Portfolio được tạo ra -->
+            <div class="card card-classical stagger-item" style="opacity: 0; margin-top: var(--space-xl); background-color: var(--bg-paper-warm);">
+              <h3 class="text-serif" style="margin-bottom: var(--space-sm); color: var(--accent-vermillion);">Vì sao Portfolio này được tạo ra?</h3>
+              <p style="font-size: 0.95rem;">
+                Portfolio này không chỉ là yêu cầu của học phần mà còn là nơi mình ghi lại dấu ấn của một giai đoạn học tập đặc biệt. Thông qua đây, mình mong muốn:
+              </p>
+              <ul style="padding-left: var(--space-md); font-size: 0.9rem; color: var(--text-charcoal); display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                <li>✓ Lưu giữ các sản phẩm học tập thực tế đã hoàn thành.</li>
+                <li>✓ Định hình và minh chứng cho các kỹ năng số đã tích lũy.</li>
+                <li>✓ Theo dõi sự tiến bộ và phản tư cá nhân qua từng chặng đường.</li>
+                <li>✓ Nhìn lại sự phát triển tư duy trong môi trường học tập số.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. HÀNH TRÌNH HỌC TẬP SECTION (6 CHẶNG - INTERFACE ONLY)
+         ========================================================================== -->
+    <section id="journey" class="section-padding scroll-reveal">
+      <div class="calligraphy-accent" style="top: 15%; right: 2%; font-size: 5rem;">修業之旅</div> <!-- Tu nghiệp chi lữ -->
+
+      <div class="scroll-unroll-container">
+        <div class="scroll-unroll-roller-left"></div>
+        <div class="scroll-unroll-roller-right"></div>
+        <div class="scroll-unroll-content">
+          <div class="container">
+            <div class="section-header">
+              <span class="section-eyebrow">Showcase</span>
+              <h2 class="section-title-line text-serif">Hành Trình Học Tập</h2>
+              <p style="max-width: 600px; margin: var(--space-sm) auto 0 auto; font-size: 0.9rem; color: var(--text-muted); font-style: italic;">
+                "Mỗi bài tập trong học phần không chỉ là một nhiệm vụ cần hoàn thành mà còn là một bước tiến giúp mình hiểu rõ hơn về công nghệ, dữ liệu, trí tuệ nhân tạo..."
+              </p>
+            </div>
+            
+            <div class="timeline-container">
+          <div class="timeline-line"></div>
+          
+          <!-- CHẶNG 1 -->
+          <div class="timeline-item" id="stage-node-1">
+            <div class="timeline-node animate-pulse-vermillion"></div>
+            <div class="timeline-content-wrapper">
+              <div class="card journey-card card-classical">
+                <span class="journey-eyebrow text-serif">Chặng 01 / 書卷壹</span>
+                <h3 class="journey-title text-serif">Xây dựng nền tảng quản lý dữ liệu cá nhân</h3>
+                
+                <p class="journey-desc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--space-md); color: var(--text-charcoal);">
+                  Tìm hiểu cấu trúc máy tính, thao tác hệ điều hành cơ bản và thực hành tổ chức lưu trữ, quản lý tệp tin, dữ liệu học tập cá nhân một cách khoa học.
+                </p>
+                
+                <div class="journey-actions">
+                  <a href="stage_details.html?stage=1" class="btn btn-primary btn-sm btn-toggle-stage" style="padding: 0.4rem 1.2rem; font-size: 0.85rem; text-decoration: none;">
+                    Xem thêm 🔍
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- CHẶNG 2 -->
+          <div class="timeline-item" id="stage-node-2">
+            <div class="timeline-node animate-pulse-vermillion"></div>
+            <div class="timeline-content-wrapper">
+              <div class="card journey-card card-classical">
+                <span class="journey-eyebrow text-serif">Chặng 02 / 書卷貳</span>
+                <h3 class="journey-title text-serif">Học cách tìm kiếm thay vì chỉ tìm thấy</h3>
+                
+                <p class="journey-desc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--space-md); color: var(--text-charcoal);">
+                  Nắm vững các kỹ thuật khai thác tài liệu học thuật trực tuyến nâng cao, đồng thời xây dựng tiêu chí đánh giá độ tin cậy và liêm chính nguồn thông tin số.
+                </p>
+                
+                <div class="journey-actions">
+                  <a href="stage_details.html?stage=2" class="btn btn-primary btn-sm btn-toggle-stage" style="padding: 0.4rem 1.2rem; font-size: 0.85rem; text-decoration: none;">
+                    Xem thêm 🔍
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- CHẶNG 3 -->
+          <div class="timeline-item" id="stage-node-3">
+            <div class="timeline-node animate-pulse-vermillion"></div>
+            <div class="timeline-content-wrapper">
+              <div class="card journey-card card-classical">
+                <span class="journey-eyebrow text-serif">Chặng 03 / 書卷叁</span>
+                <h3 class="journey-title text-serif">Học cách giao tiếp với AI</h3>
+                
+                <p class="journey-desc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--space-md); color: var(--text-charcoal);">
+                  Nghiên cứu nguyên lý hoạt động của các mô hình ngôn ngữ lớn (LLM) và thực hành xây dựng các kỹ thuật Prompt Engineering nâng cao để giải quyết các tác vụ ngôn ngữ.
+                </p>
+                
+                <div class="journey-actions">
+                  <a href="stage_details.html?stage=3" class="btn btn-primary btn-sm btn-toggle-stage" style="padding: 0.4rem 1.2rem; font-size: 0.85rem; text-decoration: none;">
+                    Xem thêm 🔍
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- CHẶNG 4 -->
+          <div class="timeline-item" id="stage-node-4">
+            <div class="timeline-node animate-pulse-vermillion"></div>
+            <div class="timeline-content-wrapper">
+              <div class="card journey-card card-classical">
+                <span class="journey-eyebrow text-serif">Chặng 04 / 書卷肆</span>
+                <h3 class="journey-title text-serif">Làm việc nhóm trong môi trường số</h3>
+                
+                <p class="journey-desc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--space-md); color: var(--text-charcoal);">
+                  Sử dụng các nền tảng cộng tác trực tuyến hiện đại (Notion, Google Workspace) để lập kế hoạch, phân chia vai trò và quản lý hiệu quả một dự án làm việc nhóm.
+                </p>
+                
+                <div class="journey-actions">
+                  <a href="stage_details.html?stage=4" class="btn btn-primary btn-sm btn-toggle-stage" style="padding: 0.4rem 1.2rem; font-size: 0.85rem; text-decoration: none;">
+                    Xem thêm 🔍
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- CHẶNG 5 -->
+          <div class="timeline-item" id="stage-node-5">
+            <div class="timeline-node animate-pulse-vermillion"></div>
+            <div class="timeline-content-wrapper">
+              <div class="card journey-card card-classical">
+                <span class="journey-eyebrow text-serif">Chặng 05 / 書卷伍</span>
+                <h3 class="journey-title text-serif">Sáng tạo cùng AI</h3>
+                
+                <p class="journey-desc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--space-md); color: var(--text-charcoal);">
+                  Kết hợp năng lực tư duy sáng tạo của con người với công nghệ đồ họa AI hiện đại để thiết kế các sản phẩm truyền thông số và infographic chất lượng cao.
+                </p>
+                
+                <div class="journey-actions">
+                  <a href="stage_details.html?stage=5" class="btn btn-primary btn-sm btn-toggle-stage" style="padding: 0.4rem 1.2rem; font-size: 0.85rem; text-decoration: none;">
+                    Xem thêm 🔍
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- CHẶNG 6 -->
+          <div class="timeline-item" id="stage-node-6">
+            <div class="timeline-node animate-pulse-vermillion"></div>
+            <div class="timeline-content-wrapper">
+              <div class="card journey-card card-classical">
+                <span class="journey-eyebrow text-serif">Chặng 06 / 書卷陸</span>
+                <h3 class="journey-title text-serif">Trách nhiệm trong thời đại AI</h3>
+                
+                <p class="journey-desc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--space-md); color: var(--text-charcoal);">
+                  Phân tích vai trò và xây dựng đạo đức sử dụng trí tuệ nhân tạo có trách nhiệm, giữ vững tính an toàn thông tin và tính chính trực, liêm chính học thuật trong nghiên cứu.
+                </p>
+                
+                <div class="journey-actions">
+                  <a href="stage_details.html?stage=6" class="btn btn-primary btn-sm btn-toggle-stage" style="padding: 0.4rem 1.2rem; font-size: 0.85rem; text-decoration: none;">
+                    Xem thêm 🔍
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- ==========================================================================
+         4. NHÌN LẠI HÀNH TRÌNH SECTION (REFLECTION - INTERFACE ONLY)
+         ========================================================================== -->
+    <section id="reflection" class="section-padding scroll-reveal">
+      <div class="calligraphy-accent" style="top: 20%; left: 2%; font-size: 5rem;">回顧省思</div> <!-- Hồi cố tỉnh tư -->
+
+      <div class="scroll-unroll-container">
+        <div class="scroll-unroll-roller-left"></div>
+        <div class="scroll-unroll-roller-right"></div>
+        <div class="scroll-unroll-content">
+          <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Reflection</span>
+          <h2 class="section-title-line text-serif">Nhìn Lại Hành Trình</h2>
+        </div>
+        
+        <!-- 4.1 Cảm nhận trước/sau -->
+        <div class="reflection-compare">
+          <div class="card compare-card before card-classical">
+            <h4 class="text-serif"><span>⏳</span> Tôi của ngày đầu tiên</h4>
+            <p style="font-size: 0.95rem; line-height: 1.8;">
+              Công nghệ với mình chủ yếu là công cụ phục vụ học tập cơ bản hàng ngày. Thấy AI tò mò nhưng mơ hồ, thường dùng để tìm câu trả lời nhanh hơn thay vì suy nghĩ sâu sắc.
+            </p>
+          </div>
+          
+          <div class="card compare-card after card-classical">
+            <h4 class="text-serif"><span>✨</span> Tôi của hiện tại</h4>
+            <p style="font-size: 0.95rem; line-height: 1.8;">
+              Sự thay đổi lớn nhất là ở cách học: biết tổ chức thông tin, đối chiếu dữ liệu, thiết lập quy trình. Hiểu rằng giá trị công nghệ phụ thuộc vào sự chủ động độc lập của tư duy.
+            </p>
+          </div>
+        </div>
+        
+        <!-- 4.2 Dấu ấn học tập -->
+        <h3 class="text-serif text-center" style="margin-bottom: var(--space-lg); color: var(--accent-vermillion);">Dấu Ấn Học Tập</h3>
+        
+        <div class="skills-container">
+          <!-- 6 Kỹ năng số (Skill Tree Graphic Placeholder) -->
+          <div>
+            <h4 class="text-serif" style="margin-bottom: var(--space-sm); font-size: 1.1rem; color: var(--accent-gold);">六大數位技能 / 6 Kỹ năng số</h4>
+            <div class="skills-tree-graphic">
+              <!-- Skill 1 -->
+              <div class="skill-node-item">
+                <span class="skill-node-icon">🔍</span>
+                <span class="skill-node-num">01</span>
+                <p style="font-size: 0.85rem; font-weight:600; margin-bottom:0;">Khai thác thông tin</p>
+              </div>
+              <!-- Skill 2 -->
+              <div class="skill-node-item">
+                <span class="skill-node-icon">⚖️</span>
+                <span class="skill-node-num">02</span>
+                <p style="font-size: 0.85rem; font-weight:600; margin-bottom:0;">Đánh giá phản biện</p>
+              </div>
+              <!-- Skill 3 -->
+              <div class="skill-node-item">
+                <span class="skill-node-icon">📧</span>
+                <span class="skill-node-num">03</span>
+                <p style="font-size: 0.85rem; font-weight:600; margin-bottom:0;">Giao tiếp số</p>
+              </div>
+              <!-- Skill 4 -->
+              <div class="skill-node-item">
+                <span class="skill-node-icon">🤝</span>
+                <span class="skill-node-num">04</span>
+                <p style="font-size: 0.85rem; font-weight:600; margin-bottom:0;">Hợp tác trực tuyến</p>
+              </div>
+              <!-- Skill 5 -->
+              <div class="skill-node-item">
+                <span class="skill-node-icon">🔒</span>
+                <span class="skill-node-num">05</span>
+                <p style="font-size: 0.85rem; font-weight:600; margin-bottom:0;">An toàn số</p>
+              </div>
+              <!-- Skill 6 -->
+              <div class="skill-node-item">
+                <span class="skill-node-icon">📜</span>
+                <span class="skill-node-num">06</span>
+                <p style="font-size: 0.85rem; font-weight:600; margin-bottom:0;">Liêm chính học thuật</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Prompt Library QR Code -->
+          <div class="card card-classical" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+            <h4 class="text-serif" style="margin-bottom: var(--space-sm); font-size: 1.1rem; color: var(--accent-gold);">Thư viện Prompt cá nhân</h4>
+            <div class="qr-card-content">
+              <div class="qr-image-wrapper">
+                <img src="./PortfolioAssets/MÃ QR CHO PROMPT LIBRARY.png" alt="Mã QR Prompt Library" class="qr-image">
+              </div>
+              <div>
+                <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: var(--space-xs);">
+                  Quét mã QR để truy cập kho lưu trữ <strong>Prompt Library</strong> cá nhân được xây dựng trong suốt học phần.
+                </p>
+                <a href="./PortfolioAssets/MÃ QR CHO PROMPT LIBRARY.png" target="_blank" class="btn-text" style="font-size: 0.85rem;">
+                  Mở ảnh QR lớn ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 Kiến thức mới - Bản đồ AI cá nhân -->
+        <div style="margin-bottom: var(--space-3xl);">
+          <h4 class="text-serif" style="margin-bottom: var(--space-sm); font-size: 1.1rem; color: var(--accent-gold);">Bản đồ AI cá nhân</h4>
+          <div class="ai-map-table-wrapper">
+            <table class="ai-map-table">
+              <thead>
+                <tr>
+                  <th>Công cụ AI</th>
+                  <th>Vai trò</th>
+                  <th>Ứng dụng nổi bật</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="ai-tool-badge">💬 ChatGPT</td>
+                  <td>Trung tâm hỗ trợ học tập</td>
+                  <td>Nghiên cứu, học tập, xây dựng ý tưởng, cải thiện Prompt</td>
+                </tr>
+                <tr>
+                  <td class="ai-tool-badge">🎨 Canva AI</td>
+                  <td>Trợ lý sáng tạo</td>
+                  <td>Thiết kế infographic, bài thuyết trình, nội dung trực quan</td>
+                </tr>
+                <tr>
+                  <td class="ai-tool-badge">📓 Notion AI</td>
+                  <td>Trợ lý quản lý tri thức</td>
+                  <td>Ghi chú, quản lý dự án, tổ chức tài liệu học tập</td>
+                </tr>
+                <tr>
+                  <td class="ai-tool-badge">✍️ Grammarly</td>
+                  <td>Trợ lý học thuật</td>
+                  <td>Kiểm tra ngữ pháp, cải thiện chất lượng bài viết</td>
+                </tr>
+                <tr>
+                  <td class="ai-tool-badge">💎 Gemini</td>
+                  <td>Trợ lý tìm kiếm</td>
+                  <td>Tìm kiếm thông tin, đối chiếu dữ liệu và mở rộng góc nhìn</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 4.3 Quá trình hoàn thiện -->
+        <div class="reflection-compare" style="margin-bottom: 0;">
+          <div class="card card-classical">
+            <h4 class="text-serif" style="color: var(--accent-vermillion);">❤️ Điều tôi tâm đắc nhất</h4>
+            <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom:0;">
+              "AI có thể tạo ra câu trả lời, nhưng chỉ con người mới tạo ra được ý nghĩa." Giữ được tư duy độc lập mới là kỹ năng quan trọng nhất trong thời đại AI phát triển vũ bão.
+            </p>
+          </div>
+          
+          <div class="card card-classical">
+            <h4 class="text-serif" style="color: var(--text-charcoal);">⚠️ Khó khăn tôi đã gặp</h4>
+            <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom:0;">
+              Thách thức lớn nhất không phải là các công cụ số mà là việc hệ thống hóa quá trình học tập thành một câu chuyện có chiều sâu và phản ánh chân thực tiến bộ cá nhân.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- ==========================================================================
+         5. TỔNG KẾT & LIÊN HỆ SECTION (FOOTER)
+         ========================================================================== -->
+    <footer id="contact" class="site-footer">
+      <!-- Decorative floral patterns at the bottom -->
+      <svg class="footer-decor-left" viewBox="0 0 100 100">
+        <path fill="rgba(184, 144, 71, 0.08)" d="M0,100 C30,70 70,70 100,100 Z"/>
+      </svg>
+      <svg class="footer-decor-right" viewBox="0 0 100 100">
+        <path fill="rgba(184, 144, 71, 0.08)" d="M100,100 C70,70 30,70 0,100 Z"/>
+      </svg>
+
+      <div class="container footer-content scroll-reveal">
+        <div class="footer-philosophy text-serif">
+          “AI có thể hỗ trợ việc học, nhưng sự tiến bộ luôn bắt đầu từ chính người học.”
+          <span>學習與成長 • 學無止境</span> <!-- Học tập và trưởng thành • Học vô chỉ cảnh -->
+        </div>
+        
+        <div class="footer-contact">
+          <span class="footer-contact-title">THÔNG TIN LIÊN HỆ</span>
+          <div class="footer-links">
+            <a href="mailto:Huyenlinhdv4307@gmail.com" class="footer-link-item">
+              <span>📧</span> Huyenlinhdv4307@gmail.com
+            </a>
+            <a href="https://www.facebook.com/huyen.linh.969733" target="_blank" class="footer-link-item">
+              <span>👤</span> Facebook cá nhân
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-copyright">
+          <p>Digital Portfolio © 2026 Đồng Huyền Linh. Thiết kế giao diện phong cách Cổ Phong & Tactile Design.</p>
+          <p style="font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-top: 4px;">Nhập môn Công nghệ số & Ứng dụng Trí tuệ nhân tạo | ĐH Ngoại ngữ – ĐHQGHN</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ==========================================================================
+       LIGHTBOX CONTAINER
+       ========================================================================== -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-content">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+      <button id="lightbox-prev" class="lightbox-arrow lightbox-prev" aria-label="Previous Image">&#10094;</button>
+      <img id="lightbox-img" class="lightbox-img" src="" alt="">
+      <button id="lightbox-next" class="lightbox-arrow lightbox-next" aria-label="Next Image">&#10095;</button>
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SCRIPTS
+       ========================================================================== -->
+  
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
+
+  
+  <!-- Custom scripts -->
+  <script src="./js/loading.js"></script>
+  <script src="./js/ambient-canvas.js"></script>
+  <script src="./js/stage-content.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/lightbox.js"></script>
+  <script src="./js/scroll-effects.js"></script>
+
+</body>
+</html>

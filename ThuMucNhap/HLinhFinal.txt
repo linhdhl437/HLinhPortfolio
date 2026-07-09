@@ -1,0 +1,471 @@
+- 
+BỐI CẢNH DỰ ÁN
+Đây là Digital Portfolio tổng kết học phần “Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo”.
+Portfolio không chỉ là nơi lưu trữ bài tập mà phải kể lại hành trình học tập, trưởng thành và thay đổi tư duy của người học trong thời đại AI.
+PHONG CÁCH THIẾT KẾ
+* Chủ đề: Trung Hoa cổ phong kết hợp hiện đại
+* Cảm hứng: tranh thủy mặc, mây cách điệu, núi xa, hoa trắng, giấy dó, thư quyển cổ 
+* Tinh thần: tinh tế, tối giản, học thuật, có chiều sâu
+* Không lạm dụng chữ Hán
+* Chữ Hán nếu xuất hiện chỉ đóng vai trò minh họa thị giác
+* Website phải hoạt động như một cuốn Portfolio số kể lại hành trình học tập và trưởng thành trong thời đại AI, tạo cảm giác: Portfolio cá nhân cao cấp, Sinh viên ngoại ngữ trong thời đại AI, Có chiều sâu học thuật, Có bản sắc riêng, Không giống template phổ thông.
+HIỆU ỨNG 
+* Cánh hoa trắng rơi nhẹ
+* Mực loang khi hover menu
+* Chữ trang trí hiện dần khi scroll
+* Hiệu ứng mở thư quyển khi cuộn đến section
+* Smooth scroll.
+* Parallax rất nhẹ.
+* Fade-in theo từng section.
+* Hover card mềm mại.
+* Loading screen dạng mực loang.
+VISUAL
+Background gồm:
+* Mây cách điệu
+* Núi xa dạng thủy mặc
+* Mực loang nhẹ
+* Hoa trắng ở góc trang
+Tất cả đều phải tinh tế.
+Không làm rối nội dung.
+Không lấn át nội dung học thuật.
+________________
+
+
+
+
+CẤU TRÚC BẮT BUỘC
+1. MỞ ĐẦU
+* Hero Section
+* Ảnh avartar của tôi
+* Video giới thiệu bản thân
+* Thông tin cơ bản
+* Câu trích dẫn cá nhân
+* Nút bắt đầu hành trình
+2. TÔI LÀ AI
+* Giới thiệu bản thân
+* Chân dung người học
+* Giá trị cốt lõi
+* Mục tiêu tương lai
+* Lý do tạo Portfolio
+3. HÀNH TRÌNH HỌC TẬP
+Bao gồm 6 chặng:
+Chặng 1:
+Xây dựng nền tảng quản lý dữ liệu cá nhân
+Chặng 2:
+Học cách tìm kiếm thay vì chỉ tìm thấy
+Chặng 3:
+Học cách giao tiếp với AI
+Chặng 4:
+Trải nghiệm làm việc nhóm trong môi trường số
+Chặng 5:
+Sáng tạo cùng AI
+Chặng 6:
+Trách nhiệm trong thời đại AI
+Mỗi chặng phải có:
+* Mục tiêu
+* Quá trình thực hiện
+* Điều đáng nhớ nhất
+* Giá trị tôi mang theo
+* Sản phẩm
+Nếu có PDF: Hiển thị nút: "Xem báo cáo PDF" Mở tab mới.
+Nếu có ảnh: Hiển thị gallery.Cho phép: Click phóng to, Lightbox, Carousel.
+Nếu có infographic: Hiển thị thêm nút: "Xem sản phẩm"
+
+
+4. NHÌN LẠI HÀNH TRÌNH
+4.1 Cảm nhận về học phần
+* Tôi của ngày đầu tiên
+* Tôi của hiện tại
+4.2 Dấu ấn học tập
+* 6 kỹ năng số
+* 5 kiến thức mới
+* Prompt Library
+* Bản đồ AI cá nhân
+* Portfolio số cá nhân
+4.3 Quá trình hoàn thiện Portfolio
+* Điều tôi tâm đắc nhất
+* Khó khăn tôi gặp phải
+5. TỔNG KẾT – LIÊN HỆ
+* Lời kết
+* Triết lý học tập trong thời đại AI
+* Email
+* Facebook
+* Kênh liên hệ khác (trường)
+
+TRANG CHỦ
+Digital Portfolio
+Hành trình học tập và trưởng thành trong thời đại AI
+ĐỒNG HUYỀN LINH
+Sinh viên ngành Ngôn ngữ Trung
+Trường Đại học Ngoại ngữ – ĐHQGHN
+MSSV: 25041679
+“Hãy để AI làm trợ lý nâng tầm tư duy, đừng biến AI thành bộ não thay thế chính mình."
+[Nút: Bắt đầu hành trình]
+Video ngắn nền trắng, xám khói, hiệu ứng mực loang giới thiệu sơ lược về họ tên, trường, khoa, mã số sinh viên)
+________________
+
+
+PHẦN 1
+TÔI LÀ AI?
+1.1 Giới thiệu bản thân
+Xin chào!
+        Mình là Đồng Huyền Linh, sinh viên năm nhất ngành Ngôn ngữ Trung tại Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội.
+        Mình yêu thích ngôn ngữ, văn hóa và những câu chuyện được kể qua con chữ. Bên cạnh đó, mình cũng luôn tò mò về cách công nghệ đang thay đổi việc học tập và giao tiếp của con người. Chính sự giao thoa giữa ngôn ngữ và công nghệ đã khiến mình hứng thú với học phần “Nhập môn Công nghệ số & Ứng dụng Trí tuệ nhân tạo”.
+        Sở thích của mình là đọc truyện, học ngoại ngữ, nghe nhạc và khám phá những công cụ mới có thể hỗ trợ việc học hiệu quả hơn.
+________________
+
+
+1.2 Chân dung người học
+Tôi tin vào
+* Học tập suốt đời
+* Tư duy phản biện
+* Tính trung thực trong học thuật
+* Sự phát triển bền vững của bản thân
+________________
+
+
+Tôi đang hướng tới
+📚 HSK 6
+🎓 GPA 3.5+
+🌟 Sinh viên 5 tốt
+🤖 Ứng dụng AI hiệu quả trong học tập ngoại ngữ và xây dựng học liệu 
+* nâng cao năng lực nghiên cứu và dịch thuật 
+* trở thành một người học tập suốt đời, luôn sẵn sàng thích nghi với những thay đổi của thời đại
+________________
+
+
+1.3 Vì sao Portfolio này được tạo ra?
+Portfolio này không chỉ là yêu cầu của học phần mà còn là nơi mình ghi lại dấu ấn của một giai đoạn học tập đặc biệt.
+Thông qua Portfolio, mình mong muốn:
+* Lưu giữ các sản phẩm học tập đã thực hiện.
+* Thể hiện những kỹ năng số đã được hình thành.
+* Theo dõi sự tiến bộ của bản thân qua từng nhiệm vụ.
+* Nhìn lại hành trình trưởng thành của mình trong môi trường học tập số.
+________________
+
+
+PHẦN 2 HÀNH TRÌNH HỌC TẬP
+Giới thiệu
+Mỗi bài tập trong học phần không chỉ là một nhiệm vụ cần hoàn thành mà còn là một bước tiến giúp mình hiểu rõ hơn về công nghệ, dữ liệu, trí tuệ nhân tạo và trách nhiệm của người học trong môi trường số.
+CHẶNG 1 Xây dựng nền tảng quản lý dữ liệu cá nhân
+Bài tập 1 - Bài 1: Máy tính và các thiết bị ngoại vi 
+Mục tiêu
+Bài tập giúp mình làm quen với các thao tác quản lý tệp tin và thư mục trên máy tính, đồng thời rèn luyện thói quen tổ chức dữ liệu khoa học thay vì lưu trữ theo cảm tính như trước đây.
+Quá trình thực hiện
+Mình thực hành từng thao tác cơ bản như tạo thư mục, tạo tệp văn bản, đổi tên, sao chép, di chuyển và xóa tệp. Sau khi hoàn thành yêu cầu bài tập, mình thử áp dụng cách tổ chức đó vào chính tài liệu học tập của bản thân bằng cách phân chia thư mục theo môn học, học kỳ và loại tài liệu.
+Điều đáng nhớ nhất
+Trước đây mình thường lưu tài liệu ở nhiều vị trí khác nhau và đặt tên khá tùy ý. Khi cần tìm lại một tài liệu cũ, mình thường mất khá nhiều thời gian.
+Thông qua bài tập này, mình nhận ra rằng việc quản lý dữ liệu tưởng chừng đơn giản nhưng lại ảnh hưởng trực tiếp đến hiệu quả học tập và làm việc lâu dài.
+Giá trị tôi mang theo
+Mình hình thành được thói quen lưu trữ tài liệu có hệ thống, đặt tên tệp thống nhất và quản lý dữ liệu cá nhân một cách khoa học hơn.
+SẢN PHẨM 
+=> Xem thêm
+________________
+
+
+CHẶNG 2 Học cách tìm kiếm thay vì chỉ tìm thấy
+• Bài tập 2 - Bài 2: Khai thác dữ liệu và thông tin
+Mục tiêu
+Rèn luyện khả năng tìm kiếm tài liệu học thuật và đánh giá độ tin cậy của nguồn thông tin trước khi sử dụng.
+Quá trình thực hiện
+Mình lựa chọn một chủ đề liên quan đến ngành học, sau đó tìm kiếm tài liệu từ Google Scholar, các bài báo khoa học và nguồn học thuật trực tuyến. Không chỉ thu thập tài liệu, mình còn phải xem xét tác giả, cơ quan xuất bản, số lượng trích dẫn và tính cập nhật của từng nguồn.
+Điều đáng nhớ nhất
+Đây là lần đầu tiên mình thực sự phân biệt được sự khác nhau giữa một bài viết phổ thông trên Internet và một nguồn học thuật đáng tin cậy.
+Trước đây mình thường có xu hướng sử dụng những kết quả xuất hiện đầu tiên trên Google. Sau khi thực hiện bài tập, mình hiểu rằng việc tìm được thông tin không quá khó, nhưng đánh giá được chất lượng của thông tin mới là kỹ năng quan trọng.
+Giá trị tôi mang theo
+Mình bắt đầu có thói quen kiểm chứng nguồn tin trước khi sử dụng và biết cách tiếp cận các nguồn học thuật phục vụ học tập và nghiên cứu.
+SẢN PHẨM 
+=> Xem thêm
+________________
+
+
+CHẶNG 3 Học cách giao tiếp với AI
+Bài tập 2 - Bài 3: Tổng quan về trí tuệ nhân tạo
+Mục tiêu
+Khám phá ảnh hưởng của Prompt đến chất lượng phản hồi từ AI và rèn luyện khả năng đặt yêu cầu rõ ràng, có mục tiêu.
+Quá trình thực hiện
+Mình thử nghiệm nhiều phiên bản Prompt cho ba tác vụ khác nhau: tóm tắt tài liệu, giải thích khái niệm và tạo câu hỏi ôn tập. Mỗi tác vụ được thực hiện với Prompt cơ bản, Prompt cải tiến và Prompt nâng cao để so sánh chất lượng đầu ra.
+Điều đáng nhớ nhất
+Ban đầu mình nghĩ rằng AI sẽ hiểu mọi yêu cầu dù đặt câu hỏi như thế nào. Tuy nhiên, kết quả thử nghiệm cho thấy cùng một công cụ AI nhưng chất lượng câu trả lời thay đổi rất nhiều tùy vào cách đặt Prompt.
+Điều này khiến mình nhận ra rằng kỹ năng quan trọng không phải là biết dùng AI, mà là biết diễn đạt điều mình thực sự muốn nhận được.
+Giá trị tôi mang theo
+Mình học được cách đặt câu hỏi cụ thể hơn, tư duy rõ ràng hơn và biết cách cải thiện phản hồi của AI thông qua việc điều chỉnh Prompt.
+SẢN PHẨM 
+=> Xem thêm
+________________
+
+
+CHẶNG 4 Trải nghiệm làm việc nhóm trong môi trường số
+Bài tập 3 - Bài 4: Giao tiếp và hợp tác trong môi trường số
+Mục tiêu
+Trải nghiệm các nền tảng hỗ trợ làm việc nhóm và rèn luyện khả năng quản lý công việc cá nhân trong dự án chung.
+Quá trình thực hiện
+Trong một tuần làm việc nhóm, mình sử dụng Notion để quản lý nhiệm vụ, Google Docs để cộng tác nội dung và Google Drive để lưu trữ tài liệu. Mình theo dõi tiến độ công việc, cập nhật trạng thái nhiệm vụ và tham gia trao đổi với các thành viên trong nhóm.
+Điều đáng nhớ nhất
+Điều mình nhận ra là làm việc nhóm trực tuyến không đơn giản chỉ là chia việc cho nhau. Nếu thiếu cập nhật tiến độ hoặc giao tiếp không rõ ràng, công việc rất dễ bị chồng chéo hoặc bỏ sót.
+Giá trị tôi mang theo
+Mình hình thành kỹ năng quản lý công việc cá nhân, phối hợp nhóm hiệu quả hơn và biết tận dụng các công cụ số để nâng cao năng suất làm việc.
+SẢN PHẨM 
+=> Xem thêm
+________________
+
+
+CHẶNG 5 Sáng tạo cùng AI
+Bài tập 2 - Bài 5: Sáng tạo nội dung số
+Mục tiêu
+Khám phá cách AI có thể hỗ trợ quá trình sáng tạo và xây dựng một sản phẩm nội dung số hoàn chỉnh.
+Quá trình thực hiện
+Mình sử dụng nhiều công cụ AI khác nhau để hỗ trợ lên ý tưởng, tạo nội dung văn bản, thiết kế hình ảnh và hoàn thiện sản phẩm cuối cùng. Trong quá trình đó, mình liên tục thử nghiệm Prompt, chỉnh sửa đầu ra và kết hợp thêm các ý tưởng cá nhân.
+Điều đáng nhớ nhất
+Trải nghiệm này giúp mình nhận ra rằng AI có thể hỗ trợ rất tốt trong việc tạo ý tưởng và tiết kiệm thời gian, nhưng những sản phẩm tốt nhất luôn cần dấu ấn và sự lựa chọn của con người.
+Giá trị tôi mang theo
+Mình hiểu rõ hơn về vai trò của AI trong quá trình sáng tạo và biết cách kết hợp giữa công nghệ với tư duy cá nhân để tạo ra sản phẩm có giá trị.
+SẢN PHẨM 
+=> Xem thêm
+________________
+
+
+CHẶNG 6 Trách nhiệm trong thời đại AI
+Bài tập 4 - Bài 6: An toàn và liêm chính học thuật trong môi trường số
+Mục tiêu
+Tìm hiểu các nguyên tắc đạo đức và trách nhiệm khi sử dụng AI trong môi trường học thuật.
+Quá trình thực hiện
+Mình nghiên cứu các quy định liên quan đến việc sử dụng AI trong giáo dục, phân tích những tình huống dễ dẫn đến vi phạm liêm chính học thuật và xây dựng bộ nguyên tắc cá nhân khi sử dụng AI trong học tập.
+Điều đáng nhớ nhất
+Đây là bài tập khiến mình suy nghĩ nhiều nhất trong toàn bộ học phần.
+Mình nhận ra rằng AI có thể giúp hoàn thành công việc nhanh hơn, nhưng nếu lạm dụng hoặc phụ thuộc hoàn toàn vào AI, người học sẽ đánh mất cơ hội rèn luyện tư duy và năng lực của chính mình.
+Giá trị tôi mang theo
+Mình xây dựng được quan điểm rõ ràng hơn về việc sử dụng AI như một công cụ hỗ trợ thay vì thay thế quá trình học tập. Đồng thời, mình hiểu rằng trách nhiệm cuối cùng đối với mọi sản phẩm học thuật luôn thuộc về người sử dụng.
+SẢN PHẨM 
+=> Xem thêm
+PHẦN 3 NHÌN LẠI HÀNH TRÌNH
+3.1 CẢM NHẬN VỀ HỌC PHẦN 
+Tôi của ngày đầu tiên
+Khi bắt đầu học phần này, mình xem công nghệ chủ yếu là những công cụ phục vụ học tập hàng ngày. Mình biết sử dụng một số ứng dụng phổ biến nhưng chưa thực sự hiểu cách khai thác chúng một cách có hệ thống.
+Đối với AI, mình tò mò nhưng cũng khá mơ hồ. Mình thường sử dụng AI để tìm câu trả lời nhanh hơn thay vì suy nghĩ sâu hơn về cách đặt câu hỏi hay đánh giá chất lượng thông tin nhận được.
+________________
+
+
+Tôi của hiện tại
+Sau một học kỳ, điều thay đổi lớn nhất không phải là số lượng công cụ mình biết sử dụng.
+Điều thay đổi lớn nhất là cách mình học.
+Mình bắt đầu chú ý hơn đến việc tổ chức thông tin, đánh giá nguồn dữ liệu, xây dựng quy trình làm việc và sử dụng AI như một người hỗ trợ thay vì phụ thuộc hoàn toàn vào nó.
+Mình hiểu rằng công nghệ không làm cho việc học trở nên dễ dàng hơn một cách kỳ diệu. Nó chỉ phát huy giá trị khi người học chủ động tư duy, chủ động lựa chọn và chịu trách nhiệm với những gì mình tạo ra.
+
+
+________________
+
+
+3.2 DẤU ẤN HỌC TẬP
+📚 06 kỹ năng số được hình thành ( có thể trình bày dạng Skill tree)
+1. Kỹ năng tìm kiếm và khai thác thông tin9
+Mình biết vận dụng các chiến lược tìm kiếm nâng cao trên Internet và các cơ sở dữ liệu học thuật, đồng thời kết hợp các công cụ AI để hỗ trợ quá trình thu thập thông tin.
+________________
+
+
+2. Kỹ năng đánh giá thông tin một cách phản biện
+Mình có khả năng:
+* Kiểm tra độ tin cậy của nguồn tin.
+* Đối chiếu thông tin từ nhiều nguồn.
+* Nhận diện thông tin sai lệch và tin giả.
+________________
+
+
+3. Kỹ năng giao tiếp số chuyên nghiệp
+Mình biết sử dụng Email, họp trực tuyến và mạng xã hội học thuật một cách phù hợp, hiệu quả và đúng mục đích.
+________________
+
+
+4. Kỹ năng hợp tác trực tuyến
+Thông qua các dự án nhóm, mình đã làm quen với:
+* Microsoft 365
+* Notion
+* Trello
+Từ đó nâng cao khả năng phối hợp công việc, chia sẻ tài liệu và quản lý tiến độ trong môi trường số.
+________________
+
+
+5. Kỹ năng bảo vệ dữ liệu và an toàn số
+Mình biết áp dụng các biện pháp thực hành tốt để:
+* Bảo vệ thông tin cá nhân.
+* Quản lý mật khẩu.
+* Nhận diện các nguy cơ mất an toàn trên Internet.
+* Bảo vệ thiết bị và dữ liệu số.
+________________
+
+
+6. Kỹ năng liêm chính học thuật
+Mình có thể:
+* Phân biệt các hình thức vi phạm liêm chính học thuật.
+* Nhận diện hành vi đạo văn.
+* Trích dẫn nguồn đúng quy chuẩn.
+* Diễn giải và tổng hợp thông tin một cách trung thực.
+🤖 01 Bản đồ AI cá nhân được xây dựng
+
+
+Công cụ AI
+	Vai trò
+	Ứng dụng nổi bật
+	ChatGPT
+	Trung tâm hỗ trợ học tập
+	Nghiên cứu, học tập, xây dựng ý tưởng, cải thiện Prompt
+	Canva AI
+	Trợ lý sáng tạo
+	Thiết kế infographic, bài thuyết trình, nội dung trực quan
+	Notion AI
+	Trợ lý quản lý tri thức
+	Ghi chú, quản lý dự án, tổ chức tài liệu học tập
+	Grammarly
+	Trợ lý học thuật
+	Kiểm tra ngữ pháp, cải thiện chất lượng bài viết
+	Gemini
+	Trợ lý tìm kiếm và khám phá
+	Tìm kiếm thông tin, đối chiếu dữ liệu và mở rộng góc nhìn
+	
+
+📂 5 Kiến thức mới, mở rộng tri thức 
+1. Hiểu cách máy tính và hệ thống số vận hành
+Mình hiểu rõ hơn về cấu trúc cơ bản của máy tính, vai trò của phần cứng và phần mềm, cũng như cách các thiết bị số phối hợp với nhau để xử lý thông tin.
+________________
+
+
+2. Hiểu cách AI hoạt động và tạo ra câu trả lời
+Trước đây mình thường xem AI như một “hộp đen” có thể trả lời mọi câu hỏi.
+Sau học phần này, mình hiểu rằng AI hoạt động dựa trên dữ liệu, mô hình học máy và xác suất ngôn ngữ. Điều đó giúp mình sử dụng AI một cách thực tế và có tư duy phản biện hơn thay vì tin tưởng tuyệt đối vào kết quả do AI tạo ra.
+________________
+
+
+3. Phân biệt dữ liệu, thông tin và tri thức
+Đây là một trong những kiến thức nền tảng nhưng rất quan trọng.
+Mình hiểu rằng:
+* Dữ liệu là những sự kiện hoặc con số thô.
+* Thông tin là dữ liệu đã được xử lý và đặt trong ngữ cảnh.
+* Tri thức là sự hiểu biết được hình thành từ việc phân tích và vận dụng thông tin.
+Từ đó, mình nhận thức rõ hơn về quá trình chuyển hóa từ dữ liệu đến tri thức trong học tập và nghiên cứu.
+________________
+
+
+4. Hiểu về quyền sở hữu trí tuệ và liêm chính học thuật
+Mình nhận ra rằng việc sử dụng tài liệu, hình ảnh hay nội dung từ Internet không đơn giản chỉ là sao chép và sử dụng.
+Người học cần tôn trọng bản quyền, biết trích dẫn nguồn và chịu trách nhiệm đối với sản phẩm học thuật của mình.
+________________
+
+
+5. Nhận thức về văn hóa ứng xử số và an ninh mạng
+Học phần giúp mình hiểu rõ hơn về:
+* Các nguyên tắc giao tiếp văn minh trên môi trường mạng (Netiquette).
+* Những rủi ro phổ biến như lừa đảo trực tuyến, đánh cắp dữ liệu và mã độc.
+* Cách bảo vệ thông tin cá nhân và xây dựng thói quen sử dụng Internet an toàn.
+🌐 01 Portfolio số cá nhân
+
+
+________________
+
+
+
+
+3.3 QUÁ TRÌNH HOÀN THIỆN PORTFOLIO
+Điều tôi tâm đắc nhất
+Điều mình tâm đắc nhất sau khi hoàn thiện dự án cá nhân này là nhận ra rằng:
+AI có thể tạo ra câu trả lời, nhưng chỉ con người mới tạo ra được ý nghĩa.
+Một công cụ có thể viết một đoạn văn hoàn chỉnh trong vài giây, nhưng nó không thể thay thế trải nghiệm, cảm xúc, giá trị sống và góc nhìn cá nhân của mỗi người.
+Chính vì vậy, điều quan trọng nhất không phải là học cách dùng AI nhanh đến đâu mà là học cách giữ được tư duy độc lập trong thời đại AI.
+________________
+
+
+Những khó khăn tôi đã gặp
+Trong quá trình thực hiện Portfolio, thử thách lớn nhất đối với mình không phải là sử dụng công cụ mới mà là việc hệ thống hóa toàn bộ quá trình học tập thành một câu chuyện có ý nghĩa.
+Ban đầu mình chỉ nghĩ đây là nơi lưu trữ bài tập. Tuy nhiên, khi bắt đầu sắp xếp lại từng sản phẩm, mình nhận ra mỗi bài tập đều phản ánh một kỹ năng mới và một sự thay đổi nhỏ trong cách học của bản thân.
+Chính quá trình nhìn lại đó giúp mình hiểu rõ hơn mình đã học được gì và đã trưởng thành như thế nào.
+________________
+
+
+
+
+Lời kết
+Portfolio này khép lại một học phần nhưng cũng đánh dấu điểm khởi đầu cho một hành trình dài hơn.
+Nếu trước đây mình học cách sử dụng công nghệ, thì hôm nay mình đang học cách sử dụng công nghệ một cách có trách nhiệm.
+Nếu trước đây mình tìm kiếm câu trả lời, thì hôm nay mình đang học cách đặt những câu hỏi tốt hơn.
+Và có lẽ, đó mới là điều ý nghĩa nhất mà học phần này mang lại cho mình. ✨
+AI có thể hỗ trợ việc học, nhưng sự tiến bộ luôn bắt đầu từ chính người học.
+* THÔNG TIN LIÊN HỆ, 
+gmail: Huyenlinhdv4307@gmail.com 
+facebook: https://www.facebook.com/huyen.linh.969733?
+
+
+Bạn là một chuyên gia cao cấp kiêm nhiệm 3 vai trò: Senior Full-Stack Developer, Lead UI/UX Designer và Tech Copywriter. Tôi cần bạn xây dựng một website Digital Portfolio cá nhân có độ hoàn thiện cực cao, mượt mà, chuẩn SEO và tối ưu hiệu năng.
+
+Dưới đây là toàn bộ thông tin đặc tả dự án. Hãy đọc kỹ trước khi thiết kế kiến trúc và viết mã:
+
+### 1. ĐỊNH VỊ THƯƠNG HIỆU & PHONG CÁCH THIẾT KẾ (UI/UX)
+- Chủ sở hữu: Đồng Huyền Linh - Sinh viên năm nhất ngành Ngôn ngữ Trung, Trường Đại học Ngoại ngữ – ĐHQGHN (MSSV: 25041679).
+- Bối cảnh dự án: Digital Portfolio tổng kết học phần “Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo”. Hành trình học tập và trưởng thành trong thời đại AI.
+- Phong cách giao diện (Theme): Trung Hoa cổ phong kết hợp hiện đại. Tinh tế, tối giản, học thuật, có chiều sâu. Website mang lại cảm giác của một Portfolio cá nhân cao cấp, không giống template phổ thông.
+- Cảm hứng hình ảnh: Tranh thủy mặc, mây cách điệu, núi xa, hoa trắng, giấy dó, thư quyển cổ. (Chữ Hán chỉ đóng vai trò minh họa thị giác, không lạm dụng làm rối nội dung).
+- Bảng màu chủ đạo (Color Palette):
+  + Nền (Background): Trắng ngà/Giấy dó (#F9F9F6) hoặc Xám khói nhạt (#F5F5F5) làm nền chính.
+  + Chữ chính (Text): Đen mực tàu (#1C1C1C) hoặc Xám than (#333333).
+  + Màu điểm nhấn (Accent Color): Đỏ chu sa (màu con dấu thư pháp - #8B0000) hoặc Vàng trầm cổ điển (#D4AF37) để làm nổi bật các nút, link, hoặc viền thẻ.
+- Typography: Sử dụng Font có chân (Serif) thanh lịch, mang hơi hướng cổ điển cho Tiêu đề (VD: Noto Serif, Playfair Display) kết hợp Font không chân (Sans-serif) hiện đại, sạch sẽ cho văn bản (VD: Inter, Roboto) để dễ đọc.
+
+### 2. KIẾN TRÚC CÔNG NGHỆ & TIÊU CHUẨN CODE (TECH STACK)
+- Frontend Framework: ReactJS (Vite) hoặc Next.js (App Router).
+- Styling Utility: Tailwind CSS (tùy biến cấu hình màu sắc theo Color Palette ở trên).
+- Thư viện bổ trợ hoạt họa: Framer Motion (xử lý scroll/fade-in/thư quyển), tsParticles (xử lý hiệu ứng cánh hoa trắng rơi nhẹ).
+- Tiêu chuẩn mã nguồn: 
+  + Code sạch (Clean Code), mô hình Component hóa linh hoạt. Đặt tên biến/hàm theo chuẩn.
+  + Semantic HTML (<header>, <nav>, <section>, <article>) để tối ưu SEO và Accessibility.
+
+### 3. CẤU TRÚC CHI TIẾT CỦA WEBSITE (SITEMAP & COMPONENTS)
+Website được xây dựng theo dạng Single Page Application (Cuộn trang mượt mà), bao gồm:
+
+#### A. Mở đầu (Hero Section)
+- Màn hình Loading: Hiệu ứng loading dạng mực loang.
+- Nội dung: Background có mây cách điệu, núi xa dạng thủy mặc. Video ngắn nền trắng, xám khói giới thiệu sơ lược. Ảnh Avatar cá nhân.
+- Text: Tên, thông tin cơ bản và câu Quote: "Hãy để AI làm trợ lý nâng tầm tư duy, đừng biến AI thành bộ não thay thế chính mình."
+- CTA: Nút "Bắt đầu hành trình" (hover có hiệu ứng mực loang).
+
+#### B. Phần 1: Tôi là ai? (About Me)
+- Lời chào & Giới thiệu: Đam mê ngôn ngữ, công nghệ và sự giao thoa của chúng.
+- Chân dung người học: Hiển thị các giá trị (Học tập suốt đời, Tư duy phản biện, Trung thực học thuật...) và Mục tiêu (HSK 6, GPA 3.5+, Ứng dụng AI...).
+- Lý do tạo Portfolio: Trình bày dạng danh sách tinh tế.
+
+#### C. Phần 2: Hành trình học tập (Showcase)
+- Bao gồm 6 chặng (Chặng 1: Quản lý dữ liệu -> Chặng 6: Trách nhiệm thời đại AI).
+- Layout mỗi chặng (Dạng Thẻ/Card hoặc Scroll ngang/dọc xen kẽ):
+  + Tiêu đề chặng & Mục tiêu.
+  + Quá trình thực hiện & Điều đáng nhớ nhất.
+  + Giá trị mang theo.
+  + Khu vực Sản phẩm: Có các nút chức năng (mở tab mới, lightbox ảnh, xem infographic).
+
+#### D. Phần 3: Nhìn lại hành trình (Reflection)
+- Cảm nhận: Thiết kế so sánh song song hoặc timeline giữa "Tôi của ngày đầu tiên" và "Tôi của hiện tại".
+- Dấu ấn học tập: Trình bày dạng Skill Tree cho 6 kỹ năng số và 5 kiến thức mới. 
+- Bản đồ AI cá nhân: Trình bày dạng Bảng (Table) hoặc Grid Card mềm mại (ChatGPT, Canva AI, Notion AI, Grammarly, Gemini).
+- Quá trình hoàn thiện: Thẻ chứa nội dung "Điều tâm đắc nhất" và "Khó khăn đã gặp".
+
+#### E. Phần 4: Tổng kết - Liên hệ (Footer)
+- Lời kết & Triết lý học tập: "AI có thể hỗ trợ việc học, nhưng sự tiến bộ luôn bắt đầu từ chính người học."
+- Thông tin liên hệ: Email (Huyenlinhdv4307@gmail.com) và link Facebook, thiết kế tối giản ở chân trang.
+
+### 4. TIÊU CHÍ TRẢI NGHIỆM NGƯỜI DÙNG & HOẠT HỌA (UX & ANIMATIONS)
+- Cảm giác cuộn (Scroll): Smooth scroll. Có Parallax rất nhẹ ở phần background núi/mây để tạo chiều sâu nhưng không làm lấn át nội dung học thuật.
+- Hoạt họa (Animations): 
+  + Cánh hoa trắng rơi nhẹ toàn màn hình (không cản trở click).
+  + Hiệu ứng "Mở thư quyển cổ" (scroll-triggered) khi chuyển giao giữa các Section lớn.
+  + Hover Menu/Nút bấm có hiệu ứng mực loang mờ ảo.
+  + Các text trang trí hiện dần (Fade-in) khi cuộn đến.
+- Responsive: Tối ưu hoàn hảo trên Desktop, Tablet và Mobile.
+
+### 5. KẾ HOẠCH TRIỂN KHAI VÀ ĐẦU RA (OUTPUT REQUIREMENT)
+Do giới hạn về độ dài phản hồi, hãy triển khai dự án này cùng tôi theo từng bước chiến lược sau:
+
+- Bước 1: Phân tích lại yêu cầu, đề xuất Layout cấu trúc giao diện chi tiết, bộ Font cụ thể (link Google Fonts) và cấu hình Tailwind (mã màu HEX chính xác) theo đúng phong cách "Trung Hoa cổ phong". Đợi tôi xác nhận.
+- Bước 2: Thiết lập cấu trúc thư mục chuẩn chỉnh cho dự án React/Next.js.
+- Bước 3: Cung cấp mã nguồn cho các Layout chung (Global CSS/Tailwind, Navigation có hiệu ứng hover mực loang, Loading Screen, Hero Section).
+- Các section tiếp theo tôi sẽ ra lệnh tạo code khi đã hoàn thành Bước 3.
+
+Hãy bắt đầu bằng **Bước 1**.
+
+
+

@@ -1,0 +1,1065 @@
+/* 🎋 Page Sections Style for HLinh Portfolio */
+
+/* ==========================================================================
+   0. LOADING SCREEN
+   ========================================================================== */
+/* ==========================================================================
+   0. INTRO VIDEO OVERLAY & WELCOME SCREEN
+   ========================================================================== */
+.intro-video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  z-index: var(--z-loading);
+  overflow: hidden;
+  transition: opacity 1.2s ease, visibility 1.2s ease;
+}
+
+.intro-video-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.intro-video-overlay video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none; /* Block pausing by click */
+}
+
+/* 🏔️ Welcome Enter Screen (Màn hình đệm) */
+.intro-enter-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../PortfolioAssets/AnhIntro1.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 2; /* In front of video initially */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.intro-enter-screen.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Glassmorphism Panel matching AnhIntro1.png style */
+.glass-panel-welcome {
+  width: 90%;
+  max-width: 600px;
+  padding: var(--space-xl) var(--space-lg);
+  background: rgba(255, 255, 255, 0.88); /* Increased opacity to 0.88 for excellent text contrast */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: 1px solid rgba(184, 144, 71, 0.4); /* Gold border */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative star ornament like in AnhIntro1.png */
+.glass-panel-welcome::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23B89047' d='M12,2L14.8,9.2L22,12L14.8,14.8L12,22L9.2,14.8L2,12L9.2,9.2Z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+}
+
+/* Watermark vertical characters */
+.glass-panel-welcome .watermark-characters {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-chinese);
+  font-size: 8rem;
+  color: rgba(28, 28, 28, 0.035);
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.chinese-welcome {
+  font-family: var(--font-chinese);
+  color: var(--text-ink); /* Deep ink black */
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: var(--space-xs);
+  letter-spacing: 0.08em;
+  position: relative;
+  z-index: 1;
+}
+
+.english-welcome {
+  font-family: var(--font-serif);
+  color: var(--text-ink); /* Deep ink black */
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  letter-spacing: 0.04em;
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--accent-vermillion); /* High contrast vermillion red */
+  font-weight: 600;
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-desc {
+  font-size: 0.95rem;
+  color: var(--text-charcoal); /* High contrast dark grey */
+  margin-bottom: var(--space-lg);
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
+}
+
+#btn-start-intro {
+  padding: 0.9rem 2.5rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  background-color: var(--accent-vermillion);
+  color: var(--bg-paper); /* Excellent contrast white/cream on dark red */
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-normal), transform 0.2s;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.25);
+}
+
+#btn-start-intro:hover {
+  background-color: var(--accent-vermillion-hover);
+  transform: translateY(-2px);
+}
+
+#btn-start-intro:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   1. HERO SECTION
+   ========================================================================== */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 100px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgba(249, 249, 246, 0.75) 0%, rgba(249, 249, 246, 0.75) 100%), 
+              url('../PortfolioAssets/MoDau.jpg') center/cover no-repeat fixed;
+}
+
+/* Landscape background overlay */
+.hero-bg-mountains {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23E8E3D7' fill-opacity='0.5' d='M0,288L120,266.7C240,245,480,203,720,208C960,213,1200,267,1320,293.3L1440,320L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z'%3E%3C/path%3E%3Cpath fill='%23DCD5C5' fill-opacity='0.4' d='M0,224L120,208C240,192,480,160,720,176C960,192,1200,256,1320,288L1440,320L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-xl);
+  align-items: center;
+  z-index: var(--z-content);
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.hero-subtitle {
+  font-family: var(--font-serif);
+  color: var(--accent-vermillion);
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-ink);
+}
+
+.hero-meta {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--text-charcoal);
+  border-left: 2px solid var(--accent-gold);
+  padding-left: var(--space-md);
+  margin: var(--space-sm) 0;
+}
+
+.hero-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  position: relative;
+  padding: 0 var(--space-md);
+}
+
+.hero-quote::before, .hero-quote::after {
+  content: '“';
+  font-size: 2.5rem;
+  position: absolute;
+  color: rgba(184, 144, 71, 0.2);
+  line-height: 1;
+}
+.hero-quote::before { left: -10px; top: -10px; }
+.hero-quote::after { content: '”'; right: 0; bottom: -20px; }
+
+.hero-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  justify-content: center;
+}
+
+/* Avatar container */
+.hero-avatar-wrapper {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  padding: 6px;
+  border: 1px solid var(--accent-gold);
+}
+
+.hero-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--bg-paper);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Callout signature stamp */
+.hero-avatar-wrapper::after {
+  content: "東"; /* Đông stamp */
+  font-family: var(--font-chinese);
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: var(--accent-vermillion);
+  color: var(--text-paper);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(139, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Video Intro Player Widget */
+.hero-video-box {
+  width: 100%;
+  max-width: 320px;
+  background: var(--bg-paper-warm);
+  border: 1px solid var(--border-ink);
+  border-radius: 8px;
+  padding: var(--space-xs);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.hero-video-box video {
+  width: 100%;
+  height: 180px;
+  border-radius: 6px;
+  object-fit: cover;
+  background-color: #000;
+}
+
+.video-label {
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: var(--space-xs) 0 2px 0;
+}
+
+/* ==========================================================================
+   2. ABOUT ME SECTION (TÔI LÀ AI)
+   ========================================================================== */
+.section-padding {
+  padding: var(--space-3xl) 0;
+}
+
+#about {
+  position: relative;
+  background: linear-gradient(to bottom, rgba(249, 249, 246, 0.76) 0%, rgba(249, 249, 246, 0.76) 100%), 
+              url('../PortfolioAssets/ToiLaAi.jpe') center/cover no-repeat fixed;
+}
+
+#journey {
+  position: relative;
+  background: linear-gradient(to bottom, rgba(249, 249, 246, 0.78) 0%, rgba(249, 249, 246, 0.78) 100%), 
+              url('../PortfolioAssets/HanhTrinh.jpg') center/cover no-repeat fixed;
+}
+
+#reflection {
+  position: relative;
+  background: linear-gradient(to bottom, rgba(249, 249, 246, 0.78) 0%, rgba(249, 249, 246, 0.78) 100%), 
+              url('../PortfolioAssets/NhinLai.jpg') center/cover no-repeat fixed;
+}
+
+/* Fix mobile Safari background attachment bug */
+@media (max-width: 1024px) {
+  #about, #journey, #reflection {
+    background-attachment: scroll !important;
+  }
+}
+
+.section-header {
+  margin-bottom: var(--space-2xl);
+  text-align: center;
+  position: relative;
+}
+
+.section-eyebrow {
+  font-family: var(--font-serif);
+  color: var(--accent-gold);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+
+.section-title-line {
+  display: inline-block;
+  position: relative;
+  padding-bottom: var(--space-sm);
+}
+
+.section-title-line::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  width: 40%;
+  height: 1px;
+  background-color: var(--accent-gold);
+}
+
+.section-title-line::before {
+  content: "♦";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--accent-vermillion);
+  font-size: 0.6rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.about-intro-text {
+  font-size: 1.05rem;
+  color: var(--text-charcoal);
+  line-height: 1.85;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(184, 144, 71, 0.2);
+  border-radius: 8px;
+  padding: var(--space-lg);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+}
+
+.about-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* Core Values Grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.value-card {
+  padding: var(--space-md);
+  background-color: var(--bg-paper);
+  border: 1px solid var(--border-ink);
+  border-radius: 4px;
+}
+
+.value-card h4 {
+  font-family: var(--font-serif);
+  color: var(--accent-vermillion);
+  margin-bottom: var(--space-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* Goals List */
+.goals-section h3 {
+  margin-bottom: var(--space-md);
+}
+
+.goals-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  list-style: none;
+}
+
+.goal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  font-size: 0.95rem;
+}
+
+.goal-icon {
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   3. SHOWCASE TIMELINE (HÀNH TRÌNH HỌC TẬP)
+   ========================================================================== */
+.timeline-container {
+  position: relative;
+  padding: var(--space-xl) 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(184,144,71,0.1) 0%, rgba(184,144,71,0.6) 10%, rgba(184,144,71,0.6) 90%, rgba(184,144,71,0.1) 100%);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.timeline-item {
+  display: flex;
+  width: 100%;
+  margin-bottom: var(--space-3xl);
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-node {
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--bg-paper);
+  border: 3px solid var(--accent-vermillion);
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.timeline-content-wrapper {
+  width: 45%;
+}
+
+.timeline-item:nth-child(even) .timeline-content-wrapper {
+  padding-left: var(--space-lg);
+}
+
+.timeline-item:not(:nth-child(even)) .timeline-content-wrapper {
+  padding-right: var(--space-lg);
+  text-align: right;
+}
+
+.journey-card {
+  text-align: left !important;
+}
+
+.journey-eyebrow {
+  font-family: var(--font-serif);
+  color: var(--accent-gold);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.journey-title {
+  font-size: 1.35rem;
+  margin-bottom: var(--space-sm);
+  border-bottom: 1px dashed var(--border-ink);
+  padding-bottom: var(--space-xs);
+}
+
+.journey-body-placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.95rem;
+  background-color: rgba(28,28,28,0.02);
+  border: 1px dashed var(--border-ink);
+  padding: var(--space-md);
+  border-radius: 4px;
+  margin-bottom: var(--space-md);
+}
+
+.journey-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+/* ==========================================================================
+   4. REFLECTION SECTION (NHÌN LẠI HÀNH TRÌNH)
+   ========================================================================== */
+.reflection-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-3xl);
+}
+
+.compare-card {
+  padding: var(--space-xl);
+}
+
+.compare-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.compare-card.before h4 { color: var(--text-muted); }
+.compare-card.after h4 { color: var(--accent-vermillion); }
+
+/* Skill tree layout */
+.skills-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-2xl);
+  align-items: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.skills-tree-graphic {
+  background-color: var(--bg-paper-warm);
+  border: 1px solid var(--border-ink);
+  border-radius: 8px;
+  padding: var(--space-xl);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  position: relative;
+  min-height: 350px;
+}
+
+.skill-node-item {
+  border: 1px solid var(--border-ink);
+  background-color: var(--bg-paper);
+  padding: var(--space-md);
+  border-radius: 6px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  transition: all var(--transition-normal);
+}
+
+.skill-node-item:hover {
+  border-color: var(--accent-gold);
+  transform: scale(1.03);
+}
+
+.skill-node-icon {
+  font-size: 1.5rem;
+  color: var(--accent-gold);
+}
+
+.skill-node-num {
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  color: var(--accent-vermillion);
+}
+
+/* AI Map Grid Table style */
+.ai-map-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-ink);
+  border-radius: 8px;
+  background-color: var(--bg-paper-warm);
+}
+
+.ai-map-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.ai-map-table th, .ai-map-table td {
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--border-ink);
+}
+
+.ai-map-table th {
+  font-family: var(--font-serif);
+  color: var(--text-ink);
+  background-color: rgba(184, 144, 71, 0.05);
+  font-weight: 600;
+}
+
+.ai-map-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ai-tool-badge {
+  font-family: var(--font-serif);
+  color: var(--accent-vermillion);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* QR Code styling */
+.qr-card-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.qr-image-wrapper {
+  width: 130px;
+  height: 130px;
+  border: 1px solid var(--border-ink);
+  padding: 6px;
+  background: white;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.qr-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ==========================================================================
+   5. SITE FOOTER (TỔNG KẾT - LIÊN HỆ)
+   ========================================================================== */
+.site-footer {
+  background-color: var(--bg-dark);
+  color: var(--text-paper);
+  padding: var(--space-3xl) 0 var(--space-lg) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bottom corner flowers */
+.footer-decor-left, .footer-decor-right {
+  position: absolute;
+  bottom: 0;
+  opacity: 0.05;
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+}
+.footer-decor-left { left: 0; }
+.footer-decor-right { right: 0; }
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-xl);
+}
+
+.footer-philosophy {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  max-width: 700px;
+  line-height: 1.6;
+  color: var(--bg-paper-warm);
+}
+
+.footer-philosophy span {
+  color: var(--accent-gold-light);
+  display: block;
+  font-size: 0.875rem;
+  margin-top: var(--space-sm);
+  letter-spacing: 0.1em;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.footer-contact-title {
+  font-family: var(--font-serif);
+  color: var(--accent-gold-light);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.footer-link-item {
+  color: var(--text-paper);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  transition: color var(--transition-normal);
+  font-size: 1rem;
+}
+
+.footer-link-item:hover {
+  color: var(--accent-gold-light);
+}
+
+.footer-copyright {
+  margin-top: var(--space-2xl);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  width: 100%;
+  padding-top: var(--space-md);
+}
+
+/* ==========================================================================
+   6. RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-lg);
+  }
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--bg-paper);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 0;
+    overflow: hidden;
+    transition: height 0.4s var(--ease-ink), padding-top 0.4s var(--ease-ink);
+    border-bottom: 1px solid var(--border-ink);
+  }
+  
+  .nav-menu.active {
+    height: 300px;
+    padding-top: var(--space-xl);
+  }
+  
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-xl);
+  }
+  
+  .hero-meta {
+    border-left: none;
+    border-top: 2px solid var(--accent-gold);
+    border-bottom: 2px solid var(--accent-gold);
+    padding: var(--space-sm) 0;
+    margin: var(--space-sm) auto;
+    width: 80%;
+  }
+  
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  
+  .timeline-line {
+    left: 20px;
+  }
+  
+  .timeline-node {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    flex-direction: row !important;
+  }
+  
+  .timeline-content-wrapper {
+    width: 100%;
+    padding-left: 45px !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+  }
+  
+  .reflection-compare {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-tree-graphic {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .qr-card-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-tree-graphic {
+    grid-template-columns: 1fr;
+  }
+  .goals-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 📜 Scroll Unroll (Thư Quyển Mở) Styles */
+.scroll-unroll-container {
+  position: relative;
+  width: 100%;
+  overflow: visible; /* Allow decorative items to overflow slightly */
+}
+
+.scroll-unroll-content {
+  width: 100%;
+  clip-path: inset(0% 50% 0% 50%); /* Collapsed vertically in center */
+  transition: clip-path 1.6s var(--ease-ink);
+}
+
+.scroll-unroll-roller-left,
+.scroll-unroll-roller-right {
+  position: absolute;
+  top: -10px;
+  width: 20px;
+  height: calc(100% + 20px);
+  background: linear-gradient(to right, #8a6421 0%, #b89047 30%, #f3e5ab 50%, #b89047 70%, #8a6421 100%); /* cylindrical 3D gradient */
+  box-shadow: 0 0 14px rgba(139, 0, 0, 0.3), inset 1px 0 1px rgba(255,255,255,0.25);
+  z-index: 20;
+  pointer-events: none;
+  transition: left 1.6s var(--ease-ink), right 1.6s var(--ease-ink), transform 1.6s var(--ease-ink), opacity 1.6s;
+  opacity: 0;
+  border-radius: 4px;
+}
+
+.scroll-unroll-roller-left::before,
+.scroll-unroll-roller-left::after,
+.scroll-unroll-roller-right::before,
+.scroll-unroll-roller-right::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  height: 14px;
+  background: radial-gradient(circle, #f3e5ab 0%, #b89047 70%, #8a6421 100%);
+  border: 1px solid #8a6421;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+.scroll-unroll-roller-left::before,
+.scroll-unroll-roller-right::before {
+  top: -14px;
+}
+.scroll-unroll-roller-left::after,
+.scroll-unroll-roller-right::after {
+  bottom: -14px;
+}
+
+.scroll-unroll-roller-left {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-unroll-roller-right {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+/* Active State (Triggered when scrolled into view) */
+.scroll-unroll-container.unrolled .scroll-unroll-content {
+  clip-path: inset(0% 0% 0% 0%); /* Fully unrolled */
+}
+
+.scroll-unroll-container.unrolled .scroll-unroll-roller-left {
+  left: -10px;
+  transform: none;
+  opacity: 1;
+}
+
+.scroll-unroll-container.unrolled .scroll-unroll-roller-right {
+  right: -10px;
+  transform: none;
+  opacity: 1;
+}
+
+/* Hide rollers on small screen layouts if needed, but keeping them is fine */
+@media (max-width: 768px) {
+  .scroll-unroll-roller-left, .scroll-unroll-roller-right {
+    height: 100%;
+    top: 0;
+  }
+}
+
+/* 📜 Stage Expanded Details Styling */
+.journey-expanded-details {
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px dashed rgba(184, 144, 71, 0.35);
+  text-align: left !important; /* Ensure it stays aligned left for reading flow */
+}
+
+/* Customize content elements inside expanded details */
+.journey-expanded-details p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-charcoal);
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
+
+.journey-expanded-details ul, .journey-expanded-details ol {
+  margin-bottom: 1.2rem;
+  padding-left: 1.5rem;
+}
+
+.journey-expanded-details li {
+  margin-bottom: 0.6rem;
+  color: var(--text-charcoal);
+  font-size: 0.95rem;
+}
+
+.journey-expanded-details h4.stage-h4 {
+  font-family: var(--font-serif);
+  color: var(--accent-vermillion);
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-left: 3px solid var(--accent-gold);
+  padding-left: 10px;
+}
+
+.journey-expanded-details h5.stage-h5 {
+  font-family: var(--font-serif);
+  color: var(--accent-gold);
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.10rem;
+  font-weight: bold;
+}
+
+.journey-expanded-details h6.stage-h6 {
+  font-family: var(--font-serif);
+  color: var(--text-ink);
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.stage-image-container img {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.stage-image-container img:hover {
+  transform: scale(1.015);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* 🧭 Skip Intro Button Style */
+.btn-skip-intro:hover {
+  background-color: var(--accent-vermillion) !important;
+  border-color: var(--accent-vermillion) !important;
+  color: var(--text-paper) !important;
+  transform: scale(1.05);
+}
