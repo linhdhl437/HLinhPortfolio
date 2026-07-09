@@ -232,41 +232,84 @@
   <!-- Database containing stage reports as formatted HTML string templates -->
   <script src="./js/stage-content.js"></script>
   <script src="./js/lightbox.js"></script>
+  <script src="./js/custom-cursor.js"></script>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // 1. Get current stage from URL parameters
-      const urlParams = new URLSearchParams(window.location.search);
-      let stage = parseInt(urlParams.get("stage")) || 1;
-      
-      // Keep within bounds
-      if (stage < 1 || stage > 6) stage = 1;
+      // 1. Function to load content dynamically
+      function loadStage(stageNum, pushState = true) {
+        if (stageNum < 1 || stageNum > 6) stageNum = 1;
+        
+        // Update active class in sidebar links
+        document.querySelectorAll(".sidebar-link").forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("data-stage-link") === String(stageNum)) {
+            link.classList.add("active");
+          }
+        });
 
-      // 2. Highlight active link in sidebar
-      const activeLink = document.querySelector(`[data-stage-link="${stage}"]`);
-      if (activeLink) {
-        activeLink.classList.add("active");
-      }
-
-      // 3. Update Back button hash to target this specific node in the timeline
-      const backBtn = document.getElementById("btn-back-to-timeline");
-      if (backBtn) {
-        backBtn.setAttribute("href", `index.html#stage-node-${stage}`);
-      }
-
-      // 4. Inject content from database
-      const contentTarget = document.getElementById("stage-detail-content-target");
-      if (contentTarget && typeof window.stageContents !== "undefined") {
-        const reportHtml = window.stageContents[`stage${stage}`];
-        if (reportHtml) {
-          contentTarget.innerHTML = reportHtml;
-        } else {
-          contentTarget.innerHTML = `
-            <div style="text-align:center; padding:50px; font-family:var(--font-serif); color:var(--accent-vermillion);">
-              Không tìm thấy nội dung báo cáo cho Chặng ${stage}.
-            </div>`;
+        // Update back button
+        const backBtn = document.getElementById("btn-back-to-timeline");
+        if (backBtn) {
+          backBtn.setAttribute("href", `index.html#stage-node-${stageNum}`);
         }
+
+        // Inject content
+        const contentTarget = document.getElementById("stage-detail-content-target");
+        if (contentTarget && typeof window.stageContents !== "undefined") {
+          const reportHtml = window.stageContents[`stage${stageNum}`];
+          if (reportHtml) {
+            contentTarget.style.opacity = "0";
+            contentTarget.style.transform = "translateY(12px)";
+            contentTarget.style.transition = "none";
+            
+            // Force layout reflow
+            contentTarget.offsetHeight;
+            
+            contentTarget.innerHTML = reportHtml;
+            
+            // Fade-in & slide-up animation
+            contentTarget.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+            contentTarget.style.opacity = "1";
+            contentTarget.style.transform = "translateY(0)";
+          } else {
+            contentTarget.innerHTML = `
+              <div style="text-align:center; padding:50px; font-family:var(--font-serif); color:var(--accent-vermillion);">
+                Không tìm thấy nội dung báo cáo cho Chặng ${stageNum}.
+              </div>`;
+          }
+        }
+
+        // Push state to browser history
+        if (pushState) {
+          window.history.pushState({ stage: stageNum }, "", `?stage=${stageNum}`);
+        }
+
+        // Scroll back to top smoothly
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
+
+      // 2. Parse initial stage from URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      let initialStage = parseInt(urlParams.get("stage")) || 1;
+      loadStage(initialStage, false);
+
+      // 3. Handle click on sidebar links to transition client-side
+      document.querySelector(".sidebar-menu").addEventListener("click", (e) => {
+        const link = e.target.closest(".sidebar-link");
+        if (link) {
+          e.preventDefault();
+          const targetStage = parseInt(link.getAttribute("data-stage-link"));
+          loadStage(targetStage, true);
+        }
+      });
+
+      // 4. Handle popstate event (back/forward browser buttons)
+      window.addEventListener("popstate", (e) => {
+        const urlParams = new URLSearchParams(window.location.search);
+        let stageNum = parseInt(urlParams.get("stage")) || 1;
+        loadStage(stageNum, false);
+      });
     });
   </script>
 </body>

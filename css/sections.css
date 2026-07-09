@@ -341,13 +341,13 @@
 
 #HanhTrinh {
   position: relative;
-  background: linear-gradient(to bottom, rgba(249, 249, 246, 0.78) 0%, rgba(249, 249, 246, 0.78) 100%), 
+  background: linear-gradient(to bottom, rgba(249, 249, 246, 0.58) 0%, rgba(249, 249, 246, 0.58) 100%), 
               url('../PortfolioAssets/HanhTrinh.jpg') center/cover no-repeat fixed;
 }
 
 #NhinLai {
   position: relative;
-  background: linear-gradient(to bottom, rgba(249, 249, 246, 0.78) 0%, rgba(249, 249, 246, 0.78) 100%), 
+  background: linear-gradient(to bottom, rgba(249, 249, 246, 0.58) 0%, rgba(249, 249, 246, 0.58) 100%), 
               url('../PortfolioAssets/NhinLai.jpg') center/cover no-repeat fixed;
 }
 
@@ -909,6 +909,11 @@
   width: 100%;
   clip-path: inset(0% 50% 0% 50%); /* Collapsed vertically in center */
   transition: clip-path 1.6s var(--ease-ink);
+  background: rgba(253, 252, 249, 0.95); /* Semi-solid parchment background */
+  border-radius: 4px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.04);
+  position: relative;
+  z-index: 2;
 }
 
 .scroll-unroll-roller-left,

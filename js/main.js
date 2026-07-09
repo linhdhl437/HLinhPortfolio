@@ -65,6 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
             top: targetOffset,
             behavior: "smooth"
           });
+
+          // Silently update address bar URL hash on click
+          window.history.pushState(null, null, targetId);
         }
       }
     });
@@ -74,27 +77,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // 2. STICKY HEADER & SCROLLSPY (ACTIVE LINK ON SCROLL)
   // ==========================================================================
   const header = document.getElementById("site-header");
-  const sections = document.querySelectorAll("section[id]");
+  const sections = document.querySelectorAll("section[id], footer[id]");
   let lastScrollY = window.scrollY;
 
   window.addEventListener("scroll", () => {
     const currentScrollY = window.scrollY;
 
-    // A. Sticky Header Toggle
+    // A. Sticky Header Toggle (Keep header always visible)
     if (header) {
-      if (currentScrollY > 100) {
+      if (currentScrollY > 50) {
         header.style.backgroundColor = "rgba(249, 249, 246, 0.96)";
-        
-        // Scroll down hides, scroll up shows
-        if (currentScrollY > lastScrollY && currentScrollY > 300) {
-          header.classList.add("scroll-down");
-        } else {
-          header.classList.remove("scroll-down");
-        }
       } else {
         header.style.backgroundColor = "rgba(249, 249, 246, 0.85)";
-        header.classList.remove("scroll-down");
       }
+      header.classList.remove("scroll-down");
     }
     
     lastScrollY = currentScrollY;
@@ -120,6 +116,10 @@ document.addEventListener("DOMContentLoaded", () => {
           link.classList.add("active");
         }
       });
+      // Silently update address bar URL hash on scroll
+      if (window.location.hash !== `#${currentActiveId}`) {
+        window.history.replaceState(null, null, `#${currentActiveId}`);
+      }
     }
   });
   
