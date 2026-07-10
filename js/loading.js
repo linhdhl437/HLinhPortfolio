@@ -50,6 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
     isPlayingIntro = false;
     document.body.style.overflow = "";
     
+    // Immediately reveal Hero intro section elements (no opacity 0 lockout)
+    const heroElements = document.querySelectorAll(".hero-animate");
+    heroElements.forEach((el) => {
+      el.classList.add("animate-fade-in-up");
+      el.style.opacity = "1";
+    });
+    
     // Perform instant scroll to the hash target on page load bypass
     const hash = window.location.hash;
     setTimeout(() => {
