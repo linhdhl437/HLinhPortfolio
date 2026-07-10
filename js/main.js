@@ -2,6 +2,30 @@
 document.addEventListener("DOMContentLoaded", () => {
   
   // ==========================================================================
+  // 0. BRUSH TOGGLE SYSTEM
+  // ==========================================================================
+  const toggleBtn = document.getElementById("btn-toggle-brush");
+  if (toggleBtn) {
+    let brushEnabled = localStorage.getItem("brushEnabled") !== "false";
+    if (!brushEnabled) {
+      document.body.classList.add("brush-disabled");
+      toggleBtn.classList.add("disabled");
+    }
+    
+    toggleBtn.addEventListener("click", () => {
+      brushEnabled = !brushEnabled;
+      localStorage.setItem("brushEnabled", brushEnabled);
+      if (brushEnabled) {
+        document.body.classList.remove("brush-disabled");
+        toggleBtn.classList.remove("disabled");
+      } else {
+        document.body.classList.add("brush-disabled");
+        toggleBtn.classList.add("disabled");
+      }
+    });
+  }
+
+  // ==========================================================================
   // 1. MOBILE MENU TOGGLE
   // ==========================================================================
   const menuToggle = document.getElementById("menu-toggle");
@@ -155,5 +179,80 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     }, 1800); // Wait for loading overlay to slide out and animations to start
+  }
+
+  // ==========================================================================
+  // 4. JOURNEY TABS INTERACTION HANDLER
+  // ==========================================================================
+  const tabItems = document.querySelectorAll(".journey-tab-item");
+  const tabPanes = document.querySelectorAll(".journey-tab-pane");
+
+  if (tabItems.length && tabPanes.length) {
+    tabItems.forEach(item => {
+      item.addEventListener("click", () => {
+        // 1. Check if already active
+        if (item.classList.contains("active")) return;
+
+        // 2. Remove active state from all items
+        tabItems.forEach(i => i.classList.remove("active"));
+        
+        // 3. Add active state to clicked item
+        item.classList.add("active");
+        
+        // 4. Get target pane ID
+        const targetId = item.getAttribute("data-target");
+        
+        // 5. Deactivate current active pane with transition
+        const activePane = document.querySelector(".journey-tab-pane.active");
+        if (activePane) {
+          activePane.style.opacity = "0";
+          activePane.style.transform = "translateY(10px)";
+          
+          setTimeout(() => {
+            activePane.classList.remove("active");
+            
+            const targetPane = document.getElementById(targetId);
+            if (targetPane) {
+              targetPane.classList.add("active");
+              // Force reflow
+              targetPane.offsetHeight;
+              targetPane.style.opacity = "1";
+              targetPane.style.transform = "translateY(0)";
+            }
+          }, 300);
+        } else {
+          // Fallback if no active pane
+          const targetPane = document.getElementById(targetId);
+          if (targetPane) {
+            targetPane.classList.add("active");
+            targetPane.offsetHeight;
+            targetPane.style.opacity = "1";
+            targetPane.style.transform = "translateY(0)";
+          }
+        }
+      });
+    });
+
+    // Initialize transition style triggers
+    tabPanes.forEach(pane => {
+      pane.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+      if (pane.classList.contains("active")) {
+        pane.style.opacity = "1";
+        pane.style.transform = "translateY(0)";
+      } else {
+        pane.style.opacity = "0";
+        pane.style.transform = "translateY(10px)";
+      }
+    });
+
+    // Check if loading with a stage hash, and click the corresponding tab
+    const hash = window.location.hash;
+    if (hash && hash.startsWith("#stage-node-")) {
+      const stageNum = hash.replace("#stage-node-", "");
+      const targetTabItem = document.querySelector(`.journey-tab-item[data-target="tab-stage-${stageNum}"]`);
+      if (targetTabItem) {
+        targetTabItem.click();
+      }
+    }
   }
 });

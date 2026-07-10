@@ -87,7 +87,9 @@
 
     /* Main Parchment Sheet Styling */
     .parchment-sheet {
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(253, 252, 249, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       padding: 40px 50px;
       min-height: 600px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
@@ -236,6 +238,12 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // 0. Sync Brush Toggle State
+      const brushEnabled = localStorage.getItem("brushEnabled") !== "false";
+      if (!brushEnabled) {
+        document.body.classList.add("brush-disabled");
+      }
+
       // 1. Function to load content dynamically
       function loadStage(stageNum, pushState = true) {
         if (stageNum < 1 || stageNum > 6) stageNum = 1;

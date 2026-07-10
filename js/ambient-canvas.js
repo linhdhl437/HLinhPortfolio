@@ -33,6 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Track mouse movements and add to brush stroke path
   window.addEventListener("mousemove", (e) => {
+    if (document.body.classList.contains("brush-disabled")) {
+      mouse.active = false;
+      return;
+    }
     mouse.x = e.clientX;
     mouse.y = e.clientY;
     mouse.active = true;

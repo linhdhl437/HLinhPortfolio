@@ -41,7 +41,7 @@
     </div>
     
     <!-- Nút Bỏ qua Video (Skip Intro) -->
-    <button id="btn-skip-intro" class="btn-skip-intro" style="position: absolute; top: 24px; right: 24px; z-index: 10; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #ffffff; padding: 8px 16px; font-family: var(--font-serif); font-size: 0.85rem; border-radius: 4px; cursor: pointer; backdrop-filter: blur(8px); transition: background 0.3s, border-color 0.3s;">
+    <button id="btn-skip-intro" class="btn-skip-intro" style="position: absolute; top: 24px; right: 24px; z-index: 10; background: rgba(0, 0, 0, 0.75); border: 1px solid rgba(255,255,255,0.4); color: #ffffff; padding: 8px 18px; font-family: var(--font-serif); font-size: 0.95rem; font-weight: 600; border-radius: 4px; cursor: pointer; backdrop-filter: blur(8px); transition: background 0.3s, border-color 0.3s, transform 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
       Bỏ qua ✕
     </button>
     
@@ -56,7 +56,7 @@
   <header id="site-header" class="site-header">
     <div class="container nav-container">
       <a href="#Modau" class="nav-logo">
-        玄靈 <span>• Portfolio</span>
+        玄靈 <span>• Huyền Linh</span>
       </a>
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
         <span></span>
@@ -70,6 +70,13 @@
           <li><a href="#HanhTrinh" class="nav-link">Hành trình</a></li>
           <li><a href="#NhinLai" class="nav-link">Nhìn lại</a></li>
           <li><a href="#LienHe" class="nav-link">Liên hệ</a></li>
+          <li style="display: flex; align-items: center; margin-left: 12px;">
+            <div class="brush-toggle-capsule" title="Bật/Tắt nét bút thư pháp">
+              <button id="btn-toggle-brush" class="btn-toggle-brush" aria-label="Toggle Calligraphy Brush">
+                🖌️
+              </button>
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
@@ -95,9 +102,11 @@
 
       <div class="container hero-grid">
         <div class="hero-content hero-animate" style="opacity: 0;">
-          <div class="hero-content-block card-classical" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: var(--space-xl); border-radius: 12px; border: 1px solid rgba(184, 144, 71, 0.25); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); max-width: 600px; color: #000000; text-align: left;">
-            <span class="hero-subtitle" style="color: var(--accent-vermillion); font-weight: 600; font-family: var(--font-serif); font-size: 1.1rem; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 6px;">Digital Portfolio</span>
-            <h1 class="hero-title" style="color: #000000; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin: 10px 0; font-family: var(--font-serif); line-height: 1.25;">Hành trình học tập & Trưởng thành</h1>
+          <div class="hero-content-block card-classical" style="background: rgba(253, 252, 249, 0.58); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: var(--space-xl); border-radius: 12px; border: 1px solid rgba(184, 144, 71, 0.25); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); max-width: 600px; color: #000000; text-align: left;">
+            <span class="hero-subtitle" style="color: var(--accent-vermillion); font-weight: 600; font-family: var(--font-serif); font-size: 1.15rem; letter-spacing: 0.1em; display: block; margin-bottom: 6px;">
+              Digital Portfolio <span style="font-family: var(--font-chinese); font-size: 0.9rem; margin-left: 6px; color: var(--text-muted);">/ 数字化作品集</span>
+            </span>
+            <h1 class="hero-title" style="color: #000000; font-size: clamp(1.8rem, 3.8vw, 2.8rem); font-weight: 700; margin: 10px 0; font-family: var(--font-serif); line-height: 1.25;">Hành trình học tập và trưởng thành trong thời đại AI</h1>
             
             <div class="hero-meta" style="border-left: 3px solid var(--accent-gold); padding-left: var(--space-md); margin: var(--space-md) 0; color: #000000; text-align: left;">
               <p style="font-weight: 700; font-size: 1.25rem; margin-bottom: 6px; color: #000000;">ĐỒNG HUYỀN LINH</p>
@@ -105,7 +114,7 @@
               <p style="font-size: 0.9rem; color: #1a1a1a; margin-top: 4px;">Trường Đại học Ngoại ngữ – ĐHQGHN | MSSV: 25041679</p>
             </div>
             
-            <p class="hero-quote" style="color: #000000; font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; line-height: 1.6; border-top: 1px dashed rgba(0,0,0,0.15); padding-top: var(--space-sm); margin-top: var(--space-sm);">
+            <p class="hero-quote" style="color: #000000; font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; line-height: 1.6; border-top: 1px dashed rgba(0,0,0,0.15); padding-top: var(--space-sm); margin-top: var(--space-sm); margin-bottom: 0;">
               “Hãy để AI làm trợ lý nâng tầm tư duy, đừng biến AI thành bộ não thay thế chính mình.”
             </p>
           </div>
@@ -191,12 +200,13 @@
         <div class="scroll-unroll-content">
           <div class="container">
             <div class="section-header">
-              <span class="section-eyebrow">Giới Thiệu</span>
+              <span class="section-eyebrow">个人简介</span>
               <h2 class="section-title-line text-serif">Tôi Là Ai?</h2>
             </div>
             
             <div class="about-grid">
               <div class="stagger-item" style="opacity: 0;">
+                <span class="journey-eyebrow text-serif" style="display: block; margin-bottom: 2px;">1.1 Giới thiệu bản thân / 个人简介</span>
                 <h3 class="text-serif" style="margin-bottom: var(--space-md); color: var(--accent-vermillion);">Xin chào!</h3>
                 <div class="about-intro-text">
                   <p>
@@ -214,7 +224,8 @@
               <div class="about-details stagger-item" style="opacity: 0;">
                 <!-- Values Grid -->
                 <div>
-                  <h3 class="text-serif" style="margin-bottom: var(--space-sm); font-size: 1.2rem;">Giá Trị Cốt Lõi</h3>
+                  <span class="journey-eyebrow text-serif" style="display: block; margin-bottom: 2px;">1.2 Chân dung người học / 学习者画像</span>
+                  <h3 class="text-serif" style="margin-bottom: var(--space-sm); font-size: 1.2rem; color: var(--accent-vermillion);">Tôi tin vào...</h3>
                   <div class="values-grid">
                     <div class="value-card card-classical">
                       <h4><span>📖</span> Học tập suốt đời</h4>
@@ -229,36 +240,39 @@
                       <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">Tôn trọng sở hữu trí tuệ, sử dụng AI có trách nhiệm.</p>
                     </div>
                     <div class="value-card card-classical">
-                      <h4><span>📈</span> Phát triển cá nhân</h4>
+                      <h4><span>🌱</span> Phát triển bền vững</h4>
                       <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">Xây dựng lộ trình phát triển bản thân bền vững.</p>
                     </div>
                   </div>
                 </div>
                 
                 <!-- Goals Section -->
-                <div class="goals-section card card-classical" style="background: rgba(255,255,255,0.78); backdrop-filter: blur(10px); padding: var(--space-md) var(--space-lg); border-radius: 8px; border: 1px solid rgba(184,144,71,0.2); box-shadow: 0 4px 12px rgba(0,0,0,0.01); margin-top: var(--space-md);">
-                  <h3 class="text-serif" style="margin-bottom: var(--space-sm); font-size: 1.25rem; color: var(--accent-vermillion);">Mục Tiêu Tương Lai</h3>
-                  <ul class="goals-list" style="margin: 0; padding: 0;">
-                    <li class="goal-item"><span class="goal-icon">📚</span> HSK Cấp 6 quốc tế</li>
-                    <li class="goal-item"><span class="goal-icon">🎓</span> Điểm GPA tích lũy 3.5+</li>
-                    <li class="goal-item"><span class="goal-icon">🌟</span> Đạt danh hiệu Sinh viên 5 tốt</li>
-                    <li class="goal-item"><span class="goal-icon">🤖</span> Ứng dụng AI hiệu quả trong ngôn ngữ</li>
+                <div class="goals-section card card-classical" style="background: rgba(253, 252, 249, 0.65); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: var(--space-md) var(--space-lg); border-radius: 8px; border: 1px solid rgba(184, 144, 71, 0.2); box-shadow: 0 4px 12px rgba(0,0,0,0.01); margin-top: var(--space-md);">
+                  <h3 class="text-serif" style="margin-bottom: var(--space-sm); font-size: 1.2rem; color: var(--accent-vermillion);">Tôi đang hướng tới...</h3>
+                  <ul class="goals-list" style="margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px;">
+                    <li class="goal-item" style="display: flex; align-items: flex-start; gap: 8px;"><span class="goal-icon">📚</span> HSK 6</li>
+                    <li class="goal-item" style="display: flex; align-items: flex-start; gap: 8px;"><span class="goal-icon">🎓</span> GPA 3.5+</li>
+                    <li class="goal-item" style="display: flex; align-items: flex-start; gap: 8px;"><span class="goal-icon">🌟</span> Sinh viên 5 tốt</li>
+                    <li class="goal-item" style="display: flex; align-items: flex-start; gap: 8px;"><span class="goal-icon">🤖</span> Ứng dụng AI hiệu quả trong học tập ngoại ngữ và xây dựng học liệu</li>
+                    <li class="goal-item" style="display: flex; align-items: flex-start; gap: 8px;"><span class="goal-icon">🔍</span> Nâng cao năng lực nghiên cứu và dịch thuật</li>
+                    <li class="goal-item" style="display: flex; align-items: flex-start; gap: 8px;"><span class="goal-icon">🌱</span> Trở thành một người học tập suốt đời, luôn sẵn sàng thích nghi với những thay đổi của thời đại</li>
                   </ul>
                 </div>
               </div>
             </div>
 
             <!-- 3. Vì sao Portfolio được tạo ra -->
-            <div class="card card-classical stagger-item" style="opacity: 0; margin-top: var(--space-xl); background-color: var(--bg-paper-warm);">
-              <h3 class="text-serif" style="margin-bottom: var(--space-sm); color: var(--accent-vermillion);">Vì sao Portfolio này được tạo ra?</h3>
+            <div class="card card-classical stagger-item" style="opacity: 0; margin-top: var(--space-xl); background: rgba(253, 252, 249, 0.65); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+              <span class="journey-eyebrow text-serif" style="display: block; margin-bottom: 2px;">1.3 Vì sao Portfolio này được tạo ra? / 创作初衷</span>
+              <h3 class="text-serif" style="margin-bottom: var(--space-sm); color: var(--accent-vermillion);">Sứ mệnh của Portfolio</h3>
               <p style="font-size: 0.95rem;">
-                Portfolio này không chỉ là yêu cầu của học phần mà còn là nơi mình ghi lại dấu ấn của một giai đoạn học tập đặc biệt. Thông qua đây, mình mong muốn:
+                Portfolio này không chỉ là yêu cầu của học phần mà còn là nơi mình ghi lại dấu ấn của một giai đoạn học tập đặc biệt. Thông qua Portfolio, mình mong muốn:
               </p>
-              <ul style="padding-left: var(--space-md); font-size: 0.9rem; color: var(--text-charcoal); display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-                <li>✓ Lưu giữ các sản phẩm học tập thực tế đã hoàn thành.</li>
-                <li>✓ Định hình và minh chứng cho các kỹ năng số đã tích lũy.</li>
-                <li>✓ Theo dõi sự tiến bộ và phản tư cá nhân qua từng chặng đường.</li>
-                <li>✓ Nhìn lại sự phát triển tư duy trong môi trường học tập số.</li>
+              <ul style="padding-left: var(--space-md); font-size: 0.9rem; color: var(--text-charcoal); display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: var(--space-xs);">
+                <li>✓ Lưu giữ các sản phẩm học tập đã thực hiện.</li>
+                <li>✓ Thể hiện những kỹ năng số đã được hình thành.</li>
+                <li>✓ Theo dõi sự tiến bộ của bản thân qua từng nhiệm vụ.</li>
+                <li>✓ Nhìn lại hành trình trưởng thành của mình trong môi trường học tập số.</li>
               </ul>
             </div>
           </div>
@@ -278,146 +292,243 @@
         <div class="scroll-unroll-content">
           <div class="container">
             <div class="section-header">
-              <span class="section-eyebrow">Showcase</span>
+              <span class="section-eyebrow">成果展示</span>
               <h2 class="section-title-line text-serif">Hành Trình Học Tập</h2>
               <p style="max-width: 600px; margin: var(--space-sm) auto 0 auto; font-size: 0.9rem; color: var(--text-muted); font-style: italic;">
                 "Mỗi bài tập trong học phần không chỉ là một nhiệm vụ cần hoàn thành mà còn là một bước tiến giúp mình hiểu rõ hơn về công nghệ, dữ liệu, trí tuệ nhân tạo..."
               </p>
             </div>
             
-            <div class="timeline-container">
-          <div class="timeline-line"></div>
-          
-          <!-- CHẶNG 1 -->
-          <div class="timeline-item" id="stage-node-1">
-            <div class="timeline-node animate-pulse-vermillion"></div>
-            <div class="timeline-content-wrapper">
-              <div class="card journey-card card-classical">
-                <span class="journey-eyebrow text-serif">Chặng 01 / 書卷壹</span>
-                <h3 class="journey-title text-serif">Xây dựng nền tảng quản lý dữ liệu cá nhân</h3>
-                
-                <p class="journey-desc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--space-md); color: var(--text-charcoal);">
-                  Tìm hiểu cấu trúc máy tính, thao tác hệ điều hành cơ bản và thực hành tổ chức lưu trữ, quản lý tệp tin, dữ liệu học tập cá nhân một cách khoa học.
-                </p>
-                
-                <div class="journey-actions">
-                  <a href="stage_details.html?stage=1" class="btn btn-primary btn-sm btn-toggle-stage" style="padding: 0.4rem 1.2rem; font-size: 0.85rem; text-decoration: none;">
-                    Xem thêm 🔍
-                  </a>
+            <div class="journey-tabs-container">
+              <!-- Left Column: Tabs list -->
+              <div class="journey-tab-sidebar">
+                <div class="journey-tab-item active" data-target="tab-stage-1">
+                  <span class="tab-number">書卷壹</span>
+                  <span class="tab-title">Chặng 1: Nền tảng dữ liệu</span>
+                </div>
+                <div class="journey-tab-item" data-target="tab-stage-2">
+                  <span class="tab-number">書卷貳</span>
+                  <span class="tab-title">Chặng 2: Khai thác thông tin</span>
+                </div>
+                <div class="journey-tab-item" data-target="tab-stage-3">
+                  <span class="tab-number">書卷叁</span>
+                  <span class="tab-title">Chặng 3: Giao tiếp với AI</span>
+                </div>
+                <div class="journey-tab-item" data-target="tab-stage-4">
+                  <span class="tab-number">書卷肆</span>
+                  <span class="tab-title">Chặng 4: Làm việc nhóm số</span>
+                </div>
+                <div class="journey-tab-item" data-target="tab-stage-5">
+                  <span class="tab-number">書卷伍</span>
+                  <span class="tab-title">Chặng 5: Sáng tạo cùng AI</span>
+                </div>
+                <div class="journey-tab-item" data-target="tab-stage-6">
+                  <span class="tab-number">書卷陸</span>
+                  <span class="tab-title">Chặng 6: Trách nhiệm với AI</span>
                 </div>
               </div>
-            </div>
-          </div>
-          
-          <!-- CHẶNG 2 -->
-          <div class="timeline-item" id="stage-node-2">
-            <div class="timeline-node animate-pulse-vermillion"></div>
-            <div class="timeline-content-wrapper">
-              <div class="card journey-card card-classical">
-                <span class="journey-eyebrow text-serif">Chặng 02 / 書卷貳</span>
-                <h3 class="journey-title text-serif">Học cách tìm kiếm thay vì chỉ tìm thấy</h3>
+              
+              <!-- Right Column: Tab Contents -->
+              <div class="journey-tab-content-wrapper card card-classical" style="padding: var(--space-xl);">
                 
-                <p class="journey-desc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--space-md); color: var(--text-charcoal);">
-                  Nắm vững các kỹ thuật khai thác tài liệu học thuật trực tuyến nâng cao, đồng thời xây dựng tiêu chí đánh giá độ tin cậy và liêm chính nguồn thông tin số.
-                </p>
-                
-                <div class="journey-actions">
-                  <a href="stage_details.html?stage=2" class="btn btn-primary btn-sm btn-toggle-stage" style="padding: 0.4rem 1.2rem; font-size: 0.85rem; text-decoration: none;">
-                    Xem thêm 🔍
-                  </a>
+                <!-- CHẶNG 1 -->
+                <div class="journey-tab-pane active" id="tab-stage-1">
+                  <h3 class="tab-pane-title text-serif">CHẶNG 1: Xây dựng nền tảng quản lý dữ liệu cá nhân</h3>
+                  <p style="font-family: var(--font-serif); font-size: 1.05rem; font-weight: bold; color: var(--accent-vermillion); margin-bottom: var(--space-md);">
+                    Bài tập 1 - Bài 1: Máy tính và các thiết bị ngoại vi
+                  </p>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Mục tiêu</h4>
+                    <p class="pane-text">Bài tập giúp mình làm quen với các thao tác quản lý tệp tin và thư mục trên máy tính, đồng thời rèn luyện thói quen tổ chức dữ liệu khoa học thay vì lưu trữ theo cảm tính như trước đây.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Quá trình thực hiện</h4>
+                    <p class="pane-text">Mình thực hành từng thao tác cơ bản như tạo thư mục, tạo tệp văn bản, đổi tên, sao chép, di chuyển và xóa tệp. Sau khi hoàn thành yêu cầu bài tập, mình thử áp dụng cách tổ chức đó vào chính tài liệu học tập của bản thân bằng cách phân chia thư mục theo môn học, học kỳ và loại tài liệu.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Điều đáng nhớ nhất</h4>
+                    <p class="pane-text">Trước đây mình thường lưu tài liệu ở nhiều vị trí khác nhau và đặt tên khá tùy ý. Khi cần tìm lại một tài liệu cũ, mình thường mất khá nhiều thời gian. Thông qua bài tập này, mình nhận ra rằng việc quản lý dữ liệu tưởng chừng đơn giản nhưng lại ảnh hưởng trực tiếp đến hiệu quả học tập và làm việc lâu dài.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Giá trị tôi mang theo</h4>
+                    <p class="pane-text">Mình hình thành được thói quen lưu trữ tài liệu có hệ thống, đặt tên tệp thống nhất và quản lý dữ liệu cá nhân một cách khoa học hơn.</p>
+                  </div>
+                  
+                  <div style="margin-top: var(--space-lg); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-md);">
+                    <a href="stage_details.html?stage=1" class="btn btn-primary" style="text-decoration: none;">Xem Chi Tiết Báo Cáo 🔍</a>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- CHẶNG 3 -->
-          <div class="timeline-item" id="stage-node-3">
-            <div class="timeline-node animate-pulse-vermillion"></div>
-            <div class="timeline-content-wrapper">
-              <div class="card journey-card card-classical">
-                <span class="journey-eyebrow text-serif">Chặng 03 / 書卷叁</span>
-                <h3 class="journey-title text-serif">Học cách giao tiếp với AI</h3>
                 
-                <p class="journey-desc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--space-md); color: var(--text-charcoal);">
-                  Nghiên cứu nguyên lý hoạt động của các mô hình ngôn ngữ lớn (LLM) và thực hành xây dựng các kỹ thuật Prompt Engineering nâng cao để giải quyết các tác vụ ngôn ngữ.
-                </p>
-                
-                <div class="journey-actions">
-                  <a href="stage_details.html?stage=3" class="btn btn-primary btn-sm btn-toggle-stage" style="padding: 0.4rem 1.2rem; font-size: 0.85rem; text-decoration: none;">
-                    Xem thêm 🔍
-                  </a>
+                <!-- CHẶNG 2 -->
+                <div class="journey-tab-pane" id="tab-stage-2">
+                  <h3 class="tab-pane-title text-serif">CHẶNG 2: Học cách tìm kiếm thay vì chỉ tìm thấy</h3>
+                  <p style="font-family: var(--font-serif); font-size: 1.05rem; font-weight: bold; color: var(--accent-vermillion); margin-bottom: var(--space-md);">
+                    Bài tập 2 - Bài 2: Khai thác dữ liệu và thông tin
+                  </p>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Mục tiêu</h4>
+                    <p class="pane-text">Rèn luyện khả năng tìm kiếm tài liệu học thuật và đánh giá độ tin cậy của nguồn thông tin trước khi sử dụng.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Quá trình thực hiện</h4>
+                    <p class="pane-text">Mình lựa chọn một chủ đề liên quan đến ngành học, sau đó tìm kiếm tài liệu từ Google Scholar, các bài báo khoa học và nguồn học thuật trực tuyến. Không chỉ thu thập tài liệu, mình còn phải xem xét tác giả, cơ quan xuất bản, số lượng trích dẫn và tính cập nhật của từng nguồn.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Điều đáng nhớ nhất</h4>
+                    <p class="pane-text">Đây là lần đầu tiên mình thực sự phân biệt được sự khác nhau giữa một bài viết phổ thông trên Internet và một nguồn học thuật đáng tin cậy. Trước đây mình thường có xu hướng sử dụng những kết quả xuất hiện đầu tiên trên Google. Sau khi thực hiện bài tập, mình hiểu rằng việc tìm được thông tin không quá khó, nhưng đánh giá được chất lượng của thông tin mới là kỹ năng quan trọng.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Giá trị tôi mang theo</h4>
+                    <p class="pane-text">Mình bắt đầu có thói quen kiểm chứng nguồn tin trước khi sử dụng và biết cách tiếp cận các nguồn học thuật phục vụ học tập và nghiên cứu.</p>
+                  </div>
+                  
+                  <div style="margin-top: var(--space-lg); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-md);">
+                    <a href="stage_details.html?stage=2" class="btn btn-primary" style="text-decoration: none;">Xem Chi Tiết Báo Cáo 🔍</a>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- CHẶNG 4 -->
-          <div class="timeline-item" id="stage-node-4">
-            <div class="timeline-node animate-pulse-vermillion"></div>
-            <div class="timeline-content-wrapper">
-              <div class="card journey-card card-classical">
-                <span class="journey-eyebrow text-serif">Chặng 04 / 書卷肆</span>
-                <h3 class="journey-title text-serif">Làm việc nhóm trong môi trường số</h3>
                 
-                <p class="journey-desc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--space-md); color: var(--text-charcoal);">
-                  Sử dụng các nền tảng cộng tác trực tuyến hiện đại (Notion, Google Workspace) để lập kế hoạch, phân chia vai trò và quản lý hiệu quả một dự án làm việc nhóm.
-                </p>
-                
-                <div class="journey-actions">
-                  <a href="stage_details.html?stage=4" class="btn btn-primary btn-sm btn-toggle-stage" style="padding: 0.4rem 1.2rem; font-size: 0.85rem; text-decoration: none;">
-                    Xem thêm 🔍
-                  </a>
+                <!-- CHẶNG 3 -->
+                <div class="journey-tab-pane" id="tab-stage-3">
+                  <h3 class="tab-pane-title text-serif">CHẶNG 3: Học cách giao tiếp với AI</h3>
+                  <p style="font-family: var(--font-serif); font-size: 1.05rem; font-weight: bold; color: var(--accent-vermillion); margin-bottom: var(--space-md);">
+                    Bài tập 2 - Bài 3: Tổng quan về trí tuệ nhân tạo
+                  </p>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Mục tiêu</h4>
+                    <p class="pane-text">Khám phá ảnh hưởng của Prompt đến chất lượng phản hồi từ AI và rèn luyện khả năng đặt yêu cầu rõ ràng, có mục tiêu.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Quá trình thực hiện</h4>
+                    <p class="pane-text">Mình thử nghiệm nhiều phiên bản Prompt cho ba tác vụ khác nhau: tóm tắt tài liệu, giải thích khái niệm và tạo câu hỏi ôn tập. Mỗi tác vụ được thực hiện với Prompt cơ bản, Prompt cải tiến và Prompt nâng cao để so sánh chất lượng đầu ra.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Điều đáng nhớ nhất</h4>
+                    <p class="pane-text">Ban đầu mình nghĩ rằng AI sẽ hiểu mọi yêu cầu dù đặt câu hỏi như thế nào. Tuy nhiên, kết quả thử nghiệm cho thấy cùng một công cụ AI nhưng chất lượng câu trả lời thay đổi rất nhiều tùy vào cách đặt Prompt. Điều này khiến mình nhận ra rằng kỹ năng quan trọng không phải là biết dùng AI, mà là biết diễn đạt điều mình thực sự muốn nhận được.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Giá trị tôi mang theo</h4>
+                    <p class="pane-text">Mình học được cách đặt câu hỏi cụ thể hơn, tư duy rõ ràng hơn và biết cách cải thiện phản hồi của AI thông qua việc điều chỉnh Prompt.</p>
+                  </div>
+                  
+                  <div style="margin-top: var(--space-lg); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-md);">
+                    <a href="stage_details.html?stage=3" class="btn btn-primary" style="text-decoration: none;">Xem Chi Tiết Báo Cáo 🔍</a>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- CHẶNG 5 -->
-          <div class="timeline-item" id="stage-node-5">
-            <div class="timeline-node animate-pulse-vermillion"></div>
-            <div class="timeline-content-wrapper">
-              <div class="card journey-card card-classical">
-                <span class="journey-eyebrow text-serif">Chặng 05 / 書卷伍</span>
-                <h3 class="journey-title text-serif">Sáng tạo cùng AI</h3>
                 
-                <p class="journey-desc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--space-md); color: var(--text-charcoal);">
-                  Kết hợp năng lực tư duy sáng tạo của con người với công nghệ đồ họa AI hiện đại để thiết kế các sản phẩm truyền thông số và infographic chất lượng cao.
-                </p>
-                
-                <div class="journey-actions">
-                  <a href="stage_details.html?stage=5" class="btn btn-primary btn-sm btn-toggle-stage" style="padding: 0.4rem 1.2rem; font-size: 0.85rem; text-decoration: none;">
-                    Xem thêm 🔍
-                  </a>
+                <!-- CHẶNG 4 -->
+                <div class="journey-tab-pane" id="tab-stage-4">
+                  <h3 class="tab-pane-title text-serif">CHẶNG 4: Trải nghiệm làm việc nhóm trong môi trường số</h3>
+                  <p style="font-family: var(--font-serif); font-size: 1.05rem; font-weight: bold; color: var(--accent-vermillion); margin-bottom: var(--space-md);">
+                    Bài tập 3 - Bài 4: Giao tiếp và hợp tác trong môi trường số
+                  </p>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Mục tiêu</h4>
+                    <p class="pane-text">Trải nghiệm các nền tảng hỗ trợ làm việc nhóm và rèn luyện khả năng quản lý công việc cá nhân trong dự án chung.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Quá trình thực hiện</h4>
+                    <p class="pane-text">Trong một tuần làm việc nhóm, mình sử dụng Notion để quản lý nhiệm vụ, Google Docs để cộng tác nội dung và Google Drive để lưu trữ tài liệu. Mình theo dõi tiến độ công việc, cập nhật trạng thái nhiệm vụ và tham gia trao đổi với các thành viên trong nhóm.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Điều đáng nhớ nhất</h4>
+                    <p class="pane-text">Điều mình nhận ra là làm việc nhóm trực tuyến không đơn giản chỉ là chia việc cho nhau. Nếu thiếu cập nhật tiến độ hoặc giao tiếp không rõ ràng, công việc rất dễ bị chồng chéo hoặc bỏ sót.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Giá trị tôi mang theo</h4>
+                    <p class="pane-text">Mình hình thành kỹ năng quản lý công việc cá nhân, phối hợp nhóm hiệu quả hơn và biết tận dụng các công cụ số để nâng cao năng suất làm việc.</p>
+                  </div>
+                  
+                  <div style="margin-top: var(--space-lg); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-md);">
+                    <a href="stage_details.html?stage=4" class="btn btn-primary" style="text-decoration: none;">Xem Chi Tiết Báo Cáo 🔍</a>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- CHẶNG 6 -->
-          <div class="timeline-item" id="stage-node-6">
-            <div class="timeline-node animate-pulse-vermillion"></div>
-            <div class="timeline-content-wrapper">
-              <div class="card journey-card card-classical">
-                <span class="journey-eyebrow text-serif">Chặng 06 / 書卷陸</span>
-                <h3 class="journey-title text-serif">Trách nhiệm trong thời đại AI</h3>
                 
-                <p class="journey-desc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--space-md); color: var(--text-charcoal);">
-                  Phân tích vai trò và xây dựng đạo đức sử dụng trí tuệ nhân tạo có trách nhiệm, giữ vững tính an toàn thông tin và tính chính trực, liêm chính học thuật trong nghiên cứu.
-                </p>
-                
-                <div class="journey-actions">
-                  <a href="stage_details.html?stage=6" class="btn btn-primary btn-sm btn-toggle-stage" style="padding: 0.4rem 1.2rem; font-size: 0.85rem; text-decoration: none;">
-                    Xem thêm 🔍
-                  </a>
+                <!-- CHẶNG 5 -->
+                <div class="journey-tab-pane" id="tab-stage-5">
+                  <h3 class="tab-pane-title text-serif">CHẶNG 5: Sáng tạo cùng AI</h3>
+                  <p style="font-family: var(--font-serif); font-size: 1.05rem; font-weight: bold; color: var(--accent-vermillion); margin-bottom: var(--space-md);">
+                    Bài tập 2 - Bài 5: Sáng tạo nội dung số
+                  </p>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Mục tiêu</h4>
+                    <p class="pane-text">Khám phá cách AI có thể hỗ trợ quá trình sáng tạo và xây dựng một sản phẩm nội dung số hoàn chỉnh.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Quá trình thực hiện</h4>
+                    <p class="pane-text">Mình sử dụng nhiều công cụ AI khác nhau để hỗ trợ lên ý tưởng, tạo nội dung văn bản, thiết kế hình ảnh và hoàn thiện sản phẩm cuối cùng. Trong quá trình đó, mình liên tục thử nghiệm Prompt, chỉnh sửa đầu ra và kết hợp thêm các ý tưởng cá nhân.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Điều đáng nhớ nhất</h4>
+                    <p class="pane-text">Trải nghiệm này giúp mình nhận ra rằng AI có thể hỗ trợ rất tốt trong việc tạo ý tưởng và tiết kiệm thời gian, nhưng những sản phẩm tốt nhất luôn cần dấu ấn và sự lựa chọn của con người.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Giá trị tôi mang theo</h4>
+                    <p class="pane-text">Mình hiểu rõ hơn về vai trò của AI trong quá trình sáng tạo và biết cách kết hợp giữa công nghệ với tư duy cá nhân để tạo ra sản phẩm có giá trị.</p>
+                  </div>
+                  
+                  <div style="margin-top: var(--space-lg); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-md);">
+                    <a href="stage_details.html?stage=5" class="btn btn-primary" style="text-decoration: none;">Xem Chi Tiết Báo Cáo 🔍</a>
+                  </div>
                 </div>
+                
+                <!-- CHẶNG 6 -->
+                <div class="journey-tab-pane" id="tab-stage-6">
+                  <h3 class="tab-pane-title text-serif">CHẶNG 6: Trách nhiệm trong thời đại AI</h3>
+                  <p style="font-family: var(--font-serif); font-size: 1.05rem; font-weight: bold; color: var(--accent-vermillion); margin-bottom: var(--space-md);">
+                    Bài tập 4 - Bài 6: An toàn và liêm chính học thuật trong môi trường số
+                  </p>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Mục tiêu</h4>
+                    <p class="pane-text">Tìm hiểu các nguyên tắc đạo đức và trách nhiệm khi sử dụng AI trong môi trường học thuật.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Quá trình thực hiện</h4>
+                    <p class="pane-text">Mình nghiên cứu các quy định liên quan đến việc sử dụng AI trong giáo dục, phân tích những tình huống dễ dẫn đến vi phạm liêm chính học thuật và xây dựng bộ nguyên tắc cá nhân khi sử dụng AI trong học tập.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Điều đáng nhớ nhất</h4>
+                    <p class="pane-text">Đây là bài tập khiến mình suy nghĩ nhiều nhất trong toàn bộ học phần. Mình nhận ra rằng AI có thể giúp hoàn thành công việc nhanh hơn, nhưng nếu lạm dụng hoặc phụ thuộc hoàn toàn vào AI, người học sẽ đánh mất cơ hội rèn luyện tư duy và năng lực của chính mình.</p>
+                  </div>
+                  
+                  <div class="pane-section">
+                    <h4 class="pane-section-title">Giá trị tôi mang theo</h4>
+                    <p class="pane-text">Mình xây dựng được quan điểm rõ ràng hơn về việc sử dụng AI như một công cụ hỗ trợ thay vì thay thế quá trình học tập. Đồng thời, mình hiểu rằng trách nhiệm cuối cùng đối với mọi sản phẩm học thuật luôn thuộc về người sử dụng.</p>
+                  </div>
+                  
+                  <div style="margin-top: var(--space-lg); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-md);">
+                    <a href="stage_details.html?stage=6" class="btn btn-primary" style="text-decoration: none;">Xem Chi Tiết Báo Cáo 🔍</a>
+                  </div>
+                </div>
+                
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- ==========================================================================
          4. NHÌN LẠI HÀNH TRÌNH SECTION (REFLECTION - INTERFACE ONLY)
@@ -430,157 +541,277 @@
         <div class="scroll-unroll-roller-right"></div>
         <div class="scroll-unroll-content">
           <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">Reflection</span>
-          <h2 class="section-title-line text-serif">Nhìn Lại Hành Trình</h2>
-        </div>
-        
-        <!-- 4.1 Cảm nhận trước/sau -->
-        <div class="reflection-compare">
-          <div class="card compare-card before card-classical">
-            <h4 class="text-serif"><span>⏳</span> Tôi của ngày đầu tiên</h4>
-            <p style="font-size: 0.95rem; line-height: 1.8;">
-              Công nghệ với mình chủ yếu là công cụ phục vụ học tập cơ bản hàng ngày. Thấy AI tò mò nhưng mơ hồ, thường dùng để tìm câu trả lời nhanh hơn thay vì suy nghĩ sâu sắc.
-            </p>
-          </div>
-          
-          <div class="card compare-card after card-classical">
-            <h4 class="text-serif"><span>✨</span> Tôi của hiện tại</h4>
-            <p style="font-size: 0.95rem; line-height: 1.8;">
-              Sự thay đổi lớn nhất là ở cách học: biết tổ chức thông tin, đối chiếu dữ liệu, thiết lập quy trình. Hiểu rằng giá trị công nghệ phụ thuộc vào sự chủ động độc lập của tư duy.
-            </p>
-          </div>
-        </div>
-        
-        <!-- 4.2 Dấu ấn học tập -->
-        <h3 class="text-serif text-center" style="margin-bottom: var(--space-lg); color: var(--accent-vermillion);">Dấu Ấn Học Tập</h3>
-        
-        <div class="skills-container">
-          <!-- 6 Kỹ năng số (Skill Tree Graphic Placeholder) -->
-          <div>
-            <h4 class="text-serif" style="margin-bottom: var(--space-sm); font-size: 1.1rem; color: var(--accent-gold);">六大數位技能 / 6 Kỹ năng số</h4>
-            <div class="skills-tree-graphic">
-              <!-- Skill 1 -->
-              <div class="skill-node-item">
-                <span class="skill-node-icon">🔍</span>
-                <span class="skill-node-num">01</span>
-                <p style="font-size: 0.85rem; font-weight:600; margin-bottom:0;">Khai thác thông tin</p>
-              </div>
-              <!-- Skill 2 -->
-              <div class="skill-node-item">
-                <span class="skill-node-icon">⚖️</span>
-                <span class="skill-node-num">02</span>
-                <p style="font-size: 0.85rem; font-weight:600; margin-bottom:0;">Đánh giá phản biện</p>
-              </div>
-              <!-- Skill 3 -->
-              <div class="skill-node-item">
-                <span class="skill-node-icon">📧</span>
-                <span class="skill-node-num">03</span>
-                <p style="font-size: 0.85rem; font-weight:600; margin-bottom:0;">Giao tiếp số</p>
-              </div>
-              <!-- Skill 4 -->
-              <div class="skill-node-item">
-                <span class="skill-node-icon">🤝</span>
-                <span class="skill-node-num">04</span>
-                <p style="font-size: 0.85rem; font-weight:600; margin-bottom:0;">Hợp tác trực tuyến</p>
-              </div>
-              <!-- Skill 5 -->
-              <div class="skill-node-item">
-                <span class="skill-node-icon">🔒</span>
-                <span class="skill-node-num">05</span>
-                <p style="font-size: 0.85rem; font-weight:600; margin-bottom:0;">An toàn số</p>
-              </div>
-              <!-- Skill 6 -->
-              <div class="skill-node-item">
-                <span class="skill-node-icon">📜</span>
-                <span class="skill-node-num">06</span>
-                <p style="font-size: 0.85rem; font-weight:600; margin-bottom:0;">Liêm chính học thuật</p>
-              </div>
+            <div class="section-header">
+              <span class="section-eyebrow">回顾反思</span>
+              <h2 class="section-title-line text-serif">Nhìn Lại Hành Trình</h2>
             </div>
-          </div>
-          
-          <!-- Prompt Library QR Code -->
-          <div class="card card-classical" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
-            <h4 class="text-serif" style="margin-bottom: var(--space-sm); font-size: 1.1rem; color: var(--accent-gold);">Thư viện Prompt cá nhân</h4>
-            <div class="qr-card-content">
-              <div class="qr-image-wrapper">
-                <img src="./PortfolioAssets/MÃ QR CHO PROMPT LIBRARY.png" alt="Mã QR Prompt Library" class="qr-image">
-              </div>
-              <div>
-                <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: var(--space-xs);">
-                  Quét mã QR để truy cập kho lưu trữ <strong>Prompt Library</strong> cá nhân được xây dựng trong suốt học phần.
+            
+            <!-- 3.1 Cảm nhận về học phần -->
+            <div class="reflection-compare" style="margin-bottom: var(--space-xl);">
+              <div class="card compare-card before card-classical" style="padding: var(--space-xl);">
+                <h4 class="text-serif" style="color: var(--accent-vermillion); margin-top: 0; font-size: 1.15rem;"><span>⏳</span> Tôi của ngày đầu tiên</h4>
+                <p style="font-size: 0.98rem; line-height: 1.8; color: var(--text-charcoal); margin: 0; text-align: justify;">
+                  Khi bắt đầu học phần này, mình xem công nghệ chủ yếu là những công cụ phục vụ học tập hàng ngày. Mình biết sử dụng một số ứng dụng phổ biến nhưng chưa thực sự hiểu cách khai thác chúng một cách có hệ thống. Đối với AI, mình tò mò nhưng cũng khá mơ hồ. Mình thường sử dụng AI để tìm câu trả lời nhanh hơn thay vì suy nghĩ sâu hơn về cách đặt câu hỏi hay đánh giá chất lượng thông tin nhận được.
                 </p>
-                <a href="./PortfolioAssets/MÃ QR CHO PROMPT LIBRARY.png" target="_blank" class="btn-text" style="font-size: 0.85rem;">
-                  Mở ảnh QR lớn ↗
-                </a>
+              </div>
+              
+              <div class="card compare-card after card-classical" style="padding: var(--space-xl);">
+                <h4 class="text-serif" style="color: var(--accent-gold-light); margin-top: 0; font-size: 1.15rem;"><span>✨</span> Tôi của hiện tại</h4>
+                <p style="font-size: 0.98rem; line-height: 1.8; color: var(--text-charcoal); margin: 0; text-align: justify;">
+                  Sau một học kỳ, điều thay đổi lớn nhất không phải là số lượng công cụ mình biết sử dụng. Điều thay đổi lớn nhất là cách mình học. Mình bắt đầu chú ý hơn đến việc tổ chức thông tin, đánh giá nguồn dữ liệu, xây dựng quy trình làm việc và sử dụng AI như một người hỗ trợ thay vì phụ thuộc hoàn toàn vào nó. Mình hiểu rằng công nghệ không làm cho việc học trở nên dễ dàng hơn một cách kỳ diệu. Nó chỉ phát huy giá trị khi người học chủ động tư duy, chủ động lựa chọn và chịu trách nhiệm với những gì mình tạo ra.
+                </p>
               </div>
             </div>
-          </div>
-        </div>
-
-        <!-- 5 Kiến thức mới - Bản đồ AI cá nhân -->
-        <div style="margin-bottom: var(--space-3xl);">
-          <h4 class="text-serif" style="margin-bottom: var(--space-sm); font-size: 1.1rem; color: var(--accent-gold);">Bản đồ AI cá nhân</h4>
-          <div class="ai-map-table-wrapper">
-            <table class="ai-map-table">
-              <thead>
-                <tr>
-                  <th>Công cụ AI</th>
-                  <th>Vai trò</th>
-                  <th>Ứng dụng nổi bật</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="ai-tool-badge">💬 ChatGPT</td>
-                  <td>Trung tâm hỗ trợ học tập</td>
-                  <td>Nghiên cứu, học tập, xây dựng ý tưởng, cải thiện Prompt</td>
-                </tr>
-                <tr>
-                  <td class="ai-tool-badge">🎨 Canva AI</td>
-                  <td>Trợ lý sáng tạo</td>
-                  <td>Thiết kế infographic, bài thuyết trình, nội dung trực quan</td>
-                </tr>
-                <tr>
-                  <td class="ai-tool-badge">📓 Notion AI</td>
-                  <td>Trợ lý quản lý tri thức</td>
-                  <td>Ghi chú, quản lý dự án, tổ chức tài liệu học tập</td>
-                </tr>
-                <tr>
-                  <td class="ai-tool-badge">✍️ Grammarly</td>
-                  <td>Trợ lý học thuật</td>
-                  <td>Kiểm tra ngữ pháp, cải thiện chất lượng bài viết</td>
-                </tr>
-                <tr>
-                  <td class="ai-tool-badge">💎 Gemini</td>
-                  <td>Trợ lý tìm kiếm</td>
-                  <td>Tìm kiếm thông tin, đối chiếu dữ liệu và mở rộng góc nhìn</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- 4.3 Quá trình hoàn thiện -->
-        <div class="reflection-compare" style="margin-bottom: 0;">
-          <div class="card card-classical">
-            <h4 class="text-serif" style="color: var(--accent-vermillion);">❤️ Điều tôi tâm đắc nhất</h4>
-            <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom:0;">
-              "AI có thể tạo ra câu trả lời, nhưng chỉ con người mới tạo ra được ý nghĩa." Giữ được tư duy độc lập mới là kỹ năng quan trọng nhất trong thời đại AI phát triển vũ bão.
-            </p>
-          </div>
-          
-          <div class="card card-classical">
-            <h4 class="text-serif" style="color: var(--text-charcoal);">⚠️ Khó khăn tôi đã gặp</h4>
-            <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom:0;">
-              Thách thức lớn nhất không phải là các công cụ số mà là việc hệ thống hóa quá trình học tập thành một câu chuyện có chiều sâu và phản ánh chân thực tiến bộ cá nhân.
-            </p>
+            
+            <!-- 3.2 Dấu ấn học tập -->
+            <div style="margin-top: var(--space-2xl); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-xl);">
+              <h3 class="text-serif text-center" style="margin-bottom: var(--space-xl); color: var(--accent-vermillion); font-size: 1.6rem;">Dấu Ấn Học Tập</h3>
+              
+              <!-- 📚 06 Kỹ năng số được hình thành (Skill Tree Grid) -->
+              <div style="margin-bottom: var(--space-2xl);">
+                <h4 class="text-serif" style="margin-bottom: var(--space-sm); font-size: 1.2rem; color: var(--accent-gold); border-left: 4px solid var(--accent-vermillion); padding-left: 10px;">📚 06 Kỹ năng số được hình thành</h4>
+                
+                <div class="skills-detailed-grid">
+                  <!-- Skill 1 -->
+                  <div class="skill-card-detailed">
+                    <div class="skill-card-header">
+                      <div class="skill-card-icon">🔍</div>
+                      <div>
+                        <span class="skill-card-number">01</span>
+                        <h5 class="skill-card-title">Kỹ năng tìm kiếm và khai thác thông tin</h5>
+                      </div>
+                    </div>
+                    <p class="skill-card-desc">
+                      Mình biết vận dụng các chiến lược tìm kiếm nâng cao trên Internet và các cơ sở dữ liệu học thuật, đồng thời kết hợp các công cụ AI để hỗ trợ quá trình thu thập thông tin.
+                    </p>
+                  </div>
+                  
+                  <!-- Skill 2 -->
+                  <div class="skill-card-detailed">
+                    <div class="skill-card-header">
+                      <div class="skill-card-icon">🧠</div>
+                      <div>
+                        <span class="skill-card-number">02</span>
+                        <h5 class="skill-card-title">Kỹ năng đánh giá thông tin một cách phản biện</h5>
+                      </div>
+                    </div>
+                    <p class="skill-card-desc">
+                      Mình có khả năng:
+                      <ul style="margin: 4px 0 0 0; padding-left: 16px;">
+                        <li>Kiểm tra độ tin cậy của nguồn tin.</li>
+                        <li>Đối chiếu thông tin từ nhiều nguồn.</li>
+                        <li>Nhận diện thông tin sai lệch và tin giả.</li>
+                      </ul>
+                    </p>
+                  </div>
+                  
+                  <!-- Skill 3 -->
+                  <div class="skill-card-detailed">
+                    <div class="skill-card-header">
+                      <div class="skill-card-icon">📧</div>
+                      <div>
+                        <span class="skill-card-number">03</span>
+                        <h5 class="skill-card-title">Kỹ năng giao tiếp số chuyên nghiệp</h5>
+                      </div>
+                    </div>
+                    <p class="skill-card-desc">
+                      Mình biết sử dụng Email, họp trực tuyến và mạng xã hội học thuật một cách phù hợp, hiệu quả và đúng mục đích.
+                    </p>
+                  </div>
+                  
+                  <!-- Skill 4 -->
+                  <div class="skill-card-detailed">
+                    <div class="skill-card-header">
+                      <div class="skill-card-icon">🤝</div>
+                      <div>
+                        <span class="skill-card-number">04</span>
+                        <h5 class="skill-card-title">Kỹ năng hợp tác trực tuyến</h5>
+                      </div>
+                    </div>
+                    <p class="skill-card-desc">
+                      Thông qua các dự án nhóm, mình đã làm quen với:
+                      <ul style="margin: 4px 0 0 0; padding-left: 16px;">
+                        <li>Microsoft 365</li>
+                        <li>Notion</li>
+                        <li>Trello</li>
+                      </ul>
+                      Từ đó nâng cao khả năng phối hợp công việc, chia sẻ tài liệu và quản lý tiến độ trong môi trường số.
+                    </p>
+                  </div>
+                  
+                  <!-- Skill 5 -->
+                  <div class="skill-card-detailed">
+                    <div class="skill-card-header">
+                      <div class="skill-card-icon">🔒</div>
+                      <div>
+                        <span class="skill-card-number">05</span>
+                        <h5 class="skill-card-title">Kỹ năng bảo vệ dữ liệu và an toàn số</h5>
+                      </div>
+                    </div>
+                    <p class="skill-card-desc">
+                      Mình biết áp dụng các biện pháp thực hành tốt để:
+                      <ul style="margin: 4px 0 0 0; padding-left: 16px;">
+                        <li>Bảo vệ thông tin cá nhân.</li>
+                        <li>Quản lý mật khẩu.</li>
+                        <li>Nhận diện các nguy cơ mất an toàn trên Internet.</li>
+                        <li>Bảo vệ thiết bị và dữ liệu số.</li>
+                      </ul>
+                    </p>
+                  </div>
+                  
+                  <!-- Skill 6 -->
+                  <div class="skill-card-detailed">
+                    <div class="skill-card-header">
+                      <div class="skill-card-icon">📜</div>
+                      <div>
+                        <span class="skill-card-number">06</span>
+                        <h5 class="skill-card-title">Kỹ năng liêm chính học thuật</h5>
+                      </div>
+                    </div>
+                    <p class="skill-card-desc">
+                      Mình có thể:
+                      <ul style="margin: 4px 0 0 0; padding-left: 16px;">
+                        <li>Phân biệt các hình thức vi phạm liêm chính học thuật.</li>
+                        <li>Nhận diện hành vi đạo văn.</li>
+                        <li>Trích dẫn nguồn đúng quy chuẩn.</li>
+                        <li>Diễn giải và tổng hợp thông tin một cách trung thực.</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 🤖 01 Bản đồ AI cá nhân được xây dựng -->
+              <div style="margin-bottom: var(--space-2xl);">
+                <h4 class="text-serif" style="margin-bottom: var(--space-sm); font-size: 1.2rem; color: var(--accent-gold); border-left: 4px solid var(--accent-vermillion); padding-left: 10px;">🤖 01 Bản đồ AI cá nhân được xây dựng</h4>
+                
+                <div class="ai-map-table-wrapper">
+                  <table class="ai-map-table">
+                    <thead>
+                      <tr>
+                        <th style="width: 25%;">Công cụ AI</th>
+                        <th style="width: 25%;">Vai trò</th>
+                        <th style="width: 50%;">Ứng dụng nổi bật</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="ai-tool-name">💬 ChatGPT</td>
+                        <td>Trung tâm hỗ trợ học tập</td>
+                        <td>Nghiên cứu, học tập, xây dựng ý tưởng, cải thiện Prompt</td>
+                      </tr>
+                      <tr>
+                        <td class="ai-tool-name">🎨 Canva AI</td>
+                        <td>Trợ lý sáng tạo</td>
+                        <td>Thiết kế infographic, bài thuyết trình, nội dung trực quan</td>
+                      </tr>
+                      <tr>
+                        <td class="ai-tool-name">📓 Notion AI</td>
+                        <td>Trợ lý quản lý tri thức</td>
+                        <td>Ghi chú, quản lý dự án, tổ chức tài liệu học tập</td>
+                      </tr>
+                      <tr>
+                        <td class="ai-tool-name">✍️ Grammarly</td>
+                        <td>Trợ lý học thuật</td>
+                        <td>Kiểm tra ngữ pháp, cải thiện chất lượng bài viết</td>
+                      </tr>
+                      <tr>
+                        <td class="ai-tool-name">💎 Gemini</td>
+                        <td>Trợ lý tìm kiếm và khám phá</td>
+                        <td>Tìm kiếm thông tin, đối chiếu dữ liệu và mở rộng góc nhìn</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              
+              <!-- 📂 5 Kiến thức mới, mở rộng tri thức & 🌐 01 Portfolio số cá nhân -->
+              <div class="reflection-compare" style="margin-bottom: var(--space-2xl);">
+                <!-- 5 Kiến thức mới -->
+                <div class="card card-classical" style="padding: var(--space-xl);">
+                  <h4 class="text-serif" style="margin-top: 0; color: var(--accent-vermillion); font-size: 1.2rem; border-bottom: 1px dashed rgba(184, 144, 71, 0.25); padding-bottom: 8px;">📂 5 Kiến thức mới, mở rộng tri thức</h4>
+                  <ul class="goals-list" style="margin: var(--space-md) 0 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem; line-height: 1.6; color: var(--text-charcoal);">
+                    <li>
+                      <strong>1. Hiểu cách máy tính và hệ thống số vận hành:</strong>
+                      Mình hiểu rõ hơn về cấu trúc cơ bản của máy tính, vai trò của phần cứng và phần mềm, cũng as cách các thiết bị số phối hợp với nhau để xử lý thông tin.
+                    </li>
+                    <li>
+                      <strong>2. Hiểu cách AI hoạt động và tạo ra câu trả lời:</strong>
+                      Trước đây mình thường xem AI như một “hộp đen” có thể trả lời mọi câu hỏi. Sau học phần này, mình hiểu rằng AI hoạt động dựa trên dữ liệu, mô hình học máy và xác suất ngôn ngữ. Điều đó giúp mình sử dụng AI một cách thực tế và có tư duy phản biện hơn.
+                    </li>
+                    <li>
+                      <strong>3. Phân biệt dữ liệu, thông tin và tri thức:</strong>
+                      Đây là kiến thức nền tảng rất quan trọng. Mình hiểu dữ liệu là sự kiện thô; thông tin là dữ liệu đã xử lý đặt trong ngữ cảnh; tri thức là sự hiểu biết được hình thành từ việc phân tích thông tin.
+                    </li>
+                    <li>
+                      <strong>4. Hiểu về quyền sở hữu trí tuệ và liêm chính học thuật:</strong>
+                      Sử dụng tài liệu hay hình ảnh từ Internet không đơn giản chỉ là sao chép. Người học cần tôn trọng bản quyền, biết trích dẫn nguồn đúng cách và chịu trách nhiệm đối với sản phẩm học thuật của mình.
+                    </li>
+                    <li>
+                      <strong>5. Nhận thức về văn hóa ứng xử số và an ninh mạng:</strong>
+                      Hiểu về Netiquette (giao tiếp văn minh trên mạng), nhận diện các rủi ro bảo mật (lừa đảo, mã độc) và biết cách bảo vệ thông tin cá nhân trên không gian mạng.
+                    </li>
+                  </ul>
+                </div>
+                
+                <!-- 🌐 01 Portfolio số cá nhân -->
+                <div class="card card-classical" style="padding: var(--space-xl); display: flex; flex-direction: column; justify-content: center;">
+                  <h4 class="text-serif" style="margin-top: 0; color: var(--accent-gold-light); font-size: 1.2rem; border-bottom: 1px dashed rgba(184, 144, 71, 0.25); padding-bottom: 8px;">🌐 01 Portfolio số cá nhân</h4>
+                  <p style="font-size: 0.98rem; line-height: 1.75; color: var(--text-charcoal); text-align: justify; margin-top: var(--space-md); margin-bottom: var(--space-md);">
+                    Sản phẩm tích hợp cuối cùng của mình là không gian số nghệ thuật này, nơi lưu trữ, trưng bày và xâu chuỗi toàn bộ quá trình phát triển tri thức trong học phần. Portfolio được xây dựng theo phong cách cổ phong thủy mặc, tượng trưng cho tính bền bỉ, học tập suốt đời giống như cọ loang thủy mặc loang dần và thấm nhuần vào giấy dó.
+                  </p>
+                  
+                  <div class="card card-classical" style="background: rgba(184, 144, 71, 0.05); border: 1px solid rgba(184, 144, 71, 0.2); padding: var(--space-md);">
+                    <h5 class="text-serif" style="margin: 0 0 6px 0; color: var(--accent-vermillion);">Thư viện Prompt cá nhân</h5>
+                    <div class="qr-card-content" style="display: flex; gap: var(--space-md); align-items: center; margin-top: 8px;">
+                      <img src="./PortfolioAssets/MÃ QR CHO PROMPT LIBRARY.png" alt="Mã QR Thư viện Prompt cá nhân" style="width: 80px; height: 80px; border-radius: 4px; border: 1px solid var(--accent-gold); cursor: pointer;" data-lightbox data-caption="Mã QR Thư viện Prompt cá nhân">
+                      <div>
+                        <p style="font-size: 0.88rem; line-height: 1.4; color: var(--text-charcoal); margin: 0 0 6px 0;">
+                          Quét mã QR để truy cập kho lưu trữ <strong>Prompt Library</strong> cá nhân được tích lũy trong học kỳ.
+                        </p>
+                        <button class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.78rem; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px;" data-lightbox data-src="./PortfolioAssets/MÃ QR CHO PROMPT LIBRARY.png" data-caption="Mã QR Thư viện Prompt cá nhân">
+                          🔍 Phóng to QR
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 3.3 Quá trình hoàn thiện -->
+            <div style="margin-top: var(--space-2xl); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-xl);">
+              <h3 class="text-serif text-center" style="margin-bottom: var(--space-xl); color: var(--accent-vermillion); font-size: 1.6rem;">Quá Trình Hoàn Thiện Portfolio</h3>
+              
+              <div class="reflection-compare" style="margin-bottom: var(--space-xl);">
+                <div class="card card-classical" style="padding: var(--space-xl);">
+                  <h4 class="text-serif" style="color: var(--accent-vermillion); margin-top: 0; font-size: 1.15rem;">❤️ Điều tôi tâm đắc nhất</h4>
+                  <p style="font-size: 0.98rem; line-height: 1.8; color: var(--text-charcoal); margin: 0; text-align: justify;">
+                    Điều mình tâm đắc nhất sau khi hoàn thiện dự án cá nhân này là nhận ra rằng: <strong>AI có thể tạo ra câu trả lời, nhưng chỉ con người mới tạo ra được ý nghĩa</strong>. Một công cụ có thể viết một đoạn văn hoàn chỉnh trong vài giây, nhưng nó không thể thay thế trải nghiệm, cảm xúc, giá trị sống và góc nhìn cá nhân của mỗi người. Chính vì vậy, điều quan trọng nhất không phải là học cách dùng AI nhanh đến đâu mà là học cách giữ được tư duy độc lập trong thời đại AI.
+                  </p>
+                </div>
+                
+                <div class="card card-classical" style="padding: var(--space-xl);">
+                  <h4 class="text-serif" style="color: var(--text-charcoal); margin-top: 0; font-size: 1.15rem;">⚠️ Những khó khăn tôi đã gặp</h4>
+                  <p style="font-size: 0.98rem; line-height: 1.8; color: var(--text-charcoal); margin: 0; text-align: justify;">
+                    Trong quá trình thực hiện Portfolio, thử thách lớn nhất đối với mình không phải là sử dụng công cụ mới mà là việc hệ thống hóa toàn bộ quá trình học tập thành một câu chuyện có ý nghĩa. Ban đầu mình chỉ nghĩ đây là nơi lưu trữ bài tập. Tuy nhiên, khi bắt đầu sắp xếp lại từng sản phẩm, mình nhận ra mỗi bài tập đều phản ánh một kỹ năng mới và một sự thay đổi nhỏ trong cách học của bản thân. Chính quá trình nhìn lại đó giúp mình hiểu rõ hơn mình đã học được gì và đã trưởng thành như thế nào.
+                  </p>
+                </div>
+              </div>
+              
+              <!-- Lời kết -->
+              <div class="card card-classical" style="padding: var(--space-xl); background: rgba(184, 144, 71, 0.05); border: 1px solid var(--accent-gold); margin-top: var(--space-lg);">
+                <h4 class="text-serif text-center" style="color: var(--accent-vermillion); margin-top: 0; font-size: 1.3rem; margin-bottom: var(--space-sm);">✨ Lời kết</h4>
+                <p style="font-size: 1rem; line-height: 1.8; color: var(--text-charcoal); margin: 0; text-align: justify; font-style: italic;">
+                  Portfolio này khép lại một học phần nhưng cũng đánh dấu điểm khởi đầu cho một hành trình dài hơn. Nếu trước đây mình học cách sử dụng công nghệ, thì hôm nay mình đang học cách sử dụng công nghệ một cách có trách nhiệm. Nếu trước đây mình tìm kiếm câu trả lời, thì hôm nay mình đang học cách đặt những câu hỏi tốt hơn. Và có lẽ, đó mới là điều ý nghĩa nhất mà học phần này mang lại cho mình.
+                </p>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- ==========================================================================
          5. TỔNG KẾT & LIÊN HỆ SECTION (FOOTER)
@@ -597,7 +828,7 @@
       <div class="container footer-content scroll-reveal">
         <div class="footer-philosophy text-serif">
           “AI có thể hỗ trợ việc học, nhưng sự tiến bộ luôn bắt đầu từ chính người học.”
-          <span>學習 với 成長 • 學無止境</span> <!-- Học tập với trưởng thành • Học vô chỉ cảnh -->
+          <span>學習與成長 • 學無止境</span> <!-- Học tập với trưởng thành • Học vô chỉ cảnh -->
         </div>
         
         <div class="footer-contact">
