@@ -117,18 +117,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Scroll handling based on hash routing
     const hash = window.location.hash;
-    if (hash && hash.startsWith("#stage-node-")) {
-      const targetNode = document.getElementById("HanhTrinh");
+    if (hash) {
+      let targetNode = null;
+      if (hash.startsWith("#stage-node-")) {
+        targetNode = document.getElementById("HanhTrinh");
+      } else {
+        try {
+          targetNode = document.querySelector(hash);
+        } catch (e) {
+          targetNode = null;
+        }
+      }
+      
       if (targetNode) {
         const headerHeight = 70; // Matches navbar height
         const targetOffset = targetNode.getBoundingClientRect().top + window.scrollY - headerHeight;
         window.scrollTo({
           top: targetOffset,
-          behavior: "auto" // Jump instantly so they land directly on target stage tab
+          behavior: "auto" // Jump instantly
         });
+      } else {
+        // Fallback to top if target element not found
+        window.scrollTo(0, 0);
+        window.history.replaceState(null, null, "#Modau");
       }
     } else {
-      // Scroll to the very top section (Modau) immediately on exit
+      // Scroll to the very top section (Modau) immediately on exit if no hash is present
       window.scrollTo(0, 0);
       window.history.replaceState(null, null, "#Modau");
     }
