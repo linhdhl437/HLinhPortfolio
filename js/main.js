@@ -253,13 +253,26 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Check if loading with a stage hash, and click the corresponding tab
+    // Check if loading with a stage hash, and initialize the corresponding tab instantly
     const hash = window.location.hash;
     if (hash && hash.startsWith("#stage-node-")) {
       const stageNum = hash.replace("#stage-node-", "");
       const targetTabItem = document.querySelector(`.journey-tab-item[data-target="tab-stage-${stageNum}"]`);
-      if (targetTabItem) {
-        targetTabItem.click();
+      const targetTabPane = document.getElementById(`tab-stage-${stageNum}`);
+      if (targetTabItem && targetTabPane) {
+        // Remove active state from all items and panes instantly
+        tabItems.forEach(i => i.classList.remove("active"));
+        tabPanes.forEach(p => {
+          p.classList.remove("active");
+          p.style.opacity = "0";
+          p.style.transform = "translateY(10px)";
+        });
+        
+        // Activate the target tab and pane immediately
+        targetTabItem.classList.add("active");
+        targetTabPane.classList.add("active");
+        targetTabPane.style.opacity = "1";
+        targetTabPane.style.transform = "translateY(0)";
       }
     }
   }
