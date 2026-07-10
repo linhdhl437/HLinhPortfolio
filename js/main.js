@@ -178,20 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================================================
   // 3. SMOOTH SCROLL TO STAGE NODE ON PAGE LOAD (If navigated back from details page)
   // ==========================================================================
-  if (window.location.hash && window.location.hash.startsWith("#stage-node-")) {
-    setTimeout(() => {
-      const targetNode = document.getElementById("HanhTrinh");
-      if (targetNode) {
-        const headerHeight = 70; // Matches navbar height
-        const targetOffset = targetNode.getBoundingClientRect().top + window.scrollY - headerHeight;
-        
-        window.scrollTo({
-          top: targetOffset,
-          behavior: "auto" // Jump instantly!
-        });
-      }
-    }, 100); // 100ms delay is perfect for browser rendering stability
-  }
+  // Handled in exitIntro() of loading.js to align with video fade-out
 
   // ==========================================================================
   // 4. JOURNEY TABS INTERACTION HANDLER

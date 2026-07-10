@@ -44,15 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ["#Modau", "#ToiLaAi", "#HanhTrinh", "#NhinLai", "#LienHe"].includes(window.location.hash)
   );
 
-  if (hasHash && overlay) {
-    overlay.style.display = "none";
-    overlay.classList.add("fade-out");
-    isPlayingIntro = false;
-    document.body.style.overflow = "";
-  } else {
-    // 1. Lock scrolling initially
-    document.body.style.overflow = "hidden";
-  }
+  // 1. Lock scrolling initially for welcome intro video playback
+  document.body.style.overflow = "hidden";
 
   // 2. Play intro on welcome screen click
   if (enterScreen && video) {
@@ -122,9 +115,23 @@ document.addEventListener("DOMContentLoaded", () => {
     window.removeEventListener("wheel", preventDefault);
     window.removeEventListener("touchmove", preventDefault);
 
-    // Scroll to the very top section (Modau) immediately on exit
-    window.scrollTo(0, 0);
-    window.history.replaceState(null, null, "#Modau");
+    // Scroll handling based on hash routing
+    const hash = window.location.hash;
+    if (hash && hash.startsWith("#stage-node-")) {
+      const targetNode = document.getElementById("HanhTrinh");
+      if (targetNode) {
+        const headerHeight = 70; // Matches navbar height
+        const targetOffset = targetNode.getBoundingClientRect().top + window.scrollY - headerHeight;
+        window.scrollTo({
+          top: targetOffset,
+          behavior: "auto" // Jump instantly so they land directly on target stage tab
+        });
+      }
+    } else {
+      // Scroll to the very top section (Modau) immediately on exit
+      window.scrollTo(0, 0);
+      window.history.replaceState(null, null, "#Modau");
+    }
 
     setTimeout(() => {
       overlay.style.display = "none";
