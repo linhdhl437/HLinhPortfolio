@@ -518,6 +518,91 @@
       color: var(--text-muted) !important;
     }
 
+    /* 📜 Accordion Styles for Report Sections */
+    .accordion-item {
+      border: 1px solid var(--border-ink) !important;
+      border-radius: 6px !important;
+      margin-bottom: 1.2rem !important;
+      background: var(--bg-paper-warm) !important;
+      overflow: hidden !important;
+      transition: border-color 0.3s !important;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01) !important;
+    }
+
+    .accordion-item:hover {
+      border-color: var(--accent-gold) !important;
+    }
+
+    .accordion-header {
+      width: 100% !important;
+      background: rgba(184, 144, 71, 0.03) !important;
+      border: none !important;
+      outline: none !important;
+      padding: 1.2rem 1.5rem !important;
+      text-align: left !important;
+      font-size: 1.15rem !important;
+      font-weight: bold !important;
+      color: var(--accent-vermillion) !important;
+      cursor: pointer !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      transition: background 0.3s !important;
+      font-family: var(--font-serif) !important;
+      box-sizing: border-box !important;
+    }
+
+    .accordion-header:hover {
+      background: rgba(184, 144, 71, 0.08) !important;
+    }
+
+    .accordion-header.active {
+      background: rgba(184, 144, 71, 0.1) !important;
+      border-bottom: 1px solid var(--border-ink) !important;
+    }
+
+    .accordion-content {
+      max-height: 0 !important;
+      overflow: hidden !important;
+      transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+      background: rgba(253, 252, 249, 0.4) !important;
+      padding: 0 1.5rem !important;
+      box-sizing: border-box !important;
+    }
+
+    .accordion-content.open {
+      padding: 1.5rem !important;
+    }
+
+    .accordion-icon {
+      font-size: 0.9rem !important;
+      color: var(--accent-gold) !important;
+      transition: transform 0.3s !important;
+    }
+
+    /* Style for Back button at top left hover effect */
+    #btn-back-to-timeline {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      padding: 0.6rem 1.2rem !important;
+      text-decoration: none !important;
+      border-radius: 4px !important;
+      border: 1px solid var(--border-gold) !important;
+      background: var(--bg-paper-warm) !important;
+      color: var(--accent-vermillion) !important;
+      font-family: var(--font-serif) !important;
+      font-weight: bold !important;
+      transition: all 0.3s !important;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02) !important;
+    }
+
+    #btn-back-to-timeline:hover {
+      background: rgba(184, 144, 71, 0.15) !important;
+      border-color: var(--accent-vermillion) !important;
+      transform: translateX(-4px) !important;
+    }
+
     /* Responsive grid columns */
     @media (max-width: 768px) {
       .stage-document-wrapper .ethics-grid,
@@ -581,24 +666,25 @@
         <li><a href="?stage=6" data-stage-link="6" class="sidebar-link text-serif">書卷陸 • Chặng 6</a></li>
       </ul>
       
-      <div style="margin-top: 2rem; border-top: 1px dashed var(--border-ink); padding-top: 1.5rem;">
-        <a href="index.html#HanhTrinh" id="btn-back-to-timeline" class="btn btn-secondary btn-sm" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0.6rem 1rem; text-decoration: none; border-radius: 4px;">
-          <span>↩️</span> Quay lại hành trình
-        </a>
-      </div>
     </aside>
-
-    <!-- Main Content parchment sheet -->
-    <main class="details-main-content">
-      <article class="parchment-sheet card card-classical">
-        <div id="stage-detail-content-target">
-          <!-- Dynamically loaded content goes here -->
-          <div style="text-align: center; padding: 100px 0; color: var(--text-muted); font-style: italic; font-family: var(--font-serif);">
-            Đang mở thư quyển...
-          </div>
-        </div>
-      </article>
-    </main>
+ 
+     <!-- Main Content parchment sheet -->
+     <main class="details-main-content">
+       <article class="parchment-sheet card card-classical">
+         <!-- Back Button at Top Left of parchment sheet -->
+         <div class="top-left-back-container" style="margin-bottom: 2rem; display: flex; justify-content: flex-start;">
+           <a href="index.html#HanhTrinh" id="btn-back-to-timeline" class="btn btn-secondary btn-sm">
+             <span>↩️</span> Quay lại hành trình
+           </a>
+         </div>
+         <div id="stage-detail-content-target">
+           <!-- Dynamically loaded content goes here -->
+           <div style="text-align: center; padding: 100px 0; color: var(--text-muted); font-style: italic; font-family: var(--font-serif);">
+             Đang mở thư quyển...
+           </div>
+         </div>
+       </article>
+     </main>
   </div>
 
   <!-- ==========================================================================
@@ -666,6 +752,9 @@
             
             contentTarget.innerHTML = reportHtml;
             
+            // Wrap content sections into collapsible accordions
+            makeAccordion();
+            
             // Fade-in & slide-up animation
             contentTarget.style.transition = "opacity 0.4s ease, transform 0.4s ease";
             contentTarget.style.opacity = "1";
@@ -685,6 +774,118 @@
 
         // Scroll back to top smoothly
         window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      // 1.1. Dynamic Accordion builder function
+      function makeAccordion() {
+        const container = document.getElementById("stage-detail-content-target");
+        if (!container) return;
+        
+        const children = Array.from(container.children);
+        const h2Headers = container.querySelectorAll("h2");
+        if (h2Headers.length === 0) return; // Keep standard layout if no H2 elements exist
+        
+        const newContainer = document.createElement("div");
+        newContainer.className = "accordion-container";
+        
+        let currentHeader = null;
+        let currentGroup = [];
+        
+        children.forEach(child => {
+          if (child.tagName === 'H2') {
+            if (currentHeader) {
+              newContainer.appendChild(createAccordionItem(currentHeader, currentGroup));
+            } else {
+              currentGroup.forEach(el => newContainer.appendChild(el));
+            }
+            currentHeader = child;
+            currentGroup = [];
+          } else if (child.tagName === 'H1' || child.tagName === 'STYLE') {
+            newContainer.appendChild(child);
+          } else {
+            currentGroup.push(child);
+          }
+        });
+        
+        if (currentHeader) {
+          newContainer.appendChild(createAccordionItem(currentHeader, currentGroup));
+        } else {
+          currentGroup.forEach(el => newContainer.appendChild(el));
+        }
+        
+        container.innerHTML = "";
+        Array.from(newContainer.childNodes).forEach(node => {
+          container.appendChild(node);
+        });
+        
+        const headers = container.querySelectorAll(".accordion-header");
+        headers.forEach(header => {
+          header.addEventListener("click", () => {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector(".accordion-icon");
+            const isOpen = header.classList.contains("active");
+            
+            if (isOpen) {
+              header.classList.remove("active");
+              content.style.maxHeight = content.offsetHeight + "px";
+              content.offsetHeight; // force layout reflow
+              content.style.maxHeight = "0";
+              content.classList.remove("open");
+              icon.textContent = "➕";
+            } else {
+              headers.forEach(h => {
+                if (h.classList.contains("active")) {
+                  h.classList.remove("active");
+                  const c = h.nextElementSibling;
+                  c.style.maxHeight = c.offsetHeight + "px";
+                  c.offsetHeight; // force reflow
+                  c.style.maxHeight = "0";
+                  c.classList.remove("open");
+                  h.querySelector(".accordion-icon").textContent = "➕";
+                }
+              });
+              
+              header.classList.add("active");
+              content.classList.add("open");
+              content.style.maxHeight = content.scrollHeight + "px";
+              icon.textContent = "➖";
+              
+              setTimeout(() => {
+                if (header.classList.contains("active")) {
+                  content.style.maxHeight = "none";
+                }
+              }, 400);
+              
+              setTimeout(() => {
+                header.scrollIntoView({ behavior: "smooth", block: "nearest" });
+              }, 150);
+            }
+          });
+        });
+        
+        if (headers.length > 0) {
+          headers[0].click();
+        }
+      }
+      
+      function createAccordionItem(headerEl, contentElements) {
+        const item = document.createElement("div");
+        item.className = "accordion-item";
+        
+        const btn = document.createElement("button");
+        btn.className = "accordion-header text-serif";
+        btn.innerHTML = `
+          <span class="header-title">${headerEl.innerHTML}</span>
+          <span class="accordion-icon">➕</span>
+        `;
+        
+        const contentWrapper = document.createElement("div");
+        contentWrapper.className = "accordion-content";
+        contentElements.forEach(el => contentWrapper.appendChild(el));
+        
+        item.appendChild(btn);
+        item.appendChild(contentWrapper);
+        return item;
       }
 
       // 2. Parse initial stage from URL parameters
