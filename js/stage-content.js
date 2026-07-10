@@ -731,12 +731,12 @@ window.stageContents = {
 <div class="image-container">
 <img alt="Ảnh 1 Tác vụ 1 Prompt cơ bản" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh1_C3_Tác vụ 1_Prompt cơ bản.jpg"/>
 <div class="image-caption">Ảnh minh họa 1: Câu lệnh tóm tắt cơ bản nhập vào ChatGPT</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 1 tại vị trí ngay sau câu lệnh cơ bản]</div>
+
 </div>
 <div class="image-container">
 <img alt="Ảnh 2 Tác vụ 1 Prompt cơ bản" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh2_C3_Tác vụ 1_Prompt cơ bản.JPG"/>
 <div class="image-caption">Ảnh minh họa 2: Phản hồi ngắn gọn và sơ sài từ chatbot AI</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 2 tại vị trí kết quả trả về của câu lệnh cơ bản]</div>
+
 </div>
 </div>
 <ul>
@@ -761,12 +761,12 @@ window.stageContents = {
 <div class="image-container">
 <img alt="Ảnh 3 Tác vụ 1 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh3_C3_Tác vụ 1_Prompt nâng cao.JPG"/>
 <div class="image-caption">Ảnh minh họa 3: Câu lệnh nâng cao thiết lập đầy đủ bối cảnh, vai trò</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 3 tại vị trí ngay sau câu lệnh nâng cao]</div>
+
 </div>
 <div class="image-container">
 <img alt="Ảnh 4 Tác vụ 1 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh4_C3_Tác vụ 1_Prompt nâng cao.JPG"/>
 <div class="image-caption">Ảnh minh họa 4: Phản hồi chi tiết, phân cấp rõ ràng của ChatGPT</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 4 tại vị trí kết quả trả về của câu lệnh nâng cao]</div>
+
 </div>
 </div>
 <p><strong>Kỹ thuật prompt engineering được áp dụng:</strong></p>
@@ -890,7 +890,7 @@ window.stageContents = {
 <div class="image-container">
 <img alt="Ảnh 5 Tác vụ 2 Prompt cơ bản" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh5_C3_Tác vụ 2_Prompt cơ bản.jpg"/>
 <div class="image-caption">Ảnh minh họa 5: Nhập câu lệnh cơ bản yêu cầu giải thích khái niệm</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 5 tại vị trí ngay sau câu lệnh cơ bản giải thích khái niệm]</div>
+
 </div>
 </div>
 <ul>
@@ -906,7 +906,7 @@ window.stageContents = {
 <div class="image-container">
 <img alt="Ảnh 6 Tác vụ 2 Prompt cải tiến" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh6_C3_Tác vụ 2_Prompt cải tiến.JPG"/>
 <div class="image-caption">Ảnh minh họa 6: ChatGPT phản hồi theo các phân loại rõ ràng hơn</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 6 tại vị trí kết quả trả về của câu lệnh cải tiến]</div>
+
 </div>
 </div>
 <ul>
@@ -923,12 +923,12 @@ window.stageContents = {
 <div class="image-container">
 <img alt="Ảnh 7 Tác vụ 2 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh7_C3_Tác vụ 2_Prompt nâng cao.JPG"/>
 <div class="image-caption">Ảnh minh họa 7: Câu lệnh nâng cao giả lập vai giảng viên, thêm mục ghi nhớ nhanh</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 7 tại vị trí ngay sau câu lệnh nâng cao giải thích khái niệm]</div>
+
 </div>
 <div class="image-container">
 <img alt="Ảnh 8 Tác vụ 2 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh8_C3_Tác vụ 2_Prompt nâng cao.JPG"/>
 <div class="image-caption">Ảnh minh họa 8: Phản hồi giàu tính sư phạm, trực quan cao của ChatGPT</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 8 tại vị trí kết quả trả về của câu lệnh nâng cao giải thích khái niệm]</div>
+
 </div>
 </div>
 <p><strong>Phân tích kỹ thuật Prompt Engineering được áp dụng:</strong></p>
@@ -1061,7 +1061,7 @@ window.stageContents = {
 <div class="image-container">
 <img alt="Ảnh 9 Tác vụ 3 Prompt cải tiến" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh5_C3_Tác vụ 3_Prompt cải tiến.JPG"/>
 <div class="image-caption">Ảnh minh họa 9: Kết quả tạo câu hỏi trắc nghiệm/tự luận cơ bản kèm đáp án</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 9 tại vị trí kết quả trả về của câu lệnh cải tiến tạo câu hỏi]</div>
+
 </div>
 </div>
 <ul>
@@ -1077,12 +1077,12 @@ window.stageContents = {
 <div class="image-container">
 <img alt="Ảnh 10 Tác vụ 3 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh9_C3_Tác vụ 3_Prompt nâng cao.JPG"/>
 <div class="image-caption">Ảnh minh họa 10: Câu lệnh nâng cao phân loại cấu trúc đề thi, tăng độ khó dần</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 10 tại vị trí ngay sau câu lệnh nâng cao tạo câu hỏi]</div>
+
 </div>
 <div class="image-container">
 <img alt="Ảnh 11 Tác vụ 3 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh10_C3_Tác vụ 3_Prompt nâng cao.JPG"/>
 <div class="image-caption">Ảnh minh họa 11: Đề ôn tập chi tiết, có phân tầng độ khó và có giải thích chi tiết</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 11 tại vị trí kết quả trả về của câu lệnh nâng cao tạo câu hỏi]</div>
+
 </div>
 </div>
 <p><strong>Phân tích các kỹ thuật Prompt Engineering được áp dụng:</strong></p>
@@ -1395,22 +1395,22 @@ window.stageContents = {
 <div class="image-container">
 <img alt="Ảnh 1 Không gian làm việc trên Notion" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 1 Không gian làm việc trên Notion do cá nhân thiết lập.jpg"/>
 <div class="image-caption">Ảnh minh họa 1: Giao diện Notion Dashboard quản lý dự án do cá nhân thiết lập</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 1 ở cuối cấu trúc workspace Notion]</div>
+
 </div>
 <div class="image-container">
 <img alt="Ảnh 2 Bảng theo dõi tổng quan nhiệm vụ" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 2.Bảng theo dõi tổng quan nhiệm vụ_.jpg"/>
 <div class="image-caption">Ảnh minh họa 2: Cơ sở dữ liệu theo dõi tổng quan danh sách đầu việc</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 2 ở cuối cấu trúc workspace Notion]</div>
+
 </div>
 <div class="image-container">
 <img alt="Ảnh 3 Bảng Kanban theo dõi tiến độ" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 3. Bảng Kanban theo dõi tiến độ trên Notion._.jpg"/>
 <div class="image-caption">Ảnh minh họa 3: Bảng Kanban quản lý trạng thái công việc</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 3 ở cuối cấu trúc workspace Notion]</div>
+
 </div>
 <div class="image-container">
 <img alt="Ảnh 4 Project timeline" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 4. Project timeline_.jpg"/>
 <div class="image-caption">Ảnh minh họa 4: Timeline chi tiết của dự án hiển thị trực quan</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 4 ở cuối cấu trúc workspace Notion]</div>
+
 </div>
 </div>
 
@@ -1440,12 +1440,12 @@ window.stageContents = {
 <div class="image-container">
 <img alt="Ảnh 5 Lịch sử chỉnh sửa trên Google Docs" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 5. Lịch sử chỉnh sửa nội dung trên Google Docs._.JPG"/>
 <div class="image-caption">Ảnh minh họa 5: Lịch sử chỉnh sửa chi tiết của các thành viên trên tài liệu chung</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 5 sau mục liên kết và thống nhất]</div>
+
 </div>
 <div class="image-container">
 <img alt="Ảnh 6 Nội dung cá nhân đóng góp" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 6. Nội dung cá nhân đóng góp trực tiếp trên tài liệu công tác._.jpg"/>
 <div class="image-caption">Ảnh minh họa 6: Phần nội dung chi tiết do cá nhân soạn thảo và đóng góp trực tiếp</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 6 sau mục liên kết và thống nhất]</div>
+
 </div>
 </div>
 <p><strong>Đánh giá hiệu quả:</strong></p>
@@ -1471,7 +1471,7 @@ window.stageContents = {
 <div class="image-container">
 <img alt="Ảnh 7 Cấu trúc Google Drive" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 7. Cấu trúc thư mục Google Drive của nhóm._.PNG"/>
 <div class="image-caption">Ảnh minh họa 7: Cấu trúc phân chia thư mục làm việc khoa học của nhóm trên Google Drive</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 7 ngay sau mục liệt kê thư mục video sản phẩm]</div>
+
 </div>
 </div>
 
@@ -1486,7 +1486,7 @@ window.stageContents = {
 <div class="image-container" style="max-width: 500px;">
 <img alt="Ảnh 8 Cách đặt tên file" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 8. Cách đặt tên file.jpg"/>
 <div class="image-caption">Ảnh minh họa 8: Thực tế áp dụng quy chuẩn đặt tên file thống nhất của nhóm</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 8 sau ví dụ đặt tên tệp mp3]</div>
+
 </div>
 </div>
 <p><strong>c) Thiết lập quyền truy cập phù hợp cho từng thành viên:</strong></p>
@@ -1536,17 +1536,17 @@ window.stageContents = {
 <div class="image-container">
 <img alt="Ảnh 9 Minh chứng Messenger" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 9. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg"/>
 <div class="image-caption">Ảnh minh họa 9: Trao đổi nhắc nhở deadline và thống nhất thời gian biểu của nhóm</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt các ảnh 9, 10, 11 sau mục tổng hợp phản hồi nhóm]</div>
+
 </div>
 <div class="image-container">
 <img alt="Ảnh 10 Minh chứng Messenger" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 10. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg"/>
 <div class="image-caption">Ảnh minh họa 10: Chia sẻ học liệu và thảo luận chuyên môn về Prompt AI</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt các ảnh 9, 10, 11 sau mục tổng hợp phản hồi nhóm]</div>
+
 </div>
 <div class="image-container">
 <img alt="Ảnh 11 Minh chứng Messenger" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 11. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg"/>
 <div class="image-caption">Ảnh minh họa 11: Tổng hợp ý kiến đóng góp và thống nhất ý kiến chỉnh sửa của nhóm</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt các ảnh 9, 10, 11 sau mục tổng hợp phản hồi nhóm]</div>
+
 </div>
 </div>
 <p><strong>Đánh giá hiệu quả:</strong></p>
@@ -1624,261 +1624,301 @@ window.stageContents = {
 </div>`,
   stage5: `<style>
 .stage-document-wrapper {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 950px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #f4f6f9;
-        }.stage-document-wrapper .document-container {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
-        }.stage-document-wrapper .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #3182ce;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }.stage-document-wrapper .back-link:hover {
-            color: #2b6cb0;
-            text-decoration: underline;
-        }.stage-document-wrapper h1 {
-            font-size: 1.8rem;
-            color: #1a365d;
-            text-align: center;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }.stage-document-wrapper .subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #4a5568;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #3182ce;
-            padding-bottom: 15px;
-        }.stage-document-wrapper h2 {
-            font-size: 1.3rem;
-            color: #2b6cb0;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 5px;
-        }.stage-document-wrapper h3 {
-            font-size: 1.1rem;
-            color: #2d3748;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }.stage-document-wrapper p, .stage-document-wrapper li {
-            font-size: 0.95rem;
-            color: #4a5568;
-            margin-bottom: 12px;
-            text-align: justify;
-        }.stage-document-wrapper ul, .stage-document-wrapper ol {
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }.stage-document-wrapper .prompt-box {
-            background-color: #f7fafc;
-            border-left: 4px solid #3182ce;
-            padding: 15px;
-            margin: 15px 0;
-            font-family: Consolas, Monaco, monospace;
-            font-size: 0.9rem;
-            color: #2d3748;
-            border-radius: 0 4px 4px 0;
-        }.stage-document-wrapper .table-responsive {
-            overflow-x: auto;
-            margin: 25px 0;
-        }.stage-document-wrapper table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-        }.stage-document-wrapper th, .stage-document-wrapper td {
-            border: 1px solid #cbd5e0;
-            padding: 10px 12px;
-            text-align: left;
-            vertical-align: top;
-        }.stage-document-wrapper th {
-            background-color: #ebf8ff;
-            color: #2b6cb0;
-            font-weight: 600;
-        }.stage-document-wrapper tr:nth-child(even) {
-            background-color: #f7fafc;
-        }.stage-document-wrapper .image-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin: 20px 0;
-        }.stage-document-wrapper .image-container {
-            flex: 1;
-            min-width: 280px;
-            max-width: 100%;
-            text-align: center;
-            padding: 12px;
-            background-color: #f8fafc;
-            border: 1px dashed #cbd5e0;
-            border-radius: 6px;
-        }.stage-document-wrapper .image-container img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #e2e8f0;
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }.stage-document-wrapper .image-caption {
-            font-size: 0.8rem;
-            color: #718096;
-            margin-top: 8px;
-            font-style: italic;
-        }.stage-document-wrapper .image-note {
-            font-size: 0.78rem;
-            color: #dd6b20;
-            margin-top: 4px;
-            font-weight: bold;
-        }.stage-document-wrapper .page-break-indicator {
-            text-align: center;
-            font-size: 0.8rem;
-            color: #a0aec0;
-            border-top: 1px dotted #e2e8f0;
-            margin: 30px 0 15px 0;
-            padding-top: 5px;
-            font-style: italic;
-        }.stage-document-wrapper /* Infographic mockup styles */
-        .infographic-mockup {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 40px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        }.stage-document-wrapper .info-title {
-            text-align: center;
-            font-size: 1.6rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            border-bottom: 2px solid #00d2ff;
-            padding-bottom: 15px;
-        }.stage-document-wrapper .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin-bottom: 25px;
-        }.stage-document-wrapper .info-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #00d2ff;
-        }.stage-document-wrapper .info-card h4 {
-            margin-top: 0;
-            color: #00d2ff;
-            font-size: 1.1rem;
-        }.stage-document-wrapper .info-card p {
-            color: #e0e0e0;
-            font-size: 0.88rem;
-            margin-bottom: 0;
-        }.stage-document-wrapper .flow-container {
-            background-color: rgba(0,0,0,0.2);
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-        }.stage-document-wrapper .flow-title {
-            text-align: center;
-            font-weight: bold;
-            color: #00d2ff;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            font-size: 0.95rem;
-        }.stage-document-wrapper .flow-steps {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-        }.stage-document-wrapper .flow-step {
-            flex: 1;
-            min-width: 140px;
-            background-color: rgba(255,255,255,0.08);
-            padding: 10px;
-            border-radius: 6px;
-            text-align: center;
-            font-size: 0.85rem;
-            border: 1px solid rgba(255,255,255,0.1);
-        }.stage-document-wrapper .flow-arrow {
-            color: #00d2ff;
-            font-weight: bold;
-            text-align: center;
-        }.stage-document-wrapper .compare-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 25px;
-        }.stage-document-wrapper .compare-col {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 15px;
-            border-radius: 8px;
-        }.stage-document-wrapper .compare-col.traditional { border-top: 4px solid #e53e3e; }.stage-document-wrapper .compare-col.ai { border-top: 4px solid #38a169; }.stage-document-wrapper .compare-col h4 {
-            margin-top: 0;
-            text-align: center;
-            font-size: 1rem;
-            text-transform: uppercase;
-        }.stage-document-wrapper .compare-col.traditional h4 { color: #feb2b2; }.stage-document-wrapper .compare-col.ai h4 { color: #9ae6b4; }.stage-document-wrapper .compare-col ul {
-            margin: 0;
-            padding-left: 15px;
-            font-size: 0.85rem;
-        }.stage-document-wrapper .compare-col li {
-            color: #e0e0e0;
-            margin-bottom: 8px;
-        }.stage-document-wrapper .info-footer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
-            gap: 15px;
-        }.stage-document-wrapper .qr-section {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }.stage-document-wrapper .qr-image {
-            width: 80px;
-            height: 80px;
-            background-color: #fff;
-            padding: 5px;
-            border-radius: 6px;
-        }.stage-document-wrapper .qr-text {
-            font-size: 0.85rem;
-            color: #e0e0e0;
-        }.stage-document-wrapper .qr-text strong {
-            color: #00d2ff;
-        }
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background-color: #f4f6f9;
+      }.stage-document-wrapper .document-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+      }.stage-document-wrapper .back-link {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #3182ce;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }.stage-document-wrapper .back-link:hover {
+        color: #2b6cb0;
+        text-decoration: underline;
+      }.stage-document-wrapper h1 {
+        font-size: 1.8rem;
+        color: #1a365d;
+        text-align: center;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }.stage-document-wrapper .subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #4a5568;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #3182ce;
+        padding-bottom: 15px;
+      }.stage-document-wrapper h2 {
+        font-size: 1.3rem;
+        color: #2b6cb0;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 5px;
+      }.stage-document-wrapper h3 {
+        font-size: 1.1rem;
+        color: #2d3748;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }.stage-document-wrapper p, .stage-document-wrapper li {
+        font-size: 0.95rem;
+        color: #4a5568;
+        margin-bottom: 12px;
+        text-align: justify;
+      }.stage-document-wrapper ul, .stage-document-wrapper ol {
+        margin-left: 20px;
+        margin-bottom: 20px;
+      }.stage-document-wrapper .prompt-box {
+        background-color: #f7fafc;
+        border-left: 4px solid #3182ce;
+        padding: 15px;
+        margin: 15px 0;
+        font-family: Consolas, Monaco, monospace;
+        font-size: 0.9rem;
+        color: #2d3748;
+        border-radius: 0 4px 4px 0;
+      }.stage-document-wrapper .table-responsive {
+        overflow-x: auto;
+        margin: 25px 0;
+      }.stage-document-wrapper table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }.stage-document-wrapper th, .stage-document-wrapper td {
+        border: 1px solid #cbd5e0;
+        padding: 10px 12px;
+        text-align: left;
+        vertical-align: top;
+      }.stage-document-wrapper th {
+        background-color: #ebf8ff;
+        color: #2b6cb0;
+        font-weight: 600;
+      }.stage-document-wrapper tr:nth-child(even) {
+        background-color: #f7fafc;
+      }.stage-document-wrapper .image-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin: 20px 0;
+      }.stage-document-wrapper .image-container {
+        flex: 1;
+        min-width: 280px;
+        max-width: 100%;
+        text-align: center;
+        padding: 12px;
+        background-color: #f8fafc;
+        border: 1px dashed #cbd5e0;
+        border-radius: 6px;
+      }.stage-document-wrapper .image-container img {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #e2e8f0;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }.stage-document-wrapper .image-caption {
+        font-size: 0.8rem;
+        color: #718096;
+        margin-top: 8px;
+        font-style: italic;
+      }.stage-document-wrapper .image-note {
+        font-size: 0.78rem;
+        color: #dd6b20;
+        margin-top: 4px;
+        font-weight: bold;
+      }.stage-document-wrapper .page-break-indicator {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #a0aec0;
+        border-top: 1px dotted #e2e8f0;
+        margin: 30px 0 15px 0;
+        padding-top: 5px;
+        font-style: italic;
+      }.stage-document-wrapper /* Infographic mockup styles */
+      .infographic-mockup {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        margin-top: 40px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      }.stage-document-wrapper .info-title {
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        border-bottom: 2px solid #00d2ff;
+        padding-bottom: 15px;
+      }.stage-document-wrapper .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+        margin-bottom: 25px;
+      }.stage-document-wrapper .info-card {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #00d2ff;
+      }.stage-document-wrapper .info-card h4 {
+        margin-top: 0;
+        color: #00d2ff;
+        font-size: 1.1rem;
+      }.stage-document-wrapper .info-card p {
+        color: #e0e0e0;
+        font-size: 0.88rem;
+        margin-bottom: 0;
+      }.stage-document-wrapper .flow-container {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 25px;
+      }.stage-document-wrapper .flow-title {
+        text-align: center;
+        font-weight: bold;
+        color: #00d2ff;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        font-size: 0.95rem;
+      }.stage-document-wrapper .flow-steps {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }.stage-document-wrapper .flow-step {
+        flex: 1;
+        min-width: 140px;
+        background-color: rgba(255, 255, 255, 0.08);
+        padding: 10px;
+        border-radius: 6px;
+        text-align: center;
+        font-size: 0.85rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }.stage-document-wrapper .flow-arrow {
+        color: #00d2ff;
+        font-weight: bold;
+        text-align: center;
+      }.stage-document-wrapper .compare-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 25px;
+      }.stage-document-wrapper .compare-col {
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 15px;
+        border-radius: 8px;
+      }.stage-document-wrapper .compare-col.traditional {
+        border-top: 4px solid #e53e3e;
+      }.stage-document-wrapper .compare-col.ai {
+        border-top: 4px solid #38a169;
+      }.stage-document-wrapper .compare-col h4 {
+        margin-top: 0;
+        text-align: center;
+        font-size: 1rem;
+        text-transform: uppercase;
+      }.stage-document-wrapper .compare-col.traditional h4 {
+        color: #feb2b2;
+      }.stage-document-wrapper .compare-col.ai h4 {
+        color: #9ae6b4;
+      }.stage-document-wrapper .compare-col ul {
+        margin: 0;
+        padding-left: 15px;
+        font-size: 0.85rem;
+      }.stage-document-wrapper .compare-col li {
+        color: #e0e0e0;
+        margin-bottom: 8px;
+      }.stage-document-wrapper .info-footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
+        gap: 15px;
+      }.stage-document-wrapper .qr-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }.stage-document-wrapper .qr-image {
+        width: 80px;
+        height: 80px;
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 6px;
+      }.stage-document-wrapper .qr-text {
+        font-size: 0.85rem;
+        color: #e0e0e0;
+      }.stage-document-wrapper .qr-text strong {
+        color: #00d2ff;
+      }
     
 </style>
 <div class="stage-document-wrapper">
 <div class="document-container">
 <h1>Báo cáo dự án sáng tạo nội dung số bằng AI</h1>
-<div class="subtitle">Chủ đề: Conversational AI và ứng dụng trong việc luyện giao tiếp ngoại ngữ</div>
+<div class="subtitle">
+        Chủ đề: Conversational AI và ứng dụng trong việc luyện giao tiếp ngoại
+        ngữ
+      </div>
 
 <h2>I. GIỚI THIỆU DỰ ÁN</h2>
-<p>Trong những năm gần đây, sự phát triển mạnh mẽ của trí tuệ nhân tạo (Artificial Intelligence - AI) đã tạo ra nhiều thay đổi trong lĩnh vực giáo dục. Một trong những ứng dụng nổi bật là Conversational AI – công nghệ cho phép máy tính giao tiếp với con người thông qua ngôn ngữ tự nhiên bằng văn bản hoặc giọng nói. Conversational AI mang lại nhiều lợi ích như tạo môi trường luyện tập giao tiếp, sửa lỗi ngôn ngữ, phản hồi tức thời và cá nhân hóa quá trình học tập. Các ứng dụng như chatbot AI, trợ lý ảo hoặc nền tảng luyện nói thông minh đang ngày càng trở nên phổ biến đối với người học ngoại ngữ.</p>
-<p>Xuất phát từ thực tế đó, tôi lựa chọn chủ đề <strong>“Conversational AI và ứng dụng trong việc luyện giao tiếp ngoại ngữ”</strong> để thiết kế một infographic nhằm giới thiệu khái niệm này một cách trực quan và dễ hiểu.</p>
-<p>Trong quá trình thực hiện, tôi sử dụng ba công cụ AI tạo sinh gồm ChatGPT, DALL-E và Canva AI. Ngoài ra, tôi còn trải nghiệm ứng dụng SpeakPal nhằm kiểm chứng khả năng ứng dụng thực tế của Conversational AI trong việc luyện giao tiếp tiếng Trung.</p>
+<p>
+        Trong những năm gần đây, sự phát triển mạnh mẽ của trí tuệ nhân tạo
+        (Artificial Intelligence - AI) đã tạo ra nhiều thay đổi trong lĩnh vực
+        giáo dục. Một trong những ứng dụng nổi bật là Conversational AI – công
+        nghệ cho phép máy tính giao tiếp với con người thông qua ngôn ngữ tự
+        nhiên bằng văn bản hoặc giọng nói. Conversational AI mang lại nhiều lợi
+        ích như tạo môi trường luyện tập giao tiếp, sửa lỗi ngôn ngữ, phản hồi
+        tức thời và cá nhân hóa quá trình học tập. Các ứng dụng như chatbot AI,
+        trợ lý ảo hoặc nền tảng luyện nói thông minh đang ngày càng trở nên phổ
+        biến đối với người học ngoại ngữ.
+      </p>
+<p>
+        Xuất phát từ thực tế đó, tôi lựa chọn chủ đề
+        <strong>“Conversational AI và ứng dụng trong việc luyện giao tiếp ngoại
+          ngữ”</strong>
+        để thiết kế một infographic nhằm giới thiệu khái niệm này một cách trực
+        quan và dễ hiểu.
+      </p>
+<p>
+        Trong quá trình thực hiện, tôi sử dụng ba công cụ AI tạo sinh gồm
+        ChatGPT, DALL-E và Canva AI. Ngoài ra, tôi còn trải nghiệm ứng dụng
+        SpeakPal nhằm kiểm chứng khả năng ứng dụng thực tế của Conversational AI
+        trong việc luyện giao tiếp tiếng Trung.
+      </p>
 <p><strong>Mục tiêu của dự án:</strong></p>
 <ul>
 <li>Giải thích khái niệm Conversational AI.</li>
-<li>Trình bày cơ chế hoạt động và ứng dụng của Conversational AI trong học ngoại ngữ.</li>
-<li>Sử dụng hiệu quả các công cụ AI tạo sinh để xây dựng sản phẩm số.</li>
+<li>
+          Trình bày cơ chế hoạt động và ứng dụng của Conversational AI trong học
+          ngoại ngữ.
+        </li>
+<li>
+          Sử dụng hiệu quả các công cụ AI tạo sinh để xây dựng sản phẩm số.
+        </li>
 <li>Đánh giá điểm mạnh, hạn chế của từng công cụ AI.</li>
 <li>Phân tích vai trò của AI trong quá trình sáng tạo nội dung.</li>
 </ul>
 <h2>II. GIỚI THIỆU SẢN PHẨM CUỐI CÙNG</h2>
-<p>Sản phẩm cuối cùng là một infographic với chủ đề: <strong>“Conversational AI – Người bạn luyện ngoại ngữ 24/7”</strong>.</p>
+<p>
+        Sản phẩm cuối cùng là một infographic với chủ đề:
+        <strong>“Conversational AI – Người bạn luyện ngoại ngữ 24/7”</strong>.
+      </p>
 <p>Infographic được thiết kế nhằm giúp người xem hiểu nhanh về:</p>
 <ol>
 <li>Conversational AI là gì.</li>
@@ -1886,162 +1926,292 @@ window.stageContents = {
 <li>Các ứng dụng trong luyện giao tiếp ngoại ngữ.</li>
 <li>Lợi ích và hạn chế của công nghệ này.</li>
 <li>Trải nghiệm thực tế với SpeakPal.</li>
-<li>Mã QR dẫn tới chatbot AI để người xem có thể trải nghiệm trực tiếp.</li>
+<li>
+          Mã QR dẫn tới chatbot AI để người xem có thể trải nghiệm trực tiếp.
+        </li>
 </ol>
-<p>Đối tượng hướng tới là sinh viên và người học ngoại ngữ. Tông màu chủ đạo của infographic là xanh dương và trắng nhằm thể hiện tính hiện đại, công nghệ và giáo dục.</p>
+<p>
+        Đối tượng hướng tới là sinh viên và người học ngoại ngữ. Tông màu chủ
+        đạo của infographic là xanh dương và trắng nhằm thể hiện tính hiện đại,
+        công nghệ và giáo dục.
+      </p>
 <h2>III. QUÁ TRÌNH SỬ DỤNG AI</h2>
 <h3>1. Công cụ AI tạo văn bản: ChatGPT</h3>
-<p><strong>1.1 Mục đích sử dụng:</strong> ChatGPT được sử dụng trong nhiều giai đoạn của dự án: Tìm kiếm ý tưởng, xây dựng nội dung, giải thích khái niệm, đề xuất cấu trúc infographic, tạo ví dụ minh họa và hỗ trợ chỉnh sửa nội dung.</p>
+<p>
+<strong>1.1 Mục đích sử dụng:</strong> ChatGPT được sử dụng trong nhiều
+        giai đoạn của dự án: Tìm kiếm ý tưởng, xây dựng nội dung, giải thích
+        khái niệm, đề xuất cấu trúc infographic, tạo ví dụ minh họa và hỗ trợ
+        chỉnh sửa nội dung.
+      </p>
 <p><strong>1.2 Các Prompt đã sử dụng:</strong></p>
 <h4>a) Prompt 1: Giải thích khái niệm</h4>
 <div class="prompt-box">
-            “Tôi đang thực hiện một infographic cho sinh viên về chủ đề Conversational AI và ứng dụng trong luyện giao tiếp ngoại ngữ. Hãy giải thích khái niệm này bằng ngôn ngữ đơn giản, tránh thuật ngữ kỹ thuật phức tạp và trình bày theo dạng các ý chính phù hợp với infographic.”
-        </div>
+        “Tôi đang thực hiện một infographic cho sinh viên về chủ đề
+        Conversational AI và ứng dụng trong luyện giao tiếp ngoại ngữ. Hãy giải
+        thích khái niệm này bằng ngôn ngữ đơn giản, tránh thuật ngữ kỹ thuật
+        phức tạp và trình bày theo dạng các ý chính phù hợp với infographic.”
+      </div>
 <div class="image-group">
-<div class="image-container" style="max-width: 600px;">
+<div class="image-container" style="max-width: 600px">
 <img alt="Ảnh 1: Prompt 1 và kết quả ChatGPT" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh1_C5.JPG"/>
-<div class="image-caption">Ảnh minh họa 1: Nhập Prompt 1 giải thích khái niệm vào ChatGPT</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 1 sau Prompt 1 và trước kết quả nhận được]</div>
+<div class="image-caption">
+            Ảnh minh họa 1: Nhập Prompt 1 giải thích khái niệm vào ChatGPT
+          </div>
+
 </div>
 </div>
 
-<p><strong>• Kết quả nhận được:</strong> ChatGPT đưa ra định nghĩa về Conversational AI là công nghệ giúp máy tính có khả năng hiểu và phản hồi ngôn ngữ tự nhiên của con người thông qua văn bản hoặc giọng nói.</p>
+<p>
+<strong>• Kết quả nhận được:</strong> ChatGPT đưa ra định nghĩa về
+        Conversational AI là công nghệ giúp máy tính có khả năng hiểu và phản
+        hồi ngôn ngữ tự nhiên của con người thông qua văn bản hoặc giọng nói.
+      </p>
 <p><strong>• Đánh giá:</strong></p>
 <ul>
-<li><em>Ưu điểm:</em> Nội dung rõ ràng, dễ hiểu đối với người không chuyên, có cấu trúc logic.</li>
-<li><em>Hạn chế:</em> Một số nội dung còn dài, chưa tập trung nhiều vào học ngoại ngữ.</li>
+<li>
+<em>Ưu điểm:</em> Nội dung rõ ràng, dễ hiểu đối với người không
+          chuyên, có cấu trúc logic.
+        </li>
+<li>
+<em>Hạn chế:</em> Một số nội dung còn dài, chưa tập trung nhiều vào
+          học ngoại ngữ.
+        </li>
 </ul>
-<p><strong>• Điều chỉnh:</strong> Tôi tiếp tục tinh chỉnh prompt và yêu cầu ChatGPT rút gọn nội dung, đồng thời bổ sung các ứng dụng liên quan trực tiếp đến việc luyện giao tiếp ngoại ngữ.</p>
+<p>
+<strong>• Điều chỉnh:</strong> Tôi tiếp tục tinh chỉnh prompt và yêu cầu
+        ChatGPT rút gọn nội dung, đồng thời bổ sung các ứng dụng liên quan trực
+        tiếp đến việc luyện giao tiếp ngoại ngữ.
+      </p>
 <div class="image-group">
-<div class="image-container" style="max-width: 600px;">
+<div class="image-container" style="max-width: 600px">
 <img alt="Ảnh 2: Tinh chỉnh prompt ChatGPT" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 2_C5.JPG"/>
-<div class="image-caption">Ảnh minh họa 2: Chatbot AI phản hồi sau khi tinh chỉnh prompt</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 2 dưới phần điều chỉnh tinh chỉnh và trước prompt 2]</div>
+<div class="image-caption">
+            Ảnh minh họa 2: Chatbot AI phản hồi sau khi tinh chỉnh prompt
+          </div>
+
 </div>
 </div>
 <h4>b) Prompt 2: Khai thác ứng dụng thực tế</h4>
 <div class="prompt-box">
-            “Hãy phân tích những lợi ích của Conversational AI đối với người học ngoại ngữ và đưa ra ví dụ thực tế trong từng trường hợp.”
-        </div>
-<p><strong>• Kết quả nhận được:</strong> ChatGPT đề xuất các ứng dụng: Luyện hội thoại, Sửa phát âm, Mở rộng vốn từ, Tạo tình huống giao tiếp thực tế và Hỗ trợ học tập cá nhân hóa.</p>
+        “Hãy phân tích những lợi ích của Conversational AI đối với người học
+        ngoại ngữ và đưa ra ví dụ thực tế trong từng trường hợp.”
+      </div>
+<p>
+<strong>• Kết quả nhận được:</strong> ChatGPT đề xuất các ứng dụng:
+        Luyện hội thoại, Sửa phát âm, Mở rộng vốn từ, Tạo tình huống giao tiếp
+        thực tế và Hỗ trợ học tập cá nhân hóa.
+      </p>
 <p><strong>• Đánh giá:</strong></p>
 <ul>
 <li><em>Ưu điểm:</em> Nhiều ý tưởng phong phú, có ví dụ minh họa.</li>
 <li><em>Hạn chế:</em> Một số ví dụ còn mang tính khái quát.</li>
 </ul>
-<p><strong>• Điều chỉnh:</strong> Tôi thay thế một số ví dụ bằng trải nghiệm thực tế với SpeakPal để tăng tính xác thực.</p>
+<p>
+<strong>• Điều chỉnh:</strong> Tôi thay thế một số ví dụ bằng trải
+        nghiệm thực tế với SpeakPal để tăng tính xác thực.
+      </p>
 
 <h4>c) Prompt 3: Hỗ trợ sáng tạo sản phẩm</h4>
 <div class="prompt-box">
-            “Hãy đề xuất các cách trình bày sáng tạo để giới thiệu Conversational AI trong một infographic dành cho sinh viên.”
-        </div>
-<p><strong>• Kết quả nhận được:</strong> ChatGPT đề xuất: Minh họa hội thoại giữa người học và AI, So sánh học ngoại ngữ truyền thống với học cùng AI, Trình bày trải nghiệm thực tế. Từ đó, tôi quyết định thêm phần “Trải nghiệm SpeakPal” làm điểm nhấn cho sản phẩm.</p>
+        “Hãy đề xuất các cách trình bày sáng tạo để giới thiệu Conversational AI
+        trong một infographic dành cho sinh viên.”
+      </div>
+<p>
+<strong>• Kết quả nhận được:</strong> ChatGPT đề xuất: Minh họa hội
+        thoại giữa người học và AI, So sánh học ngoại ngữ truyền thống với học
+        cùng AI, Trình bày trải nghiệm thực tế. Từ đó, tôi quyết định thêm phần
+        “Trải nghiệm SpeakPal” làm điểm nhấn cho sản phẩm.
+      </p>
 <h3>2. Công cụ AI tạo hình ảnh: DALL-E</h3>
-<p><strong>2.1 Mục đích sử dụng:</strong> Tạo hình ảnh minh họa phù hợp với chủ đề Conversational AI và học ngoại ngữ.</p>
+<p>
+<strong>2.1 Mục đích sử dụng:</strong> Tạo hình ảnh minh họa phù hợp với
+        chủ đề Conversational AI và học ngoại ngữ.
+      </p>
 <p><strong>2.2 Quá trình cải tiến prompt:</strong></p>
 <div class="table-responsive">
 <table>
 <thead>
 <tr>
-<th style="width: 20%;">Giai đoạn</th>
-<th style="width: 40%;">Prompt</th>
-<th style="width: 40%;">Kết quả/Đánh giá</th>
+<th style="width: 20%">Giai đoạn</th>
+<th style="width: 40%">Prompt</th>
+<th style="width: 40%">Kết quả/Đánh giá</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Prompt lần 1</strong></td>
-<td><code>“Create an illustration about AI language learning.”</code></td>
-<td>Hình ảnh khá chung chung, chưa làm nổi bật yếu tố giao tiếp và ứng dụng của Conversational AI.</td>
+<td>
+<code>“Create an illustration about AI language learning.”</code>
+</td>
+<td>
+                Hình ảnh khá chung chung, chưa làm nổi bật yếu tố giao tiếp và
+                ứng dụng của Conversational AI.
+              </td>
 </tr>
 <tr>
 <td><strong>Prompt lần 2</strong></td>
-<td><code>“Create an educational illustration showing a student learning a foreign language with AI.”</code></td>
-<td>Đã thể hiện được chủ đề học ngoại ngữ với AI nhưng yếu tố công nghệ vẫn chưa rõ nét.</td>
+<td>
+<code>“Create an educational illustration showing a student
+                  learning a foreign language with AI.”</code>
+</td>
+<td>
+                Đã thể hiện được chủ đề học ngoại ngữ với AI nhưng yếu tố công
+                nghệ vẫn chưa rõ nét.
+              </td>
 </tr>
 
 <tr>
 <td><strong>Prompt lần 3</strong></td>
-<td><code>“Create a modern educational illustration showing a university student practicing Chinese speaking skills with an AI chatbot. Include speech bubbles, microphone icons, language learning elements and a friendly futuristic design suitable for an infographic.”</code></td>
-<td>Hình ảnh thể hiện rõ sinh viên tương tác với chatbot AI, có biểu tượng hội thoại, kết hợp tốt yếu tố công nghệ và giáo dục.</td>
+<td>
+<code>“Create a modern educational illustration showing a
+                  university student practicing Chinese speaking skills with an
+                  AI chatbot. Include speech bubbles, microphone icons, language
+                  learning elements and a friendly futuristic design suitable
+                  for an infographic.”</code>
+</td>
+<td>
+                Hình ảnh thể hiện rõ sinh viên tương tác với chatbot AI, có biểu
+                tượng hội thoại, kết hợp tốt yếu tố công nghệ và giáo dục.
+              </td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="image-group">
-<div class="image-container" style="max-width: 600px;">
+<div class="image-container" style="max-width: 600px">
 <img alt="Ảnh 3: Hình ảnh tạo sinh từ DALL-E" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 3_C5.JPG"/>
-<div class="image-caption">Ảnh minh họa 3: Kết quả tạo ảnh của DALL-E sau khi cải tiến prompt</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 3 sau phần DALL-E lần 3 và trước điều chỉnh]</div>
+<div class="image-caption">
+            Ảnh minh họa 3: Kết quả tạo ảnh của DALL-E sau khi cải tiến prompt
+          </div>
+
 </div>
 </div>
 <p><strong>• Đánh giá:</strong></p>
 <ul>
-<li><em>Ưu điểm:</em> Hình ảnh trực quan, thể hiện rõ chủ đề, tính sáng tạo cao.</li>
-<li><em>Hạn chế:</em> Một số chi tiết chưa chính xác, có những thành phần không phù hợp với bố cục infographic.</li>
+<li>
+<em>Ưu điểm:</em> Hình ảnh trực quan, thể hiện rõ chủ đề, tính sáng
+          tạo cao.
+        </li>
+<li>
+<em>Hạn chế:</em> Một số chi tiết chưa chính xác, có những thành phần
+          không phù hợp với bố cục infographic.
+        </li>
 </ul>
-<p><strong>• Điều chỉnh:</strong> Tôi lựa chọn hình ảnh phù hợp nhất và kết hợp thêm các biểu tượng từ Canva để hoàn thiện sản phẩm.</p>
+<p>
+<strong>• Điều chỉnh:</strong> Tôi lựa chọn hình ảnh phù hợp nhất và kết
+        hợp thêm các biểu tượng từ Canva để hoàn thiện sản phẩm.
+      </p>
 <div class="image-group">
-<div class="image-container" style="max-width: 600px;">
+<div class="image-container" style="max-width: 600px">
 <img alt="Ảnh 4: Tách nền và xử lý ảnh trên Canva" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 4_C5.JPG"/>
-<div class="image-caption">Ảnh minh họa 4: Ảnh được tinh chỉnh và xử lý bố cục trước khi chèn vào Canva</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 4 sau khi hoàn thiện sản phẩm và trước mục 3 (Canva AI)]</div>
+<div class="image-caption">
+            Ảnh minh họa 4: Ảnh được tinh chỉnh và xử lý bố cục trước khi chèn
+            vào Canva
+          </div>
+
 </div>
 </div>
 <h3>3. Công cụ AI hỗ trợ thiết kế: Canva AI</h3>
-<p><strong>3.1 Mục đích sử dụng:</strong> Xây dựng bố cục infographic, đề xuất thiết kế, hỗ trợ sắp xếp nội dung.</p>
+<p>
+<strong>3.1 Mục đích sử dụng:</strong> Xây dựng bố cục infographic, đề
+        xuất thiết kế, hỗ trợ sắp xếp nội dung.
+      </p>
 <p><strong>3.2 Prompt:</strong></p>
 <div class="prompt-box">
-            “Design an educational infographic explaining Conversational AI and its applications in foreign language speaking practice. Use a modern style, clear information hierarchy and suitable colors for university students.”
-        </div>
+        “Design an educational infographic explaining Conversational AI and its
+        applications in foreign language speaking practice. Use a modern style,
+        clear information hierarchy and suitable colors for university
+        students.”
+      </div>
 <div class="image-group">
-<div class="image-container" style="max-width: 600px;">
-<img alt="Ảnh 5: Canva AI đề xuất mẫu" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 5_C5.JPG"/>
-<div class="image-caption">Ảnh minh họa 5: Gợi ý thiết kế và màu sắc từ Canva AI</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 5 sau prompt Canva AI và trước kết quả nhận được]</div>
+<div class="image-container" style="max-width: 600px">
+<img alt="Ảnh 5: Canva AI đề xuất mẫu" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 6_C5.PNG"/>
+<div class="image-caption">
+            Ảnh minh họa 5: Gợi ý thiết kế và màu sắc từ Canva AI
+          </div>
+
 </div>
 </div>
-<p><strong>• Kết quả nhận được:</strong> Canva AI đề xuất cấu trúc infographic, hệ thống biểu tượng minh họa và bảng màu phù hợp với chủ đề công nghệ.</p>
+<p>
+<strong>• Kết quả nhận được:</strong> Canva AI đề xuất cấu trúc
+        infographic, hệ thống biểu tượng minh họa và bảng màu phù hợp với chủ đề
+        công nghệ.
+      </p>
 <p><strong>• Đánh giá:</strong></p>
 <ul>
-<li><em>Ưu điểm:</em> Thiết kế chuyên nghiệp, tiết kiệm thời gian, dễ chỉnh sửa.</li>
-<li><em>Hạn chế:</em> Một số mẫu thiết kế còn mang tính khuôn mẫu, chưa thể hiện được trải nghiệm cá nhân.</li>
+<li>
+<em>Ưu điểm:</em> Thiết kế chuyên nghiệp, tiết kiệm thời gian, dễ
+          chỉnh sửa.
+        </li>
+<li>
+<em>Hạn chế:</em> Một số mẫu thiết kế còn mang tính khuôn mẫu, chưa
+          thể hiện được trải nghiệm cá nhân.
+        </li>
 </ul>
-<p><strong>• Điều chỉnh:</strong> Thay đổi bố cục, bổ sung phần trải nghiệm SpeakPal, tự thiết kế mã QR, chỉnh sửa màu sắc và nội dung.</p>
+<p>
+<strong>• Điều chỉnh:</strong> Thay đổi bố cục, bổ sung phần trải nghiệm
+        SpeakPal, tự thiết kế mã QR, chỉnh sửa màu sắc và nội dung.
+      </p>
 <div class="image-group">
-<div class="image-container" style="max-width: 600px;">
-<img alt="Ảnh 6: Infographic hoàn thiện" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 6_C5.PNG"/>
-<div class="image-caption">Ảnh minh họa 6: Giao diện chỉnh sửa màu sắc và hoàn thiện infographic trên Canva</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 6 sau phần chỉnh sửa màu sắc và trước mục IV (SpeakPal)]</div>
+<div class="image-container" style="max-width: 600px">
+<img alt="Ảnh 6: Infographic hoàn thiện" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 7_C5.JPG"/>
+<div class="image-caption">
+            Ảnh minh họa 6: Giao diện chỉnh sửa màu sắc và hoàn thiện
+            infographic trên Canva
+          </div>
+
 </div>
 </div>
 
 <h2>IV. TRẢI NGHIỆM THỰC TẾ VỚI SPEAKPAL</h2>
-<p>Để tìm hiểu sâu hơn về ứng dụng thực tế của Conversational AI, tôi đã sử dụng SpeakPal để luyện hội thoại tiếng Trung. SpeakPal là một ứng dụng sử dụng công nghệ Conversational AI nhằm mô phỏng các cuộc trò chuyện thực tế giữa người học và trợ lý AI.</p>
+<p>
+        Để tìm hiểu sâu hơn về ứng dụng thực tế của Conversational AI, tôi đã sử
+        dụng SpeakPal để luyện hội thoại tiếng Trung. SpeakPal là một ứng dụng
+        sử dụng công nghệ Conversational AI nhằm mô phỏng các cuộc trò chuyện
+        thực tế giữa người học và trợ lý AI.
+      </p>
 <div class="image-group">
-<div class="image-container" style="max-width: 500px;">
-<img alt="Ảnh 7: Giao diện SpeakPal" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 7_C5.JPG"/>
-<div class="image-caption">Ảnh minh họa 7: Giao diện đoạn hội thoại thực tế luyện tiếng Trung trên app SpeakPal</div>
-<div class="image-note">[Note từ ViTriChenAnh.txt: Đặt ảnh 7 ngay sau giới thiệu app SpeakPal và trước hoạt động trải nghiệm]</div>
+<div class="image-container" style="max-width: 500px">
+<img alt="Ảnh 7: Giao diện SpeakPal" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 5_C5.JPG"/>
+<div class="image-caption">
+            Ảnh minh họa 7: Giao diện đoạn hội thoại thực tế luyện tiếng Trung
+            trên app SpeakPal
+          </div>
+
 </div>
 </div>
-<p>• Trong quá trình trải nghiệm, tôi thực hiện hội thoại với chủ đề: <strong>Cuộc sống hằng ngày</strong>.</p>
-<p>• Sau cuộc hội thoại, SpeakPal đưa ra các nhận xét về: Độ tự nhiên của cách diễn đạt, khả năng sử dụng từ vựng, lỗi ngữ pháp và gợi ý cách diễn đạt tốt hơn.</p>
+<p>
+        • Trong quá trình trải nghiệm, tôi thực hiện hội thoại với chủ đề:
+        <strong>Cuộc sống hằng ngày</strong>.
+      </p>
+<p>
+        • Sau cuộc hội thoại, SpeakPal đưa ra các nhận xét về: Độ tự nhiên của
+        cách diễn đạt, khả năng sử dụng từ vựng, lỗi ngữ pháp và gợi ý cách diễn
+        đạt tốt hơn.
+      </p>
 <p><strong>• Nhận xét cá nhân:</strong></p>
 <ul>
-<li><em>Ưu điểm:</em> Phản hồi nhanh chóng, tạo môi trường luyện tập không áp lực, giúp tăng sự tự tin khi giao tiếp, có thể luyện tập mọi lúc mọi nơi.</li>
-<li><em>Hạn chế:</em> Một số phản hồi còn mang tính máy móc, chưa thể thay thế hoàn toàn giao tiếp với người thật, các chủ đề phức tạp đôi khi chưa được xử lý tự nhiên.</li>
+<li>
+<em>Ưu điểm:</em> Phản hồi nhanh chóng, tạo môi trường luyện tập không
+          áp lực, giúp tăng sự tự tin khi giao tiếp, có thể luyện tập mọi lúc
+          mọi nơi.
+        </li>
+<li>
+<em>Hạn chế:</em> Một số phản hồi còn mang tính máy móc, chưa thể thay
+          thế hoàn toàn giao tiếp với người thật, các chủ đề phức tạp đôi khi
+          chưa được xử lý tự nhiên.
+        </li>
 </ul>
 <h2>V. SO SÁNH HIỆU QUẢ CỦA CÁC CÔNG CỤ AI</h2>
 <div class="table-responsive">
 <table>
 <thead>
 <tr>
-<th style="width: 20%;">Tiêu chí</th>
-<th style="width: 20%;">ChatGPT</th>
-<th style="width: 20%;">DALL-E</th>
-<th style="width: 20%;">Canva AI</th>
-<th style="width: 20%;">SpeakPal</th>
+<th style="width: 20%">Tiêu chí</th>
+<th style="width: 20%">ChatGPT</th>
+<th style="width: 20%">DALL-E</th>
+<th style="width: 20%">Canva AI</th>
+<th style="width: 20%">SpeakPal</th>
 </tr>
 </thead>
 <tbody>
@@ -2084,101 +2254,78 @@ window.stageContents = {
 </tbody>
 </table>
 </div>
-<p>Qua quá trình sử dụng, tôi nhận thấy các công cụ không cạnh tranh mà bổ trợ lẫn nhau. ChatGPT phù hợp cho việc xây dựng nội dung và phát triển ý tưởng. DALL-E giúp trực quan hóa các ý tưởng thành hình ảnh. Canva AI hỗ trợ hoàn thiện thiết kế và trình bày sản phẩm. Trong khi đó, SpeakPal đóng vai trò minh chứng thực tế cho khả năng ứng dụng của Conversational AI trong học ngoại ngữ.</p>
+<p>
+        Qua quá trình sử dụng, tôi nhận thấy các công cụ không cạnh tranh mà bổ
+        trợ lẫn nhau. ChatGPT phù hợp cho việc xây dựng nội dung và phát triển ý
+        tưởng. DALL-E giúp trực quan hóa các ý tưởng thành hình ảnh. Canva AI hỗ
+        trợ hoàn thiện thiết kế và trình bày sản phẩm. Trong khi đó, SpeakPal
+        đóng vai trò minh chứng thực tế cho khả năng ứng dụng của Conversational
+        AI trong học ngoại ngữ.
+      </p>
 <h2>VI. ĐÓNG GÓP SÁNG TẠO CÁ NHÂN</h2>
-<p>Mặc dù AI hỗ trợ đáng kể trong quá trình thực hiện, sản phẩm cuối cùng không phải là kết quả được tạo ra hoàn toàn bởi AI. Những đóng góp cá nhân bao gồm: Xây dựng và điều chỉnh prompt nhiều lần, chọn lọc thông tin phù hợp, tự chỉnh sửa nội dung để dễ hiểu hơn, trực tiếp trải nghiệm SpeakPal, thiết kế lại bố cục infographic, bổ sung ví dụ minh họa và tự viết phần đánh giá và kết luận. Tôi ước tính tỷ lệ đóng góp cá nhân chiếm trên 50% sản phẩm cuối cùng.</p>
+<p>
+        Mặc dù AI hỗ trợ đáng kể trong quá trình thực hiện, sản phẩm cuối cùng
+        không phải là kết quả được tạo ra hoàn toàn bởi AI. Những đóng góp cá
+        nhân bao gồm: Xây dựng và điều chỉnh prompt nhiều lần, chọn lọc thông
+        tin phù hợp, tự chỉnh sửa nội dung để dễ hiểu hơn, trực tiếp trải nghiệm
+        SpeakPal, thiết kế lại bố cục infographic, bổ sung ví dụ minh họa và tự
+        viết phần đánh giá và kết luận. Tôi ước tính tỷ lệ đóng góp cá nhân
+        chiếm trên 50% sản phẩm cuối cùng.
+      </p>
 <h2>VII. PHÂN TÍCH VAI TRÒ CỦA AI TRONG QUÁ TRÌNH SÁNG TẠO</h2>
-<p>Thông qua dự án này, tôi nhận thấy AI đã thay đổi đáng kể cách con người tiếp cận quá trình sáng tạo nội dung số. Thay vì phải bắt đầu từ một trang giấy trắng, người dùng có thể sử dụng AI để tạo ý tưởng, xây dựng bản nháp và đề xuất các phương án thiết kế trong thời gian ngắn.</p>
+<p>
+        Thông qua dự án này, tôi nhận thấy AI đã thay đổi đáng kể cách con người
+        tiếp cận quá trình sáng tạo nội dung số. Thay vì phải bắt đầu từ một
+        trang giấy trắng, người dùng có thể sử dụng AI để tạo ý tưởng, xây dựng
+        bản nháp và đề xuất các phương án thiết kế trong thời gian ngắn.
+      </p>
 
-<p>ChatGPT giúp tôi nhanh chóng hình thành cấu trúc nội dung và tiếp cận nhiều góc nhìn khác nhau về chủ đề Conversational AI. DALL-E hỗ trợ tạo hình ảnh minh họa độc đáo mà không cần tìm kiếm trên Internet. Canva AI giúp tối ưu hóa thiết kế và tiết kiệm thời gian trình bày. SpeakPal mang lại trải nghiệm thực tế, giúp tôi hiểu rõ hơn cách Conversational AI được ứng dụng trong đời sống.</p>
-<p>Tuy nhiên, AI vẫn tồn tại nhiều hạn chế. Nội dung do AI tạo ra đôi khi còn thiếu chiều sâu hoặc chưa hoàn toàn chính xác. Hình ảnh tạo sinh có thể chứa các chi tiết không phù hợp. Các hệ thống Conversational AI cũng chưa thể thay thế hoàn toàn tương tác giữa con người với con người.</p>
-<p>Bên cạnh đó, việc sử dụng AI đặt ra một số vấn đề đạo đức cần cân nhắc như tính minh bạch trong việc sử dụng AI, vấn đề bản quyền dữ liệu huấn luyện và nguy cơ phụ thuộc quá mức vào công nghệ. Nếu người học chỉ sao chép kết quả từ AI mà không có sự chọn lọc và đánh giá, khả năng tư duy phản biện và sáng tạo có thể bị ảnh hưởng. Do đó, AI nên được xem là công cụ hỗ trợ thay vì công cụ thay thế con người. Giá trị của sản phẩm cuối cùng vẫn phụ thuộc vào khả năng đánh giá, sáng tạo và ra quyết định của người sử dụng.</p>
+<p>
+        ChatGPT giúp tôi nhanh chóng hình thành cấu trúc nội dung và tiếp cận
+        nhiều góc nhìn khác nhau về chủ đề Conversational AI. DALL-E hỗ trợ tạo
+        hình ảnh minh họa độc đáo mà không cần tìm kiếm trên Internet. Canva AI
+        giúp tối ưu hóa thiết kế và tiết kiệm thời gian trình bày. SpeakPal mang
+        lại trải nghiệm thực tế, giúp tôi hiểu rõ hơn cách Conversational AI
+        được ứng dụng trong đời sống.
+      </p>
+<p>
+        Tuy nhiên, AI vẫn tồn tại nhiều hạn chế. Nội dung do AI tạo ra đôi khi
+        còn thiếu chiều sâu hoặc chưa hoàn toàn chính xác. Hình ảnh tạo sinh có
+        thể chứa các chi tiết không phù hợp. Các hệ thống Conversational AI cũng
+        chưa thể thay thế hoàn toàn tương tác giữa con người với con người.
+      </p>
+<p>
+        Bên cạnh đó, việc sử dụng AI đặt ra một số vấn đề đạo đức cần cân nhắc
+        như tính minh bạch trong việc sử dụng AI, vấn đề bản quyền dữ liệu huấn
+        luyện và nguy cơ phụ thuộc quá mức vào công nghệ. Nếu người học chỉ sao
+        chép kết quả từ AI mà không có sự chọn lọc và đánh giá, khả năng tư duy
+        phản biện và sáng tạo có thể bị ảnh hưởng. Do đó, AI nên được xem là
+        công cụ hỗ trợ thay vì công cụ thay thế con người. Giá trị của sản phẩm
+        cuối cùng vẫn phụ thuộc vào khả năng đánh giá, sáng tạo và ra quyết định
+        của người sử dụng.
+      </p>
 <h2>VIII. KẾT LUẬN</h2>
-<p>Thông qua dự án “Conversational AI và ứng dụng trong việc luyện giao tiếp ngoại ngữ”, tôi đã có cơ hội tìm hiểu sâu hơn về một ứng dụng quan trọng của trí tuệ nhân tạo trong giáo dục. Việc kết hợp ChatGPT, DALL-E, Canva AI và trải nghiệm thực tế với SpeakPal đã giúp tôi xây dựng một sản phẩm trực quan, sinh động và có tính ứng dụng cao.</p>
-<p>Dự án không chỉ giúp tôi nâng cao kỹ năng sử dụng các công cụ AI tạo sinh mà còn giúp tôi hiểu rõ hơn về vai trò của AI trong học tập, sáng tạo nội dung số và phát triển năng lực cá nhân trong thời đại công nghệ số.</p>
+<p>
+        Thông qua dự án “Conversational AI và ứng dụng trong việc luyện giao
+        tiếp ngoại ngữ”, tôi đã có cơ hội tìm hiểu sâu hơn về một ứng dụng quan
+        trọng của trí tuệ nhân tạo trong giáo dục. Việc kết hợp ChatGPT, DALL-E,
+        Canva AI và trải nghiệm thực tế với SpeakPal đã giúp tôi xây dựng một
+        sản phẩm trực quan, sinh động và có tính ứng dụng cao.
+      </p>
+<p>
+        Dự án không chỉ giúp tôi nâng cao kỹ năng sử dụng các công cụ AI tạo
+        sinh mà còn giúp tôi hiểu rõ hơn về vai trò của AI trong học tập, sáng
+        tạo nội dung số và phát triển năng lực cá nhân trong thời đại công nghệ
+        số.
+      </p>
 
 <!-- Infographic representation -->
-<div class="infographic-mockup">
-<div class="info-title">Conversational AI - Người bạn luyện ngoại ngữ 24/7</div>
-<div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 20px; font-size: 0.85rem; color: #a3e635; font-weight: bold; text-transform: uppercase;">
-<span>✦ Công nghệ AI tiên tiến</span>
-<span>✦ Đa dạng chủ đề luyện tập</span>
-<span>✦ Theo dõi tiến độ chi tiết</span>
-</div>
-<div class="info-card" style="margin-bottom: 20px; background-color: rgba(255,255,255,0.08);">
-<h4>Conversational AI là gì?</h4>
-<p>Là công nghệ cho phép máy tính giao tiếp với con người bằng ngôn ngữ tự nhiên thông qua văn bản hoặc giọng nói. Công nghệ này được ứng dụng rộng rãi trong chatbot, trợ lý ảo và các nền tảng học ngoại ngữ thông minh giúp tạo môi trường học thân thiện, dễ sử dụng.</p>
-</div>
-<div class="flow-container">
-<div class="flow-title">Quy trình tương tác học tập</div>
-<div class="flow-steps">
-<div class="flow-step">1. Người học đặt câu hỏi / nói</div>
-<div class="flow-arrow">➔</div>
-<div class="flow-step">2. AI tiếp nhận &amp; phân tích</div>
-<div class="flow-arrow">➔</div>
-<div class="flow-step">3. AI xử lý &amp; tạo phản hồi</div>
-<div class="flow-arrow">➔</div>
-<div class="flow-step">4. Người học nhận phản hồi &amp; sửa lỗi</div>
-</div>
-</div>
-<div class="info-grid">
-<div class="info-card">
-<h4>Ứng dụng chính</h4>
-<p>• Thực hành giao tiếp 24/7 mọi lúc mọi nơi.<br/>
-                       • Mô phỏng tình huống đàm thoại thực tế.<br/>
-                       • Phát âm chuẩn xác, nhận diện giọng nói.<br/>
-                       • Mở rộng vốn từ vựng theo ngữ cảnh.<br/>
-                       • Lộ trình học tập cá nhân hóa.</p>
-</div>
-<div class="info-card">
-<h4>Trải nghiệm thực tế với SpeakPal</h4>
-<p>• Mô phỏng đoạn hội thoại luyện nói tiếng Trung.<br/>
-                       • Nhận phản hồi tức thời về lỗi ngữ pháp, từ vựng.<br/>
-                       • Giúp người học luyện tập thoải mái, không áp lực.</p>
-</div>
-</div>
-<div class="flow-title" style="margin-top: 15px;">So sánh học truyền thống vs Học cùng AI</div>
-<div class="compare-grid">
-<div class="compare-col traditional">
-<h4>Học truyền thống</h4>
-<ul>
-<li>Thời gian học cố định, gò bó</li>
-<li>Cơ hội thực hành giao tiếp hạn chế</li>
-<li>Phản hồi sửa lỗi chậm trễ</li>
-<li>Nội dung bài giảng chung, ít cá nhân hóa</li>
-<li>Môi trường học tập áp lực, lo sợ mắc lỗi</li>
-</ul>
-</div>
-<div class="compare-col ai">
-<h4>Học cùng AI</h4>
-<ul>
-<li>Học mọi lúc, mọi nơi cực kỳ linh hoạt</li>
-<li>Cơ hội thực hành giao tiếp liên tục</li>
-<li>Phản hồi sửa lỗi tức thì, chính xác</li>
-<li>Lộ trình cá nhân hóa cao theo trình độ</li>
-<li>Môi trường thoải mái, không áp lực, tự tin</li>
-</ul>
-</div>
-</div>
-<div class="info-card" style="margin-bottom: 25px; border-left-color: #ecc94b; background-color: rgba(236,201,75,0.05);">
-<h4 style="color: #ecc94b;">Một số lưu ý khi học cùng AI</h4>
-<p style="color: #e2e8f0;">• Phụ thuộc vào kết nối internet ổn định.<br/>
-                   • Không thể thay thế hoàn toàn giáo viên bản xứ ngoài đời thật.<br/>
-                   • Người học cần kiên trì, tự giác luyện tập đều đặn hàng ngày.</p>
-</div>
-<div class="info-footer">
-<div class="qr-section">
-<img alt="Mã QR Prompt Library" class="qr-image cursor-zoom" data-lightbox="" src="./PortfolioAssets/MÃ QR CHO PROMPT LIBRARY.png"/>
-<div class="qr-text">
-<strong>QUÉT MÃ QR</strong><br/>
-                        để trải nghiệm ngay Chatbot AI<br/>
-                        luyện giao tiếp ngoại ngữ!
-                    </div>
-</div>
-<div style="font-size: 0.8rem; color: #cbd5e0; text-align: right;">
-                    Thiết kế bởi: Đồng Huyền Linh<br/>
-                    Lớp: CNS &amp; AI - E252056
-                </div>
+<div class="image-group">
+<div class="image-container" style="max-width: 100%; border: none; background: none; padding: 0;">
+<img alt="Sản phẩm infographic C5" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Sản phẩm infographic C5.png" style="width: 100%; height: auto; border: 1px solid var(--border-gold); border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);"/>
+<div class="image-caption">
+            Sản phẩm Infographic hoàn thiện của Chặng 5: Conversational AI - Người bạn luyện ngoại ngữ 24/7
+          </div>
 </div>
 </div>
 </div>
@@ -2466,38 +2613,12 @@ window.stageContents = {
 <p>Sự phát triển của trí tuệ nhân tạo đang tạo ra nhiều cơ hội mới cho giáo dục đại học. AI có thể trở thành công cụ hỗ trợ hiệu quả giúp sinh viên học tập và nghiên cứu tốt hơn. Tuy nhiên, việc sử dụng AI cần đi kèm với tinh thần trách nhiệm, tính trung thực và ý thức liêm chính học thuật. Chỉ khi người học biết sử dụng AI một cách đúng đắn, công nghệ này mới thực sự góp phần nâng cao chất lượng học tập và phát triển năng lực cá nhân.</p>
 
 <!-- Ethics Infographic representation -->
-<div class="ethics-infographic">
-<div class="ethics-title">Sử dụng AI có trách nhiệm trong học thuật</div>
-<div class="ethics-grid">
-<!-- NÊN LÀM -->
-<div class="ethics-col do">
-<h3>Nên làm</h3>
-<ul class="ethics-list">
-<li class="ethics-item">Tìm ý tưởng, phát triển đề tài nghiên cứu.</li>
-<li class="ethics-item">Tóm tắt tài liệu học tập, tổng hợp nguồn thông tin chính.</li>
-<li class="ethics-item">Kiểm tra lỗi ngữ pháp và cải thiện văn phong diễn đạt.</li>
-<li class="ethics-item">Kiểm chứng chéo thông tin và xác minh dữ liệu thực tế.</li>
-<li class="ethics-item">Trích dẫn sử dụng AI một cách minh bạch, ghi rõ nguồn.</li>
-</ul>
-</div>
-<!-- KHÔNG NÊN LÀM -->
-<div class="ethics-col dont">
-<h3>Không nên làm</h3>
-<ul class="ethics-list">
-<li class="ethics-item">Sao chép nguyên văn phản hồi của AI và nộp không chỉnh sửa.</li>
-<li class="ethics-item">Để AI tự làm toàn bộ bài tập, tiểu luận hoặc báo cáo.</li>
-<li class="ethics-item">Tạo các nguồn tham khảo giả, bịa đặt dữ liệu học thuật.</li>
-<li class="ethics-item">Che giấu việc sử dụng AI, không khai báo trung thực.</li>
-<li class="ethics-item">Tin tưởng tuyệt đối vào AI, bỏ qua tư duy phản biện cá nhân.</li>
-</ul>
-</div>
-</div>
-<div class="ethics-quote">
-                "AI là công cụ hỗ trợ học tập, nhưng tư duy, trách nhiệm và liêm chính học thuật luôn thuộc về con người."
-            </div>
-<div style="margin-top: 25px; display: flex; justify-content: space-between; font-size: 0.8rem; color: #718096; border-top: 1px solid #4a5568; padding-top: 15px;">
-<span>Học phần: Nhập môn Công nghệ số &amp; AI</span>
-<span>Sinh viên thực hiện: Đồng Huyền Linh</span>
+<div class="image-group">
+<div class="image-container" style="max-width: 100%; border: none; background: none; padding: 0;">
+<img alt="Sản phẩm infographic C6" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 6/Image/Sản phẩm infographic C6.png" style="width: 100%; height: auto; border: 1px solid var(--border-gold); border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);"/>
+<div class="image-caption">
+            Sản phẩm Infographic hoàn thiện của Chặng 6: Sử dụng AI có trách nhiệm trong học thuật
+          </div>
 </div>
 </div>
 </div>

@@ -1,5 +1,13 @@
 /* 🎋 Main Script for HLinh Portfolio */
 document.addEventListener("DOMContentLoaded", () => {
+  // Detect reload to reset hash and scroll to top on refresh
+  const navEntries = performance.getEntriesByType("navigation");
+  if (navEntries.length && navEntries[0].type === "reload") {
+    if (window.location.hash) {
+      window.history.replaceState(null, null, window.location.pathname);
+    }
+    window.scrollTo(0, 0);
+  }
   
   // ==========================================================================
   // 0. BRUSH TOGGLE SYSTEM
@@ -168,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================================================
   if (window.location.hash && window.location.hash.startsWith("#stage-node-")) {
     setTimeout(() => {
-      const targetNode = document.querySelector(window.location.hash);
+      const targetNode = document.getElementById("HanhTrinh");
       if (targetNode) {
         const headerHeight = 70; // Matches navbar height
         const targetOffset = targetNode.getBoundingClientRect().top + window.scrollY - headerHeight;

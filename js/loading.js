@@ -1,5 +1,14 @@
 /* 🎋 Welcome Screen & Fullscreen Video Intro Controller */
 document.addEventListener("DOMContentLoaded", () => {
+  // Detect reload to reset hash and force intro video replay on refresh
+  const navEntries = performance.getEntriesByType("navigation");
+  if (navEntries.length && navEntries[0].type === "reload") {
+    if (window.location.hash) {
+      window.history.replaceState(null, null, window.location.pathname);
+    }
+    window.scrollTo(0, 0);
+  }
+
   const overlay = document.getElementById("intro-video-overlay");
   const enterScreen = document.getElementById("intro-enter-screen");
   const startBtn = document.getElementById("btn-start-intro");
