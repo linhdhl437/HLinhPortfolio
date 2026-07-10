@@ -183,10 +183,10 @@ document.addEventListener("DOMContentLoaded", () => {
         
         window.scrollTo({
           top: targetOffset,
-          behavior: "smooth"
+          behavior: "auto" // Jump instantly!
         });
       }
-    }, 1800); // Wait for loading overlay to slide out and animations to start
+    }, 50); // Almost instant jump on page load
   }
 
   // ==========================================================================
