@@ -1,4 +1,8 @@
 /* 🎋 Welcome Screen & Fullscreen Video Intro Controller */
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Detect reload to reset hash and force intro video replay on refresh
   const navEntries = performance.getEntriesByType("navigation");

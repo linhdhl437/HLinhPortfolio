@@ -1,4 +1,8 @@
 /* 🎋 Main Script for HLinh Portfolio */
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Detect reload to reset hash and scroll to top on refresh
   const navEntries = performance.getEntriesByType("navigation");
@@ -186,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
           behavior: "auto" // Jump instantly!
         });
       }
-    }, 50); // Almost instant jump on page load
+    }, 100); // 100ms delay is perfect for browser rendering stability
   }
 
   // ==========================================================================
