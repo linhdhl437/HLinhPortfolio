@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const enterScreen = document.getElementById("intro-enter-screen");
   const startBtn = document.getElementById("btn-start-intro");
   const video = document.getElementById("intro-video");
+  const skipBtn = document.getElementById("btn-skip-intro");
+  
+  // Hide skip button initially
+  if (skipBtn) {
+    skipBtn.style.display = "none";
+  }
   
   // Replay triggers (removed nav trigger to keep navbar minimal)
   const heroTrigger = document.getElementById("hero-video-trigger");
@@ -54,6 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
         enterScreen.style.display = "none";
       }, 800);
 
+      // Show skip button now that video is playing
+      if (skipBtn) {
+        skipBtn.style.display = "block";
+      }
+
       // Play video with audio
       video.muted = false;
       video.currentTime = 0;
@@ -71,7 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 2.1. Handle Skip Intro Button Click
-  const skipBtn = document.getElementById("btn-skip-intro");
   if (skipBtn) {
     skipBtn.addEventListener("click", (e) => {
       e.preventDefault();
