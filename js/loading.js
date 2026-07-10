@@ -87,7 +87,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 2. Play intro on welcome screen click
   if (enterScreen && video) {
+    let enterClicked = false;
     enterScreen.addEventListener("click", () => {
+      if (enterClicked) return;
+      enterClicked = true;
+      
       // Fade out welcome screen panel
       enterScreen.classList.add("fade-out");
       
