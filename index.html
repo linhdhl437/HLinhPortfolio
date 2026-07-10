@@ -7,6 +7,28 @@
   <title>Đồng Huyền Linh | Digital Portfolio</title>
   <link rel="icon" type="image/png" href="./img/ulis_logo.png">
   
+  <!-- 🚀 CRITICAL: Run before body renders to prevent intro flash when navigating back -->
+  <script>
+    (function() {
+      var hash = window.location.hash;
+      var skipHashes = ['#ToiLaAi', '#HanhTrinh', '#NhinLai', '#LienHe'];
+      var shouldSkip = (hash && (hash.indexOf('#stage-node-') === 0 || skipHashes.indexOf(hash) !== -1));
+      if (shouldSkip) {
+        document.documentElement.classList.add('skip-intro');
+      }
+    })();
+  </script>
+  <style>
+    /* Hide intro overlay immediately when navigating back — no flash */
+    html.skip-intro #intro-video-overlay {
+      display: none !important;
+    }
+    /* Also prevent body scroll-lock flash */
+    html.skip-intro body {
+      overflow: auto !important;
+    }
+  </style>
+
   <!-- 🎋 CSS Design System & Components -->
   <link rel="stylesheet" href="./css/variables.css">
   <link rel="stylesheet" href="./css/base.css">
