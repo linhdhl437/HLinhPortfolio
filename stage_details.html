@@ -64,18 +64,19 @@
     .btn-back-sticky {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
+      gap: 8px;
+      padding: 8px 20px;
       border: 1px solid var(--border-gold);
       background: var(--bg-paper-warm);
       color: var(--accent-vermillion);
       font-family: var(--font-serif);
       font-weight: bold;
       text-decoration: none;
-      border-radius: 4px;
+      border-radius: 30px;
       font-size: 0.9rem;
       transition: all 0.3s var(--ease-ink);
       box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      white-space: nowrap;
     }
 
     .btn-back-sticky:hover {
@@ -87,19 +88,20 @@
     /* Pinned Stage selectors */
     .nav-stages-list {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       align-items: center;
     }
 
     .nav-stage-item {
-      padding: 8px 16px;
+      padding: 8px 18px;
       text-decoration: none;
       color: var(--text-charcoal);
-      font-size: 0.95rem;
-      border-radius: 4px;
+      font-size: 0.92rem;
+      border-radius: 20px;
       transition: all 0.3s;
       border: 1px solid transparent;
       font-family: var(--font-serif);
+      white-space: nowrap;
     }
 
     .nav-stage-item:hover {
@@ -163,12 +165,15 @@
 
     /* Main Parchment Sheet Styling */
     .parchment-sheet {
-      background: rgba(253, 252, 249, 0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      padding: 40px 50px;
-      min-height: 600px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      background: rgba(253, 252, 249, 0.9) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      padding: 50px var(--space-xl) !important;
+      min-height: 600px !important;
+      border: 1px solid var(--border-gold) !important;
+      border-radius: 12px !important;
+      box-shadow: 0 15px 40px rgba(184, 144, 71, 0.05), 
+                  inset 0 0 40px rgba(184, 144, 71, 0.02) !important;
     }
 
     /* Scoped document content target setup */
@@ -596,17 +601,24 @@
 
     /* 📜 Accordion Styles for Report Sections */
     .accordion-item {
-      border: 1px solid var(--border-ink) !important;
-      border-radius: 6px !important;
+      border: 1px solid var(--border-gold) !important;
+      border-radius: 8px !important;
       margin-bottom: 1.2rem !important;
       background: var(--bg-paper-warm) !important;
       overflow: hidden !important;
-      transition: border-color 0.3s !important;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01) !important;
+      transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1) !important;
+      box-shadow: 0 4px 15px rgba(184, 144, 71, 0.02) !important;
+      border-left: 1px solid var(--border-gold) !important;
     }
 
     .accordion-item:hover {
       border-color: var(--accent-gold) !important;
+    }
+
+    .accordion-item.active-item {
+      border-color: var(--accent-vermillion) !important;
+      border-left: 4px solid var(--accent-vermillion) !important;
+      box-shadow: 0 6px 20px rgba(139, 0, 0, 0.04) !important;
     }
 
     .accordion-header {
@@ -633,7 +645,7 @@
     }
 
     .accordion-header.active {
-      background: rgba(184, 144, 71, 0.1) !important;
+      background: rgba(184, 144, 71, 0.08) !important;
       border-bottom: 1px solid var(--border-ink) !important;
     }
 
@@ -650,33 +662,39 @@
       padding: 1.5rem !important;
     }
 
-    .accordion-icon {
-      font-size: 0.9rem !important;
-      color: var(--accent-gold) !important;
-      transition: transform 0.3s !important;
+    /* Elegant Circular Icon Box */
+    .accordion-icon-box {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid var(--accent-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--accent-gold);
+      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      background: transparent;
+      font-weight: bold;
+      line-height: 1;
     }
 
-    /* Style for Back button at top left hover effect */
-    #btn-back-to-timeline {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 8px !important;
-      padding: 0.6rem 1.2rem !important;
-      text-decoration: none !important;
-      border-radius: 4px !important;
-      border: 1px solid var(--border-gold) !important;
-      background: var(--bg-paper-warm) !important;
-      color: var(--accent-vermillion) !important;
-      font-family: var(--font-serif) !important;
-      font-weight: bold !important;
-      transition: all 0.3s !important;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.02) !important;
+    .accordion-header.active .accordion-icon-box {
+      background: var(--accent-vermillion);
+      border-color: var(--accent-vermillion);
+      color: #ffffff;
+      transform: rotate(180deg);
     }
 
-    #btn-back-to-timeline:hover {
-      background: rgba(184, 144, 71, 0.15) !important;
-      border-color: var(--accent-vermillion) !important;
-      transform: translateX(-4px) !important;
+    /* Scrollable horizontal navigation for medium widths to prevent squishing */
+    @media (max-width: 1100px) {
+      .nav-stages-list {
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        max-width: 70% !important;
+        padding-bottom: 4px !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
     }
 
     /* Responsive grid columns */
@@ -879,33 +897,37 @@
         headers.forEach(header => {
           header.addEventListener("click", () => {
             const content = header.nextElementSibling;
-            const icon = header.querySelector(".accordion-icon");
+            const icon = header.querySelector(".accordion-icon-box");
             const isOpen = header.classList.contains("active");
             
             if (isOpen) {
               header.classList.remove("active");
+              header.parentElement.classList.remove("active-item");
               content.style.maxHeight = content.offsetHeight + "px";
               content.offsetHeight; // force layout reflow
               content.style.maxHeight = "0";
               content.classList.remove("open");
-              icon.textContent = "➕";
+              if (icon) icon.textContent = "＋";
             } else {
               headers.forEach(h => {
                 if (h.classList.contains("active")) {
                   h.classList.remove("active");
+                  h.parentElement.classList.remove("active-item");
                   const c = h.nextElementSibling;
                   c.style.maxHeight = c.offsetHeight + "px";
                   c.offsetHeight; // force reflow
                   c.style.maxHeight = "0";
                   c.classList.remove("open");
-                  h.querySelector(".accordion-icon").textContent = "➕";
+                  const i = h.querySelector(".accordion-icon-box");
+                  if (i) i.textContent = "＋";
                 }
               });
               
               header.classList.add("active");
+              header.parentElement.classList.add("active-item");
               content.classList.add("open");
               content.style.maxHeight = content.scrollHeight + "px";
-              icon.textContent = "➖";
+              if (icon) icon.textContent = "－";
               
               setTimeout(() => {
                 if (header.classList.contains("active")) {
@@ -933,7 +955,7 @@
         btn.className = "accordion-header text-serif";
         btn.innerHTML = `
           <span class="header-title">${headerEl.innerHTML}</span>
-          <span class="accordion-icon">➕</span>
+          <span class="accordion-icon-box">＋</span>
         `;
         
         const contentWrapper = document.createElement("div");
