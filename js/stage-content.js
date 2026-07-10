@@ -333,9 +333,7 @@ window.stageContents = {
 <td><code>English speaking AND Vietnam</code></td>
 <td>Kết hợp hai chủ đề</td>
 </tr>
-<tr class="page-break-indicator-row">
-<td colspan="3" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 2 ---</td>
-</tr>
+
 <tr>
 <td><strong>OR</strong></td>
 <td><code>chatbot OR AI speaking practice</code></td>
@@ -434,9 +432,7 @@ window.stageContents = {
 <td>Công bộ quốc tế, tác giả học thuật nhưng tạp chí ít nổi; phương pháp thiếu dữ liệu thực nghiệm; cập nhật mới; hữu ích nhưng cần kết hợp thêm nguồn khác.</td>
 <td><span class="rating-badge rating-3">3</span></td>
 </tr>
-<tr class="page-break-indicator-row">
-<td colspan="10" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 4 ---</td>
-</tr>
+
 <!-- Tài liệu 4 -->
 <tr>
 <td>4</td>
@@ -489,9 +485,7 @@ window.stageContents = {
 <td>Tạp chí SAGE có IF 2.6, tác giả đa quốc gia; nghiên cứu sâu sắc, cập nhật; nhiều trích dẫn; rất có giá trị khoa học.</td>
 <td><span class="rating-badge rating-5">5</span></td>
 </tr>
-<tr class="page-break-indicator-row">
-<td colspan="10" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 5 ---</td>
-</tr>
+
 <!-- Tài liệu 8 -->
 <tr>
 <td>8</td>
@@ -544,9 +538,7 @@ window.stageContents = {
 <td>Nguồn học thuật uy tín, nội dung chuyên sâu và sát thực tế giáo dục Việt Nam; tuy nhiên số lượng trích dẫn chưa nhiều do mới công bố.</td>
 <td><span class="rating-badge rating-5">5</span></td>
 </tr>
-<tr class="page-break-indicator-row">
-<td colspan="10" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 6 ---</td>
-</tr>
+
 <!-- Tài liệu 12 -->
 <tr>
 <td>12</td>
@@ -793,9 +785,7 @@ window.stageContents = {
 <td>Cung cấp bối cảnh: sinh viên ôn thi môn Nhập môn Công nghệ số và Trí tuệ nhân tạo</td>
 <td>Giúp AI hiểu đúng mục tiêu học tập và ưu tiên nội dung quan trọng</td>
 </tr>
-<tr class="page-break-indicator-row">
-<td colspan="3" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 3 ---</td>
-</tr>
+
 <tr>
 <td><strong>Role Prompting</strong></td>
 <td>“Bạn là một trợ giảng đại học…”</td>
@@ -1018,9 +1008,7 @@ window.stageContents = {
 <td>Tốt</td>
 <td>Rất tốt</td>
 </tr>
-<tr class="page-break-indicator-row">
-<td colspan="4" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 6 ---</td>
-</tr>
+
 <tr>
 <td><strong>Tính trực quan</strong></td>
 <td>Thấp</td>
@@ -1133,9 +1121,7 @@ window.stageContents = {
 <td>Phân chia câu hỏi theo từng loại</td>
 <td>Tăng tính logic và rõ ràng</td>
 </tr>
-<tr class="page-break-indicator-row">
-<td colspan="3" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 8 ---</td>
-</tr>
+
 <tr>
 <td><strong>Constraint Prompting</strong></td>
 <td>Quy định số lượng và nội dung câu hỏi</td>
@@ -1611,9 +1597,7 @@ window.stageContents = {
 <td>Tạo điều kiện chỉnh sửa cộng tác nhanh chóng, minh bạch hóa mức độ đóng góp.</td>
 <td>Rất cao</td>
 </tr>
-<tr class="page-break-indicator-row">
-<td colspan="3" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 7 ---</td>
-</tr>
+
 <tr>
 <td><strong>Google Drive</strong></td>
 <td>Hỗ trợ lưu trữ tài nguyên khoa học, đồng bộ hóa dữ liệu giữa các thành viên.</td>
@@ -1975,9 +1959,7 @@ window.stageContents = {
 <td><code>“Create an educational illustration showing a student learning a foreign language with AI.”</code></td>
 <td>Đã thể hiện được chủ đề học ngoại ngữ với AI nhưng yếu tố công nghệ vẫn chưa rõ nét.</td>
 </tr>
-<tr class="page-break-indicator-row">
-<td colspan="3" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 4 ---</td>
-</tr>
+
 <tr>
 <td><strong>Prompt lần 3</strong></td>
 <td><code>“Create a modern educational illustration showing a university student practicing Chinese speaking skills with an AI chatbot. Include speech bubbles, microphone icons, language learning elements and a friendly futuristic design suitable for an infographic.”</code></td>
@@ -2070,9 +2052,7 @@ window.stageContents = {
 <td>Thiết kế</td>
 <td>Hội thoại AI</td>
 </tr>
-<tr class="page-break-indicator-row">
-<td colspan="5" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 6 ---</td>
-</tr>
+
 <tr>
 <td><strong>Tốc độ xử lý</strong></td>
 <td>Rất nhanh</td>
