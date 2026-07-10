@@ -2168,7 +2168,7 @@ window.stageContents = {
 </div>
 <div class="info-footer">
 <div class="qr-section">
-<img alt="Mã QR Prompt Library" class="qr-image cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/MÃ QR CHO PROMPT LIBRARY.png"/>
+<img alt="Mã QR Prompt Library" class="qr-image cursor-zoom" data-lightbox="" src="./PortfolioAssets/MÃ QR CHO PROMPT LIBRARY.png"/>
 <div class="qr-text">
 <strong>QUÉT MÃ QR</strong><br/>
                         để trải nghiệm ngay Chatbot AI<br/>
