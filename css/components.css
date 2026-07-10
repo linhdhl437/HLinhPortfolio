@@ -42,6 +42,28 @@
   color: var(--accent-vermillion);
 }
 
+/* University Logos – left of brand in navbar */
+.nav-uni-logos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 14px;
+}
+
+.nav-uni-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.08));
+}
+
+.nav-uni-logo:hover {
+  opacity: 1;
+  transform: scale(1.07);
+}
+
 .nav-menu {
   display: flex;
   list-style: none;
