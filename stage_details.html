@@ -20,27 +20,103 @@
                   url('./PortfolioAssets/HanhTrinh.jpg') center/cover no-repeat fixed;
       min-height: 100vh;
       margin: 0;
-      padding: 40px var(--space-md);
+      padding: 110px var(--space-md) var(--space-xl) var(--space-md);
       overflow-x: hidden;
     }
 
     .details-layout-container {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: var(--space-xl);
-      max-width: 1200px;
+      display: block;
+      max-width: 1000px;
       margin: 0 auto;
       position: relative;
       z-index: 10;
     }
 
+    /* 📜 Sticky Top Header Bar */
+    .sticky-nav-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background: rgba(253, 252, 249, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-gold);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-bar-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    /* Sticky Back Button */
+    .btn-back-sticky {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border: 1px solid var(--border-gold);
+      background: var(--bg-paper-warm);
+      color: var(--accent-vermillion);
+      font-family: var(--font-serif);
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      transition: all 0.3s var(--ease-ink);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .btn-back-sticky:hover {
+      background: rgba(184, 144, 71, 0.12);
+      border-color: var(--accent-vermillion);
+      transform: translateX(-4px);
+    }
+
+    /* Pinned Stage selectors */
+    .nav-stages-list {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .nav-stage-item {
+      padding: 8px 16px;
+      text-decoration: none;
+      color: var(--text-charcoal);
+      font-size: 0.95rem;
+      border-radius: 4px;
+      transition: all 0.3s;
+      border: 1px solid transparent;
+      font-family: var(--font-serif);
+    }
+
+    .nav-stage-item:hover {
+      color: var(--accent-vermillion);
+      background: rgba(184, 144, 71, 0.05);
+    }
+
+    .nav-stage-item.active {
+      color: var(--accent-vermillion);
+      background: rgba(184, 144, 71, 0.08);
+      border-color: var(--border-gold);
+      font-weight: bold;
+    }
+
     /* Sidebar Styling */
     .details-sidebar {
-      position: sticky;
-      top: 40px;
-      height: fit-content;
-      background: rgba(255, 255, 255, 0.94);
-      padding: var(--space-lg);
+      display: none; /* Decommissioned in favor of sticky nav-bar */
     }
 
     .sidebar-header h4 {
@@ -620,25 +696,8 @@
 
     /* Responsive Layout for Mobile Devices */
     @media (max-width: 992px) {
-      .details-layout-container {
-        grid-template-columns: 1fr;
-      }
-      .details-sidebar {
-        position: relative;
-        top: 0;
-        margin-bottom: var(--space-md);
-        width: 100%;
-        box-sizing: border-box;
-      }
-      .sidebar-menu {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 8px;
-        justify-content: center;
-      }
-      .sidebar-link {
-        padding: 8px 14px;
-        font-size: 0.88rem;
+      body.stage-details-page {
+        padding-top: 150px;
       }
       .parchment-sheet {
         padding: 24px 16px;
@@ -651,32 +710,30 @@
   <!-- 🖌️ Ambient Canvas Background -->
   <canvas id="ambient-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></canvas>
 
-  <div class="details-layout-container">
-    <!-- Sidebar Navigation -->
-    <aside class="details-sidebar card card-classical">
-      <div class="sidebar-header">
-        <h4 class="text-serif">目錄 / Mục lục</h4>
-      </div>
-      <ul class="sidebar-menu">
-        <li><a href="?stage=1" data-stage-link="1" class="sidebar-link text-serif">書卷壹 • Chặng 1</a></li>
-        <li><a href="?stage=2" data-stage-link="2" class="sidebar-link text-serif">書卷貳 • Chặng 2</a></li>
-        <li><a href="?stage=3" data-stage-link="3" class="sidebar-link text-serif">書卷叁 • Chặng 3</a></li>
-        <li><a href="?stage=4" data-stage-link="4" class="sidebar-link text-serif">書卷肆 • Chặng 4</a></li>
-        <li><a href="?stage=5" data-stage-link="5" class="sidebar-link text-serif">書卷伍 • Chặng 5</a></li>
-        <li><a href="?stage=6" data-stage-link="6" class="sidebar-link text-serif">書卷陸 • Chặng 6</a></li>
-      </ul>
+  <!-- 🧭 Sticky Pinned Top Navigation Bar -->
+  <header class="sticky-nav-bar">
+    <div class="nav-bar-container">
+      <!-- Pinned Back Button on the left -->
+      <a href="index.html#HanhTrinh" id="btn-back-to-timeline" class="btn-back-sticky">
+        <span>↩️</span> Quay lại hành trình
+      </a>
       
-    </aside>
- 
+      <!-- Pinned Stage selectors -->
+      <nav class="nav-stages-list">
+        <a href="?stage=1" data-stage-link="1" class="nav-stage-item text-serif">書卷壹 • Chặng 1</a>
+        <a href="?stage=2" data-stage-link="2" class="nav-stage-item text-serif">書卷貳 • Chặng 2</a>
+        <a href="?stage=3" data-stage-link="3" class="nav-stage-item text-serif">書卷叁 • Chặng 3</a>
+        <a href="?stage=4" data-stage-link="4" class="nav-stage-item text-serif">書卷肆 • Chặng 4</a>
+        <a href="?stage=5" data-stage-link="5" class="nav-stage-item text-serif">書卷伍 • Chặng 5</a>
+        <a href="?stage=6" data-stage-link="6" class="nav-stage-item text-serif">書卷陸 • Chặng 6</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="details-layout-container">
      <!-- Main Content parchment sheet -->
      <main class="details-main-content">
        <article class="parchment-sheet card card-classical">
-         <!-- Back Button at Top Left of parchment sheet -->
-         <div class="top-left-back-container" style="margin-bottom: 2rem; display: flex; justify-content: flex-start;">
-           <a href="index.html#HanhTrinh" id="btn-back-to-timeline" class="btn btn-secondary btn-sm">
-             <span>↩️</span> Quay lại hành trình
-           </a>
-         </div>
          <div id="stage-detail-content-target">
            <!-- Dynamically loaded content goes here -->
            <div style="text-align: center; padding: 100px 0; color: var(--text-muted); font-style: italic; font-family: var(--font-serif);">
@@ -723,8 +780,8 @@
       function loadStage(stageNum, pushState = true) {
         if (stageNum < 1 || stageNum > 6) stageNum = 1;
         
-        // Update active class in sidebar links
-        document.querySelectorAll(".sidebar-link").forEach(link => {
+        // Update active class in stage navigation links
+        document.querySelectorAll(".nav-stage-item").forEach(link => {
           link.classList.remove("active");
           if (link.getAttribute("data-stage-link") === String(stageNum)) {
             link.classList.add("active");
@@ -893,9 +950,9 @@
       let initialStage = parseInt(urlParams.get("stage")) || 1;
       loadStage(initialStage, false);
 
-      // 3. Handle click on sidebar links to transition client-side
-      document.querySelector(".sidebar-menu").addEventListener("click", (e) => {
-        const link = e.target.closest(".sidebar-link");
+      // 3. Handle click on nav stage links to transition client-side
+      document.querySelector(".nav-stages-list").addEventListener("click", (e) => {
+        const link = e.target.closest(".nav-stage-item");
         if (link) {
           e.preventDefault();
           const targetStage = parseInt(link.getAttribute("data-stage-link"));
