@@ -310,7 +310,7 @@
   position: absolute;
   width: 120px;
   height: 120px;
-  opacity: 0.12; /* Subtle opacity to respect academic readability */
+  opacity: 1; /* Subtle opacity to respect academic readability */
   pointer-events: none;
   z-index: var(--z-decoration);
   user-select: none;

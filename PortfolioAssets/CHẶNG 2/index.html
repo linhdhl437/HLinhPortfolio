@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chặng 2: Báo cáo tìm kiếm và đánh giá thông tin</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background-color: #f4f6f9;
+      }
+      .document-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+      }
+      .back-link {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #3182ce;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .back-link:hover {
+        color: #2b6cb0;
+        text-decoration: underline;
+      }
+      h1 {
+        font-size: 1.8rem;
+        color: #1a365d;
+        text-align: center;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+      .subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #4a5568;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #3182ce;
+        padding-bottom: 15px;
+      }
+      h2 {
+        font-size: 1.3rem;
+        color: #2b6cb0;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 5px;
+      }
+      p,
+      li {
+        font-size: 0.95rem;
+        color: #4a5568;
+        margin-bottom: 12px;
+        text-align: justify;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+        margin-bottom: 20px;
+      }
+      .table-responsive {
+        overflow-x: auto;
+        margin: 25px 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        min-width: 800px;
+      }
+      th,
+      td {
+        border: 1px solid #cbd5e0;
+        padding: 8px 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background-color: #ebf8ff;
+        color: #2b6cb0;
+        font-weight: 600;
+      }
+      tr:nth-child(even) {
+        background-color: #f7fafc;
+      }
+      .rating-badge {
+        display: inline-block;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-weight: bold;
+        text-align: center;
+        color: #fff;
+      }
+      .rating-5 {
+        background-color: #38a169;
+      }
+      .rating-4 {
+        background-color: #48bb78;
+      }
+      .rating-3 {
+        background-color: #ecc94b;
+        color: #333;
+      }
+      .rating-2 {
+        background-color: #ed8936;
+      }
+      .rating-1 {
+        background-color: #e53e3e;
+      }
+      .page-break-indicator {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #a0aec0;
+        border-top: 1px dotted #e2e8f0;
+        margin: 30px 0 15px 0;
+        padding-top: 5px;
+        font-style: italic;
+      }
+      .doc-list {
+        margin-top: 15px;
+      }
+      .doc-item {
+        margin-bottom: 10px;
+        padding-left: 15px;
+        text-indent: -15px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="../index.html" class="back-link">← Quay lại Trang chủ Portfolio</a>
+
+    <div class="document-container">
+      <h1>Báo cáo tìm kiếm và đánh giá nguồn thông tin</h1>
+      <div class="subtitle">
+        Chủ đề: Nghiên cứu rào cản và phương pháp phát triển kĩ năng giao tiếp
+        tiếng Anh của người Việt
+      </div>
+
+      <div class="page-break-indicator">--- Trang 1 ---</div>
+
+      <h2>1. GIỚI THIỆU VỀ BÁO CÁO</h2>
+      <p>
+        Trong bối cảnh toàn cầu hóa và hội nhập quốc tế ngày càng sâu rộng,
+        tiếng Anh đã trở thành công cụ giao tiếp quan trọng trong học tập,
+        nghiên cứu, công việc và giao lưu văn hóa. Tại Việt Nam, việc dạy và học
+        tiếng Anh được chú trọng trong toàn bộ hệ thống giáo dục, từ bậc phổ
+        thông đến đại học. Tuy nhiên, thực tế cho thấy phần lớn người học Việt
+        Nam vẫn gặp nhiều khó khăn trong việc sử dụng tiếng Anh để giao tiếp
+        thực tế, đặc biệt là kỹ năng nói và phản xạ ngôn ngữ.
+      </p>
+      <p>
+        Xuất phát từ thực tế trên, báo cáo này được thực hiện nhằm tìm kiếm,
+        tổng hợp và đánh giá các nguồn thông tin liên quan đến vấn đề rào cản và
+        phương pháp phát triển kỹ năng giao tiếp tiếng Anh của người Việt. Báo
+        cáo tập trung phân tích mức độ tin cậy của các tài liệu dựa trên nhiều
+        tiêu chí học thuật như tác giả, cơ quan xuất bản, phương pháp nghiên
+        cứu, mức độ trích dẫn và tính cập nhật của tài liệu. Qua đó, báo cáo góp
+        phần lựa chọn được các nguồn thông tin có giá trị phục vụ cho nghiên cứu
+        và học tập trong lĩnh vực giáo dục ngôn ngữ.
+      </p>
+
+      <h2>2. PHƯƠNG PHÁP TÌM KIẾM VÀ THU THẬP TÀI LIỆU</h2>
+      <p>
+        Việc tìm kiếm được thực hiện trên Google Search, Google Scholar, ERIC,
+        SpringerOpen, Frontiers và Cambridge University Press. Các tài liệu được
+        ưu tiên trong giai đoạn 2017–2025 nhằm đảm bảo tính cập nhật. Từ khóa sử
+        dụng gồm cả tiếng Anh và tiếng Việt như:
+        <em
+          >Vietnamese EFL speaking barriers, English communication skills in
+          Vietnam, Foreign language anxiety, English speaking strategies, rào
+          cản giao tiếp tiếng Anh của người Việt, phương pháp phát triển kỹ năng
+          giao tiếp tiếng Anh</em
+        >.
+      </p>
+
+      <p><strong>Thực hành sử dụng toán tử tìm kiếm Google:</strong></p>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 15%">Toán tử</th>
+              <th style="width: 35%">Ví dụ</th>
+              <th style="width: 50%">Mục đích</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>“ ”</strong></td>
+              <td><code>“English speaking anxiety”</code></td>
+              <td>Tìm chính xác cụm từ</td>
+            </tr>
+            <tr>
+              <td><strong>AND</strong></td>
+              <td><code>English speaking AND Vietnam</code></td>
+              <td>Kết hợp hai chủ đề</td>
+            </tr>
+            <tr class="page-break-indicator-row">
+              <td
+                colspan="3"
+                style="
+                  text-align: center;
+                  background: #fafafa;
+                  font-size: 0.8rem;
+                  color: #a0aec0;
+                  border: none;
+                  padding: 2px;
+                "
+              >
+                --- Trang 2 ---
+              </td>
+            </tr>
+            <tr>
+              <td><strong>OR</strong></td>
+              <td><code>chatbot OR AI speaking practice</code></td>
+              <td>Mở rộng phạm vi tìm kiếm</td>
+            </tr>
+            <tr>
+              <td><strong>NOT (-)</strong></td>
+              <td><code>English speaking barriers -advertisement</code></td>
+              <td>Loại bỏ kết quả không liên quan</td>
+            </tr>
+            <tr>
+              <td><strong>site:</strong></td>
+              <td><code>site:eric.ed.gov English speaking anxiety</code></td>
+              <td>Tìm trong nguồn học thuật xác định</td>
+            </tr>
+            <tr>
+              <td><strong>filetype:</strong></td>
+              <td><code>English speaking strategies filetype:pdf</code></td>
+              <td>Tìm bài báo, báo cáo dạng PDF</td>
+            </tr>
+            <tr>
+              <td><strong>intitle:</strong></td>
+              <td><code>intitle:“English speaking skills” Vietnam</code></td>
+              <td>Tìm tài liệu có tiêu đề chứa từ khóa phù hợp</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Chiến lược tìm kiếm:</strong></p>
+      <p>
+        Quá trình tìm kiếm được triển khai theo ba bước. Đầu tiên sử dụng từ
+        khóa rộng để xác định các hướng nghiên cứu chính. Tiếp theo, kết hợp
+        nhiều toán tử nhằm thu hẹp phạm vi và tăng độ liên quan của kết quả.
+        Cuối cùng, các tài liệu được đối chiếu về tác giả, đơn vị xuất bản,
+        phương pháp nghiên cứu và số lượng trích dẫn trước khi đưa vào phân
+        tích. Việc kết hợp linh hoạt hơn 4 toán tử giúp giảm đáng kể kết quả
+        nhiễu, đồng thời tiếp cận nhanh các nguồn học thuật chất lượng cao.
+      </p>
+      <p>
+        Sau quá trình sàng lọc, tổng cộng 12 tài liệu tiêu biểu đã được lựa chọn
+        để tiến hành đánh giá độ tin cậy. Các tài liệu này bao gồm bài báo khoa
+        học quốc tế, sách chuyên khảo, nghiên cứu thực nghiệm và một số nguồn mở
+        nhằm phục vụ việc đối chiếu thực tiễn.
+      </p>
+
+      <h2>3. TIÊU CHÍ ĐÁNH GIÁ ĐỘ TIN CẬY CỦA NGUỒN THÔNG TIN</h2>
+      <p>
+        Độ tin cậy của các tài liệu được đánh giá dựa trên bốn tiêu chí chính:
+        tác giả và cơ quan xuất bản, phương pháp nghiên cứu, mức độ trích dẫn
+        học thuật và tính cập nhật. Đây là những tiêu chí phổ biến trong nghiên
+        cứu học thuật nhằm xác định chất lượng và giá trị sử dụng của nguồn
+        thông tin.
+      </p>
+      <ul>
+        <li>
+          <strong>Tác giả và cơ quan xuất bản:</strong> Ưu tiên các tài liệu
+          được công bố bởi nhà nghiên cứu, giảng viên hoặc chuyên gia có chuyên
+          môn liên quan, đồng thời xuất bản trên các tạp chí và nhà xuất bản học
+          thuật uy tín như Cambridge University Press, SpringerOpen, SAGE hoặc
+          Frontiers. Các website thương mại và blog cá nhân chỉ được sử dụng để
+          tham khảo bổ sung.
+        </li>
+        <li>
+          <strong>Phương pháp nghiên cứu:</strong> Những nghiên cứu trình bày rõ
+          đối tượng khảo sát, quy mô mẫu, cách thu thập và phân tích dữ liệu
+          được đánh giá cao hơn các tài liệu chỉ mang tính tổng hợp hoặc thiếu
+          minh chứng thực nghiệm.
+        </li>
+        <div class="page-break-indicator">--- Trang 3 ---</div>
+        <li>
+          <strong>Mức độ trích dẫn:</strong> Số lượng trích dẫn phản ánh mức độ
+          ảnh hưởng và sự công nhận của cộng đồng học thuật đối với một công
+          trình. Tuy nhiên, tiêu chí này được xem xét kết hợp với uy tín của
+          nguồn và tính mới của nghiên cứu.
+        </li>
+        <li>
+          <strong>Tính cập nhật:</strong> Các tài liệu xuất bản trong giai đoạn
+          2017–2025 được ưu tiên nhằm phản ánh xu hướng giáo dục hiện nay. Một
+          số nghiên cứu cũ vẫn được sử dụng nếu có giá trị nền tảng về lý
+          thuyết.
+        </li>
+      </ul>
+      <p>
+        Các nguồn sau khi đánh giá được xếp hạng theo thang điểm từ 1–5, trong
+        đó 5 là mức độ tin cậy rất cao, 4 là cao, 3 là trung bình, 2 là thấp và
+        1 là không phù hợp để sử dụng làm nguồn học thuật chính.
+      </p>
+
+      <h2>4. BẢNG TỔNG HỢP ĐÁNH GIÁ ĐỘ TIN CẬY CỦA NGUỒN THÔNG TIN</h2>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 4%">STT</th>
+              <th style="width: 15%">Tên tài liệu</th>
+              <th style="width: 8%">Loại nguồn</th>
+              <th style="width: 10%">Tác giả</th>
+              <th style="width: 12%">Cơ quan xuất bản</th>
+              <th style="width: 12%">Phương pháp nghiên cứu</th>
+              <th style="width: 6%">Trích dẫn</th>
+              <th style="width: 6%">Năm xuất bản</th>
+              <th style="width: 22%">Đánh giá chung</th>
+              <th style="width: 5%">Độ tin cậy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Tài liệu 1 -->
+            <tr>
+              <td>1</td>
+              <td><strong>Foreign Language Classroom Anxiety</strong></td>
+              <td>Bài báo khoa học</td>
+              <td>Elaine Horwitz và cộng sự</td>
+              <td>Modern Language Journal (US)</td>
+              <td>Nghiên cứu định lượng (thang đo FLCAS)</td>
+              <td>13000+</td>
+              <td>1986</td>
+              <td>
+                Nguồn kinh điển, tác giả uy tín, phương pháp khoa học; nhiều
+                trích dẫn, vẫn được trích dẫn rộng; tuy cũ nhưng vẫn là tham
+                khảo cơ bản.
+              </td>
+              <td><span class="rating-badge rating-5">5</span></td>
+            </tr>
+            <!-- Tài liệu 2 -->
+            <tr>
+              <td>2</td>
+              <td>
+                <strong>Approaches and Methods in Language Teaching</strong>
+              </td>
+              <td>Sách</td>
+              <td>Jack C. Richards & T. S. Rodgers</td>
+              <td>Cambridge University Press</td>
+              <td>Tổng hợp lý thuyết (không thực nghiệm)</td>
+              <td>30000+</td>
+              <td>2014</td>
+              <td>
+                Sách toàn diện, tác giả nổi tiếng, xuất bản Cambridge; cập nhật
+                3rd ed.; không phải nghiên cứu mới, không có dữ liệu thực
+                nghiệm, nhưng tài liệu gốc tham khảo tốt.
+              </td>
+              <td><span class="rating-badge rating-5">5</span></td>
+            </tr>
+            <!-- Tài liệu 3 -->
+            <tr>
+              <td>3</td>
+              <td>
+                <strong
+                  >Barriers to Intercultural Communication Implications for
+                  English Teaching at Tertiary Level in Vietnam</strong
+                >
+              </td>
+              <td>Báo khoa học quốc tế</td>
+              <td>Nguyễn Thị Mai Hương</td>
+              <td>IJSELL (ARC Journals)</td>
+              <td>Tổng hợp, phân tích văn liệu (không khảo sát thực nghiệm)</td>
+              <td>&lt;10</td>
+              <td>2025</td>
+              <td>
+                Công bộ quốc tế, tác giả học thuật nhưng tạp chí ít nổi; phương
+                pháp thiếu dữ liệu thực nghiệm; cập nhật mới; hữu ích nhưng cần
+                kết hợp thêm nguồn khác.
+              </td>
+              <td><span class="rating-badge rating-3">3</span></td>
+            </tr>
+            <tr class="page-break-indicator-row">
+              <td
+                colspan="10"
+                style="
+                  text-align: center;
+                  background: #fafafa;
+                  font-size: 0.8rem;
+                  color: #a0aec0;
+                  border: none;
+                  padding: 2px;
+                "
+              >
+                --- Trang 4 ---
+              </td>
+            </tr>
+            <!-- Tài liệu 4 -->
+            <tr>
+              <td>4</td>
+              <td>
+                <strong
+                  >The Impact of AI Chatbot Integration on Vietnamese EFL
+                  Learners' Speaking Performance, Fluency, and
+                  Confidence</strong
+                >
+              </td>
+              <td>Bài báo khoa học</td>
+              <td>Nguyen T.H.</td>
+              <td>Language, Technology, and Social Media (WISE Indo)</td>
+              <td>
+                Thí nghiệm bán thực nghiệm (quasi-experiment: đo trước và sau,
+                khảo sát)
+              </td>
+              <td>&lt;10</td>
+              <td>2025</td>
+              <td>
+                Xuất bản quốc tế, phương pháp rõ ràng (thiết kế pre-post test);
+                nhưng tạp chí ít tên tuổi, tác giả trong nước; có giá trị thực
+                nghiệm; cần tham khảo thêm nguồn khác.
+              </td>
+              <td><span class="rating-badge rating-3">3</span></td>
+            </tr>
+            <!-- Tài liệu 5 -->
+            <tr>
+              <td>5</td>
+              <td>
+                <strong
+                  >An exploratory study on Vietnamese university students’
+                  resilience in learning English as a foreign language</strong
+                >
+              </td>
+              <td>Báo khoa học quốc tế</td>
+              <td>Trịnh Quốc Lập, Võ Thị Thúy Trang, Lê Công Tuấn</td>
+              <td>Frontiers in Education (Frontiers Media, Thụy Sĩ)</td>
+              <td>Khảo sát (150 SV) + phỏng vấn (5 SV)</td>
+              <td>38</td>
+              <td>2025</td>
+              <td>
+                Tạp chí quốc tế peer-reviewed; tác giả là giảng viên ĐH, phương
+                pháp nghiên cứu chi tiết và cập nhật; nội dung phù hợp; trích
+                dẫn rộng. Đáng tin cậy cao.
+              </td>
+              <td><span class="rating-badge rating-4">4</span></td>
+            </tr>
+            <!-- Tài liệu 6 -->
+            <tr>
+              <td>6</td>
+              <td>
+                <strong
+                  >Language Learning Strategies to Improve English Speaking
+                  Skills among Vietnamese Students: A Case of Three High Schools
+                  in Binh Duong Province, Vietnam</strong
+                >
+              </td>
+              <td>Bài báo khoa học</td>
+              <td>Du T.T. & Quyen H.T.L.</td>
+              <td>World Journal of English Language</td>
+              <td>
+                Hỗn hợp: khảo sát định lượng và phỏng vấn bán cấu trúc (nhiều
+                học sinh THPT)
+              </td>
+              <td>25+</td>
+              <td>2023</td>
+              <td>
+                Nghiên cứu hiện đại, kết hợp KLTN + định tính. Kết quả chỉ ra
+                chiến lược cognitive/affective quan trọng. Tuy nhiên tạp chí
+                mới, ít trích dẫn và khái quát hẹp (phổ thông).
+              </td>
+              <td><span class="rating-badge rating-4">4</span></td>
+            </tr>
+            <!-- Tài liệu 7 -->
+            <tr>
+              <td>7</td>
+              <td>
+                <strong
+                  >Blended learning: Barriers and drawbacks for English language
+                  lecturers at Vietnamese universities</strong
+                >
+              </td>
+              <td>Bài báo khoa học</td>
+              <td>Lê T.N., Bill Allen, Nicola Johnson</td>
+              <td>E-Learning and Digital Media (SAGE, Anh)</td>
+              <td>Định tính (30 giảng viên phỏng vấn bán cấu trúc)</td>
+              <td>50+</td>
+              <td>2021</td>
+              <td>
+                Tạp chí SAGE có IF 2.6, tác giả đa quốc gia; nghiên cứu sâu sắc,
+                cập nhật; nhiều trích dẫn; rất có giá trị khoa học.
+              </td>
+              <td><span class="rating-badge rating-5">5</span></td>
+            </tr>
+            <tr class="page-break-indicator-row">
+              <td
+                colspan="10"
+                style="
+                  text-align: center;
+                  background: #fafafa;
+                  font-size: 0.8rem;
+                  color: #a0aec0;
+                  border: none;
+                  padding: 2px;
+                "
+              >
+                --- Trang 5 ---
+              </td>
+            </tr>
+            <!-- Tài liệu 8 -->
+            <tr>
+              <td>8</td>
+              <td>
+                <strong
+                  >Enhancing Vietnamese EFL Students’ Speaking Skills Through
+                  Augmented Reality: A Mixed-Method Study in English for Tourism
+                  and Hospitality</strong
+                >
+              </td>
+              <td>Bài báo khoa học</td>
+              <td>Thăng Hồ Minh & S. Suppasetseree</td>
+              <td>Educational Process: Int’l Journal (Azerbaijan)</td>
+              <td>
+                Hỗn hợp: quasi-experiment (một nhóm) + khảo sát + thảo luận nhóm
+              </td>
+              <td>10+</td>
+              <td>2025</td>
+              <td>
+                Tạp chí mở, mới, nhưng có DOI/ERIC; phương pháp chi tiết và hiện
+                đại (AR, TAM); tác giả học thuật; nội dung chuyên sâu; độ tin
+                cậy tương đối cao.
+              </td>
+              <td><span class="rating-badge rating-4">4</span></td>
+            </tr>
+            <!-- Tài liệu 9 -->
+            <tr>
+              <td>9</td>
+              <td>
+                <strong
+                  >Teaching English speaking skills: An investigation into
+                  Vietnamese EFL teachers’ beliefs and practices</strong
+                >
+              </td>
+              <td>Bài báo khoa học</td>
+              <td>Vũ Thị Bích Hiệp</td>
+              <td>Issues in Educational Research</td>
+              <td>
+                Hỗn hợp: khảo sát (52 giảng viên) + phỏng vấn bán cấu trúc về
+                niềm tin và thực hành
+              </td>
+              <td>25+</td>
+              <td>2023</td>
+              <td>
+                Nghiên cứu định tính, bài bản, với mẫu giảng viên đại học rộng.
+                Phản ánh niềm tin và thách thức giảng dạy kỹ năng nói.
+              </td>
+              <td><span class="rating-badge rating-4">4</span></td>
+            </tr>
+            <!-- Tài liệu 10 -->
+            <tr>
+              <td>10</td>
+              <td>
+                <strong
+                  >AI for English speaking practice: A study of effectiveness
+                  and engagement among Vietnamese university learners</strong
+                >
+              </td>
+              <td>Bài báo khoa học</td>
+              <td>Hoàng N.H.</td>
+              <td>Australasian Journal of Educational Technology</td>
+              <td>
+                Định lượng: quasi-experiment (16 tuần, 240 SV, mô hình đa cấp)
+              </td>
+              <td>10+</td>
+              <td>2025</td>
+              <td>
+                AJET là tạp chí lớn trong EdTech; tác giả chuyên môn; thiết kế
+                nghiên cứu quy mô lớn, hiện đại; nội dung cập nhật; đáng tin cậy
+                rất cao.
+              </td>
+              <td><span class="rating-badge rating-5">5</span></td>
+            </tr>
+            <!-- Tài liệu 11 -->
+            <tr>
+              <td>11</td>
+              <td>
+                <strong
+                  >Addressing English-speaking anxiety in Vietnamese initial
+                  teacher education</strong
+                >
+              </td>
+              <td>Bài báo khoa học</td>
+              <td>Nguyễn Thục Anh</td>
+              <td>
+                SpringerOpen – Asian-Pacific Journal of Second and Foreign
+                Language Education
+              </td>
+              <td>
+                Nghiên cứu định tính, phân tích giáo dục và dữ liệu thực tiễn
+              </td>
+              <td>18</td>
+              <td>2025</td>
+              <td>
+                Nguồn học thuật uy tín, nội dung chuyên sâu và sát thực tế giáo
+                dục Việt Nam; tuy nhiên số lượng trích dẫn chưa nhiều do mới
+                công bố.
+              </td>
+              <td><span class="rating-badge rating-5">5</span></td>
+            </tr>
+            <tr class="page-break-indicator-row">
+              <td
+                colspan="10"
+                style="
+                  text-align: center;
+                  background: #fafafa;
+                  font-size: 0.8rem;
+                  color: #a0aec0;
+                  border: none;
+                  padding: 2px;
+                "
+              >
+                --- Trang 6 ---
+              </td>
+            </tr>
+            <!-- Tài liệu 12 -->
+            <tr>
+              <td>12</td>
+              <td><strong>TalkClass Review (2025)</strong></td>
+              <td>Website thương mại</td>
+              <td>TalkClass edu.vn (trung tâm tiếng Anh)</td>
+              <td>TalkClass website</td>
+              <td>Tổng hợp thông tin quảng cáo</td>
+              <td>Không</td>
+              <td>-</td>
+              <td>
+                Trang web thương mại, nội dung quảng cáo khóa học (dạy online
+                blended, AI luyện nói). Không kiểm định khoa học, độ tin cậy
+                thấp.
+              </td>
+              <td><span class="rating-badge rating-1">1</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>6. KẾT LUẬN</h2>
+      <p>
+        Qua quá trình tìm kiếm và đánh giá nguồn thông tin, có thể thấy các rào
+        cản chính đối với kỹ năng giao tiếp tiếng Anh của người Việt gồm lo âu
+        khi giao tiếp, thiếu môi trường thực hành và ảnh hưởng của phương pháp
+        học truyền thống. Nhiều nghiên cứu cũng chỉ ra hiệu quả tích cực của các
+        phương pháp hiện đại như
+        <em>Communicative Language Teaching, Blended Learning, AI Chatbot</em>
+        và thực tế ảo tăng cường (AR) trong việc nâng cao khả năng nói và sự tự
+        tin của người học.
+      </p>
+      <p>
+        Kết quả đánh giá cho thấy các nguồn có độ tin cậy cao thường được công
+        bố trên các tạp chí hoặc nhà xuất bản học thuật uy tín, có phương pháp
+        nghiên cứu rõ ràng và dữ liệu minh chứng cụ thể. Ngược lại, các nguồn
+        thương mại chỉ phù hợp để tham khảo bổ sung.
+      </p>
+      <p>
+        Nhìn chung, việc lựa chọn và đánh giá nguồn thông tin đóng vai trò quan
+        trọng trong nghiên cứu, giúp đảm bảo tính chính xác, khách quan và nâng
+        cao chất lượng học thuật của báo cáo.
+      </p>
+
+      <div class="page-break-indicator">--- Trang 7 ---</div>
+
+      <h2>DANH MỤC TÀI LIỆU THAM KHẢO (THEO HARVARD)</h2>
+      <div class="doc-list">
+        <div class="doc-item">
+          1. Horwitz, E.K., Horwitz, M.B. and Cope, J. (1986) ‘Foreign Language
+          Classroom Anxiety’, <em>Modern Language Journal</em>, 70(2), pp.
+          125–132.
+        </div>
+        <div class="doc-item">
+          2. Richards, J.C. and Rodgers, T.S. (2014)
+          <em>Approaches and Methods in Language Teaching</em>. 3rd edn.
+          Cambridge: Cambridge University Press.
+        </div>
+        <div class="doc-item">
+          3. Nguyễn Thị Mai Hương (2025) ‘Barriers to Intercultural
+          Communication’,
+          <em
+            >International Journal on Studies in English Language and
+            Literature</em
+          >, 13(6).
+        </div>
+        <div class="doc-item">
+          4. Nguyễn T.H. (2025) ‘The Impact of AI Chatbot Integration on
+          Vietnamese EFL Learners’ Speaking Performance’,
+          <em>Language, Technology and Social Media</em>, 4(1).
+        </div>
+        <div class="doc-item">
+          5. Lập, T., Trang, N. and Tuấn, P. (2025) ‘Resilience in Learning
+          English’, <em>Frontiers in Education</em>, 10.
+        </div>
+        <div class="doc-item">
+          6. Du, T. and Quyen, N. (2023) ‘Language Learning Strategies to
+          Improve English Speaking Skills’,
+          <em>World Journal of English Language</em>, 13(7).
+        </div>
+        <div class="doc-item">
+          7. Lê, T. et al. (2022) ‘Blended Learning: Barriers and Drawbacks for
+          English Language Lecturers at Vietnamese Universities’,
+          <em>E-Learning and Digital Media</em>.
+        </div>
+        <div class="doc-item">
+          8. Ho-Minh, T. and Suppasetseree, S. (2025) ‘Enhancing Vietnamese EFL
+          Students’ Speaking Skills through AR’, <em>Euromentor Journal</em>.
+        </div>
+        <div class="doc-item">
+          9. Vũ Thị Bích Hiệp (2023) ‘Teaching Speaking Skills: Teachers’
+          Beliefs’, <em>Issues in Educational Research</em>, 33(1).
+        </div>
+        <div class="doc-item">
+          10. Hoàng Nguyễn Hữu (2025) ‘AI for English Speaking Practice: A Study
+          of Effectiveness and Engagement’,
+          <em>Australasian Journal of Educational Technology</em>, 41(3).
+        </div>
+        <div class="doc-item">
+          11. Nguyễn Thục Anh (2025) ‘Addressing English-speaking anxiety in
+          Vietnamese initial teacher education’,
+          <em>Asian-Pacific Journal of Second and Foreign Language Education</em
+          >.
+        </div>
+        <div class="doc-item">
+          12. TalkClass.edu.vn (2025) ‘Review 9 khóa học tiếng Anh giao tiếp
+          online’. Available at: TalkClass.edu.vn (Accessed: 1 May 2026).
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

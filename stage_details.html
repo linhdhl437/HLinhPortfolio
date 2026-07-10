@@ -1,994 +1,1111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Chi tiết báo cáo chặng học tập trong hành trình chuyển đổi số của Đồng Huyền Linh.">
-  <title>Đồng Huyền Linh | Chi Tiết Chặng Báo Cáo</title>
-  
-  <!-- 🎋 CSS Design System & Components -->
-  <link rel="stylesheet" href="./css/variables.css">
-  <link rel="stylesheet" href="./css/base.css">
-  <link rel="stylesheet" href="./css/animations.css">
-  <link rel="stylesheet" href="./css/components.css">
-  <link rel="stylesheet" href="./css/sections.css">
-  
-  <style>
-    /* Special layout rules for details page */
-    body.stage-details-page {
-      background: linear-gradient(to bottom, rgba(249, 249, 246, 0.88) 0%, rgba(249, 249, 246, 0.88) 100%), 
-                  url('./PortfolioAssets/HanhTrinh.jpg') center/cover no-repeat fixed;
-      min-height: 100vh;
-      margin: 0;
-      padding: 110px var(--space-md) var(--space-xl) var(--space-md);
-      overflow-x: hidden;
-    }
-
-    .details-layout-container {
-      display: block;
-      max-width: 1000px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 10;
-    }
-
-    /* 📜 Sticky Top Header Bar */
-    .sticky-nav-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 70px;
-      background: rgba(253, 252, 249, 0.94);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-gold);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-    }
-
-    .nav-bar-container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 var(--space-md);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-sizing: border-box;
-    }
-
-    /* Sticky Back Button */
-    .btn-back-sticky {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 20px;
-      border: 1px solid var(--border-gold);
-      background: var(--bg-paper-warm);
-      color: var(--accent-vermillion);
-      font-family: var(--font-serif);
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 30px;
-      font-size: 0.9rem;
-      transition: all 0.3s var(--ease-ink);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-      white-space: nowrap;
-    }
-
-    .btn-back-sticky:hover {
-      background: rgba(184, 144, 71, 0.12);
-      border-color: var(--accent-vermillion);
-      transform: translateX(-4px);
-    }
-
-    /* Pinned Stage selectors */
-    .nav-stages-list {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .nav-stage-item {
-      padding: 8px 18px;
-      text-decoration: none;
-      color: var(--text-charcoal);
-      font-size: 0.92rem;
-      border-radius: 20px;
-      transition: all 0.3s;
-      border: 1px solid transparent;
-      font-family: var(--font-serif);
-      white-space: nowrap;
-    }
-
-    .nav-stage-item:hover {
-      color: var(--accent-vermillion);
-      background: rgba(184, 144, 71, 0.05);
-    }
-
-    .nav-stage-item.active {
-      color: var(--accent-vermillion);
-      background: rgba(184, 144, 71, 0.08);
-      border-color: var(--border-gold);
-      font-weight: bold;
-    }
-
-    /* Sidebar Styling */
-    .details-sidebar {
-      display: none; /* Decommissioned in favor of sticky nav-bar */
-    }
-
-    .sidebar-header h4 {
-      color: var(--accent-vermillion);
-      margin-bottom: var(--space-md);
-      font-size: 1.15rem;
-      border-bottom: 2px solid var(--accent-gold);
-      padding-bottom: var(--space-xs);
-    }
-
-    .sidebar-menu {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .sidebar-link {
-      display: block;
-      padding: 10px 14px;
-      border-radius: 4px;
-      color: var(--text-charcoal);
-      font-size: 0.95rem;
-      transition: all var(--transition-normal);
-      text-decoration: none;
-      border: 1px solid transparent;
-    }
-
-    .sidebar-link:hover {
-      background-color: rgba(184, 144, 71, 0.05);
-      color: var(--accent-gold-light);
-      border-color: rgba(184, 144, 71, 0.15);
-      transform: translateX(4px);
-    }
-
-    .sidebar-link.active {
-      background-color: var(--accent-vermillion);
-      color: var(--text-paper) !important;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(139, 0, 0, 0.15);
-    }
-
-    /* Main Parchment Sheet Styling */
-    .parchment-sheet {
-      background: rgba(253, 252, 249, 0.9) !important;
-      backdrop-filter: blur(12px) !important;
-      -webkit-backdrop-filter: blur(12px) !important;
-      padding: 50px var(--space-xl) !important;
-      min-height: 600px !important;
-      border: 1px solid var(--border-gold) !important;
-      border-radius: 12px !important;
-      box-shadow: 0 15px 40px rgba(184, 144, 71, 0.05), 
-                  inset 0 0 40px rgba(184, 144, 71, 0.02) !important;
-    }
-
-    /* Scoped document content target setup */
-    #stage-detail-content-target {
-      width: 100%;
-    }
-
-    /* 📜 Scoped traditional Chinese scholar styles for dynamic report document */
-    .stage-document-wrapper {
-      font-family: var(--font-serif);
-      color: var(--text-charcoal);
-      line-height: 1.85;
-      font-size: 1.02rem;
-    }
-
-    /* Override body font and layout */
-    .stage-document-wrapper .document-container {
-      background: transparent !important;
-      padding: 0 !important;
-      border: none !important;
-      box-shadow: none !important;
-    }
-
-    /* Scoped Headings */
-    .stage-document-wrapper h1 {
-      font-family: var(--font-serif) !important;
-      color: var(--accent-vermillion) !important;
-      text-align: center !important;
-      margin-bottom: 2.2rem !important;
-      font-size: 1.65rem !important;
-      text-transform: uppercase !important;
-      border-bottom: 2px solid var(--accent-gold) !important;
-      padding-bottom: 14px !important;
-      letter-spacing: 0.5px !important;
-    }
-
-    .stage-document-wrapper h2 {
-      font-family: var(--font-serif) !important;
-      color: var(--accent-gold) !important;
-      font-size: 1.25rem !important;
-      font-weight: bold !important;
-      margin-top: 2.2rem !important;
-      margin-bottom: 1rem !important;
-      border-bottom: 1px dashed var(--border-gold) !important;
-      padding-bottom: 6px !important;
-      display: flex !important;
-      align-items: center !important;
-      gap: 8px !important;
-    }
-
-    .stage-document-wrapper h2::before {
-      content: "🎋" !important;
-      font-size: 1rem !important;
-      filter: sepia(0.5) hue-rotate(10deg);
-    }
-
-    .stage-document-wrapper h3 {
-      font-family: var(--font-serif) !important;
-      color: var(--text-ink) !important;
-      font-size: 1.15rem !important;
-      font-weight: bold !important;
-      margin-top: 1.8rem !important;
-      margin-bottom: 0.8rem !important;
-    }
-
-    .stage-document-wrapper h4 {
-      font-family: var(--font-serif) !important;
-      color: var(--accent-vermillion) !important;
-      font-size: 1.05rem !important;
-      font-weight: bold !important;
-      margin-top: 1.4rem !important;
-      margin-bottom: 0.6rem !important;
-    }
-
-    /* Paragraphs and Lists */
-    .stage-document-wrapper p {
-      font-size: 1.02rem !important;
-      line-height: 1.85 !important;
-      text-align: justify !important;
-      text-indent: 2rem !important;
-      margin-bottom: 1.4rem !important;
-      color: var(--text-charcoal) !important;
-    }
-
-    .stage-document-wrapper ul, .stage-document-wrapper ol {
-      margin-bottom: 1.4rem !important;
-      padding-left: 2rem !important;
-    }
-
-    .stage-document-wrapper li {
-      font-size: 1.02rem !important;
-      line-height: 1.75 !important;
-      margin-bottom: 0.6rem !important;
-      color: var(--text-charcoal) !important;
-    }
-
-    /* Image Group Containers */
-    .stage-document-wrapper .image-group {
-      display: flex !important;
-      gap: var(--space-md) !important;
-      justify-content: center !important;
-      flex-wrap: wrap !important;
-      margin: 1.8rem 0 !important;
-    }
-
-    .stage-document-wrapper .image-container {
-      flex: 1 !important;
-      min-width: 260px !important;
-      text-align: center !important;
-      padding: 12px !important;
-      background: var(--bg-paper-warm) !important;
-      border: 1px solid var(--border-ink) !important;
-      border-radius: 6px !important;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02) !important;
-    }
-
-    .stage-document-wrapper .image-container img {
-      max-width: 100% !important;
-      height: auto !important;
-      border: 1px solid rgba(0, 0, 0, 0.08) !important;
-      border-radius: 4px !important;
-    }
-
-    .stage-document-wrapper .image-caption {
-      font-family: var(--font-serif) !important;
-      font-size: 0.8rem !important;
-      color: var(--text-muted) !important;
-      margin-top: 6px !important;
-      font-style: italic !important;
-    }
-
-    .stage-document-wrapper .image-note {
-      font-family: var(--font-serif) !important;
-      font-size: 0.8rem !important;
-      color: var(--accent-vermillion) !important;
-      margin-top: 4px !important;
-      text-align: center !important;
-    }
-
-    /* Prompt Box and Terminal style */
-    .stage-document-wrapper .prompt-box, 
-    .stage-document-wrapper .prompt-card {
-      background: rgba(35, 32, 26, 0.98) !important;
-      color: #f8f8f2 !important;
-      border: 1px solid var(--accent-gold) !important;
-      border-left: 4px solid var(--accent-vermillion) !important;
-      border-radius: 6px !important;
-      padding: 1.2rem 1.5rem !important;
-      margin: 1.6rem 0 !important;
-      font-family: 'Courier New', Courier, monospace !important;
-      font-size: 0.95rem !important;
-      line-height: 1.6 !important;
-      position: relative !important;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08) !important;
-    }
-
-    .stage-document-wrapper .prompt-box::after, 
-    .stage-document-wrapper .prompt-card::after {
-      content: "PROMPT INPUT" !important;
-      position: absolute !important;
-      top: 6px !important;
-      right: 12px !important;
-      font-size: 0.65rem !important;
-      color: var(--accent-gold) !important;
-      font-family: var(--font-sans) !important;
-      font-weight: bold !important;
-      letter-spacing: 1px !important;
-    }
-
-    .stage-document-wrapper .prompt-box code,
-    .stage-document-wrapper .prompt-card code {
-      font-family: 'Courier New', Courier, monospace !important;
-      color: #ffaf00 !important;
-      background: transparent !important;
-      padding: 0 !important;
-    }
-
-    /* Tables styling */
-    .stage-document-wrapper table {
-      width: 100% !important;
-      border-collapse: collapse !important;
-      margin: 2rem 0 !important;
-      font-size: 0.9rem !important;
-      border: 1px solid var(--border-ink) !important;
-      background: rgba(253, 252, 249, 0.5) !important;
-    }
-
-    .stage-document-wrapper th {
-      background: rgba(184, 144, 71, 0.08) !important;
-      color: var(--accent-vermillion) !important;
-      font-weight: bold !important;
-      padding: 12px !important;
-      border: 1px solid var(--border-ink) !important;
-      font-family: var(--font-serif) !important;
-      text-align: left !important;
-    }
-
-    .stage-document-wrapper td {
-      padding: 10px 12px !important;
-      border: 1px solid var(--border-ink) !important;
-      color: var(--text-charcoal) !important;
-    }
-
-    .stage-document-wrapper tr:nth-child(even) {
-      background: rgba(249, 249, 246, 0.6) !important;
-    }
-
-    /* Rating Badges in Stage 2 */
-    .stage-document-wrapper .rating-badge {
-      display: inline-block !important;
-      padding: 2px 8px !important;
-      border-radius: 4px !important;
-      font-weight: bold !important;
-      color: #fff !important;
-      font-size: 0.8rem !important;
-      font-family: var(--font-sans) !important;
-    }
-
-    .stage-document-wrapper .rating-5 { background-color: var(--accent-vermillion) !important; }
-    .stage-document-wrapper .rating-4 { background-color: var(--accent-gold) !important; }
-    .stage-document-wrapper .rating-3 { background-color: #9c7b4c !important; }
-    .stage-document-wrapper .rating-2 { background-color: #6e6e6e !important; }
-    .stage-document-wrapper .rating-1 { background-color: #3a3a3a !important; }
-
-    /* Page breaks styled as gradient dividers with diamonds */
-    .stage-document-wrapper .page-break-indicator {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 12px !important;
-      color: var(--accent-gold) !important;
-      font-size: 0.8rem !important;
-      font-family: var(--font-serif) !important;
-      margin: 3.5rem 0 2rem 0 !important;
-      font-style: italic !important;
-      border: none !important;
-      padding: 0 !important;
-      background: transparent !important;
-    }
-
-    .stage-document-wrapper .page-break-indicator::before,
-    .stage-document-wrapper .page-break-indicator::after {
-      content: "" !important;
-      display: inline-block !important;
-      width: 120px !important;
-      height: 1px !important;
-      background: linear-gradient(to right, transparent, var(--accent-gold), transparent) !important;
-    }
-
-    /* Ethics Grid in Stage 6 */
-    .stage-document-wrapper .ethics-grid {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr !important;
-      gap: var(--space-md) !important;
-      margin: 2rem 0 !important;
-    }
-
-    .stage-document-wrapper .ethics-col {
-      padding: 1.2rem !important;
-      border-radius: 6px !important;
-      background: var(--bg-paper-warm) !important;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02) !important;
-    }
-
-    .stage-document-wrapper .ethics-col.do {
-      border: 1px solid rgba(139, 0, 0, 0.15) !important;
-      border-top: 4px solid var(--accent-vermillion) !important;
-    }
-
-    .stage-document-wrapper .ethics-col.dont {
-      border: 1px solid rgba(28, 28, 28, 0.15) !important;
-      border-top: 4px solid var(--text-ink) !important;
-    }
-
-    .stage-document-wrapper .ethics-col h3 {
-      font-family: var(--font-serif) !important;
-      margin-top: 0 !important;
-      margin-bottom: 1rem !important;
-      font-size: 1.15rem !important;
-    }
-
-    .stage-document-wrapper .ethics-col.do h3 {
-      color: var(--accent-vermillion) !important;
-    }
-
-    .stage-document-wrapper .ethics-col.dont h3 {
-      color: var(--text-ink) !important;
-    }
-
-    .stage-document-wrapper .ethics-list {
-      list-style-type: none !important;
-      padding-left: 0 !important;
-    }
-
-    .stage-document-wrapper .ethics-item {
-      position: relative !important;
-      padding-left: 1.5rem !important;
-      margin-bottom: 0.8rem !important;
-      font-size: 0.95rem !important;
-    }
-
-    .stage-document-wrapper .ethics-col.do .ethics-item::before {
-      content: "✓" !important;
-      position: absolute !important;
-      left: 0 !important;
-      color: var(--accent-vermillion) !important;
-      font-weight: bold !important;
-    }
-
-    .stage-document-wrapper .ethics-col.dont .ethics-item::before {
-      content: "✗" !important;
-      position: absolute !important;
-      left: 0 !important;
-      color: var(--text-ink) !important;
-      font-weight: bold !important;
-    }
-
-    /* Comparison Grid in Stage 5 */
-    .stage-document-wrapper .compare-grid {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr !important;
-      gap: var(--space-md) !important;
-      margin: 2rem 0 !important;
-    }
-
-    .stage-document-wrapper .compare-col {
-      padding: 1.2rem !important;
-      border-radius: 6px !important;
-      background: var(--bg-paper-warm) !important;
-      border: 1px solid var(--border-ink) !important;
-    }
-
-    .stage-document-wrapper .compare-col.traditional {
-      border-top: 4px solid var(--accent-gold) !important;
-    }
-
-    .stage-document-wrapper .compare-col.ai {
-      border-top: 4px solid var(--accent-vermillion) !important;
-    }
-
-    .stage-document-wrapper .compare-col h4 {
-      font-family: var(--font-serif) !important;
-      margin-top: 0 !important;
-      margin-bottom: 0.8rem !important;
-      font-size: 1.1rem !important;
-    }
-
-    .stage-document-wrapper .compare-col.traditional h4 {
-      color: var(--accent-gold) !important;
-    }
-
-    .stage-document-wrapper .compare-col.ai h4 {
-      color: var(--accent-vermillion) !important;
-    }
-
-    /* Solutions / Box outlines in Stage 6 */
-    .stage-document-wrapper .solution-box {
-      border: 1px solid var(--border-ink) !important;
-      background-color: var(--bg-paper-warm) !important;
-      border-left: 4px solid var(--accent-gold) !important;
-      padding: 1.2rem !important;
-      border-radius: 4px !important;
-      margin: 1.5rem 0 !important;
-    }
-
-    .stage-document-wrapper .solution-box h4 {
-      margin-top: 0 !important;
-      color: var(--accent-gold) !important;
-    }
-
-    /* Flow blocks in Stage 5 */
-    .stage-document-wrapper .flow-container {
-      background: var(--bg-paper-warm) !important;
-      border: 1px solid var(--border-ink) !important;
-      border-radius: 6px !important;
-      padding: 1.5rem !important;
-      margin: 2rem 0 !important;
-    }
-
-    .stage-document-wrapper .flow-title {
-      font-family: var(--font-serif) !important;
-      color: var(--accent-vermillion) !important;
-      font-size: 1.15rem !important;
-      font-weight: bold !important;
-      margin-top: 0 !important;
-      margin-bottom: 1.2rem !important;
-      text-align: center !important;
-    }
-
-    .stage-document-wrapper .flow-steps {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-around !important;
-      flex-wrap: wrap !important;
-      gap: 10px !important;
-    }
-
-    .stage-document-wrapper .flow-step {
-      padding: 10px 14px !important;
-      background: var(--bg-paper) !important;
-      border: 1px solid var(--accent-gold) !important;
-      border-radius: 4px !important;
-      font-family: var(--font-serif) !important;
-      font-weight: bold !important;
-      font-size: 0.9rem !important;
-      color: var(--text-ink) !important;
-      text-align: center !important;
-    }
-
-    .stage-document-wrapper .flow-arrow {
-      color: var(--accent-gold) !important;
-      font-weight: bold !important;
-      font-size: 1.2rem !important;
-    }
-
-    /* ethics quote block */
-    .stage-document-wrapper .ethics-quote {
-      font-family: var(--font-serif) !important;
-      font-style: italic !important;
-      border-left: 4px solid var(--accent-gold) !important;
-      padding-left: 1rem !important;
-      margin: 1.5rem 0 !important;
-      color: var(--text-muted) !important;
-    }
-
-    /* 📜 Accordion Styles for Report Sections */
-    .accordion-item {
-      border: 1px solid var(--border-gold) !important;
-      border-radius: 8px !important;
-      margin-bottom: 1.2rem !important;
-      background: var(--bg-paper-warm) !important;
-      overflow: hidden !important;
-      transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
-      box-shadow: 0 4px 15px rgba(184, 144, 71, 0.02) !important;
-      border-left: 1px solid var(--border-gold) !important;
-    }
-
-    .accordion-item:hover {
-      border-color: var(--accent-gold) !important;
-    }
-
-    .accordion-item.active-item {
-      border-color: var(--accent-vermillion) !important;
-      border-left: 4px solid var(--accent-vermillion) !important;
-      box-shadow: 0 6px 20px rgba(139, 0, 0, 0.04) !important;
-    }
-
-    .accordion-header {
-      width: 100% !important;
-      background: rgba(184, 144, 71, 0.03) !important;
-      border: none !important;
-      outline: none !important;
-      padding: 1.2rem 1.5rem !important;
-      text-align: left !important;
-      font-size: 1.15rem !important;
-      font-weight: bold !important;
-      color: var(--accent-vermillion) !important;
-      cursor: pointer !important;
-      display: flex !important;
-      justify-content: space-between !important;
-      align-items: center !important;
-      transition: background 0.3s !important;
-      font-family: var(--font-serif) !important;
-      box-sizing: border-box !important;
-    }
-
-    .accordion-header:hover {
-      background: rgba(184, 144, 71, 0.08) !important;
-    }
-
-    .accordion-header.active {
-      background: rgba(184, 144, 71, 0.08) !important;
-      border-bottom: 1px solid var(--border-ink) !important;
-    }
-
-    .accordion-content {
-      max-height: 0 !important;
-      overflow: hidden !important;
-      transition: max-height 0.8s cubic-bezier(0.25, 1, 0.5, 1) !important;
-      background: rgba(253, 252, 249, 0.4) !important;
-      padding: 0 1.5rem !important;
-      box-sizing: border-box !important;
-    }
-
-    .accordion-content.open {
-      padding: 1.5rem !important;
-    }
-
-    /* Elegant Circular Icon Box */
-    .accordion-icon-box {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      border: 1px solid var(--accent-gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      color: var(--accent-gold);
-      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-      background: transparent;
-      font-weight: bold;
-      line-height: 1;
-    }
-
-    .accordion-header.active .accordion-icon-box {
-      background: var(--accent-vermillion);
-      border-color: var(--accent-vermillion);
-      color: #ffffff;
-      transform: rotate(180deg);
-    }
-
-    /* Scrollable horizontal navigation for medium widths to prevent squishing */
-    @media (max-width: 1100px) {
-      .nav-stages-list {
-        overflow-x: auto !important;
-        white-space: nowrap !important;
-        max-width: 70% !important;
-        padding-bottom: 4px !important;
-        -webkit-overflow-scrolling: touch !important;
-      }
-    }
-
-    /* Responsive grid columns */
-    @media (max-width: 768px) {
-      .stage-document-wrapper .ethics-grid,
-      .stage-document-wrapper .compare-grid {
-        grid-template-columns: 1fr !important;
-      }
-      .stage-document-wrapper .flow-steps {
-        flex-direction: column !important;
-      }
-      .stage-document-wrapper .flow-arrow {
-        transform: rotate(90deg) !important;
-        margin: 5px 0 !important;
-      }
-    }
-
-    /* Responsive Layout for Mobile Devices */
-    @media (max-width: 992px) {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Chi tiết báo cáo chặng học tập trong hành trình chuyển đổi số của Đồng Huyền Linh."
+    />
+    <title>Đồng Huyền Linh | Chi Tiết Chặng Báo Cáo</title>
+
+    <!-- 🎋 CSS Design System & Components -->
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/sections.css" />
+
+    <style>
+      /* Special layout rules for details page */
       body.stage-details-page {
-        padding-top: 150px;
+        background:
+          linear-gradient(
+            to bottom,
+            rgba(249, 249, 246, 0.88) 0%,
+            rgba(249, 249, 246, 0.88) 100%
+          ),
+          url("./PortfolioAssets/HanhTrinh.jpg") center/cover no-repeat fixed;
+        min-height: 100vh;
+        margin: 0;
+        padding: 110px var(--space-md) var(--space-xl) var(--space-md);
+        overflow-x: hidden;
       }
+
+      .details-layout-container {
+        display: block;
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 10;
+      }
+
+      /* 📜 Sticky Top Header Bar */
+      .sticky-nav-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background: rgba(253, 252, 249, 0.94);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border-gold);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-bar-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--space-md);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+      }
+
+      /* Sticky Back Button */
+      .btn-back-sticky {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 20px;
+        border: 1px solid var(--border-gold);
+        background: var(--bg-paper-warm);
+        color: var(--accent-vermillion);
+        font-family: var(--font-serif);
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        transition: all 0.3s var(--ease-ink);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        white-space: nowrap;
+      }
+
+      .btn-back-sticky:hover {
+        background: rgba(184, 144, 71, 0.12);
+        border-color: var(--accent-vermillion);
+        transform: translateX(-4px);
+      }
+
+      /* Pinned Stage selectors */
+      .nav-stages-list {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .nav-stage-item {
+        padding: 8px 18px;
+        text-decoration: none;
+        color: var(--text-charcoal);
+        font-size: 0.92rem;
+        border-radius: 20px;
+        transition: all 0.3s;
+        border: 1px solid transparent;
+        font-family: var(--font-serif);
+        white-space: nowrap;
+      }
+
+      .nav-stage-item:hover {
+        color: var(--accent-vermillion);
+        background: rgba(184, 144, 71, 0.05);
+      }
+
+      .nav-stage-item.active {
+        color: var(--accent-vermillion);
+        background: rgba(184, 144, 71, 0.08);
+        border-color: var(--border-gold);
+        font-weight: bold;
+      }
+
+      /* Sidebar Styling */
+      .details-sidebar {
+        display: none; /* Decommissioned in favor of sticky nav-bar */
+      }
+
+      .sidebar-header h4 {
+        color: var(--accent-vermillion);
+        margin-bottom: var(--space-md);
+        font-size: 1.15rem;
+        border-bottom: 2px solid var(--accent-gold);
+        padding-bottom: var(--space-xs);
+      }
+
+      .sidebar-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .sidebar-link {
+        display: block;
+        padding: 10px 14px;
+        border-radius: 4px;
+        color: var(--text-charcoal);
+        font-size: 0.95rem;
+        transition: all var(--transition-normal);
+        text-decoration: none;
+        border: 1px solid transparent;
+      }
+
+      .sidebar-link:hover {
+        background-color: rgba(184, 144, 71, 0.05);
+        color: var(--accent-gold-light);
+        border-color: rgba(184, 144, 71, 0.15);
+        transform: translateX(4px);
+      }
+
+      .sidebar-link.active {
+        background-color: var(--accent-vermillion);
+        color: var(--text-paper) !important;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(139, 0, 0, 0.15);
+      }
+
+      /* Main Parchment Sheet Styling */
       .parchment-sheet {
-        padding: 24px 16px;
+        background: rgba(253, 252, 249, 0.9) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        padding: 50px var(--space-xl) !important;
+        min-height: 600px !important;
+        border: 1px solid var(--border-gold) !important;
+        border-radius: 12px !important;
+        box-shadow:
+          0 15px 40px rgba(184, 144, 71, 0.05),
+          inset 0 0 40px rgba(184, 144, 71, 0.02) !important;
       }
-    }
-  </style>
-</head>
-<body class="stage-details-page">
 
-  <!-- 🖌️ Ambient Canvas Background -->
-  <canvas id="ambient-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></canvas>
+      /* Scoped document content target setup */
+      #stage-detail-content-target {
+        width: 100%;
+      }
 
-  <!-- 🧭 Sticky Pinned Top Navigation Bar -->
-  <header class="sticky-nav-bar">
-    <div class="nav-bar-container">
-      <!-- Pinned Back Button on the left -->
-      <a href="index.html#HanhTrinh" id="btn-back-to-timeline" class="btn-back-sticky">
-        <span>↩️</span> Quay lại hành trình
-      </a>
-      
-      <!-- Pinned Stage selectors -->
-      <nav class="nav-stages-list">
-        <a href="?stage=1" data-stage-link="1" class="nav-stage-item text-serif">書卷壹 • Chặng 1</a>
-        <a href="?stage=2" data-stage-link="2" class="nav-stage-item text-serif">書卷貳 • Chặng 2</a>
-        <a href="?stage=3" data-stage-link="3" class="nav-stage-item text-serif">書卷叁 • Chặng 3</a>
-        <a href="?stage=4" data-stage-link="4" class="nav-stage-item text-serif">書卷肆 • Chặng 4</a>
-        <a href="?stage=5" data-stage-link="5" class="nav-stage-item text-serif">書卷伍 • Chặng 5</a>
-        <a href="?stage=6" data-stage-link="6" class="nav-stage-item text-serif">書卷陸 • Chặng 6</a>
-      </nav>
+      /* 📜 Scoped traditional Chinese scholar styles for dynamic report document */
+      .stage-document-wrapper {
+        font-family: var(--font-serif);
+        color: var(--text-charcoal);
+        line-height: 1.85;
+        font-size: 1.02rem;
+      }
+
+      /* Override body font and layout */
+      .stage-document-wrapper .document-container {
+        background: transparent !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      /* Scoped Headings */
+      .stage-document-wrapper h1 {
+        font-family: var(--font-serif) !important;
+        color: var(--accent-vermillion) !important;
+        text-align: center !important;
+        margin-bottom: 2.2rem !important;
+        font-size: 1.65rem !important;
+        text-transform: uppercase !important;
+        border-bottom: 2px solid var(--accent-gold) !important;
+        padding-bottom: 14px !important;
+        letter-spacing: 0.5px !important;
+      }
+
+      .stage-document-wrapper h2 {
+        font-family: var(--font-serif) !important;
+        color: var(--accent-gold) !important;
+        font-size: 1.25rem !important;
+        font-weight: bold !important;
+        margin-top: 2.2rem !important;
+        margin-bottom: 1rem !important;
+        border-bottom: 1px dashed var(--border-gold) !important;
+        padding-bottom: 6px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+      }
+
+      .stage-document-wrapper h2::before {
+        content: "🎋" !important;
+        font-size: 1rem !important;
+        filter: sepia(0.5) hue-rotate(10deg);
+      }
+
+      .stage-document-wrapper h3 {
+        font-family: var(--font-serif) !important;
+        color: var(--text-ink) !important;
+        font-size: 1.15rem !important;
+        font-weight: bold !important;
+        margin-top: 1.8rem !important;
+        margin-bottom: 0.8rem !important;
+      }
+
+      .stage-document-wrapper h4 {
+        font-family: var(--font-serif) !important;
+        color: var(--accent-vermillion) !important;
+        font-size: 1.05rem !important;
+        font-weight: bold !important;
+        margin-top: 1.4rem !important;
+        margin-bottom: 0.6rem !important;
+      }
+
+      /* Paragraphs and Lists */
+      .stage-document-wrapper p {
+        font-size: 1.02rem !important;
+        line-height: 1.85 !important;
+        text-align: justify !important;
+        text-indent: 2rem !important;
+        margin-bottom: 1.4rem !important;
+        color: var(--text-charcoal) !important;
+      }
+
+      .stage-document-wrapper ul,
+      .stage-document-wrapper ol {
+        margin-bottom: 1.4rem !important;
+        padding-left: 2rem !important;
+      }
+
+      .stage-document-wrapper li {
+        font-size: 1.02rem !important;
+        line-height: 1.75 !important;
+        margin-bottom: 0.6rem !important;
+        color: var(--text-charcoal) !important;
+      }
+
+      /* Image Group Containers */
+      .stage-document-wrapper .image-group {
+        display: flex !important;
+        gap: var(--space-md) !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        margin: 1.8rem 0 !important;
+      }
+
+      .stage-document-wrapper .image-container {
+        flex: 1 !important;
+        min-width: 260px !important;
+        text-align: center !important;
+        padding: 12px !important;
+        background: var(--bg-paper-warm) !important;
+        border: 1px solid var(--border-ink) !important;
+        border-radius: 6px !important;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02) !important;
+      }
+
+      .stage-document-wrapper .image-container img {
+        max-width: 100% !important;
+        height: auto !important;
+        border: 1px solid rgba(0, 0, 0, 0.08) !important;
+        border-radius: 4px !important;
+      }
+
+      .stage-document-wrapper .image-caption {
+        font-family: var(--font-serif) !important;
+        font-size: 0.8rem !important;
+        color: var(--text-muted) !important;
+        margin-top: 6px !important;
+        font-style: italic !important;
+      }
+
+      .stage-document-wrapper .image-note {
+        font-family: var(--font-serif) !important;
+        font-size: 0.8rem !important;
+        color: var(--accent-vermillion) !important;
+        margin-top: 4px !important;
+        text-align: center !important;
+      }
+
+      /* Prompt Box and Terminal style */
+      .stage-document-wrapper .prompt-box,
+      .stage-document-wrapper .prompt-card {
+        background: rgba(35, 32, 26, 0.98) !important;
+        color: #f8f8f2 !important;
+        border: 1px solid var(--accent-gold) !important;
+        border-left: 4px solid var(--accent-vermillion) !important;
+        border-radius: 6px !important;
+        padding: 1.2rem 1.5rem !important;
+        margin: 1.6rem 0 !important;
+        font-family: "Courier New", Courier, monospace !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        position: relative !important;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08) !important;
+      }
+
+      .stage-document-wrapper .prompt-box::after,
+      .stage-document-wrapper .prompt-card::after {
+        content: "PROMPT INPUT" !important;
+        position: absolute !important;
+        top: 6px !important;
+        right: 12px !important;
+        font-size: 0.65rem !important;
+        color: var(--accent-gold) !important;
+        font-family: var(--font-sans) !important;
+        font-weight: bold !important;
+        letter-spacing: 1px !important;
+      }
+
+      .stage-document-wrapper .prompt-box code,
+      .stage-document-wrapper .prompt-card code {
+        font-family: "Courier New", Courier, monospace !important;
+        color: #ffaf00 !important;
+        background: transparent !important;
+        padding: 0 !important;
+      }
+
+      /* Tables styling */
+      .stage-document-wrapper table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        margin: 2rem 0 !important;
+        font-size: 0.9rem !important;
+        border: 1px solid var(--border-ink) !important;
+        background: rgba(253, 252, 249, 0.5) !important;
+      }
+
+      .stage-document-wrapper th {
+        background: rgba(184, 144, 71, 0.08) !important;
+        color: var(--accent-vermillion) !important;
+        font-weight: bold !important;
+        padding: 12px !important;
+        border: 1px solid var(--border-ink) !important;
+        font-family: var(--font-serif) !important;
+        text-align: left !important;
+      }
+
+      .stage-document-wrapper td {
+        padding: 10px 12px !important;
+        border: 1px solid var(--border-ink) !important;
+        color: var(--text-charcoal) !important;
+      }
+
+      .stage-document-wrapper tr:nth-child(even) {
+        background: rgba(249, 249, 246, 0.6) !important;
+      }
+
+      /* Rating Badges in Stage 2 */
+      .stage-document-wrapper .rating-badge {
+        display: inline-block !important;
+        padding: 2px 8px !important;
+        border-radius: 4px !important;
+        font-weight: bold !important;
+        color: #fff !important;
+        font-size: 0.8rem !important;
+        font-family: var(--font-sans) !important;
+      }
+
+      .stage-document-wrapper .rating-5 {
+        background-color: var(--accent-vermillion) !important;
+      }
+      .stage-document-wrapper .rating-4 {
+        background-color: var(--accent-gold) !important;
+      }
+      .stage-document-wrapper .rating-3 {
+        background-color: #9c7b4c !important;
+      }
+      .stage-document-wrapper .rating-2 {
+        background-color: #6e6e6e !important;
+      }
+      .stage-document-wrapper .rating-1 {
+        background-color: #3a3a3a !important;
+      }
+
+      /* Page breaks styled as gradient dividers with diamonds */
+      .stage-document-wrapper .page-break-indicator {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        color: var(--accent-gold) !important;
+        font-size: 0.8rem !important;
+        font-family: var(--font-serif) !important;
+        margin: 3.5rem 0 2rem 0 !important;
+        font-style: italic !important;
+        border: none !important;
+        padding: 0 !important;
+        background: transparent !important;
+      }
+
+      .stage-document-wrapper .page-break-indicator::before,
+      .stage-document-wrapper .page-break-indicator::after {
+        content: "" !important;
+        display: inline-block !important;
+        width: 120px !important;
+        height: 1px !important;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--accent-gold),
+          transparent
+        ) !important;
+      }
+
+      /* Ethics Grid in Stage 6 */
+      .stage-document-wrapper .ethics-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: var(--space-md) !important;
+        margin: 2rem 0 !important;
+      }
+
+      .stage-document-wrapper .ethics-col {
+        padding: 1.2rem !important;
+        border-radius: 6px !important;
+        background: var(--bg-paper-warm) !important;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02) !important;
+      }
+
+      .stage-document-wrapper .ethics-col.do {
+        border: 1px solid rgba(139, 0, 0, 0.15) !important;
+        border-top: 4px solid var(--accent-vermillion) !important;
+      }
+
+      .stage-document-wrapper .ethics-col.dont {
+        border: 1px solid rgba(28, 28, 28, 0.15) !important;
+        border-top: 4px solid var(--text-ink) !important;
+      }
+
+      .stage-document-wrapper .ethics-col h3 {
+        font-family: var(--font-serif) !important;
+        margin-top: 0 !important;
+        margin-bottom: 1rem !important;
+        font-size: 1.15rem !important;
+      }
+
+      .stage-document-wrapper .ethics-col.do h3 {
+        color: var(--accent-vermillion) !important;
+      }
+
+      .stage-document-wrapper .ethics-col.dont h3 {
+        color: var(--text-ink) !important;
+      }
+
+      .stage-document-wrapper .ethics-list {
+        list-style-type: none !important;
+        padding-left: 0 !important;
+      }
+
+      .stage-document-wrapper .ethics-item {
+        position: relative !important;
+        padding-left: 1.5rem !important;
+        margin-bottom: 0.8rem !important;
+        font-size: 0.95rem !important;
+      }
+
+      .stage-document-wrapper .ethics-col.do .ethics-item::before {
+        content: "✓" !important;
+        position: absolute !important;
+        left: 0 !important;
+        color: var(--accent-vermillion) !important;
+        font-weight: bold !important;
+      }
+
+      .stage-document-wrapper .ethics-col.dont .ethics-item::before {
+        content: "✗" !important;
+        position: absolute !important;
+        left: 0 !important;
+        color: var(--text-ink) !important;
+        font-weight: bold !important;
+      }
+
+      /* Comparison Grid in Stage 5 */
+      .stage-document-wrapper .compare-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: var(--space-md) !important;
+        margin: 2rem 0 !important;
+      }
+
+      .stage-document-wrapper .compare-col {
+        padding: 1.2rem !important;
+        border-radius: 6px !important;
+        background: var(--bg-paper-warm) !important;
+        border: 1px solid var(--border-ink) !important;
+      }
+
+      .stage-document-wrapper .compare-col.traditional {
+        border-top: 4px solid var(--accent-gold) !important;
+      }
+
+      .stage-document-wrapper .compare-col.ai {
+        border-top: 4px solid var(--accent-vermillion) !important;
+      }
+
+      .stage-document-wrapper .compare-col h4 {
+        font-family: var(--font-serif) !important;
+        margin-top: 0 !important;
+        margin-bottom: 0.8rem !important;
+        font-size: 1.1rem !important;
+      }
+
+      .stage-document-wrapper .compare-col.traditional h4 {
+        color: var(--accent-gold) !important;
+      }
+
+      .stage-document-wrapper .compare-col.ai h4 {
+        color: var(--accent-vermillion) !important;
+      }
+
+      /* Solutions / Box outlines in Stage 6 */
+      .stage-document-wrapper .solution-box {
+        border: 1px solid var(--border-ink) !important;
+        background-color: var(--bg-paper-warm) !important;
+        border-left: 4px solid var(--accent-gold) !important;
+        padding: 1.2rem !important;
+        border-radius: 4px !important;
+        margin: 1.5rem 0 !important;
+      }
+
+      .stage-document-wrapper .solution-box h4 {
+        margin-top: 0 !important;
+        color: var(--accent-gold) !important;
+      }
+
+      /* Flow blocks in Stage 5 */
+      .stage-document-wrapper .flow-container {
+        background: var(--bg-paper-warm) !important;
+        border: 1px solid var(--border-ink) !important;
+        border-radius: 6px !important;
+        padding: 1.5rem !important;
+        margin: 2rem 0 !important;
+      }
+
+      .stage-document-wrapper .flow-title {
+        font-family: var(--font-serif) !important;
+        color: var(--accent-vermillion) !important;
+        font-size: 1.15rem !important;
+        font-weight: bold !important;
+        margin-top: 0 !important;
+        margin-bottom: 1.2rem !important;
+        text-align: center !important;
+      }
+
+      .stage-document-wrapper .flow-steps {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-around !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+      }
+
+      .stage-document-wrapper .flow-step {
+        padding: 10px 14px !important;
+        background: var(--bg-paper) !important;
+        border: 1px solid var(--accent-gold) !important;
+        border-radius: 4px !important;
+        font-family: var(--font-serif) !important;
+        font-weight: bold !important;
+        font-size: 0.9rem !important;
+        color: var(--text-ink) !important;
+        text-align: center !important;
+      }
+
+      .stage-document-wrapper .flow-arrow {
+        color: var(--accent-gold) !important;
+        font-weight: bold !important;
+        font-size: 1.2rem !important;
+      }
+
+      /* ethics quote block */
+      .stage-document-wrapper .ethics-quote {
+        font-family: var(--font-serif) !important;
+        font-style: italic !important;
+        border-left: 4px solid var(--accent-gold) !important;
+        padding-left: 1rem !important;
+        margin: 1.5rem 0 !important;
+        color: var(--text-muted) !important;
+      }
+
+      /* 📜 Accordion Styles for Report Sections */
+      .accordion-item {
+        border: 1px solid var(--border-gold) !important;
+        border-radius: 8px !important;
+        margin-bottom: 1.2rem !important;
+        background: var(--bg-paper-warm) !important;
+        overflow: hidden !important;
+        transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
+        box-shadow: 0 4px 15px rgba(184, 144, 71, 0.02) !important;
+        border-left: 1px solid var(--border-gold) !important;
+      }
+
+      .accordion-item:hover {
+        border-color: var(--accent-gold) !important;
+      }
+
+      .accordion-item.active-item {
+        border-color: var(--accent-vermillion) !important;
+        border-left: 4px solid var(--accent-vermillion) !important;
+        box-shadow: 0 6px 20px rgba(139, 0, 0, 0.04) !important;
+      }
+
+      .accordion-header {
+        width: 100% !important;
+        background: rgba(184, 144, 71, 0.03) !important;
+        border: none !important;
+        outline: none !important;
+        padding: 1.2rem 1.5rem !important;
+        text-align: left !important;
+        font-size: 1.15rem !important;
+        font-weight: bold !important;
+        color: var(--accent-vermillion) !important;
+        cursor: pointer !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        transition: background 0.3s !important;
+        font-family: var(--font-serif) !important;
+        box-sizing: border-box !important;
+      }
+
+      .accordion-header:hover {
+        background: rgba(184, 144, 71, 0.08) !important;
+      }
+
+      .accordion-header.active {
+        background: rgba(184, 144, 71, 0.08) !important;
+        border-bottom: 1px solid var(--border-ink) !important;
+      }
+
+      .accordion-content {
+        max-height: 0 !important;
+        overflow: hidden !important;
+        transition: max-height 0.8s cubic-bezier(0.25, 1, 0.5, 1) !important;
+        background: rgba(253, 252, 249, 0.4) !important;
+        padding: 0 1.5rem !important;
+        box-sizing: border-box !important;
+      }
+
+      .accordion-content.open {
+        padding: 1.5rem !important;
+      }
+
+      /* Elegant Circular Icon Box */
+      .accordion-icon-box {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        border: 1px solid var(--accent-gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        color: var(--accent-gold);
+        transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        background: transparent;
+        font-weight: bold;
+        line-height: 1;
+      }
+
+      .accordion-header.active .accordion-icon-box {
+        background: var(--accent-vermillion);
+        border-color: var(--accent-vermillion);
+        color: #ffffff;
+        transform: rotate(180deg);
+      }
+
+      /* Scrollable horizontal navigation for medium widths to prevent squishing */
+      @media (max-width: 1100px) {
+        .nav-stages-list {
+          overflow-x: auto !important;
+          white-space: nowrap !important;
+          max-width: 70% !important;
+          padding-bottom: 4px !important;
+          -webkit-overflow-scrolling: touch !important;
+        }
+      }
+
+      /* Responsive grid columns */
+      @media (max-width: 768px) {
+        .stage-document-wrapper .ethics-grid,
+        .stage-document-wrapper .compare-grid {
+          grid-template-columns: 1fr !important;
+        }
+        .stage-document-wrapper .flow-steps {
+          flex-direction: column !important;
+        }
+        .stage-document-wrapper .flow-arrow {
+          transform: rotate(90deg) !important;
+          margin: 5px 0 !important;
+        }
+      }
+
+      /* Responsive Layout for Mobile Devices */
+      @media (max-width: 992px) {
+        body.stage-details-page {
+          padding-top: 150px;
+        }
+        .parchment-sheet {
+          padding: 24px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body class="stage-details-page">
+    <!-- 🖌️ Ambient Canvas Background -->
+    <canvas
+      id="ambient-canvas"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+      "
+    ></canvas>
+
+    <!-- 🧭 Sticky Pinned Top Navigation Bar -->
+    <header class="sticky-nav-bar">
+      <div class="nav-bar-container">
+        <!-- Pinned Back Button on the left -->
+        <a
+          href="index.html#HanhTrinh"
+          id="btn-back-to-timeline"
+          class="btn-back-sticky"
+        >
+          <span>↩️</span> Quay lại hành trình
+        </a>
+
+        <!-- Pinned Stage selectors -->
+        <nav class="nav-stages-list">
+          <a
+            href="?stage=1"
+            data-stage-link="1"
+            class="nav-stage-item text-serif"
+            >書卷壹 • Chặng 1</a
+          >
+          <a
+            href="?stage=2"
+            data-stage-link="2"
+            class="nav-stage-item text-serif"
+            >書卷貳 • Chặng 2</a
+          >
+          <a
+            href="?stage=3"
+            data-stage-link="3"
+            class="nav-stage-item text-serif"
+            >書卷叁 • Chặng 3</a
+          >
+          <a
+            href="?stage=4"
+            data-stage-link="4"
+            class="nav-stage-item text-serif"
+            >書卷肆 • Chặng 4</a
+          >
+          <a
+            href="?stage=5"
+            data-stage-link="5"
+            class="nav-stage-item text-serif"
+            >書卷伍 • Chặng 5</a
+          >
+          <a
+            href="?stage=6"
+            data-stage-link="6"
+            class="nav-stage-item text-serif"
+            >書卷陸 • Chặng 6</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <div class="details-layout-container">
+      <!-- Main Content parchment sheet -->
+      <main class="details-main-content">
+        <article class="parchment-sheet card card-classical">
+          <div id="stage-detail-content-target">
+            <!-- Dynamically loaded content goes here -->
+            <div
+              style="
+                text-align: center;
+                padding: 100px 0;
+                color: var(--text-muted);
+                font-style: italic;
+                font-family: var(--font-serif);
+              "
+            >
+              Đang mở thư quyển...
+            </div>
+          </div>
+        </article>
+      </main>
     </div>
-  </header>
 
-  <div class="details-layout-container">
-     <!-- Main Content parchment sheet -->
-     <main class="details-main-content">
-       <article class="parchment-sheet card card-classical">
-         <div id="stage-detail-content-target">
-           <!-- Dynamically loaded content goes here -->
-           <div style="text-align: center; padding: 100px 0; color: var(--text-muted); font-style: italic; font-family: var(--font-serif);">
-             Đang mở thư quyển...
-           </div>
-         </div>
-       </article>
-     </main>
-  </div>
-
-  <!-- ==========================================================================
+    <!-- ==========================================================================
        LIGHTBOX CONTAINER
        ========================================================================== -->
-  <div id="lightbox-modal" class="lightbox-modal">
-    <div class="lightbox-content">
-      <button id="lightbox-close" class="lightbox-close" aria-label="Close Lightbox">&times;</button>
-      <button id="lightbox-prev" class="lightbox-arrow lightbox-prev" aria-label="Previous Image">&#10094;</button>
-      <img id="lightbox-img" class="lightbox-img" src="" alt="">
-      <button id="lightbox-next" class="lightbox-arrow lightbox-next" aria-label="Next Image">&#10095;</button>
-      <div id="lightbox-caption" class="lightbox-caption"></div>
+    <div id="lightbox-modal" class="lightbox-modal">
+      <div class="lightbox-content">
+        <button
+          id="lightbox-close"
+          class="lightbox-close"
+          aria-label="Close Lightbox"
+        >
+          &times;
+        </button>
+        <button
+          id="lightbox-prev"
+          class="lightbox-arrow lightbox-prev"
+          aria-label="Previous Image"
+        >
+          &#10094;
+        </button>
+        <img id="lightbox-img" class="lightbox-img" src="" alt="" />
+        <button
+          id="lightbox-next"
+          class="lightbox-arrow lightbox-next"
+          aria-label="Next Image"
+        >
+          &#10095;
+        </button>
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
     </div>
-  </div>
 
-  <!-- ==========================================================================
+    <!-- ==========================================================================
        SCRIPTS
        ========================================================================== -->
-  <!-- Ambient Canvas custom rendering (vết mực loang, lá trúc, chim bay, mây trôi) -->
-  <script src="./js/ambient-canvas.js"></script>
-  
-  <!-- Database containing stage reports as formatted HTML string templates -->
-  <script src="./js/stage-content.js"></script>
-  <script src="./js/lightbox.js"></script>
-  <script src="./js/custom-cursor.js"></script>
+    <!-- Ambient Canvas custom rendering (vết mực loang, lá trúc, chim bay, mây trôi) -->
+    <script src="./js/ambient-canvas.js"></script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // 0. Sync Brush Toggle State
-      const brushEnabled = localStorage.getItem("brushEnabled") !== "false";
-      if (!brushEnabled) {
-        document.body.classList.add("brush-disabled");
-      }
+    <!-- Database containing stage reports as formatted HTML string templates -->
+    <script src="./js/stage-content.js"></script>
+    <script src="./js/lightbox.js"></script>
+    <script src="./js/custom-cursor.js"></script>
 
-      // 1. Function to load content dynamically
-      function loadStage(stageNum, pushState = true) {
-        if (stageNum < 1 || stageNum > 6) stageNum = 1;
-        
-        // Update active class in stage navigation links
-        document.querySelectorAll(".nav-stage-item").forEach(link => {
-          link.classList.remove("active");
-          if (link.getAttribute("data-stage-link") === String(stageNum)) {
-            link.classList.add("active");
-          }
-        });
-
-        // Update back button (Redirect to index with parameter & hash)
-        const backBtn = document.getElementById("btn-back-to-timeline");
-        if (backBtn) {
-          backBtn.setAttribute("href", `index.html?stage=${stageNum}#HanhTrinh`);
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 0. Sync Brush Toggle State
+        const brushEnabled = localStorage.getItem("brushEnabled") !== "false";
+        if (!brushEnabled) {
+          document.body.classList.add("brush-disabled");
         }
 
+        // 1. Function to load content dynamically
+        function loadStage(stageNum, pushState = true) {
+          if (stageNum < 1 || stageNum > 6) stageNum = 1;
 
-        // Inject content
-        const contentTarget = document.getElementById("stage-detail-content-target");
-        if (contentTarget && typeof window.stageContents !== "undefined") {
-          const reportHtml = window.stageContents[`stage${stageNum}`];
-          if (reportHtml) {
-            contentTarget.style.opacity = "0";
-            contentTarget.style.transform = "translateY(12px)";
-            contentTarget.style.transition = "none";
-            
-            // Force layout reflow
-            contentTarget.offsetHeight;
-            
-            contentTarget.innerHTML = reportHtml;
-            
-            // Wrap content sections into collapsible accordions
-            makeAccordion();
-            
-            // Fade-in & slide-up animation
-            contentTarget.style.transition = "opacity 0.4s ease, transform 0.4s ease";
-            contentTarget.style.opacity = "1";
-            contentTarget.style.transform = "translateY(0)";
-          } else {
-            contentTarget.innerHTML = `
+          // Update active class in stage navigation links
+          document.querySelectorAll(".nav-stage-item").forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("data-stage-link") === String(stageNum)) {
+              link.classList.add("active");
+            }
+          });
+
+          // Update back button (Redirect to index with parameter & hash)
+          const backBtn = document.getElementById("btn-back-to-timeline");
+          if (backBtn) {
+            backBtn.setAttribute(
+              "href",
+              `index.html?stage=${stageNum}#HanhTrinh`,
+            );
+          }
+
+          // Inject content
+          const contentTarget = document.getElementById(
+            "stage-detail-content-target",
+          );
+          if (contentTarget && typeof window.stageContents !== "undefined") {
+            const reportHtml = window.stageContents[`stage${stageNum}`];
+            if (reportHtml) {
+              contentTarget.style.opacity = "0";
+              contentTarget.style.transform = "translateY(12px)";
+              contentTarget.style.transition = "none";
+
+              // Force layout reflow
+              contentTarget.offsetHeight;
+
+              contentTarget.innerHTML = reportHtml;
+
+              // Wrap content sections into collapsible accordions
+              makeAccordion();
+
+              // Fade-in & slide-up animation
+              contentTarget.style.transition =
+                "opacity 0.4s ease, transform 0.4s ease";
+              contentTarget.style.opacity = "1";
+              contentTarget.style.transform = "translateY(0)";
+            } else {
+              contentTarget.innerHTML = `
               <div style="text-align:center; padding:50px; font-family:var(--font-serif); color:var(--accent-vermillion);">
                 Không tìm thấy nội dung báo cáo cho Chặng ${stageNum}.
               </div>`;
-          }
-        }
-
-        // Push state to browser history
-        if (pushState) {
-          window.history.pushState({ stage: stageNum }, "", `?stage=${stageNum}`);
-        }
-
-        // Scroll back to top smoothly
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-
-      // 1.1. Dynamic Accordion builder function
-      function makeAccordion() {
-        const container = document.getElementById("stage-detail-content-target");
-        if (!container) return;
-        
-        const children = Array.from(container.children);
-        const h2Headers = container.querySelectorAll("h2");
-        if (h2Headers.length === 0) return; // Keep standard layout if no H2 elements exist
-        
-        const newContainer = document.createElement("div");
-        newContainer.className = "accordion-container";
-        
-        let currentHeader = null;
-        let currentGroup = [];
-        
-        children.forEach(child => {
-          if (child.tagName === 'H2') {
-            if (currentHeader) {
-              newContainer.appendChild(createAccordionItem(currentHeader, currentGroup));
-            } else {
-              currentGroup.forEach(el => newContainer.appendChild(el));
             }
-            currentHeader = child;
-            currentGroup = [];
-          } else if (child.tagName === 'H1' || child.tagName === 'STYLE') {
-            newContainer.appendChild(child);
-          } else {
-            currentGroup.push(child);
           }
-        });
-        
-        if (currentHeader) {
-          newContainer.appendChild(createAccordionItem(currentHeader, currentGroup));
-        } else {
-          currentGroup.forEach(el => newContainer.appendChild(el));
+
+          // Push state to browser history
+          if (pushState) {
+            window.history.pushState(
+              { stage: stageNum },
+              "",
+              `?stage=${stageNum}`,
+            );
+          }
+
+          // Scroll back to top smoothly
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }
-        
-        container.innerHTML = "";
-        Array.from(newContainer.childNodes).forEach(node => {
-          container.appendChild(node);
-        });
-        
-        const headers = container.querySelectorAll(".accordion-header");
-        headers.forEach(header => {
-          header.addEventListener("click", () => {
-            const content = header.nextElementSibling;
-            const icon = header.querySelector(".accordion-icon-box");
-            const isOpen = header.classList.contains("active");
-            
-            if (isOpen) {
-              header.classList.remove("active");
-              header.parentElement.classList.remove("active-item");
-              content.style.maxHeight = content.offsetHeight + "px";
-              content.offsetHeight; // force layout reflow
-              content.style.maxHeight = "0";
-              content.classList.remove("open");
-              if (icon) icon.textContent = "＋";
+
+        // 1.1. Dynamic Accordion builder function
+        function makeAccordion() {
+          const container = document.getElementById(
+            "stage-detail-content-target",
+          );
+          if (!container) return;
+
+          const children = Array.from(container.children);
+          const h2Headers = container.querySelectorAll("h2");
+          if (h2Headers.length === 0) return; // Keep standard layout if no H2 elements exist
+
+          const newContainer = document.createElement("div");
+          newContainer.className = "accordion-container";
+
+          let currentHeader = null;
+          let currentGroup = [];
+
+          children.forEach((child) => {
+            if (child.tagName === "H2") {
+              if (currentHeader) {
+                newContainer.appendChild(
+                  createAccordionItem(currentHeader, currentGroup),
+                );
+              } else {
+                currentGroup.forEach((el) => newContainer.appendChild(el));
+              }
+              currentHeader = child;
+              currentGroup = [];
+            } else if (child.tagName === "H1" || child.tagName === "STYLE") {
+              newContainer.appendChild(child);
             } else {
-              headers.forEach(h => {
-                if (h.classList.contains("active")) {
-                  h.classList.remove("active");
-                  h.parentElement.classList.remove("active-item");
-                  const c = h.nextElementSibling;
-                  c.style.maxHeight = c.offsetHeight + "px";
-                  c.offsetHeight; // force reflow
-                  c.style.maxHeight = "0";
-                  c.classList.remove("open");
-                  const i = h.querySelector(".accordion-icon-box");
-                  if (i) i.textContent = "＋";
-                }
-              });
-              
-              header.classList.add("active");
-              header.parentElement.classList.add("active-item");
-              content.classList.add("open");
-              content.style.maxHeight = content.scrollHeight + "px";
-              if (icon) icon.textContent = "－";
-              
-              setTimeout(() => {
-                if (header.classList.contains("active")) {
-                  content.style.maxHeight = "none";
-                }
-              }, 800);
-              
-              setTimeout(() => {
-                header.scrollIntoView({ behavior: "smooth", block: "nearest" });
-              }, 150);
+              currentGroup.push(child);
             }
           });
-        });
-        
-        if (headers.length > 0) {
-          headers[0].click();
+
+          if (currentHeader) {
+            newContainer.appendChild(
+              createAccordionItem(currentHeader, currentGroup),
+            );
+          } else {
+            currentGroup.forEach((el) => newContainer.appendChild(el));
+          }
+
+          container.innerHTML = "";
+          Array.from(newContainer.childNodes).forEach((node) => {
+            container.appendChild(node);
+          });
+
+          const headers = container.querySelectorAll(".accordion-header");
+          headers.forEach((header) => {
+            header.addEventListener("click", () => {
+              const content = header.nextElementSibling;
+              const icon = header.querySelector(".accordion-icon-box");
+              const isOpen = header.classList.contains("active");
+
+              if (isOpen) {
+                header.classList.remove("active");
+                header.parentElement.classList.remove("active-item");
+                content.style.maxHeight = content.offsetHeight + "px";
+                content.offsetHeight; // force layout reflow
+                content.style.maxHeight = "0";
+                content.classList.remove("open");
+                if (icon) icon.textContent = "＋";
+              } else {
+                headers.forEach((h) => {
+                  if (h.classList.contains("active")) {
+                    h.classList.remove("active");
+                    h.parentElement.classList.remove("active-item");
+                    const c = h.nextElementSibling;
+                    c.style.maxHeight = c.offsetHeight + "px";
+                    c.offsetHeight; // force reflow
+                    c.style.maxHeight = "0";
+                    c.classList.remove("open");
+                    const i = h.querySelector(".accordion-icon-box");
+                    if (i) i.textContent = "＋";
+                  }
+                });
+
+                header.classList.add("active");
+                header.parentElement.classList.add("active-item");
+                content.classList.add("open");
+                content.style.maxHeight = content.scrollHeight + "px";
+                if (icon) icon.textContent = "－";
+
+                setTimeout(() => {
+                  if (header.classList.contains("active")) {
+                    content.style.maxHeight = "none";
+                  }
+                }, 800);
+
+                setTimeout(() => {
+                  header.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                  });
+                }, 150);
+              }
+            });
+          });
+
+          if (headers.length > 0) {
+            headers[0].click();
+          }
         }
-      }
-      
-      function createAccordionItem(headerEl, contentElements) {
-        const item = document.createElement("div");
-        item.className = "accordion-item";
-        
-        const btn = document.createElement("button");
-        btn.className = "accordion-header text-serif";
-        btn.innerHTML = `
+
+        function createAccordionItem(headerEl, contentElements) {
+          const item = document.createElement("div");
+          item.className = "accordion-item";
+
+          const btn = document.createElement("button");
+          btn.className = "accordion-header text-serif";
+          btn.innerHTML = `
           <span class="header-title">${headerEl.innerHTML}</span>
           <span class="accordion-icon-box">＋</span>
         `;
-        
-        const contentWrapper = document.createElement("div");
-        contentWrapper.className = "accordion-content";
-        contentElements.forEach(el => contentWrapper.appendChild(el));
-        
-        item.appendChild(btn);
-        item.appendChild(contentWrapper);
-        return item;
-      }
 
-      // 2. Parse initial stage from URL parameters
-      const urlParams = new URLSearchParams(window.location.search);
-      let initialStage = parseInt(urlParams.get("stage")) || 1;
-      loadStage(initialStage, false);
+          const contentWrapper = document.createElement("div");
+          contentWrapper.className = "accordion-content";
+          contentElements.forEach((el) => contentWrapper.appendChild(el));
 
-      // 3. Handle click on nav stage links to transition client-side
-      document.querySelector(".nav-stages-list").addEventListener("click", (e) => {
-        const link = e.target.closest(".nav-stage-item");
-        if (link) {
-          e.preventDefault();
-          const targetStage = parseInt(link.getAttribute("data-stage-link"));
-          loadStage(targetStage, true);
+          item.appendChild(btn);
+          item.appendChild(contentWrapper);
+          return item;
         }
-      });
 
-      // 4. Handle popstate event (back/forward browser buttons)
-      window.addEventListener("popstate", (e) => {
+        // 2. Parse initial stage from URL parameters
         const urlParams = new URLSearchParams(window.location.search);
-        let stageNum = parseInt(urlParams.get("stage")) || 1;
-        loadStage(stageNum, false);
+        let initialStage = parseInt(urlParams.get("stage")) || 1;
+        loadStage(initialStage, false);
+
+        // 3. Handle click on nav stage links to transition client-side
+        document
+          .querySelector(".nav-stages-list")
+          .addEventListener("click", (e) => {
+            const link = e.target.closest(".nav-stage-item");
+            if (link) {
+              e.preventDefault();
+              const targetStage = parseInt(
+                link.getAttribute("data-stage-link"),
+              );
+              loadStage(targetStage, true);
+            }
+          });
+
+        // 4. Handle popstate event (back/forward browser buttons)
+        window.addEventListener("popstate", (e) => {
+          const urlParams = new URLSearchParams(window.location.search);
+          let stageNum = parseInt(urlParams.get("stage")) || 1;
+          loadStage(stageNum, false);
+        });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

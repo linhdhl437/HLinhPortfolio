@@ -1,0 +1,1123 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Chặng 3: Báo cáo phân tích hiệu quả của Prompt Engineering trong học tập
+    </title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background-color: #f4f6f9;
+      }
+      .document-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+      }
+      .back-link {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #3182ce;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .back-link:hover {
+        color: #2b6cb0;
+        text-decoration: underline;
+      }
+      h1 {
+        font-size: 1.8rem;
+        color: #1a365d;
+        text-align: center;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+      .subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #4a5568;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #3182ce;
+        padding-bottom: 15px;
+      }
+      h2 {
+        font-size: 1.4rem;
+        color: #2b6cb0;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 5px;
+      }
+      h3 {
+        font-size: 1.15rem;
+        color: #2d3748;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      p,
+      li {
+        font-size: 0.95rem;
+        color: #4a5568;
+        margin-bottom: 12px;
+        text-align: justify;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+        margin-bottom: 20px;
+      }
+      .prompt-box {
+        background-color: #f7fafc;
+        border-left: 4px solid #3182ce;
+        padding: 15px;
+        margin: 15px 0;
+        font-family: Consolas, Monaco, monospace;
+        font-size: 0.9rem;
+        color: #2d3748;
+        border-radius: 0 4px 4px 0;
+      }
+      .table-responsive {
+        overflow-x: auto;
+        margin: 25px 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+      th,
+      td {
+        border: 1px solid #cbd5e0;
+        padding: 10px 12px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background-color: #ebf8ff;
+        color: #2b6cb0;
+        font-weight: 600;
+      }
+      tr:nth-child(even) {
+        background-color: #f7fafc;
+      }
+      .image-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin: 20px 0;
+      }
+      .image-container {
+        flex: 1;
+        min-width: 280px;
+        max-width: 100%;
+        text-align: center;
+        padding: 12px;
+        background-color: #f8fafc;
+        border: 1px dashed #cbd5e0;
+        border-radius: 6px;
+      }
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #e2e8f0;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+      .image-caption {
+        font-size: 0.82rem;
+        color: #718096;
+        margin-top: 8px;
+        font-style: italic;
+      }
+      .image-note {
+        font-size: 0.8rem;
+        color: #dd6b20;
+        margin-top: 4px;
+        font-weight: bold;
+      }
+      .page-break-indicator {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #a0aec0;
+        border-top: 1px dotted #e2e8f0;
+        margin: 30px 0 15px 0;
+        padding-top: 5px;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="../index.html" class="back-link">← Quay lại Trang chủ Portfolio</a>
+
+    <div class="document-container">
+      <h1>Báo cáo phân tích hiệu quả của Prompt Engineering trong học tập</h1>
+      <div class="subtitle">
+        Nghiên cứu ứng dụng các kỹ thuật thiết kế Prompt
+      </div>
+
+      <div class="page-break-indicator">--- Trang 1 ---</div>
+
+      <h2>1. MỞ ĐẦU</h2>
+      <p>
+        Trong bối cảnh trí tuệ nhân tạo tạo sinh phát triển mạnh mẽ, các mô hình
+        ngôn ngữ lớn (Large Language Models – LLMs) như ChatGPT đang trở thành
+        công cụ hỗ trợ học tập phổ biến đối với sinh viên. Tuy nhiên, chất lượng
+        đầu ra của AI phụ thuộc đáng kể vào cách người dùng xây dựng prompt. Một
+        prompt thiếu rõ ràng có thể dẫn đến câu trả lời mơ hồ, trong khi prompt
+        được thiết kế tốt có khả năng định hướng mô hình tạo ra nội dung chính
+        xác, có cấu trúc và phù hợp với mục tiêu học tập.
+      </p>
+      <p>
+        Báo cáo này nhằm phân tích hiệu quả của các kỹ thuật prompt engineering
+        thông qua ba tác vụ học tập phổ biến: tóm tắt tài liệu học thuật, giải
+        thích khái niệm phức tạp và tạo câu hỏi ôn tập.
+      </p>
+
+      <h2>2. PHÂN TÍCH CÁC TÁC VỤ HỌC TẬP</h2>
+
+      <h2>2.1. TÁC VỤ 1: TÓM TẮT TÀI LIỆU HỌC THUẬT</h2>
+      <h3>2.1.1. Ngữ liệu</h3>
+      <p>
+        Bài giảng
+        <strong>“Chương 1: Máy tính và các thiết bị ngoại vi”</strong> – môn
+        Nhập môn Công nghệ số và Trí tuệ nhân tạo.
+      </p>
+
+      <h3>2.1.2. Mục tiêu của tác vụ</h3>
+      <p>
+        Tóm tắt tài liệu học thuật giúp sinh viên rút gọn nội dung, xác định ý
+        chính, ghi nhớ kiến thức và ôn tập hiệu quả. Với bài giảng “Máy tính và
+        các thiết bị ngoại vi”, việc tóm tắt giúp nắm nhanh các nội dung cốt lõi
+        như khái niệm máy tính, phần cứng cơ bản, thiết bị ngoại vi và vai trò
+        của công nghệ số.
+      </p>
+
+      <h3>2.1.3. Thách thức của tác vụ</h3>
+      <p>
+        Khi tóm tắt tài liệu học thuật, AI có thể bỏ sót nội dung quan trọng,
+        tạo bản tóm tắt quá chung chung hoặc thiếu tính logic. Nếu prompt chưa
+        rõ ràng, kết quả thường ngắn, thiếu hệ thống và chưa tập trung vào trọng
+        tâm môn học. Do đó, chất lượng prompt ảnh hưởng lớn đến chất lượng đầu
+        ra của AI.
+      </p>
+
+      <div class="page-break-indicator">--- Trang 2 ---</div>
+
+      <h3>2.1.4. Các phiên bản prompt</h3>
+
+      <h4>a) Prompt cơ bản</h4>
+      <div class="prompt-box">
+        Hãy tóm tắt nội dung bài giảng “Chương 1: Máy tính và các thiết bị ngoại
+        vi”.
+      </div>
+
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./Image/Ảnh1_C3_Tác vụ 1_Prompt cơ bản.jpg"
+            alt="Ảnh 1 Tác vụ 1 Prompt cơ bản"
+          />
+          <div class="image-caption">
+            Ảnh minh họa 1: Câu lệnh tóm tắt cơ bản nhập vào ChatGPT
+          </div>
+          <div class="image-note">
+            [Note từ ViTriChenAnh.txt: Đặt ảnh 1 tại vị trí ngay sau câu lệnh cơ
+            bản]
+          </div>
+        </div>
+        <div class="image-container">
+          <img
+            src="./Image/Ảnh2_C3_Tác vụ 1_Prompt cơ bản.JPG"
+            alt="Ảnh 2 Tác vụ 1 Prompt cơ bản"
+          />
+          <div class="image-caption">
+            Ảnh minh họa 2: Phản hồi ngắn gọn và sơ sài từ chatbot AI
+          </div>
+          <div class="image-note">
+            [Note từ ViTriChenAnh.txt: Đặt ảnh 2 tại vị trí kết quả trả về của
+            câu lệnh cơ bản]
+          </div>
+        </div>
+      </div>
+
+      <ul>
+        <li>
+          <strong>Đặc điểm:</strong> ngắn gọn, không quy định độ dài, không xác
+          định cấu trúc đầu ra, không nêu rõ nội dung cần ưu tiên.
+        </li>
+        <li><strong>Ưu điểm:</strong> dễ sử dụng, nhanh chóng.</li>
+        <li>
+          <strong>Hạn chế:</strong> AI dễ trả lời chung chung, có thể thiếu ý
+          quan trọng, cấu trúc chưa rõ ràng.
+        </li>
+      </ul>
+
+      <h4>b) Prompt cải tiến</h4>
+      <div class="prompt-box">
+        Hãy tóm tắt bài giảng “Chương 1: Máy tính và các thiết bị ngoại vi”
+        trong khoảng 200 từ. Yêu cầu: trình bày rõ các nội dung chính của bài
+        học; nêu các thành phần cơ bản của máy tính; giải thích ngắn gọn vai trò
+        của thiết bị ngoại vi; sử dụng văn phong học thuật, dễ hiểu; trình bày
+        theo từng ý rõ ràng; chuyển về dạng văn bản.
+      </div>
+      <ul>
+        <li>
+          <strong>Kỹ thuật prompt engineering được sử dụng:</strong> Constraint
+          Prompting (giới hạn độ dài), Structured Prompting (quy định cấu trúc),
+          Instruction Prompting (đưa yêu cầu cụ thể).
+        </li>
+        <li>
+          <strong>Ưu điểm:</strong> nội dung đầy đủ hơn; có định hướng rõ ràng,
+          kết quả logic hơn prompt cơ bản.
+        </li>
+        <li>
+          <strong>Hạn chế:</strong> AI vẫn có thể chưa xác định được đâu là nội
+          dung trọng tâm nhất, mức độ học thuật chưa thật sự ổn định.
+        </li>
+      </ul>
+
+      <h4>c) Prompt nâng cao</h4>
+      <div class="prompt-box">
+        Tôi là sinh viên năm nhất đang học môn “Nhập môn Công nghệ số và Trí tuệ
+        nhân tạo”, chưa có nhiều nền tảng về công nghệ và cần ôn tập bài giảng
+        “Chương 1: Máy tính và các thiết bị ngoại vi” để chuẩn bị cho kiểm tra.
+        Bạn là một trợ giảng đại học chuyên hỗ trợ sinh viên tóm tắt tài liệu
+        công nghệ thông tin theo hướng dễ học và dễ ghi nhớ. Hãy xác định chủ đề
+        chính của bài giảng, tóm tắt các nội dung quan trọng nhất, phân loại các
+        thành phần của máy tính theo từng nhóm, giải thích ngắn gọn chức năng
+        của từng nhóm thiết bị, đồng thời chỉ ra các kiến thức trọng tâm sinh
+        viên cần ghi nhớ khi ôn thi. Yêu cầu: viết bằng tiếng Việt, trình bày
+        dạng bullet points, sử dụng văn phong học thuật nhưng dễ hiểu, giữ lại
+        các thuật ngữ công nghệ quan trọng, độ dài 500 từ và không đưa thông tin
+        ngoài nội dung bài giảng.
+      </div>
+
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./Image/Ảnh3_C3_Tác vụ 1_Prompt nâng cao.JPG"
+            alt="Ảnh 3 Tác vụ 1 Prompt nâng cao"
+          />
+          <div class="image-caption">
+            Ảnh minh họa 3: Câu lệnh nâng cao thiết lập đầy đủ bối cảnh, vai trò
+          </div>
+          <div class="image-note">
+            [Note từ ViTriChenAnh.txt: Đặt ảnh 3 tại vị trí ngay sau câu lệnh
+            nâng cao]
+          </div>
+        </div>
+        <div class="image-container">
+          <img
+            src="./Image/Ảnh4_C3_Tác vụ 1_Prompt nâng cao.JPG"
+            alt="Ảnh 4 Tác vụ 1 Prompt nâng cao"
+          />
+          <div class="image-caption">
+            Ảnh minh họa 4: Phản hồi chi tiết, phân cấp rõ ràng của ChatGPT
+          </div>
+          <div class="image-note">
+            [Note từ ViTriChenAnh.txt: Đặt ảnh 4 tại vị trí kết quả trả về của
+            câu lệnh nâng cao]
+          </div>
+        </div>
+      </div>
+
+      <p><strong>Kỹ thuật prompt engineering được áp dụng:</strong></p>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%">Kỹ thuật Prompt Engineering</th>
+              <th style="width: 45%">Biểu hiện trong prompt</th>
+              <th style="width: 30%">Tác dụng</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Context Prompting</strong></td>
+              <td>
+                Cung cấp bối cảnh: sinh viên ôn thi môn Nhập môn Công nghệ số và
+                Trí tuệ nhân tạo
+              </td>
+              <td>
+                Giúp AI hiểu đúng mục tiêu học tập và ưu tiên nội dung quan
+                trọng
+              </td>
+            </tr>
+            <tr class="page-break-indicator-row">
+              <td
+                colspan="3"
+                style="
+                  text-align: center;
+                  background: #fafafa;
+                  font-size: 0.8rem;
+                  color: #a0aec0;
+                  border: none;
+                  padding: 2px;
+                "
+              >
+                --- Trang 3 ---
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Role Prompting</strong></td>
+              <td>“Bạn là một trợ giảng đại học…”</td>
+              <td>
+                Làm cho câu trả lời mang tính học thuật, logic và có tính sư
+                phạm hơn
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Explicit Instruction</strong></td>
+              <td>Chia nhiệm vụ thành các yêu cầu cụ thể</td>
+              <td>Giảm sự mơ hồ, hạn chế bỏ sót ý</td>
+            </tr>
+            <tr>
+              <td><strong>Audience Prompting</strong></td>
+              <td>Xác định đối tượng là sinh viên năm nhất</td>
+              <td>Giúp AI điều chỉnh độ khó và cách diễn đạt phù hợp</td>
+            </tr>
+            <tr>
+              <td><strong>Structured Prompting</strong></td>
+              <td>Yêu cầu trình bày bằng bullet points, theo từng mục</td>
+              <td>Tăng tính rõ ràng, dễ đọc và dễ ôn tập</td>
+            </tr>
+            <tr>
+              <td><strong>Constraint Prompting</strong></td>
+              <td>Giới hạn độ dài 500 từ</td>
+              <td>Giúp nội dung cô đọng, tránh lan man</td>
+            </tr>
+            <tr>
+              <td><strong>Chain-of-thought Prompting</strong></td>
+              <td>Yêu cầu AI kiểm tra và tối ưu nội dung trước khi trả lời</td>
+              <td>Tăng tính logic và độ đầy đủ của kết quả</td>
+            </tr>
+            <tr>
+              <td><strong>Refinement Prompting</strong></td>
+              <td>“Loại bỏ ý trùng lặp”, “đảm bảo bố cục logic”</td>
+              <td>Cải thiện chất lượng đầu ra và tính mạch lạc</td>
+            </tr>
+            <tr>
+              <td><strong>Task Decomposition</strong></td>
+              <td>Chia tác vụ thành nhiều bước nhỏ</td>
+              <td>Giúp AI xử lý nhiệm vụ phức tạp hiệu quả hơn</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>2.1.5 So sánh kết quả giữa các prompt</h3>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%">Tiêu chí</th>
+              <th style="width: 25%">Prompt cơ bản</th>
+              <th style="width: 25%">Prompt cải tiến</th>
+              <th style="width: 25%">Prompt nâng cao</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Độ đầy đủ nội dung</strong></td>
+              <td>Trung bình</td>
+              <td>Khá đầy đủ</td>
+              <td>Rất đầy đủ</td>
+            </tr>
+            <tr>
+              <td><strong>Tính logic</strong></td>
+              <td>Thấp</td>
+              <td>Khá rõ ràng</td>
+              <td>Rõ ràng, hệ thống</td>
+            </tr>
+            <tr>
+              <td><strong>Tính học thuật</strong></td>
+              <td>Chưa ổn định</td>
+              <td>Tốt hơn</td>
+              <td>Cao</td>
+            </tr>
+            <tr>
+              <td><strong>Khả năng hỗ trợ ôn tập</strong></td>
+              <td>Hạn chế</td>
+              <td>Khá tốt</td>
+              <td>Rất hiệu quả</td>
+            </tr>
+            <tr>
+              <td><strong>Mức độ kiểm soát đầu ra</strong></td>
+              <td>Thấp</td>
+              <td>Trung bình</td>
+              <td>Cao</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="page-break-indicator">--- Trang 4 ---</div>
+
+      <h2>2.2. TÁC VỤ 2: GIẢI THÍCH MỘT KHÁI NIỆM PHỨC TẠP</h2>
+      <h3>2.2.1. Khái niệm được chọn</h3>
+      <p>
+        <strong>“Thiết bị ngoại vi”</strong> (trong bài giảng Chương 1: Máy tính
+        và các thiết bị ngoại vi – môn Nhập môn Công nghệ số và Trí tuệ nhân
+        tạo).
+      </p>
+
+      <h3>2.2.2. Phân tích tác vụ học tập</h3>
+      <p>
+        <strong>a. Mục tiêu của tác vụ:</strong> Giải thích khái niệm giúp người
+        học hiểu bản chất kiến thức, ghi nhớ thuật ngữ và vận dụng vào thực tế.
+        Với khái niệm “thiết bị ngoại vi”, sinh viên cần nắm được định nghĩa,
+        chức năng, đặc điểm và vai trò của các thiết bị này trong hệ thống máy
+        tính.
+      </p>
+      <p>
+        <strong>b. Thách thức của tác vụ:</strong> Khi giải thích khái niệm, AI
+        có thể sử dụng ngôn ngữ quá học thuật, thiếu ví dụ thực tế hoặc trình
+        bày dài dòng, gây khó hiểu cho người học. Đối với sinh viên năm nhất,
+        những giải thích thiếu trực quan dễ dẫn đến nhầm lẫn và khó ghi nhớ. Vì
+        vậy, cần xây dựng prompt phù hợp để AI đưa ra phản hồi rõ ràng và hiệu
+        quả hơn.
+      </p>
+
+      <h3>2.2.3. Các phiên bản prompt</h3>
+
+      <h4>a) Prompt cơ bản</h4>
+      <div class="prompt-box">
+        Hãy giải thích khái niệm “thiết bị ngoại vi”.
+      </div>
+
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./Image/Ảnh5_C3_Tác vụ 2_Prompt cơ bản.jpg"
+            alt="Ảnh 5 Tác vụ 2 Prompt cơ bản"
+          />
+          <div class="image-caption">
+            Ảnh minh họa 5: Nhập câu lệnh cơ bản yêu cầu giải thích khái niệm
+          </div>
+          <div class="image-note">
+            [Note từ ViTriChenAnh.txt: Đặt ảnh 5 tại vị trí ngay sau câu lệnh cơ
+            bản giải thích khái niệm]
+          </div>
+        </div>
+      </div>
+
+      <ul>
+        <li>
+          <strong>Đặc điểm:</strong> ngắn gọn, dễ sử dụng, không có yêu cầu cụ
+          thể về cách trình bày hay mức độ chi tiết.
+        </li>
+        <li>
+          <strong>Ưu điểm:</strong> nhanh chóng, phù hợp với nhu cầu hỏi đáp đơn
+          giản.
+        </li>
+        <li>
+          <strong>Hạn chế:</strong> AI dễ trả lời quá chung chung, thiếu ví dụ
+          minh họa, chưa phù hợp với đối tượng người học cụ thể, khó hỗ trợ ghi
+          nhớ và ôn tập.
+        </li>
+      </ul>
+
+      <h4>b) Prompt cải tiến</h4>
+      <div class="prompt-box">
+        Hãy giải thích khái niệm “thiết bị ngoại vi” cho sinh viên năm nhất
+        ngành công nghệ. Yêu cầu: giải thích dễ hiểu; nêu chức năng của thiết bị
+        ngoại vi; đưa ra ví dụ thực tế; phân loại thiết bị nhập và thiết bị
+        xuất; trình bày theo từng mục rõ ràng.
+      </div>
+
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./Image/Ảnh6_C3_Tác vụ 2_Prompt cải tiến.JPG"
+            alt="Ảnh 6 Tác vụ 2 Prompt cải tiến"
+          />
+          <div class="image-caption">
+            Ảnh minh họa 6: ChatGPT phản hồi theo các phân loại rõ ràng hơn
+          </div>
+          <div class="image-note">
+            [Note từ ViTriChenAnh.txt: Đặt ảnh 6 tại vị trí kết quả trả về của
+            câu lệnh cải tiến]
+          </div>
+        </div>
+      </div>
+
+      <ul>
+        <li>
+          <strong>Kỹ thuật prompt engineering được sử dụng:</strong> Audience
+          Prompting, Explicit Instruction, Structured Prompting và Example
+          Prompting.
+        </li>
+        <li>
+          <strong>Ưu điểm:</strong> nội dung rõ ràng hơn, phù hợp trình độ sinh
+          viên, có tính trực quan hơn prompt cơ bản.
+        </li>
+        <li>
+          <strong>Hạn chế:</strong> mức độ học thuật chưa thật sự sâu, chưa tối
+          ưu khả năng ghi nhớ kiến thức.
+        </li>
+      </ul>
+
+      <div class="page-break-indicator">--- Trang 5 ---</div>
+
+      <h4>c) Prompt nâng cao</h4>
+      <div class="prompt-box">
+        Tôi là sinh viên năm nhất đang học môn “Nhập môn Công nghệ số và Trí tuệ
+        nhân tạo”. Tôi đang ôn tập Chương 1 về máy tính và các thiết bị ngoại vi
+        nhưng chưa hiểu rõ khái niệm “thiết bị ngoại vi”. Bạn là một giảng viên
+        công nghệ thông tin có kinh nghiệm giảng dạy cho sinh viên mới bắt đầu
+        học về máy tính. Hãy giải thích khái niệm “thiết bị ngoại vi”; phân biệt
+        thiết bị ngoại vi với các thành phần chính bên trong máy tính; phân loại
+        thiết bị ngoại vi thành thiết bị nhập và thiết bị xuất; đưa ra ví dụ
+        thực tế cho từng loại; giải thích vai trò của thiết bị ngoại vi trong
+        hoạt động của máy tính. Yêu cầu: sử dụng ngôn ngữ đơn giản, dễ hiểu;
+        trình bày theo từng mục rõ ràng; có ví dụ minh họa thực tế; không dùng
+        quá nhiều thuật ngữ chuyên sâu; độ dài khoảng 250 từ. Trước khi hoàn
+        thành: kiểm tra xem phần giải thích đã dễ hiểu chưa; đảm bảo các ví dụ
+        phù hợp thực tế; loại bỏ nội dung trùng lặp; cuối cùng thêm mục “Cách
+        ghi nhớ nhanh khái niệm thiết bị ngoại vi”.
+      </div>
+
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./Image/Ảnh7_C3_Tác vụ 2_Prompt nâng cao.JPG"
+            alt="Ảnh 7 Tác vụ 2 Prompt nâng cao"
+          />
+          <div class="image-caption">
+            Ảnh minh họa 7: Câu lệnh nâng cao giả lập vai giảng viên, thêm mục
+            ghi nhớ nhanh
+          </div>
+          <div class="image-note">
+            [Note từ ViTriChenAnh.txt: Đặt ảnh 7 tại vị trí ngay sau câu lệnh
+            nâng cao giải thích khái niệm]
+          </div>
+        </div>
+        <div class="image-container">
+          <img
+            src="./Image/Ảnh8_C3_Tác vụ 2_Prompt nâng cao.JPG"
+            alt="Ảnh 8 Tác vụ 2 Prompt nâng cao"
+          />
+          <div class="image-caption">
+            Ảnh minh họa 8: Phản hồi giàu tính sư phạm, trực quan cao của
+            ChatGPT
+          </div>
+          <div class="image-note">
+            [Note từ ViTriChenAnh.txt: Đặt ảnh 8 tại vị trí kết quả trả về của
+            câu lệnh nâng cao giải thích khái niệm]
+          </div>
+        </div>
+      </div>
+
+      <p>
+        <strong>Phân tích kỹ thuật Prompt Engineering được áp dụng:</strong>
+      </p>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%">Kỹ thuật Prompt Engineering</th>
+              <th style="width: 45%">Biểu hiện trong prompt</th>
+              <th style="width: 30%">Tác dụng</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Context Prompting</strong></td>
+              <td>Cung cấp bối cảnh sinh viên đang ôn tập chương 1</td>
+              <td>Giúp AI hiểu mục tiêu học tập</td>
+            </tr>
+            <tr>
+              <td><strong>Role Prompting</strong></td>
+              <td>“Bạn là một giảng viên công nghệ thông tin…”</td>
+              <td>Tăng tính học thuật và sư phạm</td>
+            </tr>
+            <tr>
+              <td><strong>Explicit Instruction</strong></td>
+              <td>Chia nhiệm vụ thành 5 yêu cầu cụ thể</td>
+              <td>Giảm mơ hồ, tăng tính đầy đủ</td>
+            </tr>
+            <tr>
+              <td><strong>Audience Prompting</strong></td>
+              <td>Xác định đối tượng là sinh viên năm nhất</td>
+              <td>Điều chỉnh độ khó phù hợp</td>
+            </tr>
+            <tr>
+              <td><strong>Structured Prompting</strong></td>
+              <td>Yêu cầu trình bày theo từng mục</td>
+              <td>Tăng tính rõ ràng</td>
+            </tr>
+            <tr>
+              <td><strong>Constraint Prompting</strong></td>
+              <td>Giới hạn độ dài khoảng 250 từ</td>
+              <td>Giúp nội dung cô đọng</td>
+            </tr>
+            <tr>
+              <td><strong>Example Prompting</strong></td>
+              <td>Yêu cầu ví dụ minh họa thực tế</td>
+              <td>Tăng tính trực quan</td>
+            </tr>
+            <tr>
+              <td><strong>Refinement Prompting</strong></td>
+              <td>Yêu cầu kiểm tra và tối ưu nội dung</td>
+              <td>Cải thiện chất lượng phản hồi</td>
+            </tr>
+            <tr>
+              <td><strong>Task Decomposition</strong></td>
+              <td>Chia nhiệm vụ thành nhiều bước nhỏ</td>
+              <td>Giúp AI xử lý thông tin logic hơn</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>2.2.4 So sánh kết quả giữa các prompt</h3>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%">Tiêu chí</th>
+              <th style="width: 25%">Prompt cơ bản</th>
+              <th style="width: 25%">Prompt cải tiến</th>
+              <th style="width: 30%">Prompt nâng cao</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Độ dễ hiểu</strong></td>
+              <td>Trung bình</td>
+              <td>Tốt</td>
+              <td>Rất tốt</td>
+            </tr>
+            <tr class="page-break-indicator-row">
+              <td
+                colspan="4"
+                style="
+                  text-align: center;
+                  background: #fafafa;
+                  font-size: 0.8rem;
+                  color: #a0aec0;
+                  border: none;
+                  padding: 2px;
+                "
+              >
+                --- Trang 6 ---
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Tính trực quan</strong></td>
+              <td>Thấp</td>
+              <td>Có ví dụ</td>
+              <td>Nhiều ví dụ thực tế</td>
+            </tr>
+            <tr>
+              <td><strong>Phù hợp sinh viên năm nhất</strong></td>
+              <td>Chưa cao</td>
+              <td>Khá phù hợp</td>
+              <td>Rất phù hợp</td>
+            </tr>
+            <tr>
+              <td><strong>Tính logic</strong></td>
+              <td>Chưa rõ</td>
+              <td>Khá rõ ràng</td>
+              <td>Có hệ thống</td>
+            </tr>
+            <tr>
+              <td><strong>Khả năng hỗ trợ ghi nhớ</strong></td>
+              <td>Hạn chế</td>
+              <td>Khá tốt</td>
+              <td>Rất hiệu quả</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>2.3. TÁC VỤ 3: TẠO BỘ CÂU HỎI ÔN TẬP CHO MỘT CHỦ ĐỀ</h2>
+      <h3>2.3.1. Chủ đề</h3>
+      <p>
+        <strong>“Máy tính và các thiết bị ngoại vi”</strong> (trong bài giảng
+        Chương 1 – môn Nhập môn Công nghệ số và Trí tuệ nhân tạo).
+      </p>
+
+      <h3>2.3.2. Phân tích tác vụ học tập</h3>
+      <p>
+        <strong>a. Mục tiêu của tác vụ:</strong> Tạo bộ câu hỏi ôn tập giúp
+        người học củng cố kiến thức, kiểm tra mức độ ghi nhớ và chuẩn bị cho các
+        bài kiểm tra, kỳ thi. Với chủ đề “Máy tính và các thiết bị ngoại vi”, bộ
+        câu hỏi hỗ trợ sinh viên ghi nhớ kiến thức về phần cứng, thiết bị nhập –
+        xuất và chức năng của từng loại thiết bị.
+      </p>
+      <p>
+        <strong>b. Thách thức của tác vụ:</strong> Khi tạo câu hỏi ôn tập, AI có
+        thể đưa ra các câu hỏi lặp ý, mức độ khó chưa phù hợp hoặc thiếu đáp án,
+        giải thích. Nếu prompt không rõ ràng, câu hỏi thường chung chung, thiếu
+        hệ thống và chưa đánh giá được nhiều mức độ tư duy. Vì vậy, cần xây dựng
+        prompt cụ thể và có cấu trúc để nâng cao chất lượng kết quả.
+      </p>
+
+      <h3>2.3.3. Các phiên bản prompt</h3>
+
+      <h4>a) Prompt cơ bản</h4>
+      <div class="prompt-box">
+        Hãy tạo bộ câu hỏi ôn tập về chủ đề “Máy tính và các thiết bị ngoại vi”.
+      </div>
+      <ul>
+        <li>
+          <strong>Đặc điểm:</strong> ngắn gọn, không quy định số lượng câu hỏi,
+          không yêu cầu mức độ khó, không yêu cầu đáp án hoặc giải thích.
+        </li>
+        <li>
+          <strong>Ưu điểm:</strong> dễ sử dụng, phù hợp với nhu cầu hỏi nhanh.
+        </li>
+        <li>
+          <strong>Hạn chế:</strong> câu hỏi dễ bị chung chung, thiếu cấu trúc,
+          khó phục vụ ôn thi hiệu quả.
+        </li>
+      </ul>
+
+      <div class="page-break-indicator">--- Trang 7 ---</div>
+
+      <h4>b) Prompt cải tiến</h4>
+      <div class="prompt-box">
+        Hãy tạo 10 câu hỏi ôn tập về chủ đề “Máy tính và các thiết bị ngoại vi”.
+        Yêu cầu: gồm cả câu hỏi trắc nghiệm và tự luận ngắn; tập trung vào cấu
+        tạo máy tính, CPU, bộ nhớ, thiết bị nhập/xuất, thiết bị ngoại vi; kèm
+        đáp án ngắn gọn; trình bày rõ ràng theo từng mục.
+      </div>
+
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./Image/Ảnh5_C3_Tác vụ 3_Prompt cải tiến.JPG"
+            alt="Ảnh 9 Tác vụ 3 Prompt cải tiến"
+          />
+          <div class="image-caption">
+            Ảnh minh họa 9: Kết quả tạo câu hỏi trắc nghiệm/tự luận cơ bản kèm
+            đáp án
+          </div>
+          <div class="image-note">
+            [Note từ ViTriChenAnh.txt: Đặt ảnh 9 tại vị trí kết quả trả về của
+            câu lệnh cải tiến tạo câu hỏi]
+          </div>
+        </div>
+      </div>
+
+      <ul>
+        <li>
+          <strong>Kỹ thuật prompt engineering được sử dụng:</strong> Explicit
+          Instruction, Structured Prompting, Constraint Prompting và Answer
+          Prompting.
+        </li>
+        <li>
+          <strong>Ưu điểm:</strong> nội dung rõ ràng hơn, có tính hệ thống, hỗ
+          trợ ôn tập hiệu quả hơn prompt cơ bản.
+        </li>
+        <li>
+          <strong>Hạn chế:</strong> mức độ tư duy chưa được phân tầng rõ, câu
+          hỏi vận dụng còn hạn chế.
+        </li>
+      </ul>
+
+      <h4>c) Prompt nâng cao</h4>
+      <div class="prompt-box">
+        Tôi là sinh viên năm nhất đang học môn “Nhập môn Công nghệ số và Trí tuệ
+        nhân tạo”. Tôi cần một bộ câu hỏi ôn tập cho Chương 1: “Máy tính và các
+        thiết bị ngoại vi” để chuẩn bị cho kiểm tra. Bạn là giảng viên đại học
+        ngành công nghệ thông tin chuyên thiết kế đề ôn tập cho sinh viên. Hãy
+        tạo bộ câu hỏi ôn tập gồm 5 câu trắc nghiệm, 3 câu tự luận ngắn và 2 câu
+        vận dụng thực tế. Nội dung tập trung vào cấu tạo máy tính, CPU, bộ nhớ,
+        thiết bị nhập, thiết bị xuất và thiết bị ngoại vi. Yêu cầu: mỗi câu phải
+        kèm đáp án; giải thích ngắn gọn vì sao đáp án đúng; câu hỏi không được
+        trùng ý; trình bày theo từng phần rõ ràng; độ khó tăng dần từ dễ đến
+        khó. Trước khi hoàn thành: kiểm tra xem các câu hỏi đã bao quát đủ nội
+        dung chương chưa; loại bỏ câu hỏi trùng lặp; đảm bảo mức độ khó đa dạng;
+        cuối cùng thêm mục “5 kiến thức quan trọng nhất cần ghi nhớ trước khi
+        thi”.
+      </div>
+
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./Image/Ảnh9_C3_Tác vụ 3_Prompt nâng cao.JPG"
+            alt="Ảnh 10 Tác vụ 3 Prompt nâng cao"
+          />
+          <div class="image-caption">
+            Ảnh minh họa 10: Câu lệnh nâng cao phân loại cấu trúc đề thi, tăng
+            độ khó dần
+          </div>
+          <div class="image-note">
+            [Note từ ViTriChenAnh.txt: Đặt ảnh 10 tại vị trí ngay sau câu lệnh
+            nâng cao tạo câu hỏi]
+          </div>
+        </div>
+        <div class="image-container">
+          <img
+            src="./Image/Ảnh10_C3_Tác vụ 3_Prompt nâng cao.JPG"
+            alt="Ảnh 11 Tác vụ 3 Prompt nâng cao"
+          />
+          <div class="image-caption">
+            Ảnh minh họa 11: Đề ôn tập chi tiết, có phân tầng độ khó và có giải
+            thích chi tiết
+          </div>
+          <div class="image-note">
+            [Note từ ViTriChenAnh.txt: Đặt ảnh 11 tại vị trí kết quả trả về của
+            câu lệnh nâng cao tạo câu hỏi]
+          </div>
+        </div>
+      </div>
+
+      <p>
+        <strong>Phân tích các kỹ thuật Prompt Engineering được áp dụng:</strong>
+      </p>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%">Kỹ thuật Prompt Engineering</th>
+              <th style="width: 45%">Biểu hiện trong prompt</th>
+              <th style="width: 30%">Tác dụng</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Context Prompting</strong></td>
+              <td>Cung cấp bối cảnh ôn thi giữa kỳ</td>
+              <td>Giúp AI hiểu mục tiêu học tập</td>
+            </tr>
+            <tr>
+              <td><strong>Role Prompting</strong></td>
+              <td>“Bạn là giảng viên đại học…”</td>
+              <td>Tăng tính học thuật và tính sư phạm</td>
+            </tr>
+            <tr>
+              <td><strong>Explicit Instruction</strong></td>
+              <td>Chia nhiệm vụ thành nhiều yêu cầu cụ thể</td>
+              <td>Giảm mơ hồ và tăng độ đầy đủ</td>
+            </tr>
+            <tr>
+              <td><strong>Audience Prompting</strong></td>
+              <td>Xác định đối tượng là sinh viên năm nhất</td>
+              <td>Điều chỉnh độ khó phù hợp</td>
+            </tr>
+            <tr>
+              <td><strong>Structured Prompting</strong></td>
+              <td>Phân chia câu hỏi theo từng loại</td>
+              <td>Tăng tính logic và rõ ràng</td>
+            </tr>
+            <tr class="page-break-indicator-row">
+              <td
+                colspan="3"
+                style="
+                  text-align: center;
+                  background: #fafafa;
+                  font-size: 0.8rem;
+                  color: #a0aec0;
+                  border: none;
+                  padding: 2px;
+                "
+              >
+                --- Trang 8 ---
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Constraint Prompting</strong></td>
+              <td>Quy định số lượng và nội dung câu hỏi</td>
+              <td>Giúp kiểm soát đầu ra</td>
+            </tr>
+            <tr>
+              <td><strong>Answer Prompting</strong></td>
+              <td>Yêu cầu kèm đáp án và giải thích</td>
+              <td>Hỗ trợ tự học hiệu quả</td>
+            </tr>
+            <tr>
+              <td><strong>Refinement Prompting</strong></td>
+              <td>Yêu cầu kiểm tra độ bao quát và loại bỏ trùng lặp</td>
+              <td>Cải thiện chất lượng bộ câu hỏi</td>
+            </tr>
+            <tr>
+              <td><strong>Task Decomposition</strong></td>
+              <td>Chia nhiệm vụ thành nhiều phần nhỏ</td>
+              <td>Giúp AI xử lý yêu cầu phức tạp tốt hơn</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>2.3.4 So sánh kết quả giữa các prompt</h3>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%">Tiêu chí</th>
+              <th style="width: 25%">Prompt cơ bản</th>
+              <th style="width: 25%">Prompt cải tiến</th>
+              <th style="width: 25%">Prompt nâng cao</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Độ đầy đủ nội dung</strong></td>
+              <td>Thấp</td>
+              <td>Khá đầy đủ</td>
+              <td>Rất đầy đủ</td>
+            </tr>
+            <tr>
+              <td><strong>Mức độ phân loại câu hỏi</strong></td>
+              <td>Chưa rõ</td>
+              <td>Có phân loại cơ bản</td>
+              <td>Phân tầng rõ ràng</td>
+            </tr>
+            <tr>
+              <td><strong>Khả năng hỗ trợ ôn thi</strong></td>
+              <td>Trung bình</td>
+              <td>Tốt</td>
+              <td>Rất hiệu quả</td>
+            </tr>
+            <tr>
+              <td><strong>Tính logic</strong></td>
+              <td>Thấp</td>
+              <td>Khá rõ ràng</td>
+              <td>Có hệ thống</td>
+            </tr>
+            <tr>
+              <td><strong>Độ phù hợp với sinh viên năm nhất</strong></td>
+              <td>Chưa ổn định</td>
+              <td>Khá phù hợp</td>
+              <td>Rất phù hợp</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="page-break-indicator">--- Trang 9 ---</div>
+
+      <h2>
+        3. PHÂN TÍCH LÝ DO TẠI SAO MỘT SỐ PROMPT HIỆU QUẢ HƠN CÁC PROMPT KHÁC
+      </h2>
+      <p>
+        <strong
+          >Prompt rõ ràng giúp giảm sự mơ hồ và nâng cao độ chính xác:</strong
+        >
+        Khi prompt cung cấp đầy đủ mục tiêu, bối cảnh và yêu cầu cụ thể, AI có
+        thể xác định đúng nội dung cần tập trung, từ đó tạo ra phản hồi chính
+        xác và phù hợp hơn. Ngược lại, các prompt ngắn và chung chung thường
+        khiến AI đưa ra câu trả lời mang tính khái quát, thiếu chiều sâu hoặc
+        chưa đáp ứng đúng nhu cầu học tập.
+      </p>
+      <p>
+        <strong>Context Prompting giúp AI hiểu đúng tình huống học tập:</strong>
+        Việc bổ sung thông tin về môn học, mục đích sử dụng và đối tượng người
+        học giúp AI lựa chọn mức độ kiến thức phù hợp. Chẳng hạn, khi biết người
+        dùng là sinh viên năm nhất đang ôn tập môn Nhập môn Công nghệ số và Trí
+        tuệ nhân tạo, AI sẽ ưu tiên các kiến thức cốt lõi, giảm thuật ngữ chuyên
+        môn phức tạp và tập trung vào những nội dung có khả năng xuất hiện trong
+        kiểm tra, thi cử.
+      </p>
+      <p>
+        <strong>Role Prompting làm tăng tính sư phạm của phản hồi:</strong> Khi
+        được yêu cầu đóng vai giảng viên hoặc trợ giảng, AI không chỉ cung cấp
+        thông tin mà còn giải thích theo hướng giảng dạy, giúp người học dễ hiểu
+        và dễ ghi nhớ hơn. Trong tác vụ tạo câu hỏi ôn tập, kỹ thuật này còn
+        giúp AI xây dựng hệ thống câu hỏi hợp lý, có đáp án và giải thích, gần
+        với hình thức đánh giá thực tế.
+      </p>
+      <p>
+        <strong
+          >Structured Prompting và Task Decomposition giúp nội dung mạch lạc
+          hơn:</strong
+        >
+        Việc quy định cấu trúc trình bày hoặc chia nhiệm vụ thành nhiều bước nhỏ
+        giúp AI xử lý thông tin theo trình tự logic. Nhờ đó, phản hồi trở nên rõ
+        ràng, đầy đủ hơn, hạn chế bỏ sót ý quan trọng và tránh tình trạng trình
+        bày lan man hoặc thiếu liên kết giữa các phần.
+      </p>
+      <div class="page-break-indicator">--- Trang 10 ---</div>
+      <p>
+        <strong>Refinement Prompting giúp tối ưu chất lượng đầu ra:</strong> Khi
+        được yêu cầu tự rà soát và cải thiện phản hồi trước khi hoàn thành, AI
+        có thể phát hiện các ý trùng lặp, bổ sung nội dung còn thiếu và tăng
+        tính logic của câu trả lời. Nhờ đó, kết quả cuối cùng thường đầy đủ,
+        mạch lạc và có giá trị học tập cao hơn so với các prompt thông thường.
+      </p>
+
+      <h2>4. TỔNG HỢP CÁC NGUYÊN TẮC VÀ MẸO VIẾT PROMPT HIỆU QUẢ</h2>
+      <ul>
+        <li>
+          <strong>Xác định rõ mục tiêu và yêu cầu đầu ra:</strong> Prompt cần
+          nêu rõ AI phải thực hiện nhiệm vụ gì, mức độ chi tiết ra sao và cách
+          trình bày như thế nào. Mục tiêu càng cụ thể thì phản hồi càng chính
+          xác, đúng trọng tâm và phù hợp với nhu cầu người dùng.
+        </li>
+        <li>
+          <strong
+            >Cung cấp bối cảnh và đối tượng sử dụng (Context &
+            Audience):</strong
+          >
+          Việc bổ sung thông tin về môn học, mục đích sử dụng và đối tượng người
+          học giúp AI điều chỉnh nội dung phù hợp hơn. Nhờ đó, phản hồi tập
+          trung vào kiến thức cần thiết, sử dụng ngôn ngữ và mức độ giải thích
+          phù hợp với người đọc.
+        </li>
+        <li>
+          <strong
+            >Định hướng vai trò và phong cách phản hồi (Role Prompting):</strong
+          >
+          Gán cho AI một vai trò cụ thể như giảng viên, trợ giảng hay chuyên gia
+          giúp phản hồi có tính chuyên môn, logic và sư phạm hơn. Điều này đặc
+          biệt hữu ích trong các tác vụ học tập như giải thích kiến thức hoặc
+          xây dựng câu hỏi ôn tập.
+        </li>
+        <li>
+          <strong>Cấu trúc hóa nhiệm vụ và đưa ra ràng buộc cụ thể:</strong>
+          Chia nhiệm vụ thành các bước rõ ràng và quy định các yêu cầu như độ
+          dài, nội dung cần đề cập hoặc định dạng trình bày giúp AI xử lý thông
+          tin có hệ thống, hạn chế bỏ sót ý và tránh diễn đạt lan man.
+        </li>
+        <li>
+          <strong>Kết hợp nhiều kỹ thuật Prompt Engineering:</strong> Các prompt
+          hiệu quả thường là sự kết hợp của nhiều kỹ thuật như Context
+          Prompting, Role Prompting, Audience Prompting, Structured Prompting và
+          Refinement Prompting. Sự kết hợp này giúp AI hiểu yêu cầu toàn diện
+          hơn, giảm sự mơ hồ, nâng cao độ chính xác và cải thiện chất lượng phản
+          hồi.
+        </li>
+      </ul>
+
+      <h2>5. KẾT LUẬN</h2>
+      <p>
+        Qua quá trình thử nghiệm với ba tác vụ học tập, có thể thấy rằng cấu
+        trúc prompt ảnh hưởng trực tiếp đến chất lượng phản hồi của AI. Những
+        prompt có mục tiêu rõ ràng, ngữ cảnh cụ thể và yêu cầu chi tiết thường
+        tạo ra câu trả lời chính xác, logic và phù hợp với nhu cầu học tập hơn
+        so với các prompt đơn giản.
+      </p>
+      <p>
+        Báo cáo cũng cho thấy việc kết hợp các kỹ thuật prompt engineering như
+        Context Prompting, Role Prompting, Audience Prompting hay Refinement
+        Prompting giúp tăng đáng kể tính học thuật, tính hệ thống và khả năng hỗ
+        trợ ôn tập của phản hồi AI. Điều này chứng minh rằng prompt engineering
+        không chỉ là kỹ năng kỹ thuật mà còn là kỹ năng tư duy và giao tiếp hiệu
+        quả với AI.
+      </p>
+      <p>
+        Từ kết quả nghiên cứu, có thể khẳng định rằng việc viết prompt hiệu quả
+        đóng vai trò quan trọng trong việc khai thác tối đa tiềm năng của các mô
+        hình ngôn ngữ lớn trong học tập. Trong bối cảnh giáo dục số phát triển
+        mạnh mẽ hiện nay, kỹ năng này sẽ ngày càng trở thành một năng lực cần
+        thiết đối với sinh viên.
+      </p>
+    </div>
+  </body>
+</html>

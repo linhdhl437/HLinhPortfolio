@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chặng 1: Thao tác cơ bản với tệp tin và thư mục</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background-color: #f4f6f9;
+      }
+      .document-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+      }
+      .back-link {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #3182ce;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .back-link:hover {
+        color: #2b6cb0;
+        text-decoration: underline;
+      }
+      h1 {
+        font-size: 2rem;
+        color: #1a365d;
+        text-align: center;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #3182ce;
+        padding-bottom: 15px;
+        text-transform: uppercase;
+      }
+      h2 {
+        font-size: 1.4rem;
+        color: #2b6cb0;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 5px;
+      }
+      p,
+      li {
+        font-size: 1rem;
+        color: #4a5568;
+        margin-bottom: 12px;
+      }
+      ol {
+        margin-left: 20px;
+        margin-bottom: 20px;
+      }
+      ul {
+        margin-left: 20px;
+        margin-bottom: 10px;
+        list-style-type: disc;
+      }
+      .image-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin: 20px 0;
+      }
+      .image-container {
+        flex: 1;
+        min-width: 280px;
+        max-width: 100%;
+        text-align: center;
+        padding: 12px;
+        background-color: #f7fafc;
+        border: 1px dashed #cbd5e0;
+        border-radius: 6px;
+      }
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #e2e8f0;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+      .image-caption {
+        font-size: 0.85rem;
+        color: #718096;
+        margin-top: 8px;
+        font-style: italic;
+      }
+      .page-break-indicator {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #a0aec0;
+        border-top: 1px dotted #e2e8f0;
+        margin: 30px 0 15px 0;
+        padding-top: 5px;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="../index.html" class="back-link">← Quay lại Trang chủ Portfolio</a>
+
+    <div class="document-container">
+      <h1>Thao tác cơ bản với tệp tin và thư mục</h1>
+
+      <div class="page-break-indicator">--- Trang 1 ---</div>
+
+      <h2>1. Mở File Explorer</h2>
+      <p>
+        Thao tác mở trình quản lý tệp tin File Explorer trên hệ điều hành
+        Windows để bắt đầu làm việc với các tệp tin và thư mục.
+      </p>
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./extracted_images/image_page_1_1.png"
+            alt="Mở File Explorer"
+          />
+          <div class="image-caption">
+            Hình minh họa 1.1: Giao diện mở File Explorer
+          </div>
+        </div>
+      </div>
+
+      <h2>2. Truy cập ổ đĩa/thư mục</h2>
+      <p>
+        Di chuyển và truy cập vào các ổ đĩa hệ thống (C:, D:, E:...) hoặc các
+        thư mục làm việc mong muốn.
+      </p>
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./extracted_images/image_page_1_2.png"
+            alt="Truy cập ổ đĩa/thư mục"
+          />
+          <div class="image-caption">
+            Hình minh họa 2.1: Truy cập ổ đĩa/thư mục hệ thống
+          </div>
+        </div>
+      </div>
+
+      <div class="page-break-indicator">--- Trang 2 ---</div>
+
+      <h2>3. Tạo thư mục mới và đặt tên thư mục</h2>
+      <p>
+        Tạo một thư mục làm việc mới và đặt tên thư mục là
+        <strong>ThucHanh_DongHuyenLinh</strong>.
+      </p>
+
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./extracted_images/image_page_2_1.png"
+            alt="Ảnh minh chứng 3.1"
+          />
+          <div class="image-caption">
+            Ảnh minh chứng 3.1: Thao tác tạo thư mục mới
+          </div>
+        </div>
+        <div class="image-container">
+          <img
+            src="./extracted_images/image_page_2_2.png"
+            alt="Ảnh minh chứng 3.2"
+          />
+          <div class="image-caption">
+            Ảnh minh chứng 3.2: Đặt tên thư mục ThucHanh_DongHuyenLinh
+          </div>
+        </div>
+      </div>
+
+      <h2>4. Tạo tệp tin văn bản mới</h2>
+      <p>
+        Tạo một tệp tin văn bản (.txt) mới trong thư mục vừa tạo và đặt tên là
+        <strong>GhiChu.txt</strong>.
+      </p>
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./extracted_images/image_page_2_3.png"
+            alt="Tạo tệp GhiChu.txt"
+          />
+          <div class="image-caption">
+            Hình minh họa 4.1: Tạo tệp văn bản GhiChu.txt
+          </div>
+        </div>
+      </div>
+
+      <div class="page-break-indicator">--- Trang 3 ---</div>
+
+      <h2>5. Đổi tên tệp tin</h2>
+      <p>
+        Thực hiện đổi tên tệp tin <strong>GhiChu.txt</strong> thành
+        <strong>GhiChuQuanTrong.txt</strong>.
+      </p>
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./extracted_images/image_page_3_1.png"
+            alt="Đổi tên tệp tin"
+          />
+          <div class="image-caption">
+            Hình minh họa 5.1: Đổi tên tệp tin thành GhiChuQuanTrong.txt
+          </div>
+        </div>
+      </div>
+
+      <h2>6. Tạo thư mục con</h2>
+      <p>
+        Tạo một thư mục con bên trong thư mục
+        <strong>ThucHanh_DongHuyenLinh</strong> và đặt tên là
+        <strong>TaiLieu</strong>.
+      </p>
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./extracted_images/image_page_3_2.png"
+            alt="Tạo thư mục con TaiLieu"
+          />
+          <div class="image-caption">
+            Hình minh họa 6.1: Thư mục con TaiLieu được tạo thành công
+          </div>
+        </div>
+      </div>
+
+      <h2>7. Sao chép tệp tin (Copy & Paste)</h2>
+      <p>Thực hiện sao chép tệp tin theo các bước:</p>
+      <ol>
+        <li>
+          Nhấp chuột phải vào tệp <strong>GhiChuQuanTrong.txt</strong> -> chọn
+          <strong>Copy</strong> (hoặc chọn tệp rồi nhấn tổ hợp phím
+          <code>Ctrl + C</code>).
+        </li>
+        <li>
+          Nhấp đúp vào thư mục con <strong>TaiLieu</strong>, nhấp chuột phải vào
+          khoảng trống bên trong -> chọn <strong>Paste</strong> (hoặc nhấn tổ
+          hợp phím <code>Ctrl + V</code>).
+        </li>
+      </ol>
+      <p>
+        <em>Kết quả:</em> Bạn sẽ có một bản sao của tệp tin nằm trong thư mục
+        <strong>TaiLieu</strong>.
+      </p>
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./extracted_images/image_page_3_3.png"
+            alt="Sao chép tệp tin"
+          />
+          <div class="image-caption">
+            Hình minh họa 7.1: Kết quả sao chép tệp tin vào thư mục TaiLieu
+          </div>
+        </div>
+      </div>
+
+      <div class="page-break-indicator">--- Trang 4 ---</div>
+
+      <h2>8. Di chuyển tệp tin (Cut & Paste)</h2>
+      <p>Thực hiện di chuyển tệp tin sang vị trí mới theo các bước:</p>
+      <ol>
+        <li>
+          Quay lại thư mục gốc <strong>ThucHanh_DongHuyenLinh</strong>. Tạo một
+          tệp mới tên là <strong>DiChuyen.txt</strong>.
+        </li>
+        <li>
+          Nhấp chuột phải vào tệp <strong>DiChuyen.txt</strong> -> chọn
+          <strong>Cut</strong> (hoặc nhấn tổ hợp phím <code>Ctrl + X</code>).
+        </li>
+        <li>
+          Nhấp đúp vào thư mục <strong>TaiLieu</strong>, nhấp chuột phải vào
+          khoảng trống -> chọn <strong>Paste</strong> (hoặc nhấn tổ hợp phím
+          <code>Ctrl + V</code>).
+        </li>
+      </ol>
+      <p>
+        <em>Kết quả:</em> Tệp tin gốc biến mất khỏi vị trí cũ và chỉ còn tồn tại
+        ở vị trí mới trong thư mục <strong>TaiLieu</strong>.
+      </p>
+
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./extracted_images/image_page_4_1.png"
+            alt="Ảnh minh chứng 9.1"
+          />
+          <div class="image-caption">
+            Ảnh minh chứng 9.1: Thao tác Cut tệp tin DiChuyen.txt
+          </div>
+        </div>
+        <div class="image-container">
+          <img
+            src="./extracted_images/image_page_4_2.png"
+            alt="Ảnh minh chứng 9.2"
+          />
+          <div class="image-caption">
+            Ảnh minh chứng 9.2: Paste tệp tin vào thư mục TaiLieu
+          </div>
+        </div>
+      </div>
+
+      <h2>9. Xóa tệp tin</h2>
+      <p>
+        Thực hiện xóa tệp tin để chuyển vào Recycle Bin (Thùng rác) bằng cách
+        chọn tệp và nhấn phím <code>Delete</code> hoặc nhấp chuột phải chọn biểu
+        tượng thùng rác.
+      </p>
+      <div class="image-group">
+        <div class="image-container">
+          <img src="./extracted_images/image_page_4_3.png" alt="Xóa tệp tin" />
+          <div class="image-caption">
+            Hình minh họa 9.3: Thực hiện xóa tệp tin
+          </div>
+        </div>
+      </div>
+
+      <div class="page-break-indicator">--- Trang 5 ---</div>
+
+      <h2>10. Xóa vĩnh viễn</h2>
+      <p>
+        Thực hiện xóa vĩnh viễn tệp tin mà không lưu vào thùng rác bằng cách
+        chọn tệp tin và nhấn tổ hợp phím <code>Shift + Delete</code>.
+      </p>
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./extracted_images/image_page_5_1.png"
+            alt="Xóa vĩnh viễn"
+          />
+          <div class="image-caption">
+            Hình minh họa 10.1: Cảnh báo xóa vĩnh viễn tệp tin
+          </div>
+        </div>
+      </div>
+
+      <h2>11. Khôi phục từ Thùng rác</h2>
+      <p>
+        Truy cập vào <strong>Recycle Bin</strong>, tìm tệp tin đã xóa, nhấp
+        chuột phải và chọn <strong>Restore</strong> để đưa tệp tin về vị trí ban
+        đầu trước khi bị xóa.
+      </p>
+      <div class="image-group">
+        <div class="image-container">
+          <img
+            src="./extracted_images/image_page_5_2.png"
+            alt="Khôi phục từ Thùng rác"
+          />
+          <div class="image-caption">
+            Hình minh họa 11.1: Khôi phục tệp tin từ Thùng rác
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -989,8 +989,8 @@
   clip-path: inset(0% 50% 0% 50%); /* Collapsed vertically in center */
   transition: clip-path 1.6s var(--ease-ink);
   background: rgba(253, 252, 249, 0.74); /* Semi-transparent parchment background */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
   border-radius: 4px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.04);
   position: relative;
