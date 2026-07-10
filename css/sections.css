@@ -427,9 +427,9 @@
   font-size: 1.05rem;
   color: var(--text-charcoal);
   line-height: 1.85;
-  background: rgba(253, 252, 249, 0.22); /* Very transparent (22%) to bleed background beautifully */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(253, 252, 249, 0.85); /* Increased contrast (85%) */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(184, 144, 71, 0.2);
   border-radius: 8px;
   padding: var(--space-lg);
@@ -451,9 +451,9 @@
 
 .value-card {
   padding: var(--space-md);
-  background-color: rgba(253, 252, 249, 0.62);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(253, 252, 249, 0.85); /* Increased contrast (85%) */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border: 1px solid var(--border-ink);
   border-radius: 4px;
 }
@@ -1182,9 +1182,9 @@
 }
 
 .journey-tab-item {
-  background: rgba(253, 252, 249, 0.22); /* 22% opacity for background landscape visibility */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(253, 252, 249, 0.85); /* Increased contrast (85%) */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(184, 144, 71, 0.25);
   border-radius: 12px;
   padding: var(--space-md) var(--space-lg);
@@ -1197,7 +1197,7 @@
 }
 
 .journey-tab-item:hover {
-  background: rgba(184, 144, 71, 0.08);
+  background: rgba(253, 252, 249, 0.95);
   border-color: rgba(184, 144, 71, 0.6);
   transform: translateX(6px);
 }
@@ -1331,9 +1331,9 @@
 }
 
 .skill-card-detailed {
-  background: rgba(253, 252, 249, 0.22); /* 22% opacity */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(253, 252, 249, 0.85); /* Increased contrast (85%) */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(184, 144, 71, 0.25);
   border-radius: 12px;
   padding: var(--space-lg);
@@ -1345,7 +1345,7 @@
 .skill-card-detailed:hover {
   transform: translateY(-3px);
   border-color: rgba(184, 144, 71, 0.6);
-  background: rgba(253, 252, 249, 0.42); /* 42% opacity on hover */
+  background: rgba(253, 252, 249, 0.95); /* Keep high contrast on hover (95%) */
   box-shadow: 0 10px 25px rgba(184, 144, 71, 0.08);
 }
 
@@ -1415,9 +1415,9 @@
 .ai-map-table {
   width: 100%;
   border-collapse: collapse;
-  background: rgba(253, 252, 249, 0.22); /* 22% opacity */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(253, 252, 249, 0.85); /* Increased contrast (85%) */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   text-align: left;
 }
 

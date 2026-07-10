@@ -166,9 +166,9 @@
    3. CARDS & BENTO GRID
    ========================================================================== */
 .card {
-  background: rgba(253, 252, 249, 0.22); /* Lower opacity (22%) to let lively watercolor landscapes bleed through elegantly */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(253, 252, 249, 0.85); /* Increased contrast (85%) for enhanced text readability */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(184, 144, 71, 0.25); /* Gold-accent border */
   border-radius: 12px;
   padding: var(--space-xl);
@@ -181,7 +181,7 @@
 .card:hover {
   transform: translateY(-4px);
   border-color: rgba(184, 144, 71, 0.7);
-  background: rgba(253, 252, 249, 0.42); /* Keep transparency on hover (42%) */
+  background: rgba(253, 252, 249, 0.95); /* Keep high contrast on hover (95%) */
   box-shadow: 0 12px 35px rgba(184, 144, 71, 0.12);
 }
 
