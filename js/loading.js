@@ -44,8 +44,39 @@ document.addEventListener("DOMContentLoaded", () => {
     ["#Modau", "#ToiLaAi", "#HanhTrinh", "#NhinLai", "#LienHe"].includes(window.location.hash)
   );
 
-  // 1. Lock scrolling initially for welcome intro video playback
-  document.body.style.overflow = "hidden";
+  if (hasHash && overlay) {
+    overlay.style.display = "none";
+    overlay.classList.add("fade-out");
+    isPlayingIntro = false;
+    document.body.style.overflow = "";
+    
+    // Perform instant scroll to the hash target on page load bypass
+    const hash = window.location.hash;
+    setTimeout(() => {
+      let targetNode = null;
+      if (hash.startsWith("#stage-node-")) {
+        targetNode = document.getElementById("HanhTrinh");
+      } else {
+        try {
+          targetNode = document.querySelector(hash);
+        } catch (e) {
+          targetNode = null;
+        }
+      }
+      
+      if (targetNode) {
+        const headerHeight = 70; // Matches navbar height
+        const targetOffset = targetNode.getBoundingClientRect().top + window.scrollY - headerHeight;
+        window.scrollTo({
+          top: targetOffset,
+          behavior: "auto" // Jump instantly!
+        });
+      }
+    }, 100); // 100ms delay is perfect for layout settling
+  } else {
+    // Lock scrolling initially for welcome intro video playback
+    document.body.style.overflow = "hidden";
+  }
 
   // 2. Play intro on welcome screen click
   if (enterScreen && video) {
