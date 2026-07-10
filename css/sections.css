@@ -16,6 +16,10 @@
   z-index: var(--z-loading);
   overflow: hidden;
   transition: opacity 1.2s ease, visibility 1.2s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .intro-video-overlay.fade-out {
