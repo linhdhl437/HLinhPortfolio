@@ -769,7 +769,7 @@
       <div class="nav-bar-container">
         <!-- Pinned Back Button on the left -->
         <a
-          href="index.html#HanhTrinh"
+          href="javascript:void(0)"
           id="btn-back-to-timeline"
           class="btn-back-sticky"
         >
@@ -882,12 +882,52 @@
     <script src="./js/lightbox.js"></script>
     <script src="./js/custom-cursor.js"></script>
 
+    <!-- Page Transition Overlay -->
+    <style>
+      #page-transition-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(249, 247, 242, 0);
+        z-index: 9999;
+        pointer-events: none;
+        transition: background 0.35s ease;
+      }
+      #page-transition-overlay.fading {
+        background: rgba(249, 247, 242, 1);
+        pointer-events: all;
+      }
+    </style>
+    <div id="page-transition-overlay"></div>
+
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         // 0. Sync Brush Toggle State
         const brushEnabled = localStorage.getItem("brushEnabled") !== "false";
         if (!brushEnabled) {
           document.body.classList.add("brush-disabled");
+        }
+
+        // 0.1 Back button with smooth page transition
+        const backBtn = document.getElementById("btn-back-to-timeline");
+        if (backBtn) {
+          backBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            // Read current stage from URL to build correct hash
+            const params = new URLSearchParams(window.location.search);
+            const currentStage = params.get("stage") || "1";
+            const targetUrl = `index.html#stage-node-${currentStage}`;
+
+            // Fade the page out
+            const overlay = document.getElementById("page-transition-overlay");
+            if (overlay) {
+              overlay.classList.add("fading");
+              setTimeout(() => {
+                window.location.href = targetUrl;
+              }, 350);
+            } else {
+              window.location.href = targetUrl;
+            }
+          });
         }
 
         // 1. Function to load content dynamically

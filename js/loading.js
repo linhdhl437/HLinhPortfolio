@@ -44,6 +44,21 @@ document.addEventListener("DOMContentLoaded", () => {
     ["#Modau", "#ToiLaAi", "#HanhTrinh", "#NhinLai", "#LienHe"].includes(window.location.hash)
   );
 
+  // ============================================================
+  // PAGE TRANSITION: Fade-in when navigating back from stage details
+  // ============================================================
+  const isComingFromDetails = document.referrer.includes('stage_details');
+  if (isComingFromDetails || (window.location.hash && window.location.hash.startsWith('#stage-node-'))) {
+    // Briefly make body transparent for a smooth fade-in
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.4s ease';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.body.style.opacity = '1';
+      });
+    });
+  }
+
   if (hasHash && overlay) {
     overlay.style.display = "none";
     overlay.classList.add("fade-out");
@@ -57,8 +72,33 @@ document.addEventListener("DOMContentLoaded", () => {
       el.style.opacity = "1";
     });
     
-    // Perform instant scroll to the hash target on page load bypass
+    // ---- Activate correct tab SYNCHRONOUSLY (before any paint) ----
     const hash = window.location.hash;
+    if (hash.startsWith("#stage-node-")) {
+      const stageNum = hash.replace("#stage-node-", "");
+      const targetTabItem = document.querySelector(`.journey-tab-item[data-target="tab-stage-${stageNum}"]`);
+      const targetTabPane = document.getElementById(`tab-stage-${stageNum}`);
+      
+      if (targetTabItem && targetTabPane) {
+        document.querySelectorAll(".journey-tab-item").forEach(i => i.classList.remove("active"));
+        document.querySelectorAll(".journey-tab-pane").forEach(p => {
+          p.classList.remove("active");
+          p.style.opacity = "0";
+          p.style.transform = "translateY(10px)";
+        });
+        targetTabItem.classList.add("active");
+        targetTabPane.classList.add("active");
+        targetTabPane.style.opacity = "1";
+        targetTabPane.style.transform = "translateY(0)";
+        
+        // Scroll tab item into view inside the sidebar
+        setTimeout(() => {
+          targetTabItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }, 200);
+      }
+    }
+
+    // Scroll to target section after layout has settled
     setTimeout(() => {
       let targetNode = null;
       if (hash.startsWith("#stage-node-")) {
@@ -72,14 +112,22 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       
       if (targetNode) {
-        const headerHeight = 70; // Matches navbar height
+        const headerEl = document.getElementById('site-header');
+        const headerHeight = headerEl ? headerEl.offsetHeight : 70;
         const targetOffset = targetNode.getBoundingClientRect().top + window.scrollY - headerHeight;
         window.scrollTo({
           top: targetOffset,
-          behavior: "auto" // Jump instantly!
+          behavior: "auto"
         });
+        
+        // Subtle highlight pulse on the journey section to confirm arrival
+        targetNode.style.transition = 'box-shadow 0.5s ease';
+        targetNode.style.boxShadow = 'inset 0 0 0 2px rgba(184,144,71,0.3)';
+        setTimeout(() => {
+          targetNode.style.boxShadow = '';
+        }, 800);
       }
-    }, 100); // 100ms delay is perfect for layout settling
+    }, 80);
   } else {
     // Lock scrolling initially for welcome intro video playback
     document.body.style.overflow = "hidden";
