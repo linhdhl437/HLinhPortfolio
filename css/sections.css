@@ -1139,6 +1139,17 @@
 }
 
 /* 🧭 Skip Intro Button Style */
+.btn-skip-intro {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, background-color 0.3s, border-color 0.3s, transform 0.3s !important;
+}
+
+.btn-skip-intro.visible {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
 .btn-skip-intro:hover {
   background-color: var(--accent-vermillion) !important;
   border-color: var(--accent-vermillion) !important;

@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Hide skip button initially
   if (skipBtn) {
     skipBtn.style.display = "none";
+    skipBtn.classList.remove("visible");
   }
   
   // Replay triggers (removed nav trigger to keep navbar minimal)
@@ -26,6 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // State to track status
   let isPlayingIntro = true;
   let fadeOutTriggered = false;
+  let skipBtnTimeout;
+
+  // Helper to prevent wheel and touch gestures during video playback
+  function preventDefault(e) {
+    e.preventDefault();
+  }
 
   // Check if page loaded with a hash (e.g. back from details page or navigating directly)
   const hasHash = window.location.hash && (
@@ -38,19 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.classList.add("fade-out");
     isPlayingIntro = false;
     document.body.style.overflow = "";
-    
-    // Trigger Hero entrance animations immediately
-    const heroElements = document.querySelectorAll(".hero-animate");
-    heroElements.forEach((el) => {
-      el.classList.add("animate-fade-in-up");
-      el.style.opacity = "1";
-    });
   } else {
     // 1. Lock scrolling initially
     document.body.style.overflow = "hidden";
   }
 
-  // 2. Play intro on welcome screen click (Bypasses browser autoplay block with audio)
+  // 2. Play intro on welcome screen click
   if (enterScreen && video) {
     enterScreen.addEventListener("click", () => {
       // Fade out welcome screen panel
@@ -60,10 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
         enterScreen.style.display = "none";
       }, 800);
 
-      // Show skip button now that video is playing
-      if (skipBtn) {
-        skipBtn.style.display = "block";
-      }
+      // Lock mouse wheel and touch scroll during play
+      window.addEventListener("wheel", preventDefault, { passive: false });
+      window.addEventListener("touchmove", preventDefault, { passive: false });
 
       // Play video with audio
       video.muted = false;
@@ -91,9 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. Handle transition when video is near the end (crossfade before black screen)
+  // 3. Handle transition when video is near the end
   if (video && overlay) {
-    // Listen to timeupdate to start fade-out slightly early (e.g. 0.8s before video ends)
     video.addEventListener("timeupdate", () => {
       if (video.duration && (video.duration - video.currentTime <= 0.8)) {
         if (!fadeOutTriggered) {
@@ -103,7 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Fallback in case timeupdate missed the exact last fraction of a second
     video.addEventListener("ended", () => {
       if (!fadeOutTriggered) {
         fadeOutTriggered = true;
@@ -116,8 +113,14 @@ document.addEventListener("DOMContentLoaded", () => {
     isPlayingIntro = false;
     overlay.classList.add("fade-out");
     
-    // Allow page to scroll
+    // Unlock scrolling
     document.body.style.overflow = "";
+    window.removeEventListener("wheel", preventDefault);
+    window.removeEventListener("touchmove", preventDefault);
+
+    // Scroll to the very top section (Modau) immediately on exit
+    window.scrollTo(0, 0);
+    window.history.replaceState(null, null, "#Modau");
 
     setTimeout(() => {
       overlay.style.display = "none";
@@ -131,15 +134,50 @@ document.addEventListener("DOMContentLoaded", () => {
           el.style.opacity = "1";
         }, index * 150);
       });
-    }, 1200); // Matches CSS transition duration
+    }, 1200);
   }
 
-  // 4. Block user from pausing/skipping the video during playback
+  // 4. Tap video to toggle Skip button & Lock all other clicks/interactions
   if (overlay) {
     overlay.addEventListener("click", (e) => {
-      if (isPlayingIntro && !e.target.closest("#btn-skip-intro")) {
-        e.preventDefault();
-        e.stopPropagation();
+      if (!isPlayingIntro) return;
+      
+      // If click skip button, let it handle
+      if (e.target.closest("#btn-skip-intro")) return;
+      
+      // If welcome panel is still up, let it handle
+      if (enterScreen && enterScreen.style.display !== "none") return;
+      
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Toggle skip button visibility
+      if (skipBtn) {
+        const isCurrentlyVisible = skipBtn.classList.contains("visible");
+        if (!isCurrentlyVisible) {
+          skipBtn.style.display = "block";
+          skipBtn.offsetHeight; // Force reflow
+          skipBtn.classList.add("visible");
+          
+          // Hide again after 3 seconds of inactivity
+          clearTimeout(skipBtnTimeout);
+          skipBtnTimeout = setTimeout(() => {
+            skipBtn.classList.remove("visible");
+            setTimeout(() => {
+              if (!skipBtn.classList.contains("visible")) {
+                skipBtn.style.display = "none";
+              }
+            }, 300);
+          }, 3000);
+        } else {
+          // Hide immediately
+          skipBtn.classList.remove("visible");
+          setTimeout(() => {
+            if (!skipBtn.classList.contains("visible")) {
+              skipBtn.style.display = "none";
+            }
+          }, 300);
+        }
       }
     });
 
@@ -153,25 +191,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: false });
   }
 
-  // 5. Replay Video Intro logic
+  // 5. Replay Video Intro logic (Locks scroll & restarts lock listeners)
   function replayIntro() {
     isPlayingIntro = true;
     fadeOutTriggered = false;
     
-    // Stop scroll
+    // Stop scroll & add locks
     document.body.style.overflow = "hidden";
+    window.addEventListener("wheel", preventDefault, { passive: false });
+    window.addEventListener("touchmove", preventDefault, { passive: false });
     
+    // Hide skip button initially
+    if (skipBtn) {
+      skipBtn.classList.remove("visible");
+      skipBtn.style.display = "none";
+    }
+
     // Show overlay
     overlay.style.display = "block";
-    overlay.offsetHeight; // Force reflow
+    overlay.offsetHeight;
     overlay.classList.remove("fade-out");
     
-    // Hide welcome panel (directly show video)
     if (enterScreen) {
       enterScreen.style.display = "none";
     }
 
-    // Play video unmuted
+    // Play video
     video.muted = false;
     video.currentTime = 0;
     
