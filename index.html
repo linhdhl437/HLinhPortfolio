@@ -91,7 +91,7 @@
   <canvas id="ambient-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></canvas>
 
   <!-- 🖌️ Ink Bleed Canvas (Hiệu ứng mực loang thủy mặc khi click) -->
-  <canvas id="ink-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10005; pointer-events: none; filter: url(#ink-bleed-filter);"></canvas>
+  <canvas id="ink-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10005; pointer-events: none;"></canvas>
 
   <!-- 🖌️ Intro Video & Welcome Overlay (Toàn màn hình) -->
   <div id="intro-video-overlay" class="intro-video-overlay">
@@ -149,11 +149,15 @@
           <li><a href="#HanhTrinh" class="nav-link">Hành trình</a></li>
           <li><a href="#NhinLai" class="nav-link">Nhìn lại</a></li>
           <li><a href="#LienHe" class="nav-link">Liên hệ</a></li>
-          <li style="display: flex; align-items: center; margin-left: 12px;">
+          <li style="display: flex; align-items: center; margin-left: 12px; position: relative;">
             <div class="brush-toggle-capsule" id="particle-toggle-capsule" title="Đổi hiệu ứng con trỏ chuột">
               <button id="btn-toggle-particles" class="btn-toggle-brush" aria-label="Toggle Cursor Trail Particles">
                 🌸
               </button>
+            </div>
+            <!-- Tooltip chỉ dẫn đổi hiệu ứng cọ di chuột -->
+            <div class="brush-toggle-tooltip" id="particle-toggle-tooltip">
+              Nhấp để đổi cọ di chuột 🎋
             </div>
           </li>
         </ul>

@@ -530,6 +530,66 @@ body.brush-disabled .brush-toggle-capsule {
   border-color: rgba(0, 0, 0, 0.15);
 }
 
+/* Tooltip chỉ dẫn và Hiệu ứng pulsing phát sóng thu hút sự chú ý */
+.brush-toggle-capsule.pulse-glow {
+  position: relative;
+}
+.brush-toggle-capsule.pulse-glow::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border: 1px solid var(--accent-gold);
+  border-radius: 50%;
+  animation: pulseGlowRing 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseGlowRing {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+.brush-toggle-tooltip {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  background: rgba(184, 144, 71, 0.95);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(184, 144, 71, 0.25);
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.brush-toggle-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  right: 12px;
+  border: 5px solid transparent;
+  border-bottom-color: rgba(184, 144, 71, 0.95);
+}
+
+.brush-toggle-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 body.brush-disabled .brush-toggle-label {
   color: var(--text-charcoal);
   opacity: 0.6;
