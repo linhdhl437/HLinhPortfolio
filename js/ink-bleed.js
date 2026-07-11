@@ -523,8 +523,8 @@ document.addEventListener("DOMContentLoaded", () => {
       numPetals = 8;
       type = "maudon";
     } else {
-      // 25% Hoa Cúc (Vàng Neon)
-      color = "#FFE600"; 
+      // 25% Hoa Cúc (Tím Neon)
+      color = "#D000FF"; 
       numPetals = 12;
       type = "cuc";
     }
