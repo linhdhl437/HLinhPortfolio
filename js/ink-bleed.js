@@ -19,14 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
       this.numPetals = numPetals;
       this.type = type; // "dao", "maudon", "cuc"
       this.progress = 0;
-      this.speed = 0.011; // Lan tỏa chậm rãi hơn để pháo hoa nở từ từ đẹp mắt
+      this.speed = 0.010; // Lan tỏa chậm rãi pháo hoa
 
-      // Nhụy hoa phác thảo tả thực phóng to hơn một chút
+      // Nhụy hoa phát sáng Neon
       this.centerPistil = {
         coreRadius: 3.5,
         coreColor: "#FFFFFF",
         stamenColor: "#FFE600",
-        lineColor: "#FFA500", // Đường chỉ nhụy màu cam vàng ấm áp
+        lineColor: "#FFA500",
         alpha: 1.0
       };
 
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (this.type === "maudon") {
         this.maxRadius = 26; // Mẫu đơn xòe lớp vừa phải
       } else {
-        this.maxRadius = 30; // Hoa cúc mảnh
+        this.maxRadius = 30; // Hoa cúc thon mảnh
       }
 
       this.alpha = 1.0;
@@ -53,19 +53,85 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const easeOutCubic = 1 - Math.pow(1 - this.progress, 3);
       const currentBaseRadius = this.maxRadius * easeOutCubic;
+      const N = this.numPetals;
+
+      // Xác định cấu trúc lớp cánh hoa theo loài để dùng chung cho vẽ gân & vẽ chấm viền
+      let layers = [];
+      if (this.type === "dao") {
+        // HOA ĐÀO: Vẽ 2 lớp cánh (lớp trong xếp so le lớp ngoài) y hệt ảnh mẫu
+        layers = [
+          { scale: 0.76, dots: 45, rot: Math.PI / 5, amp: 0.28 },
+          { scale: 1.0, dots: 65, rot: 0, amp: 0.32 }
+        ];
+      } else if (this.type === "maudon") {
+        // HOA MẪU ĐƠN: 2 lớp cánh xếp đè nếp nhăn sóng
+        layers = [
+          { scale: 0.78, dots: 55, rot: Math.PI / 8, amp: 0.25 },
+          { scale: 1.0, dots: 75, rot: 0, amp: 0.28 }
+        ];
+      } else {
+        // HOA CÚC: 2 lớp cánh thon mảnh so le
+        layers = [
+          { scale: 0.75, dots: 60, rot: Math.PI / 12, amp: 0.42 },
+          { scale: 1.0, dots: 84, rot: 0, amp: 0.42 }
+        ];
+      }
 
       // ----------------------------------------------------
-      // 1. VẼ NHỤY HOA TẢ THỰC CHI TIẾT (Tổ hợp Nhị đực + Nhị cái)
+      // 1. VẼ CÁC ĐƯỜNG GÂN CÁNH HOA NỐI NHỤY (Petals connected to pistil)
+      // ----------------------------------------------------
+      // Vẽ các sợi gân hoa mảnh tỏa từ tâm ra đỉnh cánh của lớp ngoài cùng
+      ctx.save();
+      ctx.shadowBlur = 4;
+      ctx.shadowColor = this.color;
+      ctx.strokeStyle = this.hexToRGBA(this.color, alpha * 0.35); // Độ trong suốt nhẹ tinh tế
+      ctx.lineWidth = 0.6;
+
+      const outerLayer = layers[layers.length - 1];
+      for (let k = 0; k < N; k++) {
+        // Tính góc đỉnh cánh chính xác
+        const theta = (k / N) * Math.PI * 2 - outerLayer.rot;
+        let radiusFactor = 1;
+
+        if (this.type === "dao") {
+          const cos5 = Math.cos(5 * theta);
+          const baseShape = Math.sign(cos5) * Math.pow(Math.abs(cos5), 0.65);
+          const notch = Math.cos(10 * theta);
+          radiusFactor = 1 + outerLayer.amp * baseShape + 0.06 * notch;
+        } else if (this.type === "maudon") {
+          const cos8 = Math.cos(8 * theta);
+          const baseShape = Math.sign(cos8) * Math.pow(Math.abs(cos8), 0.7);
+          const ruffle = Math.sin(16 * theta);
+          radiusFactor = 1 + outerLayer.amp * baseShape + 0.05 * ruffle;
+        } else {
+          const cos12 = Math.cos(12 * theta);
+          const positiveLobe = Math.max(0, cos12);
+          const negativeValley = Math.max(0, -cos12);
+          radiusFactor = 1 + outerLayer.amp * Math.pow(positiveLobe, 1.4) - 0.12 * negativeValley;
+        }
+
+        const finalRadius = currentBaseRadius * outerLayer.scale * radiusFactor;
+        const px = this.x + Math.cos(theta) * finalRadius;
+        const py = this.y + Math.sin(theta) * finalRadius;
+
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(px, py);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      // ----------------------------------------------------
+      // 2. VẼ NHỤY HOA TẢ THỰC CHI TIẾT (Đè lên điểm xuất phát của gân hoa)
       // ----------------------------------------------------
       ctx.save();
       ctx.shadowBlur = 8;
       ctx.shadowColor = "#FFE600";
 
       if (this.type === "dao") {
-        // NHỤY HOA ĐÀO (Hình 1): 10 sợi nhụy mảnh tỏa tròn có chấm tròn nhỏ ở đầu
         const sCount = 10;
-        const sLength = 8.5; // Chiều dài sợi nhụy tỉ lệ với hoa bé
-        const rotationOffset = this.progress * 0.15; // Xoay cực nhẹ sinh động
+        const sLength = 8.5;
+        const rotationOffset = this.progress * 0.15;
 
         // Vẽ nhụy cái ở tâm
         ctx.beginPath();
@@ -79,7 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
           const endX = this.x + Math.cos(angle) * sLength;
           const endY = this.y + Math.sin(angle) * sLength;
 
-          // Vẽ sợi chỉ nhụy mảnh
           ctx.beginPath();
           ctx.moveTo(this.x, this.y);
           ctx.lineTo(endX, endY);
@@ -87,27 +152,23 @@ document.addEventListener("DOMContentLoaded", () => {
           ctx.lineWidth = 0.6;
           ctx.stroke();
 
-          // Vẽ hạt phấn nhỏ ở đầu sợi nhụy
           ctx.beginPath();
           ctx.arc(endX, endY, 1.2, 0, Math.PI * 2);
           ctx.fillStyle = this.hexToRGBA(this.centerPistil.stamenColor, alpha);
           ctx.fill();
         }
       } else if (this.type === "maudon") {
-        // NHỤY HOA MẪU ĐƠN (Hình 2): Cụm nhụy vàng kim dày đặc lấm tấm ở giữa
         const mCount = 14;
         const rotationOffset = -this.progress * 0.1;
 
-        // Vẽ tâm nhụy sẫm hơn
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.centerPistil.coreRadius * 0.8, 0, Math.PI * 2);
         ctx.fillStyle = this.hexToRGBA("#FFA500", alpha);
         ctx.fill();
 
-        // Vẽ cụm hạt nhụy vàng xếp xoắn ốc tỏa nhẹ
         for (let m = 0; m < mCount; m++) {
-          const dist = 3.5 + (m * 0.35); // Xếp từ trong ra ngoài
-          const angle = m * 137.5 * (Math.PI / 180) + rotationOffset; // Góc vàng phyllotaxis
+          const dist = 3.5 + (m * 0.35);
+          const angle = m * 137.5 * (Math.PI / 180) + rotationOffset;
           const mX = this.x + Math.cos(angle) * dist;
           const mY = this.y + Math.sin(angle) * dist;
 
@@ -117,7 +178,6 @@ document.addEventListener("DOMContentLoaded", () => {
           ctx.fill();
         }
       } else {
-        // NHỤY HOA CÚC: Tâm nhụy vàng kim to sáng rực rỡ
         ctx.beginPath();
         ctx.arc(this.x, this.y, 4.5, 0, Math.PI * 2);
         ctx.fillStyle = this.hexToRGBA("#FFE600", alpha);
@@ -126,72 +186,37 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.restore();
 
       // ----------------------------------------------------
-      // 2. VẼ ĐƯỜNG VIỀN CÁNH HOA HẠT NEON SẮC NÉT
+      // 3. VẼ ĐƯỜNG VIỀN CÁNH HOA HẠT NEON SẮC NÉT
       // ----------------------------------------------------
       ctx.save();
       ctx.shadowBlur = 6;
       ctx.shadowColor = this.color;
       ctx.fillStyle = this.hexToRGBA(this.color, alpha);
 
-      const N = this.numPetals;
-      
-      // Vẽ cánh hoa dựa trên loài hoa cụ thể
-      if (this.type === "dao") {
-        // HOA ĐÀO (Hình 1): 5 cánh bầu bĩnh hơi nhọn nhẹ ở đầu cánh hoa
-        const dotsCount = 70; // Đảm bảo đường viền khít sát khi hoa bé
-        for (let i = 0; i < dotsCount; i++) {
-          const theta = (i / dotsCount) * Math.PI * 2;
-          const cos5 = Math.cos(5 * theta);
-          const baseShape = Math.sign(cos5) * Math.pow(Math.abs(cos5), 0.65);
-          // Cộng thêm sóng bậc hai cos(10*theta) dương để tạo đầu cánh hơi vuốt nhọn nhẹ tinh tế như hình vẽ
-          const peakPoint = Math.cos(10 * theta);
-          const radiusFactor = 1 + 0.28 * baseShape + 0.06 * peakPoint;
+      layers.forEach(layer => {
+        for (let i = 0; i < layer.dots; i++) {
+          const theta = (i / layer.dots) * Math.PI * 2;
+          const relativeTheta = theta + layer.rot;
+          let radiusFactor = 1;
 
-          const finalRadius = currentBaseRadius * radiusFactor;
-          const dx = this.x + Math.cos(theta) * finalRadius;
-          const dy = this.y + Math.sin(theta) * finalRadius;
-
-          ctx.beginPath();
-          const dotSize = 1.5 * (1.0 - this.progress * 0.22);
-          ctx.arc(dx, dy, dotSize, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      } else if (this.type === "maudon") {
-        // HOA MẪU ĐƠN (Hình 2): Vẽ hai lớp cánh xếp đè so le tạo độ dày dặn xếp nếp
-        const layers = [
-          { scale: 0.78, dots: 55, rot: Math.PI / 8, amp: 0.25 }, // Lớp trong
-          { scale: 1.0, dots: 75, rot: 0, amp: 0.28 } // Lớp ngoài
-        ];
-
-        layers.forEach(layer => {
-          for (let i = 0; i < layer.dots; i++) {
-            const theta = (i / layer.dots) * Math.PI * 2;
-            const cos8 = Math.cos(8 * (theta + layer.rot));
+          if (this.type === "dao") {
+            const cos5 = Math.cos(5 * relativeTheta);
+            const baseShape = Math.sign(cos5) * Math.pow(Math.abs(cos5), 0.65);
+            const notch = Math.cos(10 * relativeTheta);
+            radiusFactor = 1 + layer.amp * baseShape + 0.06 * notch;
+          } else if (this.type === "maudon") {
+            const cos8 = Math.cos(8 * relativeTheta);
             const baseShape = Math.sign(cos8) * Math.pow(Math.abs(cos8), 0.7);
-            const ruffle = Math.sin(16 * (theta + layer.rot)); // Xếp nếp viền cánh nhăn sóng nhẹ
-            const radiusFactor = 1 + layer.amp * baseShape + 0.05 * ruffle;
-
-            const finalRadius = currentBaseRadius * layer.scale * radiusFactor;
-            const dx = this.x + Math.cos(theta) * finalRadius;
-            const dy = this.y + Math.sin(theta) * finalRadius;
-
-            ctx.beginPath();
-            const dotSize = 1.3 * (1.0 - this.progress * 0.2);
-            ctx.arc(dx, dy, dotSize, 0, Math.PI * 2);
-            ctx.fill();
+            const ruffle = Math.sin(16 * relativeTheta);
+            radiusFactor = 1 + layer.amp * baseShape + 0.05 * ruffle;
+          } else {
+            const cos12 = Math.cos(12 * relativeTheta);
+            const positiveLobe = Math.max(0, cos12);
+            const negativeValley = Math.max(0, -cos12);
+            radiusFactor = 1 + layer.amp * Math.pow(positiveLobe, 1.4) - 0.12 * negativeValley;
           }
-        });
-      } else {
-        // HOA CÚC: 12 cánh hoa kim vươn thon nhọn
-        const dotsCount = 96;
-        for (let i = 0; i < dotsCount; i++) {
-          const theta = (i / dotsCount) * Math.PI * 2;
-          const cos12 = Math.cos(12 * theta);
-          const positiveLobe = Math.max(0, cos12);
-          const negativeValley = Math.max(0, -cos12);
-          const radiusFactor = 1 + 0.42 * Math.pow(positiveLobe, 1.4) - 0.12 * negativeValley;
 
-          const finalRadius = currentBaseRadius * radiusFactor;
+          const finalRadius = currentBaseRadius * layer.scale * radiusFactor;
           const dx = this.x + Math.cos(theta) * finalRadius;
           const dy = this.y + Math.sin(theta) * finalRadius;
 
@@ -200,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ctx.arc(dx, dy, dotSize, 0, Math.PI * 2);
           ctx.fill();
         }
-      }
+      });
       ctx.restore();
     }
 
@@ -311,17 +336,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let color, numPetals, type;
 
     if (rand < 0.60) {
-      // 60% Hoa Đào: Neon Pink nổi bật quyến rũ
       color = "#FF007F"; 
       numPetals = 5;
       type = "dao";
     } else if (rand < 0.90) {
-      // 30% Hoa Mẫu Đơn: Neon Red rực rỡ
       color = "#FF1F1F"; 
       numPetals = 8;
       type = "maudon";
     } else {
-      // 10% Hoa Cúc: Neon Yellow sáng lóa cực sang
       color = "#FFE600"; 
       numPetals = 12;
       type = "cuc";
