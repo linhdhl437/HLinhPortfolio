@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ----------------------------------------------------
-  // CLASS: CLICK EFFECT REPRESENTATION (Vòng hạt tròn nở hình hoa)
+  // CLASS: CLICK EFFECT REPRESENTATION (Vòng hạt tròn nở hình hoa pháo hoa)
   // ----------------------------------------------------
   class ClickEffect {
     constructor(x, y, color, numPetals) {
@@ -18,30 +18,30 @@ document.addEventListener("DOMContentLoaded", () => {
       this.color = color;
       this.numPetals = numPetals;
       this.progress = 0;
-      this.speed = 0.022; // Hiệu ứng diễn ra trong khoảng 1 giây (~45 frames)
+      this.speed = 0.013; // Giảm xuống 0.013 để lan tỏa từ từ và chậm rãi như pháo hoa (mất khoảng 1.3 giây)
 
-      // Chấm nhụy vàng sắc nét ở tâm
+      // Chấm nhụy vàng ở tâm to hơn một chút
       this.centerDot = {
-        radius: 3.5,
+        radius: 4.5,
         alpha: 1.0,
-        color: "#FFD700" // Màu vàng tươi sáng tương phản đẹp mắt
+        color: "#FFD700"
       };
 
-      // 2 vòng hoa đồng tâm nở lệch pha nhau (như hình phác thảo)
+      // 2 vòng hoa đồng tâm nở rộng hơn và nhiều hạt hơn cho sắc nét
       this.rings = [
         {
           baseRadius: 0,
-          maxBaseRadius: 60,
-          dotsCount: numPetals * 6, // Số chấm tỷ lệ với số cánh hoa để tạo nét đều
-          amp: 0.26, // Biên độ nhấp nhô của cánh hoa
+          maxBaseRadius: 70, // Tăng bán kính nở rộng
+          dotsCount: numPetals * 7, // Tăng số chấm để giữ hình dáng hoa khi phóng to
+          amp: 0.25,
           delay: 0
         },
         {
           baseRadius: 0,
-          maxBaseRadius: 85,
-          dotsCount: numPetals * 6,
-          amp: 0.26,
-          delay: 0.12 // Vòng ngoài nở trễ hơn một chút tạo hiệu ứng sóng
+          maxBaseRadius: 100, // Vòng ngoài bung rộng hẳn ra
+          dotsCount: numPetals * 7,
+          amp: 0.25,
+          delay: 0.16 // Trễ nhịp rõ hơn một chút để thấy từng lớp pháo hoa nở
         }
       ];
     }
@@ -49,14 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
     update() {
       this.progress += this.speed;
 
-      // Nhụy hoa biến mất nhanh hơn vòng cánh hoa bên ngoài
-      this.centerDot.alpha = Math.max(0, 1 - this.progress * 2.2);
+      // Nhụy hoa phai màu dần
+      this.centerDot.alpha = Math.max(0, 1 - this.progress * 2.0);
 
       // Cập nhật từng vòng hoa
       this.rings.forEach(r => {
         if (this.progress > r.delay) {
           const p = Math.min(1.0, (this.progress - r.delay) / (1.0 - r.delay));
-          const easeOutCubic = 1 - Math.pow(1 - p, 3);
+          const easeOutCubic = 1 - Math.pow(1 - p, 3); // Giảm tốc về cuối giống pháo hoa thực tế
           r.baseRadius = r.maxBaseRadius * easeOutCubic;
           r.alpha = Math.max(0, 1 - p);
         } else {
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     draw(ctx) {
-      // 1. Vẽ nhụy vàng sắc nét ở trung tâm
+      // 1. Vẽ nhụy vàng trung tâm
       if (this.centerDot.alpha > 0) {
         ctx.save();
         ctx.beginPath();
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.restore();
       }
 
-      // 2. Vẽ các vòng hoa hạt tròn xếp theo đường viền cánh hoa
+      // 2. Vẽ các vòng hoa hạt tròn sắc nét to hơn
       this.rings.forEach(r => {
         if (this.progress > r.delay && r.alpha > 0) {
           const numDots = r.dotsCount;
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
           for (let i = 0; i < numDots; i++) {
             const theta = (i / numDots) * Math.PI * 2;
             
-            // Công thức đường hoa hồng: r = baseRadius * (1 + amp * cos(N * theta))
+            // Công thức hoa hồng: r = baseRadius * (1 + amp * cos(N * theta))
             const radiusFactor = 1 + amp * Math.cos(N * theta);
             const currentRadius = r.baseRadius * radiusFactor;
 
@@ -96,8 +96,8 @@ document.addEventListener("DOMContentLoaded", () => {
             ctx.save();
             ctx.beginPath();
             
-            // Kích thước các chấm tròn nhỏ lại một chút khi nở rộng ra xa
-            const dotSize = 1.5 * (1.0 - this.progress * 0.25);
+            // Tăng kích thước chấm tròn: bắt đầu từ 2.6px và thu nhỏ dần về cuối hành trình
+            const dotSize = 2.6 * (1.0 - this.progress * 0.3);
             ctx.arc(dotX, dotY, dotSize, 0, Math.PI * 2);
             ctx.fillStyle = this.hexToRGBA(this.color, r.alpha);
             ctx.fill();
@@ -108,7 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     isFinished() {
-      // Kết thúc khi vòng ngoài cùng đã mờ hết
       return this.progress >= 1.0;
     }
 
@@ -155,14 +154,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     addEffect(x, y, color, numPetals) {
-      // Giới hạn tối đa 5 hiệu ứng đồng thời
       if (this.effects.length >= 5) {
         this.effects.shift();
       }
 
       this.effects.push(new ClickEffect(x, y, color, numPetals));
 
-      // Khởi động render loop nếu đang tạm dừng
       if (!this.rafId) {
         this.loop();
       }
@@ -184,19 +181,17 @@ document.addEventListener("DOMContentLoaded", () => {
       if (this.effects.length > 0) {
         this.rafId = requestAnimationFrame(() => this.loop());
       } else {
-        this.rafId = null; // Tắt hoàn toàn loop khi rảnh
+        this.rafId = null;
       }
     }
   }
 
   const inkManager = new InkCanvasManager();
 
-  // Lắng nghe click chuột tạo hoa ngẫu nhiên sắc nét
   let lastClickTime = 0;
   const CLICK_THROTTLE_MS = 100;
 
   document.addEventListener('pointerdown', (e) => {
-    // Bỏ qua nếu đang phát intro video
     const introOverlay = document.getElementById("intro-video-overlay");
     if (introOverlay && introOverlay.style.display !== "none" && !introOverlay.classList.contains("fade-out")) {
       return;
@@ -210,25 +205,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const y = e.clientY;
     const target = e.target;
 
-    // Bỏ qua nếu nhấn vào panel cài đặt
     if (target.closest('#ui-panel') || target.closest('.control-panel') || target.closest('.color-btn')) {
       return;
     }
 
-    // Chọn ngẫu nhiên loại hoa
     const rand = Math.random();
     let color, numPetals;
 
     if (rand < 0.60) {
-      // 60% Hoa Đào (5 cánh hồng đào tươi)
       color = "#FF69B4";
       numPetals = 5;
     } else if (rand < 0.90) {
-      // 30% Hoa Mẫu Đơn (8 cánh đỏ chu sa thắm)
       color = "#C24D56";
       numPetals = 8;
     } else {
-      // 10% Hoa Cúc (12 cánh vàng cổ kính)
       color = "#D4AF37";
       numPetals = 12;
     }
