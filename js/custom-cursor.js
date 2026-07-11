@@ -39,48 +39,47 @@ document.addEventListener("DOMContentLoaded", () => {
     dot.style.transform = `translate3d(${mouse.x}px, ${mouse.y}px, 0) translate(-50%, -50%)`;
   });
 
-  let animFrameId = null;
-  let isTabActive = true;
-
   // Smooth follow loop for the ring (Lerp)
   function updateRing() {
-    if (!isTabActive) return;
-
     // Lerp calculation: Position += (Target - Position) * Coefficient
     ringPos.x += (mouse.x - ringPos.x) * lerpCoeff;
     ringPos.y += (mouse.y - ringPos.y) * lerpCoeff;
 
     ring.style.transform = `translate3d(${ringPos.x}px, ${ringPos.y}px, 0) translate(-50%, -50%)`;
     
-    animFrameId = requestAnimationFrame(updateRing);
+    requestAnimationFrame(updateRing);
   }
   updateRing();
 
-  // Pause cursor rendering when tab is hidden
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      isTabActive = false;
-      if (animFrameId) cancelAnimationFrame(animFrameId);
-    } else {
-      if (!isTabActive) {
-        isTabActive = true;
-        updateRing();
-      }
-    }
-  });
+  // Hover states on interactive elements
+  const addHoverClass = () => cursorContainer.classList.add("cursor-hover");
+  const removeHoverClass = () => cursorContainer.classList.remove("cursor-hover");
 
-  // Hover states using Event Delegation (replaces expensive MutationObserver re-binding)
-  document.addEventListener("mouseover", (e) => {
-    if (e.target.closest("a, button, [data-lightbox], .cursor-pointer, .btn, .sidebar-link, input, textarea, select")) {
-      cursorContainer.classList.add("cursor-hover");
-    }
-  });
+  const registerHoverListeners = () => {
+    // Select all interactive targets
+    const targets = document.querySelectorAll("a, button, [data-lightbox], .cursor-pointer, .btn, .sidebar-link, input, textarea, select");
+    
+    targets.forEach(target => {
+      // Remove old listeners to avoid duplicates
+      target.removeEventListener("mouseenter", addHoverClass);
+      target.removeEventListener("mouseleave", removeHoverClass);
+      
+      // Register listeners
+      target.addEventListener("mouseenter", addHoverClass);
+      target.addEventListener("mouseleave", removeHoverClass);
+    });
+  };
 
-  document.addEventListener("mouseout", (e) => {
-    if (e.target.closest("a, button, [data-lightbox], .cursor-pointer, .btn, .sidebar-link, input, textarea, select")) {
-      cursorContainer.classList.remove("cursor-hover");
-    }
+  // Initial registration
+  registerHoverListeners();
+
+  // Re-observe DOM changes to attach hover listeners to dynamically loaded stages
+  const observer = new MutationObserver(() => {
+    registerHoverListeners();
   });
+  
+  // Observe body changes
+  observer.observe(document.body, { childList: true, subtree: true });
 
   // Click Animation Trigger
   window.addEventListener("mousedown", () => {

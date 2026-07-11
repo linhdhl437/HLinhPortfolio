@@ -3,24 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("ink-canvas");
   if (!canvas) return;
 
-  const ctx = canvas.getContext("2d", {
-    alpha: true,
-    willReadFrequently: false
-  });
-
-  // Hàm bổ trợ tính điểm trên đường cong Bezier bậc 3 (Cubic Bezier)
-  function getBezierPoint(p0, p1, p2, p3, t) {
-    const mt = 1 - t;
-    const mt2 = mt * mt;
-    const mt3 = mt2 * mt;
-    const t2 = t * t;
-    const t3 = t2 * t;
-    
-    return {
-      x: mt3 * p0.x + 3 * mt2 * t * p1.x + 3 * mt * t2 * p2.x + t3 * p3.x,
-      y: mt3 * p0.y + 3 * mt2 * t * p1.y + 3 * mt * t2 * p2.y + t3 * p3.y
-    };
-  }
+  const ctx = canvas.getContext("2d");
+  
+  // Tham số vật lý mặc định của mực loang
+  const params = {
+    sizeScale: 1.0,
+    noiseScale: 14,      // Độ méo đường viền của mực loang
+    bleedDuration: 2.2,  // Thời gian chạy hiệu ứng loang (2.2 giây)
+    rippleCount: 3,      // Số lượng vòng sóng nước nền
+  };
 
   // ----------------------------------------------------
   // CLASS: CLICK EFFECT REPRESENTATION (Bông hoa Neon tả thực lớn hơn, nở chậm)
@@ -55,7 +46,25 @@ document.addEventListener("DOMContentLoaded", () => {
         this.maxRadius = 40; // Bông hoa cúc
       }
 
-      this.alpha = 1.0;
+      // Lịch sử vị trí/bán kính để vẽ bóng mờ dần (Fading Trail) trên đường đi
+      this.history = [];
+
+      // Hạt bụi mực lấm tấm bắn ra
+      this.particles = [];
+      const numParticles = Math.floor(Math.random() * 6) + 7;
+      for (let k = 0; k < numParticles; k++) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 2.8 + 1.0;
+        this.particles.push({
+          x: this.x,
+          y: this.y,
+          vx: Math.cos(angle) * speed * this.scaleX,
+          vy: Math.sin(angle) * speed * this.scaleY,
+          radius: Math.random() * 2.0 + 0.5,
+          opacity: 0.8,
+          friction: 0.94
+        });
+      }
     }
 
     update() {
@@ -427,15 +436,11 @@ document.addEventListener("DOMContentLoaded", () => {
       this.canvas = canvas;
       this.ctx = ctx;
       this.effects = [];
-      this.rafId = null;
-
-      this.resize();
       
-      let resizeTimer;
-      window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => this.resize(), 150);
-      }, { passive: true });
+      this.resize();
+      window.addEventListener('resize', () => this.resize());
+      
+      this.loop();
     }
 
     resize() {
@@ -452,15 +457,23 @@ document.addEventListener("DOMContentLoaded", () => {
         this.effects.shift();
       }
 
-      this.effects.push(new ClickEffect(x, y, color, numPetals, type));
+      // Tự thích ứng độ phức tạp đa giác khi click dồn dập
+      let numVertices = 90;
+      let historyLength = 25;
 
-      if (!this.rafId) {
-        this.loop();
+      if (this.effects.length >= 2) {
+        numVertices = 60;
+        historyLength = 8;
+      } else if (this.effects.length >= 3) {
+        numVertices = 45;
+        historyLength = 4;
       }
+
+      this.effects.push(new ClickEffect(x, y, maxRadius, color, scaleX, scaleY, numVertices, historyLength));
     }
 
     loop() {
-      this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
       for (let i = this.effects.length - 1; i >= 0; i--) {
         const fx = this.effects[i];
@@ -472,11 +485,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      if (this.effects.length > 0) {
-        this.rafId = requestAnimationFrame(() => this.loop());
-      } else {
-        this.rafId = null;
-      }
+      requestAnimationFrame(() => this.loop());
     }
   }
 

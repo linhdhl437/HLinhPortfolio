@@ -3,22 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("ambient-canvas");
   if (!canvas) return;
 
-  const ctx = canvas.getContext("2d", {
-    alpha: true,
-    willReadFrequently: false
-  });
-  const dpr = window.devicePixelRatio || 1;
-  let width = window.innerWidth;
-  let height = window.innerHeight;
-
-  function setupCanvasSize() {
-    canvas.width = width * dpr;
-    canvas.height = height * dpr;
-    canvas.style.width = width + 'px';
-    canvas.style.height = height + 'px';
-    ctx.scale(dpr, dpr);
-  }
-  setupCanvasSize();
+  const ctx = canvas.getContext("2d");
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
 
   // Track mouse coordinates and path history
   const mouse = { x: -1000, y: -1000, active: false };
@@ -42,41 +29,31 @@ document.addEventListener("DOMContentLoaded", () => {
     activeParticleType = e.detail;
   });
 
-  // Wind velocity tracker on scroll with requestAnimationFrame throttling
-  let scrollTicking = false;
+  // Wind velocity tracker on scroll
   window.addEventListener("scroll", () => {
-    if (!scrollTicking) {
-      requestAnimationFrame(() => {
-        const currentScrollY = window.scrollY;
-        const diff = Math.abs(currentScrollY - lastScrollY);
-        scrollWind += diff * 0.04;
-        lastScrollY = currentScrollY;
-        scrollTicking = false;
-      });
-      scrollTicking = true;
-    }
+    const currentScrollY = window.scrollY;
+    const diff = Math.abs(currentScrollY - lastScrollY);
+    scrollWind += diff * 0.04; // scale scroll velocity to wind force
+    lastScrollY = currentScrollY;
   }, { passive: true });
 
-  const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-  // Config parameters: Giảm 50% số lượng hạt trên di động để tối ưu hiệu năng
+  // Config parameters
   const config = {
-    leafCount: isTouch ? 8 : 18,
-    birdCount: isTouch ? 2 : 4,
-    cloudCount: isTouch ? 2 : 4
+    leafCount: 18, // increased slightly to include blossoms
+    birdCount: 4,
+    cloudCount: 4
   };
 
-  // Resize canvas with debounce and DPR reset
+  // Resize canvas with debounce
   let resizeTimeout;
   function resize() {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      setupCanvasSize();
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
     }, 150);
   }
-  window.addEventListener("resize", resize, { passive: true });
+  window.addEventListener("resize", resize);
 
   // Track mouse movements and add to brush stroke path + spawn particles
   let lastParticleSpawn = { x: 0, y: 0 };
@@ -88,8 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Spawn cursor trail particles if threshold distance exceeded
     const dist = Math.hypot(e.clientX - lastParticleSpawn.x, e.clientY - lastParticleSpawn.y);
-    const minDistance = isTouch ? 45 : 15; // Cần di chuyển khoảng cách xa hơn trên di động để giảm tần suất tạo hạt
-    if (dist > minDistance && activeParticleType !== "off") {
+    if (dist > 15 && activeParticleType !== "off") {
       cursorParticles.push(new CursorParticle(e.clientX, e.clientY, activeParticleType));
       lastParticleSpawn = { x: e.clientX, y: e.clientY };
     }
@@ -416,19 +392,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // 4. Update and draw Cursor particles
-    for (let i = cursorParticles.length - 1; i >= 0; i--) {
-      const p = cursorParticles[i];
-      p.update();
-      if (p.life <= 0) {
-        cursorParticles.splice(i, 1);
-      } else {
-        p.draw();
-      }
-    }
+    cursorParticles.forEach(particle => {
+      particle.update();
+      particle.draw();
+    });
+    cursorParticles = cursorParticles.filter(p => p.life > 0);
     
-    // Giới hạn tối đa 40 hạt để giảm tải CPU/Pin
-    if (cursorParticles.length > 40) {
-      cursorParticles.splice(0, cursorParticles.length - 40);
+    if (cursorParticles.length > 80) {
+      cursorParticles.shift();
     }
 
 
