@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ----------------------------------------------------
-  // CLASS: CLICK EFFECT REPRESENTATION (Bông hoa Neon thu nhỏ tả thực)
+  // CLASS: CLICK EFFECT REPRESENTATION (Bông hoa Neon tả thực lớn hơn, nở chậm)
   // ----------------------------------------------------
   class ClickEffect {
     constructor(x, y, color, numPetals, type) {
@@ -19,26 +19,26 @@ document.addEventListener("DOMContentLoaded", () => {
       this.numPetals = numPetals;
       this.type = type; // "dao", "sen", "maudon", "cuc"
       this.progress = 0;
-      this.speed = 0.010; // Lan tỏa chậm rãi pháo hoa từ từ
+      this.speed = 0.008; // Lan tỏa chậm hơn nữa (khoảng 2.0 giây) để thấy rõ chuyển động cánh hoa nở pháo hoa
 
-      // Nhụy hoa phát sáng Neon
+      // Nhụy hoa phát sáng Neon và phóng to tương ứng kích thước hoa mới
       this.centerPistil = {
-        coreRadius: 3.5,
+        coreRadius: 4.5, // Tăng nhẹ kích thước nhụy
         coreColor: "#FFFFFF",
         stamenColor: "#FFE600",
         lineColor: "#FFA500",
         alpha: 1.0
       };
 
-      // Thiết lập kích thước siêu nhỏ gọn (bé hơn nữa)
+      // Tăng kích thước hoa lớn hơn một chút (theo yêu cầu)
       if (this.type === "dao") {
-        this.maxRadius = 22; // Bông hoa đào bé nhỏ tinh tế
+        this.maxRadius = 30; // Bông hoa đào
       } else if (this.type === "sen") {
-        this.maxRadius = 24; // Hoa sen thon gọn vừa phải
+        this.maxRadius = 35; // Bông hoa sen
       } else if (this.type === "maudon") {
-        this.maxRadius = 26; // Mẫu đơn xòe lớp rộng hơn chút
+        this.maxRadius = 36; // Bông hoa mẫu đơn
       } else {
-        this.maxRadius = 30; // Hoa cúc thon mảnh
+        this.maxRadius = 40; // Bông hoa cúc
       }
 
       this.alpha = 1.0;
@@ -60,27 +60,27 @@ document.addEventListener("DOMContentLoaded", () => {
       // Xác định cấu trúc lớp cánh hoa theo loài
       let layers = [];
       if (this.type === "dao") {
-        // HOA ĐÀO (Hình mẫu mới): Đúng 1 lớp duy nhất gồm 5 cánh tròn bầu có khía V đầu cánh
+        // HOA ĐÀO (Hình mẫu): Đúng 1 lớp duy nhất gồm 5 cánh tròn bầu có khía V đầu cánh
         layers = [
-          { scale: 1.0, dots: 70, rot: 0, amp: 0.28 }
+          { scale: 1.0, dots: 80, rot: 0, amp: 0.32 } // Tăng số chấm để viền cực mịn khi hoa to hơn
         ];
       } else if (this.type === "sen") {
-        // HOA SEN (Hình mẫu mới, màu hồng): 2 lớp cánh thon pointed so le nhau
+        // HOA SEN (Hình mẫu mới): Cánh sen pointed xếp nếp hình ngọn lửa sắc nét
         layers = [
-          { scale: 0.78, dots: 50, rot: Math.PI / 8, amp: 0.26 },
-          { scale: 1.0, dots: 70, rot: 0, amp: 0.32 }
+          { scale: 0.76, dots: 60, rot: Math.PI / 8, amp: 0.28 },
+          { scale: 1.0, dots: 85, rot: 0, amp: 0.35 }
         ];
       } else if (this.type === "maudon") {
         // HOA MẪU ĐƠN: 2 lớp cánh xếp đè nếp nhăn sóng
         layers = [
-          { scale: 0.78, dots: 55, rot: Math.PI / 8, amp: 0.25 },
-          { scale: 1.0, dots: 75, rot: 0, amp: 0.28 }
+          { scale: 0.78, dots: 65, rot: Math.PI / 8, amp: 0.25 },
+          { scale: 1.0, dots: 90, rot: 0, amp: 0.28 }
         ];
       } else {
         // HOA CÚC: 2 lớp cánh thon mảnh so le
         layers = [
-          { scale: 0.75, dots: 60, rot: Math.PI / 12, amp: 0.42 },
-          { scale: 1.0, dots: 84, rot: 0, amp: 0.42 }
+          { scale: 0.75, dots: 70, rot: Math.PI / 12, amp: 0.42 },
+          { scale: 1.0, dots: 96, rot: 0, amp: 0.42 }
         ];
       }
 
@@ -90,12 +90,11 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.save();
       ctx.shadowBlur = 4;
       ctx.shadowColor = this.color;
-      ctx.strokeStyle = this.hexToRGBA(this.color, alpha * 0.35); // Đường chỉ nối nhị mảnh nhẹ
+      ctx.strokeStyle = this.hexToRGBA(this.color, alpha * 0.35);
       ctx.lineWidth = 0.6;
 
       const outerLayer = layers[layers.length - 1];
       for (let k = 0; k < N; k++) {
-        // Tính góc đỉnh cánh chính xác
         const theta = (k / N) * Math.PI * 2 - outerLayer.rot;
         let radiusFactor = 1;
 
@@ -103,10 +102,12 @@ document.addEventListener("DOMContentLoaded", () => {
           const cos5 = Math.cos(5 * theta);
           const baseShape = Math.sign(cos5) * Math.pow(Math.abs(cos5), 0.65);
           const notch = Math.cos(10 * theta);
-          radiusFactor = 1 + outerLayer.amp * baseShape - 0.06 * notch;
+          // Tăng hệ số khía V (-0.08 * notch) để tạo độ lõm sâu, sắc nét như ảnh mẫu
+          radiusFactor = 1 + outerLayer.amp * baseShape - 0.08 * notch;
         } else if (this.type === "sen") {
+          // Hoa Sen (Tả thực theo ảnh dáng sen mới): Cánh nhọn bản rộng uốn cong
           const cos8 = Math.cos(8 * theta);
-          radiusFactor = 1 + outerLayer.amp * Math.pow(Math.max(0, cos8), 1.8) - 0.12 * Math.max(0, -cos8);
+          radiusFactor = 1 + outerLayer.amp * Math.pow(Math.max(0, cos8), 1.6) - 0.12 * Math.max(0, -cos8);
         } else if (this.type === "maudon") {
           const cos8 = Math.cos(8 * theta);
           const baseShape = Math.sign(cos8) * Math.pow(Math.abs(cos8), 0.7);
@@ -131,15 +132,16 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.restore();
 
       // ----------------------------------------------------
-      // 2. VẼ NHỤY HOA TẢ THỰC CHI TIẾT
+      // 2. VẼ NHỤY HOA TẢ THỰC CHI TIẾT (LỚN HƠN)
       // ----------------------------------------------------
       ctx.save();
       ctx.shadowBlur = 8;
       ctx.shadowColor = "#FFE600";
 
       if (this.type === "dao") {
-        const sCount = 10;
-        const sLength = 8.5;
+        // HOA ĐÀO (Theo ảnh mẫu): Tăng số lượng tia nhụy đực (18 sợi) và độ dài tỏa ra
+        const sCount = 18;
+        const sLength = 11.5; // Nhị tỏa rộng hơn
         const rotationOffset = this.progress * 0.15;
 
         // Vẽ nhụy cái ở tâm
@@ -148,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.fillStyle = this.hexToRGBA(this.centerPistil.coreColor, alpha);
         ctx.fill();
 
-        // Vẽ các tia nhụy đực tỏa ra
+        // Vẽ các tia nhị đực
         for (let s = 0; s < sCount; s++) {
           const angle = (s / sCount) * Math.PI * 2 + rotationOffset;
           const endX = this.x + Math.cos(angle) * sLength;
@@ -162,18 +164,18 @@ document.addEventListener("DOMContentLoaded", () => {
           ctx.stroke();
 
           ctx.beginPath();
-          ctx.arc(endX, endY, 1.2, 0, Math.PI * 2);
+          ctx.arc(endX, endY, 1.3, 0, Math.PI * 2);
           ctx.fillStyle = this.hexToRGBA(this.centerPistil.stamenColor, alpha);
           ctx.fill();
         }
       } else if (this.type === "sen") {
-        // NHỤY HOA SEN: Đài sen ở giữa phát sáng và 6 hạt nhụy đực xung quanh quay nhẹ
-        const sCount = 6;
-        const sLength = 6.5;
+        // NHỤY HOA SEN: Đài sen to rõ nét ở giữa và các đầu hạt nhị bao quanh
+        const sCount = 8;
+        const sLength = 8.0;
         const rotationOffset = -this.progress * 0.2;
 
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.centerPistil.coreRadius, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, this.centerPistil.coreRadius * 1.1, 0, Math.PI * 2);
         ctx.fillStyle = this.hexToRGBA(this.centerPistil.coreColor, alpha);
         ctx.fill();
 
@@ -183,33 +185,33 @@ document.addEventListener("DOMContentLoaded", () => {
           const endY = this.y + Math.sin(angle) * sLength;
 
           ctx.beginPath();
-          ctx.arc(endX, endY, 1.2, 0, Math.PI * 2);
+          ctx.arc(endX, endY, 1.3, 0, Math.PI * 2);
           ctx.fillStyle = this.hexToRGBA(this.centerPistil.stamenColor, alpha);
           ctx.fill();
         }
       } else if (this.type === "maudon") {
-        const mCount = 14;
+        const mCount = 16; // Tăng nhị mẫu đơn
         const rotationOffset = -this.progress * 0.1;
 
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.centerPistil.coreRadius * 0.8, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, this.centerPistil.coreRadius * 1.0, 0, Math.PI * 2);
         ctx.fillStyle = this.hexToRGBA("#FFA500", alpha);
         ctx.fill();
 
         for (let m = 0; m < mCount; m++) {
-          const dist = 3.5 + (m * 0.35);
+          const dist = 3.5 + (m * 0.4);
           const angle = m * 137.5 * (Math.PI / 180) + rotationOffset;
           const mX = this.x + Math.cos(angle) * dist;
           const mY = this.y + Math.sin(angle) * dist;
 
           ctx.beginPath();
-          ctx.arc(mX, mY, 1.0, 0, Math.PI * 2);
+          ctx.arc(mX, mY, 1.1, 0, Math.PI * 2);
           ctx.fillStyle = this.hexToRGBA(this.centerPistil.stamenColor, alpha);
           ctx.fill();
         }
       } else {
         ctx.beginPath();
-        ctx.arc(this.x, this.y, 4.5, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, 5.5, 0, Math.PI * 2);
         ctx.fillStyle = this.hexToRGBA("#FFE600", alpha);
         ctx.fill();
       }
@@ -233,10 +235,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const cos5 = Math.cos(5 * relativeTheta);
             const baseShape = Math.sign(cos5) * Math.pow(Math.abs(cos5), 0.65);
             const notch = Math.cos(10 * relativeTheta);
-            radiusFactor = 1 + layer.amp * baseShape - 0.06 * notch;
+            // Áp dụng độ lõm khía V sâu hơn (-0.08) giúp hình dạng giống mẫu 5 cánh của bạn nhất
+            radiusFactor = 1 + layer.amp * baseShape - 0.08 * notch;
           } else if (this.type === "sen") {
+            // Hoa sen thon nhọn dáng cánh hoa như ảnh mẫu mới gửi
             const cos8 = Math.cos(8 * relativeTheta);
-            radiusFactor = 1 + layer.amp * Math.pow(Math.max(0, cos8), 1.8) - 0.12 * Math.max(0, -cos8);
+            radiusFactor = 1 + layer.amp * Math.pow(Math.max(0, cos8), 1.6) - 0.12 * Math.max(0, -cos8);
           } else if (this.type === "maudon") {
             const cos8 = Math.cos(8 * relativeTheta);
             const baseShape = Math.sign(cos8) * Math.pow(Math.abs(cos8), 0.7);
@@ -369,12 +373,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let color, numPetals, type;
 
     if (rand < 0.40) {
-      // 40% Hoa Đào (Hồng đào FFB7B2 sáng rực rỡ)
+      // 40% Hoa Đào (Hồng phấn chuẩn FFB7B2 sáng rực rỡ)
       color = "#FF8EA4"; 
       numPetals = 5;
       type = "dao";
     } else if (rand < 0.65) {
-      // 25% Hoa Sen (Hồng sen thắm,pointed 8 cánh)
+      // 25% Hoa Sen (Hồng sen thắm, pointed 8 cánh)
       color = "#FF5E8E"; 
       numPetals = 8;
       type = "sen";
