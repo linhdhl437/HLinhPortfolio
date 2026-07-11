@@ -608,7 +608,7 @@
 .footer-philosophy {
   font-family: var(--font-serif);
   font-size: 1.3rem;
-  max-width: 700px;
+  max-width: 1000px;
   line-height: 1.6;
   color: var(--bg-paper-warm);
 }
