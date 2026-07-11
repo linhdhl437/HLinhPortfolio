@@ -547,23 +547,6 @@ body.brush-disabled .brush-toggle-label {
   overflow: hidden;
 }
 
-.ripple-wave {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(184, 144, 71, 0.25) 0%, rgba(184, 144, 71, 0) 70%);
-  border: 1px solid rgba(184, 144, 71, 0.45);
-  pointer-events: none;
-  transform: scale(0);
-  animation: rippleAnimation 0.9s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
-  z-index: 99;
-}
-
-@keyframes rippleAnimation {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
 
 /* 📜 Scroll Unroll (Thư Quyển Mở) Styles */
 .scroll-unroll-container {

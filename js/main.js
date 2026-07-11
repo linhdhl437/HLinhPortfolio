@@ -303,31 +303,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // ==========================================================================
-    // 5. WATER RIPPLE BUTTON CLICK HANDLER (CLASSICAL STYLE)
-    // ==========================================================================
-    document.addEventListener("click", (e) => {
-      const target = e.target.closest(".btn, .btn-classical, .btn-back-sticky, .btn-toggle-particles, .journey-tab-item, .nav-stage-item");
-      if (!target) return;
-
-      const rect = target.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const ripple = document.createElement("span");
-      ripple.className = "ripple-wave";
-      
-      const size = Math.max(rect.width, rect.height);
-      ripple.style.width = ripple.style.height = `${size}px`;
-      
-      ripple.style.left = `${x - size / 2}px`;
-      ripple.style.top = `${y - size / 2}px`;
-
-      target.appendChild(ripple);
-      setTimeout(() => {
-        ripple.remove();
-      }, 900);
-    });
 
     // Tab init on hash is now handled entirely in loading.js (synchronous, before first paint)
     // to avoid race conditions between the two DOMContentLoaded handlers.
