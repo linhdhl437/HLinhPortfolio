@@ -10,29 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo(0, 0);
   }
   
-  // ==========================================================================
-  // 0. BRUSH TOGGLE SYSTEM
-  // ==========================================================================
-  const toggleBtn = document.getElementById("btn-toggle-brush");
-  if (toggleBtn) {
-    let brushEnabled = localStorage.getItem("brushEnabled") !== "false";
-    if (!brushEnabled) {
-      document.body.classList.add("brush-disabled");
-      toggleBtn.classList.add("disabled");
-    }
-    
-    toggleBtn.addEventListener("click", () => {
-      brushEnabled = !brushEnabled;
-      localStorage.setItem("brushEnabled", brushEnabled);
-      if (brushEnabled) {
-        document.body.classList.remove("brush-disabled");
-        toggleBtn.classList.remove("disabled");
-      } else {
-        document.body.classList.add("brush-disabled");
-        toggleBtn.classList.add("disabled");
-      }
-    });
-  }
 
   // ==========================================================================
   // 0.1 CURSOR PARTICLE TOGGLE SYSTEM
@@ -330,7 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 5. WATER RIPPLE BUTTON CLICK HANDLER (CLASSICAL STYLE)
     // ==========================================================================
     document.addEventListener("click", (e) => {
-      const target = e.target.closest(".btn, .btn-classical, .btn-back-sticky, .btn-toggle-brush, .journey-tab-item, .nav-stage-item");
+      const target = e.target.closest(".btn, .btn-classical, .btn-back-sticky, .btn-toggle-particles, .journey-tab-item, .nav-stage-item");
       if (!target) return;
 
       const rect = target.getBoundingClientRect();

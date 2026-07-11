@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Track mouse coordinates and path history
   const mouse = { x: -1000, y: -1000, active: false };
   const lastMouse = { x: null, y: null };
-  let inkPoints = []; // Holds points of the continuous brush stroke
   let cursorParticles = []; // Spawning cursor particles on movement
 
   // Active particle type for cursor trail
@@ -60,35 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let lastParticleSpawn = { x: 0, y: 0 };
 
   window.addEventListener("mousemove", (e) => {
-    if (document.body.classList.contains("brush-disabled")) {
-      mouse.active = false;
-      return;
-    }
     mouse.x = e.clientX;
     mouse.y = e.clientY;
     mouse.active = true;
-    
-    let speed = 0;
-    if (lastMouse.x !== null && lastMouse.y !== null) {
-      const dx = mouse.x - lastMouse.x;
-      const dy = mouse.y - lastMouse.y;
-      speed = Math.sqrt(dx * dx + dy * dy);
-    }
-    
-    // Dynamic brush width based on speed: slower = thicker, faster = thinner
-    const brushWidth = Math.max(22 - speed * 0.35, 7);
-    
-    inkPoints.push({
-      x: mouse.x,
-      y: mouse.y,
-      life: 1.0,
-      width: brushWidth
-    });
-    
-    // Cap ink points length
-    if (inkPoints.length > 150) {
-      inkPoints.shift();
-    }
 
     // Spawn cursor trail particles if threshold distance exceeded
     const dist = Math.hypot(e.clientX - lastParticleSpawn.x, e.clientY - lastParticleSpawn.y);
@@ -96,9 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
       cursorParticles.push(new CursorParticle(e.clientX, e.clientY, activeParticleType));
       lastParticleSpawn = { x: e.clientX, y: e.clientY };
     }
-    
-    lastMouse.x = mouse.x;
-    lastMouse.y = mouse.y;
   });
 
   // Track when mouse leaves viewport
@@ -432,49 +402,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cursorParticles.shift();
     }
 
-    // 5. Update and draw Calligraphy Ink Stroke
-    if (inkPoints.length > 2) {
-      ctx.lineCap = "round";
-      ctx.lineJoin = "round";
 
-      const drawStrokeLayer = (widthMultiplier, strokeColorPrefix, alphaMultiplier) => {
-        for (let i = 1; i < inkPoints.length - 1; i++) {
-          const pA = inkPoints[i - 1];
-          const pB = inkPoints[i];
-          const pC = inkPoints[i + 1];
-          
-          const avgLife = (pA.life + pB.life + pC.life) / 3;
-          if (avgLife <= 0) continue;
-
-          const ratioA = (i - 1) / (inkPoints.length - 1);
-          const ratioB = i / (inkPoints.length - 1);
-          const ratioC = (i + 1) / (inkPoints.length - 1);
-          const avgRatio = (ratioA + ratioB + ratioC) / 3;
-
-          ctx.beginPath();
-          const xc1 = (pA.x + pB.x) / 2;
-          const yc1 = (pA.y + pB.y) / 2;
-          const xc2 = (pB.x + pC.x) / 2;
-          const yc2 = (pB.y + pC.y) / 2;
-          
-          ctx.moveTo(xc1, yc1);
-          ctx.quadraticCurveTo(pB.x, pB.y, xc2, yc2);
-          
-          ctx.lineWidth = pB.width * avgRatio * widthMultiplier;
-          ctx.strokeStyle = `${strokeColorPrefix}${avgLife * avgRatio * alphaMultiplier})`;
-          ctx.stroke();
-        }
-      };
-
-      // Draw 3 layers for watercolor bleed
-      drawStrokeLayer(3.8, "rgba(68, 64, 58, ", 0.12);
-      drawStrokeLayer(1.8, "rgba(40, 36, 32, ", 0.28);
-      drawStrokeLayer(0.8, "rgba(12, 12, 10, ", 0.85);
-    }
-
-    // Update ink points decay using optimized filter
-    inkPoints.forEach(p => { p.life -= 0.018; });
-    inkPoints = inkPoints.filter(p => p.life > 0);
 
     animFrameId = requestAnimationFrame(loop);
   }

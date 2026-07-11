@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (hasHash && overlay) {
+    document.documentElement.classList.remove('skip-intro');
     overlay.style.display = "none";
     overlay.classList.add("fade-out");
     isPlayingIntro = false;
