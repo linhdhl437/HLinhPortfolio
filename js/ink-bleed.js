@@ -3,10 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("ink-canvas");
   if (!canvas) return;
 
-  const ctx = canvas.getContext("2d", {
-    alpha: true,
-    willReadFrequently: false
-  });
+  const ctx = canvas.getContext("2d");
   
   // Tham số vật lý mặc định của mực loang
   const params = {
@@ -60,10 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // Lịch sử vị trí/bán kính để vẽ bóng mờ dần (Fading Trail) trên đường đi
       this.history = [];
 
-      // Hạt bụi mực lấm tấm bắn ra (giảm số lượng trên di động)
+      // Hạt bụi mực lấm tấm bắn ra
       this.particles = [];
-      const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-      const numParticles = isTouch ? (Math.floor(Math.random() * 3) + 3) : (Math.floor(Math.random() * 6) + 7);
+      const numParticles = Math.floor(Math.random() * 6) + 7;
       for (let k = 0; k < numParticles; k++) {
         const angle = Math.random() * Math.PI * 2;
         const speed = Math.random() * 2.8 + 1.0;
@@ -225,33 +221,11 @@ document.addEventListener("DOMContentLoaded", () => {
       this.canvas = canvas;
       this.ctx = ctx;
       this.effects = [];
-      this.rafId = null;
-      this.isTabActive = true;
       
       this.resize();
+      window.addEventListener('resize', () => this.resize());
       
-      this.resizeTimer = null;
-      window.addEventListener('resize', () => {
-        clearTimeout(this.resizeTimer);
-        this.resizeTimer = setTimeout(() => this.resize(), 150);
-      }, { passive: true });
-
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-          this.isTabActive = false;
-          if (this.rafId) {
-            cancelAnimationFrame(this.rafId);
-            this.rafId = null;
-          }
-        } else {
-          if (!this.isTabActive) {
-            this.isTabActive = true;
-            if (this.effects.length > 0 && !this.rafId) {
-              this.loop();
-            }
-          }
-        }
-      });
+      this.loop();
     }
 
     resize() {
@@ -278,32 +252,23 @@ document.addEventListener("DOMContentLoaded", () => {
         this.effects.shift();
       }
 
-      // Tự thích ứng độ phức tạp đa giác khi click dồn dập (tối ưu mạnh trên di động)
-      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-      let numVertices = isTouchDevice ? 40 : 90;
-      let historyLength = isTouchDevice ? 12 : 25;
+      // Tự thích ứng độ phức tạp đa giác khi click dồn dập
+      let numVertices = 90;
+      let historyLength = 25;
 
       if (this.effects.length >= 2) {
-        numVertices = isTouchDevice ? 25 : 60;
-        historyLength = isTouchDevice ? 6 : 8;
+        numVertices = 60;
+        historyLength = 8;
       } else if (this.effects.length >= 3) {
-        numVertices = isTouchDevice ? 18 : 45;
-        historyLength = isTouchDevice ? 3 : 4;
+        numVertices = 45;
+        historyLength = 4;
       }
 
       this.effects.push(new ClickEffect(x, y, maxRadius, color, scaleX, scaleY, numVertices, historyLength));
-
-      // Kích hoạt lại loop nếu đang tạm dừng
-      if (!this.rafId && this.isTabActive) {
-        this.loop();
-      }
     }
 
     loop() {
-      if (!this.isTabActive) return;
-
-      // CANVAS-06: clearRect sử dụng logical width/height để khớp với tọa độ đã scale
-      this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
       for (let i = this.effects.length - 1; i >= 0; i--) {
         const fx = this.effects[i];
@@ -315,13 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      // Dừng vòng lặp vẽ nếu không còn hiệu ứng nào
-      if (this.effects.length === 0) {
-        this.rafId = null;
-        return;
-      }
-
-      this.rafId = requestAnimationFrame(() => this.loop());
+      requestAnimationFrame(() => this.loop());
     }
   }
 

@@ -138,26 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section[id], footer[id]");
   let lastScrollY = window.scrollY;
 
-  // Cache offsets to avoid forced reflows during scroll
-  let cachedSections = [];
-  function cacheSectionOffsets() {
-    cachedSections = Array.from(sections).map(section => ({
-      id: section.getAttribute("id"),
-      offsetTop: section.offsetTop,
-      offsetHeight: section.offsetHeight
-    }));
-  }
-  
-  // Cache initially
-  cacheSectionOffsets();
-
-  // Recalculate offsets on resize with debounce
-  let resizeTimer;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(cacheSectionOffsets, 150);
-  }, { passive: true });
-
   let scrollTick = false;
   window.addEventListener("scroll", () => {
     if (!scrollTick) {
@@ -175,9 +155,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // A. Sticky Header Toggle (Keep header always visible)
     if (header) {
       if (currentScrollY > 50) {
-        header.classList.add("scrolled");
+        header.style.backgroundColor = "rgba(249, 249, 246, 0.96)";
       } else {
-        header.classList.remove("scrolled");
+        header.style.backgroundColor = "rgba(249, 249, 246, 0.85)";
       }
       header.classList.remove("scroll-down");
     }
@@ -188,10 +168,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentActiveId = "";
     const scrollPosition = currentScrollY + 200; // offset for detection
 
-    // Use cached values instead of querying DOM
-    cachedSections.forEach(sec => {
-      if (scrollPosition >= sec.offsetTop && scrollPosition < sec.offsetTop + sec.offsetHeight) {
-        currentActiveId = sec.id;
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute("id");
+
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        currentActiveId = sectionId;
       }
     });
 
