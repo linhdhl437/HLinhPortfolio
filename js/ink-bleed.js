@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ----------------------------------------------------
-  // CLASS: CLICK EFFECT REPRESENTATION (Bông hoa Neon thu nhỏ sắc nét)
+  // CLASS: CLICK EFFECT REPRESENTATION (Hiệu ứng Pháo Hoa Hạt Viền Hoa Độc Bản)
   // ----------------------------------------------------
   class ClickEffect {
     constructor(x, y, color, numPetals) {
@@ -18,99 +18,124 @@ document.addEventListener("DOMContentLoaded", () => {
       this.color = color;
       this.numPetals = numPetals;
       this.progress = 0;
-      this.speed = 0.015; // Lan tỏa từ từ trung bình
+      this.speed = 0.010; // Lan tỏa từ từ chậm rãi (khoảng 1.6 giây) tạo cảm giác pháo hoa nở chậm
 
-      // Nhụy hoa tâm sáng Neon
-      this.centerDot = {
-        radius: 3.5,
-        alpha: 1.0,
-        color: "#FFFFFF"
+      // Nhụy hoa tả thực phát sáng Neon (Gồm nhân chính và các hạt đầu nhụy nhỏ xung quanh)
+      this.centerPistil = {
+        coreRadius: 3.8,
+        coreColor: "#FFFFFF", // Nhân trắng điện phát sáng
+        stamenCount: 5,
+        stamenRadius: 1.3,
+        stamenDist: 6.5,
+        stamenColor: "#FFE600", // Đầu nhụy vàng tươi sáng
+        alpha: 1.0
       };
 
-      // Thu nhỏ kích thước tối đa để bông hoa bé xinh, tăng mật độ chấm để rõ hình cánh hoa
-      this.rings = [
-        {
-          baseRadius: 0,
-          maxBaseRadius: 30, // Bông hoa bé nhỏ thu gọn xung quanh con trỏ
-          dotsCount: numPetals * 9, // Tăng mật độ hạt để viền hoa rõ nét
-          amp: 0.30, // Tinh chỉnh biên độ để cánh hoa tròn trịa cân đối
-          delay: 0
-        },
-        {
-          baseRadius: 0,
-          maxBaseRadius: 45,
-          dotsCount: numPetals * 9,
-          amp: 0.30,
-          delay: 0.14
-        }
-      ];
+      // Chỉ có duy nhất 1 làn sóng (1 vòng viền hoa) lan tỏa rộng ra ngoài
+      this.ring = {
+        baseRadius: 0,
+        maxBaseRadius: 52, // Kích thước bông hoa vừa vặn xinh xắn
+        dotsCount: numPetals * (numPetals === 5 ? 14 : numPetals === 8 ? 11 : 9), // Mật độ chấm dày dặn để rõ hình dáng
+        alpha: 1.0
+      };
     }
 
     update() {
       this.progress += this.speed;
 
-      this.centerDot.alpha = Math.max(0, 1 - this.progress * 2.2);
+      // Nhụy hoa mờ dần
+      this.centerPistil.alpha = Math.max(0, 1 - this.progress * 1.8);
 
-      this.rings.forEach(r => {
-        if (this.progress > r.delay) {
-          const p = Math.min(1.0, (this.progress - r.delay) / (1.0 - r.delay));
-          const easeOutCubic = 1 - Math.pow(1 - p, 3);
-          r.baseRadius = r.maxBaseRadius * easeOutCubic;
-          r.alpha = Math.max(0, 1 - p);
-        } else {
-          r.alpha = 0;
-        }
-      });
+      // Cánh hoa nở rộng theo hàm cubic giảm tốc về cuối
+      const easeOutCubic = 1 - Math.pow(1 - this.progress, 3);
+      this.ring.baseRadius = this.ring.maxBaseRadius * easeOutCubic;
+      this.ring.alpha = Math.max(0, 1 - this.progress);
     }
 
     draw(ctx) {
-      // 1. Vẽ nhụy sáng ở trung tâm (Glow Neon trắng)
-      if (this.centerDot.alpha > 0) {
+      // 1. Vẽ nhụy hoa chi tiết sắc nét ở trung tâm
+      if (this.centerPistil.alpha > 0) {
         ctx.save();
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.centerDot.radius, 0, Math.PI * 2);
-        
         ctx.shadowBlur = 8;
-        ctx.shadowColor = "#00FFFF";
-        ctx.fillStyle = this.hexToRGBA(this.centerDot.color, this.centerDot.alpha);
+        ctx.shadowColor = "#FFE600";
+
+        // Vẽ nhụy cái (Core) ở giữa
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.centerPistil.coreRadius, 0, Math.PI * 2);
+        ctx.fillStyle = this.hexToRGBA(this.centerPistil.coreColor, this.centerPistil.alpha);
         ctx.fill();
+
+        // Vẽ 5 nhụy đực (Stamens) nhỏ bay xung quanh tâm nhụy chính
+        const sCount = this.centerPistil.stamenCount;
+        const sDist = this.centerPistil.stamenDist;
+        for (let s = 0; s < sCount; s++) {
+          // Nhụy xoay nhẹ theo thời gian lan tỏa để tăng vẻ sinh động
+          const sAngle = (s / sCount) * Math.PI * 2 + this.progress * 0.4;
+          const sX = this.x + Math.cos(sAngle) * sDist;
+          const sY = this.y + Math.sin(sAngle) * sDist;
+
+          ctx.beginPath();
+          ctx.arc(sX, sY, this.centerPistil.stamenRadius, 0, Math.PI * 2);
+          ctx.fillStyle = this.hexToRGBA(this.centerPistil.stamenColor, this.centerPistil.alpha);
+          ctx.fill();
+        }
         ctx.restore();
       }
 
-      // 2. Vẽ các vòng hoa hạt Neon sắc nét
-      this.rings.forEach(r => {
-        if (this.progress > r.delay && r.alpha > 0) {
-          const numDots = r.dotsCount;
-          const N = this.numPetals;
-          const amp = r.amp;
+      // 2. Vẽ duy nhất 1 vòng cánh hoa hạt Neon sắc nét (Đào khía, Mẫu Đơn xếp nếp, Cúc thon dài)
+      if (this.ring.alpha > 0) {
+        const numDots = this.ring.dotsCount;
+        const N = this.numPetals;
+        const baseRadius = this.ring.baseRadius;
 
-          for (let i = 0; i < numDots; i++) {
-            const theta = (i / numDots) * Math.PI * 2;
-            
-            const cosVal = Math.cos(N * theta);
-            // Áp dụng lũy thừa mũ 0.65 giúp đỉnh cánh hoa phình to tròn trịa bầu bĩnh hơn (bo tròn hơn), 
-            // đồng thời giữ kẽ hở giữa các cánh hoa sắc sảo
-            const radiusFactor = 1 + amp * Math.sign(cosVal) * Math.pow(Math.abs(cosVal), 0.65);
-            const currentRadius = r.baseRadius * radiusFactor;
+        for (let i = 0; i < numDots; i++) {
+          const theta = (i / numDots) * Math.PI * 2;
+          let radiusFactor = 1;
 
-            const dotX = this.x + Math.cos(theta) * currentRadius;
-            const dotY = this.y + Math.sin(theta) * currentRadius;
-
-            ctx.save();
-            ctx.beginPath();
-            
-            const dotSize = 2.0 * (1.0 - this.progress * 0.2);
-            ctx.arc(dotX, dotY, dotSize, 0, Math.PI * 2);
-            
-            ctx.shadowBlur = 6;
-            ctx.shadowColor = this.color;
-            ctx.fillStyle = this.hexToRGBA(this.color, r.alpha);
-            
-            ctx.fill();
-            ctx.restore();
+          // Thiết kế hình dáng các loài hoa dựa theo đường cong toán học thực tế
+          if (N === 5) {
+            // Hoa Đào (5 cánh): Đầu cánh bầu bĩnh có khía hình chữ V lõm nhẹ đặc trưng ở giữa
+            const cos5 = Math.cos(5 * theta);
+            const baseShape = Math.sign(cos5) * Math.pow(Math.abs(cos5), 0.65);
+            const notch = Math.cos(10 * theta); // Sóng bậc hai tạo vết khía ở đỉnh
+            radiusFactor = 1 + 0.32 * baseShape - 0.06 * notch;
+          } else if (N === 8) {
+            // Hoa Mẫu Đơn (8 cánh): Viền cánh uốn lượn dập dềnh xếp nếp mềm mại quý phái
+            const cos8 = Math.cos(8 * theta);
+            const baseShape = Math.sign(cos8) * Math.pow(Math.abs(cos8), 0.7);
+            const ruffle = Math.sin(16 * theta); // Sóng xếp nếp ở rìa
+            radiusFactor = 1 + 0.28 * baseShape + 0.04 * ruffle;
+          } else {
+            // Hoa Cúc (12 cánh): Cánh hoa thon mảnh, nhọn dần và vươn dài ra ngoài
+            const cos12 = Math.cos(12 * theta);
+            const positiveLobe = Math.max(0, cos12);
+            const negativeValley = Math.max(0, -cos12);
+            radiusFactor = 1 + 0.42 * Math.pow(positiveLobe, 1.4) - 0.12 * negativeValley;
           }
+
+          const dotX = this.x + Math.cos(theta) * currentRadius;
+          const dotY = this.y + Math.sin(theta) * currentRadius;
+
+          // Sử dụng toán học trực tiếp
+          const finalRadius = baseRadius * radiusFactor;
+          const dx = this.x + Math.cos(theta) * finalRadius;
+          const dy = this.y + Math.sin(theta) * finalRadius;
+
+          ctx.save();
+          ctx.beginPath();
+          
+          // Chấm tròn nhỏ đi một chút khi bay ra xa
+          const dotSize = 1.8 * (1.0 - this.progress * 0.2);
+          ctx.arc(dx, dy, dotSize, 0, Math.PI * 2);
+          
+          ctx.shadowBlur = 6;
+          ctx.shadowColor = this.color;
+          ctx.fillStyle = this.hexToRGBA(this.color, this.ring.alpha);
+          
+          ctx.fill();
+          ctx.restore();
         }
-      });
+      }
     }
 
     isFinished() {
@@ -220,12 +245,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let color, numPetals;
 
     if (rand < 0.60) {
+      // 60% Hoa Đào: Neon Pink nổi bật quyến rũ
       color = "#FF007F"; 
       numPetals = 5;
     } else if (rand < 0.90) {
+      // 30% Hoa Mẫu Đơn: Neon Red rực rỡ
       color = "#FF1F1F"; 
       numPetals = 8;
     } else {
+      // 10% Hoa Cúc: Neon Yellow sáng lóa cực sang
       color = "#FFE600"; 
       numPetals = 12;
     }
