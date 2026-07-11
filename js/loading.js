@@ -44,6 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ["#Modau", "#ToiLaAi", "#HanhTrinh", "#NhinLai", "#LienHe"].includes(window.location.hash)
   );
 
+  // Active clean: Remove skip-intro class if loading without hash to prevent lockups
+  if (!hasHash) {
+    document.documentElement.classList.remove('skip-intro');
+  }
+
   // ============================================================
   // PAGE TRANSITION: Fade-in when navigating back from stage details
   // ============================================================
@@ -57,6 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.opacity = '1';
       });
     });
+    // Safety fallback: force opacity to 1 after 450ms in case requestAnimationFrame gets stuck
+    setTimeout(() => {
+      document.body.style.opacity = '1';
+    }, 450);
   }
 
   if (hasHash && overlay) {
@@ -164,6 +173,15 @@ document.addEventListener("DOMContentLoaded", () => {
           video.play();
         });
       }
+
+      // Safety timeout: if intro video playback hangs or freezes, exit intro after 15 seconds
+      setTimeout(() => {
+        if (isPlayingIntro && !fadeOutTriggered) {
+          console.warn("Safety timeout triggered: Video play hung, auto-exiting intro.");
+          fadeOutTriggered = true;
+          exitIntro();
+        }
+      }, 15000);
     };
 
     enterScreen.addEventListener("click", triggerEnter);
@@ -197,6 +215,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     video.addEventListener("ended", () => {
+      if (!fadeOutTriggered) {
+        fadeOutTriggered = true;
+        exitIntro();
+      }
+    });
+
+    video.addEventListener("error", (e) => {
+      console.warn("Video failed to play/load, bypassing intro overlay:", e);
       if (!fadeOutTriggered) {
         fadeOutTriggered = true;
         exitIntro();
