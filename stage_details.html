@@ -8,20 +8,6 @@
       content="Chi tiết báo cáo chặng học tập trong hành trình chuyển đổi số của Đồng Huyền Linh."
     />
     <title>Đồng Huyền Linh | Chi Tiết Chặng Báo Cáo</title>
-
-    <!-- 🚀 DNS Preconnect & Font/Asset Preloads -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-    
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" as="style" />
-    <link rel="preload" href="./css/variables.css" as="style" />
-    <link rel="preload" href="./css/base.css" as="style" />
-    <link rel="preload" href="./css/components.css" as="style" />
-    <link rel="preload" href="./css/sections.css" as="style" />
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" />
-
     <link rel="icon" type="image/png" href="./img/ulis_logo.png" />
     <link rel="canonical" href="https://linhdhl437.github.io/HLinhPortfolio/stage_details.html" />
     
@@ -47,18 +33,6 @@
     <link rel="stylesheet" href="./css/sections.css" />
 
     <style>
-      #page-transition-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(249, 247, 242, 0);
-        z-index: 9999;
-        pointer-events: none;
-        transition: background 0.35s ease;
-      }
-      #page-transition-overlay.fading {
-        background: rgba(249, 247, 242, 1);
-        pointer-events: all;
-      }
       /* Special layout rules for details page */
       body.stage-details-page {
         background:
@@ -777,7 +751,7 @@
       /* Responsive Layout for Tablet/Mobile Devices */
       @media (max-width: 992px) {
         body.stage-details-page {
-          padding-top: 145px;
+          padding-top: 95px;
         }
         .parchment-sheet {
           padding: 24px 16px !important;
@@ -792,6 +766,17 @@
         body.stage-details-page {
           padding-top: 135px !important;
         }
+      }
+
+      /* Ẩn thanh cuộn ngang của .nav-stages-list giữ nguyên tính thẩm mỹ cổ phong */
+      .nav-stages-list::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+      }
+      .nav-stages-list {
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
       }
     </style>
   </head>
@@ -820,7 +805,6 @@
         height: 100%;
         z-index: 10005;
         pointer-events: none;
-        filter: url(#ink-bleed-filter);
       "
     ></canvas>
 
@@ -948,6 +932,21 @@
     <script src="./js/lightbox.js"></script>
     <script src="./js/custom-cursor.js"></script>
 
+    <!-- Page Transition Overlay -->
+    <style>
+      #page-transition-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(249, 247, 242, 0);
+        z-index: 9999;
+        pointer-events: none;
+        transition: background 0.35s ease;
+      }
+      #page-transition-overlay.fading {
+        background: rgba(249, 247, 242, 1);
+        pointer-events: all;
+      }
+    </style>
     <div id="page-transition-overlay"></div>
 
     <script>

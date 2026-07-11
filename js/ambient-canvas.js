@@ -3,13 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("ambient-canvas");
   if (!canvas) return;
 
-  const ctx = canvas.getContext("2d", { alpha: true, willReadFrequently: false });
-  const dpr = window.devicePixelRatio || 1;
-  canvas.width = window.innerWidth * dpr;
-  canvas.height = window.innerHeight * dpr;
-  canvas.style.width = window.innerWidth + 'px';
-  canvas.style.height = window.innerHeight + 'px';
-  ctx.scale(dpr, dpr);
+  const ctx = canvas.getContext("2d");
   let width = window.innerWidth;
   let height = window.innerHeight;
 
@@ -35,46 +29,52 @@ document.addEventListener("DOMContentLoaded", () => {
     activeParticleType = e.detail;
   });
 
-  // Wind velocity tracker on scroll (Thêm RAF throttle)
-  let scrollTicking = false;
+  // Wind velocity tracker on scroll
   window.addEventListener("scroll", () => {
-    if (!scrollTicking) {
-      requestAnimationFrame(() => {
-        const currentScrollY = window.scrollY;
-        const diff = Math.abs(currentScrollY - lastScrollY);
-        scrollWind += diff * 0.04; // scale scroll velocity to wind force
-        lastScrollY = currentScrollY;
-        scrollTicking = false;
-      });
-      scrollTicking = true;
-    }
+    const currentScrollY = window.scrollY;
+    const diff = Math.abs(currentScrollY - lastScrollY);
+    scrollWind += diff * 0.04; // scale scroll velocity to wind force
+    lastScrollY = currentScrollY;
   }, { passive: true });
 
-  const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-  // Config parameters: Giảm 50% số lượng hạt trên di động để tối ưu hiệu năng
+  // Config parameters: Throttled elements count on mobile to save CPU/Battery
+  const isMobile = window.innerWidth <= 768;
   const config = {
-    leafCount: isTouch ? 8 : 18,
-    birdCount: isTouch ? 2 : 4,
-    cloudCount: isTouch ? 2 : 4
+    leafCount: isMobile ? 8 : 18,
+    birdCount: isMobile ? 2 : 4,
+    cloudCount: isMobile ? 2 : 4
   };
 
-  // Resize canvas with debounce (Cập nhật DPR scale)
+  // Resize canvas with debounce & Retina DPI scaling (capped at 2 on mobile)
   let resizeTimeout;
-  function resize() {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
+  function resize(immediate = false) {
+    const run = () => {
+      const isMobileNow = window.innerWidth <= 768;
       const dpr = window.devicePixelRatio || 1;
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      canvas.style.width = window.innerWidth + 'px';
-      canvas.style.height = window.innerHeight + 'px';
-      ctx.scale(dpr, dpr);
+      const maxDpr = isMobileNow ? Math.min(2, dpr) : dpr;
+      
       width = window.innerWidth;
       height = window.innerHeight;
-    }, 150);
+      
+      canvas.width = width * maxDpr;
+      canvas.height = height * maxDpr;
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
+      
+      ctx.scale(maxDpr, maxDpr);
+    };
+
+    if (immediate) {
+      run();
+    } else {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(run, 150);
+    }
   }
-  window.addEventListener("resize", resize, { passive: true });
+
+  // Initial resize
+  resize(true);
+  window.addEventListener("resize", () => resize(false), { passive: true });
 
   // Track mouse movements and add to brush stroke path + spawn particles
   let lastParticleSpawn = { x: 0, y: 0 };
@@ -86,8 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Spawn cursor trail particles if threshold distance exceeded
     const dist = Math.hypot(e.clientX - lastParticleSpawn.x, e.clientY - lastParticleSpawn.y);
-    const minDistance = isTouch ? 45 : 15; // Cần di chuyển khoảng cách xa hơn trên di động để giảm tần suất tạo hạt
-    if (dist > minDistance && activeParticleType !== "off") {
+    if (dist > 15 && activeParticleType !== "off") {
       cursorParticles.push(new CursorParticle(e.clientX, e.clientY, activeParticleType));
       lastParticleSpawn = { x: e.clientX, y: e.clientY };
     }
@@ -413,18 +412,15 @@ document.addEventListener("DOMContentLoaded", () => {
       leaf.draw();
     });
 
-    // 4. Update and draw Cursor particles (Tối ưu hóa duyệt ngược tránh cấp phát mảng mới)
-    for (let i = cursorParticles.length - 1; i >= 0; i--) {
-      const particle = cursorParticles[i];
+    // 4. Update and draw Cursor particles
+    cursorParticles.forEach(particle => {
       particle.update();
       particle.draw();
-      if (particle.life <= 0) {
-        cursorParticles.splice(i, 1);
-      }
-    }
+    });
+    cursorParticles = cursorParticles.filter(p => p.life > 0);
     
-    if (cursorParticles.length > 40) {
-      cursorParticles.splice(0, cursorParticles.length - 40);
+    if (cursorParticles.length > 80) {
+      cursorParticles.shift();
     }
 
 

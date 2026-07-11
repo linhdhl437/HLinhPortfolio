@@ -155,7 +155,7 @@
   padding-top: 100px;
   overflow: hidden;
   background: linear-gradient(to bottom, rgba(249, 249, 246, 0.75) 0%, rgba(249, 249, 246, 0.75) 100%), 
-              url('../PortfolioAssets/MoDau.jpg') center/cover no-repeat scroll;
+              url('../PortfolioAssets/MoDau.jpg') center/cover no-repeat fixed;
 }
 
 /* Landscape background overlay */
@@ -317,19 +317,26 @@
 #ToiLaAi {
   position: relative;
   background: linear-gradient(to bottom, rgba(249, 249, 246, 0.55) 0%, rgba(249, 249, 246, 0.55) 100%), 
-              url('../PortfolioAssets/ToiLaAi.jpe') center/cover no-repeat scroll;
+              url('../PortfolioAssets/ToiLaAi.jpe') center/cover no-repeat fixed;
 }
 
 #HanhTrinh {
   position: relative;
   background: linear-gradient(to bottom, rgba(249, 249, 246, 0.58) 0%, rgba(249, 249, 246, 0.58) 100%), 
-              url('../PortfolioAssets/HanhTrinh.jpg') center/cover no-repeat scroll;
+              url('../PortfolioAssets/HanhTrinh.jpg') center/cover no-repeat fixed;
 }
 
 #NhinLai {
   position: relative;
   background: linear-gradient(to bottom, rgba(249, 249, 246, 0.58) 0%, rgba(249, 249, 246, 0.58) 100%), 
-              url('../PortfolioAssets/NhinLai.jpg') center/cover no-repeat scroll;
+              url('../PortfolioAssets/NhinLai.jpg') center/cover no-repeat fixed;
+}
+
+/* Fix mobile Safari background attachment bug */
+@media (max-width: 1024px) {
+  #Modau, #ToiLaAi, #HanhTrinh, #NhinLai {
+    background-attachment: scroll !important;
+  }
 }
 
 .section-header {
@@ -756,6 +763,17 @@
     flex-direction: column;
     text-align: center;
   }
+
+  .nav-menu {
+    max-height: calc(100vh - 70px) !important;
+    overflow-y: auto !important;
+  }
+  .stage-document-wrapper .document-container {
+    padding: 20px 15px !important;
+  }
+  .stage-document-wrapper {
+    padding: 10px 5px !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -764,6 +782,15 @@
   }
   .goals-list {
     grid-template-columns: 1fr;
+  }
+  .chinese-welcome {
+    font-size: 1.35rem !important;
+  }
+  .english-welcome {
+    font-size: 2.0rem !important;
+  }
+  .glass-panel-welcome {
+    padding: var(--space-lg) var(--space-md) !important;
   }
 }
 
