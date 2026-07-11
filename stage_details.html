@@ -938,14 +938,20 @@
         }
 
         let isTransitioning = false;
+        let pendingTimeoutId = null;
 
         // 1. Function to load content dynamically
         function loadStage(stageNum, pushState = true) {
           if (stageNum < 1 || stageNum > 6) stageNum = 1;
-          if (isTransitioning) return; // Prevent double clicks during transition
 
           const scrollUnroll = document.getElementById("details-scroll-unroll");
           const contentTarget = document.getElementById("stage-detail-content-target");
+
+          // Hủy bỏ tiến trình cũ đang chờ xếp hàng (nếu có)
+          if (pendingTimeoutId) {
+            clearTimeout(pendingTimeoutId);
+            pendingTimeoutId = null;
+          }
 
           // Helper function to update state and load new HTML
           const executeLoad = () => {
@@ -1008,11 +1014,12 @@
                 }
 
                 // Unroll scroll after a small delay
-                setTimeout(() => {
+                pendingTimeoutId = setTimeout(() => {
                   if (scrollUnroll) {
                     scrollUnroll.classList.add("unrolled");
                   }
                   isTransitioning = false;
+                  pendingTimeoutId = null;
                 }, 150);
               } else {
                 contentTarget.innerHTML = `
@@ -1028,40 +1035,46 @@
                   );
                 }
 
-                setTimeout(() => {
+                pendingTimeoutId = setTimeout(() => {
                   if (scrollUnroll) {
                     scrollUnroll.classList.add("unrolled");
                   }
                   isTransitioning = false;
+                  pendingTimeoutId = null;
                 }, 150);
               }
             }
           };
 
-          // If scroll is currently unrolled and we are switching stages, close it first!
-          if (scrollUnroll && scrollUnroll.classList.contains("unrolled")) {
-            isTransitioning = true;
-            scrollUnroll.classList.remove("unrolled");
+          // Kiểm tra nếu đang có tiến trình đóng mở hoặc thư quyển đang mở
+          const wasTransitioning = isTransitioning;
+          isTransitioning = true;
 
-            // Fade out the target content ahead of time
-            if (contentTarget) {
-              contentTarget.style.transition = "opacity 0.4s ease";
-              contentTarget.style.opacity = "0";
+          if (scrollUnroll && (scrollUnroll.classList.contains("unrolled") || wasTransitioning)) {
+            // Nếu sách đang mở, bắt đầu gập sách lại
+            if (scrollUnroll.classList.contains("unrolled")) {
+              scrollUnroll.classList.remove("unrolled");
+
+              // Mờ dần nội dung cũ trước
+              if (contentTarget) {
+                contentTarget.style.transition = "opacity 0.4s ease";
+                contentTarget.style.opacity = "0";
+              }
+
+              // Cuộn lên đỉnh tờ giấy dó
+              const rect = scrollUnroll.getBoundingClientRect();
+              window.scrollTo({
+                top: rect.top + window.scrollY - 90,
+                behavior: "smooth"
+              });
             }
 
-            // Scroll window to top of parchment sheet smoothly IMMEDIATELY during closing!
-            const rect = scrollUnroll.getBoundingClientRect();
-            window.scrollTo({
-              top: rect.top + window.scrollY - 90,
-              behavior: "smooth"
-            });
-
-            // Wait 1.0s for the unroll closing transition to complete
-            setTimeout(() => {
+            // Lên lịch đóng sách hoàn chỉnh (1.0s) rồi mới nạp chặng mới
+            pendingTimeoutId = setTimeout(() => {
               executeLoad();
             }, 1000);
           } else {
-            // First time load: execute immediately
+            // Lần đầu tải hoặc đã gập sẵn: nạp ngay
             executeLoad();
           }
         }

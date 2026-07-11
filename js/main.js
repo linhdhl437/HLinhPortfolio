@@ -218,6 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================================================
   const tabItems = document.querySelectorAll(".journey-tab-item");
   const tabPanes = document.querySelectorAll(".journey-tab-pane");
+  let tabTimeoutId = null;
 
   if (tabItems.length && tabPanes.length) {
     tabItems.forEach((item, index) => {
@@ -225,6 +226,12 @@ document.addEventListener("DOMContentLoaded", () => {
       item.addEventListener("click", () => {
         // 1. Check if already active
         if (item.classList.contains("active")) return;
+
+        // Hủy bỏ tiến trình cũ nếu click liên tục nhanh
+        if (tabTimeoutId) {
+          clearTimeout(tabTimeoutId);
+          tabTimeoutId = null;
+        }
 
         // 2. Remove active state, aria-selected and tabindex from all items
         tabItems.forEach(i => {
@@ -243,11 +250,21 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // 5. Deactivate current active pane with transition
         const activePane = document.querySelector(".journey-tab-pane.active");
+
+        // Đồng bộ ép toàn bộ các pane khác ẩn đi ngay lập tức trước khi chuyển tiếp
+        tabPanes.forEach(pane => {
+          if (pane !== activePane) {
+            pane.classList.remove("active");
+            pane.style.opacity = "0";
+            pane.style.transform = "translateY(10px)";
+          }
+        });
+
         if (activePane) {
           activePane.style.opacity = "0";
           activePane.style.transform = "translateY(10px)";
           
-          setTimeout(() => {
+          tabTimeoutId = setTimeout(() => {
             activePane.classList.remove("active");
             
             const targetPane = document.getElementById(targetId);
@@ -258,6 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
               targetPane.style.opacity = "1";
               targetPane.style.transform = "translateY(0)";
             }
+            tabTimeoutId = null;
           }, 300);
         } else {
           // Fallback if no active pane
