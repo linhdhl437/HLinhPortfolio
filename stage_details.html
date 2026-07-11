@@ -50,7 +50,7 @@
 
       .details-layout-container {
         display: block;
-        max-width: 1000px;
+        max-width: 1250px;
         margin: 0 auto;
         position: relative;
         z-index: 10;
@@ -75,7 +75,7 @@
 
       .nav-bar-container {
         width: 100%;
-        max-width: 1200px;
+        max-width: 1250px;
         margin: 0 auto;
         padding: 0 var(--space-md);
         display: flex;
@@ -142,12 +142,11 @@
 
 
 
-      /* Main Parchment Sheet Styling */
       .parchment-sheet {
         background: rgba(253, 252, 249, 0.97) !important; /* Increased contrast (97%) for easier reading */
         backdrop-filter: blur(4px) !important;
         -webkit-backdrop-filter: blur(4px) !important;
-        padding: 50px var(--space-xl) !important;
+        padding: 45px 40px !important;
         min-height: 600px !important;
         border: 1px solid var(--border-gold) !important;
         border-radius: 12px !important;
@@ -367,6 +366,17 @@
 
       .stage-document-wrapper tr:nth-child(even) {
         background: rgba(249, 249, 246, 0.6) !important;
+      }
+
+      /* Remove scrollbar (con lăn) on desktop when screen is wide */
+      @media (min-width: 992px) {
+        .stage-document-wrapper .table-responsive {
+          overflow-x: visible !important;
+        }
+        .stage-document-wrapper table {
+          min-width: 100% !important;
+          width: 100% !important;
+        }
       }
 
       /* Rating Badges in Stage 2 */
@@ -913,88 +923,126 @@
           });
         }
 
+        let isTransitioning = false;
+
         // 1. Function to load content dynamically
         function loadStage(stageNum, pushState = true) {
           if (stageNum < 1 || stageNum > 6) stageNum = 1;
+          if (isTransitioning) return; // Prevent double clicks during transition
 
-          // Collapse scroll unroll first
           const scrollUnroll = document.getElementById("details-scroll-unroll");
-          if (scrollUnroll) {
+          const contentTarget = document.getElementById("stage-detail-content-target");
+
+          // Helper function to update state and load new HTML
+          const executeLoad = () => {
+            // Update active class in stage navigation links
+            document.querySelectorAll(".nav-stage-item").forEach((link) => {
+              link.classList.remove("active");
+              if (link.getAttribute("data-stage-link") === String(stageNum)) {
+                link.classList.add("active");
+              }
+            });
+
+            // Update back button (Redirect to index with parameter & hash)
+            const backBtn = document.getElementById("btn-back-to-timeline");
+            if (backBtn) {
+              backBtn.setAttribute(
+                "href",
+                `index.html#stage-node-${stageNum}`,
+              );
+            }
+
+            if (contentTarget && typeof window.stageContents !== "undefined") {
+              const reportHtml = window.stageContents[`stage${stageNum}`];
+              if (reportHtml) {
+                contentTarget.style.opacity = "0";
+                contentTarget.style.transform = "translateY(12px)";
+                contentTarget.style.transition = "none";
+
+                // Force layout reflow
+                contentTarget.offsetHeight;
+
+                contentTarget.innerHTML = reportHtml;
+
+                // Wrap content sections into collapsible accordions
+                makeAccordion();
+
+                // Fade-in & slide-up animation
+                contentTarget.style.transition =
+                  "opacity 0.4s ease, transform 0.4s ease";
+                contentTarget.style.opacity = "1";
+                contentTarget.style.transform = "translateY(0)";
+
+                // Push state to browser history
+                if (pushState) {
+                  window.history.pushState(
+                    { stage: stageNum },
+                    "",
+                    `?stage=${stageNum}`,
+                  );
+                }
+
+                // Scroll window to top of parchment sheet smoothly
+                if (scrollUnroll) {
+                  const rect = scrollUnroll.getBoundingClientRect();
+                  window.scrollTo({
+                    top: rect.top + window.scrollY - 90,
+                    behavior: "smooth"
+                  });
+                } else {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+
+                // Unroll scroll after a small delay
+                setTimeout(() => {
+                  if (scrollUnroll) {
+                    scrollUnroll.classList.add("unrolled");
+                  }
+                  isTransitioning = false;
+                }, 150);
+              } else {
+                contentTarget.innerHTML = `
+                <div style="text-align:center; padding:50px; font-family:var(--font-serif); color:var(--accent-vermillion);">
+                  Không tìm thấy nội dung báo cáo cho Chặng ${stageNum}.
+                </div>`;
+                
+                if (pushState) {
+                  window.history.pushState(
+                    { stage: stageNum },
+                    "",
+                    `?stage=${stageNum}`,
+                  );
+                }
+
+                setTimeout(() => {
+                  if (scrollUnroll) {
+                    scrollUnroll.classList.add("unrolled");
+                  }
+                  isTransitioning = false;
+                }, 150);
+              }
+            }
+          };
+
+          // If scroll is currently unrolled and we are switching stages, close it first!
+          if (scrollUnroll && scrollUnroll.classList.contains("unrolled")) {
+            isTransitioning = true;
             scrollUnroll.classList.remove("unrolled");
-          }
 
-          // Update active class in stage navigation links
-          document.querySelectorAll(".nav-stage-item").forEach((link) => {
-            link.classList.remove("active");
-            if (link.getAttribute("data-stage-link") === String(stageNum)) {
-              link.classList.add("active");
-            }
-          });
-
-          // Update back button (Redirect to index with parameter & hash)
-          const backBtn = document.getElementById("btn-back-to-timeline");
-          if (backBtn) {
-            backBtn.setAttribute(
-              "href",
-              `index.html#stage-node-${stageNum}`,
-            );
-          }
-
-          // Inject content
-          const contentTarget = document.getElementById(
-            "stage-detail-content-target",
-          );
-          if (contentTarget && typeof window.stageContents !== "undefined") {
-            const reportHtml = window.stageContents[`stage${stageNum}`];
-            if (reportHtml) {
+            // Fade out the target content ahead of time
+            if (contentTarget) {
+              contentTarget.style.transition = "opacity 0.4s ease";
               contentTarget.style.opacity = "0";
-              contentTarget.style.transform = "translateY(12px)";
-              contentTarget.style.transition = "none";
-
-              // Force layout reflow
-              contentTarget.offsetHeight;
-
-              contentTarget.innerHTML = reportHtml;
-
-              // Wrap content sections into collapsible accordions
-              makeAccordion();
-
-              // Fade-in & slide-up animation
-              contentTarget.style.transition =
-                "opacity 0.4s ease, transform 0.4s ease";
-              contentTarget.style.opacity = "1";
-              contentTarget.style.transform = "translateY(0)";
-
-              // Unroll scroll after a small delay
-              setTimeout(() => {
-                if (scrollUnroll) {
-                  scrollUnroll.classList.add("unrolled");
-                }
-              }, 150);
-            } else {
-              contentTarget.innerHTML = `
-              <div style="text-align:center; padding:50px; font-family:var(--font-serif); color:var(--accent-vermillion);">
-                Không tìm thấy nội dung báo cáo cho Chặng ${stageNum}.
-              </div>`;
-              setTimeout(() => {
-                if (scrollUnroll) {
-                  scrollUnroll.classList.add("unrolled");
-                }
-              }, 150);
             }
-          }
 
-          // Push state to browser history
-          if (pushState) {
-            window.history.pushState(
-              { stage: stageNum },
-              "",
-              `?stage=${stageNum}`,
-            );
+            // Wait 1.0s for the unroll closing transition to complete
+            setTimeout(() => {
+              executeLoad();
+            }, 1000);
+          } else {
+            // First time load: execute immediately
+            executeLoad();
           }
-
-          // Scroll back to top smoothly
-          window.scrollTo({ top: 0, behavior: "smooth" });
         }
 
         // 1.1. Dynamic Accordion builder function
