@@ -1134,7 +1134,7 @@ window.stageContents = {
 </ul>
 <h4>c) Prompt nâng cao</h4>
 <div class="prompt-box">
-        Tôi là sinh viên năm nhất đang học môn “Nhập môn Công nghệ số và Trí tuệ
+        Mình là sinh viên năm nhất đang học môn “Nhập môn Công nghệ số và Trí tuệ
         nhân tạo”, chưa có nhiều nền tảng về công nghệ và cần ôn tập bài giảng
         “Chương 1: Máy tính và các thiết bị ngoại vi” để chuẩn bị cho kiểm tra.
         Bạn là một trợ giảng đại học chuyên hỗ trợ sinh viên tóm tắt tài liệu
@@ -1364,8 +1364,8 @@ window.stageContents = {
 
 <h4>c) Prompt nâng cao</h4>
 <div class="prompt-box">
-        Tôi là sinh viên năm nhất đang học môn “Nhập môn Công nghệ số và Trí tuệ
-        nhân tạo”. Tôi đang ôn tập Chương 1 về máy tính và các thiết bị ngoại vi
+        Mình là sinh viên năm nhất đang học môn “Nhập môn Công nghệ số và Trí tuệ
+        nhân tạo”. Mình đang ôn tập Chương 1 về máy tính và các thiết bị ngoại vi
         nhưng chưa hiểu rõ khái niệm “thiết bị ngoại vi”. Bạn là một giảng viên
         công nghệ thông tin có kinh nghiệm giảng dạy cho sinh viên mới bắt đầu
         học về máy tính. Hãy giải thích khái niệm “thiết bị ngoại vi”; phân biệt
@@ -1578,8 +1578,8 @@ window.stageContents = {
 </ul>
 <h4>c) Prompt nâng cao</h4>
 <div class="prompt-box">
-        Tôi là sinh viên năm nhất đang học môn “Nhập môn Công nghệ số và Trí tuệ
-        nhân tạo”. Tôi cần một bộ câu hỏi ôn tập cho Chương 1: “Máy tính và các
+        Mình là sinh viên năm nhất đang học môn “Nhập môn Công nghệ số và Trí tuệ
+        nhân tạo”. Mình cần một bộ câu hỏi ôn tập cho Chương 1: “Máy tính và các
         thiết bị ngoại vi” để chuẩn bị cho kiểm tra. Bạn là giảng viên đại học
         ngành công nghệ thông tin chuyên thiết kế đề ôn tập cho sinh viên. Hãy
         tạo bộ câu hỏi ôn tập gồm 5 câu trắc nghiệm, 3 câu tự luận ngắn và 2 câu
@@ -1974,8 +1974,8 @@ window.stageContents = {
       </p>
 <p>
         Trong khuôn khổ học phần Nhập môn Công nghệ số và Trí tuệ nhân tạo, nhóm
-        chúng em thực hiện một dự án video học thuật với chủ đề: “AI trong Ngoại
-        ngữ và Giáo dục”. Báo cáo này tập trung phản ánh vai trò cá nhân của em
+        chúng mình thực hiện một dự án video học thuật với chủ đề: “AI trong Ngoại
+        ngữ và Giáo dục”. Báo cáo này tập trung phản ánh vai trò cá nhân của mình
         trong quá trình thực hiện dự án, quá trình sử dụng các công cụ hợp tác
         trực tuyến, hiệu quả đạt được, những khó khăn trong phối hợp nhóm cũng
         như giải pháp để nâng cao hiệu suất làm việc.
@@ -1994,9 +1994,9 @@ window.stageContents = {
       </p>
 <h3>3. Vai trò cá nhân trong dự án</h3>
 <p>
-        Trong quá trình thực hiện dự án, em đảm nhận vai trò:
+        Trong quá trình thực hiện dự án, mình đảm nhận vai trò:
         <strong>“Điều phối nội dung và quản lý tiến độ nhóm”</strong>. Việc đảm
-        nhận đồng thời vai trò quản lý tiến độ và hỗ trợ nội dung giúp em rèn
+        nhận đồng thời vai trò quản lý tiến độ và hỗ trợ nội dung giúp mình rèn
         luyện khả năng điều phối công việc, quản lý thời gian và giao tiếp trong
         môi trường làm việc nhóm trực tuyến.
       </p>
@@ -2019,7 +2019,7 @@ window.stageContents = {
 <h2>II. QUÁ TRÌNH THIẾT LẬP VÀ SỬ DỤNG CÁC CÔNG CỤ HỢP TÁC TRỰC TUYẾN</h2>
 <h3>1. Công cụ quản lý dự án – Notion</h3>
 <p>
-        Nhằm nâng cao hiệu quả quản lý công việc và phối hợp nhóm, em chủ động
+        Nhằm nâng cao hiệu quả quản lý công việc và phối hợp nhóm, mình chủ động
         thiết lập workspace dự án trên Notion theo mô hình
         <em>Project Dashboard</em>. Không gian làm việc được tối ưu với bảng
         Kanban theo dõi tiến độ, Calendar View quản lý deadline, hệ thống phân
@@ -2101,7 +2101,7 @@ window.stageContents = {
 </ul>
 <p><strong>Đánh giá hiệu quả:</strong></p>
 <p>
-        Notion giúp em kiểm soát toàn bộ tiến trình dự án một cách trực quan và
+        Notion giúp mình kiểm soát toàn bộ tiến trình dự án một cách trực quan và
         khoa học. Thay vì trao đổi rời rạc qua tin nhắn, mọi nhiệm vụ đều được
         cập nhật trên cùng một hệ thống, giúp các thành viên dễ dàng theo dõi
         trách nhiệm và tiến độ của bản thân. Điều này góp phần hạn chế tình
@@ -2151,7 +2151,7 @@ window.stageContents = {
 <p><strong>Đánh giá hiệu quả:</strong></p>
 <p>
         Google Docs giúp toàn bộ quá trình biên soạn diễn ra thuận lợi nhờ khả
-        năng chỉnh sửa theo thời gian thực. Em có thể dễ dàng theo dõi lịch sử
+        năng chỉnh sửa theo thời gian thực. Mình có thể dễ dàng theo dõi lịch sử
         chỉnh sửa, nhận diện phần đóng góp của từng thành viên và đưa ra góp ý
         trực tiếp ngay trên tài liệu. Điều này giúp giảm đáng kể thời gian tổng
         hợp và chỉnh sửa so với phương pháp làm việc truyền thống.
@@ -2241,7 +2241,7 @@ window.stageContents = {
       </p>
 <p>
 <strong>Hoạt động cá nhân:</strong> Trong vòng một tuần triển khai dự
-        án, em có hơn 10 lượt tương tác chủ động, bao gồm:
+        án, mình có hơn 10 lượt tương tác chủ động, bao gồm:
       </p>
 <ul>
 <li>
@@ -2414,14 +2414,14 @@ window.stageContents = {
 </table>
 </div>
 <p>
-        Qua quá trình sử dụng, em nhận thấy việc kết hợp nhiều công cụ trên cùng
+        Qua quá trình sử dụng, mình nhận thấy việc kết hợp nhiều công cụ trên cùng
         một hệ sinh thái giúp tăng đáng kể hiệu quả làm việc cá nhân và làm việc
         nhóm. Mỗi công cụ đảm nhận một chức năng riêng nhưng có khả năng bổ trợ
         lẫn nhau, tạo nên một quy trình làm việc liền mạch và hiệu quả.
       </p>
 <h2>V. KẾT LUẬN</h2>
 <p>
-        Thông qua hoạt động này, em nhận thấy kỹ năng sử dụng công cụ số không
+        Thông qua hoạt động này, mình nhận thấy kỹ năng sử dụng công cụ số không
         đơn thuần chỉ là thao tác kỹ thuật mà còn liên quan đến khả năng quản lý
         thời gian, giao tiếp và điều phối công việc.
       </p>
@@ -2433,18 +2433,10 @@ window.stageContents = {
         nghiên cứu và phát triển nghề nghiệp sau này.
       </p>
 <p>
-        Ngoài ra, em cũng học được rằng một dự án nhóm hiệu quả không chỉ phụ
+        Ngoài ra, mình cũng học được rằng một dự án nhóm hiệu quả không chỉ phụ
         thuộc vào năng lực cá nhân mà còn đến từ tinh thần chủ động hỗ trợ lẫn
         nhau, giao tiếp rõ ràng và khả năng phối hợp giữa các thành viên.
       </p>
-<div class="discarded-image-note">
-<strong>[Lưu ý học thuật - Ghi chú từ ViTriChenAnh.txt]</strong><br/>
-        Tệp hình ảnh
-        <code>Ảnh 12. Minh chứng tham gia dựng video và hoàn thiện sản
-          phẩm._.jpg</code>
-        được quyết định loại bỏ trong báo cáo HTML này theo chỉ dẫn
-        <em>"bỏ ảnh 12"</em> trong tài liệu hướng dẫn gốc.
-      </div>
 </div>
 </div>`,
   stage5: `<style>
@@ -2714,15 +2706,15 @@ window.stageContents = {
         biến đối với người học ngoại ngữ.
       </p>
 <p>
-        Xuất phát từ thực tế đó, tôi lựa chọn chủ đề
+        Xuất phát từ thực tế đó, mình lựa chọn chủ đề
         <strong>“Conversational AI và ứng dụng trong việc luyện giao tiếp ngoại
           ngữ”</strong>
         để thiết kế một infographic nhằm giới thiệu khái niệm này một cách trực
         quan và dễ hiểu.
       </p>
 <p>
-        Trong quá trình thực hiện, tôi sử dụng ba công cụ AI tạo sinh gồm
-        ChatGPT, DALL-E và Canva AI. Ngoài ra, tôi còn trải nghiệm ứng dụng
+        Trong quá trình thực hiện, mình sử dụng ba công cụ AI tạo sinh gồm
+        ChatGPT, DALL-E và Canva AI. Ngoài ra, mình còn trải nghiệm ứng dụng
         SpeakPal nhằm kiểm chứng khả năng ứng dụng thực tế của Conversational AI
         trong việc luyện giao tiếp tiếng Trung.
       </p>
@@ -2803,7 +2795,7 @@ window.stageContents = {
         </li>
 </ul>
 <p>
-<strong>• Điều chỉnh:</strong> Tôi tiếp tục tinh chỉnh prompt và yêu cầu
+<strong>• Điều chỉnh:</strong> Mình tiếp tục tinh chỉnh prompt và yêu cầu
         ChatGPT rút gọn nội dung, đồng thời bổ sung các ứng dụng liên quan trực
         tiếp đến việc luyện giao tiếp ngoại ngữ.
       </p>
@@ -2832,7 +2824,7 @@ window.stageContents = {
 <li><em>Hạn chế:</em> Một số ví dụ còn mang tính khái quát.</li>
 </ul>
 <p>
-<strong>• Điều chỉnh:</strong> Tôi thay thế một số ví dụ bằng trải
+<strong>• Điều chỉnh:</strong> Mình thay thế một số ví dụ bằng trải
         nghiệm thực tế với SpeakPal để tăng tính xác thực.
       </p>
 
@@ -2844,7 +2836,7 @@ window.stageContents = {
 <p>
 <strong>• Kết quả nhận được:</strong> ChatGPT đề xuất: Minh họa hội
         thoại giữa người học và AI, So sánh học ngoại ngữ truyền thống với học
-        cùng AI, Trình bày trải nghiệm thực tế. Từ đó, tôi quyết định thêm phần
+        cùng AI, Trình bày trải nghiệm thực tế. Từ đó, mình quyết định thêm phần
         “Trải nghiệm SpeakPal” làm điểm nhấn cho sản phẩm.
       </p>
 <h3>2. Công cụ AI tạo hình ảnh: DALL-E</h3>
@@ -2923,7 +2915,7 @@ window.stageContents = {
         </li>
 </ul>
 <p>
-<strong>• Điều chỉnh:</strong> Tôi lựa chọn hình ảnh phù hợp nhất và kết
+<strong>• Điều chỉnh:</strong> Mình lựa chọn hình ảnh phù hợp nhất và kết
         hợp thêm các biểu tượng từ Canva để hoàn thiện sản phẩm.
       </p>
 <div class="image-group">
@@ -2990,7 +2982,7 @@ window.stageContents = {
 
 <h2>IV. TRẢI NGHIỆM THỰC TẾ VỚI SPEAKPAL</h2>
 <p>
-        Để tìm hiểu sâu hơn về ứng dụng thực tế của Conversational AI, tôi đã sử
+        Để tìm hiểu sâu hơn về ứng dụng thực tế của Conversational AI, mình đã sử
         dụng SpeakPal để luyện hội thoại tiếng Trung. SpeakPal là một ứng dụng
         sử dụng công nghệ Conversational AI nhằm mô phỏng các cuộc trò chuyện
         thực tế giữa người học và trợ lý AI.
@@ -3006,7 +2998,7 @@ window.stageContents = {
 </div>
 </div>
 <p>
-        • Trong quá trình trải nghiệm, tôi thực hiện hội thoại với chủ đề:
+        • Trong quá trình trải nghiệm, mình thực hiện hội thoại với chủ đề:
         <strong>Cuộc sống hằng ngày</strong>.
       </p>
 <p>
@@ -3080,7 +3072,7 @@ window.stageContents = {
 </table>
 </div>
 <p>
-        Qua quá trình sử dụng, tôi nhận thấy các công cụ không cạnh tranh mà bổ
+        Qua quá trình sử dụng, mình nhận thấy các công cụ không cạnh tranh mà bổ
         trợ lẫn nhau. ChatGPT phù hợp cho việc xây dựng nội dung và phát triển ý
         tưởng. DALL-E giúp trực quan hóa các ý tưởng thành hình ảnh. Canva AI hỗ
         trợ hoàn thiện thiết kế và trình bày sản phẩm. Trong khi đó, SpeakPal
@@ -3094,23 +3086,23 @@ window.stageContents = {
         nhân bao gồm: Xây dựng và điều chỉnh prompt nhiều lần, chọn lọc thông
         tin phù hợp, tự chỉnh sửa nội dung để dễ hiểu hơn, trực tiếp trải nghiệm
         SpeakPal, thiết kế lại bố cục infographic, bổ sung ví dụ minh họa và tự
-        viết phần đánh giá và kết luận. Tôi ước tính tỷ lệ đóng góp cá nhân
+        viết phần đánh giá và kết luận. Mình ước tính tỷ lệ đóng góp cá nhân
         chiếm trên 50% sản phẩm cuối cùng.
       </p>
 <h2>VII. PHÂN TÍCH VAI TRÒ CỦA AI TRONG QUÁ TRÌNH SÁNG TẠO</h2>
 <p>
-        Thông qua dự án này, tôi nhận thấy AI đã thay đổi đáng kể cách con người
+        Thông qua dự án này, mình nhận thấy AI đã thay đổi đáng kể cách con người
         tiếp cận quá trình sáng tạo nội dung số. Thay vì phải bắt đầu từ một
         trang giấy trắng, người dùng có thể sử dụng AI để tạo ý tưởng, xây dựng
         bản nháp và đề xuất các phương án thiết kế trong thời gian ngắn.
       </p>
 
 <p>
-        ChatGPT giúp tôi nhanh chóng hình thành cấu trúc nội dung và tiếp cận
+        ChatGPT giúp mình nhanh chóng hình thành cấu trúc nội dung và tiếp cận
         nhiều góc nhìn khác nhau về chủ đề Conversational AI. DALL-E hỗ trợ tạo
         hình ảnh minh họa độc đáo mà không cần tìm kiếm trên Internet. Canva AI
         giúp tối ưu hóa thiết kế và tiết kiệm thời gian trình bày. SpeakPal mang
-        lại trải nghiệm thực tế, giúp tôi hiểu rõ hơn cách Conversational AI
+        lại trải nghiệm thực tế, giúp mình hiểu rõ hơn cách Conversational AI
         được ứng dụng trong đời sống.
       </p>
 <p>
@@ -3132,14 +3124,14 @@ window.stageContents = {
 <h2>VIII. KẾT LUẬN</h2>
 <p>
         Thông qua dự án “Conversational AI và ứng dụng trong việc luyện giao
-        tiếp ngoại ngữ”, tôi đã có cơ hội tìm hiểu sâu hơn về một ứng dụng quan
+        tiếp ngoại ngữ”, mình đã có cơ hội tìm hiểu sâu hơn về một ứng dụng quan
         trọng của trí tuệ nhân tạo trong giáo dục. Việc kết hợp ChatGPT, DALL-E,
-        Canva AI và trải nghiệm thực tế với SpeakPal đã giúp tôi xây dựng một
+        Canva AI và trải nghiệm thực tế với SpeakPal đã giúp mình xây dựng một
         sản phẩm trực quan, sinh động và có tính ứng dụng cao.
       </p>
 <p>
-        Dự án không chỉ giúp tôi nâng cao kỹ năng sử dụng các công cụ AI tạo
-        sinh mà còn giúp tôi hiểu rõ hơn về vai trò của AI trong học tập, sáng
+        Dự án không chỉ giúp mình nâng cao kỹ năng sử dụng các công cụ AI tạo
+        sinh mà còn giúp mình hiểu rõ hơn về vai trò của AI trong học tập, sáng
         tạo nội dung số và phát triển năng lực cá nhân trong thời đại công nghệ
         số.
       </p>
@@ -3389,7 +3381,7 @@ window.stageContents = {
 
 <h3>3. Nhận định cá nhân</h3>
 <p>
-        Theo em, định hướng của VNU là phù hợp với thực tiễn hiện nay. AI có thể
+        Theo mình, định hướng của VNU là phù hợp với thực tiễn hiện nay. AI có thể
         giúp sinh viên tìm kiếm thông tin, xây dựng ý tưởng, tóm tắt tài liệu và
         hỗ trợ nghiên cứu một cách nhanh chóng, hiệu quả. Tuy nhiên, nếu người
         học phụ thuộc hoàn toàn vào AI thì sẽ làm giảm khả năng tư duy độc lập,
@@ -3405,7 +3397,7 @@ window.stageContents = {
 <h2>II. THỰC HIỆN NHIỆM VỤ HỌC TẬP VỚI SỰ HỖ TRỢ CỦA AI</h2>
 <h3>1. Nhiệm vụ được lựa chọn</h3>
 <p>
-        Để trải nghiệm việc sử dụng AI trong học tập, em lựa chọn nhiệm vụ chuẩn
+        Để trải nghiệm việc sử dụng AI trong học tập, mình lựa chọn nhiệm vụ chuẩn
         bị một bài thuyết trình khoảng 10 phút về
         <strong>Hồ Xuân Hương</strong> cho học phần Văn học Việt Nam. Mục tiêu
         của việc sử dụng AI là hỗ trợ tìm ý tưởng, xây dựng cấu trúc nội dung và
@@ -3414,7 +3406,7 @@ window.stageContents = {
 <h3>2. Quá trình sử dụng AI</h3>
 <p>
         Để chuẩn bị bài thuyết trình 10 phút về Hồ Xuân Hương dành cho sinh viên
-        đại học, em đã sử dụng ChatGPT như một công cụ hỗ trợ trong quá trình
+        đại học, mình đã sử dụng ChatGPT như một công cụ hỗ trợ trong quá trình
         xây dựng nội dung, phân tích và hoàn thiện bài trình bày.
       </p>
 <p><strong>Bước 1. Xây dựng cấu trúc bài thuyết trình</strong></p>
@@ -3447,7 +3439,7 @@ window.stageContents = {
       </p>
 <p>
 <em>Đánh giá và điều chỉnh:</em> Một số thông tin còn mang tính khái
-        quát và chưa có nguồn dẫn cụ thể. Do đó, em đã đối chiếu với giáo trình
+        quát và chưa có nguồn dẫn cụ thể. Do đó, mình đã đối chiếu với giáo trình
         Văn học Việt Nam trung đại, tài liệu học phần và các công trình nghiên
         cứu liên quan để kiểm chứng trước khi sử dụng.
       </p>
@@ -3464,7 +3456,7 @@ window.stageContents = {
       </p>
 <p>
 <em>Đánh giá và điều chỉnh:</em> AI cung cấp nhiều gợi ý hữu ích cho
-        việc xây dựng luận điểm. Từ các gợi ý này, em đã bổ sung dẫn chứng từ
+        việc xây dựng luận điểm. Từ các gợi ý này, mình đã bổ sung dẫn chứng từ
         các tác phẩm <em>Bánh trôi nước, Tự tình II</em> và
         <em>Mời trầu</em> nhằm tăng tính thuyết phục cho phần phân tích.
       </p>
@@ -3487,7 +3479,7 @@ window.stageContents = {
 
 <h3>3. Đánh giá và tích hợp kết quả từ AI</h3>
 <p>
-        Qua quá trình sử dụng, em nhận thấy AI mang lại nhiều lợi ích trong việc
+        Qua quá trình sử dụng, mình nhận thấy AI mang lại nhiều lợi ích trong việc
         hỗ trợ học tập:
       </p>
 <ul>
@@ -3497,14 +3489,14 @@ window.stageContents = {
 </ul>
 <p>
         Tuy nhiên, nội dung do AI tạo ra không phải lúc nào cũng đầy đủ hoặc
-        hoàn toàn chính xác. Vì vậy, em đã thực hiện các bước kiểm chứng, đối
+        hoàn toàn chính xác. Vì vậy, mình đã thực hiện các bước kiểm chứng, đối
         chiếu với tài liệu học thuật, bổ sung dẫn chứng và chỉnh sửa bằng văn
         phong của bản thân trước khi đưa vào bài thuyết trình. Như vậy, AI đóng
         vai trò là công cụ hỗ trợ trong quá trình học tập, còn việc lựa chọn,
         đánh giá và hoàn thiện sản phẩm cuối cùng vẫn thuộc về người học.
       </p>
 <h3>4. Minh bạch trong việc sử dụng AI</h3>
-<p>Trong bài thuyết trình, em ghi rõ rằng ChatGPT được sử dụng để:</p>
+<p>Trong bài thuyết trình, mình ghi rõ rằng ChatGPT được sử dụng để:</p>
 <ul>
 <li>Hỗ trợ xây dựng dàn ý.</li>
 <li>Tóm tắt và tổng hợp thông tin.</li>
@@ -3622,14 +3614,14 @@ window.stageContents = {
 <li>
 <strong>Luôn xem AI là công cụ hỗ trợ, không thay thế tư duy cá
             nhân:</strong>
-          Em xem AI là công cụ hỗ trợ cho quá trình học tập thay vì là người
+          Mình xem AI là công cụ hỗ trợ cho quá trình học tập thay vì là người
           thay thế việc học. AI có thể giúp gợi ý ý tưởng, tổng hợp thông tin
           hoặc đề xuất hướng tiếp cận, nhưng việc phân tích, đánh giá và đưa ra
           kết luận cuối cùng phải do người học thực hiện.
         </li>
 <li>
 <strong>Kiểm chứng mọi thông tin do AI cung cấp trước khi sử dụng:</strong>
-          Em không mặc nhiên xem mọi thông tin do AI cung cấp là chính xác.
+          Mình không mặc nhiên xem mọi thông tin do AI cung cấp là chính xác.
           Trước khi sử dụng, các thông tin quan trọng cần được đối chiếu với
           giáo trình, tài liệu học thuật hoặc các nguồn đáng tin cậy khác.
         </li>
@@ -3637,23 +3629,23 @@ window.stageContents = {
 <strong>Minh bạch về vai trò của AI trong quá trình học tập và nghiên
             cứu:</strong>
           Khi AI được sử dụng để hỗ trợ xây dựng dàn ý, tổng hợp tài liệu hoặc
-          gợi ý hướng phân tích, em sẽ công khai mức độ sử dụng nếu bài tập hoặc
+          gợi ý hướng phân tích, mình sẽ công khai mức độ sử dụng nếu bài tập hoặc
           quy định học thuật yêu cầu.
         </li>
 <li>
 <strong>Không sử dụng AI để hoàn thành toàn bộ nhiệm vụ học thuật:</strong>
-          Em không sử dụng AI để hoàn thành toàn bộ bài tập, bài luận hoặc nhiệm
+          Mình không sử dụng AI để hoàn thành toàn bộ bài tập, bài luận hoặc nhiệm
           vụ nghiên cứu. Nếu AI tạo ra phần lớn nội dung, người học sẽ mất cơ
           hội rèn luyện các kỹ năng đọc hiểu, phân tích, lập luận.
         </li>
 <li>
 <strong>Bảo vệ dữ liệu cá nhân và thông tin nhạy cảm:</strong> Khi sử
-          dụng các công cụ AI trực tuyến, em hạn chế cung cấp thông tin cá nhân,
+          dụng các công cụ AI trực tuyến, mình hạn chế cung cấp thông tin cá nhân,
           dữ liệu nội bộ hoặc các tài liệu nghiên cứu chưa được phép công bố.
         </li>
 <li>
 <strong>Duy trì năng lực học tập độc lập trong thời đại AI:</strong>
-          Em cam kết tiếp tục rèn luyện kỹ năng đọc hiểu, viết học thuật, nghiên
+          Mình cam kết tiếp tục rèn luyện kỹ năng đọc hiểu, viết học thuật, nghiên
           cứu và tư duy phản biện. AI có thể giúp nâng cao hiệu quả, nhưng không
           thể thay thế khả năng suy nghĩ, sáng tạo của con người.
         </li>
@@ -3661,7 +3653,7 @@ window.stageContents = {
 <li>
 <strong>Sử dụng AI vì mục tiêu nâng cao chất lượng học tập, không phải chỉ
             để hoàn thành nhiệm vụ:</strong>
-          Trước mỗi lần sử dụng AI, em tự đặt câu hỏi: “Việc sử dụng AI trong
+          Trước mỗi lần sử dụng AI, mình tự đặt câu hỏi: “Việc sử dụng AI trong
           trường hợp này giúp mình hiểu vấn đề sâu hơn hay chỉ giúp hoàn thành
           bài tập nhanh hơn?”. Nếu chỉ dùng để đối phó, việc sử dụng đó cần được
           xem xét lại.
