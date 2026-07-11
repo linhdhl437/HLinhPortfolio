@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this.x = x;
       this.y = y;
       this.type = type;
-      this.size = Math.random() * 6 + 5;
+      this.size = Math.random() * 10 + 8;
       this.life = 1.0;
       this.decay = Math.random() * 0.015 + 0.012; // fades out in 1 - 1.2s
 
