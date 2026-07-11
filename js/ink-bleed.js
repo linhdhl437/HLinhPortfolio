@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // CLASS: CLICK EFFECT REPRESENTATION (Mực loang + Gợn sóng)
   // ----------------------------------------------------
   class ClickEffect {
-    constructor(x, y, baseMaxRadius, color, scaleX = 1.0, scaleY = 1.0, numVertices = 90, historyLength = 15) {
+    constructor(x, y, baseMaxRadius, color, scaleX = 1.0, scaleY = 1.0, numVertices = 90, historyLength = 25) {
       this.x = x;
       this.y = y;
       this.maxRadius = baseMaxRadius * params.sizeScale;
@@ -157,15 +157,15 @@ document.addEventListener("DOMContentLoaded", () => {
       // 1. VẼ VẾT BÓNG MỜ DẦN (Trail History) tạo quầng nước loang mềm
       this.history.forEach((state, idx) => {
         const ageFactor = idx / this.history.length;
-        const trailOpacity = mainOpacity * (0.15 + 0.85 * ageFactor) * 0.55;
+        const trailOpacity = mainOpacity * (0.3 + 0.7 * ageFactor) * 0.85;
         if (trailOpacity > 0.01) {
-          this.drawRingShape(ctx, state.radius, state.phaseOffset, trailOpacity, 2.5);
+          this.drawRingShape(ctx, state.radius, state.phaseOffset, trailOpacity, 3.2);
         }
       });
 
       // 2. VẼ VÒNG MỰC CHÍNH ĐANG LAN TỎA (Có viền sắc nét wet-edge)
       if (mainOpacity > 0.01) {
-        this.drawRingShape(ctx, this.currentBaseRadius, this.progress * 0.6, mainOpacity, 3.8);
+        this.drawRingShape(ctx, this.currentBaseRadius, this.progress * 0.6, mainOpacity, 3.5);
       }
 
       // 3. VẼ GỢN SÓNG NƯỚC ĐỒNG TÂM (Tròn dẹt Oval đồng bộ)
@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Tự thích ứng độ phức tạp đa giác khi click dồn dập
       let numVertices = 90;
-      let historyLength = 15;
+      let historyLength = 25;
 
       if (this.effects.length >= 2) {
         numVertices = 60;
@@ -318,8 +318,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const height = rect.height;
     const diagonal = Math.sqrt(width * width + height * height);
 
-    let maxRadius = 220; // Bán kính loang mặc định cho khoảng không nền
-    let color = '#111111'; // Đen mực tàu mặc định
+    let maxRadius = 120; // Bán kính loang mặc định nhỏ gọn cho khoảng không nền
+    let color = '#FFB7C5'; // Mặc định
     let scaleX = 1.0;
     let scaleY = 1.0;
 
@@ -344,26 +344,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Thiết lập kích thước tối đa dựa trên loại nút
         if (clickTarget.tagName === 'A' || clickTarget.tagName === 'BUTTON' || clickTarget.classList.contains('nav-link') || clickTarget.classList.contains('nav-stage-item') || clickTarget.classList.contains('accordion-header')) {
-          maxRadius = Math.max(55, tDiagonal * 0.58);
+          maxRadius = Math.max(35, tDiagonal * 0.4);
         } else if (clickTarget.classList.contains('journey-tab-item')) {
-          maxRadius = Math.max(75, tDiagonal * 0.45);
+          maxRadius = Math.max(45, tDiagonal * 0.35);
         } else {
-          maxRadius = Math.max(100, tDiagonal * 0.4);
+          maxRadius = Math.max(60, tDiagonal * 0.3);
         }
 
         // Chọn sắc màu thủy mặc tương thích ngữ cảnh hành động
         if (clickTarget.classList.contains('btn-back-sticky') || clickTarget.id === 'btn-back-to-timeline' || clickTarget.classList.contains('btn-skip-intro')) {
-          color = '#8B0000'; // Đỏ chu sa cho các hành động thoái lui/quay lại/bỏ qua
+          color = '#B3ECEC'; // Xanh nhạt cho các hành động thoái lui/quay lại/bỏ qua
         } else if (clickTarget.classList.contains('nav-stage-item') || clickTarget.classList.contains('nav-link') || clickTarget.classList.contains('journey-tab-item')) {
           color = '#B89047'; // Vàng trầm cổ điển cho các nút liên kết/menu/tab chặng
         } else if (clickTarget.classList.contains('accordion-header')) {
           color = '#B89047'; // Vàng trầm cho tiêu đề accordion
         } else if (clickTarget.classList.contains('btn-classical') || clickTarget.tagName === 'BUTTON') {
-          color = '#8B0000'; // Đỏ chu sa cho các nút bấm cổ điển nổi bật
+          color = '#B3ECEC'; // Xanh nhạt cho các nút bấm chính nổi bật
         } else {
           color = '#B89047'; // Các phần tử tương tác khác màu vàng kim
         }
+      } else {
+        // Cú click nền trống: chọn ngẫu nhiên trong 3 tông màu chính (Hồng nhạt/cánh sen, Vàng cổ điển, Xanh nhạt)
+        const bgColors = ['#FFB7C5', '#E2587F', '#B89047', '#B3ECEC'];
+        color = bgColors[Math.floor(Math.random() * bgColors.length)];
       }
+    } else {
+      // Cú click nền trống: chọn ngẫu nhiên trong 3 tông màu chính (Hồng nhạt/cánh sen, Vàng cổ điển, Xanh nhạt)
+      const bgColors = ['#FFB7C5', '#E2587F', '#B89047', '#B3ECEC'];
+      color = bgColors[Math.floor(Math.random() * bgColors.length)];
     }
 
     // Kích hoạt vẽ hiệu ứng lên canvas
