@@ -347,8 +347,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Stop scroll & add locks
     document.body.style.overflow = "hidden";
-    window.removeEventListener("wheel", preventDefault);
-    window.removeEventListener("touchmove", preventDefault);
     window.addEventListener("wheel", preventDefault, { passive: false });
     window.addEventListener("touchmove", preventDefault, { passive: false });
     

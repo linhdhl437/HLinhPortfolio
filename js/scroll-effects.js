@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     scrolls.forEach(scr => scrollObserver.observe(scr));
 
-    // Parallax scroll handler for non-GSAP desktop view only (completely bypassed on mobile to prevent scroll jank)
+    p    // Parallax scroll handler for non-GSAP desktop view only (completely bypassed on mobile to prevent scroll jank)
     if (!isMobileDevice) {
       window.addEventListener("scroll", () => {
         const scrollY = window.scrollY;

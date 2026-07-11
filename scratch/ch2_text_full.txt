@@ -1,0 +1,725 @@
+
+========================================
+TRANG 1
+========================================
+BÁO CÁO TÌM KIẾM VÀ ĐÁNH GIÁ 
+NGUỒN THÔNG TIN 
+Chủ đề: Nghiên cứu rào cản và phương pháp phát triển kĩ 
+năng giao tiếp tiếng anh của người Việt.  
+1. GIỚI THIỆU VỀ BÁO CÁO 
+Trong bối cảnh toàn cầu hóa và hội nhập quốc tế ngày càng sâu rộng, tiếng Anh đã 
+trở thành công cụ giao tiếp quan trọng trong học tập, nghiên cứu, công việc và giao lưu văn 
+hóa. Tại Việt Nam, việc dạy và học tiếng Anh được chú trọng trong toàn bộ hệ thống giáo 
+dục, từ bậc phổ thông đến đại học. Tuy nhiên, thực tế cho thấy phần lớn người học Việt 
+Nam vẫn gặp nhiều khó khăn trong việc sử dụng tiếng Anh để giao tiếp thực tế, đặc biệt là 
+kỹ năng nói và phản xạ ngôn ngữ. 
+Xuất phát từ thực tế trên, báo cáo này được thực hiện nhằm tìm kiếm, tổng hợp và 
+đánh giá các nguồn thông tin liên quan đến vấn đề rào cản và phương pháp phát triển kỹ 
+năng giao tiếp tiếng Anh của người Việt. Báo cáo tập trung phân tích mức độ tin cậy của các 
+tài liệu dựa trên nhiều tiêu chí học thuật như tác giả, cơ quan xuất bản, phương pháp 
+nghiên cứu, mức độ trích dẫn và tính cập nhật của tài liệu. Qua đó, báo cáo góp phần lựa 
+chọn được các nguồn thông tin có giá trị phục vụ cho nghiên cứu và học tập trong lĩnh vực 
+giáo dục ngôn ngữ. 
+2. PHƯƠNG PHÁP TÌM KIẾM VÀ THU THẬP TÀI LIỆU 
+​
+Việc tìm kiếm được thực hiện trên Google Search, Google Scholar, ERIC, 
+SpringerOpen, Frontiers và Cambridge University Press. Các tài liệu được ưu tiên trong giai 
+đoạn 2017–2025 nhằm đảm bảo tính cập nhật. Từ khóa sử dụng gồm cả tiếng Anh và tiếng 
+Việt như: Vietnamese EFL speaking barriers, English communication skills in Vietnam, 
+Foreign language anxiety, English speaking strategies, rào cản giao tiếp tiếng Anh của 
+người Việt, phương pháp phát triển kỹ năng giao tiếp tiếng Anh. 
+​
+Thực hành sử dụng toán tử tìm kiếm Google: 
+ 
+Toán tử 
+Ví dụ 
+Mục đích 
+“ “ 
+“English speaking anxiety” 
+Tìm chính xác cụm từ 
+AND 
+English speaking AND 
+Vietnam 
+Kết hợp hai chủ đề 
+
+========================================
+TRANG 2
+========================================
+OR 
+chatbot OR AI speaking 
+practice 
+Mở rộng phạm vi 
+NOT (-) 
+English speaking barriers 
+-advertisement 
+Loại bỏ kết quả không liên 
+quan 
+site: 
+site:eric.ed.gov English 
+speaking anxiety 
+Tìm trong nguồn học thuật 
+filetype: 
+English speaking 
+strategies filetype:pdf 
+Tìm bài báo, báo cáo PDF 
+intitle: 
+intitle:“English speaking 
+skills” Vietnam 
+Tìm tài liệu có tiêu đề phù 
+hợp 
+Chiến lược tìm kiếm 
+Quá trình tìm kiếm được triển khai theo ba bước. Đầu tiên sử dụng từ khóa rộng để xác 
+định các hướng nghiên cứu chính. Tiếp theo, kết hợp nhiều toán tử nhằm thu hẹp phạm vi 
+và tăng độ liên quan của kết quả. Cuối cùng, các tài liệu được đối chiếu về tác giả, đơn vị 
+xuất bản, phương pháp nghiên cứu và số lượng trích dẫn trước khi đưa vào phân tích. Việc 
+kết hợp linh hoạt hơn 4 toán tử giúp giảm đáng kể kết quả nhiễu, đồng thời tiếp cận nhanh 
+các nguồn học thuật chất lượng cao. 
+Sau quá trình sàng lọc, tổng cộng 12 tài liệu tiêu biểu đã được lựa chọn để tiến hành 
+đánh giá độ tin cậy. Các tài liệu này bao gồm bài báo khoa học quốc tế, sách chuyên khảo, 
+nghiên cứu thực nghiệm và một số nguồn mở nhằm phục vụ việc đối chiếu thực tiễn. 
+3. TIÊU CHÍ ĐÁNH GIÁ ĐỘ TIN CẬY CỦA NGUỒN THÔNG 
+TIN 
+​
+Độ tin cậy của các tài liệu được đánh giá dựa trên bốn tiêu chí chính: tác giả và cơ 
+quan xuất bản, phương pháp nghiên cứu, mức độ trích dẫn học thuật và tính cập nhật. Đây 
+là những tiêu chí phổ biến trong nghiên cứu học thuật nhằm xác định chất lượng và giá trị 
+sử dụng của nguồn thông tin. 
+​
+Tác giả và cơ quan xuất bản: Ưu tiên các tài liệu được công bố bởi nhà nghiên 
+cứu, giảng viên hoặc chuyên gia có chuyên môn liên quan, đồng thời xuất bản trên các tạp 
+chí và nhà xuất bản học thuật uy tín như Cambridge University Press, SpringerOpen, SAGE 
+hoặc Frontiers. Các website thương mại và blog cá nhân chỉ được sử dụng để tham khảo 
+bổ sung. 
+​
+Phương pháp nghiên cứu: Những nghiên cứu trình bày rõ đối tượng khảo sát, quy 
+mô mẫu, cách thu thập và phân tích dữ liệu được đánh giá cao hơn các tài liệu chỉ mang 
+tính tổng hợp hoặc thiếu minh chứng thực nghiệm. 
+
+========================================
+TRANG 3
+========================================
+​
+Mức độ trích dẫn: Số lượng trích dẫn phản ánh mức độ ảnh hưởng và sự công 
+nhận của cộng đồng học thuật đối với một công trình. Tuy nhiên, tiêu chí này được xem xét 
+kết hợp với uy tín của nguồn và tính mới của nghiên cứu. 
+​
+Tính cập nhật: Các tài liệu xuất bản trong giai đoạn 2017–2025 được ưu tiên nhằm 
+phản ánh xu hướng giáo dục hiện nay. Một số nghiên cứu cũ vẫn được sử dụng nếu có giá 
+trị nền tảng về lý thuyết. 
+​
+Các nguồn sau khi đánh giá được xếp hạng theo thang điểm từ 1–5, trong đó 5 là 
+mức độ tin cậy rất cao, 4 là cao, 3 là trung bình, 2 là thấp và 1 là không phù hợp để sử dụng 
+làm nguồn học thuật chính. 
+4. BẢNG TỔNG HỢP ĐÁNH GIÁ ĐỘ TIN CẬY CỦA NGUỒN 
+THÔNG TIN 
+ 
+STT 
+Tên tài liệu 
+Loại 
+nguồn 
+Tác giả 
+Cơ quan 
+xuất bản 
+Phương 
+pháp 
+nghiên 
+cứu 
+Trích 
+dẫn 
+Tính 
+cập 
+nhật 
+Đánh giá chung 
+Xếp 
+hạng 
+độ 
+tin 
+cậy 
+1 
+Foreign 
+Language 
+Classroom 
+Anxiety 
+Bài 
+báo 
+khoa 
+học 
+Elaine 
+Horwitz và 
+cộng sự  
+Modern 
+Language 
+Journal 
+(US) 
+Nghiên 
+cứu định 
+lượng 
+(thang đo 
+FLCAS) 
+13000+ 1986 
+Nguồn kinh điển, 
+tác giả uy tín, 
+phương pháp 
+khoa học; nhiều 
+trích dẫn, vẫn 
+được trích dẫn 
+rộng; tuy cũ 
+nhưng vẫn là 
+tham khảo cơ 
+bản. 
+5 
+2 
+Approaches 
+and 
+Methods in 
+Language 
+Teaching 
+(2014) 
+Sách 
+Jack C. 
+Richards 
+& T. S. 
+Rodgers 
+Cambridg
+e 
+University 
+Press 
+Tổng hợp 
+lý thuyết 
+(không 
+thực 
+nghiệm) 
+30000+ 2014 
+Sách toàn diện, 
+tác giả nổi tiếng, 
+xuất bản 
+Cambridge; cập 
+nhật 3rd ed.; 
+không phải nghiên 
+cứu mới, không 
+có dữ liệu thực 
+nghiệm, nhưng tài 
+liệu gốc tham 
+khảo tốt. 
+5 
+3 
+Barriers to 
+Intercultural 
+Communicat
+ion 
+Implications 
+for English 
+Báo 
+khoa 
+học 
+quốc 
+tế  
+Nguyễn 
+Thị Mai 
+Hương 
+IJSELL 
+(ARC 
+Journals)  
+Tổng hợp, 
+phân tích 
+văn liệu 
+(không 
+khảo sát 
+<10 
+2025 
+Công bố quốc tế, 
+tác giả học thuật 
+nhưng tạp chí ít 
+nổi; phương pháp 
+thiếu dữ liệu thực 
+nghiệm; cập nhật 
+3 
+
+========================================
+TRANG 4
+========================================
+Teaching at 
+Tertiary 
+Level in 
+Vietnam 
+thực 
+nghiệm) 
+mới; hữu ích 
+nhưng cần kết 
+hợp thêm nguồn 
+khác. 
+4 
+The Impact 
+of AI 
+Chatbot 
+Integration 
+on 
+Vietnamese 
+EFL 
+Learners' 
+Speaking 
+Performanc
+e, Fluency, 
+and 
+Confidence 
+Bài 
+báo 
+khoa 
+học 
+Nguyen 
+T.H.  
+Language
+, 
+Technolog
+y, and 
+Social 
+Media 
+(WISE 
+Indo) 
+Thí 
+nghiệm 
+bán thực 
+nghiệm 
+(quasi-exp
+eriment: 
+đo trước 
+và sau, 
+khảo sát) 
+<10 
+2025 
+Xuất bản quốc tế, 
+phương pháp rõ 
+ràng (thiết kế 
+pre-post test); 
+nhưng tạp chí ít 
+tên tuổi, tác giả 
+trong nước; có giá 
+trị thực nghiệm; 
+cần tham khảo 
+thêm nguồn khác. 
+3 
+5 
+An 
+exploratory 
+study on 
+Vietnamese 
+university 
+students’ 
+resilience in 
+learning 
+English as a 
+foreign 
+language 
+Báo 
+khoa 
+học 
+quốc 
+tế 
+Trịnh 
+Quốc Lập, 
+Võ Thị 
+Thúy 
+Trang, Lê 
+Công 
+Tuấn  
+Frontiers 
+in 
+Education 
+(Frontiers 
+Media, 
+Thụy Sĩ) 
+Khảo sát 
+(150 SV) 
++ phỏng 
+vấn (5 
+SV) 
+38 
+2025 
+Tạp chí quốc tế 
+peer-review; tác 
+giả là giảng viên 
+ĐH, phương pháp 
+nghiên cứu chi tiết 
+và cập nhật; nội 
+dung phù hợp; 
+trích dẫn rộng. 
+Đáng tin cậy cao  
+4 
+6 
+Language 
+Learning 
+Strategies to 
+Improve 
+English 
+Speaking 
+Skills 
+among 
+Vietnamese 
+Students: A 
+Case of 
+Three High 
+Schools in 
+Binh Duong 
+Province, 
+Vietnam  
+Bài 
+báo 
+khoa 
+học 
+Du T.T. & 
+Quyen 
+H.T.L.   
+World 
+Journal of 
+English 
+Languag 
+Hỗn hợp: 
+khảo sát 
+định 
+lượng và 
+phỏng vấn 
+bán cấu 
+trúc 
+(nhiều học 
+sinh 
+THPT  
+25+ 
+2023 
+Nghiên cứu hiện 
+đại, kết hợp 
+KLTN+ định tính. 
+Kết quả chỉ ra 
+chiến lược 
+cognitive/affective 
+quan trọng. Tuy 
+nhiên tạp chí mới, 
+ít trích dẫn và khái 
+quát hẹp (phổ 
+thông).  
+4 
+7 
+Blended 
+learning: 
+Barriers and 
+drawbacks 
+for English 
+language 
+Bài 
+báo 
+khoa 
+học 
+Lê T.N., 
+Bill Allen, 
+Nicola 
+Johnson 
+E-Learnin
+g and 
+Digital 
+Media 
+(SAGE, 
+Anh) 
+Định tính 
+(30 PGS 
+phỏng vấn 
+bán cấu 
+trúc) 
+50+ 
+2021 
+Tạp chí SAGE có 
+IF 2.6, tác giả đa 
+quốc gia; nghiên 
+cứu sâu sắc, cập 
+nhật; nhiều trích 
+5 
+
+========================================
+TRANG 5
+========================================
+lecturers at 
+Vietnamese 
+universities 
+dẫn; rất có giá trị 
+khoa học. 
+8 
+Enhancing 
+Vietnamese 
+EFL 
+Students’ 
+Speaking 
+Skills 
+Through 
+Augmented 
+Reality: 
+A 
+Mixed-Meth
+od Study in 
+English for 
+Tourism and 
+Hospitality 
+Bài 
+báo 
+khoa 
+học 
+Thăng Hồ 
+Minh 
+(UEH 
+TP.HCM) 
+& S. 
+Suppasets
+eree (ĐH 
+Thái Lan) 
+Education
+al 
+Process: 
+Int’l 
+Journal 
+(Azerbaija
+n) 
+Hỗn hợp: 
+quasi-exp
+eriment 
+(một 
+nhóm) + 
+khảo sát + 
+thảo luận 
+nhóm 
+10+ 
+2025 
+Tạp chí mở, mới, 
+nhưng có 
+DOI/ERIC; 
+phương pháp chi 
+tiết và hiện đại 
+(AR, TAM); tác giả 
+học thuật; nội 
+dung chuyên sâu; 
+độ tin cậy tương 
+đối cao  
+4 
+9 
+Teaching 
+English 
+speaking 
+skills: An 
+investigation 
+into 
+Vietnamese 
+EFL 
+teachers’ 
+beliefs and 
+practices 
+Bài 
+báo 
+khoa 
+học 
+Vũ Thị 
+Bích Hiệp  
+Issues in 
+Education
+al 
+Research 
+Hỗn hợp: 
+khảo sát 
+(52 PGS) 
++ phỏng 
+vấn bán 
+cấu trúc 
+về niềm 
+tin và thực 
+hành 
+25+ 
+2023 
+Nghiên cứu định 
+tính, bài bản, với 
+mẫu GV ĐH rộng. 
+Phản ánh niềm tin 
+và thách thức 
+giảng dạy kỹ năng 
+nói 
+ 
+4 
+10 
+AI for 
+English 
+speaking 
+practice: A 
+study of 
+effectivenes
+s and 
+engagement 
+among 
+Vietnamese 
+university 
+learners 
+Bài 
+báo 
+khoa 
+học 
+Hoàng 
+N.H. (Học 
+viện Báo 
+chí)  
+Australasi
+an Journal 
+of 
+Education
+al 
+Technolog
+y  
+Định 
+lượng: 
+quasi-exp
+eriment 
+(16 tuần, 
+240 SV, 
+mô hình 
+đa cấp) 
+10+ 
+2025 
+AJET là tạp chí 
+lớn trong EdTech; 
+tác giả chuyên 
+môn; thiết kế 
+nghiên cứu quy 
+mô lớn, hiện đại; 
+nội dung cập nhật; 
+đáng tin cậy rất 
+cao  
+5 
+11 
+Addressing 
+English-spe
+aking 
+anxiety in 
+Vietnamese 
+initial 
+teacher 
+education  
+ 
+Bài 
+báo 
+khoa 
+học 
+ 
+Nguyễn 
+Thục Anh 
+ 
+SpringerO
+pen – 
+Asian-Pac
+ific 
+Journal of 
+Second 
+and 
+Foreign 
+Nghiên 
+cứu định 
+tính, phân 
+tích giáo 
+dục và dữ 
+liệu thực 
+tiễn 
+ 
+18 
+2025 
+Nguồn học thuật 
+uy tín, nội dung 
+chuyên sâu và sát 
+thực tế giáo dục 
+Việt Nam; tuy 
+nhiên số lượng 
+trích dẫn chưa 
+nhiều do mới 
+công bố 
+5 
+
+========================================
+TRANG 6
+========================================
+Language 
+Education 
+ 
+ 
+12 
+TalkClass 
+Review 
+(2025) 
+Websit
+e 
+thương 
+mại 
+TalkClass 
+edu.vn 
+(trung tâm 
+tiếng Anh) 
+TalkClass 
+website 
+Tổng hợp 
+thông tin 
+quảng cáo  
+ 
+ 
+Không 
+(không 
+học 
+thuật) 
+- 
+Trang web thương 
+mại, nội dung 
+quảng cáo khóa 
+học (dạy online 
+blanded, AI luyện 
+nói) 
+. Không kiểm định 
+khoa học, độ tin 
+cậy thấp. 
+1 
+6. KẾT LUẬN 
+​
+Qua quá trình tìm kiếm và đánh giá nguồn thông tin, có thể thấy các rào cản chính 
+đối với kỹ năng giao tiếp tiếng Anh của người Việt gồm lo âu khi giao tiếp, thiếu môi trường 
+thực hành và ảnh hưởng của phương pháp học truyền thống. Nhiều nghiên cứu cũng chỉ ra 
+hiệu quả tích cực của các phương pháp hiện đại như Communicative Language Teaching, 
+Blended Learning, AI Chatbot và thực tế ảo tăng cường (AR) trong việc nâng cao khả năng 
+nói và sự tự tin của người học. 
+​
+Kết quả đánh giá cho thấy các nguồn có độ tin cậy cao thường được công bố trên 
+các tạp chí hoặc nhà xuất bản học thuật uy tín, có phương pháp nghiên cứu rõ ràng và dữ 
+liệu minh chứng cụ thể. Ngược lại, các nguồn thương mại chỉ phù hợp để tham khảo bổ 
+sung. 
+​
+Nhìn chung, việc lựa chọn và đánh giá nguồn thông tin đóng vai trò quan trọng trong 
+nghiên cứu, giúp đảm bảo tính chính xác, khách quan và nâng cao chất lượng học thuật của 
+báo cáo. 
+ 
+ 
+DANH MỤC TÀI LIỆU THAM KHẢO (THEO HARVARD) 
+1.​ Horwitz, E.K., Horwitz, M.B. and Cope, J. (1986) ‘Foreign Language Classroom 
+Anxiety’, Modern Language Journal, 70(2), pp. 125–132. 
+2.​ Richards, J.C. and Rodgers, T.S. (2014) Approaches and Methods in Language 
+Teaching. 3rd edn. Cambridge: Cambridge University Press. 
+3.​ Nguyễn Thị Mai Hương (2025) ‘Barriers to Intercultural Communication’, 
+International Journal on Studies in English Language and Literature, 13(6). 
+
+========================================
+TRANG 7
+========================================
+4.​ Nguyễn T.H. (2025) ‘The Impact of AI Chatbot Integration on Vietnamese EFL 
+Learners’ Speaking Performance’, Language, Technology and Social Media, 4(1). 
+5.​ Lập, T., Trang, N. and Tuấn, P. (2025) ‘Resilience in Learning English’, Frontiers in 
+Education, 10. 
+6.​ Du, T. and Quyen, N. (2023) ‘Language Learning Strategies to Improve English 
+Speaking Skills’, World Journal of English Language, 13(7). 
+7.​ Lê, T. et al. (2022) ‘Blended Learning: Barriers and Drawbacks for English Language 
+Lecturers at Vietnamese Universities’, E-Learning and Digital Media. 
+8.​ Ho-Minh, T. and Suppasetseree, S. (2025) ‘Enhancing Vietnamese EFL Students’ 
+Speaking Skills through AR’, Euromentor Journal. 
+9.​ Vũ Thị Bích Hiệp (2023) ‘Teaching Speaking Skills: Teachers’ Beliefs’, Issues in 
+Educational Research, 33(1). 
+10.​Hoàng Nguyễn Hữu (2025) ‘AI for English Speaking Practice: A Study of Effectiveness 
+and Engagement’, Australasian Journal of Educational Technology, 41(3). 
+11.​Nguyễn Thục Anh (2025) ‘Addressing English-speaking anxiety in Vietnamese initial 
+teacher education’, Asian-Pacific Journal of Second and Foreign Language Education. 
+12.​TalkClass.edu.vn (2025) ‘Review 9 khóa học tiếng Anh giao tiếp online’. Available at: 
+TalkClass.edu.vn (Accessed: 1 May 2026). 
+ 

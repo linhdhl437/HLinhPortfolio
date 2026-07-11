@@ -44,8 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Smooth follow loop for the ring (Lerp)
   function updateRing() {
-    if (!isTabActive) return;
-
     // Lerp calculation: Position += (Target - Position) * Coefficient
     ringPos.x += (mouse.x - ringPos.x) * lerpCoeff;
     ringPos.y += (mouse.y - ringPos.y) * lerpCoeff;
@@ -83,6 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
       cursorContainer.classList.remove("cursor-hover");
     }
   });
+  
+  // Observe body changes
+  observer.observe(document.body, { childList: true, subtree: true });
 
   // Click Animation Trigger
   window.addEventListener("mousedown", () => {

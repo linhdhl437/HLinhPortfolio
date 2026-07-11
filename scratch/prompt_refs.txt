@@ -1,0 +1,6 @@
+113263: mpt Library" class="qr-image cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/MÃ QR CHO PROMPT LIBRARY.png"/>
+<div class="qr-text">
+<strong>QUÉT MÃ QR</strong><br/>
+                        để trải nghiệm ngay Chatbot AI<br/>
+                        luyện giao tiếp ngoại ngữ!
+            

@@ -1,0 +1,9 @@
+292: <a href="../index.html" class="back-link">← Quay lại Trang chủ Portfolio</a>
+298: <div class="page-break-indicator">--- Trang 1 ---</div>
+347: <div class="page-break-indicator">--- Trang 2 ---</div>
+378: <div class="page-break-indicator">--- Trang 3 ---</div>
+410: <td colspan="3" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 4 ---</td>
+475: <div class="page-break-indicator">--- Trang 5 ---</div>
+517: <td colspan="5" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 6 ---</td>
+558: <div class="page-break-indicator">--- Trang 7 ---</div>
+567: <div class="page-break-indicator">--- Trang 8 (Infographic) ---</div>

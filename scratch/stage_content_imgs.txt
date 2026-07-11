@@ -1,0 +1,43 @@
+./PortfolioAssets/CHẶNG 1/extracted_images/image_page_1_1.png
+./PortfolioAssets/CHẶNG 1/extracted_images/image_page_1_2.png
+./PortfolioAssets/CHẶNG 1/extracted_images/image_page_2_1.png
+./PortfolioAssets/CHẶNG 1/extracted_images/image_page_2_2.png
+./PortfolioAssets/CHẶNG 1/extracted_images/image_page_2_3.png
+./PortfolioAssets/CHẶNG 1/extracted_images/image_page_3_1.png
+./PortfolioAssets/CHẶNG 1/extracted_images/image_page_3_2.png
+./PortfolioAssets/CHẶNG 1/extracted_images/image_page_3_3.png
+./PortfolioAssets/CHẶNG 1/extracted_images/image_page_4_1.png
+./PortfolioAssets/CHẶNG 1/extracted_images/image_page_4_2.png
+./PortfolioAssets/CHẶNG 1/extracted_images/image_page_4_3.png
+./PortfolioAssets/CHẶNG 1/extracted_images/image_page_5_1.png
+./PortfolioAssets/CHẶNG 1/extracted_images/image_page_5_2.png
+./PortfolioAssets/CHẶNG 3/Image/Ảnh1_C3_Tác vụ 1_Prompt cơ bản.jpg
+./PortfolioAssets/CHẶNG 3/Image/Ảnh2_C3_Tác vụ 1_Prompt cơ bản.JPG
+./PortfolioAssets/CHẶNG 3/Image/Ảnh3_C3_Tác vụ 1_Prompt nâng cao.JPG
+./PortfolioAssets/CHẶNG 3/Image/Ảnh4_C3_Tác vụ 1_Prompt nâng cao.JPG
+./PortfolioAssets/CHẶNG 3/Image/Ảnh5_C3_Tác vụ 2_Prompt cơ bản.jpg
+./PortfolioAssets/CHẶNG 3/Image/Ảnh6_C3_Tác vụ 2_Prompt cải tiến.JPG
+./PortfolioAssets/CHẶNG 3/Image/Ảnh7_C3_Tác vụ 2_Prompt nâng cao.JPG
+./PortfolioAssets/CHẶNG 3/Image/Ảnh8_C3_Tác vụ 2_Prompt nâng cao.JPG
+./PortfolioAssets/CHẶNG 3/Image/Ảnh5_C3_Tác vụ 3_Prompt cải tiến.JPG
+./PortfolioAssets/CHẶNG 3/Image/Ảnh9_C3_Tác vụ 3_Prompt nâng cao.JPG
+./PortfolioAssets/CHẶNG 3/Image/Ảnh10_C3_Tác vụ 3_Prompt nâng cao.JPG
+./PortfolioAssets/CHẶNG 4/Image/Ảnh 1 Không gian làm việc trên Notion do cá nhân thiết lập.jpg
+./PortfolioAssets/CHẶNG 4/Image/Ảnh 2.Bảng theo dõi tổng quan nhiệm vụ_.jpg
+./PortfolioAssets/CHẶNG 4/Image/Ảnh 3. Bảng Kanban theo dõi tiến độ trên Notion._.jpg
+./PortfolioAssets/CHẶNG 4/Image/Ảnh 4. Project timeline_.jpg
+./PortfolioAssets/CHẶNG 4/Image/Ảnh 5. Lịch sử chỉnh sửa nội dung trên Google Docs._.JPG
+./PortfolioAssets/CHẶNG 4/Image/Ảnh 6. Nội dung cá nhân đóng góp trực tiếp trên tài liệu công tác._.jpg
+./PortfolioAssets/CHẶNG 4/Image/Ảnh 7. Cấu trúc thư mục Google Drive của nhóm._.PNG
+./PortfolioAssets/CHẶNG 4/Image/Ảnh 8. Cách đặt tên file.jpg
+./PortfolioAssets/CHẶNG 4/Image/Ảnh 9. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg
+./PortfolioAssets/CHẶNG 4/Image/Ảnh 10. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg
+./PortfolioAssets/CHẶNG 4/Image/Ảnh 11. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg
+./PortfolioAssets/CHẶNG 5/Image/Ảnh1_C5.JPG
+./PortfolioAssets/CHẶNG 5/Image/Ảnh 2_C5.JPG
+./PortfolioAssets/CHẶNG 5/Image/Ảnh 3_C5.JPG
+./PortfolioAssets/CHẶNG 5/Image/Ảnh 4_C5.JPG
+./PortfolioAssets/CHẶNG 5/Image/Ảnh 5_C5.JPG
+./PortfolioAssets/CHẶNG 5/Image/Ảnh 6_C5.PNG
+./PortfolioAssets/CHẶNG 5/Image/Ảnh 7_C5.JPG
+./PortfolioAssets/MÃ QR CHO PROMPT LIBRARY.png

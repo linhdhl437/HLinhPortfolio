@@ -1,0 +1,16 @@
+site-header" class="site-header">
+    <div class="container nav-container">
+      <a href="#Modau" class="nav-logo">
+        玄靈 <span>• Huyền Linh</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#Modau" class="nav-link active">Mở đầu</a></li>
+          <li><a href="#ToiLaAi" class="nav-link">Tôi là ai</a></li>
+          <li><a href="#HanhTrinh" class="nav-link">Hành trình</a></li>
+  

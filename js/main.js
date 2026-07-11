@@ -57,6 +57,36 @@ document.addEventListener("DOMContentLoaded", () => {
       // Dispatch custom event to ambient-canvas.js
       window.dispatchEvent(new CustomEvent("cursorParticleTypeChanged", { detail: currentType }));
     });
+
+    // Bổ sung: Chỉ dẫn đổi cọ di chuột tự động cho người dùng mới
+    const particleTooltip = document.getElementById("particle-toggle-tooltip");
+    const hasToggled = localStorage.getItem("cursorParticleToggled");
+
+    if (particleTooltip && particleCapsule && !hasToggled) {
+      // Hiển thị hiệu ứng phát sóng và bong bóng chỉ dẫn sau khi video intro kết thúc
+      setTimeout(() => {
+        particleCapsule.classList.add("pulse-glow");
+        particleTooltip.classList.add("visible");
+      }, 3500);
+
+      // Tự động ẩn tooltip sau 7 giây hiển thị
+      const autoHide = setTimeout(() => {
+        hideTooltip();
+      }, 10500);
+
+      function hideTooltip() {
+        particleTooltip.classList.remove("visible");
+        particleCapsule.classList.remove("pulse-glow");
+        clearTimeout(autoHide);
+      }
+
+      // Ẩn ngay khi di chuột vào nút hoặc click đổi cọ vẽ
+      particleCapsule.addEventListener("mouseenter", hideTooltip, { once: true });
+      particleBtn.addEventListener("click", () => {
+        hideTooltip();
+        localStorage.setItem("cursorParticleToggled", "true");
+      }, { once: true });
+    }
   }
 
   // ==========================================================================
@@ -177,9 +207,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // A. Sticky Header Toggle (Dùng CSS class thay vì inline style để tránh forced reflow)
     if (header) {
       if (currentScrollY > 50) {
-        header.classList.add("scrolled");
+        header.style.backgroundColor = "rgba(249, 249, 246, 0.96)";
       } else {
-        header.classList.remove("scrolled");
+        header.style.backgroundColor = "rgba(249, 249, 246, 0.85)";
       }
       header.classList.remove("scroll-down");
     }

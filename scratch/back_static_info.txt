@@ -1,0 +1,14 @@
+- Pinned Back Button on the left -->
+        <a
+          href="index.html#HanhTrinh"
+          id="btn-back-to-timeline"
+          class="btn-back-sticky"
+        >
+          <span>↩️</span> Quay lại hành trình
+        </a>
+
+        <!-- Pinned Stage selectors -->
+        <nav class="nav-stages-list">
+          <a
+            href="?stage=1"
+     

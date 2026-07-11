@@ -1,0 +1,282 @@
+🎋 HƯỚNG DẪN CẤU HÌNH ĐỘ TRONG SUỐT (OPACITY & RGBA) CHO HLINH PORTFOLIO 🎋
+=======================================================================
+
+Dưới đây là thống kê các vị trí quan trọng quy định độ trong suốt của các hộp chữ, nền giấy
+và các hiệu ứng. Bạn có thể mở các tệp tin tương ứng và tìm kiếm theo Từ khóa để chỉnh sửa.
+
+■ 1. Nền giấy & Thẻ (Paper & Card Backgrounds)
+--------------------------------------------
+  * Tệp tin: css/animations.css:140
+    Mã CSS:  background: radial-gradient(circle, rgba(139, 0, 0, 0.1) 0%, rgba(139, 0, 0, 0) 70%);
+  * Tệp tin: css/base.css:42
+    Mã CSS:  background-color: rgba(139, 0, 0, 0.15); /* Vermillion tint */
+  * Tệp tin: css/base.css:103
+    Mã CSS:  background: rgba(184, 144, 71, 0.3); /* Accent gold thumb */
+  * Tệp tin: css/components.css:12
+    Mã CSS:  background-color: rgba(249, 249, 246, 0.85); /* Semitransparent paper */
+  * Tệp tin: css/components.css:169
+    Mã CSS:  background: rgba(253, 252, 249, 0.22); /* Lower opacity (22%) to let lively watercolor landscapes bleed through elegantly */
+  * Tệp tin: css/components.css:184
+    Mã CSS:  background: rgba(253, 252, 249, 0.42); /* Keep transparency on hover (42%) */
+  * Tệp tin: css/components.css:229
+    Mã CSS:  background-color: rgba(20, 20, 20, 0.95); /* Deep ink backdrop */
+  * Tệp tin: css/components.css:303
+    Mã CSS:  .lightbox-prev { left: 0; background: rgba(0,0,0,0.5); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+  * Tệp tin: css/components.css:304
+    Mã CSS:  .lightbox-next { right: 0; background: rgba(0,0,0,0.5); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+  * Tệp tin: css/components.css:305
+    Mã CSS:  .lightbox-close { right: 10px; top: 10px; position: fixed; background: rgba(0,0,0,0.5); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+  * Tệp tin: css/components.css:412
+    Mã CSS:  background-color: rgba(184, 144, 71, 0.08); /* faint gold watercolor wash */
+  * Tệp tin: css/components.css:429
+    Mã CSS:  background-color: rgba(139, 0, 0, 0.08) !important;
+  * Tệp tin: css/components.css:436
+    Mã CSS:  background-color: rgba(28, 28, 28, 0) !important;
+  * Tệp tin: css/components.css:454
+    Mã CSS:  background: rgba(253, 252, 249, 0.45);
+  * Tệp tin: css/components.css:465
+    Mã CSS:  background: rgba(253, 252, 249, 0.85);
+  * Tệp tin: css/components.css:490
+    Mã CSS:  background: rgba(0, 0, 0, 0.03);
+  * Tệp tin: css/sections.css:61
+    Mã CSS:  background: rgba(255, 255, 255, 0.88); /* Increased opacity to 0.88 for excellent text contrast */
+  * Tệp tin: css/sections.css:176
+    Mã CSS:  background: linear-gradient(to bottom, rgba(249, 249, 246, 0.75) 0%, rgba(249, 249, 246, 0.75) 100%),
+  * Tệp tin: css/sections.css:338
+    Mã CSS:  background: linear-gradient(to bottom, rgba(249, 249, 246, 0.55) 0%, rgba(249, 249, 246, 0.55) 100%),
+  * Tệp tin: css/sections.css:344
+    Mã CSS:  background: linear-gradient(to bottom, rgba(249, 249, 246, 0.58) 0%, rgba(249, 249, 246, 0.58) 100%),
+  * Tệp tin: css/sections.css:426
+    Mã CSS:  background: rgba(253, 252, 249, 0.22); /* Very transparent (22%) to bleed background beautifully */
+  * Tệp tin: css/sections.css:450
+    Mã CSS:  background-color: rgba(253, 252, 249, 0.62);
+  * Tệp tin: css/sections.css:505
+    Mã CSS:  background: linear-gradient(180deg, rgba(184,144,71,0.1) 0%, rgba(184,144,71,0.6) 10%, rgba(184,144,71,0.6) 90%, rgba(184,144,71,0.1) 100%);
+  * Tệp tin: css/sections.css:623
+    Mã CSS:  background-color: rgba(28,28,28,0.02);
+  * Tệp tin: css/sections.css:736
+    Mã CSS:  background-color: rgba(184, 144, 71, 0.05);
+  * Tệp tin: css/sections.css:987
+    Mã CSS:  background: rgba(253, 252, 249, 0.74); /* Semi-transparent parchment background */
+  * Tệp tin: css/sections.css:1170
+    Mã CSS:  background: rgba(253, 252, 249, 0.22); /* 22% opacity for background landscape visibility */
+  * Tệp tin: css/sections.css:1185
+    Mã CSS:  background: rgba(184, 144, 71, 0.08);
+  * Tệp tin: css/sections.css:1319
+    Mã CSS:  background: rgba(253, 252, 249, 0.22); /* 22% opacity */
+  * Tệp tin: css/sections.css:1333
+    Mã CSS:  background: rgba(253, 252, 249, 0.42); /* 42% opacity on hover */
+  * Tệp tin: css/sections.css:1348
+    Mã CSS:  background: rgba(139, 0, 0, 0.08);
+  * Tệp tin: css/sections.css:1431
+    Mã CSS:  background: rgba(184, 144, 71, 0.06);
+  * Tệp tin: index.html:44
+    Mã CSS:  <button id="btn-skip-intro" class="btn-skip-intro" style="position: absolute; top: 24px; right: 24px; z-index: 10; background: rgba(0, 0, 0, 0.75); border: 1px solid rgba(255,255,255,0.4); color: #ffffff; padding: 8px 18px; font-family: var(--font-serif); font-size: 0.95rem; font-weight: 600; border-radius: 4px; cursor: pointer; backdrop-filter: blur(8px); transition: background 0.3s, border-color 0.3s, transform 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+  * Tệp tin: index.html:105
+    Mã CSS:  <div class="hero-content-block card-classical" style="background: rgba(253, 252, 249, 0.58); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: var(--space-xl); border-radius: 12px; border: 1px solid rgba(184, 144, 71, 0.25); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); max-width: 600px; color: #000000; text-align: left;">
+  * Tệp tin: index.html:132
+    Mã CSS:  <div class="video-play-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); transition: background 0.3s;">
+  * Tệp tin: index.html:133
+    Mã CSS:  <div class="play-btn-circle" style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); color: var(--accent-vermillion); font-size: 1.25rem;">
+  * Tệp tin: index.html:250
+    Mã CSS:  <div class="goals-section card card-classical" style="background: rgba(253, 252, 249, 0.65); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: var(--space-md) var(--space-lg); border-radius: 8px; border: 1px solid rgba(184, 144, 71, 0.2); box-shadow: 0 4px 12px rgba(0,0,0,0.01); margin-top: var(--space-md);">
+  * Tệp tin: index.html:265
+    Mã CSS:  <div class="card card-classical stagger-item" style="opacity: 0; margin-top: var(--space-xl); background: rgba(253, 252, 249, 0.65); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+  * Tệp tin: index.html:764
+    Mã CSS:  <div class="card card-classical" style="background: rgba(184, 144, 71, 0.05); border: 1px solid rgba(184, 144, 71, 0.2); padding: var(--space-md);">
+  * Tệp tin: index.html:803
+    Mã CSS:  <div class="card card-classical" style="padding: var(--space-xl); background: rgba(184, 144, 71, 0.05); border: 1px solid var(--accent-gold); margin-top: var(--space-lg);">
+
+■ 2. Đường viền mờ (Transparent Borders)
+--------------------------------------
+  * Tệp tin: css/animations.css:79
+    Mã CSS:  box-shadow: 0 0 0 0 rgba(139, 0, 0, 0.4);
+  * Tệp tin: css/animations.css:82
+    Mã CSS:  box-shadow: 0 0 0 10px rgba(139, 0, 0, 0);
+  * Tệp tin: css/animations.css:85
+    Mã CSS:  box-shadow: 0 0 0 0 rgba(139, 0, 0, 0);
+  * Tệp tin: css/components.css:135
+    Mã CSS:  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.15);
+  * Tệp tin: css/components.css:172
+    Mã CSS:  border: 1px solid rgba(184, 144, 71, 0.25); /* Gold-accent border */
+  * Tệp tin: css/components.css:177
+    Mã CSS:  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  * Tệp tin: css/components.css:183
+    Mã CSS:  border-color: rgba(184, 144, 71, 0.7);
+  * Tệp tin: css/components.css:185
+    Mã CSS:  box-shadow: 0 12px 35px rgba(184, 144, 71, 0.12);
+  * Tệp tin: css/components.css:197
+    Mã CSS:  opacity: 0.45; /* Semi-visible standard border decoration */
+  * Tệp tin: css/components.css:350
+    Mã CSS:  border: 1px solid rgba(139, 0, 0, 0.3);
+  * Tệp tin: css/components.css:362
+    Mã CSS:  box-shadow: 0 4px 10px rgba(139, 0, 0, 0.15);
+  * Tệp tin: css/components.css:411
+    Mã CSS:  border: 1px solid rgba(139, 0, 0, 0.4); /* soft vermillion bleed outline */
+  * Tệp tin: css/components.css:437
+    Mã CSS:  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* ink splash */
+  * Tệp tin: css/components.css:453
+    Mã CSS:  border: 1px solid rgba(184, 144, 71, 0.35);
+  * Tệp tin: css/components.css:459
+    Mã CSS:  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), inset 0 1px 3px rgba(184, 144, 71, 0.05);
+  * Tệp tin: css/components.css:466
+    Mã CSS:  box-shadow: 0 3px 10px rgba(184, 144, 71, 0.12);
+  * Tệp tin: css/components.css:491
+    Mã CSS:  border-color: rgba(0, 0, 0, 0.15);
+  * Tệp tin: css/sections.css:65
+    Mã CSS:  border: 1px solid rgba(184, 144, 71, 0.4); /* Gold border */
+  * Tệp tin: css/sections.css:66
+    Mã CSS:  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  * Tệp tin: css/sections.css:154
+    Mã CSS:  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.25);
+  * Tệp tin: css/sections.css:279
+    Mã CSS:  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  * Tệp tin: css/sections.css:298
+    Mã CSS:  box-shadow: 0 4px 8px rgba(139, 0, 0, 0.3);
+  * Tệp tin: css/sections.css:299
+    Mã CSS:  border: 2px solid rgba(255, 255, 255, 0.2);
+  * Tệp tin: css/sections.css:310
+    Mã CSS:  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  * Tệp tin: css/sections.css:429
+    Mã CSS:  border: 1px solid rgba(184, 144, 71, 0.2);
+  * Tệp tin: css/sections.css:432
+    Mã CSS:  box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+  * Tệp tin: css/sections.css:859
+    Mã CSS:  border-top: 1px solid rgba(255,255,255,0.06);
+  * Tệp tin: css/sections.css:991
+    Mã CSS:  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.04);
+  * Tệp tin: css/sections.css:1003
+    Mã CSS:  box-shadow: 0 0 14px rgba(139, 0, 0, 0.3), inset 1px 0 1px rgba(255,255,255,0.25);
+  * Tệp tin: css/sections.css:1024
+    Mã CSS:  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  * Tệp tin: css/sections.css:1078
+    Mã CSS:  border-top: 1px dashed rgba(184, 144, 71, 0.35);
+  * Tệp tin: css/sections.css:1138
+    Mã CSS:  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  * Tệp tin: css/sections.css:1173
+    Mã CSS:  border: 1px solid rgba(184, 144, 71, 0.25);
+  * Tệp tin: css/sections.css:1181
+    Mã CSS:  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+  * Tệp tin: css/sections.css:1186
+    Mã CSS:  border-color: rgba(184, 144, 71, 0.6);
+  * Tệp tin: css/sections.css:1194
+    Mã CSS:  box-shadow: 0 6px 20px rgba(139, 0, 0, 0.25);
+  * Tệp tin: css/sections.css:1327
+    Mã CSS:  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
+  * Tệp tin: css/sections.css:1334
+    Mã CSS:  box-shadow: 0 10px 25px rgba(184, 144, 71, 0.08);
+  * Tệp tin: css/sections.css:1342
+    Mã CSS:  border-bottom: 1px dashed rgba(184, 144, 71, 0.25);
+  * Tệp tin: css/sections.css:1395
+    Mã CSS:  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  * Tệp tin: css/sections.css:1420
+    Mã CSS:  border-bottom: 1px solid rgba(184, 144, 71, 0.15);
+  * Tệp tin: css/variables.css:19
+    Mã CSS:  --border-ink: rgba(28, 28, 28, 0.1);
+  * Tệp tin: css/variables.css:20
+    Mã CSS:  --border-gold: rgba(184, 144, 71, 0.25);
+  * Tệp tin: index.html:117
+    Mã CSS:  <p class="hero-quote" style="color: #000000; font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; line-height: 1.6; border-top: 1px dashed rgba(0,0,0,0.15); padding-top: var(--space-sm); margin-top: var(--space-sm); margin-bottom: 0;">
+  * Tệp tin: index.html:361
+    Mã CSS:  <div style="margin-top: var(--space-lg); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-md);">
+  * Tệp tin: index.html:567
+    Mã CSS:  <div style="margin-top: var(--space-2xl); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-xl);">
+  * Tệp tin: index.html:732
+    Mã CSS:  <h4 class="text-serif" style="margin-top: 0; color: var(--accent-vermillion); font-size: 1.2rem; border-bottom: 1px dashed rgba(184, 144, 71, 0.25); padding-bottom: 8px;">📂 5 Kiến thức mới, mở rộng tri thức</h4>
+  * Tệp tin: index.html:759
+    Mã CSS:  <h4 class="text-serif" style="margin-top: 0; color: var(--accent-gold-light); font-size: 1.2rem; border-bottom: 1px dashed rgba(184, 144, 71, 0.25); padding-bottom: 8px;">🌐 01 Portfolio số cá nhân</h4>
+
+■ 4. Hiệu ứng tải trang & Đèn nền (Loading Screen & Ambient Glow)
+---------------------------------------------------------------
+  * Tệp tin: COMPREHENSIVE OPACITY AUDIT RESULTS
+    Mã CSS:  ===================================
+  * Tệp tin: css/animations.css:11
+    Mã CSS:  opacity: 1;
+  * Tệp tin: css/animations.css:24
+    Mã CSS:  opacity: 0;
+  * Tệp tin: css/animations.css:65
+    Mã CSS:  opacity: 0.8;
+  * Tệp tin: css/base.css:34
+    Mã CSS:  opacity: 0.04;
+  * Tệp tin: css/base.css:52
+    Mã CSS:  color: rgba(28, 28, 28, 0.05);
+  * Tệp tin: css/components.css:216
+    Mã CSS:  opacity: 1;
+  * Tệp tin: css/components.css:234
+    Mã CSS:  opacity: 0;
+  * Tệp tin: css/components.css:313
+    Mã CSS:  opacity: 0.12; /* Subtle opacity to respect academic readability */
+  * Tệp tin: css/components.css:489
+    Mã CSS:  opacity: 0.75;
+  * Tệp tin: css/components.css:496
+    Mã CSS:  opacity: 0.6;
+  * Tệp tin: css/sections.css:22
+    Mã CSS:  opacity: 0;
+  * Tệp tin: css/sections.css:83
+    Mã CSS:  opacity: 0.7;
+  * Tệp tin: css/sections.css:94
+    Mã CSS:  color: rgba(28, 28, 28, 0.035);
+  * Tệp tin: css/sections.css:249
+    Mã CSS:  color: rgba(184, 144, 71, 0.2);
+  * Tệp tin: css/sections.css:791
+    Mã CSS:  opacity: 0.05;
+  * Tệp tin: css/sections.css:1053
+    Mã CSS:  opacity: 1;
+  * Tệp tin: css/sections.css:1216
+    Mã CSS:  color: rgba(255, 255, 255, 0.8) !important;
+  * Tệp tin: css/variables.css:21
+    Mã CSS:  --ink-spread: rgba(0, 0, 0, 0.04);
+  * Tệp tin: index.html:93
+    Mã CSS:  <svg class="hero-cloud animate-float-cloud" style="position: absolute; top: 15%; left: 5%; width: 120px; opacity: 0.08; z-index: 1;" viewBox="0 0 100 100">
+  * Tệp tin: index.html:96
+    Mã CSS:  <svg class="hero-cloud animate-float-cloud" style="position: absolute; top: 25%; right: 8%; width: 180px; opacity: 0.06; z-index: 1; animation-delay: -3s;" viewBox="0 0 100 100">
+  * Tệp tin: index.html:104
+    Mã CSS:  <div class="hero-content hero-animate" style="opacity: 0;">
+  * Tệp tin: index.html:123
+    Mã CSS:  <div class="hero-visual hero-animate" style="opacity: 0;">
+  * Tệp tin: index.html:131
+    Mã CSS:  <img src="./PortfolioAssets/AnhIntro1.png" alt="Video Intro" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+  * Tệp tin: index.html:208
+    Mã CSS:  <div class="stagger-item" style="opacity: 0;">
+  * Tệp tin: index.html:224
+    Mã CSS:  <div class="about-details stagger-item" style="opacity: 0;">
+  * Tệp tin: index.html:822
+    Mã CSS:  <path fill="rgba(184, 144, 71, 0.08)" d="M0,100 C30,70 70,70 100,100 Z"/>
+  * Tệp tin: index.html:825
+    Mã CSS:  <path fill="rgba(184, 144, 71, 0.08)" d="M100,100 C70,70 30,70 0,100 Z"/>
+
+■ 5. Các trang báo cáo chi tiết (stage_details.html & Scoped Styles)
+------------------------------------------------------------------
+  * Tệp tin: stage_details.html:19
+    Mã CSS:  background: linear-gradient(to bottom, rgba(249, 249, 246, 0.88) 0%, rgba(249, 249, 246, 0.88) 100%),
+  * Tệp tin: stage_details.html:42
+    Mã CSS:  background: rgba(255, 255, 255, 0.94);
+  * Tệp tin: stage_details.html:75
+    Mã CSS:  background-color: rgba(184, 144, 71, 0.05);
+  * Tệp tin: stage_details.html:77
+    Mã CSS:  border-color: rgba(184, 144, 71, 0.15);
+  * Tệp tin: stage_details.html:85
+    Mã CSS:  box-shadow: 0 4px 10px rgba(139, 0, 0, 0.15);
+  * Tệp tin: stage_details.html:90
+    Mã CSS:  background: rgba(253, 252, 249, 0.88);
+  * Tệp tin: stage_details.html:95
+    Mã CSS:  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  * Tệp tin: stage_details.html:209
+    Mã CSS:  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02) !important;
+  * Tệp tin: stage_details.html:215
+    Mã CSS:  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  * Tệp tin: stage_details.html:238
+    Mã CSS:  background: rgba(35, 32, 26, 0.98) !important;
+  * Tệp tin: stage_details.html:249
+    Mã CSS:  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08) !important;
+  * Tệp tin: stage_details.html:280
+    Mã CSS:  background: rgba(253, 252, 249, 0.5) !important;
+  * Tệp tin: stage_details.html:284
+    Mã CSS:  background: rgba(184, 144, 71, 0.08) !important;
+  * Tệp tin: stage_details.html:300
+    Mã CSS:  background: rgba(249, 249, 246, 0.6) !important;
+  * Tệp tin: stage_details.html:361
+    Mã CSS:  border: 1px solid rgba(139, 0, 0, 0.15) !important;
+  * Tệp tin: stage_details.html:366
+    Mã CSS:  border: 1px solid rgba(28, 28, 28, 0.15) !important;
+

@@ -1,0 +1,12 @@
+t: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></canvas>
+
+  <!-- 🖌️ Intro Video & Welcome Overlay (Toàn màn hình) -->
+  <div id="intro-video-overlay" class="intro-video-overlay">
+    <!-- Màn hình đệm cổ phong (Welcome Enter Screen) -->
+    <div id="intro-enter-screen" class="intro-enter-screen" style="cursor: pointer;">
+      <div class="glass-panel-welcome">
+        <!-- Watermark chữ Hán mờ -->
+        <div class="watermark-characters">玄靈</div>
+        
+        <!-- Chữ chào mừng -->
+        <h2 class="chinese-welcome">你

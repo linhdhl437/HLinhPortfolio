@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hiệu Ứng Thủy Mặc & Gợn Sóng Nước - Premium</title>
+  
+  <!-- Google Fonts: Editorial Serif and Clean Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* SYSTEM DESIGN & VARIABLES */
+    :root {
+      --bg-paper: #f5f4f0;      /* Màu nền giấy xơ mịn */
+      --card-bg: #faf9f6;      /* Nền thẻ phụ sáng */
+      --text-charcoal: #1c1a17; /* Màu chữ mực đen carbon */
+      --text-muted: #6e6a62;    /* Chữ phụ màu tro xám */
+      --border-color: #e3dec9;  /* Đường viền mỏng mộc mạc */
+      
+      /* Preset Colors */
+      --color-charcoal: #1a120c;
+      --color-teal: #106b6b;
+      --color-sakura: #c7516b;
+      --color-indigo: #2c4263;
+      
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-title: 'Cinzel', serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-paper);
+      color: var(--text-charcoal);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    /* TACTILE NOISE OVERLAY - Tạo chất liệu giấy nhám mịn cao cấp */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      opacity: 0.045;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* GLOBAL CANVAS - Phủ toàn bộ màn hình để vẽ hiệu ứng */
+    #ink-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 900;
+      /* Áp dụng SVG Filter để làm méo nét mực loang và tạo wet-edge */
+      filter: url(#ink-bleed-filter);
+    }
+
+    /* LAYOUT: BENTO GRID CONTAINER */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-family: var(--font-title);
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* BENTO GRID */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    /* BASE BENTO CARD */
+    .bento-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(28, 26, 23, 0.02);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                  box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+
+    .bento-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(28, 26, 23, 0.05);
+    }
+
+    /* GRID SPANS */
+    .span-2-x {
+      grid-column: span 2;
+    }
+    .span-2-y {
+      grid-row: span 2;
+    }
+    .span-full {
+      grid-column: span 3;
+    }
+
+    /* CARD CONTENT STYLING */
+    .card-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .card-body {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 65ch; /* Giới hạn độ rộng ký tự theo chuẩn typography */
+    }
+
+    /* INK PRESET SELECTOR */
+    .preset-container {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .color-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      position: relative;
+    }
+
+    .color-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .color-btn.active {
+      border-color: var(--text-charcoal);
+    }
+
+    .color-btn::after {
+      content: "";
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .btn-charcoal::after { background-color: var(--color-charcoal); }
+    .btn-teal::after { background-color: var(--color-teal); }
+    .btn-sakura::after { background-color: var(--color-sakura); }
+    .btn-indigo::after { background-color: var(--color-indigo); }
+
+    /* CONTROLS SANDBOX (Không kích hoạt mực lan rộng khi bấm các input này) */
+    .control-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 12px;
+      cursor: default;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .control-group label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-charcoal);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .control-group label span {
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .control-group input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--border-color);
+      outline: none;
+    }
+
+    .control-group input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--text-charcoal);
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+
+    .control-group input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    /* BUTTONS DEMO */
+    .button-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-demo {
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: 1px solid var(--text-charcoal);
+      background: transparent;
+      color: var(--text-charcoal);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-demo:hover {
+      background: var(--text-charcoal);
+      color: var(--bg-paper);
+    }
+
+    .btn-demo.btn-small {
+      padding: 6px 12px;
+      font-size: 0.75rem;
+    }
+
+    /* CODE INTERACTIVE CARD */
+    .code-box {
+      background: #1c1a17;
+      color: #eae5d9;
+      padding: 20px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.8rem;
+      overflow-x: auto;
+      margin-top: 12px;
+      border: 1px solid #332f2b;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .quote-box {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-style: italic;
+      line-height: 1.7;
+      text-align: center;
+      margin: auto 0;
+      padding: 10px 0;
+    }
+
+    /* RESPONSIVE LAYOUT */
+    @media (max-width: 900px) {
+      .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .span-2-x {
+        grid-column: span 2;
+      }
+      .span-full {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+      .span-2-x, .span-full {
+        grid-column: span 1;
+      }
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BACKGROUND SVG FILTER FOR REALISTIC INK-BLEED EFFECTS -->
+  <svg style="position: absolute; width: 0; height: 0; pointer-events: none;">
+    <defs>
+      <!-- Bộ lọc chính cho vết mực loang -->
+      <filter id="ink-bleed-filter" x="-20%" y="-20%" width="140%" height="140%">
+        <!-- Tạo nhiễu hạt động để làm méo đường tròn -->
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4" result="noise" />
+        
+        <!-- Bẻ cong biên hình tròn dựa trên nhiễu fractal -->
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+        
+        <!-- Tăng tương phản của kênh Alpha để tạo viền cô đặc mực (Wet-Edge) -->
+        <feColorMatrix type="matrix" values="
+          1 0 0 0 0
+          0 1 0 0 0
+          0 0 1 0 0
+          0 0 0 18 -6
+        " result="sharp" />
+        
+        <!-- Tạo lớp loang nhẹ mờ nhạt bao quanh lớp nhân đậm -->
+        <feGaussianBlur in="displaced" stdDeviation="3.5" result="blur" />
+        <feColorMatrix type="matrix" values="
+          1 0 0 0 0
+          0 1 0 0 0
+          0 0 1 0 0
+          0 0 0 1.2 0
+        " result="soft-bleed" />
+
+        <!-- Trộn lớp nhân sắc nét và lớp rìa mờ ảo lại với nhau -->
+        <feMerge>
+          <feMergeNode in="soft-bleed" />
+          <feMergeNode in="sharp" />
+        </feMerge>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- EFFECT CANVAS LAYER -->
+  <canvas id="ink-canvas"></canvas>
+
+  <div class="container">
+    <header>
+      <h1>Nghệ Thuật Mực Loang</h1>
+      <p>Click vào bất kỳ đâu để trải nghiệm gợn sóng và vết mực loang tương thích</p>
+    </header>
+
+    <main class="bento-grid">
+      
+      <!-- CARD 1: OVERVIEW -->
+      <div class="bento-card span-2-x">
+        <div>
+          <span class="card-label">Nghiên Cứu Mỹ Thuật</span>
+          <h2 class="card-title">Mực Loang & Gợn Nước Thủy Mặc</h2>
+          <p class="card-body">
+            Hiệu ứng này mô phỏng chuyển động kép: sự lan tỏa cơ học dạng sóng của nước (water ripple) khi hạt mưa rơi xuống hồ, kết hợp với chuyển động hóa-lý của mực loang (ink bleed) ngấm sâu vào các sợi giấy dăm thô. Hình dáng của mực được tạo hoàn toàn ngẫu nhiên qua các sóng hài tần số độc bản tại mỗi điểm chạm.
+          </p>
+        </div>
+        <div class="button-group">
+          <button class="btn-demo btn-small">Demo Nút Nhỏ</button>
+          <button class="btn-demo">Demo Nút Vừa</button>
+          <button class="btn-demo" style="padding: 14px 28px; font-size: 1rem;">Demo Nút Lớn</button>
+        </div>
+      </div>
+
+      <!-- CARD 2: PRESETS (COLOR PICKER) -->
+      <div class="bento-card">
+        <div>
+          <span class="card-label">Màu Mực</span>
+          <h2 class="card-title">Bảng Sắc Thủy Mặc</h2>
+          <p class="card-body">Chọn một sắc màu mực truyền thống bên dưới và nhấp chuột để loang màu tương ứng.</p>
+        </div>
+        <div class="preset-container">
+          <div class="color-btn btn-charcoal active" data-color="#1a120c" title="Mực Đen Tàu"></div>
+          <div class="color-btn btn-teal" data-color="#106b6b" title="Xanh Ngọc Bích"></div>
+          <div class="color-btn btn-sakura" data-color="#c7516b" title="Hồng Hoa Đào"></div>
+          <div class="color-btn btn-indigo" data-color="#2c4263" title="Mực Chàm Cổ"></div>
+        </div>
+      </div>
+
+      <!-- CARD 3: SENSITIVE CONTROLS -->
+      <div class="bento-card span-2-y">
+        <div>
+          <span class="card-label">Phòng Thí Nghiệm</span>
+          <h2 class="card-title">Điều Chỉnh Tham Số</h2>
+          <p class="card-body">Thay đổi các tham số vật lý của chất lỏng để tùy biến kiểu loang.</p>
+          
+          <div class="control-panel" id="ui-panel">
+            <div class="control-group">
+              <label>Kích thước gốc (Size scale) <span id="val-size">1.0x</span></label>
+              <input type="range" id="param-size" min="0.5" max="2.0" step="0.1" value="1.0">
+            </div>
+
+            <div class="control-group">
+              <label>Độ méo ngẫu nhiên (Noise Level) <span id="val-noise">5px</span></label>
+              <input type="range" id="param-noise" min="1" max="40" step="1" value="5">
+            </div>
+
+            <div class="control-group">
+              <label>Tốc độ loang mực (Bleeding Speed) <span id="val-bleed-speed">3.0s</span></label>
+              <input type="range" id="param-bleed-speed" min="0.5" max="5.0" step="0.1" value="3.0">
+            </div>
+
+            <div class="control-group">
+              <label>Số vòng gợn nước (Ripples Count) <span id="val-ripples">3</span></label>
+              <input type="range" id="param-ripples" min="1" max="5" step="1" value="3">
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 20px;">
+          <p class="card-body" style="font-size: 0.8rem; font-style: italic;">
+            * Khi điều chỉnh các thanh trượt trong bảng này, hiệu ứng click sẽ được bỏ qua để tránh gây phân tâm.
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD 4: POETRY / INSPO -->
+      <div class="bento-card">
+        <span class="card-label">Ý Tưởng Nghệ Thuật</span>
+        <div class="quote-box">
+          "Giọt nước rơi hồ lặng,<br>
+          Mực loang giấy tinh sơ.<br>
+          Sóng tan vào tĩnh lặng,<br>
+          Chấm phá một nét thơ."
+        </div>
+        <div style="font-size: 0.8rem; text-align: right; color: var(--text-muted);">
+          — Cổ Thi Quyển
+        </div>
+      </div>
+
+      <!-- CARD 5: TECHNICAL CODE -->
+      <div class="bento-card span-2-x">
+        <div>
+          <span class="card-label">Tích Hợp Hệ Thống</span>
+          <h2 class="card-title">Tự Động Đo Kích Thước</h2>
+          <p class="card-body">
+            Mã nguồn sử dụng hàm `getBoundingClientRect()` để tính toán tự động bán kính loang. Kích thước mực loang tối đa sẽ tự động co giãn theo tỉ lệ diện tích phần tử tương tác:
+          </p>
+          <div class="code-box">
+const rect = target.getBoundingClientRect();
+const size = Math.max(rect.width, rect.height);
+// Phần tử nhỏ (nút bấm): Bán kính tối đa 40px
+// Phần tử trung bình (thẻ thông tin): Bán kính tối đa 90px
+// Nền trang (body): Bán kính tối đa 220px</div>
+        </div>
+      </div>
+
+      <!-- CARD 6: CODE EMBED AND INTEGRATION -->
+      <div class="bento-card span-full">
+        <div>
+          <span class="card-label">Hướng Dẫn Tích Hợp Nhanh</span>
+          <h2 class="card-title">Cách đưa vào dự án của bạn</h2>
+          <p class="card-body">
+            1. Sao chép định nghĩa `<svg>` chứa bộ lọc `#ink-bleed-filter` đặt vào cuối file HTML của bạn.<br>
+            2. Thêm một thẻ `<canvas id="ink-canvas">` toàn màn hình với style `pointer-events: none` và bộ lọc CSS `filter: url(#ink-bleed-filter)`.<br>
+            3. Khởi tạo mã nguồn Javascript ở cuối trang để nghe các tương tác nhấp chuột.
+          </p>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // ----------------------------------------------------
+    // CONSTANTS & EFFECT PARAMS (Liên kết trực tiếp với UI Sliders)
+    // ----------------------------------------------------
+    const params = {
+      sizeScale: 1.0,
+      noiseScale: 5,
+      bleedDuration: 3.0, // Giây (loang chậm 3 giây như người dùng yêu cầu)
+      rippleCount: 3,
+      currentColor: '#1a120c'
+    };
+
+    // Lắng nghe thay đổi UI Sliders
+    const paramSizeInput = document.getElementById('param-size');
+    const paramNoiseInput = document.getElementById('param-noise');
+    const paramBleedInput = document.getElementById('param-bleed-speed');
+    const paramRipplesInput = document.getElementById('param-ripples');
+
+    const valSize = document.getElementById('val-size');
+    const valNoise = document.getElementById('val-noise');
+    const valBleedSpeed = document.getElementById('val-bleed-speed');
+    const valRipples = document.getElementById('val-ripples');
+
+    paramSizeInput.addEventListener('input', (e) => {
+      params.sizeScale = parseFloat(e.target.value);
+      valSize.textContent = params.sizeScale.toFixed(1) + 'x';
+    });
+    paramNoiseInput.addEventListener('input', (e) => {
+      params.noiseScale = parseInt(e.target.value);
+      valNoise.textContent = params.noiseScale + 'px';
+      // Cập nhật thuộc tính scale của SVG DisplacementMap động
+      const dispMap = document.querySelector('#ink-bleed-filter feDisplacementMap');
+      if (dispMap) dispMap.setAttribute('scale', params.noiseScale);
+    });
+    paramBleedInput.addEventListener('input', (e) => {
+      params.bleedDuration = parseFloat(e.target.value);
+      valBleedSpeed.textContent = params.bleedDuration.toFixed(1) + 's';
+    });
+    paramRipplesInput.addEventListener('input', (e) => {
+      params.rippleCount = parseInt(e.target.value);
+      valRipples.textContent = params.rippleCount;
+    });
+
+    // Preset màu
+    const colorBtns = document.querySelectorAll('.color-btn');
+    colorBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        colorBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        params.currentColor = btn.getAttribute('data-color');
+        
+        // Không tạo vết loang lớn trên chính button màu để tránh rối mắt,
+        // chỉ cập nhật biến màu và tạo một giọt loang rất nhỏ tại tâm nút.
+        e.stopPropagation();
+        const rect = btn.getBoundingClientRect();
+        inkManager.addEffect(rect.left + rect.width/2, rect.top + rect.height/2, 25, params.currentColor);
+      });
+    });
+
+    // Chặn hiệu ứng loang khi click vào bảng tinh chỉnh thông số
+    document.getElementById('ui-panel').addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+    document.getElementById('ui-panel').addEventListener('touchstart', (e) => {
+      e.stopPropagation();
+    });
+
+
+    // ----------------------------------------------------
+    // CLASS: CLICK EFFECT REPRESENTATION (Gồm Mực Loang + Gợn Sóng)
+    // ----------------------------------------------------
+    class ClickEffect {
+      constructor(x, y, baseMaxRadius, color, scaleX = 1.0, scaleY = 1.0, numVertices = 90, historyLength = 15) {
+        this.x = x;
+        this.y = y;
+        this.maxRadius = baseMaxRadius * params.sizeScale;
+        this.color = color;
+        this.scaleX = scaleX;
+        this.scaleY = scaleY;
+        this.numVertices = numVertices;
+        this.maxHistoryLength = historyLength;
+        this.progress = 0; // Chạy từ 0 đến 1
+        
+        // Tốc độ cập nhật dựa theo thời gian chạy mong muốn (Bleed Duration)
+        this.speed = 0.016 / params.bleedDuration; 
+
+        // Sóng nước phụ trợ (Water Ripples) - mỏng nhẹ làm nền bổ trợ
+        this.ripples = [];
+        const count = params.rippleCount;
+        for (let i = 0; i < count; i++) {
+          this.ripples.push({
+            delay: (i * 0.16), 
+            scale: 0,
+            opacity: 0.25 - (i * 0.05)
+          });
+        }
+
+        // Khởi tạo các sóng hài (harmonics) tạo hình méo ngẫu nhiên cho vòng mực chính
+        this.harmonics = [];
+        const numHarmonics = 6;
+        for (let j = 0; j < numHarmonics; j++) {
+          this.harmonics.push({
+            amp: Math.random() * 0.15 + 0.05, // Biên độ méo cơ sở
+            freq: Math.floor(Math.random() * 6) + 3, // Tần số méo (3 đến 8 đỉnh răng cưa)
+            phase: Math.random() * Math.PI * 2, // Pha ban đầu
+            spin: (Math.random() - 0.5) * 1.8 // Tốc độ xoắn xoay của nhánh méo khi lan ra
+          });
+        }
+
+        // Lịch sử vị trí/bán kính để vẽ bóng mờ dần (Fading Trail) trên đường đi
+        this.history = [];
+
+        // Hạt bụi mực lấm tấm bắn ra (Tăng số lượng lên từ 8 đến 14 hạt để sinh động hơn)
+        this.particles = [];
+        const numParticles = Math.floor(Math.random() * 7) + 8;
+        for (let k = 0; k < numParticles; k++) {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * 3.0 + 1.2; // Tốc độ bắn đa dạng hơn
+          this.particles.push({
+            x: this.x,
+            y: this.y,
+            // Co giãn tốc độ bắn của hạt theo trục Oval của nút để tạo sự đồng bộ hình học
+            vx: Math.cos(angle) * speed * this.scaleX,
+            vy: Math.sin(angle) * speed * this.scaleY,
+            radius: Math.random() * 2.2 + 0.5, // Kích thước hạt lấm tấm ngẫu nhiên từ nhỏ tới mịn
+            opacity: 0.8,
+            friction: 0.94
+          });
+        }
+      }
+
+      update() {
+        this.progress += this.speed;
+        
+        // Bán kính cơ sở nở ra theo hàm ease-out-cubic
+        const easeOutCubic = 1 - Math.pow(1 - this.progress, 3);
+        this.currentBaseRadius = this.maxRadius * 0.78 * easeOutCubic;
+
+        // Lưu trạng thái hiện tại vào lịch sử vết bóng mờ (chỉ lưu khi chưa kết thúc hoạt cảnh)
+        if (this.progress < 1.0) {
+          this.history.push({
+            radius: this.currentBaseRadius,
+            progress: this.progress,
+            phaseOffset: this.progress * 0.6 // Gửi độ trễ pha để tạo hoạt ảnh morphing xoắn
+          });
+          if (this.history.length > this.maxHistoryLength) {
+            this.history.shift();
+          }
+        }
+
+        // Cập nhật gợn sóng nước nền
+        this.ripples.forEach(r => {
+          if (this.progress > r.delay) {
+            const p = Math.min(1, (this.progress - r.delay) / (1 - r.delay));
+            const easeOutQuart = 1 - Math.pow(1 - p, 4);
+            r.scale = easeOutQuart;
+            r.opacity = Math.max(0, (1 - p) * 0.25);
+          }
+        });
+
+        // Cập nhật hạt bụi mực bắn
+        this.particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.vx *= p.friction;
+          p.vy *= p.friction;
+          p.opacity = Math.max(0, 1 - this.progress);
+        });
+      }
+
+      // Hàm vẽ vòng mực méo theo tham số đầu vào
+      drawRingShape(ctx, baseRadius, phaseOffset, opacity, baseLineWidth) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.strokeStyle = this.hexToRGBA(this.color, opacity);
+        
+        // Tỉ lệ hoàn thành của vòng vẽ này (dùng để tăng độ méo dần khi nở to)
+        const currentProgress = baseRadius / (this.maxRadius * 0.78);
+        ctx.lineWidth = baseLineWidth * (1 - currentProgress * 0.45); // Nét vẽ mảnh dần khi ra xa
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+
+        const numVertices = this.numVertices; // Sử dụng số lượng đỉnh thích ứng hiệu năng
+        for (let i = 0; i < numVertices; i++) {
+          const theta = (i / numVertices) * Math.PI * 2;
+          let noise = 0;
+          
+          this.harmonics.forEach(h => {
+            // Độ méo răng cưa nhỏ ở gần tâm và lớn dần (méo chủ yếu ở viền) khi loang rộng
+            const currentAmp = h.amp * (0.2 + 0.8 * currentProgress);
+            // Xoay pha động làm hình dáng uốn lượn biến đổi liên tục khi lan ra
+            noise += currentAmp * Math.sin(h.freq * theta + h.phase + h.spin * phaseOffset);
+          });
+
+          const r = baseRadius * (1 + noise);
+          // Áp dụng scaleX và scaleY để biến dạng tròn thành hình bầu dục (oval) khớp với hình dạng của nút bấm
+          const vx = this.x + Math.cos(theta) * r * this.scaleX;
+          const vy = this.y + Math.sin(theta) * r * this.scaleY;
+
+          if (i === 0) {
+            ctx.moveTo(vx, vy);
+          } else {
+            ctx.lineTo(vx, vy);
+          }
+        }
+
+        ctx.closePath();
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      draw(ctx) {
+        const mainOpacity = Math.max(0, 1 - this.progress);
+
+        // 1. VẼ VẾT BÓNG MỜ DẦN (Trail History) phía sau đường đi
+        this.history.forEach((state, idx) => {
+          const ageFactor = idx / this.history.length; // 0 (cũ nhất) -> 1 (mới nhất)
+          
+          // Tạo độ mờ giảm dần cho các vết bóng phía sau rõ nét hơn một chút (offset 0.15, nhân hệ số 0.58)
+          // Các vết bóng mờ hơn sẽ đi qua bộ lọc SVG tạo thành quầng loang màu nước (soft-bleed)
+          const trailOpacity = mainOpacity * (0.15 + 0.85 * ageFactor) * 0.58;
+          if (trailOpacity > 0.01) {
+            this.drawRingShape(ctx, state.radius, state.phaseOffset, trailOpacity, 2.5); // Nét bóng to dày hơn (2.5px) để nhìn rõ rệt hơn
+          }
+        });
+
+        // 2. VẼ VÒNG MỰC CHÍNH ĐANG LAN TỎA (Nét vẽ rõ nhất, có wet-edge sắc sảo)
+        if (mainOpacity > 0.01) {
+          this.drawRingShape(ctx, this.currentBaseRadius, this.progress * 0.6, mainOpacity, 4.0);
+        }
+
+        // 3. VẼ GỢN SÓNG NƯỚC ĐỒNG TÂM (Đường tròn phụ mờ mảnh làm nền)
+        this.ripples.forEach(r => {
+          if (this.progress > r.delay && r.scale > 0) {
+            ctx.save();
+            ctx.beginPath();
+            const rad = this.maxRadius * r.scale;
+            // Vẽ sóng nước gợn hình Oval đồng bộ với vết mực
+            ctx.ellipse(this.x, this.y, rad * this.scaleX, rad * this.scaleY, 0, 0, Math.PI * 2);
+            ctx.strokeStyle = this.hexToRGBA(this.color, r.opacity);
+            ctx.lineWidth = 0.8 * (1 - r.scale) + 0.15;
+            ctx.stroke();
+            ctx.restore();
+          }
+        });
+
+        // 4. VẼ HẠT MỰC BẮN RA (Bụi mực nhỏ lấm tấm)
+        this.particles.forEach(p => {
+          if (p.opacity > 0) {
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fillStyle = this.hexToRGBA(this.color, p.opacity);
+            ctx.fill();
+            ctx.restore();
+          }
+        });
+      }
+
+      isFinished() {
+        return this.progress >= 1.0;
+      }
+
+      // Hàm chuyển màu HEX sang RGBA
+      hexToRGBA(hex, alpha) {
+        let c;
+        if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+          c = hex.substring(1).split('');
+          if (c.length == 3) {
+            c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+          }
+          c = '0x' + c.join('');
+          return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',' + alpha + ')';
+        }
+        return `rgba(26,18,12,${alpha})`;
+      }
+    }
+
+
+    // ----------------------------------------------------
+    // CLASS: INK CANVAS MANAGER (Quản lý Render Loop toàn cục)
+    // ----------------------------------------------------
+    class InkCanvasManager {
+      constructor(canvasId) {
+        this.canvas = document.getElementById(canvasId);
+        this.ctx = this.canvas.getContext('2d');
+        this.effects = [];
+        
+        this.resize();
+        window.addEventListener('resize', () => this.resize());
+        
+        this.loop();
+      }
+
+      resize() {
+        // Tối ưu hóa độ nét trên màn hình Retina/High-DPI
+        const dpr = window.devicePixelRatio || 1;
+        this.canvas.width = window.innerWidth * dpr;
+        this.canvas.height = window.innerHeight * dpr;
+        this.canvas.style.width = window.innerWidth + 'px';
+        this.canvas.style.height = window.innerHeight + 'px';
+        this.ctx.scale(dpr, dpr);
+      }
+
+      addEffect(x, y, maxRadius, color, scaleX = 1.0, scaleY = 1.0) {
+        // TỐI ƯU HIỆU NĂNG: Nếu người dùng click liên tục nhanh, ta gia tốc
+        // tốc độ phai màu của các hiệu ứng cũ để giải phóng tài nguyên CPU sớm hơn.
+        if (this.effects.length >= 3) {
+          this.effects.forEach((fx, idx) => {
+            if (idx < this.effects.length - 1) {
+              fx.speed = fx.speed * 2.2; // Tăng tốc phai màu gấp đôi cho hiệu ứng cũ
+            }
+          });
+        }
+
+        // Khống chế cứng số lượng hiệu ứng vẽ đồng thời để không bị giật lag
+        if (this.effects.length >= 4) {
+          this.effects.shift(); // Xóa hẳn hiệu ứng cũ nhất lập tức
+        }
+
+        // TỰ ĐỘNG THÍCH ỨNG HIỆU NĂNG (Adaptive Performance Scaling):
+        // Giảm độ phức tạp vẽ (số đỉnh và độ dài trail bóng mờ) khi có nhiều hiệu ứng cùng hoạt động.
+        let numVertices = 90;
+        let historyLength = 15;
+
+        if (this.effects.length >= 2) {
+          numVertices = 60;   // Giảm 33% số đỉnh vẽ đa giác
+          historyLength = 8;  // Rút ngắn 47% chiều dài trail
+        } else if (this.effects.length >= 3) {
+          numVertices = 45;   // Giảm 50% số đỉnh vẽ
+          historyLength = 4;  // Rút ngắn tối đa quầng bóng mờ
+        }
+
+        this.effects.push(new ClickEffect(x, y, maxRadius, color, scaleX, scaleY, numVertices, historyLength));
+      }
+
+      loop() {
+        // Xóa khung hình cũ
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+        // Vẽ và cập nhật từng hiệu ứng hoạt động
+        for (let i = this.effects.length - 1; i >= 0; i--) {
+          const fx = this.effects[i];
+          fx.update();
+          fx.draw(this.ctx);
+
+          if (fx.isFinished()) {
+            this.effects.splice(i, 1);
+          }
+        }
+
+        requestAnimationFrame(() => this.loop());
+      }
+    }
+
+    // Khởi tạo Ink Canvas Manager
+    const inkManager = new InkCanvasManager('ink-canvas');
+
+
+    // ----------------------------------------------------
+    // LOGIC: ĐO KÍCH THƯỚC NỘI DUNG & KÍCH HOẠT HIỆU ỨNG (Có giới hạn tốc độ - Throttle)
+    // ----------------------------------------------------
+    let lastClickTime = 0;
+    const CLICK_THROTTLE_MS = 100; // Mỗi click hợp lệ cách nhau tối thiểu 100ms để chống spam lag
+
+    document.addEventListener('pointerdown', (e) => {
+      const now = Date.now();
+      if (now - lastClickTime < CLICK_THROTTLE_MS) {
+        return; // Bỏ qua nhấp chuột quá nhanh liên tục để chống quá tải
+      }
+      lastClickTime = now;
+
+      // Tọa độ click
+      const x = e.clientX;
+      const y = e.clientY;
+
+      // Đo kích cỡ của phần tử nhận sự kiện click (e.target)
+      const target = e.target;
+      
+      // Chặn hiệu ứng loang khi click vào bảng tinh chỉnh thông số hoặc các thanh trượt
+      if (target.closest('#ui-panel')) {
+        return;
+      }
+      if (target.closest('.color-btn')) {
+        // Nút tròn chọn màu: Đã có xử lý sự kiện riêng tại hàm click
+        return;
+      }
+
+      const rect = target.getBoundingClientRect();
+      const width = rect.width;
+      const height = rect.height;
+      const diagonal = Math.sqrt(width * width + height * height);
+
+      let maxRadius = 220; // Bán kính mặc định cho màn hình nền lớn
+      let scaleX = 1.0;
+      let scaleY = 1.0;
+
+      // Nếu click vào một phần tử cụ thể (nút, thẻ hoặc liên kết)
+      if (target && target !== document.body && target !== document.documentElement) {
+        // Tính toán tỷ lệ co giãn Oval dựa trên hình dáng nút bấm, làm cho bầu dục tròn và mượt hơn
+        // bằng cách pha trộn tỷ lệ khía cạnh thực tế (65%) với tỷ lệ tròn hoàn hảo (35%)
+        const maxDim = Math.max(width, height);
+        if (maxDim > 0) {
+          scaleX = (width / maxDim) * 0.65 + 0.35;
+          scaleY = (height / maxDim) * 0.65 + 0.35;
+        }
+
+        if (target.closest('.btn-demo') || target.tagName === 'BUTTON' || target.tagName === 'A') {
+          // Kích thước dựa trên độ dài chữ và nút bấm, đảm bảo vết loang ít nhất to bằng nút bấm (diagonal * 0.58)
+          maxRadius = Math.max(55, diagonal * 0.58);
+        } else if (target.closest('.bento-card')) {
+          // Click vào bên trong thẻ Bento (Đảm bảo độ phủ rộng ít nhất bằng thẻ)
+          maxRadius = Math.max(100, diagonal * 0.4);
+        }
+      }
+
+      // Kích hoạt hiệu ứng mực loang tại vị trí click chuột với tỷ lệ co giãn Oval phù hợp hình dạng nút
+      inkManager.addEffect(x, y, maxRadius, params.currentColor, scaleX, scaleY);
+    });
+
+  </script>
+</body>
+</html>
