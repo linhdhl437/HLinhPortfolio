@@ -113,9 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
             radiusFactor = 1 + 0.42 * Math.pow(positiveLobe, 1.4) - 0.12 * negativeValley;
           }
 
-          const dotX = this.x + Math.cos(theta) * currentRadius;
-          const dotY = this.y + Math.sin(theta) * currentRadius;
-
           // Sử dụng toán học trực tiếp
           const finalRadius = baseRadius * radiusFactor;
           const dx = this.x + Math.cos(theta) * finalRadius;
