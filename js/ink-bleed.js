@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this.centerDot = {
         radius: 3.5,
         alpha: 1.0,
-        color: "#FFFFFF" // Màu trắng điện (electric white) làm tâm phát sáng
+        color: "#FFFFFF"
       };
 
       // Thu nhỏ kích thước tối đa để bông hoa bé xinh, tăng mật độ chấm để rõ hình cánh hoa
@@ -32,15 +32,15 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           baseRadius: 0,
           maxBaseRadius: 30, // Bông hoa bé nhỏ thu gọn xung quanh con trỏ
-          dotsCount: numPetals * 9, // Tăng mật độ hạt (ví dụ 5x9 = 45 chấm) để viền hoa rõ nét
-          amp: 0.38, // Tăng biên độ cong (amplitude) giúp cánh hoa uốn lượn rõ ràng hơn
+          dotsCount: numPetals * 9, // Tăng mật độ hạt để viền hoa rõ nét
+          amp: 0.30, // Tinh chỉnh biên độ để cánh hoa tròn trịa cân đối
           delay: 0
         },
         {
           baseRadius: 0,
-          maxBaseRadius: 45, // Vòng ngoài cũng thu gọn dẹt
+          maxBaseRadius: 45,
           dotsCount: numPetals * 9,
-          amp: 0.38,
+          amp: 0.30,
           delay: 0.14
         }
       ];
@@ -70,9 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.centerDot.radius, 0, Math.PI * 2);
         
-        // Tạo hiệu ứng phát sáng Neon
         ctx.shadowBlur = 8;
-        ctx.shadowColor = "#00FFFF"; // Ánh xanh Neon nhẹ quanh nhụy trắng
+        ctx.shadowColor = "#00FFFF";
         ctx.fillStyle = this.hexToRGBA(this.centerDot.color, this.centerDot.alpha);
         ctx.fill();
         ctx.restore();
@@ -88,8 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
           for (let i = 0; i < numDots; i++) {
             const theta = (i / numDots) * Math.PI * 2;
             
-            // Công thức hoa hồng: r = baseRadius * (1 + amp * cos(N * theta))
-            const radiusFactor = 1 + amp * Math.cos(N * theta);
+            const cosVal = Math.cos(N * theta);
+            // Áp dụng lũy thừa mũ 0.65 giúp đỉnh cánh hoa phình to tròn trịa bầu bĩnh hơn (bo tròn hơn), 
+            // đồng thời giữ kẽ hở giữa các cánh hoa sắc sảo
+            const radiusFactor = 1 + amp * Math.sign(cosVal) * Math.pow(Math.abs(cosVal), 0.65);
             const currentRadius = r.baseRadius * radiusFactor;
 
             const dotX = this.x + Math.cos(theta) * currentRadius;
@@ -98,11 +99,9 @@ document.addEventListener("DOMContentLoaded", () => {
             ctx.save();
             ctx.beginPath();
             
-            // Hạt nhỏ vừa vặn sắc nét
             const dotSize = 2.0 * (1.0 - this.progress * 0.2);
             ctx.arc(dotX, dotY, dotSize, 0, Math.PI * 2);
             
-            // Hiệu ứng phát sáng Neon cho viền hoa
             ctx.shadowBlur = 6;
             ctx.shadowColor = this.color;
             ctx.fillStyle = this.hexToRGBA(this.color, r.alpha);
@@ -221,15 +220,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let color, numPetals;
 
     if (rand < 0.60) {
-      // 60% Hoa Đào: Neon Pink nổi bật quyến rũ
       color = "#FF007F"; 
       numPetals = 5;
     } else if (rand < 0.90) {
-      // 30% Hoa Mẫu Đơn: Neon Red/Orange rực rỡ
       color = "#FF1F1F"; 
       numPetals = 8;
     } else {
-      // 10% Hoa Cúc: Neon Yellow sáng lóa cực sang
       color = "#FFE600"; 
       numPetals = 12;
     }
