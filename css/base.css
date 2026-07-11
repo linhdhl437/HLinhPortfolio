@@ -21,6 +21,12 @@ body {
   line-height: 1.75;
   overflow-x: hidden;
   position: relative;
+  
+  /* Chống bôi đen văn bản khi click dồn dập trải nghiệm hiệu ứng */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 /* 📜 Tactile Paper Texture Overlay */
