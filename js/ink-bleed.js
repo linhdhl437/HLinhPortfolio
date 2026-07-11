@@ -79,9 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
           { scale: 1.0, dots: 80, rot: 0, amp: 0.32 }
         ];
       } else if (this.type === "sen") {
-        // HOA SEN (Hình mẫu mới): Cánh sen pointed xếp nếp hình ngọn lửa sắc nét
+        // HOA SEN: 1 lớp cánh duy nhất pointed sắc nét
         layers = [
-          { scale: 0.76, dots: 60, rot: Math.PI / 8, amp: 0.28 },
           { scale: 1.0, dots: 85, rot: 0, amp: 0.35 }
         ];
       } else if (this.type === "maudon") {
