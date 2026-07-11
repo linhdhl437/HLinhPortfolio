@@ -3,7 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("ink-canvas");
   if (!canvas) return;
 
-  const ctx = canvas.getContext("2d");
+  const ctx = canvas.getContext("2d", {
+    alpha: true,
+    willReadFrequently: false
+  });
   
   // Tham số vật lý mặc định của mực loang
   const params = {
@@ -222,11 +225,33 @@ document.addEventListener("DOMContentLoaded", () => {
       this.canvas = canvas;
       this.ctx = ctx;
       this.effects = [];
+      this.rafId = null;
+      this.isTabActive = true;
       
       this.resize();
-      window.addEventListener('resize', () => this.resize());
       
-      this.loop();
+      this.resizeTimer = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(this.resizeTimer);
+        this.resizeTimer = setTimeout(() => this.resize(), 150);
+      }, { passive: true });
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          this.isTabActive = false;
+          if (this.rafId) {
+            cancelAnimationFrame(this.rafId);
+            this.rafId = null;
+          }
+        } else {
+          if (!this.isTabActive) {
+            this.isTabActive = true;
+            if (this.effects.length > 0 && !this.rafId) {
+              this.loop();
+            }
+          }
+        }
+      });
     }
 
     resize() {
@@ -267,10 +292,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       this.effects.push(new ClickEffect(x, y, maxRadius, color, scaleX, scaleY, numVertices, historyLength));
+
+      // Kích hoạt lại loop nếu đang tạm dừng
+      if (!this.rafId && this.isTabActive) {
+        this.loop();
+      }
     }
 
     loop() {
-      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      if (!this.isTabActive) return;
+
+      // CANVAS-06: clearRect sử dụng logical width/height để khớp với tọa độ đã scale
+      this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
       for (let i = this.effects.length - 1; i >= 0; i--) {
         const fx = this.effects[i];
@@ -282,7 +315,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      requestAnimationFrame(() => this.loop());
+      // Dừng vòng lặp vẽ nếu không còn hiệu ứng nào
+      if (this.effects.length === 0) {
+        this.rafId = null;
+        return;
+      }
+
+      this.rafId = requestAnimationFrame(() => this.loop());
     }
   }
 

@@ -116,17 +116,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     scrolls.forEach(scr => scrollObserver.observe(scr));
 
+    let fallbackScrollTicking = false;
     window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY;
-      
-      if (mountains) {
-        mountains.style.transform = `translateY(${scrollY * 0.15}px)`;
-      }
+      if (!fallbackScrollTicking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          
+          if (mountains) {
+            mountains.style.transform = `translateY(${scrollY * 0.15}px)`;
+          }
 
-      clouds.forEach((cloud, idx) => {
-        const speed = (idx + 1) * 0.1;
-        cloud.style.transform = `translateY(${scrollY * speed}px) translateX(${scrollY * 0.05}px)`;
-      });
-    });
+          clouds.forEach((cloud, idx) => {
+            const speed = (idx + 1) * 0.1;
+            cloud.style.transform = `translateY(${scrollY * speed}px) translateX(${scrollY * 0.05}px)`;
+          });
+          fallbackScrollTicking = false;
+        });
+        fallbackScrollTicking = true;
+      }
+    }, { passive: true });
   }
 });

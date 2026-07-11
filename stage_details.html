@@ -11,6 +11,13 @@
     <link rel="icon" type="image/png" href="./img/ulis_logo.png" />
     <link rel="canonical" href="https://linhdhl437.github.io/HLinhPortfolio/stage_details.html" />
     
+    <!-- 🚀 Resource Hints & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap">
+
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://linhdhl437.github.io/HLinhPortfolio/stage_details.html" />
@@ -767,6 +774,20 @@
           padding-top: 135px !important;
         }
       }
+
+      /* Page Transition Overlay */
+      #page-transition-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(249, 247, 242, 0);
+        z-index: 9999;
+        pointer-events: none;
+        transition: background 0.35s ease;
+      }
+      #page-transition-overlay.fading {
+        background: rgba(249, 247, 242, 1);
+        pointer-events: all;
+      }
     </style>
   </head>
   <body class="stage-details-page">
@@ -922,21 +943,6 @@
     <script src="./js/lightbox.js"></script>
     <script src="./js/custom-cursor.js"></script>
 
-    <!-- Page Transition Overlay -->
-    <style>
-      #page-transition-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(249, 247, 242, 0);
-        z-index: 9999;
-        pointer-events: none;
-        transition: background 0.35s ease;
-      }
-      #page-transition-overlay.fading {
-        background: rgba(249, 247, 242, 1);
-        pointer-events: all;
-      }
-    </style>
     <div id="page-transition-overlay"></div>
 
     <script>

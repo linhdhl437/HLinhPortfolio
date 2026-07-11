@@ -5,16 +5,13 @@
   0% {
     opacity: 0;
     transform: scale(0.1) translate(-50%, -50%);
-    filter: blur(15px);
   }
   40% {
     opacity: 1;
-    filter: blur(4px);
   }
   100% {
     opacity: 1;
     transform: scale(1.5) translate(-30%, -30%);
-    filter: blur(0px);
   }
 }
 
@@ -100,6 +97,7 @@
 
 /* --- Animation Classes --- */
 .animate-fade-in-up {
+  will-change: opacity, transform;
   animation: fadeInUp var(--transition-slow) forwards;
 }
 
@@ -108,6 +106,7 @@
 }
 
 .animate-float-cloud {
+  will-change: transform;
   animation: floatCloud 12s ease-in-out infinite;
 }
 
@@ -115,6 +114,7 @@
 .scroll-reveal {
   opacity: 0;
   transform: translateY(30px);
+  will-change: opacity, transform;
   transition: opacity 0.8s var(--ease-ink), transform 0.8s var(--ease-ink);
 }
 
