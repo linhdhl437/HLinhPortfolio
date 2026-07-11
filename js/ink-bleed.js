@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ----------------------------------------------------
-  // CLASS: CLICK EFFECT REPRESENTATION (Bông hoa Neon tả thực toán học)
+  // CLASS: CLICK EFFECT REPRESENTATION (Bông hoa Neon tả thực lớn hơn, nở chậm)
   // ----------------------------------------------------
   class ClickEffect {
     constructor(x, y, color, numPetals, type) {
@@ -33,18 +33,18 @@ document.addEventListener("DOMContentLoaded", () => {
       this.numPetals = numPetals;
       this.type = type; // "dao", "sen", "maudon", "cuc"
       this.progress = 0;
-      this.speed = 0.008; // Lan tỏa chậm rãi (khoảng 2.0 giây) giống pháo hoa nở chậm
+      this.speed = 0.008; // Lan tỏa chậm hơn nữa (khoảng 2.0 giây) để thấy rõ chuyển động cánh hoa nở pháo hoa
 
-      // Nhụy hoa phát sáng Neon
+      // Nhụy hoa phát sáng Neon và phóng to tương ứng kích thước hoa mới
       this.centerPistil = {
-        coreRadius: 4.5,
+        coreRadius: 4.5, // Kích thước nhụy cái
         coreColor: "#FFFFFF",
         stamenColor: "#FFE600",
         lineColor: "#FFA500",
         alpha: 1.0
       };
 
-      // Thiết lập kích thước tối đa vừa vặn nổi bật
+      // Tăng kích thước hoa lớn hơn một chút (theo yêu cầu)
       if (this.type === "dao") {
         this.maxRadius = 30; // Bông hoa đào
       } else if (this.type === "sen") {
@@ -69,6 +69,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const easeOutCubic = 1 - Math.pow(1 - this.progress, 3);
       const currentBaseRadius = this.maxRadius * easeOutCubic;
+      const N = this.numPetals;
+
+      // Xác định cấu trúc lớp cánh hoa theo loài
+      let layers = [];
+      if (this.type === "dao") {
+        // HOA ĐÀO (Hình mẫu): Đúng 1 lớp duy nhất gồm 5 cánh tròn bầu có khía V đầu cánh
+        layers = [
+          { scale: 1.0, dots: 80, rot: 0, amp: 0.32 }
+        ];
+      } else if (this.type === "sen") {
+        // HOA SEN (Hình mẫu mới): Cánh sen pointed xếp nếp hình ngọn lửa sắc nét
+        layers = [
+          { scale: 0.76, dots: 60, rot: Math.PI / 8, amp: 0.28 },
+          { scale: 1.0, dots: 85, rot: 0, amp: 0.35 }
+        ];
+      } else if (this.type === "maudon") {
+        // HOA MẪU ĐƠN: 2 lớp cánh xếp đè nếp nhăn sóng
+        layers = [
+          { scale: 0.78, dots: 65, rot: Math.PI / 8, amp: 0.25 },
+          { scale: 1.0, dots: 90, rot: 0, amp: 0.28 }
+        ];
+      } else {
+        // HOA CÚC: 2 lớp cánh thon mảnh so le
+        layers = [
+          { scale: 0.75, dots: 70, rot: Math.PI / 12, amp: 0.42 },
+          { scale: 1.0, dots: 96, rot: 0, amp: 0.42 }
+        ];
+      }
 
       // ----------------------------------------------------
       // 1. VẼ CÁC ĐƯỜNG GÂN CÁNH HOA NỐI NHỤY
@@ -76,42 +104,57 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.save();
       ctx.shadowBlur = 4;
       ctx.shadowColor = this.color;
-      ctx.strokeStyle = this.hexToRGBA(this.color, alpha * 0.35); // Nét gân hoa mờ ẩn dưới nhụy
+      ctx.strokeStyle = this.hexToRGBA(this.color, alpha * 0.35);
       ctx.lineWidth = 0.6;
 
-      if (this.type === "dao") {
-        // HOA ĐÀO: Vẽ 5 đường gân thẳng nối tâm tới 5 đỉnh cánh hoa đối xứng tâm
-        const angles = [
-          Math.PI / 2, // 90 độ (đỉnh trên cùng)
-          Math.PI / 10, // 18 độ
-          1.7 * Math.PI, // 306 độ
-          1.3 * Math.PI, // 234 độ
-          0.9 * Math.PI  // 162 độ
-        ];
+      const outerLayer = layers[layers.length - 1];
+      for (let k = 0; k < N; k++) {
+        let theta = (k / N) * Math.PI * 2 - outerLayer.rot;
+        if (this.type === "dao") {
+          theta += Math.PI / 2; // Căn lề gân hoa trùng khớp với đỉnh hoa đào (90 độ)
+        }
         
-        angles.forEach(theta => {
-          // Tính toán bán kính tại đỉnh cánh đào có khía V lõm
+        let radiusFactor = 1;
+
+        if (this.type === "dao") {
           const angleForFormula = theta - Math.PI / 2;
           const cos5 = Math.cos(5 * angleForFormula);
-          const baseShape = Math.sign(cos5) * Math.pow(Math.abs(cos5), 0.65);
           const notch = Math.cos(10 * angleForFormula);
-          const radiusFactor = 1 + 0.32 * baseShape - 0.08 * notch;
+          // Công thức trơn tru bo tròn bầu bĩnh loại bỏ hoàn toàn góc cạnh
+          radiusFactor = 1.0 + 0.18 * cos5 - 0.045 * notch;
+        } else if (this.type === "sen") {
+          // Gân sen không cần tính radiusFactor vì ta sẽ nối trực tiếp theo toạ độ tips bên dưới
+        } else if (this.type === "maudon") {
+          const cos8 = Math.cos(8 * theta);
+          const baseShape = Math.sign(cos8) * Math.pow(Math.abs(cos8), 0.7);
+          const ruffle = Math.sin(16 * theta);
+          radiusFactor = 1 + outerLayer.amp * baseShape + 0.05 * ruffle;
+        } else {
+          const cos12 = Math.cos(12 * theta);
+          const positiveLobe = Math.max(0, cos12);
+          const negativeValley = Math.max(0, -cos12);
+          radiusFactor = 1 + outerLayer.amp * Math.pow(positiveLobe, 1.4) - 0.12 * negativeValley;
+        }
 
-          const px = this.x + Math.cos(theta) * currentBaseRadius * radiusFactor;
-          const py = this.y + Math.sin(theta) * currentBaseRadius * radiusFactor;
+        if (this.type !== "sen") {
+          const finalRadius = currentBaseRadius * outerLayer.scale * radiusFactor;
+          const px = this.x + Math.cos(theta) * finalRadius;
+          const py = this.y + Math.sin(theta) * finalRadius;
 
           ctx.beginPath();
           ctx.moveTo(this.x, this.y);
           ctx.lineTo(px, py);
           ctx.stroke();
-        });
-      } else if (this.type === "sen") {
-        // HOA SEN: Vẽ 7 đường gân nối nhụy từ tâm tới 7 đỉnh cánh hoa thiết kế Bezier
+        }
+      }
+
+      if (this.type === "sen") {
+        // Hoa Sen: Vẽ 7 đường gân nối nhụy từ tâm tới 7 đỉnh cánh hoa thiết kế Bezier
         const lotusTips = [
-          { x: 0, y: -0.75 }, // Cánh đứng giữa
-          { x: -0.40, y: -0.60 }, { x: 0.40, y: -0.60 }, // Lớp cánh bên trên
-          { x: -0.72, y: -0.35 }, { x: 0.72, y: -0.35 }, // Lớp cánh bên giữa
-          { x: -0.85, y: 0.05 }, { x: 0.85, y: 0.05 }   // Lớp cánh xòe dưới
+          { x: 0, y: -0.75 },
+          { x: -0.40, y: -0.60 }, { x: 0.40, y: -0.60 },
+          { x: -0.72, y: -0.35 }, { x: 0.72, y: -0.35 },
+          { x: -0.85, y: 0.05 }, { x: 0.85, y: 0.05 }
         ];
 
         lotusTips.forEach(tip => {
@@ -123,40 +166,6 @@ document.addEventListener("DOMContentLoaded", () => {
           ctx.lineTo(px, py);
           ctx.stroke();
         });
-      } else if (this.type === "maudon") {
-        // HOA MẪU ĐƠN: 8 đường gân tỏa ra 8 đỉnh nếp xếp cánh hoa ngoài cùng
-        for (let k = 0; k < 8; k++) {
-          const theta = (k / 8) * Math.PI * 2;
-          const cos8 = Math.cos(8 * theta);
-          const baseShape = Math.sign(cos8) * Math.pow(Math.abs(cos8), 0.7);
-          const ruffle = Math.sin(16 * theta);
-          const radiusFactor = 1 + 0.28 * baseShape + 0.05 * ruffle;
-
-          const px = this.x + Math.cos(theta) * currentBaseRadius * radiusFactor;
-          const py = this.y + Math.sin(theta) * currentBaseRadius * radiusFactor;
-
-          ctx.beginPath();
-          ctx.moveTo(this.x, this.y);
-          ctx.lineTo(px, py);
-          ctx.stroke();
-        }
-      } else {
-        // HOA CÚC: 12 đường gân tỏa ra 12 đỉnh cánh thon nhọn
-        for (let k = 0; k < 12; k++) {
-          const theta = (k / 12) * Math.PI * 2;
-          const cos12 = Math.cos(12 * theta);
-          const positiveLobe = Math.max(0, cos12);
-          const negativeValley = Math.max(0, -cos12);
-          const radiusFactor = 1 + 0.42 * Math.pow(positiveLobe, 1.4) - 0.12 * negativeValley;
-
-          const px = this.x + Math.cos(theta) * currentBaseRadius * radiusFactor;
-          const py = this.y + Math.sin(theta) * currentBaseRadius * radiusFactor;
-
-          ctx.beginPath();
-          ctx.moveTo(this.x, this.y);
-          ctx.lineTo(px, py);
-          ctx.stroke();
-        }
       }
       ctx.restore();
 
@@ -168,9 +177,9 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.shadowColor = "#FFE600";
 
       if (this.type === "dao") {
-        // NHỤY HOA ĐÀO (Hình mẫu): 18 sợi chỉ nhụy mảnh tỏa tròn có chấm phấn tròn vàng
+        // NHỤY HOA ĐÀO (Theo ảnh mẫu): Nhị dài mảnh tỏa rộng
         const sCount = 18;
-        const sLength = 11.5 * easeOutCubic; // Nở rộng theo tỉ lệ hoa
+        const sLength = 11.5 * easeOutCubic;
         const rotationOffset = this.progress * 0.15;
 
         // Vẽ nhụy cái ở tâm
@@ -198,13 +207,12 @@ document.addEventListener("DOMContentLoaded", () => {
           ctx.fill();
         }
       } else if (this.type === "sen") {
-        // NHỤY HOA SEN (Đài sen elip dẹt + 7 hạt sen tĩnh nửa trên elip)
+        // NHỤY HOA SEN: Đài sen elip dẹt + 7 hạt sen tĩnh nửa trên elip
         const scale = easeOutCubic;
-        const rx = 6.2 * scale; // Bán kính ngang elip đài sen
-        const ry = 3.0 * scale; // Bán kính dọc elip đài sen
-        const cy = this.y - 1.8 * scale; // Tâm elip hơi lệch lên trên nhụy chút
+        const rx = 6.2 * scale;
+        const ry = 3.0 * scale;
+        const cy = this.y - 1.8 * scale;
 
-        // Vẽ viền đài sen (elip dẹt dập dềnh 16 chấm tròn)
         ctx.fillStyle = this.hexToRGBA("#FFE600", alpha);
         const borderDots = 14;
         for (let i = 0; i < borderDots; i++) {
@@ -217,7 +225,6 @@ document.addEventListener("DOMContentLoaded", () => {
           ctx.fill();
         }
 
-        // Vẽ 7 hạt sen (seeds) tọa độ tĩnh lọt trong nửa trên đài elip
         const staticSeeds = [
           { dx: 0, dy: -1.2 },
           { dx: -2.2, dy: -1.0 }, { dx: 2.2, dy: -1.0 },
@@ -225,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { dx: -1.8, dy: 0.2 }, { dx: 1.8, dy: 0.2 }
         ];
 
-        ctx.fillStyle = this.hexToRGBA("#8FBC8F", alpha); // Hạt sen màu xanh nhạt đạm chất thủy mặc
+        ctx.fillStyle = this.hexToRGBA("#8FBC8F", alpha);
         staticSeeds.forEach(seed => {
           const sx = this.x + seed.dx * scale;
           const sy = cy + seed.dy * scale;
@@ -239,7 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const rotationOffset = -this.progress * 0.1;
 
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.centerPistil.coreRadius * 1.0, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, this.centerPistil.coreRadius * 0.8, 0, Math.PI * 2);
         ctx.fillStyle = this.hexToRGBA("#FFA500", alpha);
         ctx.fill();
 
@@ -272,106 +279,91 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const dotSize = 1.3 * (1.0 - this.progress * 0.2);
 
-      if (this.type === "dao") {
-        // HOA ĐÀO (Hình mẫu): Đúng 1 lớp duy nhất gồm 5 cánh đối xứng trục thẳng đứng (cánh trên hướng 90 độ)
-        const dotsCount = 80;
-        for (let i = 0; i < dotsCount; i++) {
-          const theta = (i / dotsCount) * Math.PI * 2;
-          
-          // Trục cánh hoa thẳng đứng: xoay theta lệch đi -Math.PI / 2
-          const angleForFormula = theta - Math.PI / 2;
-          const cos5 = Math.cos(5 * angleForFormula);
-          const baseShape = Math.sign(cos5) * Math.pow(Math.abs(cos5), 0.65);
-          const notch = Math.cos(10 * angleForFormula);
-          
-          // Khía V ở đầu cánh làm bán kính r giảm đột ngột (notch)
-          const radiusFactor = 1 + 0.32 * baseShape - 0.08 * notch;
-
-          const finalRadius = currentBaseRadius * radiusFactor;
-          const dx = this.x + Math.cos(theta) * finalRadius;
-          const dy = this.y + Math.sin(theta) * finalRadius;
-
-          ctx.beginPath();
-          ctx.arc(dx, dy, dotSize, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      } else if (this.type === "sen") {
-        // HOA SEN (Hình mẫu mới): Cấu trúc 7 cánh uốn lượn cấu tạo bằng các đường cong Bezier bậc 3
-        const lotusPetals = [
-          // 1. Cánh chính giữa thẳng đứng hướng lên trên
-          {
-            start: { x: 0, y: 0.25 }, end: { x: 0, y: -0.75 },
-            c1Left: { x: -0.28, y: 0.1 }, c2Left: { x: -0.26, y: -0.4 },
-            c1Right: { x: 0.28, y: 0.1 }, c2Right: { x: 0.26, y: -0.4 }
-          },
-          // 2. Cặp cánh bên trên hướng chéo lên
-          {
-            start: { x: -0.08, y: 0.25 }, end: { x: -0.40, y: -0.60 },
-            c1Left: { x: -0.25, y: 0.1 }, c2Left: { x: -0.42, y: -0.30 },
-            c1Right: { x: -0.02, y: -0.05 }, c2Right: { x: -0.15, y: -0.45 }
-          },
-          {
-            start: { x: 0.08, y: 0.25 }, end: { x: 0.40, y: -0.60 },
-            c1Left: { x: 0.02, y: -0.05 }, c2Left: { x: 0.15, y: -0.45 },
-            c1Right: { x: 0.25, y: 0.1 }, c2Right: { x: 0.42, y: -0.30 }
-          },
-          // 3. Cặp cánh bên giữa nghiêng rộng
-          {
-            start: { x: -0.15, y: 0.25 }, end: { x: -0.72, y: -0.35 },
-            c1Left: { x: -0.45, y: 0.25 }, c2Left: { x: -0.75, y: -0.10 },
-            c1Right: { x: -0.05, y: -0.02 }, c2Right: { x: -0.32, y: -0.25 }
-          },
-          {
-            start: { x: 0.15, y: 0.25 }, end: { x: 0.72, y: -0.35 },
-            c1Left: { x: 0.05, y: -0.02 }, c2Left: { x: 0.32, y: -0.25 },
-            c1Right: { x: 0.45, y: 0.25 }, c2Right: { x: 0.75, y: -0.10 }
-          },
-          // 4. Cặp cánh ôm dưới cùng xòe ngang dẹt xuống
-          {
-            start: { x: -0.15, y: 0.25 }, end: { x: -0.85, y: 0.05 },
-            c1Left: { x: -0.45, y: 0.38 }, c2Left: { x: -0.75, y: 0.30 },
-            c1Right: { x: -0.38, y: 0.15 }, c2Right: { x: -0.76, y: 0.10 }
-          },
-          {
-            start: { x: 0.15, y: 0.25 }, end: { x: 0.85, y: 0.05 },
-            c1Left: { x: 0.38, y: 0.15 }, c2Left: { x: 0.76, y: 0.10 },
-            c1Right: { x: 0.45, y: 0.38 }, c2Right: { x: 0.75, y: 0.30 }
-          }
-        ];
-
-        // Rải hạt dọc theo phương trình Bezier cho từng cánh hoa sen
-        const stepsPerSide = 12; // 12 hạt cho mỗi nửa cánh hoa
-        lotusPetals.forEach(petal => {
-          for (let s = 0; s <= stepsPerSide; s++) {
-            const t = s / stepsPerSide;
+      layers.forEach(layer => {
+        if (this.type === "dao") {
+          // HOA ĐÀO (Hình mẫu): Đúng 1 lớp duy nhất gồm 5 cánh đối xứng trục thẳng đứng (cánh trên hướng 90 độ)
+          const dotsCount = layer.dots;
+          for (let i = 0; i < dotsCount; i++) {
+            const theta = (i / dotsCount) * Math.PI * 2;
             
-            // Vẽ nửa bên trái cánh hoa
-            const ptL = getBezierPoint(petal.start, petal.c1Left, petal.c2Left, petal.end, t);
-            const lx = this.x + ptL.x * currentBaseRadius;
-            const ly = this.y + ptL.y * currentBaseRadius;
+            const angleForFormula = theta - Math.PI / 2;
+            const cos5 = Math.cos(5 * angleForFormula);
+            const notch = Math.cos(10 * angleForFormula);
             
+            // Công thức trơn tru loại bỏ hoàn toàn Math.sign / Math.pow giúp cánh hoa đào bo tròn bầu bĩnh tự nhiên
+            const radiusFactor = 1.0 + 0.18 * cos5 - 0.045 * notch;
+
+            const finalRadius = currentBaseRadius * radiusFactor;
+            const dx = this.x + Math.cos(theta) * finalRadius;
+            const dy = this.y + Math.sin(theta) * finalRadius;
+
             ctx.beginPath();
-            ctx.arc(lx, ly, dotSize, 0, Math.PI * 2);
-            ctx.fill();
-
-            // Vẽ nửa bên phải cánh hoa
-            const ptR = getBezierPoint(petal.start, petal.c1Right, petal.c2Right, petal.end, t);
-            const rx = this.x + ptR.x * currentBaseRadius;
-            const ry = this.y + ptR.y * currentBaseRadius;
-            
-            ctx.beginPath();
-            ctx.arc(rx, ry, dotSize, 0, Math.PI * 2);
+            ctx.arc(dx, dy, dotSize, 0, Math.PI * 2);
             ctx.fill();
           }
-        });
-      } else if (this.type === "maudon") {
-        // HOA MẪU ĐƠN: 2 lớp cánh xếp đè nếp nhăn sóng
-        const layers = [
-          { scale: 0.78, dots: 65, rot: Math.PI / 8, amp: 0.25 },
-          { scale: 1.0, dots: 90, rot: 0, amp: 0.28 }
-        ];
+        } else if (this.type === "sen") {
+          // HOA SEN: Cấu trúc 7 cánh Bezier bậc 3 đối xứng
+          const lotusPetals = [
+            {
+              start: { x: 0, y: 0.25 }, end: { x: 0, y: -0.75 },
+              c1Left: { x: -0.28, y: 0.1 }, c2Left: { x: -0.26, y: -0.4 },
+              c1Right: { x: 0.28, y: 0.1 }, c2Right: { x: 0.26, y: -0.4 }
+            },
+            {
+              start: { x: -0.08, y: 0.25 }, end: { x: -0.40, y: -0.60 },
+              c1Left: { x: -0.25, y: 0.1 }, c2Left: { x: -0.42, y: -0.30 },
+              c1Right: { x: -0.02, y: -0.05 }, c2Right: { x: -0.15, y: -0.45 }
+            },
+            {
+              start: { x: 0.08, y: 0.25 }, end: { x: 0.40, y: -0.60 },
+              c1Left: { x: 0.02, y: -0.05 }, c2Left: { x: 0.15, y: -0.45 },
+              c1Right: { x: 0.25, y: 0.1 }, c2Right: { x: 0.42, y: -0.30 }
+            },
+            {
+              start: { x: -0.15, y: 0.25 }, end: { x: -0.72, y: -0.35 },
+              c1Left: { x: -0.45, y: 0.25 }, c2Left: { x: -0.75, y: -0.10 },
+              c1Right: { x: -0.05, y: -0.02 }, c2Right: { x: -0.32, y: -0.25 }
+            },
+            {
+              start: { x: 0.15, y: 0.25 }, end: { x: 0.72, y: -0.35 },
+              c1Left: { x: 0.05, y: -0.02 }, c2Left: { x: 0.32, y: -0.25 },
+              c1Right: { x: 0.45, y: 0.25 }, c2Right: { x: 0.75, y: -0.10 }
+            },
+            {
+              start: { x: -0.15, y: 0.25 }, end: { x: -0.85, y: 0.05 },
+              c1Left: { x: -0.45, y: 0.38 }, c2Left: { x: -0.75, y: 0.30 },
+              c1Right: { x: -0.38, y: 0.15 }, c2Right: { x: -0.76, y: 0.10 }
+            },
+            {
+              start: { x: 0.15, y: 0.25 }, end: { x: 0.85, y: 0.05 },
+              c1Left: { x: 0.38, y: 0.15 }, c2Left: { x: 0.76, y: 0.10 },
+              c1Right: { x: 0.45, y: 0.38 }, c2Right: { x: 0.75, y: 0.30 }
+            }
+          ];
 
-        layers.forEach(layer => {
+          const stepsPerSide = 12;
+          lotusPetals.forEach(petal => {
+            for (let s = 0; s <= stepsPerSide; s++) {
+              const t = s / stepsPerSide;
+              
+              const ptL = getBezierPoint(petal.start, petal.c1Left, petal.c2Left, petal.end, t);
+              const lx = this.x + ptL.x * currentBaseRadius * layer.scale;
+              const ly = this.y + ptL.y * currentBaseRadius * layer.scale;
+              
+              ctx.beginPath();
+              ctx.arc(lx, ly, dotSize, 0, Math.PI * 2);
+              ctx.fill();
+
+              const ptR = getBezierPoint(petal.start, petal.c1Right, petal.c2Right, petal.end, t);
+              const rx = this.x + ptR.x * currentBaseRadius * layer.scale;
+              const ry = this.y + ptR.y * currentBaseRadius * layer.scale;
+              
+              ctx.beginPath();
+              ctx.arc(rx, ry, dotSize, 0, Math.PI * 2);
+              ctx.fill();
+            }
+          });
+        } else if (this.type === "maudon") {
           for (let i = 0; i < layer.dots; i++) {
             const theta = (i / layer.dots) * Math.PI * 2;
             const relativeTheta = theta + layer.rot;
@@ -388,15 +380,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ctx.arc(dx, dy, dotSize, 0, Math.PI * 2);
             ctx.fill();
           }
-        });
-      } else {
-        // HOA CÚC: 2 lớp cánh thon mảnh so le
-        const layers = [
-          { scale: 0.75, dots: 70, rot: Math.PI / 12, amp: 0.42 },
-          { scale: 1.0, dots: 96, rot: 0, amp: 0.42 }
-        ];
-
-        layers.forEach(layer => {
+        } else {
           for (let i = 0; i < layer.dots; i++) {
             const theta = (i / layer.dots) * Math.PI * 2;
             const relativeTheta = theta + layer.rot;
@@ -413,8 +397,8 @@ document.addEventListener("DOMContentLoaded", () => {
             ctx.arc(dx, dy, dotSize, 0, Math.PI * 2);
             ctx.fill();
           }
-        });
-      }
+        }
+      });
       ctx.restore();
     }
 
@@ -525,7 +509,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let color, numPetals, type;
 
     if (rand < 0.25) {
-      // 25% Hoa Đào (Hồng phấn FFB7B2 chuẩn)
+      // 25% Hoa Đào (Hồng đào FFB7B2 chuẩn)
       color = "#FF8EA4"; 
       numPetals = 5;
       type = "dao";
