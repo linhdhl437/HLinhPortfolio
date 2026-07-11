@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiệu ứng Mực Loang - Xanh Ngọc & Hồng Đào</title>
+    <style>
+      /* Reset cơ bản và thiết lập background sáng để màu mực nổi bật */
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: #fdfbf7; /* Màu giấy hơi ngả vàng nhẹ */
+        overflow: hidden;
+        cursor: pointer;
+        font-family: sans-serif;
+      }
+
+      .instruction {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #888;
+        pointer-events: none;
+      }
+
+      /* Lớp CSS chính cho từng giọt mực */
+      .ink-drop {
+        position: absolute;
+        pointer-events: none; /* Không cản trở các click tiếp theo */
+        transform: translate(-50%, -50%);
+
+        /* Hiệu ứng hòa trộn màu nước (chỉ hoạt động tốt trên nền sáng) */
+        mix-blend-mode: multiply;
+
+        /* Chuyển động lan rộng và mờ dần */
+        animation: splash 1.5s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+      }
+
+      @keyframes splash {
+        0% {
+          width: 0px;
+          height: 0px;
+          opacity: 0.8;
+          filter: blur(1px);
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          width: var(--max-size);
+          height: var(--max-size);
+          opacity: 0;
+          filter: blur(8px); /* Nhòe dần khi tan vào giấy */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="instruction">Click vào bất cứ đâu trên màn hình</div>
+
+    <script>
+      document.addEventListener("click", function (e) {
+        createInkSplash(e.clientX, e.clientY);
+      });
+
+      function createInkSplash(x, y) {
+        // Tập hợp màu: Xanh ngọc (Teal/Cyan) và Hồng hoa đào (Cherry Blossom)
+        const colors = [
+          "#00CED1", // Dark Turquoise
+          "#40E0D0", // Turquoise
+          "#FFB7C5", // Cherry Blossom Pink
+          "#FF91A4", // Salmon Pink
+        ];
+
+        // Tạo 3-5 giọt mực chồng lên nhau trong 1 lần click để nhìn tự nhiên hơn
+        const dropsCount = Math.floor(Math.random() * 3) + 3;
+
+        for (let i = 0; i < dropsCount; i++) {
+          const drop = document.createElement("div");
+          drop.classList.add("ink-drop");
+
+          // Chọn màu ngẫu nhiên
+          const color = colors[Math.floor(Math.random() * colors.length)];
+          drop.style.backgroundColor = color;
+
+          // Vị trí hơi lệch nhau một chút quanh tọa độ click
+          const offsetX = (Math.random() - 0.5) * 30;
+          const offsetY = (Math.random() - 0.5) * 30;
+          drop.style.left = x + offsetX + "px";
+          drop.style.top = y + offsetY + "px";
+
+          // Kích thước lan tỏa ngẫu nhiên (từ 100px đến 300px)
+          const maxSize = Math.random() * 200 + 100;
+          drop.style.setProperty("--max-size", maxSize + "px");
+
+          // Thuật toán bóp méo border-radius để tạo hình vết mực ngẫu nhiên, không bị tròn vo
+          const br1 = Math.random() * 40 + 30;
+          const br2 = Math.random() * 40 + 30;
+          const br3 = Math.random() * 40 + 30;
+          const br4 = Math.random() * 40 + 30;
+          drop.style.borderRadius = `${br1}% ${100 - br1}% ${br2}% ${100 - br2}% / ${br3}% ${br4}% ${100 - br4}% ${100 - br3}%`;
+
+          // Độ trễ nhẹ giữa các giọt để hiệu ứng lan ra gợn sóng từ từ
+          const delay = Math.random() * 0.15;
+          drop.style.animationDelay = delay + "s";
+
+          document.body.appendChild(drop);
+
+          // Tự động xóa element sau khi animation kết thúc (1.5s + delay)
+          // Giúp DOM không bị nặng khi click nhiều lần
+          setTimeout(() => {
+            drop.remove();
+          }, 1700);
+        }
+      }
+    </script>
+  </body>
+</html>

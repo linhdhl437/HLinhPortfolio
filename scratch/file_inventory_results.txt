@@ -1,0 +1,225 @@
+FILE INVENTORY RESULTS
+======================
+
+■ ACTIVE FILES (USED BY WEBSITE)
+-------------------------------
+  * PortfolioAssets/AnhIntro1.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/image_page_1_1.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/image_page_1_2.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/image_page_2_1.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/image_page_2_2.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/image_page_2_3.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/image_page_3_1.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/image_page_3_2.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/image_page_3_3.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/image_page_4_1.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/image_page_4_2.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/image_page_4_3.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/image_page_5_1.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/image_page_5_2.png
+  * PortfolioAssets/CHẶNG 3/Image/Ảnh10_C3_Tác vụ 3_Prompt nâng cao.JPG
+  * PortfolioAssets/CHẶNG 3/Image/Ảnh1_C3_Tác vụ 1_Prompt cơ bản.jpg
+  * PortfolioAssets/CHẶNG 3/Image/Ảnh2_C3_Tác vụ 1_Prompt cơ bản.JPG
+  * PortfolioAssets/CHẶNG 3/Image/Ảnh3_C3_Tác vụ 1_Prompt nâng cao.JPG
+  * PortfolioAssets/CHẶNG 3/Image/Ảnh4_C3_Tác vụ 1_Prompt nâng cao.JPG
+  * PortfolioAssets/CHẶNG 3/Image/Ảnh5_C3_Tác vụ 2_Prompt cơ bản.jpg
+  * PortfolioAssets/CHẶNG 3/Image/Ảnh5_C3_Tác vụ 3_Prompt cải tiến.JPG
+  * PortfolioAssets/CHẶNG 3/Image/Ảnh6_C3_Tác vụ 2_Prompt cải tiến.JPG
+  * PortfolioAssets/CHẶNG 3/Image/Ảnh7_C3_Tác vụ 2_Prompt nâng cao.JPG
+  * PortfolioAssets/CHẶNG 3/Image/Ảnh8_C3_Tác vụ 2_Prompt nâng cao.JPG
+  * PortfolioAssets/CHẶNG 3/Image/Ảnh9_C3_Tác vụ 3_Prompt nâng cao.JPG
+  * PortfolioAssets/CHẶNG 4/Image/Ảnh 1 Không gian làm việc trên Notion do cá nhân thiết lập.jpg
+  * PortfolioAssets/CHẶNG 4/Image/Ảnh 10. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg
+  * PortfolioAssets/CHẶNG 4/Image/Ảnh 11. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg
+  * PortfolioAssets/CHẶNG 4/Image/Ảnh 2.Bảng theo dõi tổng quan nhiệm vụ_.jpg
+  * PortfolioAssets/CHẶNG 4/Image/Ảnh 3. Bảng Kanban theo dõi tiến độ trên Notion._.jpg
+  * PortfolioAssets/CHẶNG 4/Image/Ảnh 4. Project timeline_.jpg
+  * PortfolioAssets/CHẶNG 4/Image/Ảnh 5. Lịch sử chỉnh sửa nội dung trên Google Docs._.JPG
+  * PortfolioAssets/CHẶNG 4/Image/Ảnh 6. Nội dung cá nhân đóng góp trực tiếp trên tài liệu công tác._.jpg
+  * PortfolioAssets/CHẶNG 4/Image/Ảnh 7. Cấu trúc thư mục Google Drive của nhóm._.PNG
+  * PortfolioAssets/CHẶNG 4/Image/Ảnh 8. Cách đặt tên file.jpg
+  * PortfolioAssets/CHẶNG 4/Image/Ảnh 9. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg
+  * PortfolioAssets/CHẶNG 5/Image/Ảnh 2_C5.JPG
+  * PortfolioAssets/CHẶNG 5/Image/Ảnh 3_C5.JPG
+  * PortfolioAssets/CHẶNG 5/Image/Ảnh 4_C5.JPG
+  * PortfolioAssets/CHẶNG 5/Image/Ảnh 5_C5.JPG
+  * PortfolioAssets/CHẶNG 5/Image/Ảnh 6_C5.PNG
+  * PortfolioAssets/CHẶNG 5/Image/Ảnh 7_C5.JPG
+  * PortfolioAssets/CHẶNG 5/Image/Ảnh1_C5.JPG
+  * PortfolioAssets/HanhTrinh.jpg
+  * PortfolioAssets/MoDau.jpg
+  * PortfolioAssets/MÃ QR CHO PROMPT LIBRARY.png
+  * PortfolioAssets/NhinLai.jpg
+  * PortfolioAssets/ToiLaAi.jpe
+  * PortfolioAssets/VideoIntroPhanMoDau.mp4
+  * PortfolioAssets/ẢNH AVARTAR PHẦN MỞ ĐẦU_.jpg
+  * css/animations.css
+  * css/base.css
+  * css/components.css
+  * css/sections.css
+  * css/variables.css
+  * index.html
+  * js/ambient-canvas.js
+  * js/custom-cursor.js
+  * js/lightbox.js
+  * js/loading.js
+  * js/main.js
+  * js/scroll-effects.js
+  * js/stage-content.js
+  * stage_details.html
+
+■ UNUSED FILES (OBSOLETE / LEFT-OVERS)
+-------------------------------------
+  * PortfolioAssets/CHẶNG 1/THAO TÁC CƠ BẢN VỚI TỆP TIN VÀ THƯ MỤC.pdf
+  * PortfolioAssets/CHẶNG 1/THAO TÁC CƠ BẢN VỚI TỆP TIN VÀ THƯ MỤC_text.txt
+  * PortfolioAssets/CHẶNG 1/extracted_images/full_page_1.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/full_page_2.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/full_page_3.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/full_page_4.png
+  * PortfolioAssets/CHẶNG 1/extracted_images/full_page_5.png
+  * PortfolioAssets/CHẶNG 1/index.html
+  * PortfolioAssets/CHẶNG 2/BÁO CÁO TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN.pdf
+  * PortfolioAssets/CHẶNG 2/BÁO CÁO TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN_text.txt
+  * PortfolioAssets/CHẶNG 2/extracted_images/full_page_1.png
+  * PortfolioAssets/CHẶNG 2/extracted_images/full_page_2.png
+  * PortfolioAssets/CHẶNG 2/extracted_images/full_page_3.png
+  * PortfolioAssets/CHẶNG 2/extracted_images/full_page_4.png
+  * PortfolioAssets/CHẶNG 2/extracted_images/full_page_5.png
+  * PortfolioAssets/CHẶNG 2/extracted_images/full_page_6.png
+  * PortfolioAssets/CHẶNG 2/extracted_images/full_page_7.png
+  * PortfolioAssets/CHẶNG 2/index.html
+  * PortfolioAssets/CHẶNG 3/BÁO CÁO PHÂN TÍCH HIỆU QUẢ CỦA PROMPT ENGINEERING_TRONG HỌC TẬP.pdf
+  * PortfolioAssets/CHẶNG 3/BÁO CÁO PHÂN TÍCH HIỆU QUẢ CỦA PROMPT ENGINEERING_TRONG HỌC TẬP_text.txt
+  * PortfolioAssets/CHẶNG 3/ViTriChenAnh.txt
+  * PortfolioAssets/CHẶNG 3/extracted_images/full_page_1.png
+  * PortfolioAssets/CHẶNG 3/extracted_images/full_page_10.png
+  * PortfolioAssets/CHẶNG 3/extracted_images/full_page_2.png
+  * PortfolioAssets/CHẶNG 3/extracted_images/full_page_3.png
+  * PortfolioAssets/CHẶNG 3/extracted_images/full_page_4.png
+  * PortfolioAssets/CHẶNG 3/extracted_images/full_page_5.png
+  * PortfolioAssets/CHẶNG 3/extracted_images/full_page_6.png
+  * PortfolioAssets/CHẶNG 3/extracted_images/full_page_7.png
+  * PortfolioAssets/CHẶNG 3/extracted_images/full_page_8.png
+  * PortfolioAssets/CHẶNG 3/extracted_images/full_page_9.png
+  * PortfolioAssets/CHẶNG 3/extracted_images/Ảnh10_C3_Tác vụ 3_Prompt nâng cao.JPG
+  * PortfolioAssets/CHẶNG 3/extracted_images/Ảnh1_C3_Tác vụ 1_Prompt cơ bản.jpg
+  * PortfolioAssets/CHẶNG 3/extracted_images/Ảnh2_C3_Tác vụ 1_Prompt cơ bản.JPG
+  * PortfolioAssets/CHẶNG 3/extracted_images/Ảnh3_C3_Tác vụ 1_Prompt nâng cao.JPG
+  * PortfolioAssets/CHẶNG 3/extracted_images/Ảnh4_C3_Tác vụ 1_Prompt nâng cao.JPG
+  * PortfolioAssets/CHẶNG 3/extracted_images/Ảnh5_C3_Tác vụ 2_Prompt cơ bản.jpg
+  * PortfolioAssets/CHẶNG 3/extracted_images/Ảnh5_C3_Tác vụ 3_Prompt cải tiến.JPG
+  * PortfolioAssets/CHẶNG 3/extracted_images/Ảnh6_C3_Tác vụ 2_Prompt cải tiến.JPG
+  * PortfolioAssets/CHẶNG 3/extracted_images/Ảnh7_C3_Tác vụ 2_Prompt nâng cao.JPG
+  * PortfolioAssets/CHẶNG 3/extracted_images/Ảnh8_C3_Tác vụ 2_Prompt nâng cao.JPG
+  * PortfolioAssets/CHẶNG 3/extracted_images/Ảnh9_C3_Tác vụ 3_Prompt nâng cao.JPG
+  * PortfolioAssets/CHẶNG 3/index.html
+  * PortfolioAssets/CHẶNG 4/BÁO CÁO SỬ DỤNG CÔNG CỤ HỢP TÁC TRỰC TUYẾN VÀ TRẢI NGHIỆM QUẢN LÝ CÁ NHÂN TRONG DỰ ÁN NHÓM  .pdf
+  * PortfolioAssets/CHẶNG 4/BÁO CÁO SỬ DỤNG CÔNG CỤ HỢP TÁC TRỰC TUYẾN VÀ TRẢI NGHIỆM QUẢN LÝ CÁ NHÂN TRONG DỰ ÁN NHÓM  _text.txt
+  * PortfolioAssets/CHẶNG 4/Image/Ảnh 12. Minh chứng tham gia dựng video và hoàn thiện sản phẩm._.jpg
+  * PortfolioAssets/CHẶNG 4/ViTriChenAnh.txt
+  * PortfolioAssets/CHẶNG 4/extracted_images/full_page_1.png
+  * PortfolioAssets/CHẶNG 4/extracted_images/full_page_2.png
+  * PortfolioAssets/CHẶNG 4/extracted_images/full_page_3.png
+  * PortfolioAssets/CHẶNG 4/extracted_images/full_page_4.png
+  * PortfolioAssets/CHẶNG 4/extracted_images/full_page_5.png
+  * PortfolioAssets/CHẶNG 4/extracted_images/full_page_6.png
+  * PortfolioAssets/CHẶNG 4/extracted_images/full_page_7.png
+  * PortfolioAssets/CHẶNG 4/extracted_images/Ảnh 1 Không gian làm việc trên Notion do cá nhân thiết lập.jpg
+  * PortfolioAssets/CHẶNG 4/extracted_images/Ảnh 10. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg
+  * PortfolioAssets/CHẶNG 4/extracted_images/Ảnh 11. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg
+  * PortfolioAssets/CHẶNG 4/extracted_images/Ảnh 12. Minh chứng tham gia dựng video và hoàn thiện sản phẩm._.jpg
+  * PortfolioAssets/CHẶNG 4/extracted_images/Ảnh 2.Bảng theo dõi tổng quan nhiệm vụ_.jpg
+  * PortfolioAssets/CHẶNG 4/extracted_images/Ảnh 3. Bảng Kanban theo dõi tiến độ trên Notion._.jpg
+  * PortfolioAssets/CHẶNG 4/extracted_images/Ảnh 4. Project timeline_.jpg
+  * PortfolioAssets/CHẶNG 4/extracted_images/Ảnh 5. Lịch sử chỉnh sửa nội dung trên Google Docs._.JPG
+  * PortfolioAssets/CHẶNG 4/extracted_images/Ảnh 6. Nội dung cá nhân đóng góp trực tiếp trên tài liệu công tác._.jpg
+  * PortfolioAssets/CHẶNG 4/extracted_images/Ảnh 7. Cấu trúc thư mục Google Drive của nhóm._.PNG
+  * PortfolioAssets/CHẶNG 4/extracted_images/Ảnh 8. Cách đặt tên file.jpg
+  * PortfolioAssets/CHẶNG 4/extracted_images/Ảnh 9. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg
+  * PortfolioAssets/CHẶNG 4/index.html
+  * PortfolioAssets/CHẶNG 5/BÁO CÁO DỰ ÁN SÁNG TẠO NỘI DUNG SỐ BẰNG AI .pdf
+  * PortfolioAssets/CHẶNG 5/BÁO CÁO DỰ ÁN SÁNG TẠO NỘI DUNG SỐ BẰNG AI _text.txt
+  * PortfolioAssets/CHẶNG 5/ViTriChenAnh.txt
+  * PortfolioAssets/CHẶNG 5/extracted_images/full_page_1.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/full_page_2.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/full_page_3.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/full_page_4.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/full_page_5.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/full_page_6.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/full_page_7.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/full_page_8.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_1.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_10.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_11.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_12.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_13.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_14.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_15.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_16.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_17.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_18.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_19.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_2.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_20.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_21.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_22.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_23.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_24.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_3.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_4.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_5.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_6.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_7.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_8.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/image_page_8_9.png
+  * PortfolioAssets/CHẶNG 5/extracted_images/Ảnh 2_C5.JPG
+  * PortfolioAssets/CHẶNG 5/extracted_images/Ảnh 3_C5.JPG
+  * PortfolioAssets/CHẶNG 5/extracted_images/Ảnh 4_C5.JPG
+  * PortfolioAssets/CHẶNG 5/extracted_images/Ảnh 5_C5.JPG
+  * PortfolioAssets/CHẶNG 5/extracted_images/Ảnh 6_C5.PNG
+  * PortfolioAssets/CHẶNG 5/extracted_images/Ảnh 7_C5.JPG
+  * PortfolioAssets/CHẶNG 5/extracted_images/Ảnh1_C5.JPG
+  * PortfolioAssets/CHẶNG 5/index.html
+  * PortfolioAssets/CHẶNG 6/BÁO CÁO SỬ DỤNG AI CÓ TRÁCH NHIỆM TRONG HỌC TẬP VÀ NGHIÊN CỨU .pdf
+  * PortfolioAssets/CHẶNG 6/BÁO CÁO SỬ DỤNG AI CÓ TRÁCH NHIỆM TRONG HỌC TẬP VÀ NGHIÊN CỨU _text.txt
+  * PortfolioAssets/CHẶNG 6/extracted_images/full_page_1.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/full_page_2.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/full_page_3.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/full_page_4.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/full_page_5.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/full_page_6.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/full_page_7.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/full_page_8.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_1.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_10.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_11.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_12.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_13.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_14.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_15.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_16.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_17.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_18.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_19.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_2.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_20.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_21.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_3.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_4.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_5.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_6.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_7.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_8.png
+  * PortfolioAssets/CHẶNG 6/extracted_images/image_page_8_9.png
+  * PortfolioAssets/CHẶNG 6/index.html
+  * PortfolioAssets/index.html
+  * PortfolioAssets/ulis_logo.png
+  * PortfolioAssets/vnu_logo.png
+  * ThuMucNhap/HLinhFinal.txt
+  * check_images.py
+  * check_pdfs.py
+  * dump_ch2.py
+  * read_pdf_text.py
+  * read_stage_indices.py
+  * render_pdf_pages.py
+  * search_anchors.py

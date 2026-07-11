@@ -1,0 +1,45 @@
+1: 114: <div class="page-break-indicator">--- Trang 1 ---</div>
+1: 134: <div class="page-break-indicator">--- Trang 2 ---</div>
+1: 159: <div class="page-break-indicator">--- Trang 3 ---</div>
+1: 193: <div class="page-break-indicator">--- Trang 4 ---</div>
+1: 224: <div class="page-break-indicator">--- Trang 5 ---</div>
+2: 133: <div class="page-break-indicator">--- Trang 1 ---</div>
+2: 164: <td colspan="3" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 2 ---</td>
+2: 204: <div class="page-break-indicator">--- Trang 3 ---</div>
+2: 268: <td colspan="10" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 4 ---</td>
+2: 323: <td colspan="10" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 5 ---</td>
+2: 378: <td colspan="10" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 6 ---</td>
+2: 402: <div class="page-break-indicator">--- Trang 7 ---</div>
+3: 163: <div class="page-break-indicator">--- Trang 1 ---</div>
+3: 181: <div class="page-break-indicator">--- Trang 2 ---</div>
+3: 255: <td colspan="3" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 3 ---</td>
+3: 347: <div class="page-break-indicator">--- Trang 4 ---</div>
+3: 397: <div class="page-break-indicator">--- Trang 5 ---</div>
+3: 496: <td colspan="4" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 6 ---</td>
+3: 546: <div class="page-break-indicator">--- Trang 7 ---</div>
+3: 622: <td colspan="3" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 8 ---</td>
+3: 694: <div class="page-break-indicator">--- Trang 9 ---</div>
+3: 701: <div class="page-break-indicator">--- Trang 10 ---</div>
+4: 165: <div class="page-break-indicator">--- Trang 1 ---</div>
+4: 188: <div class="page-break-indicator">--- Trang 2 ---</div>
+4: 241: <div class="page-break-indicator">--- Trang 3 ---</div>
+4: 312: <div class="page-break-indicator">--- Trang 4 ---</div>
+4: 366: <div class="page-break-indicator">--- Trang 5 ---</div>
+4: 421: <div class="page-break-indicator">--- Trang 6 ---</div>
+4: 450: <td colspan="3" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 7 ---</td>
+5: 298: <div class="page-break-indicator">--- Trang 1 ---</div>
+5: 347: <div class="page-break-indicator">--- Trang 2 ---</div>
+5: 378: <div class="page-break-indicator">--- Trang 3 ---</div>
+5: 410: <td colspan="3" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 4 ---</td>
+5: 475: <div class="page-break-indicator">--- Trang 5 ---</div>
+5: 517: <td colspan="5" style="text-align: center; background: #fafafa; font-size: 0.8rem; color: #a0aec0; border: none; padding: 2px;">--- Trang 6 ---</td>
+5: 558: <div class="page-break-indicator">--- Trang 7 ---</div>
+5: 567: <div class="page-break-indicator">--- Trang 8 (Infographic) ---</div>
+6: 210: <div class="page-break-indicator">--- Trang 1 ---</div>
+6: 223: <div class="page-break-indicator">--- Trang 2 ---</div>
+6: 244: <div class="page-break-indicator">--- Trang 3 ---</div>
+6: 267: <div class="page-break-indicator">--- Trang 4 ---</div>
+6: 303: <div class="page-break-indicator">--- Trang 5 ---</div>
+6: 333: <div class="page-break-indicator">--- Trang 6 ---</div>
+6: 343: <div class="page-break-indicator">--- Trang 7 ---</div>
+6: 351: <div class="page-break-indicator">--- Trang 8 (Infographic) ---</div>

@@ -1,0 +1,655 @@
+COMPREHENSIVE OPACITY AUDIT RESULTS
+===================================
+
+File: css/animations.css:6
+Content: opacity: 0;
+Type: opacity
+----------------------------------------
+File: css/animations.css:11
+Content: opacity: 1;
+Type: opacity
+----------------------------------------
+File: css/animations.css:15
+Content: opacity: 1;
+Type: opacity
+----------------------------------------
+File: css/animations.css:24
+Content: opacity: 0;
+Type: opacity
+----------------------------------------
+File: css/animations.css:28
+Content: opacity: 1;
+Type: opacity
+----------------------------------------
+File: css/animations.css:37
+Content: opacity: 0;
+Type: opacity
+----------------------------------------
+File: css/animations.css:41
+Content: opacity: 1;
+Type: opacity
+----------------------------------------
+File: css/animations.css:62
+Content: opacity: 0;
+Type: opacity
+----------------------------------------
+File: css/animations.css:65
+Content: opacity: 0.8;
+Type: opacity
+----------------------------------------
+File: css/animations.css:68
+Content: opacity: 0.8;
+Type: opacity
+----------------------------------------
+File: css/animations.css:72
+Content: opacity: 0;
+Type: opacity
+----------------------------------------
+File: css/animations.css:79
+Content: box-shadow: 0 0 0 0 rgba(139, 0, 0, 0.4);
+Type: rgba
+----------------------------------------
+File: css/animations.css:82
+Content: box-shadow: 0 0 0 10px rgba(139, 0, 0, 0);
+Type: rgba
+----------------------------------------
+File: css/animations.css:85
+Content: box-shadow: 0 0 0 0 rgba(139, 0, 0, 0);
+Type: rgba
+----------------------------------------
+File: css/animations.css:92
+Content: opacity: 1;
+Type: opacity
+----------------------------------------
+File: css/animations.css:96
+Content: opacity: 0;
+Type: opacity
+----------------------------------------
+File: css/animations.css:116
+Content: opacity: 0;
+Type: opacity
+----------------------------------------
+File: css/animations.css:122
+Content: opacity: 1;
+Type: opacity
+----------------------------------------
+File: css/animations.css:140
+Content: background: radial-gradient(circle, rgba(139, 0, 0, 0.1) 0%, rgba(139, 0, 0, 0) 70%);
+Type: rgba
+----------------------------------------
+File: css/base.css:34
+Content: opacity: 0.04;
+Type: opacity
+----------------------------------------
+File: css/base.css:42
+Content: background-color: rgba(139, 0, 0, 0.15); /* Vermillion tint */
+Type: rgba
+----------------------------------------
+File: css/base.css:52
+Content: color: rgba(28, 28, 28, 0.05);
+Type: rgba
+----------------------------------------
+File: css/base.css:103
+Content: background: rgba(184, 144, 71, 0.3); /* Accent gold thumb */
+Type: rgba
+----------------------------------------
+File: css/components.css:12
+Content: background-color: rgba(249, 249, 246, 0.85); /* Semitransparent paper */
+Type: rgba
+----------------------------------------
+File: css/components.css:135
+Content: box-shadow: 0 4px 12px rgba(139, 0, 0, 0.15);
+Type: rgba
+----------------------------------------
+File: css/components.css:169
+Content: background: rgba(253, 252, 249, 0.22); /* Lower opacity (22%) to let lively watercolor landscapes bleed through elegantly */
+Type: rgba
+----------------------------------------
+File: css/components.css:172
+Content: border: 1px solid rgba(184, 144, 71, 0.25); /* Gold-accent border */
+Type: rgba
+----------------------------------------
+File: css/components.css:177
+Content: box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+Type: rgba
+----------------------------------------
+File: css/components.css:183
+Content: border-color: rgba(184, 144, 71, 0.7);
+Type: rgba
+----------------------------------------
+File: css/components.css:184
+Content: background: rgba(253, 252, 249, 0.42); /* Keep transparency on hover (42%) */
+Type: rgba
+----------------------------------------
+File: css/components.css:185
+Content: box-shadow: 0 12px 35px rgba(184, 144, 71, 0.12);
+Type: rgba
+----------------------------------------
+File: css/components.css:197
+Content: opacity: 0.45; /* Semi-visible standard border decoration */
+Type: opacity
+----------------------------------------
+File: css/components.css:216
+Content: opacity: 1;
+Type: opacity
+----------------------------------------
+File: css/components.css:229
+Content: background-color: rgba(20, 20, 20, 0.95); /* Deep ink backdrop */
+Type: rgba
+----------------------------------------
+File: css/components.css:234
+Content: opacity: 0;
+Type: opacity
+----------------------------------------
+File: css/components.css:240
+Content: opacity: 1;
+Type: opacity
+----------------------------------------
+File: css/components.css:303
+Content: .lightbox-prev { left: 0; background: rgba(0,0,0,0.5); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+Type: rgba
+----------------------------------------
+File: css/components.css:304
+Content: .lightbox-next { right: 0; background: rgba(0,0,0,0.5); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+Type: rgba
+----------------------------------------
+File: css/components.css:305
+Content: .lightbox-close { right: 10px; top: 10px; position: fixed; background: rgba(0,0,0,0.5); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+Type: rgba
+----------------------------------------
+File: css/components.css:313
+Content: opacity: 0.12; /* Subtle opacity to respect academic readability */
+Type: opacity
+----------------------------------------
+File: css/components.css:350
+Content: border: 1px solid rgba(139, 0, 0, 0.3);
+Type: rgba
+----------------------------------------
+File: css/components.css:362
+Content: box-shadow: 0 4px 10px rgba(139, 0, 0, 0.15);
+Type: rgba
+----------------------------------------
+File: css/components.css:411
+Content: border: 1px solid rgba(139, 0, 0, 0.4); /* soft vermillion bleed outline */
+Type: rgba
+----------------------------------------
+File: css/components.css:412
+Content: background-color: rgba(184, 144, 71, 0.08); /* faint gold watercolor wash */
+Type: rgba
+----------------------------------------
+File: css/components.css:429
+Content: background-color: rgba(139, 0, 0, 0.08) !important;
+Type: rgba
+----------------------------------------
+File: css/components.css:436
+Content: background-color: rgba(28, 28, 28, 0) !important;
+Type: rgba
+----------------------------------------
+File: css/components.css:437
+Content: box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* ink splash */
+Type: rgba
+----------------------------------------
+File: css/components.css:453
+Content: border: 1px solid rgba(184, 144, 71, 0.35);
+Type: rgba
+----------------------------------------
+File: css/components.css:454
+Content: background: rgba(253, 252, 249, 0.45);
+Type: rgba
+----------------------------------------
+File: css/components.css:459
+Content: box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), inset 0 1px 3px rgba(184, 144, 71, 0.05);
+Type: rgba
+----------------------------------------
+File: css/components.css:464
+Content: border-color: rgba(184, 144, 71, 0.7);
+Type: rgba
+----------------------------------------
+File: css/components.css:465
+Content: background: rgba(253, 252, 249, 0.85);
+Type: rgba
+----------------------------------------
+File: css/components.css:466
+Content: box-shadow: 0 3px 10px rgba(184, 144, 71, 0.12);
+Type: rgba
+----------------------------------------
+File: css/components.css:489
+Content: opacity: 0.75;
+Type: opacity
+----------------------------------------
+File: css/components.css:490
+Content: background: rgba(0, 0, 0, 0.03);
+Type: rgba
+----------------------------------------
+File: css/components.css:491
+Content: border-color: rgba(0, 0, 0, 0.15);
+Type: rgba
+----------------------------------------
+File: css/components.css:496
+Content: opacity: 0.6;
+Type: opacity
+----------------------------------------
+File: css/sections.css:22
+Content: opacity: 0;
+Type: opacity
+----------------------------------------
+File: css/sections.css:52
+Content: opacity: 0;
+Type: opacity
+----------------------------------------
+File: css/sections.css:61
+Content: background: rgba(255, 255, 255, 0.88); /* Increased opacity to 0.88 for excellent text contrast */
+Type: rgba
+----------------------------------------
+File: css/sections.css:65
+Content: border: 1px solid rgba(184, 144, 71, 0.4); /* Gold border */
+Type: rgba
+----------------------------------------
+File: css/sections.css:66
+Content: box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+Type: rgba
+----------------------------------------
+File: css/sections.css:83
+Content: opacity: 0.7;
+Type: opacity
+----------------------------------------
+File: css/sections.css:94
+Content: color: rgba(28, 28, 28, 0.035);
+Type: rgba
+----------------------------------------
+File: css/sections.css:154
+Content: box-shadow: 0 4px 12px rgba(139, 0, 0, 0.25);
+Type: rgba
+----------------------------------------
+File: css/sections.css:176
+Content: background: linear-gradient(to bottom, rgba(249, 249, 246, 0.75) 0%, rgba(249, 249, 246, 0.75) 100%),
+Type: rgba
+----------------------------------------
+File: css/sections.css:249
+Content: color: rgba(184, 144, 71, 0.2);
+Type: rgba
+----------------------------------------
+File: css/sections.css:279
+Content: box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+Type: rgba
+----------------------------------------
+File: css/sections.css:298
+Content: box-shadow: 0 4px 8px rgba(139, 0, 0, 0.3);
+Type: rgba
+----------------------------------------
+File: css/sections.css:299
+Content: border: 2px solid rgba(255, 255, 255, 0.2);
+Type: rgba
+----------------------------------------
+File: css/sections.css:310
+Content: box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+Type: rgba
+----------------------------------------
+File: css/sections.css:338
+Content: background: linear-gradient(to bottom, rgba(249, 249, 246, 0.55) 0%, rgba(249, 249, 246, 0.55) 100%),
+Type: rgba
+----------------------------------------
+File: css/sections.css:344
+Content: background: linear-gradient(to bottom, rgba(249, 249, 246, 0.58) 0%, rgba(249, 249, 246, 0.58) 100%),
+Type: rgba
+----------------------------------------
+File: css/sections.css:350
+Content: background: linear-gradient(to bottom, rgba(249, 249, 246, 0.58) 0%, rgba(249, 249, 246, 0.58) 100%),
+Type: rgba
+----------------------------------------
+File: css/sections.css:426
+Content: background: rgba(253, 252, 249, 0.22); /* Very transparent (22%) to bleed background beautifully */
+Type: rgba
+----------------------------------------
+File: css/sections.css:429
+Content: border: 1px solid rgba(184, 144, 71, 0.2);
+Type: rgba
+----------------------------------------
+File: css/sections.css:432
+Content: box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+Type: rgba
+----------------------------------------
+File: css/sections.css:450
+Content: background-color: rgba(253, 252, 249, 0.62);
+Type: rgba
+----------------------------------------
+File: css/sections.css:505
+Content: background: linear-gradient(180deg, rgba(184,144,71,0.1) 0%, rgba(184,144,71,0.6) 10%, rgba(184,144,71,0.6) 90%, rgba(184,144,71,0.1) 100%);
+Type: rgba
+----------------------------------------
+File: css/sections.css:623
+Content: background-color: rgba(28,28,28,0.02);
+Type: rgba
+----------------------------------------
+File: css/sections.css:736
+Content: background-color: rgba(184, 144, 71, 0.05);
+Type: rgba
+----------------------------------------
+File: css/sections.css:791
+Content: opacity: 0.05;
+Type: opacity
+----------------------------------------
+File: css/sections.css:859
+Content: border-top: 1px solid rgba(255,255,255,0.06);
+Type: rgba
+----------------------------------------
+File: css/sections.css:987
+Content: background: rgba(253, 252, 249, 0.74); /* Semi-transparent parchment background */
+Type: rgba
+----------------------------------------
+File: css/sections.css:991
+Content: box-shadow: 0 12px 35px rgba(0, 0, 0, 0.04);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1003
+Content: box-shadow: 0 0 14px rgba(139, 0, 0, 0.3), inset 1px 0 1px rgba(255,255,255,0.25);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1007
+Content: opacity: 0;
+Type: opacity
+----------------------------------------
+File: css/sections.css:1024
+Content: box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1053
+Content: opacity: 1;
+Type: opacity
+----------------------------------------
+File: css/sections.css:1059
+Content: opacity: 1;
+Type: opacity
+----------------------------------------
+File: css/sections.css:1078
+Content: border-top: 1px dashed rgba(184, 144, 71, 0.35);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1138
+Content: box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1170
+Content: background: rgba(253, 252, 249, 0.22); /* 22% opacity for background landscape visibility */
+Type: rgba
+----------------------------------------
+File: css/sections.css:1173
+Content: border: 1px solid rgba(184, 144, 71, 0.25);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1181
+Content: box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1185
+Content: background: rgba(184, 144, 71, 0.08);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1186
+Content: border-color: rgba(184, 144, 71, 0.6);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1194
+Content: box-shadow: 0 6px 20px rgba(139, 0, 0, 0.25);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1216
+Content: color: rgba(255, 255, 255, 0.8) !important;
+Type: rgba
+----------------------------------------
+File: css/sections.css:1230
+Content: opacity: 0;
+Type: opacity
+----------------------------------------
+File: css/sections.css:1237
+Content: opacity: 1;
+Type: opacity
+----------------------------------------
+File: css/sections.css:1319
+Content: background: rgba(253, 252, 249, 0.22); /* 22% opacity */
+Type: rgba
+----------------------------------------
+File: css/sections.css:1322
+Content: border: 1px solid rgba(184, 144, 71, 0.25);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1327
+Content: box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1332
+Content: border-color: rgba(184, 144, 71, 0.6);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1333
+Content: background: rgba(253, 252, 249, 0.42); /* 42% opacity on hover */
+Type: rgba
+----------------------------------------
+File: css/sections.css:1334
+Content: box-shadow: 0 10px 25px rgba(184, 144, 71, 0.08);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1342
+Content: border-bottom: 1px dashed rgba(184, 144, 71, 0.25);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1348
+Content: background: rgba(139, 0, 0, 0.08);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1394
+Content: border: 1px solid rgba(184, 144, 71, 0.25);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1395
+Content: box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1403
+Content: background: rgba(253, 252, 249, 0.22); /* 22% opacity */
+Type: rgba
+----------------------------------------
+File: css/sections.css:1420
+Content: border-bottom: 1px solid rgba(184, 144, 71, 0.15);
+Type: rgba
+----------------------------------------
+File: css/sections.css:1431
+Content: background: rgba(184, 144, 71, 0.06);
+Type: rgba
+----------------------------------------
+File: css/variables.css:19
+Content: --border-ink: rgba(28, 28, 28, 0.1);
+Type: rgba
+----------------------------------------
+File: css/variables.css:20
+Content: --border-gold: rgba(184, 144, 71, 0.25);
+Type: rgba
+----------------------------------------
+File: css/variables.css:21
+Content: --ink-spread: rgba(0, 0, 0, 0.04);
+Type: rgba
+----------------------------------------
+File: index.html:44
+Content: <button id="btn-skip-intro" class="btn-skip-intro" style="position: absolute; top: 24px; right: 24px; z-index: 10; background: rgba(0, 0, 0, 0.75); border: 1px solid rgba(255,255,255,0.4); color: #ffffff; padding: 8px 18px; font-family: var(--font-serif); font-size: 0.95rem; font-weight: 600; border-radius: 4px; cursor: pointer; backdrop-filter: blur(8px); transition: background 0.3s, border-color 0.3s, transform 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+Type: rgba
+----------------------------------------
+File: index.html:93
+Content: <svg class="hero-cloud animate-float-cloud" style="position: absolute; top: 15%; left: 5%; width: 120px; opacity: 0.08; z-index: 1;" viewBox="0 0 100 100">
+Type: opacity
+----------------------------------------
+File: index.html:96
+Content: <svg class="hero-cloud animate-float-cloud" style="position: absolute; top: 25%; right: 8%; width: 180px; opacity: 0.06; z-index: 1; animation-delay: -3s;" viewBox="0 0 100 100">
+Type: opacity
+----------------------------------------
+File: index.html:104
+Content: <div class="hero-content hero-animate" style="opacity: 0;">
+Type: opacity
+----------------------------------------
+File: index.html:105
+Content: <div class="hero-content-block card-classical" style="background: rgba(253, 252, 249, 0.58); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: var(--space-xl); border-radius: 12px; border: 1px solid rgba(184, 144, 71, 0.25); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); max-width: 600px; color: #000000; text-align: left;">
+Type: rgba
+----------------------------------------
+File: index.html:117
+Content: <p class="hero-quote" style="color: #000000; font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; line-height: 1.6; border-top: 1px dashed rgba(0,0,0,0.15); padding-top: var(--space-sm); margin-top: var(--space-sm); margin-bottom: 0;">
+Type: rgba
+----------------------------------------
+File: index.html:123
+Content: <div class="hero-visual hero-animate" style="opacity: 0;">
+Type: opacity
+----------------------------------------
+File: index.html:131
+Content: <img src="./PortfolioAssets/AnhIntro1.png" alt="Video Intro" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+Type: opacity
+----------------------------------------
+File: index.html:132
+Content: <div class="video-play-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); transition: background 0.3s;">
+Type: rgba
+----------------------------------------
+File: index.html:133
+Content: <div class="play-btn-circle" style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); color: var(--accent-vermillion); font-size: 1.25rem;">
+Type: rgba
+----------------------------------------
+File: index.html:208
+Content: <div class="stagger-item" style="opacity: 0;">
+Type: opacity
+----------------------------------------
+File: index.html:224
+Content: <div class="about-details stagger-item" style="opacity: 0;">
+Type: opacity
+----------------------------------------
+File: index.html:250
+Content: <div class="goals-section card card-classical" style="background: rgba(253, 252, 249, 0.65); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: var(--space-md) var(--space-lg); border-radius: 8px; border: 1px solid rgba(184, 144, 71, 0.2); box-shadow: 0 4px 12px rgba(0,0,0,0.01); margin-top: var(--space-md);">
+Type: rgba
+----------------------------------------
+File: index.html:265
+Content: <div class="card card-classical stagger-item" style="opacity: 0; margin-top: var(--space-xl); background: rgba(253, 252, 249, 0.65); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+Type: rgba
+----------------------------------------
+File: index.html:265
+Content: <div class="card card-classical stagger-item" style="opacity: 0; margin-top: var(--space-xl); background: rgba(253, 252, 249, 0.65); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+Type: rgba
+----------------------------------------
+File: index.html:361
+Content: <div style="margin-top: var(--space-lg); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-md);">
+Type: rgba
+----------------------------------------
+File: index.html:393
+Content: <div style="margin-top: var(--space-lg); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-md);">
+Type: rgba
+----------------------------------------
+File: index.html:425
+Content: <div style="margin-top: var(--space-lg); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-md);">
+Type: rgba
+----------------------------------------
+File: index.html:457
+Content: <div style="margin-top: var(--space-lg); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-md);">
+Type: rgba
+----------------------------------------
+File: index.html:489
+Content: <div style="margin-top: var(--space-lg); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-md);">
+Type: rgba
+----------------------------------------
+File: index.html:521
+Content: <div style="margin-top: var(--space-lg); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-md);">
+Type: rgba
+----------------------------------------
+File: index.html:567
+Content: <div style="margin-top: var(--space-2xl); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-xl);">
+Type: rgba
+----------------------------------------
+File: index.html:732
+Content: <h4 class="text-serif" style="margin-top: 0; color: var(--accent-vermillion); font-size: 1.2rem; border-bottom: 1px dashed rgba(184, 144, 71, 0.25); padding-bottom: 8px;">📂 5 Kiến thức mới, mở rộng tri thức</h4>
+Type: rgba
+----------------------------------------
+File: index.html:759
+Content: <h4 class="text-serif" style="margin-top: 0; color: var(--accent-gold-light); font-size: 1.2rem; border-bottom: 1px dashed rgba(184, 144, 71, 0.25); padding-bottom: 8px;">🌐 01 Portfolio số cá nhân</h4>
+Type: rgba
+----------------------------------------
+File: index.html:764
+Content: <div class="card card-classical" style="background: rgba(184, 144, 71, 0.05); border: 1px solid rgba(184, 144, 71, 0.2); padding: var(--space-md);">
+Type: rgba
+----------------------------------------
+File: index.html:783
+Content: <div style="margin-top: var(--space-2xl); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-xl);">
+Type: rgba
+----------------------------------------
+File: index.html:803
+Content: <div class="card card-classical" style="padding: var(--space-xl); background: rgba(184, 144, 71, 0.05); border: 1px solid var(--accent-gold); margin-top: var(--space-lg);">
+Type: rgba
+----------------------------------------
+File: index.html:822
+Content: <path fill="rgba(184, 144, 71, 0.08)" d="M0,100 C30,70 70,70 100,100 Z"/>
+Type: rgba
+----------------------------------------
+File: index.html:825
+Content: <path fill="rgba(184, 144, 71, 0.08)" d="M100,100 C70,70 30,70 0,100 Z"/>
+Type: rgba
+----------------------------------------
+File: stage_details.html:19
+Content: background: linear-gradient(to bottom, rgba(249, 249, 246, 0.88) 0%, rgba(249, 249, 246, 0.88) 100%),
+Type: rgba
+----------------------------------------
+File: stage_details.html:42
+Content: background: rgba(255, 255, 255, 0.94);
+Type: rgba
+----------------------------------------
+File: stage_details.html:75
+Content: background-color: rgba(184, 144, 71, 0.05);
+Type: rgba
+----------------------------------------
+File: stage_details.html:77
+Content: border-color: rgba(184, 144, 71, 0.15);
+Type: rgba
+----------------------------------------
+File: stage_details.html:85
+Content: box-shadow: 0 4px 10px rgba(139, 0, 0, 0.15);
+Type: rgba
+----------------------------------------
+File: stage_details.html:90
+Content: background: rgba(253, 252, 249, 0.88);
+Type: rgba
+----------------------------------------
+File: stage_details.html:95
+Content: box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+Type: rgba
+----------------------------------------
+File: stage_details.html:209
+Content: box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02) !important;
+Type: rgba
+----------------------------------------
+File: stage_details.html:215
+Content: border: 1px solid rgba(0, 0, 0, 0.08) !important;
+Type: rgba
+----------------------------------------
+File: stage_details.html:238
+Content: background: rgba(35, 32, 26, 0.98) !important;
+Type: rgba
+----------------------------------------
+File: stage_details.html:249
+Content: box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08) !important;
+Type: rgba
+----------------------------------------
+File: stage_details.html:280
+Content: background: rgba(253, 252, 249, 0.5) !important;
+Type: rgba
+----------------------------------------
+File: stage_details.html:284
+Content: background: rgba(184, 144, 71, 0.08) !important;
+Type: rgba
+----------------------------------------
+File: stage_details.html:300
+Content: background: rgba(249, 249, 246, 0.6) !important;
+Type: rgba
+----------------------------------------
+File: stage_details.html:357
+Content: box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02) !important;
+Type: rgba
+----------------------------------------
+File: stage_details.html:361
+Content: border: 1px solid rgba(139, 0, 0, 0.15) !important;
+Type: rgba
+----------------------------------------
+File: stage_details.html:366
+Content: border: 1px solid rgba(28, 28, 28, 0.15) !important;
+Type: rgba
+----------------------------------------

@@ -1,0 +1,93 @@
+593: <section id="NhinLai" class="section-padding scroll-reveal">
+594: <div class="calligraphy-accent" style="top: 20%; left: 2%; font-size: 5rem;">回顧省思</div> <!-- Hồi cố tỉnh tư -->
+596: <div class="scroll-unroll-container">
+597: <div class="scroll-unroll-roller-left"></div>
+598: <div class="scroll-unroll-roller-right"></div>
+599: <div class="scroll-unroll-content">
+600: <div class="container">
+601: <div class="section-header">
+604: </div>
+607: <div class="reflection-compare" style="margin-bottom: var(--space-xl);">
+608: <div class="card compare-card before card-classical" style="padding: var(--space-xl);">
+613: </div>
+615: <div class="card compare-card after card-classical" style="padding: var(--space-xl);">
+620: </div>
+621: </div>
+624: <div style="margin-top: var(--space-2xl); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-xl);">
+628: <div style="margin-bottom: var(--space-2xl);">
+631: <div class="skills-detailed-grid">
+633: <div class="skill-card-detailed">
+634: <div class="skill-card-header">
+635: <div class="skill-card-icon">🔍</div>
+636: <div>
+639: </div>
+640: </div>
+644: </div>
+647: <div class="skill-card-detailed">
+648: <div class="skill-card-header">
+649: <div class="skill-card-icon">🧠</div>
+650: <div>
+653: </div>
+654: </div>
+663: </div>
+666: <div class="skill-card-detailed">
+667: <div class="skill-card-header">
+668: <div class="skill-card-icon">📧</div>
+669: <div>
+672: </div>
+673: </div>
+677: </div>
+680: <div class="skill-card-detailed">
+681: <div class="skill-card-header">
+682: <div class="skill-card-icon">🤝</div>
+683: <div>
+686: </div>
+687: </div>
+697: </div>
+700: <div class="skill-card-detailed">
+701: <div class="skill-card-header">
+702: <div class="skill-card-icon">🔒</div>
+703: <div>
+706: </div>
+707: </div>
+717: </div>
+720: <div class="skill-card-detailed">
+721: <div class="skill-card-header">
+722: <div class="skill-card-icon">📜</div>
+723: <div>
+726: </div>
+727: </div>
+737: </div>
+738: </div>
+739: </div>
+742: <div style="margin-bottom: var(--space-2xl);">
+745: <div class="ai-map-table-wrapper">
+782: </div>
+783: </div>
+786: <div class="reflection-compare" style="margin-bottom: var(--space-2xl);">
+788: <div class="card card-classical" style="padding: var(--space-xl);">
+812: </div>
+815: <div class="card card-classical" style="padding: var(--space-xl); display: flex; flex-direction: column; justify-content: center;">
+821: <div class="card card-classical" style="background: rgba(184, 144, 71, 0.05); border: 1px solid rgba(184, 144, 71, 0.2); padding: var(--space-md);">
+823: <div class="qr-card-content" style="display: flex; gap: var(--space-md); align-items: center; margin-top: 8px;">
+825: <div>
+832: </div>
+833: </div>
+834: </div>
+835: </div>
+836: </div>
+837: </div>
+840: <div style="margin-top: var(--space-2xl); border-top: 1px dashed rgba(184, 144, 71, 0.25); padding-top: var(--space-xl);">
+843: <div class="reflection-compare" style="margin-bottom: var(--space-xl);">
+844: <div class="card card-classical" style="padding: var(--space-xl);">
+849: </div>
+851: <div class="card card-classical" style="padding: var(--space-xl);">
+856: </div>
+857: </div>
+860: <div class="card card-classical" style="padding: var(--space-xl); background: rgba(184, 144, 71, 0.05); border: 1px solid var(--accent-gold); margin-top: var(--space-lg);">
+865: </div>
+866: </div>
+868: </div>
+869: </div>
+870: </div>
+871: </main>

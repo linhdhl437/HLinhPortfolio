@@ -1,0 +1,206 @@
+
+========================================
+CHẶNG 1: Project/HLinh/PortfolioAssets\CHẶNG 1/index.html
+========================================
+Title: Chặng 1: Thao tác cơ bản với tệp tin và thư mục
+Headers:
+  h1: Bài tập 1: Thao tác cơ bản với tệp tin và thư mục
+  h2: 1. Mở File Explorer
+  h2: 2. Truy cập ổ đĩa/thư mục
+  h2: 3. Tạo thư mục mới và đặt tên thư mục
+  h2: 4. Tạo tệp tin văn bản mới
+  h2: 5. Đổi tên tệp tin
+  h2: 6. Tạo thư mục con
+  h2: 7. Sao chép tệp tin (Copy & Paste)
+  h2: 8. Di chuyển tệp tin (Cut & Paste)
+  h2: 9. Xóa tệp tin
+  h2: 10. Xóa vĩnh viễn
+  h2: 11. Khôi phục từ Thùng rác
+Text Preview (1000 chars):
+Chặng 1: Thao tác cơ bản với tệp tin và thư mục ← Quay lại Trang chủ Portfolio Bài tập 1: Thao tác cơ bản với tệp tin và thư mục --- Trang 1 --- 1. Mở File Explorer Thao tác mở trình quản lý tệp tin File Explorer trên hệ điều hành Windows để bắt đầu làm việc với các tệp tin và thư mục. Hình minh họa 1.1: Giao diện mở File Explorer 2. Truy cập ổ đĩa/thư mục Di chuyển và truy cập vào các ổ đĩa hệ thống (C:, D:, E:...) hoặc các thư mục làm việc mong muốn. Hình minh họa 2.1: Truy cập ổ đĩa/thư mục hệ thống --- Trang 2 --- 3. Tạo thư mục mới và đặt tên thư mục Tạo một thư mục làm việc mới và đặt tên thư mục là ThucHanh_DongHuyenLinh. Ảnh minh chứng 3.1: Thao tác tạo thư mục mới Ảnh minh chứng 3.2: Đặt tên thư mục ThucHanh_DongHuyenLinh 4. Tạo tệp tin văn bản mới Tạo một tệp tin văn bản (.txt) mới trong thư mục vừa tạo và đặt tên là GhiChu.txt. Hình minh họa 4.1: Tạo tệp văn bản GhiChu.txt --- Trang 3 --- 5. Đổi tên tệp tin Thực hiện đổi tên tệp tin GhiChu.txt thành GhiChuQuanTrong.txt. Hình
+Images:
+  src: ./extracted_images/image_page_1_1.png, alt: Mở File Explorer
+  src: ./extracted_images/image_page_1_2.png, alt: Truy cập ổ đĩa/thư mục
+  src: ./extracted_images/image_page_2_1.png, alt: Ảnh minh chứng 3.1
+  src: ./extracted_images/image_page_2_2.png, alt: Ảnh minh chứng 3.2
+  src: ./extracted_images/image_page_2_3.png, alt: Tạo tệp GhiChu.txt
+  src: ./extracted_images/image_page_3_1.png, alt: Đổi tên tệp tin
+  src: ./extracted_images/image_page_3_2.png, alt: Tạo thư mục con TaiLieu
+  src: ./extracted_images/image_page_3_3.png, alt: Sao chép tệp tin
+  src: ./extracted_images/image_page_4_1.png, alt: Ảnh minh chứng 9.1
+  src: ./extracted_images/image_page_4_2.png, alt: Ảnh minh chứng 9.2
+  src: ./extracted_images/image_page_4_3.png, alt: Xóa tệp tin
+  src: ./extracted_images/image_page_5_1.png, alt: Xóa vĩnh viễn
+  src: ./extracted_images/image_page_5_2.png, alt: Khôi phục từ Thùng rác
+
+========================================
+CHẶNG 2: Project/HLinh/PortfolioAssets\CHẶNG 2/index.html
+========================================
+Title: Chặng 2: Báo cáo tìm kiếm và đánh giá thông tin
+Headers:
+  h1: Báo cáo tìm kiếm và đánh giá nguồn thông tin
+  h2: 1. GIỚI THIỆU VỀ BÁO CÁO
+  h2: 2. PHƯƠNG PHÁP TÌM KIẾM VÀ THU THẬP TÀI LIỆU
+  h2: 3. TIÊU CHÍ ĐÁNH GIÁ ĐỘ TIN CẬY CỦA NGUỒN THÔNG TIN
+  h2: 4. BẢNG TỔNG HỢP ĐÁNH GIÁ ĐỘ TIN CẬY CỦA NGUỒN THÔNG TIN
+  h2: 6. KẾT LUẬN
+  h2: DANH MỤC TÀI LIỆU THAM KHẢO (THEO HARVARD)
+Text Preview (1000 chars):
+Chặng 2: Báo cáo tìm kiếm và đánh giá thông tin ← Quay lại Trang chủ Portfolio Báo cáo tìm kiếm và đánh giá nguồn thông tin Chủ đề: Nghiên cứu rào cản và phương pháp phát triển kĩ năng giao tiếp tiếng Anh của người Việt --- Trang 1 --- 1. GIỚI THIỆU VỀ BÁO CÁO Trong bối cảnh toàn cầu hóa và hội nhập quốc tế ngày càng sâu rộng, tiếng Anh đã trở thành công cụ giao tiếp quan trọng trong học tập, nghiên cứu, công việc và giao lưu văn hóa. Tại Việt Nam, việc dạy và học tiếng Anh được chú trọng trong toàn bộ hệ thống giáo dục, từ bậc phổ thông đến đại học. Tuy nhiên, thực tế cho thấy phần lớn người học Việt Nam vẫn gặp nhiều khó khăn trong việc sử dụng tiếng Anh để giao tiếp thực tế, đặc biệt là kỹ năng nói và phản xạ ngôn ngữ. Xuất phát từ thực tế trên, báo cáo này được thực hiện nhằm tìm kiếm, tổng hợp và đánh giá các nguồn thông tin liên quan đến vấn đề rào cản và phương pháp phát triển kỹ năng giao tiếp tiếng Anh của người Việt. Báo cáo tập trung phân tích mức độ tin cậy của các tài liệu
+Images:
+  
+
+========================================
+CHẶNG 3: Project/HLinh/PortfolioAssets\CHẶNG 3/index.html
+========================================
+Title: Chặng 3: Báo cáo phân tích hiệu quả của Prompt Engineering trong học tập
+Headers:
+  h1: Báo cáo phân tích hiệu quả của Prompt Engineering trong học tập
+  h2: 1. MỞ ĐẦU
+  h2: 2. PHÂN TÍCH CÁC TÁC VỤ HỌC TẬP
+  h2: 2.1. TÁC VỤ 1: TÓM TẮT TÀI LIỆU HỌC THUẬT
+  h3: 2.1.1. Ngữ liệu
+  h3: 2.1.2. Mục tiêu của tác vụ
+  h3: 2.1.3. Thách thức của tác vụ
+  h3: 2.1.4. Các phiên bản prompt
+  h4: a) Prompt cơ bản
+  h4: b) Prompt cải tiến
+  h4: c) Prompt nâng cao
+  h3: 2.1.5 So sánh kết quả giữa các prompt
+  h2: 2.2. TÁC VỤ 2: GIẢI THÍCH MỘT KHÁI NIỆM PHỨC TẠP
+  h3: 2.2.1. Khái niệm được chọn
+  h3: 2.2.2. Phân tích tác vụ học tập
+  h3: 2.2.3. Các phiên bản prompt
+  h4: a) Prompt cơ bản
+  h4: b) Prompt cải tiến
+  h4: c) Prompt nâng cao
+  h3: 2.2.4 So sánh kết quả giữa các prompt
+  h2: 2.3. TÁC VỤ 3: TẠO BỘ CÂU HỎI ÔN TẬP CHO MỘT CHỦ ĐỀ
+  h3: 2.3.1. Chủ đề
+  h3: 2.3.2. Phân tích tác vụ học tập
+  h3: 2.3.3. Các phiên bản prompt
+  h4: a) Prompt cơ bản
+  h4: b) Prompt cải tiến
+  h4: c) Prompt nâng cao
+  h3: 2.3.4 So sánh kết quả giữa các prompt
+  h2: 3. PHÂN TÍCH LÝ DO TẠI SAO MỘT SỐ PROMPT HIỆU QUẢ HƠN CÁC PROMPT KHÁC
+  h2: 4. TỔNG HỢP CÁC NGUYÊN TẮC VÀ MẸO VIẾT PROMPT HIỆU QUẢ
+Text Preview (1000 chars):
+Chặng 3: Báo cáo phân tích hiệu quả của Prompt Engineering trong học tập ← Quay lại Trang chủ Portfolio Báo cáo phân tích hiệu quả của Prompt Engineering trong học tập Chặng 3: Nghiên cứu ứng dụng các kỹ thuật thiết kế Prompt --- Trang 1 --- 1. MỞ ĐẦU Trong bối cảnh trí tuệ nhân tạo tạo sinh phát triển mạnh mẽ, các mô hình ngôn ngữ lớn (Large Language Models – LLMs) như ChatGPT đang trở thành công cụ hỗ trợ học tập phổ biến đối với sinh viên. Tuy nhiên, chất lượng đầu ra của AI phụ thuộc đáng kể vào cách người dùng xây dựng prompt. Một prompt thiếu rõ ràng có thể dẫn đến câu trả lời mơ hồ, trong khi prompt được thiết kế tốt có khả năng định hướng mô hình tạo ra nội dung chính xác, có cấu trúc và phù hợp với mục tiêu học tập. Báo cáo này nhằm phân tích hiệu quả của các kỹ thuật prompt engineering thông qua ba tác vụ học tập phổ biến: tóm tắt tài liệu học thuật, giải thích khái niệm phức tạp và tạo câu hỏi ôn tập. 2. PHÂN TÍCH CÁC TÁC VỤ HỌC TẬP 2.1. TÁC VỤ 1: TÓM TẮT TÀI LIỆU HỌC THUẬT 
+Images:
+  src: ./Image/Ảnh1_C3_Tác vụ 1_Prompt cơ bản.jpg, alt: Ảnh 1 Tác vụ 1 Prompt cơ bản
+  src: ./Image/Ảnh2_C3_Tác vụ 1_Prompt cơ bản.JPG, alt: Ảnh 2 Tác vụ 1 Prompt cơ bản
+  src: ./Image/Ảnh3_C3_Tác vụ 1_Prompt nâng cao.JPG, alt: Ảnh 3 Tác vụ 1 Prompt nâng cao
+  src: ./Image/Ảnh4_C3_Tác vụ 1_Prompt nâng cao.JPG, alt: Ảnh 4 Tác vụ 1 Prompt nâng cao
+  src: ./Image/Ảnh5_C3_Tác vụ 2_Prompt cơ bản.jpg, alt: Ảnh 5 Tác vụ 2 Prompt cơ bản
+  src: ./Image/Ảnh6_C3_Tác vụ 2_Prompt cải tiến.JPG, alt: Ảnh 6 Tác vụ 2 Prompt cải tiến
+  src: ./Image/Ảnh7_C3_Tác vụ 2_Prompt nâng cao.JPG, alt: Ảnh 7 Tác vụ 2 Prompt nâng cao
+  src: ./Image/Ảnh8_C3_Tác vụ 2_Prompt nâng cao.JPG, alt: Ảnh 8 Tác vụ 2 Prompt nâng cao
+  src: ./Image/Ảnh5_C3_Tác vụ 3_Prompt cải tiến.JPG, alt: Ảnh 9 Tác vụ 3 Prompt cải tiến
+  src: ./Image/Ảnh9_C3_Tác vụ 3_Prompt nâng cao.JPG, alt: Ảnh 10 Tác vụ 3 Prompt nâng cao
+  src: ./Image/Ảnh10_C3_Tác vụ 3_Prompt nâng cao.JPG, alt: Ảnh 11 Tác vụ 3 Prompt nâng cao
+
+========================================
+CHẶNG 4: Project/HLinh/PortfolioAssets\CHẶNG 4/index.html
+========================================
+Title: Chặng 4: Báo cáo sử dụng công cụ hợp tác trực tuyến và trải nghiệm quản lý cá nhân
+Headers:
+  h1: Báo cáo sử dụng công cụ hợp tác trực tuyến và trải nghiệm quản lý cá nhân trong dự án nhóm
+  h2: I. GIỚI THIỆU
+  h3: 1. Tổng quan về báo cáo
+  h3: 2. Tổng quan về dự án
+  h3: 3. Vai trò cá nhân trong dự án
+  h2: II. QUÁ TRÌNH THIẾT LẬP VÀ SỬ DỤNG CÁC CÔNG CỤ HỢP TÁC TRỰC TUYẾN
+  h3: 1. Công cụ quản lý dự án – Notion
+  h3: 2. Công cụ soạn thảo cộng tác – Google Docs
+  h3: 3. Công cụ lưu trữ và quản lý tài nguyên – Google Drive
+  h3: 4. Công cụ giao tiếp nhóm – Messenger
+  h2: III. BA THÁCH THỨC LỚN NHẤT TRONG QUÁ TRÌNH THỰC HIỆN DỰ ÁN VÀ GIẢI PHÁP
+  h3: 1. Đồng bộ tiến độ làm việc giữa các thành viên
+  h3: 2. Trùng lặp nội dung giữa các thành viên
+  h3: 3. Quản lý khối lượng lớn tài nguyên số
+  h2: IV. ĐÁNH GIÁ HIỆU QUẢ CỦA CÁC CÔNG CỤ ĐỐI VỚI CÔNG VIỆC CÁ NHÂN
+  h2: V. KẾT LUẬN
+Text Preview (1000 chars):
+Chặng 4: Báo cáo sử dụng công cụ hợp tác trực tuyến và trải nghiệm quản lý cá nhân ← Quay lại Trang chủ Portfolio Báo cáo sử dụng công cụ hợp tác trực tuyến và trải nghiệm quản lý cá nhân trong dự án nhóm Chặng 4: Đánh giá quá trình cộng tác số của cá nhân --- Trang 1 --- I. GIỚI THIỆU 1. Tổng quan về báo cáo Trong bối cảnh chuyển đổi số đang diễn ra mạnh mẽ, các công cụ hợp tác trực tuyến ngày càng trở thành phương tiện hỗ trợ thiết yếu trong môi trường học tập và làm việc. Đối với sinh viên ngành ngôn ngữ, khả năng phối hợp nhóm từ xa, quản lý tiến độ công việc và sử dụng hiệu quả các nền tảng số không chỉ góp phần nâng cao hiệu suất học tập mà còn là kỹ năng quan trọng phục vụ định hướng nghề nghiệp trong tương lai. Trong khuôn khổ học phần Nhập môn Công nghệ số và Trí tuệ nhân tạo, nhóm chúng em thực hiện một dự án video học thuật với chủ đề: “AI trong Ngoại ngữ và Giáo dục”. Báo cáo này tập trung phản ánh vai trò cá nhân của em trong quá trình thực hiện dự án, quá trình sử dụng cá
+Images:
+  src: ./Image/Ảnh 1 Không gian làm việc trên Notion do cá nhân thiết lập.jpg, alt: Ảnh 1 Không gian làm việc trên Notion
+  src: ./Image/Ảnh 2.Bảng theo dõi tổng quan nhiệm vụ_.jpg, alt: Ảnh 2 Bảng theo dõi tổng quan nhiệm vụ
+  src: ./Image/Ảnh 3. Bảng Kanban theo dõi tiến độ trên Notion._.jpg, alt: Ảnh 3 Bảng Kanban theo dõi tiến độ
+  src: ./Image/Ảnh 4. Project timeline_.jpg, alt: Ảnh 4 Project timeline
+  src: ./Image/Ảnh 5. Lịch sử chỉnh sửa nội dung trên Google Docs._.JPG, alt: Ảnh 5 Lịch sử chỉnh sửa trên Google Docs
+  src: ./Image/Ảnh 6. Nội dung cá nhân đóng góp trực tiếp trên tài liệu công tác._.jpg, alt: Ảnh 6 Nội dung cá nhân đóng góp
+  src: ./Image/Ảnh 7. Cấu trúc thư mục Google Drive của nhóm._.PNG, alt: Ảnh 7 Cấu trúc Google Drive
+  src: ./Image/Ảnh 8. Cách đặt tên file.jpg, alt: Ảnh 8 Cách đặt tên file
+  src: ./Image/Ảnh 9. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg, alt: Ảnh 9 Minh chứng Messenger
+  src: ./Image/Ảnh 10. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg, alt: Ảnh 10 Minh chứng Messenger
+  src: ./Image/Ảnh 11. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg, alt: Ảnh 11 Minh chứng Messenger
+
+========================================
+CHẶNG 5: Project/HLinh/PortfolioAssets\CHẶNG 5/index.html
+========================================
+Title: Chặng 5: Báo cáo dự án sáng tạo nội dung số bằng AI
+Headers:
+  h1: Báo cáo dự án sáng tạo nội dung số bằng AI
+  h2: I. GIỚI THIỆU DỰ ÁN
+  h2: II. GIỚI THIỆU SẢN PHẨM CUỐI CÙNG
+  h2: III. QUÁ TRÌNH SỬ DỤNG AI
+  h3: 1. Công cụ AI tạo văn bản: ChatGPT
+  h4: a) Prompt 1: Giải thích khái niệm
+  h4: b) Prompt 2: Khai thác ứng dụng thực tế
+  h4: c) Prompt 3: Hỗ trợ sáng tạo sản phẩm
+  h3: 2. Công cụ AI tạo hình ảnh: DALL-E
+  h3: 3. Công cụ AI hỗ trợ thiết kế: Canva AI
+  h2: IV. TRẢI NGHIỆM THỰC TẾ VỚI SPEAKPAL
+  h2: V. SO SÁNH HIỆU QUẢ CỦA CÁC CÔNG CỤ AI
+  h2: VI. ĐÓNG GÓP SÁNG TẠO CÁ NHÂN
+  h2: VII. PHÂN TÍCH VAI TRÒ CỦA AI TRONG QUÁ TRÌNH SÁNG TẠO
+  h2: VIII. KẾT LUẬN
+  h4: Conversational AI là gì?
+  h4: Ứng dụng chính
+  h4: Trải nghiệm thực tế với SpeakPal
+  h4: Học truyền thống
+  h4: Học cùng AI
+  h4: Một số lưu ý khi học cùng AI
+Text Preview (1000 chars):
+Chặng 5: Báo cáo dự án sáng tạo nội dung số bằng AI ← Quay lại Trang chủ Portfolio Báo cáo dự án sáng tạo nội dung số bằng AI Chủ đề: Conversational AI và ứng dụng trong việc luyện giao tiếp ngoại ngữ --- Trang 1 --- I. GIỚI THIỆU DỰ ÁN Trong những năm gần đây, sự phát triển mạnh mẽ của trí tuệ nhân tạo (Artificial Intelligence - AI) đã tạo ra nhiều thay đổi trong lĩnh vực giáo dục. Một trong những ứng dụng nổi bật là Conversational AI – công nghệ cho phép máy tính giao tiếp với con người thông qua ngôn ngữ tự nhiên bằng văn bản hoặc giọng nói. Conversational AI mang lại nhiều lợi ích như tạo môi trường luyện tập giao tiếp, sửa lỗi ngôn ngữ, phản hồi tức thời và cá nhân hóa quá trình học tập. Các ứng dụng như chatbot AI, trợ lý ảo hoặc nền tảng luyện nói thông minh đang ngày càng trở nên phổ biến đối với người học ngoại ngữ. Xuất phát từ thực tế đó, tôi lựa chọn chủ đề “Conversational AI và ứng dụng trong việc luyện giao tiếp ngoại ngữ” để thiết kế một infographic nhằm giới thiệu khái 
+Images:
+  src: ./Image/Ảnh1_C5.JPG, alt: Ảnh 1: Prompt 1 và kết quả ChatGPT
+  src: ./Image/Ảnh 2_C5.JPG, alt: Ảnh 2: Tinh chỉnh prompt ChatGPT
+  src: ./Image/Ảnh 3_C5.JPG, alt: Ảnh 3: Hình ảnh tạo sinh từ DALL-E
+  src: ./Image/Ảnh 4_C5.JPG, alt: Ảnh 4: Tách nền và xử lý ảnh trên Canva
+  src: ./Image/Ảnh 5_C5.JPG, alt: Ảnh 5: Canva AI đề xuất mẫu
+  src: ./Image/Ảnh 6_C5.PNG, alt: Ảnh 6: Infographic hoàn thiện
+  src: ./Image/Ảnh 7_C5.JPG, alt: Ảnh 7: Giao diện SpeakPal
+  src: ../MÃ QR CHO PROMPT LIBRARY.png, alt: Mã QR Prompt Library
+
+========================================
+CHẶNG 6: Project/HLinh/PortfolioAssets\CHẶNG 6/index.html
+========================================
+Title: Chặng 6: Báo cáo sử dụng AI có trách nhiệm trong học tập và nghiên cứu
+Headers:
+  h1: Báo cáo sử dụng AI có trách nhiệm trong học tập và nghiên cứu
+  h2: I. PHÂN TÍCH CHÍNH SÁCH VỀ VIỆC SỬ DỤNG AI TRONG HỌC TẬP VÀ NGHIÊN CỨU
+  h3: 1. Chính sách và định hướng của Đại học Quốc gia Hà Nội (VNU)
+  h3: 2. So sánh với một số trường đại học khác
+  h3: 3. Nhận định cá nhân
+  h2: II. THỰC HIỆN NHIỆM VỤ HỌC TẬP VỚI SỰ HỖ TRỢ CỦA AI
+  h3: 1. Nhiệm vụ được lựa chọn
+  h3: 2. Quá trình sử dụng AI
+  h3: 3. Đánh giá và tích hợp kết quả từ AI
+  h3: 4. Minh bạch trong việc sử dụng AI
+  h2: III. PHÂN TÍCH CÁC VẤN ĐỀ ĐẠO ĐỨC LIÊN QUAN ĐẾN VIỆC SỬ DỤNG AI TRONG HỌC THUẬT
+  h3: 1. Ranh giới giữa hỗ trợ hợp lý và gian lận học thuật
+  h4: Giải pháp đề xuất:
+  h3: 2. Quyền sở hữu trí tuệ và tính minh bạch học thuật
+  h4: Giải pháp đề xuất:
+  h3: 3. Tác động đến quá trình học tập và phát triển kỹ năng
+  h4: Giải pháp đề xuất:
+  h2: IV. BỘ NGUYÊN TẮC CÁ NHÂN VỀ SỬ DỤNG AI CÓ TRÁCH NHIỆM
+  h2: V. KẾT LUẬN
+  h3: Nên làm
+  h3: Không nên làm
+Text Preview (1000 chars):
+Chặng 6: Báo cáo sử dụng AI có trách nhiệm trong học tập và nghiên cứu ← Quay lại Trang chủ Portfolio Báo cáo sử dụng AI có trách nhiệm trong học tập và nghiên cứu Chặng 6: Liêm chính học thuật và Bộ nguyên tắc ứng xử AI cá nhân --- Trang 1 --- I. PHÂN TÍCH CHÍNH SÁCH VỀ VIỆC SỬ DỤNG AI TRONG HỌC TẬP VÀ NGHIÊN CỨU 1. Chính sách và định hướng của Đại học Quốc gia Hà Nội (VNU) Trong bối cảnh trí tuệ nhân tạo (AI) đang tạo ra những thay đổi mạnh mẽ đối với giáo dục đại học, Đại học Quốc gia Hà Nội (VNU) có định hướng khuyến khích người học và giảng viên khai thác AI như một công cụ hỗ trợ học tập, nghiên cứu và đổi mới sáng tạo. Thay vì hạn chế hay cấm sử dụng AI, VNU hướng tới việc phát triển năng lực số, năng lực AI và ý thức trách nhiệm của người học, bảo đảm việc ứng dụng AI diễn ra hiệu quả, minh bạch và phù hợp với các chuẩn mực đạo đức học thuật. Bên cạnh việc thúc đẩy chuyển đổi số trong đào tạo và nghiên cứu, VNU cũng đặc biệt nhấn mạnh nguyên tắc liêm chính học thuật. Sinh viên 
+Images:
+  

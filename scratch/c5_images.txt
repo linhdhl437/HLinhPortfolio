@@ -1,0 +1,92 @@
+11444:  <div class="image-group">
+        <div class="image-container" style="max-width: 600px">
+          <img
+            src="./Image/Ảnh1_C5.JPG"
+            alt="Ảnh 1: Prompt 1 và kết quả ChatGPT"
+          />
+          <div class="image-caption">
+            Ảnh minh họa 1: Nhập Prompt 1 giải thích khái niệm vào ChatGPT
+          </div>
+          <div class="image-note">
+            [Note từ ViTri
+
+12852:  <div class="image-group">
+        <div class="image-container" style="max-width: 600px">
+          <img
+            src="./Image/Ảnh 2_C5.JPG"
+            alt="Ảnh 2: Tinh chỉnh prompt ChatGPT"
+          />
+          <div class="image-caption">
+            Ảnh minh họa 2: Chatbot AI phản hồi sau khi tinh chỉnh prompt
+          </div>
+          <div class="image-note">
+            [Note từ ViTriCh
+
+17472:  <div class="image-group">
+        <div class="image-container" style="max-width: 600px">
+          <img
+            src="./Image/Ảnh 3_C5.JPG"
+            alt="Ảnh 3: Hình ảnh tạo sinh từ DALL-E"
+          />
+          <div class="image-caption">
+            Ảnh minh họa 3: Kết quả tạo ảnh của DALL-E sau khi cải tiến prompt
+          </div>
+          <div class="image-note">
+            [Note từ 
+
+18518:  <div class="image-group">
+        <div class="image-container" style="max-width: 600px">
+          <img
+            src="./Image/Ảnh 4_C5.JPG"
+            alt="Ảnh 4: Tách nền và xử lý ảnh trên Canva"
+          />
+          <div class="image-caption">
+            Ảnh minh họa 4: Ảnh được tinh chỉnh và xử lý bố cục trước khi chèn
+            vào Canva
+          </div>
+          <div class="image-n
+
+19631:  <div class="image-group">
+        <div class="image-container" style="max-width: 600px">
+          <img src="./Image/Ảnh 6_C5.JPG" alt="Ảnh 5: Canva AI đề xuất mẫu" />
+          <div class="image-caption">
+            Ảnh minh họa 5: Gợi ý thiết kế và màu sắc từ Canva AI
+          </div>
+          <div class="image-note">
+            [Note từ ViTriChenAnh.txt: Đặt ảnh 5 sau prompt Canva AI và trư
+
+20819:  <div class="image-group">
+        <div class="image-container" style="max-width: 600px">
+          <img src="./Image/Ảnh 7_C5.PNG" alt="Ảnh 6: Infographic hoàn thiện" />
+          <div class="image-caption">
+            Ảnh minh họa 6: Giao diện chỉnh sửa màu sắc và hoàn thiện
+            infographic trên Canva
+          </div>
+          <div class="image-note">
+            [Note từ ViTriChenAnh.
+
+21772:  <div class="image-group">
+        <div class="image-container" style="max-width: 500px">
+          <img src="./Image/Ảnh 5_C5.JPG" alt="Ảnh 7: Giao diện SpeakPal" />
+          <div class="image-caption">
+            Ảnh minh họa 7: Giao diện đoạn hội thoại thực tế luyện tiếng Trung
+            trên app SpeakPal
+          </div>
+          <div class="image-note">
+            [Note từ ViTriChenAnh.
+
+33097: p>
+        </div>
+
+        <div class="info-footer">
+          <div class="qr-section">
+            <img
+              src="../MÃ QR CHO PROMPT LIBRARY.png"
+              alt="Mã QR Prompt Library"
+              class="qr-image"
+            />
+            <div class="qr-text">
+              <strong>QUÉT MÃ QR</strong><br />
+              để trải nghiệm ngay Chatbot AI<br />
+              luyện gia
+

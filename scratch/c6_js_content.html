@@ -1,0 +1,319 @@
+<style>
+.stage-document-wrapper {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f4f6f9;
+        }.stage-document-wrapper .document-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }.stage-document-wrapper .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3182ce;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }.stage-document-wrapper .back-link:hover {
+            color: #2b6cb0;
+            text-decoration: underline;
+        }.stage-document-wrapper h1 {
+            font-size: 1.8rem;
+            color: #1a365d;
+            text-align: center;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }.stage-document-wrapper .subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #4a5568;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #3182ce;
+            padding-bottom: 15px;
+        }.stage-document-wrapper h2 {
+            font-size: 1.3rem;
+            color: #2b6cb0;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 5px;
+        }.stage-document-wrapper h3 {
+            font-size: 1.1rem;
+            color: #2d3748;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }.stage-document-wrapper p, .stage-document-wrapper li {
+            font-size: 0.95rem;
+            color: #4a5568;
+            margin-bottom: 12px;
+            text-align: justify;
+        }.stage-document-wrapper ul, .stage-document-wrapper ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }.stage-document-wrapper .prompt-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #3182ce;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 0.9rem;
+            color: #2d3748;
+            border-radius: 0 4px 4px 0;
+        }.stage-document-wrapper .solution-box {
+            background-color: #f0fff4;
+            border-left: 4px solid #38a169;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }.stage-document-wrapper .solution-box h4 {
+            margin-top: 0;
+            color: #276749;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+        }.stage-document-wrapper .solution-box ul {
+            margin-bottom: 0;
+        }.stage-document-wrapper .page-break-indicator {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #a0aec0;
+            border-top: 1px dotted #e2e8f0;
+            margin: 30px 0 15px 0;
+            padding-top: 5px;
+            font-style: italic;
+        }.stage-document-wrapper /* Ethics Infographic styles */
+        .ethics-infographic {
+            background-color: #1a202c;
+            color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }.stage-document-wrapper .ethics-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #edf2f7;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #4a5568;
+            padding-bottom: 15px;
+            letter-spacing: 0.5px;
+        }.stage-document-wrapper .ethics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        @media (max-width: 768px) {
+            .ethics-grid {
+                grid-template-columns: 1fr;
+            }
+        }.stage-document-wrapper .ethics-col {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }.stage-document-wrapper .ethics-col.do { border: 2px solid #2f855a; }.stage-document-wrapper .ethics-col.dont { border: 2px solid #9b2c2c; }.stage-document-wrapper .ethics-col h3 {
+            margin-top: 0;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }.stage-document-wrapper .ethics-col.do h3 { color: #48bb78; }.stage-document-wrapper .ethics-col.dont h3 { color: #f56565; }.stage-document-wrapper .ethics-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }.stage-document-wrapper .ethics-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #e2e8f0;
+        }.stage-document-wrapper .ethics-item::before {
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }.stage-document-wrapper .ethics-col.do .ethics-item::before {
+            content: "✓";
+            color: #48bb78;
+        }.stage-document-wrapper .ethics-col.dont .ethics-item::before {
+            content: "✗";
+            color: #f56565;
+        }.stage-document-wrapper .ethics-quote {
+            text-align: center;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #cbd5e0;
+            background-color: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            border-left: 4px solid #a0aec0;
+        }
+    
+</style>
+<div class="stage-document-wrapper">
+<div class="document-container">
+<h1>Báo cáo sử dụng AI có trách nhiệm trong học tập và nghiên cứu</h1>
+<div class="subtitle">Chặng 6: Liêm chính học thuật và Bộ nguyên tắc ứng xử AI cá nhân</div>
+
+<h2>I. PHÂN TÍCH CHÍNH SÁCH VỀ VIỆC SỬ DỤNG AI TRONG HỌC TẬP VÀ NGHIÊN CỨU</h2>
+<h3>1. Chính sách và định hướng của Đại học Quốc gia Hà Nội (VNU)</h3>
+<p>Trong bối cảnh trí tuệ nhân tạo (AI) đang tạo ra những thay đổi mạnh mẽ đối với giáo dục đại học, Đại học Quốc gia Hà Nội (VNU) có định hướng khuyến khích người học và giảng viên khai thác AI như một công cụ hỗ trợ học tập, nghiên cứu và đổi mới sáng tạo. Thay vì hạn chế hay cấm sử dụng AI, VNU hướng tới việc phát triển năng lực số, năng lực AI và ý thức trách nhiệm của người học, bảo đảm việc ứng dụng AI diễn ra hiệu quả, minh bạch và phù hợp với các chuẩn mực đạo đức học thuật.</p>
+<p>Bên cạnh việc thúc đẩy chuyển đổi số trong đào tạo và nghiên cứu, VNU cũng đặc biệt nhấn mạnh nguyên tắc liêm chính học thuật. Sinh viên và giảng viên phải chịu trách nhiệm đối với sản phẩm học tập, nghiên cứu của mình; các hành vi như đạo văn, giả mạo dữ liệu, trích dẫn nguồn không chính xác hoặc sử dụng công cụ AI để tạo lợi thế học tập không công bằng đều bị xem là vi phạm các chuẩn mực học thuật. AI được xem là công cụ hỗ trợ, không phải là sự thay thế cho tư duy, sáng tạo và trách nhiệm của người học.</p>
+<p>Định hướng này được cụ thể hóa tại nhiều đơn vị thành viên của VNU. Tiêu biểu, Trường Đại học Khoa học Xã hội và Nhân văn (USSH) đã ban hành <em>Khung năng lực AI dành cho người học</em> với sáu nhóm năng lực cốt lõi gồm: hiểu biết về AI và dữ liệu; tư duy phản biện đối với kết quả do AI tạo ra; đạo đức và trách nhiệm trong sử dụng AI; tư duy lấy con người làm trung tâm; ứng dụng AI trong nghề nghiệp; và thiết kế, phát triển hệ thống AI. Khung năng lực này cho thấy VNU không chỉ chú trọng khả năng sử dụng công nghệ mà còn quan tâm đến các giá trị nhân văn, tư duy phản biện và trách nhiệm xã hội trong kỷ nguyên AI.</p>
+<h3>2. So sánh với một số trường đại học khác</h3>
+<p>So với nhiều trường đại học tại Việt Nam, VNU có cách tiếp cận khá tiến bộ. Trong khi một số trường chủ yếu tập trung vào việc kiểm soát đạo văn hoặc hạn chế sử dụng AI trong các bài kiểm tra, VNU hướng tới xây dựng năng lực AI cho sinh viên và khuyến khích sử dụng AI như một công cụ hỗ trợ học tập.</p>
+<p>Điểm nổi bật của VNU là nhấn mạnh tư duy phản biện và trách nhiệm của người học thay vì chỉ tập trung vào các biện pháp giám sát. Cách tiếp cận này phù hợp với xu hướng giáo dục hiện đại trên thế giới, nơi AI được xem là một phần tất yếu của quá trình học tập và làm việc. Thay vì đặt trọng tâm vào câu hỏi “có được sử dụng AI hay không”, VNU hướng đến việc trang bị cho sinh viên khả năng đánh giá, kiểm chứng và sử dụng AI một cách hiệu quả, từ đó giảm thiểu các rủi ro liên quan đến đạo đức học thuật.</p>
+
+<h3>3. Nhận định cá nhân</h3>
+<p>Theo em, định hướng của VNU là phù hợp với thực tiễn hiện nay. AI có thể giúp sinh viên tìm kiếm thông tin, xây dựng ý tưởng, tóm tắt tài liệu và hỗ trợ nghiên cứu một cách nhanh chóng, hiệu quả. Tuy nhiên, nếu người học phụ thuộc hoàn toàn vào AI thì sẽ làm giảm khả năng tư duy độc lập, kỹ năng nghiên cứu và năng lực giải quyết vấn đề.</p>
+<p>Do đó, việc kết hợp giữa ứng dụng công nghệ và duy trì liêm chính học thuật là rất cần thiết. AI nên được xem là công cụ hỗ trợ giúp nâng cao hiệu quả học tập thay vì thay thế vai trò của người học. Chỉ khi người học biết sử dụng AI một cách có trách nhiệm, công nghệ này mới thực sự góp phần nâng cao chất lượng giáo dục và phát triển năng lực cá nhân.</p>
+<h2>II. THỰC HIỆN NHIỆM VỤ HỌC TẬP VỚI SỰ HỖ TRỢ CỦA AI</h2>
+<h3>1. Nhiệm vụ được lựa chọn</h3>
+<p>Để trải nghiệm việc sử dụng AI trong học tập, em lựa chọn nhiệm vụ chuẩn bị một bài thuyết trình khoảng 10 phút về <strong>Hồ Xuân Hương</strong> cho học phần Văn học Việt Nam. Mục tiêu của việc sử dụng AI là hỗ trợ tìm ý tưởng, xây dựng cấu trúc nội dung và gợi ý hướng phân tích, thay vì để AI thực hiện toàn bộ bài thuyết trình.</p>
+<h3>2. Quá trình sử dụng AI</h3>
+<p>Để chuẩn bị bài thuyết trình 10 phút về Hồ Xuân Hương dành cho sinh viên đại học, em đã sử dụng ChatGPT như một công cụ hỗ trợ trong quá trình xây dựng nội dung, phân tích và hoàn thiện bài trình bày.</p>
+<p><strong>Bước 1. Xây dựng cấu trúc bài thuyết trình</strong></p>
+<div class="prompt-box">
+            Prompt: “Tôi cần chuẩn bị một bài thuyết trình 10 phút về Hồ Xuân Hương cho sinh viên đại học. Hãy đề xuất cấu trúc bài thuyết trình hợp lý, đảm bảo vừa có kiến thức cơ bản vừa có nội dung phân tích.”
+        </div>
+<p><em>Kết quả từ AI:</em> Giới thiệu ➔ Tiểu sử tác giả ➔ Sự nghiệp sáng tác ➔ Đặc điểm nghệ thuật ➔ Giá trị nhân văn ➔ Kết luận.</p>
+<p><em>Đánh giá và điều chỉnh:</em> Cấu trúc do AI đề xuất tương đối đầy đủ và logic. Tuy nhiên, nội dung chưa làm nổi bật vai trò của Hồ Xuân Hương như một tiếng nói nữ quyền tiêu biểu trong văn học trung đại. Vì vậy, em đã bổ sung phần phân tích về tư tưởng phản kháng xã hội phong kiến và sự khẳng định giá trị của người phụ nữ trong thơ bà.</p>
+
+<p><strong>Bước 2. Thu thập và tổng hợp thông tin nền</strong></p>
+<div class="prompt-box">
+            Prompt: “Hãy tóm tắt tiểu sử Hồ Xuân Hương và những đóng góp nổi bật của bà đối với văn học Việt Nam trong khoảng 300 từ.”
+        </div>
+<p><em>Kết quả từ AI:</em> Giới thiệu khái quát về cuộc đời Hồ Xuân Hương; Danh hiệu “Bà chúa thơ Nôm”; Đóng góp đối với sự phát triển của thơ Nôm; Giá trị nhân văn và tiếng nói bênh vực người phụ nữ.</p>
+<p><em>Đánh giá và điều chỉnh:</em> Một số thông tin còn mang tính khái quát và chưa có nguồn dẫn cụ thể. Do đó, em đã đối chiếu với giáo trình Văn học Việt Nam trung đại, tài liệu học phần và các công trình nghiên cứu liên quan để kiểm chứng trước khi sử dụng.</p>
+<p><strong>Bước 3. Phân tích nội dung chuyên sâu</strong></p>
+<div class="prompt-box">
+            Prompt: “Vì sao Hồ Xuân Hương được xem là tiếng nói nữ quyền tiêu biểu trong văn học trung đại Việt Nam? Hãy phân tích bằng các dẫn chứng từ tác phẩm.”
+        </div>
+<p><em>Kết quả từ AI:</em> Đồng cảm với thân phận người phụ nữ; Phê phán những bất công trong xã hội phong kiến; Thể hiện khát vọng hạnh phúc và tự do cá nhân.</p>
+<p><em>Đánh giá và điều chỉnh:</em> AI cung cấp nhiều gợi ý hữu ích cho việc xây dựng luận điểm. Từ các gợi ý này, em đã bổ sung dẫn chứng từ các tác phẩm <em>Bánh trôi nước, Tự tình II</em> và <em>Mời trầu</em> nhằm tăng tính thuyết phục cho phần phân tích.</p>
+<p><strong>Bước 4. Thiết kế hoạt động tương tác</strong></p>
+<div class="prompt-box">
+            Prompt: “Hãy đề xuất 5 câu hỏi thảo luận dành cho sinh viên sau khi nghe thuyết trình về Hồ Xuân Hương.”
+        </div>
+<p><em>Kết quả từ AI:</em> AI gợi ý một số câu hỏi mở có khả năng kích thích thảo luận, chẳng hạn như: Hồ Xuân Hương có phải là nhà thơ nữ quyền đầu tiên của Việt Nam không? Những giá trị nào trong thơ Hồ Xuân Hương vẫn còn ý nghĩa trong xã hội hiện đại?</p>
+<p><em>Đánh giá và điều chỉnh:</em> Em đã lựa chọn và chỉnh sửa những câu hỏi phù hợp nhất nhằm tăng tính tương tác và khuyến khích người nghe liên hệ với thực tiễn hiện nay.</p>
+
+<h3>3. Đánh giá và tích hợp kết quả từ AI</h3>
+<p>Qua quá trình sử dụng, em nhận thấy AI mang lại nhiều lợi ích trong việc hỗ trợ học tập:</p>
+<ul>
+<li>Tiết kiệm thời gian tìm kiếm và tổng hợp thông tin.</li>
+<li>Hỗ trợ xây dựng cấu trúc bài trình bày một cách logic.</li>
+<li>Gợi mở các hướng phân tích và ý tưởng thảo luận.</li>
+</ul>
+<p>Tuy nhiên, nội dung do AI tạo ra không phải lúc nào cũng đầy đủ hoặc hoàn toàn chính xác. Vì vậy, em đã thực hiện các bước kiểm chứng, đối chiếu với tài liệu học thuật, bổ sung dẫn chứng và chỉnh sửa bằng văn phong của bản thân trước khi đưa vào bài thuyết trình. Như vậy, AI đóng vai trò là công cụ hỗ trợ trong quá trình học tập, còn việc lựa chọn, đánh giá và hoàn thiện sản phẩm cuối cùng vẫn thuộc về người học.</p>
+<h3>4. Minh bạch trong việc sử dụng AI</h3>
+<p>Trong bài thuyết trình, em ghi rõ rằng ChatGPT được sử dụng để:</p>
+<ul>
+<li>Hỗ trợ xây dựng dàn ý.</li>
+<li>Tóm tắt và tổng hợp thông tin.</li>
+<li>Gợi ý hướng phân tích và câu hỏi thảo luận.</li>
+</ul>
+<p>Toàn bộ nội dung cuối cùng đã được kiểm chứng, chỉnh sửa và hoàn thiện bởi người thực hiện. Việc công khai vai trò của AI góp phần bảo đảm tính minh bạch và tuân thủ các nguyên tắc liêm chính học thuật.</p>
+<h2>III. PHÂN TÍCH CÁC VẤN ĐỀ ĐẠO ĐỨC LIÊN QUAN ĐẾN VIỆC SỬ DỤNG AI TRONG HỌC THUẬT</h2>
+<h3>1. Ranh giới giữa hỗ trợ hợp lý và gian lận học thuật</h3>
+<p>AI có thể hỗ trợ người học trong nhiều hoạt động như tìm kiếm ý tưởng, xây dựng dàn ý, tóm tắt tài liệu hoặc gợi ý hướng phân tích. Trong những trường hợp này, AI đóng vai trò là công cụ hỗ trợ, còn người học vẫn là chủ thể thực hiện quá trình tư duy, đánh giá và hoàn thiện sản phẩm học thuật.</p>
+<p>Tuy nhiên, khi người học sao chép nguyên văn nội dung do AI tạo ra hoặc để AI thực hiện phần lớn nhiệm vụ học tập, sản phẩm cuối cùng không còn phản ánh đúng năng lực thực sự của bản thân. Điều này làm suy giảm tính trung thực học thuật và có thể được xem là một hình thức gian lận.</p>
+<div class="solution-box">
+<h4>Giải pháp đề xuất:</h4>
+<ul>
+<li>Chỉ sử dụng AI để hỗ trợ tìm ý tưởng, tham khảo hoặc định hướng nghiên cứu.</li>
+<li>Chủ động chỉnh sửa, phân tích và diễn đạt lại nội dung bằng hiểu biết của bản thân.</li>
+<li>Tuân thủ các quy định của nhà trường về việc sử dụng AI trong học tập và đánh giá.</li>
+<li>Công khai mức độ sử dụng AI khi được yêu cầu.</li>
+</ul>
+</div>
+
+<h3>2. Quyền sở hữu trí tuệ và tính minh bạch học thuật</h3>
+<p>Việc sử dụng AI đặt ra nhiều vấn đề liên quan đến quyền sở hữu trí tuệ và độ tin cậy của thông tin. Do được huấn luyện trên khối lượng dữ liệu rất lớn, AI có thể tạo ra nội dung tương đồng với các tài liệu đã tồn tại hoặc cung cấp thông tin chưa được kiểm chứng. Bên cạnh đó, AI đôi khi còn tạo ra các tài liệu tham khảo không có thật, làm ảnh hưởng đến chất lượng và độ tin cậy của sản phẩm học thuật.</p>
+<p>Nếu người học sử dụng những nội dung này mà không kiểm tra hoặc không công khai nguồn gốc hỗ trợ từ AI, các nguyên tắc về minh bạch và liêm chính học thuật có thể bị vi phạm.</p>
+<div class="solution-box">
+<h4>Giải pháp đề xuất:</h4>
+<ul>
+<li>Kiểm chứng thông tin bằng các nguồn học thuật đáng tin cậy trước khi sử dụng.</li>
+<li>Đối chiếu tài liệu tham khảo do AI cung cấp với các cơ sở dữ liệu chính thống.</li>
+<li>Thực hiện trích dẫn đầy đủ đối với các nguồn được sử dụng.</li>
+<li>Minh bạch về vai trò của AI trong quá trình học tập và nghiên cứu.</li>
+</ul>
+</div>
+<h3>3. Tác động đến quá trình học tập và phát triển kỹ năng</h3>
+<p>AI giúp người học tiết kiệm thời gian tìm kiếm và tổng hợp thông tin, đồng thời hỗ trợ tiếp cận nhiều góc nhìn khác nhau đối với một vấn đề nghiên cứu. Nhờ đó, hiệu quả học tập có thể được nâng cao đáng kể.</p>
+<p>Tuy nhiên, việc phụ thuộc quá mức vào AI có thể làm giảm khả năng tư duy độc lập, kỹ năng viết, kỹ năng giải quyết vấn đề và năng lực nghiên cứu. Nếu người học thường xuyên để AI thực hiện các nhiệm vụ trí tuệ thay mình, quá trình hình thành kiến thức và phát triển năng lực cá nhân sẽ bị ảnh hưởng.</p>
+<div class="solution-box">
+<h4>Giải pháp đề xuất:</h4>
+<ul>
+<li>Sử dụng AI như công cụ hỗ trợ thay vì công cụ thay thế tư duy.</li>
+<li>Duy trì thói quen tự đọc tài liệu, phân tích và trình bày quan điểm cá nhân.</li>
+<li>Kết hợp AI với các phương pháp học tập chủ động như thảo luận, phản biện và nghiên cứu độc lập.</li>
+<li>Thường xuyên đánh giá lại mức độ phụ thuộc vào AI để bảo đảm sự phát triển bền vững của các kỹ năng học thuật.</li>
+</ul>
+</div>
+
+<h2>IV. BỘ NGUYÊN TẮC CÁ NHÂN VỀ SỬ DỤNG AI CÓ TRÁCH NHIỆM</h2>
+<ol>
+<li><strong>Luôn xem AI là công cụ hỗ trợ, không thay thế tư duy cá nhân:</strong> Em xem AI là công cụ hỗ trợ cho quá trình học tập thay vì là người thay thế việc học. AI có thể giúp gợi ý ý tưởng, tổng hợp thông tin hoặc đề xuất hướng tiếp cận, nhưng việc phân tích, đánh giá và đưa ra kết luận cuối cùng phải do người học thực hiện.</li>
+<li><strong>Kiểm chứng mọi thông tin do AI cung cấp trước khi sử dụng:</strong> Em không mặc nhiên xem mọi thông tin do AI cung cấp là chính xác. Trước khi sử dụng, các thông tin quan trọng cần được đối chiếu với giáo trình, tài liệu học thuật hoặc các nguồn đáng tin cậy khác.</li>
+<li><strong>Minh bạch về vai trò của AI trong quá trình học tập và nghiên cứu:</strong> Khi AI được sử dụng để hỗ trợ xây dựng dàn ý, tổng hợp tài liệu hoặc gợi ý hướng phân tích, em sẽ công khai mức độ sử dụng nếu bài tập hoặc quy định học thuật yêu cầu.</li>
+<li><strong>Không sử dụng AI để hoàn thành toàn bộ nhiệm vụ học thuật:</strong> Em không sử dụng AI để hoàn thành toàn bộ bài tập, bài luận hoặc nhiệm vụ nghiên cứu. Nếu AI tạo ra phần lớn nội dung, người học sẽ mất cơ hội rèn luyện các kỹ năng đọc hiểu, phân tích, lập luận.</li>
+<li><strong>Bảo vệ dữ liệu cá nhân và thông tin nhạy cảm:</strong> Khi sử dụng các công cụ AI trực tuyến, em hạn chế cung cấp thông tin cá nhân, dữ liệu nội bộ hoặc các tài liệu nghiên cứu chưa được phép công bố.</li>
+<li><strong>Duy trì năng lực học tập độc lập trong thời đại AI:</strong> Em cam kết tiếp tục rèn luyện kỹ năng đọc hiểu, viết học thuật, nghiên cứu và tư duy phản biện. AI có thể giúp nâng cao hiệu quả, nhưng không thể thay thế khả năng suy nghĩ, sáng tạo của con người.</li>
+
+<li><strong>Sử dụng AI vì mục tiêu nâng cao chất lượng học tập, không phải chỉ để hoàn thành nhiệm vụ:</strong> Trước mỗi lần sử dụng AI, em tự đặt câu hỏi: “Việc sử dụng AI trong trường hợp này giúp mình hiểu vấn đề sâu hơn hay chỉ giúp hoàn thành bài tập nhanh hơn?”. Nếu chỉ dùng để đối phó, việc sử dụng đó cần được xem xét lại.</li>
+</ol>
+<p>Bộ nguyên tắc trên được xây dựng dựa trên quan điểm rằng AI là một công cụ mạnh mẽ nhưng không trung lập về mặt học thuật và đạo đức. Giá trị của AI không nằm ở khả năng thay thế con người mà ở khả năng hỗ trợ con người học tập hiệu quả hơn. Vì vậy, trách nhiệm, tư duy phản biện và tính minh bạch cần luôn được đặt ở vị trí trung tâm trong quá trình sử dụng AI.</p>
+<h2>V. KẾT LUẬN</h2>
+<p>Sự phát triển của trí tuệ nhân tạo đang tạo ra nhiều cơ hội mới cho giáo dục đại học. AI có thể trở thành công cụ hỗ trợ hiệu quả giúp sinh viên học tập và nghiên cứu tốt hơn. Tuy nhiên, việc sử dụng AI cần đi kèm với tinh thần trách nhiệm, tính trung thực và ý thức liêm chính học thuật. Chỉ khi người học biết sử dụng AI một cách đúng đắn, công nghệ này mới thực sự góp phần nâng cao chất lượng học tập và phát triển năng lực cá nhân.</p>
+
+<!-- Ethics Infographic representation -->
+<div class="ethics-infographic">
+<div class="ethics-title">Sử dụng AI có trách nhiệm trong học thuật</div>
+<div class="ethics-grid">
+<!-- NÊN LÀM -->
+<div class="ethics-col do">
+<h3>Nên làm</h3>
+<ul class="ethics-list">
+<li class="ethics-item">Tìm ý tưởng, phát triển đề tài nghiên cứu.</li>
+<li class="ethics-item">Tóm tắt tài liệu học tập, tổng hợp nguồn thông tin chính.</li>
+<li class="ethics-item">Kiểm tra lỗi ngữ pháp và cải thiện văn phong diễn đạt.</li>
+<li class="ethics-item">Kiểm chứng chéo thông tin và xác minh dữ liệu thực tế.</li>
+<li class="ethics-item">Trích dẫn sử dụng AI một cách minh bạch, ghi rõ nguồn.</li>
+</ul>
+</div>
+<!-- KHÔNG NÊN LÀM -->
+<div class="ethics-col dont">
+<h3>Không nên làm</h3>
+<ul class="ethics-list">
+<li class="ethics-item">Sao chép nguyên văn phản hồi của AI và nộp không chỉnh sửa.</li>
+<li class="ethics-item">Để AI tự làm toàn bộ bài tập, tiểu luận hoặc báo cáo.</li>
+<li class="ethics-item">Tạo các nguồn tham khảo giả, bịa đặt dữ liệu học thuật.</li>
+<li class="ethics-item">Che giấu việc sử dụng AI, không khai báo trung thực.</li>
+<li class="ethics-item">Tin tưởng tuyệt đối vào AI, bỏ qua tư duy phản biện cá nhân.</li>
+</ul>
+</div>
+</div>
+<div class="ethics-quote">
+                "AI là công cụ hỗ trợ học tập, nhưng tư duy, trách nhiệm và liêm chính học thuật luôn thuộc về con người."
+            </div>
+<div style="margin-top: 25px; display: flex; justify-content: space-between; font-size: 0.8rem; color: #718096; border-top: 1px solid #4a5568; padding-top: 15px;">
+<span>Học phần: Nhập môn Công nghệ số &amp; AI</span>
+<span>Sinh viên thực hiện: Đồng Huyền Linh</span>
+</div>
+</div>
+</div>
+</div>

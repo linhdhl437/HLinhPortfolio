@@ -1,0 +1,16 @@
+.\Project\HLinh\PortfolioAssets\CHẶNG 5\Sản phẩm infographic C5.pdf
+.\Project\HLinh\PortfolioAssets\CHẶNG 6\Sản phẩm infographic C6.pdf
+.\Project\Hlinh_DUPHONG\HLinh_Backup\PortfolioAssets\CHẶNG 1\THAO TÁC CƠ BẢN VỚI TỆP TIN VÀ THƯ MỤC.pdf
+.\Project\Hlinh_DUPHONG\HLinh_Backup\PortfolioAssets\CHẶNG 2\BÁO CÁO TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN.pdf
+.\Project\Hlinh_DUPHONG\HLinh_Backup\PortfolioAssets\CHẶNG 3\BÁO CÁO PHÂN TÍCH HIỆU QUẢ CỦA PROMPT ENGINEERING_TRONG HỌC TẬP.pdf
+.\Project\Hlinh_DUPHONG\HLinh_Backup\PortfolioAssets\CHẶNG 4\BÁO CÁO SỬ DỤNG CÔNG CỤ HỢP TÁC TRỰC TUYẾN VÀ TRẢI NGHIỆM QUẢN LÝ CÁ NHÂN TRONG DỰ ÁN NHÓM  .pdf
+.\Project\Hlinh_DUPHONG\HLinh_Backup\PortfolioAssets\CHẶNG 5\BÁO CÁO DỰ ÁN SÁNG TẠO NỘI DUNG SỐ BẰNG AI .pdf
+.\Project\Hlinh_DUPHONG\HLinh_Backup\PortfolioAssets\CHẶNG 6\BÁO CÁO SỬ DỤNG AI CÓ TRÁCH NHIỆM TRONG HỌC TẬP VÀ NGHIÊN CỨU .pdf
+.\Project\LMS_sourceNTT\25023048 - Ngô Tiến Thành.pdf
+.\Project\LMS_sourceNTT\PortfolioFinal.pdf
+.\Project\MHangFOF\DuAnWord\1. Thao tác cơ bản với tệp tin và thư mục.pdf
+.\Project\MHangFOF\DuAnWord\2. Tìm kiếm và đánh giá thông tin học thuật.pdf
+.\Project\MHangFOF\DuAnWord\3. Viết prompt hiệu quả cho các tác vụ học tập.pdf
+.\Project\MHangFOF\DuAnWord\4. Sử dụng công cụ trực tuyến cho dự án nhóm.pdf
+.\Project\MHangFOF\DuAnWord\5. Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung.pdf
+.\Project\MHangFOF\DuAnWord\6. Sử dụng AI có trách nhiệm trong học tập và nghiên cứu.pdf
