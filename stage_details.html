@@ -710,7 +710,7 @@
         }
       }
 
-      /* Responsive grid columns */
+      /* Responsive grid columns & Mobile Menu Adaptation */
       @media (max-width: 768px) {
         .stage-document-wrapper .ethics-grid,
         .stage-document-wrapper .compare-grid {
@@ -723,15 +723,48 @@
           transform: rotate(90deg) !important;
           margin: 5px 0 !important;
         }
+
+        /* Menu Navbar xếp 2 hàng dọc trên di động */
+        .sticky-nav-bar {
+          height: auto !important;
+          padding: 8px 0 !important;
+        }
+        .nav-bar-container {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 6px !important;
+        }
+        .nav-stages-list {
+          width: 100% !important;
+          max-width: 100% !important;
+          overflow-x: auto !important;
+          white-space: nowrap !important;
+          padding: 4px 0 !important;
+          justify-content: flex-start !important;
+          -webkit-overflow-scrolling: touch !important;
+        }
+        body.stage-details-page {
+          padding-top: 135px !important; /* Tăng padding để tránh bị đè nội dung */
+        }
       }
 
-      /* Responsive Layout for Mobile Devices */
+      /* Responsive Layout for Tablet/Mobile Devices */
       @media (max-width: 992px) {
         body.stage-details-page {
-          padding-top: 150px;
+          padding-top: 145px;
         }
         .parchment-sheet {
-          padding: 24px 16px;
+          padding: 24px 16px !important;
+        }
+      }
+
+      /* Cực nhỏ (Điện thoại cũ hoặc màn dọc đứng hẹp) */
+      @media (max-width: 480px) {
+        .parchment-sheet {
+          padding: 20px 10px !important;
+        }
+        body.stage-details-page {
+          padding-top: 135px !important;
         }
       }
     </style>
