@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
     // 📜 THƯ QUYỂN MỞ HAI CHIỀU (Toggled via GSAP ScrollTrigger)
     gsap.utils.toArray(".scroll-unroll-container").forEach(container => {
       ScrollTrigger.create({
@@ -49,30 +51,30 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Parallax on mountains (slow downward movement relative to scroll)
+    // Parallax on mountains (giảm dịch chuyển trên di động để tăng hiệu năng)
     gsap.to(".hero-bg-mountains", {
-      yPercent: 25,
+      yPercent: isTouch ? 8 : 25,
       ease: "none",
       scrollTrigger: {
         trigger: ".hero-section",
         start: "top top",
         end: "bottom top",
-        scrub: true
+        scrub: isTouch ? 0.6 : true
       }
     });
 
-    // Parallax on clouds (slow movements in opposite or different speeds)
+    // Parallax on clouds (giảm dịch chuyển trên di động để tăng hiệu năng)
     gsap.utils.toArray(".hero-cloud").forEach((cloud, idx) => {
-      const speed = (idx + 1) * 35;
+      const speed = (idx + 1) * (isTouch ? 10 : 35);
       gsap.to(cloud, {
         y: speed,
-        x: 20,
+        x: isTouch ? 5 : 20,
         ease: "none",
         scrollTrigger: {
           trigger: ".hero-section",
           start: "top top",
           end: "bottom top",
-          scrub: true
+          scrub: isTouch ? 0.6 : true
         }
       });
     });
@@ -80,14 +82,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Parallax on Calligraphy decorative stamp watermarks
     gsap.utils.toArray(".calligraphy-accent").forEach((char) => {
       gsap.to(char, {
-        y: -100,
+        y: isTouch ? -30 : -100,
         opacity: 0.15,
         ease: "power1.out",
         scrollTrigger: {
           trigger: char.parentElement,
           start: "top bottom",
           end: "bottom top",
-          scrub: true
+          scrub: isTouch ? 0.6 : true
         }
       });
     });

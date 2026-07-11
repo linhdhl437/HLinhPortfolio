@@ -57,9 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // Lịch sử vị trí/bán kính để vẽ bóng mờ dần (Fading Trail) trên đường đi
       this.history = [];
 
-      // Hạt bụi mực lấm tấm bắn ra
+      // Hạt bụi mực lấm tấm bắn ra (giảm số lượng trên di động)
       this.particles = [];
-      const numParticles = Math.floor(Math.random() * 6) + 7;
+      const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const numParticles = isTouch ? (Math.floor(Math.random() * 3) + 3) : (Math.floor(Math.random() * 6) + 7);
       for (let k = 0; k < numParticles; k++) {
         const angle = Math.random() * Math.PI * 2;
         const speed = Math.random() * 2.8 + 1.0;
@@ -252,16 +253,17 @@ document.addEventListener("DOMContentLoaded", () => {
         this.effects.shift();
       }
 
-      // Tự thích ứng độ phức tạp đa giác khi click dồn dập
-      let numVertices = 90;
-      let historyLength = 25;
+      // Tự thích ứng độ phức tạp đa giác khi click dồn dập (tối ưu mạnh trên di động)
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      let numVertices = isTouchDevice ? 40 : 90;
+      let historyLength = isTouchDevice ? 12 : 25;
 
       if (this.effects.length >= 2) {
-        numVertices = 60;
-        historyLength = 8;
+        numVertices = isTouchDevice ? 25 : 60;
+        historyLength = isTouchDevice ? 6 : 8;
       } else if (this.effects.length >= 3) {
-        numVertices = 45;
-        historyLength = 4;
+        numVertices = isTouchDevice ? 18 : 45;
+        historyLength = isTouchDevice ? 3 : 4;
       }
 
       this.effects.push(new ClickEffect(x, y, maxRadius, color, scaleX, scaleY, numVertices, historyLength));

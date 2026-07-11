@@ -37,11 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
     lastScrollY = currentScrollY;
   }, { passive: true });
 
-  // Config parameters
+  const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+  // Config parameters: Giảm 50% số lượng hạt trên di động để tối ưu hiệu năng
   const config = {
-    leafCount: 18, // increased slightly to include blossoms
-    birdCount: 4,
-    cloudCount: 4
+    leafCount: isTouch ? 8 : 18,
+    birdCount: isTouch ? 2 : 4,
+    cloudCount: isTouch ? 2 : 4
   };
 
   // Resize canvas with debounce
@@ -65,7 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Spawn cursor trail particles if threshold distance exceeded
     const dist = Math.hypot(e.clientX - lastParticleSpawn.x, e.clientY - lastParticleSpawn.y);
-    if (dist > 15 && activeParticleType !== "off") {
+    const minDistance = isTouch ? 45 : 15; // Cần di chuyển khoảng cách xa hơn trên di động để giảm tần suất tạo hạt
+    if (dist > minDistance && activeParticleType !== "off") {
       cursorParticles.push(new CursorParticle(e.clientX, e.clientY, activeParticleType));
       lastParticleSpawn = { x: e.clientX, y: e.clientY };
     }
