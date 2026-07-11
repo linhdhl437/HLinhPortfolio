@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ----------------------------------------------------
-  // CLASS: CLICK EFFECT REPRESENTATION (Vòng hạt tròn nở hình hoa pháo hoa)
+  // CLASS: CLICK EFFECT REPRESENTATION (Bông hoa Neon thu nhỏ sắc nét)
   // ----------------------------------------------------
   class ClickEffect {
     constructor(x, y, color, numPetals) {
@@ -18,30 +18,30 @@ document.addEventListener("DOMContentLoaded", () => {
       this.color = color;
       this.numPetals = numPetals;
       this.progress = 0;
-      this.speed = 0.013; // Giảm xuống 0.013 để lan tỏa từ từ và chậm rãi như pháo hoa (mất khoảng 1.3 giây)
+      this.speed = 0.015; // Lan tỏa từ từ trung bình
 
-      // Chấm nhụy vàng ở tâm to hơn một chút
+      // Nhụy hoa tâm sáng Neon
       this.centerDot = {
-        radius: 4.5,
+        radius: 3.5,
         alpha: 1.0,
-        color: "#FFD700"
+        color: "#FFFFFF" // Màu trắng điện (electric white) làm tâm phát sáng
       };
 
-      // 2 vòng hoa đồng tâm nở rộng hơn và nhiều hạt hơn cho sắc nét
+      // Thu nhỏ kích thước tối đa để bông hoa bé xinh, tăng mật độ chấm để rõ hình cánh hoa
       this.rings = [
         {
           baseRadius: 0,
-          maxBaseRadius: 70, // Tăng bán kính nở rộng
-          dotsCount: numPetals * 7, // Tăng số chấm để giữ hình dáng hoa khi phóng to
-          amp: 0.25,
+          maxBaseRadius: 30, // Bông hoa bé nhỏ thu gọn xung quanh con trỏ
+          dotsCount: numPetals * 9, // Tăng mật độ hạt (ví dụ 5x9 = 45 chấm) để viền hoa rõ nét
+          amp: 0.38, // Tăng biên độ cong (amplitude) giúp cánh hoa uốn lượn rõ ràng hơn
           delay: 0
         },
         {
           baseRadius: 0,
-          maxBaseRadius: 100, // Vòng ngoài bung rộng hẳn ra
-          dotsCount: numPetals * 7,
-          amp: 0.25,
-          delay: 0.16 // Trễ nhịp rõ hơn một chút để thấy từng lớp pháo hoa nở
+          maxBaseRadius: 45, // Vòng ngoài cũng thu gọn dẹt
+          dotsCount: numPetals * 9,
+          amp: 0.38,
+          delay: 0.14
         }
       ];
     }
@@ -49,14 +49,12 @@ document.addEventListener("DOMContentLoaded", () => {
     update() {
       this.progress += this.speed;
 
-      // Nhụy hoa phai màu dần
-      this.centerDot.alpha = Math.max(0, 1 - this.progress * 2.0);
+      this.centerDot.alpha = Math.max(0, 1 - this.progress * 2.2);
 
-      // Cập nhật từng vòng hoa
       this.rings.forEach(r => {
         if (this.progress > r.delay) {
           const p = Math.min(1.0, (this.progress - r.delay) / (1.0 - r.delay));
-          const easeOutCubic = 1 - Math.pow(1 - p, 3); // Giảm tốc về cuối giống pháo hoa thực tế
+          const easeOutCubic = 1 - Math.pow(1 - p, 3);
           r.baseRadius = r.maxBaseRadius * easeOutCubic;
           r.alpha = Math.max(0, 1 - p);
         } else {
@@ -66,17 +64,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     draw(ctx) {
-      // 1. Vẽ nhụy vàng trung tâm
+      // 1. Vẽ nhụy sáng ở trung tâm (Glow Neon trắng)
       if (this.centerDot.alpha > 0) {
         ctx.save();
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.centerDot.radius, 0, Math.PI * 2);
+        
+        // Tạo hiệu ứng phát sáng Neon
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = "#00FFFF"; // Ánh xanh Neon nhẹ quanh nhụy trắng
         ctx.fillStyle = this.hexToRGBA(this.centerDot.color, this.centerDot.alpha);
         ctx.fill();
         ctx.restore();
       }
 
-      // 2. Vẽ các vòng hoa hạt tròn sắc nét to hơn
+      // 2. Vẽ các vòng hoa hạt Neon sắc nét
       this.rings.forEach(r => {
         if (this.progress > r.delay && r.alpha > 0) {
           const numDots = r.dotsCount;
@@ -96,10 +98,15 @@ document.addEventListener("DOMContentLoaded", () => {
             ctx.save();
             ctx.beginPath();
             
-            // Tăng kích thước chấm tròn: bắt đầu từ 2.6px và thu nhỏ dần về cuối hành trình
-            const dotSize = 2.6 * (1.0 - this.progress * 0.3);
+            // Hạt nhỏ vừa vặn sắc nét
+            const dotSize = 2.0 * (1.0 - this.progress * 0.2);
             ctx.arc(dotX, dotY, dotSize, 0, Math.PI * 2);
+            
+            // Hiệu ứng phát sáng Neon cho viền hoa
+            ctx.shadowBlur = 6;
+            ctx.shadowColor = this.color;
             ctx.fillStyle = this.hexToRGBA(this.color, r.alpha);
+            
             ctx.fill();
             ctx.restore();
           }
@@ -121,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
         c = '0x' + c.join('');
         return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',' + alpha + ')';
       }
-      return `rgba(26,18,12,${alpha})`;
+      return `rgba(256,256,256,${alpha})`;
     }
   }
 
@@ -209,17 +216,21 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    // Chọn ngẫu nhiên loại hoa màu sắc Neon nổi bật
     const rand = Math.random();
     let color, numPetals;
 
     if (rand < 0.60) {
-      color = "#FF69B4";
+      // 60% Hoa Đào: Neon Pink nổi bật quyến rũ
+      color = "#FF007F"; 
       numPetals = 5;
     } else if (rand < 0.90) {
-      color = "#C24D56";
+      // 30% Hoa Mẫu Đơn: Neon Red/Orange rực rỡ
+      color = "#FF1F1F"; 
       numPetals = 8;
     } else {
-      color = "#D4AF37";
+      // 10% Hoa Cúc: Neon Yellow sáng lóa cực sang
+      color = "#FFE600"; 
       numPetals = 12;
     }
 
