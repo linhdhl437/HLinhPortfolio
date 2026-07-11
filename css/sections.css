@@ -318,31 +318,18 @@
   position: relative;
   background: linear-gradient(to bottom, rgba(249, 249, 246, 0.55) 0%, rgba(249, 249, 246, 0.55) 100%), 
               url('../PortfolioAssets/ToiLaAi.jpe') center/cover no-repeat scroll;
-  content-visibility: auto;
-  contain-intrinsic-size: 0 500px;
 }
 
 #HanhTrinh {
   position: relative;
   background: linear-gradient(to bottom, rgba(249, 249, 246, 0.58) 0%, rgba(249, 249, 246, 0.58) 100%), 
               url('../PortfolioAssets/HanhTrinh.jpg') center/cover no-repeat scroll;
-  content-visibility: auto;
-  contain-intrinsic-size: 0 500px;
 }
 
 #NhinLai {
   position: relative;
   background: linear-gradient(to bottom, rgba(249, 249, 246, 0.58) 0%, rgba(249, 249, 246, 0.58) 100%), 
               url('../PortfolioAssets/NhinLai.jpg') center/cover no-repeat scroll;
-  content-visibility: auto;
-  contain-intrinsic-size: 0 500px;
-}
-
-/* Fix mobile Safari background attachment bug */
-@media (max-width: 1024px) {
-  #Modau, #ToiLaAi, #HanhTrinh, #NhinLai {
-    background-attachment: scroll !important;
-  }
 }
 
 .section-header {
@@ -778,7 +765,7 @@
   .goals-list {
     grid-template-columns: 1fr;
   }
-
+}
 
 /* 📜 Stage Expanded Details Styling */
 

@@ -130,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const speed = (idx + 1) * 0.1;
             cloud.style.transform = `translateY(${scrollY * speed}px) translateX(${scrollY * 0.05}px)`;
           });
+          
           fallbackScrollTicking = false;
         });
         fallbackScrollTicking = true;

@@ -54,16 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============================================================
   const isComingFromDetails = document.referrer.includes('stage_details');
   if (isComingFromDetails || (window.location.hash && window.location.hash.startsWith('#stage-node-'))) {
-    // Briefly make body transparent for a smooth fade-in using CSS class
-    document.body.classList.add('fade-out-active');
+    // Briefly make body transparent for a smooth fade-in
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.4s ease';
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        document.body.classList.remove('fade-out-active');
+        document.body.style.opacity = '1';
       });
     });
     // Safety fallback: force opacity to 1 after 450ms in case requestAnimationFrame gets stuck
     setTimeout(() => {
-      document.body.classList.remove('fade-out-active');
+      document.body.style.opacity = '1';
     }, 450);
   }
 

@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Digital Portfolio hành trình học tập và trưởng thành trong thời đại AI của Đồng Huyền Linh - Sinh viên Ngôn ngữ Trung, Trường Đại học Ngoại ngữ - ĐHQGHN.">
   <title>Đồng Huyền Linh | Digital Portfolio</title>
-  
-  <!-- 🚀 Resource Hints & Fonts -->
+
+  <!-- 🚀 DNS Preconnect & Font/Asset Preloads -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="preload" as="image" href="./PortfolioAssets/ẢNH AVARTAR PHẦN MỞ ĐẦU_.jpg">
+  
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" as="style">
+  <link rel="preload" href="./css/variables.css" as="style">
+  <link rel="preload" href="./css/base.css" as="style">
+  <link rel="preload" href="./css/components.css" as="style">
+  <link rel="preload" href="./css/sections.css" as="style">
+  <link rel="preload" as="image" href="./PortfolioAssets/ẢNH AVARTAR PHẦN MỞ ĐẦU_.jpg" fetchpriority="high">
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap">
 
   <link rel="icon" type="image/png" href="./img/ulis_logo.png">
@@ -140,8 +147,8 @@
     <div class="container nav-container">
       <a href="#Modau" class="nav-logo">
         <div class="nav-uni-logos">
-          <img src="./img/vnu_logo.png" alt="VNU Logo" class="nav-uni-logo" title="Đại học Quốc gia Hà Nội" width="36" height="36" decoding="async">
-          <img src="./img/ulis_logo.png" alt="ULIS Logo" class="nav-uni-logo" title="Trường Đại học Ngoại ngữ" width="36" height="36" decoding="async">
+          <img src="./img/vnu_logo.png" alt="VNU Logo" class="nav-uni-logo" width="36" height="36" decoding="async" title="Đại học Quốc gia Hà Nội">
+          <img src="./img/ulis_logo.png" alt="ULIS Logo" class="nav-uni-logo" width="36" height="36" decoding="async" title="Trường Đại học Ngoại ngữ">
         </div>
         玄靈 <span>• Huyền Linh</span>
       </a>

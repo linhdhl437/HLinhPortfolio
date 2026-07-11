@@ -3,10 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("ink-canvas");
   if (!canvas) return;
 
-  const ctx = canvas.getContext("2d", {
-    alpha: true,
-    willReadFrequently: false
-  });
+  const ctx = canvas.getContext("2d", { alpha: true, willReadFrequently: false });
   
   // Tham số vật lý mặc định của mực loang
   const params = {
@@ -218,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ----------------------------------------------------
-  // CLASS: INK CANVAS MANAGER (Quản lý Render Loop)
+  // CLASS: INK CANVAS MANAGER (Quản lý Render Loop tối ưu)
   // ----------------------------------------------------
   class InkCanvasManager {
     constructor() {
@@ -227,15 +224,19 @@ document.addEventListener("DOMContentLoaded", () => {
       this.effects = [];
       this.rafId = null;
       this.isTabActive = true;
+      this.logicalWidth = window.innerWidth;
+      this.logicalHeight = window.innerHeight;
       
       this.resize();
       
-      this.resizeTimer = null;
+      // Debounce window resize
+      let resizeTimer;
       window.addEventListener('resize', () => {
-        clearTimeout(this.resizeTimer);
-        this.resizeTimer = setTimeout(() => this.resize(), 150);
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => this.resize(), 150);
       }, { passive: true });
 
+      // Tab visibility observer
       document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
           this.isTabActive = false;
@@ -246,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           if (!this.isTabActive) {
             this.isTabActive = true;
-            if (this.effects.length > 0 && !this.rafId) {
+            if (this.effects.length > 0) {
               this.loop();
             }
           }
@@ -256,11 +257,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     resize() {
       const dpr = window.devicePixelRatio || 1;
-      this.canvas.width = window.innerWidth * dpr;
-      this.canvas.height = window.innerHeight * dpr;
-      this.canvas.style.width = window.innerWidth + 'px';
-      this.canvas.style.height = window.innerHeight + 'px';
+      this.logicalWidth = window.innerWidth;
+      this.logicalHeight = window.innerHeight;
+      this.canvas.width = this.logicalWidth * dpr;
+      this.canvas.height = this.logicalHeight * dpr;
+      this.canvas.style.width = this.logicalWidth + 'px';
+      this.canvas.style.height = this.logicalHeight + 'px';
       this.ctx.scale(dpr, dpr);
+      
+      // Clear logical viewport if idle
+      if (!this.rafId) {
+        this.ctx.clearRect(0, 0, this.logicalWidth, this.logicalHeight);
+      }
     }
 
     addEffect(x, y, maxRadius, color, scaleX = 1.0, scaleY = 1.0) {
@@ -292,8 +300,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       this.effects.push(new ClickEffect(x, y, maxRadius, color, scaleX, scaleY, numVertices, historyLength));
-
-      // Kích hoạt lại loop nếu đang tạm dừng
+      
+      // Start render loop if idle and tab is active
       if (!this.rafId && this.isTabActive) {
         this.loop();
       }
@@ -302,8 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loop() {
       if (!this.isTabActive) return;
 
-      // CANVAS-06: clearRect sử dụng logical width/height để khớp với tọa độ đã scale
-      this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      this.ctx.clearRect(0, 0, this.logicalWidth, this.logicalHeight);
 
       for (let i = this.effects.length - 1; i >= 0; i--) {
         const fx = this.effects[i];
@@ -315,13 +322,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      // Dừng vòng lặp vẽ nếu không còn hiệu ứng nào
-      if (this.effects.length === 0) {
-        this.rafId = null;
-        return;
+      if (this.effects.length > 0) {
+        this.rafId = requestAnimationFrame(() => this.loop());
+      } else {
+        this.rafId = null; // Dừng render loop hoàn toàn khi rảnh
       }
-
-      this.rafId = requestAnimationFrame(() => this.loop());
     }
   }
 

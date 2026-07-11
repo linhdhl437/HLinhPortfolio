@@ -16,12 +16,12 @@
   transition: transform var(--transition-normal), background-color var(--transition-normal);
 }
 
-.site-header.scroll-down {
-  transform: translateY(-100%);
-}
-
 .site-header.scrolled {
   background-color: rgba(249, 249, 246, 0.96);
+}
+
+.site-header.scroll-down {
+  transform: translateY(-100%);
 }
 
 .nav-container {
@@ -563,6 +563,7 @@ body.brush-disabled .brush-toggle-label {
 .scroll-unroll-content {
   width: 100%;
   clip-path: inset(0% 50% 0% 50%); /* Collapsed vertically in center */
+  will-change: clip-path;
   transition: clip-path 1.0s var(--ease-ink);
   background: rgba(253, 252, 249, 0.74); /* Semi-transparent parchment background */
   border-radius: 4px;

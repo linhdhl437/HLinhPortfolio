@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Position dot instantly
     dot.style.transform = `translate3d(${mouse.x}px, ${mouse.y}px, 0) translate(-50%, -50%)`;
-  });
+  }, { passive: true });
 
-  let animFrameId = null;
+  let cursorRafId = null;
   let isTabActive = true;
 
   // Smooth follow loop for the ring (Lerp)
@@ -52,15 +52,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ring.style.transform = `translate3d(${ringPos.x}px, ${ringPos.y}px, 0) translate(-50%, -50%)`;
     
-    animFrameId = requestAnimationFrame(updateRing);
+    cursorRafId = requestAnimationFrame(updateRing);
   }
   updateRing();
 
-  // Pause cursor rendering when tab is hidden
-  document.addEventListener('visibilitychange', () => {
+  // Visibility Check to pause animation loop when tab is hidden
+  document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
       isTabActive = false;
-      if (animFrameId) cancelAnimationFrame(animFrameId);
+      if (cursorRafId) cancelAnimationFrame(cursorRafId);
     } else {
       if (!isTabActive) {
         isTabActive = true;
@@ -69,15 +69,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Hover states using Event Delegation (replaces expensive MutationObserver re-binding)
+  // Hover states on interactive elements using Event Delegation (Thế chỗ cho MutationObserver & QueryAll)
   document.addEventListener("mouseover", (e) => {
-    if (e.target.closest("a, button, [data-lightbox], .cursor-pointer, .btn, .sidebar-link, input, textarea, select")) {
+    const target = e.target.closest("a, button, [data-lightbox], .cursor-pointer, .btn, .sidebar-link, input, textarea, select");
+    if (target) {
       cursorContainer.classList.add("cursor-hover");
     }
   });
 
   document.addEventListener("mouseout", (e) => {
-    if (e.target.closest("a, button, [data-lightbox], .cursor-pointer, .btn, .sidebar-link, input, textarea, select")) {
+    const target = e.target.closest("a, button, [data-lightbox], .cursor-pointer, .btn, .sidebar-link, input, textarea, select");
+    if (target) {
       cursorContainer.classList.remove("cursor-hover");
     }
   });

@@ -3,22 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("ambient-canvas");
   if (!canvas) return;
 
-  const ctx = canvas.getContext("2d", {
-    alpha: true,
-    willReadFrequently: false
-  });
+  const ctx = canvas.getContext("2d", { alpha: true, willReadFrequently: false });
   const dpr = window.devicePixelRatio || 1;
+  canvas.width = window.innerWidth * dpr;
+  canvas.height = window.innerHeight * dpr;
+  canvas.style.width = window.innerWidth + 'px';
+  canvas.style.height = window.innerHeight + 'px';
+  ctx.scale(dpr, dpr);
   let width = window.innerWidth;
   let height = window.innerHeight;
-
-  function setupCanvasSize() {
-    canvas.width = width * dpr;
-    canvas.height = height * dpr;
-    canvas.style.width = width + 'px';
-    canvas.style.height = height + 'px';
-    ctx.scale(dpr, dpr);
-  }
-  setupCanvasSize();
 
   // Track mouse coordinates and path history
   const mouse = { x: -1000, y: -1000, active: false };
@@ -42,14 +35,14 @@ document.addEventListener("DOMContentLoaded", () => {
     activeParticleType = e.detail;
   });
 
-  // Wind velocity tracker on scroll with requestAnimationFrame throttling
+  // Wind velocity tracker on scroll (Thêm RAF throttle)
   let scrollTicking = false;
   window.addEventListener("scroll", () => {
     if (!scrollTicking) {
       requestAnimationFrame(() => {
         const currentScrollY = window.scrollY;
         const diff = Math.abs(currentScrollY - lastScrollY);
-        scrollWind += diff * 0.04;
+        scrollWind += diff * 0.04; // scale scroll velocity to wind force
         lastScrollY = currentScrollY;
         scrollTicking = false;
       });
@@ -66,14 +59,19 @@ document.addEventListener("DOMContentLoaded", () => {
     cloudCount: isTouch ? 2 : 4
   };
 
-  // Resize canvas with debounce and DPR reset
+  // Resize canvas with debounce (Cập nhật DPR scale)
   let resizeTimeout;
   function resize() {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      canvas.style.width = window.innerWidth + 'px';
+      canvas.style.height = window.innerHeight + 'px';
+      ctx.scale(dpr, dpr);
       width = window.innerWidth;
       height = window.innerHeight;
-      setupCanvasSize();
     }, 150);
   }
   window.addEventListener("resize", resize, { passive: true });
@@ -415,18 +413,16 @@ document.addEventListener("DOMContentLoaded", () => {
       leaf.draw();
     });
 
-    // 4. Update and draw Cursor particles
+    // 4. Update and draw Cursor particles (Tối ưu hóa duyệt ngược tránh cấp phát mảng mới)
     for (let i = cursorParticles.length - 1; i >= 0; i--) {
-      const p = cursorParticles[i];
-      p.update();
-      if (p.life <= 0) {
+      const particle = cursorParticles[i];
+      particle.update();
+      particle.draw();
+      if (particle.life <= 0) {
         cursorParticles.splice(i, 1);
-      } else {
-        p.draw();
       }
     }
     
-    // Giới hạn tối đa 40 hạt để giảm tải CPU/Pin
     if (cursorParticles.length > 40) {
       cursorParticles.splice(0, cursorParticles.length - 40);
     }
