@@ -1035,6 +1035,13 @@
               contentTarget.style.opacity = "0";
             }
 
+            // Scroll window to top of parchment sheet smoothly IMMEDIATELY during closing!
+            const rect = scrollUnroll.getBoundingClientRect();
+            window.scrollTo({
+              top: rect.top + window.scrollY - 90,
+              behavior: "smooth"
+            });
+
             // Wait 1.0s for the unroll closing transition to complete
             setTimeout(() => {
               executeLoad();
