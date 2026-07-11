@@ -1,7 +1,4 @@
 /* 🎋 Main Script for HLinh Portfolio */
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   // Detect reload to reset hash and scroll to top on refresh
@@ -34,6 +31,54 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.add("brush-disabled");
         toggleBtn.classList.add("disabled");
       }
+    });
+  }
+
+  // ==========================================================================
+  // 0.1 CURSOR PARTICLE TOGGLE SYSTEM
+  // ==========================================================================
+  const particleBtn = document.getElementById("btn-toggle-particles");
+  const particleCapsule = document.getElementById("particle-toggle-capsule");
+  
+  if (particleBtn) {
+    const particleTypes = ["peach", "bamboo", "lotus", "off"];
+    const particleIcons = {
+      peach: "🌸",
+      bamboo: "🎋",
+      lotus: "🪷",
+      off: "🚫"
+    };
+    const particleTitles = {
+      peach: "Hiệu ứng chuột: Cánh hoa đào 🌸 (Click để đổi)",
+      bamboo: "Hiệu ứng chuột: Lá trúc nhỏ 🎋 (Click để đổi)",
+      lotus: "Hiệu ứng chuột: Cánh hoa sen 🪷 (Click để đổi)",
+      off: "Tắt hiệu ứng hạt theo chuột 🚫 (Click để bật lại)"
+    };
+    
+    let currentType = localStorage.getItem("cursorParticleType") || "peach";
+    
+    // Set initial icon and title
+    particleBtn.textContent = particleIcons[currentType];
+    if (particleCapsule) {
+      particleCapsule.setAttribute("title", particleTitles[currentType]);
+    }
+    
+    particleBtn.addEventListener("click", () => {
+      const currentIndex = particleTypes.indexOf(currentType);
+      const nextIndex = (currentIndex + 1) % particleTypes.length;
+      currentType = particleTypes[nextIndex];
+      
+      // Save state
+      localStorage.setItem("cursorParticleType", currentType);
+      
+      // Update UI
+      particleBtn.textContent = particleIcons[currentType];
+      if (particleCapsule) {
+        particleCapsule.setAttribute("title", particleTitles[currentType]);
+      }
+      
+      // Dispatch custom event to ambient-canvas.js
+      window.dispatchEvent(new CustomEvent("cursorParticleTypeChanged", { detail: currentType }));
     });
   }
 
@@ -94,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (targetId && targetId.startsWith("#")) {
         const targetSection = document.querySelector(targetId);
         if (targetSection) {
-          const headerHeight = 70; // Matches navbar height
+          const headerHeight = document.getElementById('site-header')?.offsetHeight || 70; // Matches navbar height dynamically
           const targetOffset = targetSection.getBoundingClientRect().top + window.scrollY - headerHeight;
           
           window.scrollTo({
@@ -116,7 +161,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section[id], footer[id]");
   let lastScrollY = window.scrollY;
 
+  let scrollTick = false;
   window.addEventListener("scroll", () => {
+    if (!scrollTick) {
+      window.requestAnimationFrame(() => {
+        handleScroll();
+        scrollTick = false;
+      });
+      scrollTick = true;
+    }
+  }, { passive: true });
+
+  function handleScroll() {
     const currentScrollY = window.scrollY;
 
     // A. Sticky Header Toggle (Keep header always visible)
@@ -157,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.history.replaceState(null, null, `#${currentActiveId}`);
       }
     }
-  });
+  }
   
   // CTA Button Smooth Scroll helper
   const ctaBtn = document.getElementById("hero-cta-btn");
@@ -187,16 +243,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabPanes = document.querySelectorAll(".journey-tab-pane");
 
   if (tabItems.length && tabPanes.length) {
-    tabItems.forEach(item => {
+    tabItems.forEach((item, index) => {
+      // Click handler
       item.addEventListener("click", () => {
         // 1. Check if already active
         if (item.classList.contains("active")) return;
 
-        // 2. Remove active state from all items
-        tabItems.forEach(i => i.classList.remove("active"));
+        // 2. Remove active state, aria-selected and tabindex from all items
+        tabItems.forEach(i => {
+          i.classList.remove("active");
+          i.setAttribute("aria-selected", "false");
+          i.setAttribute("tabindex", "-1");
+        });
         
-        // 3. Add active state to clicked item
+        // 3. Add active state, aria-selected and tabindex to clicked item
         item.classList.add("active");
+        item.setAttribute("aria-selected", "true");
+        item.setAttribute("tabindex", "0");
         
         // 4. Get target pane ID
         const targetId = item.getAttribute("data-target");
@@ -230,6 +293,25 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
       });
+
+      // Keyboard navigation handler (Arrows, Space, Enter)
+      item.addEventListener("keydown", (e) => {
+        let nextIndex = index;
+        if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+          nextIndex = (index + 1) % tabItems.length;
+        } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+          nextIndex = (index - 1 + tabItems.length) % tabItems.length;
+        } else if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          item.click();
+          return;
+        } else {
+          return;
+        }
+        e.preventDefault();
+        tabItems[nextIndex].focus();
+        tabItems[nextIndex].click();
+      });
     });
 
     // Initialize transition style triggers
@@ -244,7 +326,34 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    // ==========================================================================
+    // 5. WATER RIPPLE BUTTON CLICK HANDLER (CLASSICAL STYLE)
+    // ==========================================================================
+    document.addEventListener("click", (e) => {
+      const target = e.target.closest(".btn, .btn-classical, .btn-back-sticky, .btn-toggle-brush, .journey-tab-item, .nav-stage-item");
+      if (!target) return;
+
+      const rect = target.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const ripple = document.createElement("span");
+      ripple.className = "ripple-wave";
+      
+      const size = Math.max(rect.width, rect.height);
+      ripple.style.width = ripple.style.height = `${size}px`;
+      
+      ripple.style.left = `${x - size / 2}px`;
+      ripple.style.top = `${y - size / 2}px`;
+
+      target.appendChild(ripple);
+      setTimeout(() => {
+        ripple.remove();
+      }, 900);
+    });
+
     // Tab init on hash is now handled entirely in loading.js (synchronous, before first paint)
     // to avoid race conditions between the two DOMContentLoaded handlers.
   }
 });
+

@@ -132,11 +132,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Lock scrolling initially for welcome intro video playback
     document.body.style.overflow = "hidden";
   }
-
-  // 2. Play intro on welcome screen click
+  // 2. Play intro on welcome screen click (with keyboard accessibility)
   if (enterScreen && video) {
     let enterClicked = false;
-    enterScreen.addEventListener("click", () => {
+    const triggerEnter = () => {
       if (enterClicked) return;
       enterClicked = true;
       
@@ -163,6 +162,14 @@ document.addEventListener("DOMContentLoaded", () => {
           video.muted = true;
           video.play();
         });
+      }
+    };
+
+    enterScreen.addEventListener("click", triggerEnter);
+    enterScreen.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        triggerEnter();
       }
     });
   }

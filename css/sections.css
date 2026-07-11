@@ -142,30 +142,7 @@
   font-weight: 500;
 }
 
-#btn-start-intro {
-  padding: 0.9rem 2.5rem;
-  font-size: 1rem;
-  border-radius: 30px;
-  letter-spacing: 0.05em;
-  font-weight: 600;
-  background-color: var(--accent-vermillion);
-  color: var(--bg-paper); /* Excellent contrast white/cream on dark red */
-  border: none;
-  cursor: pointer;
-  transition: background-color var(--transition-normal), transform 0.2s;
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.25);
-}
 
-#btn-start-intro:hover {
-  background-color: var(--accent-vermillion-hover);
-  transform: translateY(-2px);
-}
-
-#btn-start-intro:active {
-  transform: translateY(0);
-}
 
 /* ==========================================================================
    1. HERO SECTION
@@ -357,7 +334,7 @@
 
 /* Fix mobile Safari background attachment bug */
 @media (max-width: 1024px) {
-  #about, #journey, #reflection {
+  #Modau, #ToiLaAi, #HanhTrinh, #NhinLai {
     background-attachment: scroll !important;
   }
 }
@@ -495,110 +472,7 @@
 /* ==========================================================================
    3. SHOWCASE TIMELINE (HÀNH TRÌNH HỌC TẬP)
    ========================================================================== */
-.timeline-container {
-  position: relative;
-  padding: var(--space-xl) 0;
-}
 
-.timeline-line {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(184,144,71,0.1) 0%, rgba(184,144,71,0.6) 10%, rgba(184,144,71,0.6) 90%, rgba(184,144,71,0.1) 100%);
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-.timeline-item {
-  display: flex;
-  width: 100%;
-  margin-bottom: var(--space-3xl);
-  position: relative;
-  z-index: 2;
-}
-
-.timeline-item:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-.timeline-node {
-  position: absolute;
-  left: 50%;
-  top: 30px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: var(--bg-paper);
-  border: 3px solid var(--accent-vermillion);
-  transform: translateX(-50%);
-  z-index: 3;
-}
-
-.timeline-content-wrapper {
-  width: 45%;
-}
-
-.timeline-item:nth-child(even) .timeline-content-wrapper {
-  padding-left: var(--space-lg);
-}
-
-.timeline-item:not(:nth-child(even)) .timeline-content-wrapper {
-  padding-right: var(--space-lg);
-  text-align: right;
-}
-
-/* 🎋 Desktop Staggered Masonry Alternating Timeline (Save space, staggered) */
-@media (min-width: 1025px) {
-  .timeline-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 80px;
-    row-gap: 0;
-    padding-bottom: 120px;
-  }
-
-  .timeline-item {
-    margin-bottom: 0 !important;
-    width: 100% !important;
-    display: block !important;
-  }
-
-  .timeline-content-wrapper {
-    width: 100% !important;
-    padding: 0 !important;
-    text-align: left !important;
-  }
-
-  /* Distribute items into left and right columns with row overlap spacing */
-  #stage-node-1 { grid-column: 1; grid-row: 1; margin-top: 0; }
-  #stage-node-3 { grid-column: 1; grid-row: 2; margin-top: -60px; }
-  #stage-node-5 { grid-column: 1; grid-row: 3; margin-top: -60px; }
-
-  #stage-node-2 { grid-column: 2; grid-row: 1 / 3; margin-top: 140px; }
-  #stage-node-4 { grid-column: 2; grid-row: 2 / 4; margin-top: 80px; }
-  #stage-node-6 { grid-column: 2; grid-row: 3 / 5; margin-top: 80px; }
-
-  /* Align nodes on the central line */
-  #stage-node-1 .timeline-node,
-  #stage-node-3 .timeline-node,
-  #stage-node-5 .timeline-node {
-    left: auto;
-    right: -49px;
-    transform: translate(50%, -50%);
-    top: 50px;
-  }
-
-  #stage-node-2 .timeline-node,
-  #stage-node-4 .timeline-node,
-  #stage-node-6 .timeline-node {
-    left: -49px;
-    right: auto;
-    transform: translate(-50%, -50%);
-    top: 50px;
-  }
-}
 
 .journey-card {
   text-align: left !important;
@@ -664,86 +538,9 @@
 .compare-card.after h4 { color: var(--accent-vermillion); }
 
 /* Skill tree layout */
-.skills-container {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: var(--space-2xl);
-  align-items: center;
-  margin-bottom: var(--space-3xl);
-}
 
-.skills-tree-graphic {
-  background-color: var(--bg-paper-warm);
-  border: 1px solid var(--border-ink);
-  border-radius: 8px;
-  padding: var(--space-xl);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  position: relative;
-  min-height: 350px;
-}
 
-.skill-node-item {
-  border: 1px solid var(--border-ink);
-  background-color: var(--bg-paper);
-  padding: var(--space-md);
-  border-radius: 6px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-xs);
-  transition: all var(--transition-normal);
-}
 
-.skill-node-item:hover {
-  border-color: var(--accent-gold);
-  transform: scale(1.03);
-}
-
-.skill-node-icon {
-  font-size: 1.5rem;
-  color: var(--accent-gold);
-}
-
-.skill-node-num {
-  font-family: var(--font-serif);
-  font-size: 0.8rem;
-  color: var(--accent-vermillion);
-}
-
-/* AI Map Grid Table style */
-.ai-map-table-wrapper {
-  overflow-x: auto;
-  border: 1px solid var(--border-ink);
-  border-radius: 8px;
-  background-color: var(--bg-paper-warm);
-}
-
-.ai-map-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 0.95rem;
-}
-
-.ai-map-table th, .ai-map-table td {
-  padding: var(--space-md);
-  border-bottom: 1px solid var(--border-ink);
-}
-
-.ai-map-table th {
-  font-family: var(--font-serif);
-  color: var(--text-ink);
-  background-color: rgba(184, 144, 71, 0.05);
-  font-weight: 600;
-}
-
-.ai-map-table tr:last-child td {
-  border-bottom: none;
-}
 
 .ai-tool-badge {
   font-family: var(--font-serif);
@@ -977,161 +774,11 @@
   }
 }
 
-/* 📜 Scroll Unroll (Thư Quyển Mở) Styles */
-.scroll-unroll-container {
-  position: relative;
-  width: 100%;
-  overflow: visible; /* Allow decorative items to overflow slightly */
-}
 
-.scroll-unroll-content {
-  width: 100%;
-  clip-path: inset(0% 50% 0% 50%); /* Collapsed vertically in center */
-  transition: clip-path 1.6s var(--ease-ink);
-  background: rgba(253, 252, 249, 0.74); /* Semi-transparent parchment background */
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  border-radius: 4px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.04);
-  position: relative;
-  z-index: 2;
-}
-
-.scroll-unroll-roller-left,
-.scroll-unroll-roller-right {
-  position: absolute;
-  top: -10px;
-  width: 20px;
-  height: calc(100% + 20px);
-  background: linear-gradient(to right, #8a6421 0%, #b89047 30%, #f3e5ab 50%, #b89047 70%, #8a6421 100%); /* cylindrical 3D gradient */
-  box-shadow: 0 0 14px rgba(139, 0, 0, 0.3), inset 1px 0 1px rgba(255,255,255,0.25);
-  z-index: 20;
-  pointer-events: none;
-  transition: left 1.6s var(--ease-ink), right 1.6s var(--ease-ink), transform 1.6s var(--ease-ink), opacity 1.6s;
-  opacity: 0;
-  border-radius: 4px;
-}
-
-.scroll-unroll-roller-left::before,
-.scroll-unroll-roller-left::after,
-.scroll-unroll-roller-right::before,
-.scroll-unroll-roller-right::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 28px;
-  height: 14px;
-  background: radial-gradient(circle, #f3e5ab 0%, #b89047 70%, #8a6421 100%);
-  border: 1px solid #8a6421;
-  border-radius: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-.scroll-unroll-roller-left::before,
-.scroll-unroll-roller-right::before {
-  top: -14px;
-}
-.scroll-unroll-roller-left::after,
-.scroll-unroll-roller-right::after {
-  bottom: -14px;
-}
-
-.scroll-unroll-roller-left {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.scroll-unroll-roller-right {
-  right: 50%;
-  transform: translateX(50%);
-}
-
-/* Active State (Triggered when scrolled into view) */
-.scroll-unroll-container.unrolled .scroll-unroll-content {
-  clip-path: inset(0% 0% 0% 0%); /* Fully unrolled */
-}
-
-.scroll-unroll-container.unrolled .scroll-unroll-roller-left {
-  left: -10px;
-  transform: none;
-  opacity: 1;
-}
-
-.scroll-unroll-container.unrolled .scroll-unroll-roller-right {
-  right: -10px;
-  transform: none;
-  opacity: 1;
-}
-
-/* Hide rollers on small screen layouts if needed, but keeping them is fine */
-@media (max-width: 768px) {
-  .scroll-unroll-roller-left, .scroll-unroll-roller-right {
-    height: 100%;
-    top: 0;
-  }
 }
 
 /* 📜 Stage Expanded Details Styling */
-.journey-expanded-details {
-  display: none;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-  margin-top: var(--space-md);
-  padding-top: var(--space-md);
-  border-top: 1px dashed rgba(184, 144, 71, 0.35);
-  text-align: left !important; /* Ensure it stays aligned left for reading flow */
-}
 
-/* Customize content elements inside expanded details */
-.journey-expanded-details p {
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: var(--text-charcoal);
-  margin-bottom: 1.2rem;
-  text-align: justify;
-}
-
-.journey-expanded-details ul, .journey-expanded-details ol {
-  margin-bottom: 1.2rem;
-  padding-left: 1.5rem;
-}
-
-.journey-expanded-details li {
-  margin-bottom: 0.6rem;
-  color: var(--text-charcoal);
-  font-size: 0.95rem;
-}
-
-.journey-expanded-details h4.stage-h4 {
-  font-family: var(--font-serif);
-  color: var(--accent-vermillion);
-  margin-top: 2rem;
-  margin-bottom: 0.8rem;
-  font-size: 1.25rem;
-  font-weight: bold;
-  border-left: 3px solid var(--accent-gold);
-  padding-left: 10px;
-}
-
-.journey-expanded-details h5.stage-h5 {
-  font-family: var(--font-serif);
-  color: var(--accent-gold);
-  margin-top: 1.5rem;
-  margin-bottom: 0.6rem;
-  font-size: 1.10rem;
-  font-weight: bold;
-}
-
-.journey-expanded-details h6.stage-h6 {
-  font-family: var(--font-serif);
-  color: var(--text-ink);
-  margin-top: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  font-weight: bold;
-  font-style: italic;
-}
 
 .stage-image-container img {
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);

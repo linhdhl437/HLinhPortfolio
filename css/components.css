@@ -74,31 +74,44 @@
   font-family: var(--font-serif);
   font-size: 0.95rem;
   color: var(--text-charcoal);
-  padding: var(--space-xs) var(--space-sm);
+  padding: 6px 12px;
   position: relative;
-  transition: color var(--transition-normal);
   cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: color 0.35s ease, text-shadow 0.35s ease, border-color 0.35s ease, background-color 0.35s ease;
 }
 
 .nav-link::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 1px;
-  background-color: var(--accent-vermillion);
-  transition: width 0.3s var(--ease-ink), left 0.3s var(--ease-ink);
+  bottom: -4px;
+  left: 5%;
+  width: 90%;
+  height: 6px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 10' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3,5 Q25,2 50,5 T97,5 Q80,8 50,6 T3,5' fill='%23b89047'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-ink);
 }
 
 .nav-link:hover {
-  color: var(--accent-vermillion);
+  color: #b89047;
+  text-shadow: 0 0 8px rgba(184, 144, 71, 0.45);
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
-  width: 80%;
-  left: 10%;
+  transform: scaleX(1);
+}
+
+.nav-link.active {
+  color: #b89047 !important;
+  text-shadow: 0 0 8px rgba(184, 144, 71, 0.55);
+  border-color: rgba(184, 144, 71, 0.35);
+  background-color: rgba(184, 144, 71, 0.05);
 }
 
 /* Mobile Menu Toggle button */
@@ -250,16 +263,19 @@
   height: 100%;
   background-color: rgba(20, 20, 20, 0.95); /* Deep ink backdrop */
   z-index: var(--z-modal);
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
 .lightbox-modal.active {
-  display: flex;
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .lightbox-content {
@@ -524,3 +540,167 @@ body.brush-disabled .brush-toggle-label {
     display: none !important;
   }
 }
+
+/* 🌊 Classical Water Ripple Button Effect */
+.btn, .btn-classical, .btn-back-sticky, .btn-toggle-brush, .journey-tab-item, .nav-stage-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-wave {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184, 144, 71, 0.25) 0%, rgba(184, 144, 71, 0) 70%);
+  border: 1px solid rgba(184, 144, 71, 0.45);
+  pointer-events: none;
+  transform: scale(0);
+  animation: rippleAnimation 0.9s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+  z-index: 99;
+}
+
+@keyframes rippleAnimation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* 📜 Scroll Unroll (Thư Quyển Mở) Styles */
+.scroll-unroll-container {
+  position: relative;
+  width: 100%;
+  overflow: visible; /* Allow decorative items to overflow slightly */
+}
+
+.scroll-unroll-content {
+  width: 100%;
+  clip-path: inset(0% 50% 0% 50%); /* Collapsed vertically in center */
+  transition: clip-path 1.6s var(--ease-ink);
+  background: rgba(253, 252, 249, 0.74); /* Semi-transparent parchment background */
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 4px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.04);
+  position: relative;
+  z-index: 2;
+}
+
+.scroll-unroll-roller-left,
+.scroll-unroll-roller-right {
+  position: absolute;
+  top: -10px;
+  width: 20px;
+  height: calc(100% + 20px);
+  background: linear-gradient(to right, #8a6421 0%, #b89047 30%, #f3e5ab 50%, #b89047 70%, #8a6421 100%); /* cylindrical 3D gradient */
+  box-shadow: 0 0 14px rgba(139, 0, 0, 0.3), inset 1px 0 1px rgba(255,255,255,0.25);
+  z-index: 20;
+  pointer-events: none;
+  transition: left 1.6s var(--ease-ink), right 1.6s var(--ease-ink), transform 1.6s var(--ease-ink), opacity 1.6s;
+  opacity: 0;
+  border-radius: 4px;
+}
+
+.scroll-unroll-roller-left::before,
+.scroll-unroll-roller-left::after,
+.scroll-unroll-roller-right::before,
+.scroll-unroll-roller-right::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  height: 14px;
+  background: radial-gradient(circle, #f3e5ab 0%, #b89047 70%, #8a6421 100%);
+  border: 1px solid #8a6421;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+.scroll-unroll-roller-left::before,
+.scroll-unroll-roller-right::before {
+  top: -14px;
+}
+.scroll-unroll-roller-left::after,
+.scroll-unroll-roller-right::after {
+  bottom: -14px;
+}
+
+.scroll-unroll-roller-left {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-unroll-roller-right {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+/* Active State (Triggered when scrolled into view) */
+.scroll-unroll-container.unrolled .scroll-unroll-content {
+  clip-path: inset(0% 0% 0% 0%); /* Fully unrolled */
+}
+
+.scroll-unroll-container.unrolled .scroll-unroll-roller-left {
+  left: -10px;
+  transform: none;
+  opacity: 1;
+}
+
+.scroll-unroll-container.unrolled .scroll-unroll-roller-right {
+  right: -10px;
+  transform: none;
+  opacity: 1;
+}
+
+/* Hide rollers on small screen layouts if needed, but keeping them is fine */
+@media (max-width: 768px) {
+  .scroll-unroll-roller-left, .scroll-unroll-roller-right {
+    height: 100%;
+    top: 0;
+  }
+}
+
+/* 💮 Red Seal (Dấu Triện Đỏ) for Parchment Sheet */
+.parchment-sheet {
+  position: relative;
+}
+
+.parchment-sheet::before {
+  content: "玄靈";
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 44px;
+  height: 44px;
+  border: 3px double var(--accent-vermillion);
+  color: var(--accent-vermillion);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 18px;
+  text-align: center;
+  padding: 3px;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  transform: rotate(-6deg);
+  border-radius: 4px;
+  box-shadow: 0 0 2px rgba(139, 0, 0, 0.1);
+  background-color: transparent;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .parchment-sheet::before {
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+

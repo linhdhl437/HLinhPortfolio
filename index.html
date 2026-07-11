@@ -6,6 +6,36 @@
   <meta name="description" content="Digital Portfolio hành trình học tập và trưởng thành trong thời đại AI của Đồng Huyền Linh - Sinh viên Ngôn ngữ Trung, Trường Đại học Ngoại ngữ - ĐHQGHN.">
   <title>Đồng Huyền Linh | Digital Portfolio</title>
   <link rel="icon" type="image/png" href="./img/ulis_logo.png">
+  <link rel="canonical" href="https://linhdhl437.github.io/HLinhPortfolio/index.html">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://linhdhl437.github.io/HLinhPortfolio/index.html">
+  <meta property="og:title" content="Đồng Huyền Linh | Digital Portfolio">
+  <meta property="og:description" content="Digital Portfolio hành trình học tập và trưởng thành trong thời đại AI của Đồng Huyền Linh - Sinh viên Ngôn ngữ Trung, Trường Đại học Ngoại ngữ - ĐHQGHN.">
+  <meta property="og:image" content="https://linhdhl437.github.io/HLinhPortfolio/PortfolioAssets/AnhIntro1.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://linhdhl437.github.io/HLinhPortfolio/index.html">
+  <meta property="twitter:title" content="Đồng Huyền Linh | Digital Portfolio">
+  <meta property="twitter:description" content="Digital Portfolio hành trình học tập và trưởng thành trong thời đại AI của Đồng Huyền Linh - Sinh viên Ngôn ngữ Trung, Trường Đại học Ngoại ngữ - ĐHQGHN.">
+  <meta property="twitter:image" content="https://linhdhl437.github.io/HLinhPortfolio/PortfolioAssets/AnhIntro1.png">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Đồng Huyền Linh",
+      "jobTitle": "Sinh viên Ngôn ngữ Trung",
+      "affiliation": {
+        "@type": "EducationalOrganization",
+        "name": "Trường Đại học Ngoại ngữ - ĐHQGHN"
+      },
+      "url": "https://linhdhl437.github.io/HLinhPortfolio/index.html"
+    }
+  </script>
   
   <!-- 🚀 CRITICAL: Run before body renders to prevent intro flash when navigating back -->
   <script>
@@ -44,7 +74,7 @@
   <!-- 🖌️ Intro Video & Welcome Overlay (Toàn màn hình) -->
   <div id="intro-video-overlay" class="intro-video-overlay">
     <!-- Màn hình đệm cổ phong (Welcome Enter Screen) -->
-    <div id="intro-enter-screen" class="intro-enter-screen" style="cursor: pointer;">
+    <div id="intro-enter-screen" class="intro-enter-screen" style="cursor: pointer;" role="button" tabindex="0" aria-label="Nhấp để bắt đầu hành trình">
       <div class="glass-panel-welcome">
         <!-- Watermark chữ Hán mờ -->
         <div class="watermark-characters">玄靈</div>
@@ -69,7 +99,7 @@
     </button>
     
     <!-- Thẻ video phát intro -->
-    <video id="intro-video" playsinline preload="auto" style="pointer-events: none;">
+    <video id="intro-video" playsinline preload="none" style="pointer-events: none;">
       <source src="./PortfolioAssets/VideoIntroPhanMoDau.mp4" type="video/mp4">
       Trình duyệt của bạn không hỗ trợ thẻ video này.
     </video>
@@ -104,6 +134,13 @@
               </button>
             </div>
           </li>
+          <li style="display: flex; align-items: center; margin-left: 8px;">
+            <div class="brush-toggle-capsule" id="particle-toggle-capsule" title="Đổi hiệu ứng con trỏ chuột">
+              <button id="btn-toggle-particles" class="btn-toggle-brush" aria-label="Toggle Cursor Trail Particles">
+                🌸
+              </button>
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
@@ -117,15 +154,15 @@
       <div class="hero-bg-mountains"></div>
       
       <!-- Decorative background clouds -->
-      <svg class="hero-cloud animate-float-cloud" style="position: absolute; top: 15%; left: 5%; width: 120px; opacity: 0.08; z-index: 1;" viewBox="0 0 100 100">
+      <svg class="hero-cloud animate-float-cloud" style="position: absolute; top: 15%; left: 5%; width: 120px; opacity: 0.08; z-index: 1;" viewBox="0 0 100 100" aria-hidden="true">
         <path fill="currentColor" d="M20,50 C20,35 40,30 50,40 C60,25 85,30 80,50 C95,50 95,70 80,70 C70,70 65,70 50,70 C30,70 10,70 20,50 Z"/>
       </svg>
-      <svg class="hero-cloud animate-float-cloud" style="position: absolute; top: 25%; right: 8%; width: 180px; opacity: 0.06; z-index: 1; animation-delay: -3s;" viewBox="0 0 100 100">
+      <svg class="hero-cloud animate-float-cloud" style="position: absolute; top: 25%; right: 8%; width: 180px; opacity: 0.06; z-index: 1; animation-delay: -3s;" viewBox="0 0 100 100" aria-hidden="true">
         <path fill="currentColor" d="M20,50 C20,35 40,30 50,40 C60,25 85,30 80,50 C95,50 95,70 80,70 C70,70 65,70 50,70 C30,70 10,70 20,50 Z"/>
       </svg>
 
       <!-- Decorative calligraphy watermark -->
-      <div class="calligraphy-accent" style="top: 15%; right: 5%;">數位學卷</div> <!-- Kỷ yếu số -->
+      <div class="calligraphy-accent" style="top: 15%; right: 5%;" aria-hidden="true">數位學卷</div> <!-- Kỷ yếu số -->
 
       <div class="container hero-grid">
         <div class="hero-content hero-animate" style="opacity: 0;">
@@ -173,7 +210,7 @@
          ========================================================================== -->
     <section id="ToiLaAi" class="section-padding scroll-reveal" style="position: relative;">
       <!-- Elegant Corner Flowers -->
-      <svg class="corner-flower top-left" viewBox="0 0 100 100">
+      <svg class="corner-flower top-left" viewBox="0 0 100 100" aria-hidden="true">
         <path d="M10,10 Q40,30 80,45" fill="none" stroke="currentColor" stroke-width="1.5"/>
         <path d="M30,23 Q50,15 65,10" fill="none" stroke="currentColor" stroke-width="1"/>
         <circle cx="30" cy="23" r="5" fill="#FFF" stroke="currentColor" stroke-width="1"/>
@@ -195,7 +232,7 @@
         <circle cx="86" cy="46" r="4.8" fill="#FFF" stroke="currentColor" stroke-width="1"/>
         <circle cx="80" cy="45" r="1.8" fill="var(--accent-gold)"/>
       </svg>
-      <svg class="corner-flower top-right" viewBox="0 0 100 100">
+      <svg class="corner-flower top-right" viewBox="0 0 100 100" aria-hidden="true">
         <path d="M10,10 Q40,30 80,45" fill="none" stroke="currentColor" stroke-width="1.5"/>
         <path d="M30,23 Q50,15 65,10" fill="none" stroke="currentColor" stroke-width="1"/>
         <circle cx="30" cy="23" r="5" fill="#FFF" stroke="currentColor" stroke-width="1"/>
@@ -219,7 +256,7 @@
       </svg>
 
       <!-- Calligraphy decorative stamp background -->
-      <div class="calligraphy-accent" style="top: 25%; left: 2%; font-size: 4rem;">吾是誰</div> <!-- Ta là ai -->
+      <div class="calligraphy-accent" style="top: 25%; left: 2%; font-size: 4rem;" aria-hidden="true">吾是誰</div> <!-- Ta là ai -->
 
       <div class="scroll-unroll-container">
         <div class="scroll-unroll-roller-left"></div>
@@ -311,7 +348,7 @@
          3. HÀNH TRÌNH HỌC TẬP SECTION (6 CHẶNG - INTERFACE ONLY)
          ========================================================================== -->
     <section id="HanhTrinh" class="section-padding scroll-reveal">
-      <div class="calligraphy-accent" style="top: 15%; right: 2%; font-size: 5rem;">修業之旅</div> <!-- Tu nghiệp chi lữ -->
+      <div class="calligraphy-accent" style="top: 15%; right: 2%; font-size: 5rem;" aria-hidden="true">修業之旅</div> <!-- Tu nghiệp chi lữ -->
 
       <div class="scroll-unroll-container">
         <div class="scroll-unroll-roller-left"></div>
@@ -328,28 +365,28 @@
             
             <div class="journey-tabs-container">
               <!-- Left Column: Tabs list -->
-              <div class="journey-tab-sidebar">
-                <div class="journey-tab-item active" data-target="tab-stage-1">
+              <div class="journey-tab-sidebar" role="tablist" aria-label="Hành trình học tập">
+                <div class="journey-tab-item active" role="tab" aria-selected="true" tabindex="0" id="stage-tab-1" aria-controls="tab-stage-1" data-target="tab-stage-1">
                   <span class="tab-number">書卷壹</span>
                   <span class="tab-title">Chặng 1: Nền tảng dữ liệu</span>
                 </div>
-                <div class="journey-tab-item" data-target="tab-stage-2">
+                <div class="journey-tab-item" role="tab" aria-selected="false" tabindex="-1" id="stage-tab-2" aria-controls="tab-stage-2" data-target="tab-stage-2">
                   <span class="tab-number">書卷貳</span>
                   <span class="tab-title">Chặng 2: Khai thác thông tin</span>
                 </div>
-                <div class="journey-tab-item" data-target="tab-stage-3">
+                <div class="journey-tab-item" role="tab" aria-selected="false" tabindex="-1" id="stage-tab-3" aria-controls="tab-stage-3" data-target="tab-stage-3">
                   <span class="tab-number">書卷叁</span>
                   <span class="tab-title">Chặng 3: Giao tiếp với AI</span>
                 </div>
-                <div class="journey-tab-item" data-target="tab-stage-4">
+                <div class="journey-tab-item" role="tab" aria-selected="false" tabindex="-1" id="stage-tab-4" aria-controls="tab-stage-4" data-target="tab-stage-4">
                   <span class="tab-number">書卷肆</span>
                   <span class="tab-title">Chặng 4: Làm việc nhóm số</span>
                 </div>
-                <div class="journey-tab-item" data-target="tab-stage-5">
+                <div class="journey-tab-item" role="tab" aria-selected="false" tabindex="-1" id="stage-tab-5" aria-controls="tab-stage-5" data-target="tab-stage-5">
                   <span class="tab-number">書卷伍</span>
                   <span class="tab-title">Chặng 5: Sáng tạo cùng AI</span>
                 </div>
-                <div class="journey-tab-item" data-target="tab-stage-6">
+                <div class="journey-tab-item" role="tab" aria-selected="false" tabindex="-1" id="stage-tab-6" aria-controls="tab-stage-6" data-target="tab-stage-6">
                   <span class="tab-number">書卷陸</span>
                   <span class="tab-title">Chặng 6: Trách nhiệm với AI</span>
                 </div>
@@ -359,7 +396,7 @@
               <div class="journey-tab-content-wrapper card card-classical" style="padding: var(--space-xl);">
                 
                 <!-- CHẶNG 1 -->
-                <div class="journey-tab-pane active" id="tab-stage-1">
+                <div class="journey-tab-pane active" id="tab-stage-1" role="tabpanel" aria-labelledby="stage-tab-1">
                   <h3 class="tab-pane-title text-serif">CHẶNG 1: Xây dựng nền tảng quản lý dữ liệu cá nhân</h3>
                   <p style="font-family: var(--font-serif); font-size: 1.05rem; font-weight: bold; color: var(--accent-vermillion); margin-bottom: var(--space-md);">
                     Bài tập 1 - Bài 1: Máy tính và các thiết bị ngoại vi
@@ -391,7 +428,7 @@
                 </div>
                 
                 <!-- CHẶNG 2 -->
-                <div class="journey-tab-pane" id="tab-stage-2">
+                <div class="journey-tab-pane" id="tab-stage-2" role="tabpanel" aria-labelledby="stage-tab-2">
                   <h3 class="tab-pane-title text-serif">CHẶNG 2: Học cách tìm kiếm thay vì chỉ tìm thấy</h3>
                   <p style="font-family: var(--font-serif); font-size: 1.05rem; font-weight: bold; color: var(--accent-vermillion); margin-bottom: var(--space-md);">
                     Bài tập 2 - Bài 2: Khai thác dữ liệu và thông tin
@@ -423,7 +460,7 @@
                 </div>
                 
                 <!-- CHẶNG 3 -->
-                <div class="journey-tab-pane" id="tab-stage-3">
+                <div class="journey-tab-pane" id="tab-stage-3" role="tabpanel" aria-labelledby="stage-tab-3">
                   <h3 class="tab-pane-title text-serif">CHẶNG 3: Học cách giao tiếp với AI</h3>
                   <p style="font-family: var(--font-serif); font-size: 1.05rem; font-weight: bold; color: var(--accent-vermillion); margin-bottom: var(--space-md);">
                     Bài tập 2 - Bài 3: Tổng quan về trí tuệ nhân tạo
@@ -455,7 +492,7 @@
                 </div>
                 
                 <!-- CHẶNG 4 -->
-                <div class="journey-tab-pane" id="tab-stage-4">
+                <div class="journey-tab-pane" id="tab-stage-4" role="tabpanel" aria-labelledby="stage-tab-4">
                   <h3 class="tab-pane-title text-serif">CHẶNG 4: Trải nghiệm làm việc nhóm trong môi trường số</h3>
                   <p style="font-family: var(--font-serif); font-size: 1.05rem; font-weight: bold; color: var(--accent-vermillion); margin-bottom: var(--space-md);">
                     Bài tập 3 - Bài 4: Giao tiếp và hợp tác trong môi trường số
@@ -487,7 +524,7 @@
                 </div>
                 
                 <!-- CHẶNG 5 -->
-                <div class="journey-tab-pane" id="tab-stage-5">
+                <div class="journey-tab-pane" id="tab-stage-5" role="tabpanel" aria-labelledby="stage-tab-5">
                   <h3 class="tab-pane-title text-serif">CHẶNG 5: Sáng tạo cùng AI</h3>
                   <p style="font-family: var(--font-serif); font-size: 1.05rem; font-weight: bold; color: var(--accent-vermillion); margin-bottom: var(--space-md);">
                     Bài tập 2 - Bài 5: Sáng tạo nội dung số
@@ -519,7 +556,7 @@
                 </div>
                 
                 <!-- CHẶNG 6 -->
-                <div class="journey-tab-pane" id="tab-stage-6">
+                <div class="journey-tab-pane" id="tab-stage-6" role="tabpanel" aria-labelledby="stage-tab-6">
                   <h3 class="tab-pane-title text-serif">CHẶNG 6: Trách nhiệm trong thời đại AI</h3>
                   <p style="font-family: var(--font-serif); font-size: 1.05rem; font-weight: bold; color: var(--accent-vermillion); margin-bottom: var(--space-md);">
                     Bài tập 4 - Bài 6: An toàn và liêm chính học thuật trong môi trường số
@@ -561,7 +598,7 @@
          4. NHÌN LẠI HÀNH TRÌNH SECTION (REFLECTION - INTERFACE ONLY)
          ========================================================================== -->
     <section id="NhinLai" class="section-padding scroll-reveal">
-      <div class="calligraphy-accent" style="top: 20%; left: 2%; font-size: 5rem;">回顧省思</div> <!-- Hồi cố tỉnh tư -->
+      <div class="calligraphy-accent" style="top: 20%; left: 2%; font-size: 5rem;" aria-hidden="true">回顧省思</div> <!-- Hồi cố tỉnh tư -->
 
       <div class="scroll-unroll-container">
         <div class="scroll-unroll-roller-left"></div>
@@ -835,10 +872,11 @@
               </div>
             </div>
             
-          </div>
-        </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+</main>
 
     <!-- ==========================================================================
          5. TỔNG KẾT & LIÊN HỆ SECTION (FOOTER)
@@ -875,7 +913,6 @@
         </div>
       </div>
     </footer>
-  </main>
 
   <!-- ==========================================================================
        LIGHTBOX CONTAINER
@@ -903,7 +940,6 @@
   <!-- Custom scripts -->
   <script src="./js/loading.js"></script>
   <script src="./js/ambient-canvas.js"></script>
-  <script src="./js/stage-content.js"></script>
   <script src="./js/main.js"></script>
   <script src="./js/lightbox.js"></script>
   <script src="./js/scroll-effects.js"></script>

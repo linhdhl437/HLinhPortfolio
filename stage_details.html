@@ -9,6 +9,21 @@
     />
     <title>Đồng Huyền Linh | Chi Tiết Chặng Báo Cáo</title>
     <link rel="icon" type="image/png" href="./img/ulis_logo.png" />
+    <link rel="canonical" href="https://linhdhl437.github.io/HLinhPortfolio/stage_details.html" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://linhdhl437.github.io/HLinhPortfolio/stage_details.html" />
+    <meta property="og:title" content="Đồng Huyền Linh | Chi Tiết Chặng Báo Cáo" />
+    <meta property="og:description" content="Chi tiết báo cáo chặng học tập trong hành trình chuyển đổi số của Đồng Huyền Linh." />
+    <meta property="og:image" content="https://linhdhl437.github.io/HLinhPortfolio/PortfolioAssets/AnhIntro1.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://linhdhl437.github.io/HLinhPortfolio/stage_details.html" />
+    <meta property="twitter:title" content="Đồng Huyền Linh | Chi Tiết Chặng Báo Cáo" />
+    <meta property="twitter:description" content="Chi tiết báo cáo chặng học tập trong hành trình chuyển đổi số của Đồng Huyền Linh." />
+    <meta property="twitter:image" content="https://linhdhl437.github.io/HLinhPortfolio/PortfolioAssets/AnhIntro1.png" />
 
     <!-- 🎋 CSS Design System & Components -->
     <link rel="stylesheet" href="./css/variables.css" />
@@ -125,52 +140,7 @@
         font-weight: bold;
       }
 
-      /* Sidebar Styling */
-      .details-sidebar {
-        display: none; /* Decommissioned in favor of sticky nav-bar */
-      }
 
-      .sidebar-header h4 {
-        color: var(--accent-vermillion);
-        margin-bottom: var(--space-md);
-        font-size: 1.15rem;
-        border-bottom: 2px solid var(--accent-gold);
-        padding-bottom: var(--space-xs);
-      }
-
-      .sidebar-menu {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .sidebar-link {
-        display: block;
-        padding: 10px 14px;
-        border-radius: 4px;
-        color: var(--text-charcoal);
-        font-size: 0.95rem;
-        transition: all var(--transition-normal);
-        text-decoration: none;
-        border: 1px solid transparent;
-      }
-
-      .sidebar-link:hover {
-        background-color: rgba(184, 144, 71, 0.05);
-        color: var(--accent-gold-light);
-        border-color: rgba(184, 144, 71, 0.15);
-        transform: translateX(4px);
-      }
-
-      .sidebar-link.active {
-        background-color: var(--accent-vermillion);
-        color: var(--text-paper) !important;
-        font-weight: bold;
-        box-shadow: 0 4px 10px rgba(139, 0, 0, 0.15);
-      }
 
       /* Main Parchment Sheet Styling */
       .parchment-sheet {
@@ -819,24 +789,30 @@
     </header>
 
     <div class="details-layout-container">
-      <!-- Main Content parchment sheet -->
+      <!-- Main Content parchment sheet wrapped in scroll unroll -->
       <main class="details-main-content">
-        <article class="parchment-sheet card card-classical">
-          <div id="stage-detail-content-target">
-            <!-- Dynamically loaded content goes here -->
-            <div
-              style="
-                text-align: center;
-                padding: 100px 0;
-                color: var(--text-muted);
-                font-style: italic;
-                font-family: var(--font-serif);
-              "
-            >
-              Đang mở thư quyển...
-            </div>
+        <div class="scroll-unroll-container" id="details-scroll-unroll">
+          <div class="scroll-unroll-roller-left"></div>
+          <div class="scroll-unroll-content">
+            <article class="parchment-sheet card card-classical">
+              <div id="stage-detail-content-target">
+                <!-- Dynamically loaded content goes here -->
+                <div
+                  style="
+                    text-align: center;
+                    padding: 100px 0;
+                    color: var(--text-muted);
+                    font-style: italic;
+                    font-family: var(--font-serif);
+                  "
+                >
+                  Đang mở thư quyển...
+                </div>
+              </div>
+            </article>
           </div>
-        </article>
+          <div class="scroll-unroll-roller-right"></div>
+        </div>
       </main>
     </div>
 
@@ -934,6 +910,12 @@
         function loadStage(stageNum, pushState = true) {
           if (stageNum < 1 || stageNum > 6) stageNum = 1;
 
+          // Collapse scroll unroll first
+          const scrollUnroll = document.getElementById("details-scroll-unroll");
+          if (scrollUnroll) {
+            scrollUnroll.classList.remove("unrolled");
+          }
+
           // Update active class in stage navigation links
           document.querySelectorAll(".nav-stage-item").forEach((link) => {
             link.classList.remove("active");
@@ -975,11 +957,23 @@
                 "opacity 0.4s ease, transform 0.4s ease";
               contentTarget.style.opacity = "1";
               contentTarget.style.transform = "translateY(0)";
+
+              // Unroll scroll after a small delay
+              setTimeout(() => {
+                if (scrollUnroll) {
+                  scrollUnroll.classList.add("unrolled");
+                }
+              }, 150);
             } else {
               contentTarget.innerHTML = `
               <div style="text-align:center; padding:50px; font-family:var(--font-serif); color:var(--accent-vermillion);">
                 Không tìm thấy nội dung báo cáo cho Chặng ${stageNum}.
               </div>`;
+              setTimeout(() => {
+                if (scrollUnroll) {
+                  scrollUnroll.classList.add("unrolled");
+                }
+              }, 150);
             }
           }
 
@@ -1139,6 +1133,30 @@
               loadStage(targetStage, true);
             }
           });
+
+        // 3.1 Water ripple button click handler (Classical style)
+        document.addEventListener("click", (e) => {
+          const target = e.target.closest(".btn, .btn-classical, .btn-back-sticky, .nav-stage-item, .accordion-header");
+          if (!target) return;
+
+          const rect = target.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const ripple = document.createElement("span");
+          ripple.className = "ripple-wave";
+          
+          const size = Math.max(rect.width, rect.height);
+          ripple.style.width = ripple.style.height = `${size}px`;
+          
+          ripple.style.left = `${x - size / 2}px`;
+          ripple.style.top = `${y - size / 2}px`;
+
+          target.appendChild(ripple);
+          setTimeout(() => {
+            ripple.remove();
+          }, 900);
+        });
 
         // 4. Handle popstate event (back/forward browser buttons)
         window.addEventListener("popstate", (e) => {
