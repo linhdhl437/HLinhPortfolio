@@ -385,3 +385,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Force scroll to top on page load if refreshed to override browser scroll restoration
+window.addEventListener("load", () => {
+  const navEntries = performance.getEntriesByType("navigation");
+  if (navEntries.length && navEntries[0].type === "reload") {
+    window.scrollTo(0, 0);
+  }
+});

@@ -37,14 +37,33 @@
     }
   </script>
   
-  <!-- 🚀 CRITICAL: Run before body renders to prevent intro flash when navigating back -->
+  <!-- 🚀 CRITICAL: Run before body renders to handle reload reset & prevent intro flash -->
   <script>
     (function() {
+      var isReload = false;
+      if (window.performance && window.performance.getEntriesByType) {
+        var navEntries = window.performance.getEntriesByType("navigation");
+        if (navEntries.length && navEntries[0].type === "reload") {
+          isReload = true;
+        }
+      }
+      
       var hash = window.location.hash;
-      var skipHashes = ['#ToiLaAi', '#HanhTrinh', '#NhinLai', '#LienHe'];
-      var shouldSkip = (hash && (hash.indexOf('#stage-node-') === 0 || skipHashes.indexOf(hash) !== -1));
-      if (shouldSkip) {
-        document.documentElement.classList.add('skip-intro');
+      
+      if (isReload) {
+        // Force page back to beginning on refresh (reset hash & scroll)
+        if (hash) {
+          window.history.replaceState(null, null, window.location.pathname);
+        }
+        if ('scrollRestoration' in history) {
+          history.scrollRestoration = 'manual';
+        }
+      } else {
+        var skipHashes = ['#ToiLaAi', '#HanhTrinh', '#NhinLai', '#LienHe'];
+        var shouldSkip = (hash && (hash.indexOf('#stage-node-') === 0 || skipHashes.indexOf(hash) !== -1));
+        if (shouldSkip) {
+          document.documentElement.classList.add('skip-intro');
+        }
       }
     })();
   </script>
