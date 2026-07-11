@@ -276,6 +276,13 @@
         height: auto !important;
         border: 1px solid rgba(0, 0, 0, 0.08) !important;
         border-radius: 4px !important;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease !important;
+        cursor: zoom-in !important;
+      }
+
+      .stage-document-wrapper .image-container img:hover {
+        transform: scale(1.04) !important;
+        box-shadow: 0 10px 24px rgba(184, 144, 71, 0.12), 0 6px 12px rgba(0,0,0,0.04) !important;
       }
 
       .stage-document-wrapper .image-caption {

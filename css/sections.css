@@ -781,12 +781,13 @@
 
 
 .stage-image-container img {
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  cursor: zoom-in;
 }
 
 .stage-image-container img:hover {
-  transform: scale(1.015);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(184, 144, 71, 0.15), 0 8px 16px rgba(0, 0, 0, 0.05);
 }
 
 /* 🧭 Skip Intro Button Style */
