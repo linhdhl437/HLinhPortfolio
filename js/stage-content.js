@@ -2760,7 +2760,7 @@ window.stageContents = {
 <p><strong>1.2 Các Prompt đã sử dụng:</strong></p>
 <h4>a) Prompt 1: Giải thích khái niệm</h4>
 <div class="prompt-box">
-        “Tôi đang thực hiện một infographic cho sinh viên về chủ đề
+        “Mình đang thực hiện một infographic cho sinh viên về chủ đề
         Conversational AI và ứng dụng trong luyện giao tiếp ngoại ngữ. Hãy giải
         thích khái niệm này bằng ngôn ngữ đơn giản, tránh thuật ngữ kỹ thuật
         phức tạp và trình bày theo dạng các ý chính phù hợp với infographic.”
@@ -3408,7 +3408,7 @@ window.stageContents = {
       </p>
 <p><strong>Bước 1. Xây dựng cấu trúc bài thuyết trình</strong></p>
 <div class="prompt-box">
-        Prompt: “Tôi cần chuẩn bị một bài thuyết trình 10 phút về Hồ Xuân Hương
+        Prompt: “Mình cần chuẩn bị một bài thuyết trình 10 phút về Hồ Xuân Hương
         cho sinh viên đại học. Hãy đề xuất cấu trúc bài thuyết trình hợp lý, đảm
         bảo vừa có kiến thức cơ bản vừa có nội dung phân tích.”
       </div>
