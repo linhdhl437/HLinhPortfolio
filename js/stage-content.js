@@ -2274,23 +2274,23 @@ window.stageContents = {
 </ul>
 <div class="image-group">
 <div class="image-container">
-<img alt="Ảnh 9. Góp ý hỗ trợ các thành viên về nội dung thuyết trình" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 9. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg"/>
+<img alt="Ảnh minh họa 9: Góp ý hỗ trợ các thành viên về nội dung thuyết trình" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 9. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg"/>
 <div class="image-caption">
-            Ảnh 9. Góp ý hỗ trợ các thành viên về nội dung thuyết trình
+            Ảnh minh họa 9: Góp ý hỗ trợ các thành viên về nội dung thuyết trình
           </div>
 
 </div>
 <div class="image-container">
-<img alt="Ảnh 10. Chia sẻ học liệu và hỗ trợ nhiệm vụ dự án" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 10. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg"/>
+<img alt="Ảnh minh họa 10: Chia sẻ học liệu và hỗ trợ nhiệm vụ dự án" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 10. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg"/>
 <div class="image-caption">
-            Ảnh 10. Chia sẻ học liệu và hỗ trợ nhiệm vụ dự án
+            Ảnh minh họa 10: Chia sẻ học liệu và hỗ trợ nhiệm vụ dự án
           </div>
 
 </div>
 <div class="image-container">
-<img alt="Ảnh 11. Vote lịch họp" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 11. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg"/>
+<img alt="Ảnh minh họa 11: Vote lịch họp" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 11. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg"/>
 <div class="image-caption">
-            Ảnh 11. Vote lịch họp
+            Ảnh minh họa 11: Vote lịch họp
           </div>
 
 </div>
