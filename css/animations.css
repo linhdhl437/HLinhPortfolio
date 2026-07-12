@@ -113,6 +113,7 @@
 
 /* Scroll Trigger helper defaults */
 .scroll-reveal {
+  will-change: opacity, transform;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s var(--ease-ink), transform 0.8s var(--ease-ink);

@@ -314,7 +314,7 @@
   padding: var(--space-3xl) 0;
 }
 
-#ToiLaAi {
+#MinhLaAi {
   position: relative;
   background: linear-gradient(to bottom, rgba(249, 249, 246, 0.55) 0%, rgba(249, 249, 246, 0.55) 100%), 
               url('../PortfolioAssets/ToiLaAi.jpe') center/cover no-repeat fixed;
@@ -334,7 +334,7 @@
 
 /* Fix mobile Safari background attachment bug */
 @media (max-width: 1024px) {
-  #Modau, #ToiLaAi, #HanhTrinh, #NhinLai {
+  #Modau, #MinhLaAi, #HanhTrinh, #NhinLai {
     background-attachment: scroll !important;
   }
 }
@@ -763,6 +763,17 @@
     flex-direction: column;
     text-align: center;
   }
+
+  .nav-menu {
+    max-height: calc(100vh - 70px) !important;
+    overflow-y: auto !important;
+  }
+  .stage-document-wrapper .document-container {
+    padding: 20px 15px !important;
+  }
+  .stage-document-wrapper {
+    padding: 10px 5px !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -772,9 +783,15 @@
   .goals-list {
     grid-template-columns: 1fr;
   }
-}
-
-
+  .chinese-welcome {
+    font-size: 1.35rem !important;
+  }
+  .english-welcome {
+    font-size: 2.0rem !important;
+  }
+  .glass-panel-welcome {
+    padding: var(--space-lg) var(--space-md) !important;
+  }
 }
 
 /* 📜 Stage Expanded Details Styling */
@@ -1117,5 +1134,33 @@
   .goals-list {
     grid-template-columns: 1fr !important;
     gap: var(--space-lg) !important;
+  }
+}
+
+/* Adjust sizes for short height viewports (landscape mobile phone) */
+@media (max-height: 500px) {
+  .glass-panel-welcome {
+    padding: 10px 15px !important;
+    max-width: 520px !important;
+  }
+  .chinese-welcome {
+    font-size: 1.1rem !important;
+    margin-bottom: 2px !important;
+  }
+  .english-welcome {
+    font-size: 1.6rem !important;
+    margin-bottom: 5px !important;
+  }
+  .welcome-name {
+    font-size: 0.9rem !important;
+    margin-bottom: 2px !important;
+  }
+  .welcome-desc {
+    font-size: 0.75rem !important;
+    margin-bottom: 2px !important;
+  }
+  .welcome-click-to-start {
+    margin-top: 0.5rem !important;
+    font-size: 0.75rem !important;
   }
 }

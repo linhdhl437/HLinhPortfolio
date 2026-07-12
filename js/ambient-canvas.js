@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!canvas) return;
 
   const ctx = canvas.getContext("2d");
-  let width = canvas.width = window.innerWidth;
-  let height = canvas.height = window.innerHeight;
+  let width = window.innerWidth;
+  let height = window.innerHeight;
 
   // Track mouse coordinates and path history
   const mouse = { x: -1000, y: -1000, active: false };
@@ -37,23 +37,44 @@ document.addEventListener("DOMContentLoaded", () => {
     lastScrollY = currentScrollY;
   }, { passive: true });
 
-  // Config parameters
+  // Config parameters: Throttled elements count on mobile to save CPU/Battery
+  const isMobile = window.innerWidth <= 768;
   const config = {
-    leafCount: 18, // increased slightly to include blossoms
-    birdCount: 4,
-    cloudCount: 4
+    leafCount: isMobile ? 8 : 18,
+    birdCount: isMobile ? 2 : 4,
+    cloudCount: isMobile ? 2 : 4
   };
 
-  // Resize canvas with debounce
+  // Resize canvas with debounce & Retina DPI scaling (capped at 2 on mobile)
   let resizeTimeout;
-  function resize() {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    }, 150);
+  function resize(immediate = false) {
+    const run = () => {
+      const isMobileNow = window.innerWidth <= 768;
+      const dpr = window.devicePixelRatio || 1;
+      const maxDpr = isMobileNow ? Math.min(2, dpr) : dpr;
+      
+      width = window.innerWidth;
+      height = window.innerHeight;
+      
+      canvas.width = width * maxDpr;
+      canvas.height = height * maxDpr;
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
+      
+      ctx.scale(maxDpr, maxDpr);
+    };
+
+    if (immediate) {
+      run();
+    } else {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(run, 150);
+    }
   }
-  window.addEventListener("resize", resize);
+
+  // Initial resize
+  resize(true);
+  window.addEventListener("resize", () => resize(false), { passive: true });
 
   // Track mouse movements and add to brush stroke path + spawn particles
   let lastParticleSpawn = { x: 0, y: 0 };

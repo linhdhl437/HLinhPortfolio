@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Check if page loaded with a hash (e.g. back from details page or navigating directly)
   const hasHash = window.location.hash && (
     window.location.hash.startsWith("#stage-node-") || 
-    ["#Modau", "#ToiLaAi", "#HanhTrinh", "#NhinLai", "#LienHe"].includes(window.location.hash)
+    ["#Modau", "#MinhLaAi", "#HanhTrinh", "#NhinLai", "#LienHe"].includes(window.location.hash)
   );
 
   // Active clean: Remove skip-intro class if loading without hash to prevent lockups
@@ -333,7 +333,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Block keyboard controls (Spacebar/Enter) that could pause the video
     window.addEventListener("keydown", (e) => {
       if (isPlayingIntro && (overlay.style.display !== "none" && !overlay.classList.contains("fade-out"))) {
-        if (["Space", " ", "Enter"].includes(e.key)) {
+        const keysToBlock = ["Space", " ", "Enter", "ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End"];
+        if (keysToBlock.includes(e.key)) {
           e.preventDefault();
         }
       }

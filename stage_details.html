@@ -751,7 +751,7 @@
       /* Responsive Layout for Tablet/Mobile Devices */
       @media (max-width: 992px) {
         body.stage-details-page {
-          padding-top: 145px;
+          padding-top: 95px;
         }
         .parchment-sheet {
           padding: 24px 16px !important;
@@ -766,6 +766,17 @@
         body.stage-details-page {
           padding-top: 135px !important;
         }
+      }
+
+      /* Ẩn thanh cuộn ngang của .nav-stages-list giữ nguyên tính thẩm mỹ cổ phong */
+      .nav-stages-list::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+      }
+      .nav-stages-list {
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
       }
     </style>
   </head>

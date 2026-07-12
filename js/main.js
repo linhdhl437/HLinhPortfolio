@@ -168,6 +168,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section[id], footer[id]");
   let lastScrollY = window.scrollY;
 
+  // Cache section positions to avoid layout thrashing (forced reflow) during scroll
+  let cachedSections = [];
+  function cacheSectionPositions() {
+    cachedSections = Array.from(sections).map(sec => ({
+      id: sec.getAttribute("id"),
+      top: sec.offsetTop,
+      height: sec.offsetHeight
+    }));
+  }
+
+  // Initial cache
+  cacheSectionPositions();
+
+  // Debounced resize to update cache positions
+  let cacheResizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(cacheResizeTimer);
+    cacheResizeTimer = setTimeout(() => {
+      cacheSectionPositions();
+    }, 150);
+  }, { passive: true });
+
   let scrollTick = false;
   window.addEventListener("scroll", () => {
     if (!scrollTick) {
@@ -182,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function handleScroll() {
     const currentScrollY = window.scrollY;
 
-    // A. Sticky Header Toggle (Keep header always visible)
+    // A. Sticky Header Toggle (Dùng CSS class thay vì inline style để tránh forced reflow)
     if (header) {
       if (currentScrollY > 50) {
         header.style.backgroundColor = "rgba(249, 249, 246, 0.96)";
@@ -194,19 +216,17 @@ document.addEventListener("DOMContentLoaded", () => {
     
     lastScrollY = currentScrollY;
 
-    // B. Scrollspy (Active Menu Item)
+    // B. Scrollspy (Sử dụng dữ liệu tọa độ đã cache)
     let currentActiveId = "";
     const scrollPosition = currentScrollY + 200; // offset for detection
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute("id");
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        currentActiveId = sectionId;
+    for (let i = 0; i < cachedSections.length; i++) {
+      const sec = cachedSections[i];
+      if (scrollPosition >= sec.top && scrollPosition < sec.top + sec.height) {
+        currentActiveId = sec.id;
+        break;
       }
-    });
+    }
 
     if (currentActiveId) {
       navLinks.forEach(link => {

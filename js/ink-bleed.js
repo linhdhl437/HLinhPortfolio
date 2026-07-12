@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("ink-canvas");
   if (!canvas) return;
 
-  const ctx = canvas.getContext("2d");
+  const ctx = canvas.getContext("2d", { alpha: true, willReadFrequently: false });
   
   // Tham số vật lý mặc định của mực loang
   const params = {
@@ -429,27 +429,61 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ----------------------------------------------------
-  // CLASS: INK CANVAS MANAGER (Quản lý Render Loop cực nhẹ)
+  // CLASS: INK CANVAS MANAGER (Quản lý Render Loop tối ưu)
   // ----------------------------------------------------
   class InkCanvasManager {
     constructor() {
       this.canvas = canvas;
       this.ctx = ctx;
       this.effects = [];
+      this.rafId = null;
+      this.isTabActive = true;
+      this.logicalWidth = window.innerWidth;
+      this.logicalHeight = window.innerHeight;
       
       this.resize();
       window.addEventListener('resize', () => this.resize());
       
-      this.loop();
+      // Debounce window resize
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => this.resize(), 150);
+      }, { passive: true });
+
+      // Tab visibility observer
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          this.isTabActive = false;
+          if (this.rafId) {
+            cancelAnimationFrame(this.rafId);
+            this.rafId = null;
+          }
+        } else {
+          if (!this.isTabActive) {
+            this.isTabActive = true;
+            if (this.effects.length > 0) {
+              this.loop();
+            }
+          }
+        }
+      });
     }
 
     resize() {
       const dpr = window.devicePixelRatio || 1;
-      this.canvas.width = window.innerWidth * dpr;
-      this.canvas.height = window.innerHeight * dpr;
-      this.canvas.style.width = window.innerWidth + 'px';
-      this.canvas.style.height = window.innerHeight + 'px';
+      this.logicalWidth = window.innerWidth;
+      this.logicalHeight = window.innerHeight;
+      this.canvas.width = this.logicalWidth * dpr;
+      this.canvas.height = this.logicalHeight * dpr;
+      this.canvas.style.width = this.logicalWidth + 'px';
+      this.canvas.style.height = this.logicalHeight + 'px';
       this.ctx.scale(dpr, dpr);
+      
+      // Clear logical viewport if idle
+      if (!this.rafId) {
+        this.ctx.clearRect(0, 0, this.logicalWidth, this.logicalHeight);
+      }
     }
 
     addEffect(x, y, color, numPetals, type) {
@@ -470,10 +504,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       this.effects.push(new ClickEffect(x, y, maxRadius, color, scaleX, scaleY, numVertices, historyLength));
+      
+      // Start render loop if idle and tab is active
+      if (!this.rafId && this.isTabActive) {
+        this.loop();
+      }
     }
 
     loop() {
-      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      if (!this.isTabActive) return;
+
+      this.ctx.clearRect(0, 0, this.logicalWidth, this.logicalHeight);
 
       for (let i = this.effects.length - 1; i >= 0; i--) {
         const fx = this.effects[i];
@@ -485,7 +526,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      requestAnimationFrame(() => this.loop());
+      if (this.effects.length > 0) {
+        this.rafId = requestAnimationFrame(() => this.loop());
+      } else {
+        this.rafId = null; // Dừng render loop hoàn toàn khi rảnh
+      }
     }
   }
 

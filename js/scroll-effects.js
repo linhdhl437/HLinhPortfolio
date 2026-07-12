@@ -31,10 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
+  const isMobileDevice = window.innerWidth <= 768;
+
   // ==========================================================================
   // 2. PARALLAX & GSAP SCROLL TRIGGER ANIMATIONS (Book open & Parallax backgrounds)
   // ==========================================================================
-  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined" && !isMobileDevice) {
     gsap.registerPlugin(ScrollTrigger);
 
     // 📜 THƯ QUYỂN MỞ HAI CHIỀU (Toggled via GSAP ScrollTrigger)
@@ -92,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   } else {
-    // Fallback: standard scroll handler if GSAP failed to load
+    // Fallback: standard scroll handler if GSAP failed to load or running on a mobile device
     const mountains = document.querySelector(".hero-bg-mountains");
     const clouds = document.querySelectorAll(".hero-cloud");
     const scrolls = document.querySelectorAll(".scroll-unroll-container");
@@ -114,17 +116,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     scrolls.forEach(scr => scrollObserver.observe(scr));
 
-    window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY;
-      
-      if (mountains) {
-        mountains.style.transform = `translateY(${scrollY * 0.15}px)`;
-      }
+    p    // Parallax scroll handler for non-GSAP desktop view only (completely bypassed on mobile to prevent scroll jank)
+    if (!isMobileDevice) {
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        
+        if (mountains) {
+          mountains.style.transform = `translateY(${scrollY * 0.15}px)`;
+        }
 
-      clouds.forEach((cloud, idx) => {
-        const speed = (idx + 1) * 0.1;
-        cloud.style.transform = `translateY(${scrollY * speed}px) translateX(${scrollY * 0.05}px)`;
-      });
-    });
+        clouds.forEach((cloud, idx) => {
+          const speed = (idx + 1) * 0.1;
+          cloud.style.transform = `translateY(${scrollY * speed}px) translateX(${scrollY * 0.05}px)`;
+        });
+      }, { passive: true });
+    }
   }
 });

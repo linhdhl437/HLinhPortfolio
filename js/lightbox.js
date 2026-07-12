@@ -110,16 +110,28 @@ document.addEventListener("DOMContentLoaded", () => {
     showPrev();
   });
 
-  // Keyboard controls
-  document.addEventListener("keydown", (e) => {
-    if (!lightbox.classList.contains("active")) return;
-    
-    if (e.key === "Escape") {
-      closeLightbox();
-    } else if (e.key === "ArrowRight") {
-      showNext();
-    } else if (e.key === "ArrowLeft") {
-      showPrev();
+  // Touch Swiping for mobile devices (Swipe left for next, swipe right for prev)
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  lightbox.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  lightbox.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe() {
+    const swipeDistance = touchEndX - touchStartX;
+    const minSwipeDistance = 50; // px threshold
+    if (Math.abs(swipeDistance) > minSwipeDistance) {
+      if (swipeDistance < 0) {
+        showNext();
+      } else {
+        showPrev();
+      }
     }
-  });
+  }
 });
