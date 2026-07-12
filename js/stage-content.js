@@ -2357,7 +2357,7 @@ window.stageContents = {
         sẽ dễ xảy ra thất lạc hoặc nhầm lẫn dữ liệu.
       </p>
 <p>
-<strong>Giải pháp:</strong> Em chủ động tổ chức dữ liệu trên Google
+<strong>Giải pháp:</strong> Mình chủ động tổ chức dữ liệu trên Google
         Drive theo: cấu trúc thư mục nhiều cấp, quy chuẩn đặt tên file thống
         nhất, thiết lập quyền truy cập theo mục đích sử dụng. Các file cũ hoặc
         chưa hoàn thiện được đánh dấu rõ ràng để tránh sử dụng nhầm phiên bản.
@@ -3422,7 +3422,7 @@ window.stageContents = {
 <p>
 <em>Đánh giá và điều chỉnh:</em> Cấu trúc do AI đề xuất tương đối đầy đủ
         và logic. Tuy nhiên, nội dung chưa làm nổi bật vai trò của Hồ Xuân Hương
-        như một tiếng nói nữ quyền tiêu biểu trong văn học trung đại. Vì vậy, em
+        như một tiếng nói nữ quyền tiêu biểu trong văn học trung đại. Vì vậy, mình
         đã bổ sung phần phân tích về tư tưởng phản kháng xã hội phong kiến và sự
         khẳng định giá trị của người phụ nữ trong thơ bà.
       </p>
@@ -3472,7 +3472,7 @@ window.stageContents = {
         Hương vẫn còn ý nghĩa trong xã hội hiện đại?
       </p>
 <p>
-<em>Đánh giá và điều chỉnh:</em> Em đã lựa chọn và chỉnh sửa những câu
+<em>Đánh giá và điều chỉnh:</em> Mình đã lựa chọn và chỉnh sửa những câu
         hỏi phù hợp nhất nhằm tăng tính tương tác và khuyến khích người nghe
         liên hệ với thực tiễn hiện nay.
       </p>

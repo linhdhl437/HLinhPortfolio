@@ -333,7 +333,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Block keyboard controls (Spacebar/Enter) that could pause the video
     window.addEventListener("keydown", (e) => {
       if (isPlayingIntro && (overlay.style.display !== "none" && !overlay.classList.contains("fade-out"))) {
-        if (["Space", " ", "Enter"].includes(e.key)) {
+        const keysToBlock = ["Space", " ", "Enter", "ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End"];
+        if (keysToBlock.includes(e.key)) {
           e.preventDefault();
         }
       }

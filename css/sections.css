@@ -1136,3 +1136,31 @@
     gap: var(--space-lg) !important;
   }
 }
+
+/* Adjust sizes for short height viewports (landscape mobile phone) */
+@media (max-height: 500px) {
+  .glass-panel-welcome {
+    padding: 10px 15px !important;
+    max-width: 520px !important;
+  }
+  .chinese-welcome {
+    font-size: 1.1rem !important;
+    margin-bottom: 2px !important;
+  }
+  .english-welcome {
+    font-size: 1.6rem !important;
+    margin-bottom: 5px !important;
+  }
+  .welcome-name {
+    font-size: 0.9rem !important;
+    margin-bottom: 2px !important;
+  }
+  .welcome-desc {
+    font-size: 0.75rem !important;
+    margin-bottom: 2px !important;
+  }
+  .welcome-click-to-start {
+    margin-top: 0.5rem !important;
+    font-size: 0.75rem !important;
+  }
+}
