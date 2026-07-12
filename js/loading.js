@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Check if page loaded with a hash (e.g. back from details page or navigating directly)
   const hasHash = window.location.hash && (
     window.location.hash.startsWith("#stage-node-") || 
-    ["#Modau", "#ToiLaAi", "#HanhTrinh", "#NhinLai", "#LienHe"].includes(window.location.hash)
+    ["#Modau", "#MinhLaAi", "#HanhTrinh", "#NhinLai", "#LienHe"].includes(window.location.hash)
   );
 
   // Active clean: Remove skip-intro class if loading without hash to prevent lockups
