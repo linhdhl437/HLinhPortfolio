@@ -78,6 +78,11 @@
     }
   </style>
 
+  <!-- 🎋 Google Fonts Preconnect (Optimal Network Waterfall) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap">
+
   <!-- 🎋 CSS Design System & Components -->
   <link rel="stylesheet" href="./css/variables.css">
   <link rel="stylesheet" href="./css/base.css">
@@ -87,11 +92,11 @@
 </head>
 <body>
 
+  <!-- ♿ Skip to main content for keyboard & screen readers -->
+  <a href="#MinhLaAi" class="skip-link sr-only">Chuyển đến nội dung chính</a>
+
   <!-- 🖌️ Ambient Canvas (Vết mực loang, lá trúc, chim bay, mây trôi) -->
   <canvas id="ambient-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></canvas>
-
-  <!-- 🖌️ Ink Bleed Canvas (Hiệu ứng mực loang thủy mặc khi click) -->
-  <canvas id="ink-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10005; pointer-events: none;"></canvas>
 
   <!-- 🖌️ Intro Video & Welcome Overlay (Toàn màn hình) -->
   <div id="intro-video-overlay" class="intro-video-overlay">
@@ -103,7 +108,7 @@
         
         <!-- Chữ chào mừng -->
         <h2 class="chinese-welcome">你好，欢迎来到我的</h2>
-        <h1 class="english-welcome">"PORTFOLIO"</h1>
+        <div class="english-welcome">"PORTFOLIO"</div>
         
         <p class="welcome-name">Đồng Huyền Linh • 董玄靈</p>
         <p class="welcome-desc">Hành trình học tập & Trưởng thành trong thời đại AI</p>
@@ -132,8 +137,8 @@
     <div class="container nav-container">
       <a href="#Modau" class="nav-logo">
         <div class="nav-uni-logos">
-          <img src="./img/vnu_logo.png" alt="VNU Logo" class="nav-uni-logo" title="Đại học Quốc gia Hà Nội">
-          <img src="./img/ulis_logo.png" alt="ULIS Logo" class="nav-uni-logo" title="Trường Đại học Ngoại ngữ">
+          <img src="./img/vnu_logo.png" alt="VNU Logo" class="nav-uni-logo" width="32" height="32" title="Đại học Quốc gia Hà Nội">
+          <img src="./img/ulis_logo.png" alt="ULIS Logo" class="nav-uni-logo" width="32" height="32" title="Trường Đại học Ngoại ngữ">
         </div>
         玄靈 <span>• Huyền Linh</span>
       </a>
@@ -205,13 +210,13 @@
         
         <div class="hero-visual hero-animate" style="opacity: 0;">
           <div class="hero-avatar-wrapper">
-            <img src="./PortfolioAssets/ẢNH AVARTAR PHẦN MỞ ĐẦU_.jpg" alt="Đồng Huyền Linh" class="hero-avatar">
+            <img src="./PortfolioAssets/ẢNH AVARTAR PHẦN MỞ ĐẦU_.jpg" alt="Đồng Huyền Linh" class="hero-avatar" width="280" height="280" fetchpriority="high">
           </div>
           
           <!-- Embedded Video Intro (Chuyển thành Card kích hoạt Replay Intro) -->
           <div class="hero-video-box cursor-pointer" id="hero-video-trigger" style="cursor: pointer;">
             <div class="hero-video-thumbnail-wrapper" style="position: relative; border-radius: 6px; overflow: hidden; height: 180px; background-color: #000;">
-              <img src="./PortfolioAssets/AnhIntro1.png" alt="Video Intro" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+              <img src="./PortfolioAssets/AnhIntro1.png" alt="Video Intro" width="1920" height="1080" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
               <div class="video-play-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); transition: background 0.3s;">
                 <div class="play-btn-circle" style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); color: var(--accent-vermillion); font-size: 1.25rem;">
                   ▶
@@ -632,14 +637,14 @@
             <!-- 3.1 Cảm nhận về học phần -->
             <div class="reflection-compare" style="margin-bottom: var(--space-xl);">
               <div class="card compare-card before card-classical" style="padding: var(--space-xl);">
-                <h4 class="text-serif" style="color: var(--accent-vermillion); margin-top: 0; font-size: 1.15rem;"><span>⏳</span> Mình của ngày đầu tiên</h4>
+                <h3 class="text-serif" style="color: var(--accent-vermillion); margin-top: 0; font-size: 1.15rem;"><span>⏳</span> Mình của ngày đầu tiên</h3>
                 <p style="font-size: 0.98rem; line-height: 1.8; color: var(--text-charcoal); margin: 0; text-align: justify;">
                   Khi bắt đầu học phần này, mình xem công nghệ chủ yếu là những công cụ phục vụ học tập hàng ngày. Mình biết sử dụng một số ứng dụng phổ biến nhưng chưa thực sự hiểu cách khai thác chúng một cách có hệ thống. Đối với AI, mình tò mò nhưng cũng khá mơ hồ. Mình thường sử dụng AI để tìm câu trả lời nhanh hơn thay vì suy nghĩ sâu hơn về cách đặt câu hỏi hay đánh giá chất lượng thông tin nhận được.
                 </p>
               </div>
               
               <div class="card compare-card after card-classical" style="padding: var(--space-xl);">
-                <h4 class="text-serif" style="color: var(--accent-gold-light); margin-top: 0; font-size: 1.15rem;"><span>✨</span> Mình của hiện tại</h4>
+                <h3 class="text-serif" style="color: var(--accent-gold-light); margin-top: 0; font-size: 1.15rem;"><span>✨</span> Mình của hiện tại</h3>
                 <p style="font-size: 0.98rem; line-height: 1.8; color: var(--text-charcoal); margin: 0; text-align: justify;">
                   Sau một học kỳ, điều thay đổi lớn nhất không phải là số lượng công cụ mình biết sử dụng. Điều thay đổi lớn nhất là cách mình học. Mình bắt đầu chú ý hơn đến việc tổ chức thông tin, đánh giá nguồn dữ liệu, xây dựng quy trình làm việc và sử dụng AI như một người hỗ trợ thay vì phụ thuộc hoàn toàn vào nó. Mình hiểu rằng công nghệ không làm cho việc học trở nên dễ dàng hơn một cách kỳ diệu. Nó chỉ phát huy giá trị khi người học chủ động tư duy, chủ động lựa chọn và chịu trách nhiệm với những gì mình tạo ra.
                 </p>
@@ -847,7 +852,7 @@
                   <div class="card card-classical" style="background: rgba(184, 144, 71, 0.05); border: 1px solid rgba(184, 144, 71, 0.2); padding: var(--space-md);">
                     <h5 class="text-serif" style="margin: 0 0 6px 0; color: var(--accent-vermillion);">Thư viện Prompt cá nhân</h5>
                     <div class="qr-card-content" style="display: flex; gap: var(--space-md); align-items: center; margin-top: 8px;">
-                      <img src="./PortfolioAssets/MÃ QR CHO PROMPT LIBRARY.png" alt="Mã QR Thư viện Prompt cá nhân" style="width: 80px; height: 80px; border-radius: 4px; border: 1px solid var(--accent-gold); cursor: pointer;" data-lightbox data-caption="Mã QR Thư viện Prompt cá nhân">
+                      <img src="./PortfolioAssets/MÃ QR CHO PROMPT LIBRARY.png" alt="Mã QR Thư viện Prompt cá nhân" width="80" height="80" loading="lazy" style="width: 80px; height: 80px; border-radius: 4px; border: 1px solid var(--accent-gold); cursor: pointer;" data-lightbox data-caption="Mã QR Thư viện Prompt cá nhân">
                       <div>
                         <p style="font-size: 0.88rem; line-height: 1.4; color: var(--text-charcoal); margin: 0 0 6px 0;">
                           Quét mã QR để truy cập kho lưu trữ <strong>Prompt Library</strong> cá nhân được tích lũy trong học kỳ.
@@ -946,43 +951,6 @@
     </div>
   </div>
 
-  <!-- BACKGROUND SVG FILTER FOR REALISTIC INK-BLEED EFFECTS -->
-  <svg style="position: absolute; width: 0; height: 0; pointer-events: none;">
-    <defs>
-      <!-- Bộ lọc chính cho vết mực loang -->
-      <filter id="ink-bleed-filter" x="-20%" y="-20%" width="140%" height="140%">
-        <!-- Tạo nhiễu hạt động để làm méo đường tròn -->
-        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4" result="noise" />
-        
-        <!-- Bẻ cong biên hình tròn dựa trên nhiễu fractal -->
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" xChannelSelector="R" yChannelSelector="G" result="displaced" />
-        
-        <!-- Tăng tương phản của kênh Alpha để tạo viền cô đặc mực (Wet-Edge) -->
-        <feColorMatrix type="matrix" values="
-          1 0 0 0 0
-          0 1 0 0 0
-          0 0 1 0 0
-          0 0 0 18 -6
-        " result="sharp" />
-        
-        <!-- Tạo lớp loang nhẹ mờ nhạt bao quanh lớp nhân đậm -->
-        <feGaussianBlur in="displaced" stdDeviation="3.5" result="blur" />
-        <feColorMatrix type="matrix" values="
-          1 0 0 0 0
-          0 1 0 0 0
-          0 0 1 0 0
-          0 0 0 1.2 0
-        " result="soft-bleed" />
-
-        <!-- Trộn lớp nhân sắc nét và lớp rìa mờ ảo lại với nhau -->
-        <feMerge>
-          <feMergeNode in="soft-bleed" />
-          <feMergeNode in="sharp" />
-        </feMerge>
-      </filter>
-    </defs>
-  </svg>
-
   <!-- ==========================================================================
        SCRIPTS
        ========================================================================== -->
@@ -991,8 +959,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   
-
-  
   <!-- Custom scripts -->
   <script src="./js/loading.js"></script>
   <script src="./js/ambient-canvas.js"></script>
@@ -1000,7 +966,6 @@
   <script src="./js/lightbox.js"></script>
   <script src="./js/scroll-effects.js"></script>
   <script src="./js/custom-cursor.js"></script>
-  <script src="./js/ink-bleed.js"></script>
 
 </body>
 </html>

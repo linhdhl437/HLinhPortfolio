@@ -31,12 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isMobileDevice = window.innerWidth <= 768;
 
   // ==========================================================================
   // 2. PARALLAX & GSAP SCROLL TRIGGER ANIMATIONS (Book open & Parallax backgrounds)
   // ==========================================================================
-  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined" && !isMobileDevice) {
+  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined" && !isMobileDevice && !prefersReducedMotion) {
     gsap.registerPlugin(ScrollTrigger);
 
     // 📜 THƯ QUYỂN MỞ HAI CHIỀU (Toggled via GSAP ScrollTrigger)
@@ -116,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     scrolls.forEach(scr => scrollObserver.observe(scr));
 
-    p    // Parallax scroll handler for non-GSAP desktop view only (completely bypassed on mobile to prevent scroll jank)
+    // Parallax scroll handler for non-GSAP desktop view only (completely bypassed on mobile to prevent scroll jank)
     if (!isMobileDevice) {
       window.addEventListener("scroll", () => {
         const scrollY = window.scrollY;

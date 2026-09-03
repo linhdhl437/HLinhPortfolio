@@ -25,6 +25,11 @@
     <meta property="twitter:description" content="Chi tiết báo cáo chặng học tập trong hành trình chuyển đổi số của Đồng Huyền Linh." />
     <meta property="twitter:image" content="https://linhdhl437.github.io/HLinhPortfolio/PortfolioAssets/AnhIntro1.png" />
 
+    <!-- 🎋 Google Fonts Preconnect (Optimal Network Waterfall) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" />
+
     <!-- 🎋 CSS Design System & Components -->
     <link rel="stylesheet" href="./css/variables.css" />
     <link rel="stylesheet" href="./css/base.css" />
@@ -1275,43 +1280,5 @@
       });
     </script>
 
-    <!-- BACKGROUND SVG FILTER FOR REALISTIC INK-BLEED EFFECTS -->
-    <svg style="position: absolute; width: 0; height: 0; pointer-events: none;">
-      <defs>
-        <!-- Bộ lọc chính cho vết mực loang -->
-        <filter id="ink-bleed-filter" x="-20%" y="-20%" width="140%" height="140%">
-          <!-- Tạo nhiễu hạt động để làm méo đường tròn -->
-          <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4" result="noise" />
-          
-          <!-- Bẻ cong biên hình tròn dựa trên nhiễu fractal -->
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" xChannelSelector="R" yChannelSelector="G" result="displaced" />
-          
-          <!-- Tăng tương phản của kênh Alpha để tạo viền cô đặc mực (Wet-Edge) -->
-          <feColorMatrix type="matrix" values="
-            1 0 0 0 0
-            0 1 0 0 0
-            0 0 1 0 0
-            0 0 0 18 -6
-          " result="sharp" />
-          
-          <!-- Tạo lớp loang nhẹ mờ nhạt bao quanh lớp nhân đậm -->
-          <feGaussianBlur in="displaced" stdDeviation="3.5" result="blur" />
-          <feColorMatrix type="matrix" values="
-            1 0 0 0 0
-            0 1 0 0 0
-            0 0 1 0 0
-            0 0 0 1.2 0
-          " result="soft-bleed" />
-
-          <!-- Trộn lớp nhân sắc nét và lớp rìa mờ ảo lại với nhau -->
-          <feMerge>
-            <feMergeNode in="soft-bleed" />
-            <feMergeNode in="sharp" />
-          </feMerge>
-        </filter>
-      </defs>
-    </svg>
-
-    <script src="./js/ink-bleed.js"></script>
   </body>
 </html>

@@ -99,7 +99,7 @@ window.stageContents = {
       </p>
 <div class="image-group">
 <div class="image-container">
-<img alt="Mở File Explorer" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_1_1.png"/>
+<img loading="lazy" decoding="async" alt="Mở File Explorer" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_1_1.png"/>
 <div class="image-caption">
             Hình minh họa 1.1: Giao diện mở File Explorer
           </div>
@@ -112,7 +112,7 @@ window.stageContents = {
       </p>
 <div class="image-group">
 <div class="image-container">
-<img alt="Truy cập ổ đĩa/thư mục" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_1_2.png"/>
+<img loading="lazy" decoding="async" alt="Truy cập ổ đĩa/thư mục" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_1_2.png"/>
 <div class="image-caption">
             Hình minh họa 2.1: Truy cập ổ đĩa/thư mục hệ thống
           </div>
@@ -126,13 +126,13 @@ window.stageContents = {
       </p>
 <div class="image-group">
 <div class="image-container">
-<img alt="Ảnh minh chứng 3.1" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_2_1.png"/>
+<img loading="lazy" decoding="async" alt="Ảnh minh chứng 3.1" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_2_1.png"/>
 <div class="image-caption">
             Ảnh minh chứng 3.1: Thao tác tạo thư mục mới
           </div>
 </div>
 <div class="image-container">
-<img alt="Ảnh minh chứng 3.2" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_2_2.png"/>
+<img loading="lazy" decoding="async" alt="Ảnh minh chứng 3.2" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_2_2.png"/>
 <div class="image-caption">
             Ảnh minh chứng 3.2: Đặt tên thư mục ThucHanh_DongHuyenLinh
           </div>
@@ -145,7 +145,7 @@ window.stageContents = {
       </p>
 <div class="image-group">
 <div class="image-container">
-<img alt="Tạo tệp GhiChu.txt" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_2_3.png"/>
+<img loading="lazy" decoding="async" alt="Tạo tệp GhiChu.txt" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_2_3.png"/>
 <div class="image-caption">
             Hình minh họa 4.1: Tạo tệp văn bản GhiChu.txt
           </div>
@@ -159,7 +159,7 @@ window.stageContents = {
       </p>
 <div class="image-group">
 <div class="image-container">
-<img alt="Đổi tên tệp tin" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_3_1.png"/>
+<img loading="lazy" decoding="async" alt="Đổi tên tệp tin" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_3_1.png"/>
 <div class="image-caption">
             Hình minh họa 5.1: Đổi tên tệp tin thành GhiChuQuanTrong.txt
           </div>
@@ -173,7 +173,7 @@ window.stageContents = {
       </p>
 <div class="image-group">
 <div class="image-container">
-<img alt="Tạo thư mục con TaiLieu" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_3_2.png"/>
+<img loading="lazy" decoding="async" alt="Tạo thư mục con TaiLieu" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_3_2.png"/>
 <div class="image-caption">
             Hình minh họa 6.1: Thư mục con TaiLieu được tạo thành công
           </div>
@@ -199,7 +199,7 @@ window.stageContents = {
       </p>
 <div class="image-group">
 <div class="image-container">
-<img alt="Sao chép tệp tin" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_3_3.png"/>
+<img loading="lazy" decoding="async" alt="Sao chép tệp tin" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_3_3.png"/>
 <div class="image-caption">
             Hình minh họa 7.1: Kết quả sao chép tệp tin vào thư mục TaiLieu
           </div>
@@ -229,13 +229,13 @@ window.stageContents = {
       </p>
 <div class="image-group">
 <div class="image-container">
-<img alt="Ảnh minh chứng 9.1" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_4_1.png"/>
+<img loading="lazy" decoding="async" alt="Ảnh minh chứng 9.1" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_4_1.png"/>
 <div class="image-caption">
             Ảnh minh chứng 9.1: Thao tác Cut tệp tin DiChuyen.txt
           </div>
 </div>
 <div class="image-container">
-<img alt="Ảnh minh chứng 9.2" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_4_2.png"/>
+<img loading="lazy" decoding="async" alt="Ảnh minh chứng 9.2" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_4_2.png"/>
 <div class="image-caption">
             Ảnh minh chứng 9.2: Paste tệp tin vào thư mục TaiLieu
           </div>
@@ -249,7 +249,7 @@ window.stageContents = {
       </p>
 <div class="image-group">
 <div class="image-container">
-<img alt="Xóa tệp tin" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_4_3.png"/>
+<img loading="lazy" decoding="async" alt="Xóa tệp tin" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_4_3.png"/>
 <div class="image-caption">
             Hình minh họa 9.3: Thực hiện xóa tệp tin
           </div>
@@ -263,7 +263,7 @@ window.stageContents = {
       </p>
 <div class="image-group">
 <div class="image-container">
-<img alt="Xóa vĩnh viễn" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_5_1.png"/>
+<img loading="lazy" decoding="async" alt="Xóa vĩnh viễn" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_5_1.png"/>
 <div class="image-caption">
             Hình minh họa 10.1: Cảnh báo xóa vĩnh viễn tệp tin
           </div>
@@ -277,7 +277,7 @@ window.stageContents = {
       </p>
 <div class="image-group">
 <div class="image-container">
-<img alt="Khôi phục từ Thùng rác" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_5_2.png"/>
+<img loading="lazy" decoding="async" alt="Khôi phục từ Thùng rác" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 1/extracted_images/image_page_5_2.png"/>
 <div class="image-caption">
             Hình minh họa 11.1: Khôi phục tệp tin từ Thùng rác
           </div>
@@ -1084,14 +1084,14 @@ window.stageContents = {
       </div>
 <div class="image-group">
 <div class="image-container">
-<img alt="Ảnh 1 Tác vụ 1 Prompt cơ bản" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh1_C3_Tác vụ 1_Prompt cơ bản.jpg"/>
+<img loading="lazy" decoding="async" alt="Ảnh 1 Tác vụ 1 Prompt cơ bản" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh1_C3_Tác vụ 1_Prompt cơ bản.jpg"/>
 <div class="image-caption">
             Ảnh minh họa 1: Câu lệnh tóm tắt cơ bản nhập vào ChatGPT
           </div>
 
 </div>
 <div class="image-container">
-<img alt="Ảnh 2 Tác vụ 1 Prompt cơ bản" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh2_C3_Tác vụ 1_Prompt cơ bản.JPG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 2 Tác vụ 1 Prompt cơ bản" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh2_C3_Tác vụ 1_Prompt cơ bản.JPG"/>
 <div class="image-caption">
             Ảnh minh họa 2: Phản hồi ngắn gọn và sơ sài từ chatbot AI
           </div>
@@ -1149,14 +1149,14 @@ window.stageContents = {
       </div>
 <div class="image-group">
 <div class="image-container">
-<img alt="Ảnh 3 Tác vụ 1 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh3_C3_Tác vụ 1_Prompt nâng cao.JPG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 3 Tác vụ 1 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh3_C3_Tác vụ 1_Prompt nâng cao.JPG"/>
 <div class="image-caption">
             Ảnh minh họa 3: Câu lệnh nâng cao thiết lập đầy đủ bối cảnh, vai trò
           </div>
 
 </div>
 <div class="image-container">
-<img alt="Ảnh 4 Tác vụ 1 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh4_C3_Tác vụ 1_Prompt nâng cao.JPG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 4 Tác vụ 1 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh4_C3_Tác vụ 1_Prompt nâng cao.JPG"/>
 <div class="image-caption">
             Ảnh minh họa 4: Phản hồi chi tiết, phân cấp rõ ràng của ChatGPT
           </div>
@@ -1308,7 +1308,7 @@ window.stageContents = {
       </div>
 <div class="image-group">
 <div class="image-container">
-<img alt="Ảnh 5 Tác vụ 2 Prompt cơ bản" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh5_C3_Tác vụ 2_Prompt cơ bản.jpg"/>
+<img loading="lazy" decoding="async" alt="Ảnh 5 Tác vụ 2 Prompt cơ bản" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh5_C3_Tác vụ 2_Prompt cơ bản.jpg"/>
 <div class="image-caption">
             Ảnh minh họa 5: Nhập câu lệnh cơ bản yêu cầu giải thích khái niệm
           </div>
@@ -1339,7 +1339,7 @@ window.stageContents = {
       </div>
 <div class="image-group">
 <div class="image-container">
-<img alt="Ảnh 6 Tác vụ 2 Prompt cải tiến" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh6_C3_Tác vụ 2_Prompt cải tiến.JPG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 6 Tác vụ 2 Prompt cải tiến" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh6_C3_Tác vụ 2_Prompt cải tiến.JPG"/>
 <div class="image-caption">
             Ảnh minh họa 6: ChatGPT phản hồi theo các phân loại rõ ràng hơn
           </div>
@@ -1381,7 +1381,7 @@ window.stageContents = {
       </div>
 <div class="image-group">
 <div class="image-container">
-<img alt="Ảnh 7 Tác vụ 2 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh7_C3_Tác vụ 2_Prompt nâng cao.JPG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 7 Tác vụ 2 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh7_C3_Tác vụ 2_Prompt nâng cao.JPG"/>
 <div class="image-caption">
             Ảnh minh họa 7: Câu lệnh nâng cao giả lập vai giảng viên, thêm mục
             ghi nhớ nhanh
@@ -1389,7 +1389,7 @@ window.stageContents = {
 
 </div>
 <div class="image-container">
-<img alt="Ảnh 8 Tác vụ 2 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh8_C3_Tác vụ 2_Prompt nâng cao.JPG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 8 Tác vụ 2 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh8_C3_Tác vụ 2_Prompt nâng cao.JPG"/>
 <div class="image-caption">
             Ảnh minh họa 8: Phản hồi giàu tính sư phạm, trực quan cao của
             ChatGPT
@@ -1553,7 +1553,7 @@ window.stageContents = {
       </div>
 <div class="image-group">
 <div class="image-container">
-<img alt="Ảnh 9 Tác vụ 3 Prompt cải tiến" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh5_C3_Tác vụ 3_Prompt cải tiến.JPG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 9 Tác vụ 3 Prompt cải tiến" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh5_C3_Tác vụ 3_Prompt cải tiến.JPG"/>
 <div class="image-caption">
             Ảnh minh họa 9: Kết quả tạo câu hỏi trắc nghiệm/tự luận cơ bản kèm
             đáp án
@@ -1594,7 +1594,7 @@ window.stageContents = {
       </div>
 <div class="image-group">
 <div class="image-container">
-<img alt="Ảnh 10 Tác vụ 3 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh9_C3_Tác vụ 3_Prompt nâng cao.JPG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 10 Tác vụ 3 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh9_C3_Tác vụ 3_Prompt nâng cao.JPG"/>
 <div class="image-caption">
             Ảnh minh họa 10: Câu lệnh nâng cao phân loại cấu trúc đề thi, tăng
             độ khó dần
@@ -1602,7 +1602,7 @@ window.stageContents = {
 
 </div>
 <div class="image-container">
-<img alt="Ảnh 11 Tác vụ 3 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh10_C3_Tác vụ 3_Prompt nâng cao.JPG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 11 Tác vụ 3 Prompt nâng cao" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 3/Image/Ảnh10_C3_Tác vụ 3_Prompt nâng cao.JPG"/>
 <div class="image-caption">
             Ảnh minh họa 11: Đề ôn tập chi tiết, có phân tầng độ khó và có giải
             thích chi tiết
@@ -2060,7 +2060,7 @@ window.stageContents = {
 </ul>
 <div class="image-group">
 <div class="image-container">
-<img alt="Ảnh 1 Không gian làm việc trên Notion" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 1 Không gian làm việc trên Notion do cá nhân thiết lập.jpg"/>
+<img loading="lazy" decoding="async" alt="Ảnh 1 Không gian làm việc trên Notion" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 1 Không gian làm việc trên Notion do cá nhân thiết lập.jpg"/>
 <div class="image-caption">
             Ảnh minh họa 1: Giao diện Notion Dashboard quản lý dự án do cá nhân
             thiết lập
@@ -2068,21 +2068,21 @@ window.stageContents = {
 
 </div>
 <div class="image-container">
-<img alt="Ảnh 2 Bảng theo dõi tổng quan nhiệm vụ" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 2.Bảng theo dõi tổng quan nhiệm vụ_.jpg"/>
+<img loading="lazy" decoding="async" alt="Ảnh 2 Bảng theo dõi tổng quan nhiệm vụ" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 2.Bảng theo dõi tổng quan nhiệm vụ_.jpg"/>
 <div class="image-caption">
             Ảnh minh họa 2: Cơ sở dữ liệu theo dõi tổng quan danh sách đầu việc
           </div>
 
 </div>
 <div class="image-container">
-<img alt="Ảnh 3 Bảng Kanban theo dõi tiến độ" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 3. Bảng Kanban theo dõi tiến độ trên Notion._.jpg"/>
+<img loading="lazy" decoding="async" alt="Ảnh 3 Bảng Kanban theo dõi tiến độ" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 3. Bảng Kanban theo dõi tiến độ trên Notion._.jpg"/>
 <div class="image-caption">
             Ảnh minh họa 3: Bảng Kanban quản lý trạng thái công việc
           </div>
 
 </div>
 <div class="image-container">
-<img alt="Ảnh 4 Project timeline" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 4. Project timeline_.jpg"/>
+<img loading="lazy" decoding="async" alt="Ảnh 4 Project timeline" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 4. Project timeline_.jpg"/>
 <div class="image-caption">
             Ảnh minh họa 4: Timeline chi tiết của dự án hiển thị trực quan
           </div>
@@ -2132,7 +2132,7 @@ window.stageContents = {
 </ul>
 <div class="image-group">
 <div class="image-container">
-<img alt="Ảnh 5 Lịch sử chỉnh sửa trên Google Docs" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 5. Lịch sử chỉnh sửa nội dung trên Google Docs._.JPG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 5 Lịch sử chỉnh sửa trên Google Docs" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 5. Lịch sử chỉnh sửa nội dung trên Google Docs._.JPG"/>
 <div class="image-caption">
             Ảnh minh họa 5: Lịch sử chỉnh sửa chi tiết của các thành viên trên
             tài liệu chung
@@ -2140,7 +2140,7 @@ window.stageContents = {
 
 </div>
 <div class="image-container">
-<img alt="Ảnh 6 Nội dung cá nhân đóng góp" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 6. Nội dung cá nhân đóng góp trực tiếp trên tài liệu công tác._.jpg"/>
+<img loading="lazy" decoding="async" alt="Ảnh 6 Nội dung cá nhân đóng góp" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 6. Nội dung cá nhân đóng góp trực tiếp trên tài liệu công tác._.jpg"/>
 <div class="image-caption">
             Ảnh minh họa 6: Phần nội dung chi tiết do cá nhân soạn thảo và đóng
             góp trực tiếp
@@ -2184,7 +2184,7 @@ window.stageContents = {
 </ul>
 <div class="image-group">
 <div class="image-container">
-<img alt="Ảnh 7 Cấu trúc Google Drive" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 7. Cấu trúc thư mục Google Drive của nhóm._.PNG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 7 Cấu trúc Google Drive" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 7. Cấu trúc thư mục Google Drive của nhóm._.PNG"/>
 <div class="image-caption">
             Ảnh minh họa 7: Cấu trúc phân chia thư mục làm việc khoa học của
             nhóm trên Google Drive
@@ -2205,7 +2205,7 @@ window.stageContents = {
 </ul>
 <div class="image-group">
 <div class="image-container" style="max-width: 500px">
-<img alt="Ảnh 8 Cách đặt tên file" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 8. Cách đặt tên file.jpg"/>
+<img loading="lazy" decoding="async" alt="Ảnh 8 Cách đặt tên file" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 8. Cách đặt tên file.jpg"/>
 <div class="image-caption">
             Ảnh minh họa 8: Thực tế áp dụng quy chuẩn đặt tên file thống nhất
             của nhóm
@@ -2274,21 +2274,21 @@ window.stageContents = {
 </ul>
 <div class="image-group">
 <div class="image-container">
-<img alt="Ảnh minh họa 9: Góp ý hỗ trợ các thành viên về nội dung thuyết trình" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 9. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg"/>
+<img loading="lazy" decoding="async" alt="Ảnh minh họa 9: Góp ý hỗ trợ các thành viên về nội dung thuyết trình" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 9. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg"/>
 <div class="image-caption">
             Ảnh minh họa 9: Góp ý hỗ trợ các thành viên về nội dung thuyết trình
           </div>
 
 </div>
 <div class="image-container">
-<img alt="Ảnh minh họa 10: Chia sẻ học liệu và hỗ trợ nhiệm vụ dự án" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 10. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg"/>
+<img loading="lazy" decoding="async" alt="Ảnh minh họa 10: Chia sẻ học liệu và hỗ trợ nhiệm vụ dự án" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 10. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg"/>
 <div class="image-caption">
             Ảnh minh họa 10: Chia sẻ học liệu và hỗ trợ nhiệm vụ dự án
           </div>
 
 </div>
 <div class="image-container">
-<img alt="Ảnh minh họa 11: Vote lịch họp" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 11. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg"/>
+<img loading="lazy" decoding="async" alt="Ảnh minh họa 11: Vote lịch họp" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 4/Image/Ảnh 11. Minh chứng trao đổi và hỗ trợ thành viên trên Messenger._.jpg"/>
 <div class="image-caption">
             Ảnh minh họa 11: Vote lịch họp
           </div>
@@ -2767,7 +2767,7 @@ window.stageContents = {
       </div>
 <div class="image-group">
 <div class="image-container" style="max-width: 600px">
-<img alt="Ảnh 1: Prompt 1 và kết quả ChatGPT" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh1_C5.JPG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 1: Prompt 1 và kết quả ChatGPT" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh1_C5.JPG"/>
 <div class="image-caption">
             Ảnh minh họa 1: Nhập Prompt 1 giải thích khái niệm vào ChatGPT
           </div>
@@ -2798,7 +2798,7 @@ window.stageContents = {
       </p>
 <div class="image-group">
 <div class="image-container" style="max-width: 600px">
-<img alt="Ảnh 2: Tinh chỉnh prompt ChatGPT" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 2_C5.JPG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 2: Tinh chỉnh prompt ChatGPT" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 2_C5.JPG"/>
 <div class="image-caption">
             Ảnh minh họa 2: Chatbot AI phản hồi sau khi tinh chỉnh prompt
           </div>
@@ -2893,7 +2893,7 @@ window.stageContents = {
 </div>
 <div class="image-group">
 <div class="image-container" style="max-width: 600px">
-<img alt="Ảnh 3: Hình ảnh tạo sinh từ DALL-E" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 3_C5.JPG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 3: Hình ảnh tạo sinh từ DALL-E" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 3_C5.JPG"/>
 <div class="image-caption">
             Ảnh minh họa 3: Kết quả tạo ảnh của DALL-E sau khi cải tiến prompt
           </div>
@@ -2917,7 +2917,7 @@ window.stageContents = {
       </p>
 <div class="image-group">
 <div class="image-container" style="max-width: 600px">
-<img alt="Ảnh 4: Tách nền và xử lý ảnh trên Canva" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 4_C5.JPG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 4: Tách nền và xử lý ảnh trên Canva" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 4_C5.JPG"/>
 <div class="image-caption">
             Ảnh minh họa 4: Ảnh được tinh chỉnh và xử lý bố cục trước khi chèn
             vào Canva
@@ -2939,7 +2939,7 @@ window.stageContents = {
       </div>
 <div class="image-group">
 <div class="image-container" style="max-width: 600px">
-<img alt="Ảnh 5: Canva AI đề xuất mẫu" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 6_C5.PNG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 5: Canva AI đề xuất mẫu" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 6_C5.PNG"/>
 <div class="image-caption">
             Ảnh minh họa 5: Gợi ý thiết kế và màu sắc từ Canva AI
           </div>
@@ -2968,7 +2968,7 @@ window.stageContents = {
       </p>
 <div class="image-group">
 <div class="image-container" style="max-width: 600px">
-<img alt="Ảnh 6: Infographic hoàn thiện" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 7_C5.JPG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 6: Infographic hoàn thiện" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 7_C5.JPG"/>
 <div class="image-caption">
             Ảnh minh họa 6: Giao diện chỉnh sửa màu sắc và hoàn thiện
             infographic trên Canva
@@ -2986,7 +2986,7 @@ window.stageContents = {
       </p>
 <div class="image-group">
 <div class="image-container" style="max-width: 500px">
-<img alt="Ảnh 7: Giao diện SpeakPal" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 5_C5.JPG"/>
+<img loading="lazy" decoding="async" alt="Ảnh 7: Giao diện SpeakPal" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Ảnh 5_C5.JPG"/>
 <div class="image-caption">
             Ảnh minh họa 7: Giao diện đoạn hội thoại thực tế luyện tiếng Trung
             trên app SpeakPal
@@ -3136,7 +3136,7 @@ window.stageContents = {
 <!-- Infographic representation -->
 <div class="image-group">
 <div class="image-container" style="max-width: 100%; border: none; background: none; padding: 0;">
-<img alt="Sản phẩm infographic C5" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Sản phẩm infographic C5.png" style="width: 100%; height: auto; border: 1px solid var(--border-gold); border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);"/>
+<img loading="lazy" decoding="async" alt="Sản phẩm infographic C5" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 5/Image/Sản phẩm infographic C5.png" style="width: 100%; height: auto; border: 1px solid var(--border-gold); border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);"/>
 <div class="image-caption">
             Sản phẩm Infographic hoàn thiện của Chặng 5: Conversational AI - Người bạn luyện ngoại ngữ 24/7
           </div>
@@ -3678,7 +3678,7 @@ window.stageContents = {
 <!-- Ethics Infographic representation -->
 <div class="image-group">
 <div class="image-container" style="max-width: 100%; border: none; background: none; padding: 0">
-<img alt="Sản phẩm infographic C6" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 6/Image/Sản phẩm infographic C6.png" style="
+<img loading="lazy" decoding="async" alt="Sản phẩm infographic C6" class="cursor-zoom" data-lightbox="" src="./PortfolioAssets/CHẶNG 6/Image/Sản phẩm infographic C6.png" style="
               width: 100%;
               height: auto;
               border: 1px solid var(--border-gold);

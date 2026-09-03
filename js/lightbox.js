@@ -134,4 +134,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
+
+  // Keyboard Accessibility: Esc to close, Arrow keys to navigate
+  window.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("active")) return;
+    if (e.key === "Escape") {
+      closeLightbox();
+    } else if (e.key === "ArrowRight") {
+      showNext();
+    } else if (e.key === "ArrowLeft") {
+      showPrev();
+    }
+  });
 });

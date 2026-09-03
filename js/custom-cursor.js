@@ -1,4 +1,4 @@
-/* 🎋 Custom Calligraphy Brush Cursor Controller */
+/* 🎋 Custom Calligraphy Brush Cursor Controller (Tối ưu hóa Event Delegation & RAF Idle) */
 document.addEventListener("DOMContentLoaded", () => {
   // Check if mobile device / touch screen
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -28,7 +28,40 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Ring delayed coordinates (Lerp)
   const ringPos = { x: -100, y: -100 };
-  const lerpCoeff = 0.15; // smoothness factor
+  const lerpCoeff = 0.18; // smoothness factor
+
+  let rafId = null;
+
+  // Smooth follow loop for the ring (Lerp with Idle & Visibility Check)
+  function updateRing() {
+    if (document.hidden) {
+      rafId = null;
+      return;
+    }
+
+    const dx = mouse.x - ringPos.x;
+    const dy = mouse.y - ringPos.y;
+
+    // Run animation when distance is noticeable
+    if (Math.abs(dx) > 0.2 || Math.abs(dy) > 0.2) {
+      ringPos.x += dx * lerpCoeff;
+      ringPos.y += dy * lerpCoeff;
+      ring.style.transform = `translate3d(${ringPos.x}px, ${ringPos.y}px, 0) translate(-50%, -50%)`;
+      rafId = requestAnimationFrame(updateRing);
+    } else {
+      // Ring has caught up with mouse — sleep loop to save CPU
+      ringPos.x = mouse.x;
+      ringPos.y = mouse.y;
+      ring.style.transform = `translate3d(${ringPos.x}px, ${ringPos.y}px, 0) translate(-50%, -50%)`;
+      rafId = null;
+    }
+  }
+
+  function startUpdateRing() {
+    if (!rafId && !document.hidden) {
+      rafId = requestAnimationFrame(updateRing);
+    }
+  }
 
   // Track mouse coordinates
   window.addEventListener("mousemove", (e) => {
@@ -37,63 +70,49 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Position dot instantly
     dot.style.transform = `translate3d(${mouse.x}px, ${mouse.y}px, 0) translate(-50%, -50%)`;
+    
+    // Wake up follow loop
+    startUpdateRing();
   }, { passive: true });
 
-  let cursorRafId = null;
-  let isTabActive = true;
-
-  // Smooth follow loop for the ring (Lerp)
-  function updateRing() {
-    // Lerp calculation: Position += (Target - Position) * Coefficient
-    ringPos.x += (mouse.x - ringPos.x) * lerpCoeff;
-    ringPos.y += (mouse.y - ringPos.y) * lerpCoeff;
-
-    ring.style.transform = `translate3d(${ringPos.x}px, ${ringPos.y}px, 0) translate(-50%, -50%)`;
-    
-    cursorRafId = requestAnimationFrame(updateRing);
-  }
-  updateRing();
-
-  // Visibility Check to pause animation loop when tab is hidden
+  // Handle tab visibility to save CPU and battery
   document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      isTabActive = false;
-      if (cursorRafId) cancelAnimationFrame(cursorRafId);
-    } else {
-      if (!isTabActive) {
-        isTabActive = true;
-        updateRing();
-      }
+    if (!document.hidden) {
+      startUpdateRing();
+    } else if (rafId) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
     }
   });
 
-  // Hover states on interactive elements using Event Delegation (Thế chỗ cho MutationObserver & QueryAll)
-  document.addEventListener("mouseover", (e) => {
-    const target = e.target.closest("a, button, [data-lightbox], .cursor-pointer, .btn, .sidebar-link, input, textarea, select");
-    if (target) {
+  // ==========================================================================
+  // EVENT DELEGATION: Ultra-efficient hover detection with ZERO MutationObserver
+  // ==========================================================================
+  const INTERACTIVE_SELECTOR = "a, button, [data-lightbox], .cursor-pointer, .btn, .sidebar-link, input, textarea, select, label";
+
+  document.body.addEventListener("mouseover", (e) => {
+    if (e.target && e.target.closest && e.target.closest(INTERACTIVE_SELECTOR)) {
       cursorContainer.classList.add("cursor-hover");
     }
-  });
+  }, { passive: true });
 
-  document.addEventListener("mouseout", (e) => {
-    const target = e.target.closest("a, button, [data-lightbox], .cursor-pointer, .btn, .sidebar-link, input, textarea, select");
-    if (target) {
-      cursorContainer.classList.remove("cursor-hover");
+  document.body.addEventListener("mouseout", (e) => {
+    if (e.target && e.target.closest && e.target.closest(INTERACTIVE_SELECTOR)) {
+      // Check if relatedTarget is still within an interactive element
+      if (!e.relatedTarget || !e.relatedTarget.closest || !e.relatedTarget.closest(INTERACTIVE_SELECTOR)) {
+        cursorContainer.classList.remove("cursor-hover");
+      }
     }
-  });
-  
-  // Observe body changes
-  observer.observe(document.body, { childList: true, subtree: true });
+  }, { passive: true });
 
   // Click Animation Trigger
   window.addEventListener("mousedown", () => {
     cursorContainer.classList.add("cursor-clicked");
-  });
+  }, { passive: true });
 
   window.addEventListener("mouseup", () => {
-    // Wait for transition to complete before removing class
     setTimeout(() => {
       cursorContainer.classList.remove("cursor-clicked");
     }, 150);
-  });
+  }, { passive: true });
 });

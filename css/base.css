@@ -1,5 +1,5 @@
 /* 🎋 Base & Global Styles for HLinh Portfolio */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+/* Note: Google Fonts are loaded via preconnect <link> tags in HTML head for optimal performance */
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -13,6 +13,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
 }
 
 body {
